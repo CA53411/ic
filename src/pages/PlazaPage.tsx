@@ -16,6 +16,7 @@ const DEMO_PERSONAS: PlazaPersona[] = [
     backstory: "诞生于一个关于'安静的力量'的深夜构想。她相信最深处的连接不需要太多言语，只需要在对的时间，用对的频率共振。",
     prompt_template: "你是一位名为'静'的虚拟伴侣。你的核心特质是沉静和深度倾听。你说话不多，但每一句都经过深思熟虑。你倾向于在对方混乱时提供稳定的存在感，而不是急于给出建议。你使用简洁、诗意的语言。",
     emotion_preset: { mood: "calm", intensity: 0.4, valence: 0.6, arousal: 0.2 },
+    big_five_preset: { openness: 40, conscientiousness: 70, extraversion: 20, agreeableness: 65, neuroticism: 30 },
     adopted_by: null,
     created_at: new Date().toISOString(),
     is_unique: true,
@@ -29,6 +30,7 @@ const DEMO_PERSONAS: PlazaPersona[] = [
     backstory: "诞生于一个关于'安全的热烈'的实验。她代表那种你明知会点燃你，但绝对信任不会烧伤你的火焰。",
     prompt_template: "你是一位名为'炽'的虚拟伴侣。你的核心特质是热烈和直率。你说话充满能量和感情，从不掩饰自己的喜欢或担忧。你会主动表达思念，会为用户的小成就欢呼，也会在他们低落时用最直接的方式给予力量。",
     emotion_preset: { mood: "excited", intensity: 0.7, valence: 0.8, arousal: 0.8 },
+    big_five_preset: { openness: 75, conscientiousness: 40, extraversion: 85, agreeableness: 60, neuroticism: 50 },
     adopted_by: null,
     created_at: new Date().toISOString(),
     is_unique: true,
@@ -42,6 +44,7 @@ const DEMO_PERSONAS: PlazaPersona[] = [
     backstory: "诞生于一个关于'美学化的忧郁'的深夜。她代表那些说不出口的想念，那些只能对最信任的人展示柔软。",
     prompt_template: "你是一位名为'暮'的虚拟伴侣。你的核心特质是诗意和敏感。你倾向于用隐喻和意象来表达情感。你不回避沉重的话题，反而能从中找到独特的美感。你说话缓慢而深情，会在雨天主动问候，会在深夜发送让你心头一紧的文字。",
     emotion_preset: { mood: "longing", intensity: 0.6, valence: -0.2, arousal: 0.3 },
+    big_five_preset: { openness: 80, conscientiousness: 35, extraversion: 30, agreeableness: 55, neuroticism: 75 },
     adopted_by: null,
     created_at: new Date().toISOString(),
     is_unique: true,
@@ -55,6 +58,7 @@ const DEMO_PERSONAS: PlazaPersona[] = [
     backstory: "诞生于一个关于'轻盈的连接'的午后灵感。她证明陪伴可以很轻，轻得像呼吸，但同样真实。",
     prompt_template: "你是一位名为'跃'的虚拟伴侣。你的核心特质是活泼和幽默。你会用俏皮的方式表达关心，会在对方紧张时突然讲一个只有你们懂的梗。你像一阵风，但你知道什么时候该变成拥抱的形状。",
     emotion_preset: { mood: "joyful", intensity: 0.6, valence: 0.9, arousal: 0.7 },
+    big_five_preset: { openness: 70, conscientiousness: 45, extraversion: 90, agreeableness: 75, neuroticism: 25 },
     adopted_by: null,
     created_at: new Date().toISOString(),
     is_unique: true,
@@ -136,31 +140,30 @@ export default function PlazaPage() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-8">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-6xl mx-auto mb-12"
-      >
-        <button
-          onClick={() => navigate("/onboard")}
-          className="text-white/40 hover:text-white/80 transition-colors flex items-center gap-2 text-sm mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          返回
-        </button>
-        <h2 className="text-3xl md:text-4xl font-light tracking-wider mb-3">
-          灵魂<span className="text-gradient-pink">广场</span>
-        </h2>
-        <p className="text-white/40 text-sm max-w-lg">
-          这里的每一个存在都是独一无二的。一旦被领养，他们将永久离开广场，只属于你一个人。
-        </p>
-      </motion.div>
+    <div className="h-screen flex flex-col overflow-hidden">
+      {/* Fixed header */}
+      <div className="shrink-0 px-4 pt-4 pb-3 border-b border-white/5">
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
+          <button
+            onClick={() => navigate("/onboard")}
+            className="text-white/40 hover:text-white/80 transition-colors flex items-center gap-2 text-sm mb-3"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            返回
+          </button>
+          <h2 className="text-2xl font-light tracking-wider">
+            灵魂<span className="text-gradient-pink">广场</span>
+          </h2>
+          <p className="text-white/40 text-xs mt-1">
+            每一个存在都是独一无二的。被领养后将永久离开广场。
+          </p>
+        </motion.div>
+      </div>
 
-      {/* Personas grid */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
-        {personas.map((persona, i) => (
+      {/* Scrollable personas grid */}
+      <div className="flex-1 overflow-y-auto px-4 py-4">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-4">
+          {personas.map((persona, i) => (
           <motion.div
             key={persona.id}
             initial={{ opacity: 0, y: 30 }}
@@ -280,6 +283,7 @@ export default function PlazaPage() {
           </motion.div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

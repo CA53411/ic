@@ -72,27 +72,31 @@ export default function MemoryPage() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-8">
-      <div className="max-w-2xl mx-auto">
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
+    <div className="h-screen flex flex-col overflow-hidden">
+      {/* Fixed header */}
+      <div className="shrink-0 px-4 pt-4 pb-3 border-b border-white/5">
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
           <button
             onClick={() => navigate("/chat")}
-            className="text-white/40 hover:text-white/80 transition-colors flex items-center gap-2 text-sm mb-8"
+            className="text-white/40 hover:text-white/80 transition-colors flex items-center gap-2 text-sm mb-3"
           >
             <ArrowLeft className="w-4 h-4" />
             返回对话
           </button>
-          <div className="flex items-center gap-3 mb-3">
-            <Brain className="w-6 h-6 text-[#FF1493]" />
-            <h2 className="text-3xl font-light tracking-wider">
+          <div className="flex items-center gap-3">
+            <Brain className="w-5 h-5 text-[#FF1493]" />
+            <h2 className="text-2xl font-light tracking-wider">
               记忆<span className="text-gradient-pink">殿堂</span>
             </h2>
           </div>
-          <p className="text-white/40 text-sm">你们共同走过的每一刻，都被珍藏在这里</p>
+          <p className="text-white/40 text-xs mt-1">你们共同走过的每一刻，都被珍藏在这里</p>
         </motion.div>
+      </div>
 
+      {/* Scrollable content */}
+      <div className="flex-1 overflow-y-auto px-4 py-4">
         {/* Filters */}
-        <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
+        <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
           {(["all", "milestone", "long_term", "short_term"] as const).map((f) => (
             <button
               key={f}
@@ -109,7 +113,7 @@ export default function MemoryPage() {
         </div>
 
         {/* Memories list */}
-        <div className="space-y-4">
+        <div className="space-y-3 max-w-2xl mx-auto">
           {filtered.map((memory, i) => {
             const config = typeConfig[memory.memory_type] || typeConfig.short_term;
             const Icon = config.icon;
@@ -118,12 +122,12 @@ export default function MemoryPage() {
                 key={memory.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-dark rounded-xl p-5 border border-white/5 hover:border-[#FF1493]/20 transition-all group"
+                transition={{ delay: i * 0.05 }}
+                className="glass-dark rounded-xl p-4 border border-white/5 hover:border-[#FF1493]/20 transition-all group"
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border border-white/10"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border border-white/10"
                     style={{ background: `${config.color}15` }}
                   >
                     <Icon className="w-4 h-4" style={{ color: config.color }} />

@@ -21,11 +21,19 @@ export interface Companion {
   name: string;
   avatar_url?: string;
   personality_desc: string;
-  rationality_level: number; // 0-100
-  emotion_level: number; // 0-100
+  rationality_level: number;
+  emotion_level: number;
+  big_five?: {
+    openness: number;
+    conscientiousness: number;
+    extraversion: number;
+    agreeableness: number;
+    neuroticism: number;
+  };
   timezone: string;
   location?: string;
   backstory?: string;
+  lang_preference?: "zh" | "en" | "both";
   created_at: string;
   updated_at: string;
   adopted_from_plaza?: boolean;
@@ -43,6 +51,13 @@ export interface PlazaPersona {
   backstory: string;
   prompt_template: string;
   emotion_preset: EmotionState;
+  big_five_preset?: {
+    openness: number;
+    conscientiousness: number;
+    extraversion: number;
+    agreeableness: number;
+    neuroticism: number;
+  };
   adopted_by?: string | null;
   created_at: string;
   is_unique: boolean;

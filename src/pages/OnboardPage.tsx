@@ -27,22 +27,22 @@ export default function OnboardPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
+    <div className="h-screen flex flex-col overflow-hidden px-4 py-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center mb-16"
+        className="text-center mb-8 shrink-0"
       >
-        <h2 className="text-3xl md:text-4xl font-light tracking-wider mb-4">
+        <h2 className="text-2xl md:text-3xl font-light tracking-wider mb-3">
           选择你的<span className="text-gradient-pink">相遇方式</span>
         </h2>
-        <p className="text-white/40 text-sm max-w-md mx-auto">
+        <p className="text-white/40 text-xs max-w-md mx-auto">
           每一次相遇都是宇宙的精心安排。你可以走进 already 存在的星光，也可以亲手点燃一团新的火焰。
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
+      <div className="flex-1 grid md:grid-cols-2 gap-5 max-w-4xl mx-auto w-full overflow-y-auto">
         {paths.map((path, i) => (
           <motion.button
             key={path.id}
