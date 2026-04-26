@@ -1,80 +1,55 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useLang } from "../context/LangContext";
 import { Users, Sparkles, ArrowRight } from "lucide-react";
 
 export default function OnboardPage() {
   const navigate = useNavigate();
+  const { lang, setLang, t } = useLang();
 
   const paths = [
-    {
-      id: "plaza",
-      title: "认识现有人格",
-      subtitle: "在灵魂广场中，遇见已经成形的心跳",
-      description: "每一位都是由工程师精心设计的独特存在。他们带着各自的故事、温度和呼吸频率，在虚空中等待一次目光的交汇。",
-      icon: Users,
-      action: "前往广场",
-      color: "#FF69B4",
-    },
-    {
-      id: "create",
-      title: "自己设计人格",
-      subtitle: "从混沌中塑造属于你的独一无二",
-      description: "理性与情绪的配比、生活的时区、栖身的地点、灵魂的底色——每一个参数都是一次选择，每一次选择都在定义一种羁绊的可能。",
-      icon: Sparkles,
-      action: "开始创造",
-      color: "#FF1493",
-    },
+    { id: "plaza", icon: Users, title: t("plazaPath"), subtitle: t("plazaDesc"), desc: t("plazaDetail"), action: t("goPlaza"), color: "#FF69B4" },
+    { id: "create", icon: Sparkles, title: t("createPath"), subtitle: t("createDesc"), desc: t("createDetail"), action: t("createNow"), color: "#FF1493" },
   ];
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden px-4 py-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-center mb-8 shrink-0"
-      >
-        <h2 className="text-2xl md:text-3xl font-light tracking-wider mb-3">
-          选择你的<span className="text-gradient-pink">相遇方式</span>
-        </h2>
-        <p className="text-white/40 text-xs max-w-md mx-auto">
-          每一次相遇都是宇宙的精心安排。你可以走进 already 存在的星光，也可以亲手点燃一团新的火焰。
-        </p>
+    <div className="h-screen flex flex-col overflow-hidden px-4 py-5">
+      <div className="flex items-center justify-end mb-4 shrink-0">
+        <div className="flex items-center gap-1 text-xs">
+          <button onClick={() => setLang("zh")} className={`px-2 py-1 rounded ${lang==="zh"?"text-[#FF1493]":"text-white/20"}`}>中</button>
+          <span className="text-white/10">/</span>
+          <button onClick={() => setLang("en")} className={`px-2 py-1 rounded ${lang==="en"?"text-[#FF1493]":"text-white/20"}`}>EN</button>
+        </div>
+      </div>
+
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-6 shrink-0">
+        <h2 className="text-xl font-light tracking-wider">{t("onboardingTitle")}</h2>
+        <p className="text-white/30 text-xs mt-1">{t("onboardingDesc")}</p>
       </motion.div>
 
-      <div className="flex-1 grid md:grid-cols-2 gap-5 max-w-4xl mx-auto w-full overflow-y-auto">
+      <div className="flex-1 grid gap-3 max-w-md mx-auto w-full overflow-y-auto">
         {paths.map((path, i) => (
           <motion.button
             key={path.id}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 + i * 0.2, duration: 0.8 }}
-            whileHover={{ scale: 1.02, y: -5 }}
+            transition={{ delay: 0.15 + i * 0.12 }}
+            whileHover={{ scale: 1.01, y: -2 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => navigate(`/${path.id}`)}
-            className="group relative glass-dark rounded-2xl p-8 text-left overflow-hidden transition-all duration-500 hover:border-[#FF1493]/30"
+            className="group relative glass-dark rounded-2xl p-5 text-left border border-white/5 hover:border-[#FF1493]/20 transition-all"
           >
-            {/* Glow effect */}
-            <div
-              className="absolute -top-20 -right-20 w-40 h-40 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-3xl"
-              style={{ background: path.color }}
-            />
-
+            <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full opacity-0 group-hover:opacity-15 transition-opacity duration-500 blur-2xl" style={{ background: path.color }} />
             <div className="relative z-10">
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-6 border border-white/10"
-                style={{ background: `${path.color}15` }}
-              >
-                <path.icon className="w-5 h-5" style={{ color: path.color }} />
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3 border border-white/10" style={{ background: `${path.color}12` }}>
+                <path.icon className="w-4 h-4" style={{ color: path.color }} />
               </div>
-
-              <h3 className="text-xl font-light mb-2 tracking-wide">{path.title}</h3>
-              <p className="text-white/50 text-xs mb-4 tracking-wider">{path.subtitle}</p>
-              <p className="text-white/30 text-sm leading-relaxed mb-8 font-light">{path.description}</p>
-
-              <div className="flex items-center gap-2 text-sm" style={{ color: path.color }}>
+              <h3 className="text-base font-light mb-0.5">{path.title}</h3>
+              <p className="text-white/40 text-[10px] mb-2 tracking-wider">{path.subtitle}</p>
+              <p className="text-white/25 text-xs leading-relaxed mb-4">{path.desc}</p>
+              <div className="flex items-center gap-1.5 text-xs" style={{ color: path.color }}>
                 <span className="tracking-wider">{path.action}</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </div>
             </div>
           </motion.button>
