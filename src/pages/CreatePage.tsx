@@ -28,24 +28,41 @@ export default function CreatePage() {
   const [creating, setCreating] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
+  const generatePersonaDesc = () => {
+    const t2 = traits;
+    const parts: string[] = [];
+    if (description) parts.push(description);
+    // Big Five derived traits
+    const openness = t2.openness > 60 ? "充满好奇心，乐于探索抽象概念和新鲜体验" : t2.openness < 40 ? "务实沉稳，偏好熟悉和可预期的事物" : "在新鲜与稳定之间找到平衡";
+    const conscientiousness = t2.conscientiousness > 60 ? "做事有条理、认真负责，注重细节" : t2.conscientiousness < 40 ? "随性自由，不喜欢被规则束缚" : "灵活而有条理，知道何时该认真";
+    const extraversion = t2.extraversion > 60 ? "外向热情，喜欢与人互动，能量来自外界" : t2.extraversion < 40 ? "内敛安静，在独处中充电，思考比表达更自然" : "既享受陪伴也需要独处的时间";
+    const agreeableness = t2.agreeableness > 60 ? "温暖包容，善于共情，总是优先考虑他人感受" : t2.agreeableness < 40 ? "直率坦诚，有自己的立场，不轻易妥协" : "在坚持自我与照顾他人之间游刃有余";
+    const neuroticism = t2.neuroticism > 60 ? "情感细腻敏感，对细微变化有深刻感知" : t2.neuroticism < 40 ? "情绪稳定从容，面对变化依然保持平静" : "大多数时间平和，但某些时刻会格外敏感";
+    parts.push(openness, conscientiousness, extraversion, agreeableness, neuroticism);
+    const langPart = compLang === "zh" ? "用中文交流" : compLang === "en" ? "用英文交流" : "根据用户语言自动切换中英文";
+    parts.push(langPart);
+    return parts.join("。") + "。与用户是柏拉图式的精神伴侣关系——不是恋爱，但比朋友更亲密。";
+  };
+
   const handleCreate = async () => {
     if (!user || !name.trim()) return;
     setCreating(true);
     const rationality = Math.round((traits.conscientiousness + (100 - traits.neuroticism)) / 2);
     const emotion = Math.round((traits.extraversion + traits.agreeableness + traits.openness) / 3);
+    const personaDesc = generatePersonaDesc();
 
     try {
       const { data, error } = await supabase.from("companions").insert({
-        user_id: user.id, name: name.trim(), personality_desc: description || "A unique digital companion",
+        user_id: user.id, name: name.trim(), personality_desc: personaDesc,
         rationality_level: rationality, emotion_level: emotion, big_five: traits,
-        timezone, location: location || undefined, backstory: description, adopted_from_plaza: false, is_active: true,
+        timezone, location: location || undefined, backstory: description || personaDesc, adopted_from_plaza: false, is_active: true, lang_preference: compLang,
       }).select().single();
 
       if (error || !data) {
         const mock = { id: crypto.randomUUID(), user_id: user.id, name: name.trim(), avatar_url: "/personas/serene.jpg",
-          personality_desc: description || "A unique digital companion", rationality_level: rationality, emotion_level: emotion,
-          big_five: traits, timezone, location: location || undefined, backstory: description, adopted_from_plaza: false,
-          is_active: true, created_at: new Date().toISOString(), updated_at: new Date().toISOString() };
+          personality_desc: personaDesc, rationality_level: rationality, emotion_level: emotion,
+          big_five: traits, timezone, location: location || undefined, backstory: description || personaDesc, adopted_from_plaza: false,
+          is_active: true, lang_preference: compLang, created_at: new Date().toISOString(), updated_at: new Date().toISOString() };
         setCompanion(mock as any);
       } else {
         setCompanion(data);
