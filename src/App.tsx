@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "./lib/supabase";
 import { useStore } from "./store";
 import { LangProvider } from "./context/LangContext";
@@ -17,21 +17,17 @@ import SettingsPage from "./pages/SettingsPage";
 
 function App() {
   const { setUser, setSession, setCompanion, user, companion } = useStore();
+  const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    // Safe session getter that doesn't throw on invalid refresh tokens
-    const initSession = async () => {
+    const init = async () => {
       try {
         const { data: { session }, error } = await supabase.auth.getSession();
         if (error) {
-          // If refresh token is invalid, clear local state and stay logged out
-          if (error.message?.includes("refresh_token") || error.message?.includes("Refresh Token")) {
-            console.warn("Invalid refresh token, clearing auth state");
-            setSession(null);
-            setUser(null);
-            return;
-          }
-          console.warn("getSession error:", error.message);
+          console.warn("getSession:", error.message);
+          setSession(null); setUser(null);
+          setChecking(false);
+          return;
         }
 
         if (session?.user) {
@@ -42,73 +38,59 @@ function App() {
             created_at: session.user.created_at || new Date().toISOString(),
             updated_at: session.user.updated_at || new Date().toISOString(),
           });
+
+          // Fetch companion if email verified
           if (session.user.email_confirmed_at) {
-            fetchCompanion(session.user.id);
+            try {
+              const { data, error: ce } = await supabase
+                .from("companions")
+                .select("*")
+                .eq("user_id", session.user.id)
+                .eq("is_active", true)
+                .maybeSingle();
+              if (ce && ce.code !== "PGRST116") {
+                console.warn("companion fetch:", ce.message);
+              }
+              if (data) setCompanion(data);
+            } catch (e: any) {
+              console.warn("companion exception:", e?.message);
+            }
           }
         }
       } catch (err: any) {
-        console.warn("Auth init error:", err?.message || err);
-        setSession(null);
-        setUser(null);
+        console.warn("auth init:", err?.message);
+        setSession(null); setUser(null);
       }
+      setChecking(false);
     };
 
-    const fetchCompanion = async (uid: string) => {
-      try {
-        const { data, error } = await supabase
-          .from("companions")
-          .select("*")
-          .eq("user_id", uid)
-          .eq("is_active", true)
-          .single();
-        if (error) {
-          // Table doesn't exist yet or RLS issue - don't crash
-          if (error.code === "406" || error.code === "409" || error.code === "42P01") {
-            console.warn("Companion table not ready yet:", error.message);
-            return;
-          }
-          console.warn("Fetch companion error:", error.message);
-        }
-        if (data) setCompanion(data);
-      } catch (err: any) {
-        console.warn("Companion fetch exception:", err?.message || err);
-      }
-    };
-
-    initSession();
+    init();
 
     const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === "SIGNED_IN" && session?.user) {
-        if (session.user.email_confirmed_at) {
-          setSession(session);
-          setUser({
-            id: session.user.id,
-            email: session.user.email || undefined,
-            created_at: session.user.created_at || new Date().toISOString(),
-            updated_at: session.user.updated_at || new Date().toISOString(),
-          });
-          fetchCompanion(session.user.id);
-        }
+        setSession(session);
+        setUser({
+          id: session.user.id,
+          email: session.user.email || undefined,
+          created_at: session.user.created_at || new Date().toISOString(),
+          updated_at: session.user.updated_at || new Date().toISOString(),
+        });
+        // Don't auto-fetch companion here - let App render handle redirect
       } else if (event === "SIGNED_OUT") {
-        setUser(null);
-        setSession(null);
-        setCompanion(null);
+        setUser(null); setSession(null); setCompanion(null);
       }
     });
 
     return () => listener.subscription.unsubscribe();
   }, []);
 
-  const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-    if (!user) return <Navigate to="/auth" replace />;
-    return <>{children}</>;
-  };
-
-  const CompanionRoute = ({ children }: { children: React.ReactNode }) => {
-    if (!user) return <Navigate to="/auth" replace />;
-    if (!companion) return <Navigate to="/onboard" replace />;
-    return <>{children}</>;
-  };
+  if (checking) {
+    return (
+      <div className="h-screen bg-black flex items-center justify-center">
+        <div className="w-6 h-6 border-2 border-[#FF1493]/30 border-t-[#FF1493] rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <LangProvider>
@@ -119,14 +101,14 @@ function App() {
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/auth" element={<AuthPage />} />
-              <Route path="/onboard" element={<ProtectedRoute><OnboardPage /></ProtectedRoute>} />
-              <Route path="/plaza" element={<ProtectedRoute><PlazaPage /></ProtectedRoute>} />
-              <Route path="/create" element={<ProtectedRoute><CreatePage /></ProtectedRoute>} />
-              <Route path="/home" element={<CompanionRoute><HomePage /></CompanionRoute>} />
-              <Route path="/chat" element={<CompanionRoute><ChatPage /></CompanionRoute>} />
-              <Route path="/memory" element={<CompanionRoute><MemoryPage /></CompanionRoute>} />
-              <Route path="/bond" element={<CompanionRoute><BondPage /></CompanionRoute>} />
-              <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
+              <Route path="/onboard" element={user ? (companion ? <Navigate to="/home" replace /> : <OnboardPage />) : <Navigate to="/auth" replace />} />
+              <Route path="/plaza" element={user ? <PlazaPage /> : <Navigate to="/auth" replace />} />
+              <Route path="/create" element={user ? <CreatePage /> : <Navigate to="/auth" replace />} />
+              <Route path="/home" element={user && companion ? <HomePage /> : <Navigate to={user ? "/onboard" : "/auth"} replace />} />
+              <Route path="/chat" element={user && companion ? <ChatPage /> : <Navigate to={user ? "/onboard" : "/auth"} replace />} />
+              <Route path="/memory" element={user && companion ? <MemoryPage /> : <Navigate to={user ? "/onboard" : "/auth"} replace />} />
+              <Route path="/bond" element={user && companion ? <BondPage /> : <Navigate to={user ? "/onboard" : "/auth"} replace />} />
+              <Route path="/settings" element={user ? <SettingsPage /> : <Navigate to="/auth" replace />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>

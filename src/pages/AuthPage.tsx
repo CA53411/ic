@@ -98,11 +98,10 @@ export default function AuthPage() {
   }, []);
 
   async function markVerifiedAndNavigate(session: any) {
-    // Mark in database
     try {
       await supabase.rpc("mark_email_verified", { p_user_id: session.user.id });
     } catch {
-      // ignore RPC error
+      // ignore
     }
     setSession(session);
     setUser({
@@ -224,15 +223,19 @@ export default function AuthPage() {
 
   const handleCheckVerification = async () => {
     setCheckingVerification(true);
-    const { data } = await supabase.auth.refreshSession();
-    if (data.session) {
-      const confirmed = !!data.session.user?.email_confirmed_at;
-      if (confirmed) {
-        await markVerifiedAndNavigate(data.session);
-        return;
+    try {
+      const { data } = await supabase.auth.refreshSession();
+      if (data.session) {
+        const confirmed = !!data.session.user?.email_confirmed_at;
+        if (confirmed) {
+          await markVerifiedAndNavigate(data.session);
+          return;
+        }
       }
+      setError("邮箱尚未验证 / Email not verified yet");
+    } catch {
+      setError("验证失败 / Verification failed");
     }
-    setError("邮箱尚未验证 / Email not verified yet");
     setCheckingVerification(false);
   };
 
