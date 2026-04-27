@@ -50,7 +50,7 @@ export default function CreatePage() {
       } else {
         setCompanion(data);
       }
-      navigate("/chat");
+      navigate("/home");
     } catch (err) { console.error(err); } finally { setCreating(false); }
   };
 

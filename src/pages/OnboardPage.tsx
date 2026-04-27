@@ -14,7 +14,7 @@ export default function OnboardPage() {
 
   return (
     <div className="h-screen flex flex-col overflow-hidden px-4 py-5">
-      <div className="flex items-center justify-end mb-4 shrink-0">
+      <div className="flex items-center justify-end mb-3 shrink-0">
         <div className="flex items-center gap-1 text-xs">
           <button onClick={() => setLang("zh")} className={`px-2 py-1 rounded ${lang==="zh"?"text-[#FF1493]":"text-white/20"}`}>中</button>
           <span className="text-white/10">/</span>
@@ -22,12 +22,12 @@ export default function OnboardPage() {
         </div>
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-6 shrink-0">
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-4 shrink-0">
         <h2 className="text-xl font-light tracking-wider">{t("onboardingTitle")}</h2>
         <p className="text-white/30 text-xs mt-1">{t("onboardingDesc")}</p>
       </motion.div>
 
-      <div className="flex-1 grid gap-3 max-w-md mx-auto w-full overflow-y-auto">
+      <div className="flex-1 flex flex-col justify-center gap-3 max-w-md mx-auto w-full">
         {paths.map((path, i) => (
           <motion.button
             key={path.id}

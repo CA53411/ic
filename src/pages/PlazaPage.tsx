@@ -94,7 +94,7 @@ export default function PlazaPage() {
           updated_at: new Date().toISOString(),
         };
         setCompanion(mock as any);
-        navigate("/chat");
+        navigate("/home");
         return;
       }
 
@@ -102,7 +102,7 @@ export default function PlazaPage() {
       await supabase.from("plaza_personas").update({ adopted_by: user.id, is_visible: false }).eq("id", persona.id);
 
       setCompanion(comp);
-      navigate("/chat");
+      navigate("/home");
     } catch (err) {
       console.error(err);
     } finally {
