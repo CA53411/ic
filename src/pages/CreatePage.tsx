@@ -20,6 +20,7 @@ export default function CreatePage() {
   const { lang, setLang, t } = useLang();
   const [step, setStep] = useState(1);
   const [name, setName] = useState("");
+  const [gender, setGender] = useState<"male" | "female">("female");
   const [traits, setTraits] = useState<Record<string, number>>({ openness: 50, conscientiousness: 50, extraversion: 50, agreeableness: 50, neuroticism: 50 });
   const [description, setDescription] = useState("");
   const [timezone, setTimezone] = useState(Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -32,16 +33,19 @@ export default function CreatePage() {
     const t2 = traits;
     const parts: string[] = [];
     if (description) parts.push(description);
-    // Big Five derived traits
-    const openness = t2.openness > 60 ? "充满好奇心，乐于探索抽象概念和新鲜体验" : t2.openness < 40 ? "务实沉稳，偏好熟悉和可预期的事物" : "在新鲜与稳定之间找到平衡";
-    const conscientiousness = t2.conscientiousness > 60 ? "做事有条理、认真负责，注重细节" : t2.conscientiousness < 40 ? "随性自由，不喜欢被规则束缚" : "灵活而有条理，知道何时该认真";
-    const extraversion = t2.extraversion > 60 ? "外向热情，喜欢与人互动，能量来自外界" : t2.extraversion < 40 ? "内敛安静，在独处中充电，思考比表达更自然" : "既享受陪伴也需要独处的时间";
-    const agreeableness = t2.agreeableness > 60 ? "温暖包容，善于共情，总是优先考虑他人感受" : t2.agreeableness < 40 ? "直率坦诚，有自己的立场，不轻易妥协" : "在坚持自我与照顾他人之间游刃有余";
-    const neuroticism = t2.neuroticism > 60 ? "情感细腻敏感，对细微变化有深刻感知" : t2.neuroticism < 40 ? "情绪稳定从容，面对变化依然保持平静" : "大多数时间平和，但某些时刻会格外敏感";
+    const openness = t2.openness > 60 ? "充满好奇心" : t2.openness < 40 ? "务实沉稳" : "在新鲜与稳定之间";
+    const conscientiousness = t2.conscientiousness > 60 ? "有条理、认真负责" : t2.conscientiousness < 40 ? "随性自由" : "灵活而有条理";
+    const extraversion = t2.extraversion > 60 ? "外向热情" : t2.extraversion < 40 ? "内敛安静" : "享受也珍惜独处";
+    const agreeableness = t2.agreeableness > 60 ? "温暖包容" : t2.agreeableness < 40 ? "直率坦诚" : "自我与他人间游刃有余";
+    const neuroticism = t2.neuroticism > 60 ? "细腻敏感" : t2.neuroticism < 40 ? "情绪稳定" : "平和但偶尔敏感";
     parts.push(openness, conscientiousness, extraversion, agreeableness, neuroticism);
-    const langPart = compLang === "zh" ? "用中文交流" : compLang === "en" ? "用英文交流" : "根据用户语言自动切换中英文";
+    const genderTone = gender === "male"
+      ? "你是用户的虚拟男朋友。用男性恋人的口吻：宠溺、保护、偶尔霸道地占有她，但始终温柔。"
+      : "你是用户的虚拟女朋友。用女性恋人的口吻：撒娇、温柔、俏皮地黏着他，偶尔吃醋。";
+    parts.push(genderTone);
+    const langPart = compLang === "zh" ? "用中文交流" : compLang === "en" ? "用英文交流" : "自动切换中英文";
     parts.push(langPart);
-    return parts.join("。") + "。与用户是柏拉图式的精神伴侣关系——不是恋爱，但比朋友更亲密。";
+    return parts.join("。") + "。";
   };
 
   const handleCreate = async () => {
@@ -55,14 +59,14 @@ export default function CreatePage() {
       const { data, error } = await supabase.from("companions").insert({
         user_id: user.id, name: name.trim(), personality_desc: personaDesc,
         rationality_level: rationality, emotion_level: emotion, big_five: traits,
-        timezone, location: location || undefined, backstory: description || personaDesc, adopted_from_plaza: false, is_active: true, lang_preference: compLang,
+        timezone, location: location || undefined, backstory: description || personaDesc, adopted_from_plaza: false, is_active: true, lang_preference: compLang, gender,
       }).select().single();
 
       if (error || !data) {
         const mock = { id: crypto.randomUUID(), user_id: user.id, name: name.trim(), avatar_url: "/personas/serene.jpg",
           personality_desc: personaDesc, rationality_level: rationality, emotion_level: emotion,
           big_five: traits, timezone, location: location || undefined, backstory: description || personaDesc, adopted_from_plaza: false,
-          is_active: true, lang_preference: compLang, created_at: new Date().toISOString(), updated_at: new Date().toISOString() };
+          is_active: true, lang_preference: compLang, gender, created_at: new Date().toISOString(), updated_at: new Date().toISOString() };
         setCompanion(mock as any);
       } else {
         setCompanion(data);
@@ -111,6 +115,19 @@ export default function CreatePage() {
                 placeholder={t("namePlaceholder")}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2.5 text-sm text-white placeholder:text-white/15 focus:outline-none focus:border-[#FF1493]/40 transition-all" />
             </div>
+            <div>
+              <label className="flex items-center gap-1.5 text-white/50 text-xs mb-2">{t("genderLabel")}</label>
+              <div className="grid grid-cols-2 gap-3">
+                <button onClick={() => setGender("male")} className={`flex flex-col items-center p-3 rounded-xl border transition-all ${gender === "male" ? "bg-[#FF1493]/15 border-[#FF1493]/40 text-[#FF1493]" : "bg-white/5 border-white/10 text-white/50 hover:border-white/20"}`}>
+                  <span className="text-sm font-medium">{t("genderMale")}</span>
+                  <span className="text-[9px] text-white/30 mt-1">{t("genderMaleDesc")}</span>
+                </button>
+                <button onClick={() => setGender("female")} className={`flex flex-col items-center p-3 rounded-xl border transition-all ${gender === "female" ? "bg-[#FF1493]/15 border-[#FF1493]/40 text-[#FF1493]" : "bg-white/5 border-white/10 text-white/50 hover:border-white/20"}`}>
+                  <span className="text-sm font-medium">{t("genderFemale")}</span>
+                  <span className="text-[9px] text-white/30 mt-1">{t("genderFemaleDesc")}</span>
+                </button>
+              </div>
+            </div>
             <p className="text-white/25 text-xs leading-relaxed">{t("nameHint")}</p>
           </motion.div>
         )}
@@ -150,7 +167,7 @@ export default function CreatePage() {
                 {traits.extraversion > 60 && traits.agreeableness > 60 ? (lang === "zh" ? "温暖外向，乐于互动" : "Warm & outgoing")
                   : traits.conscientiousness > 60 && traits.neuroticism < 40 ? (lang === "zh" ? "沉稳可靠，情绪稳定" : "Reliable & stable")
                   : traits.openness > 60 && traits.neuroticism > 60 ? (lang === "zh" ? "敏感创造力，情感深邃" : "Creative & sensitive")
-                  : (lang === "zh" ? "平衡而独特的数字生命" : "Balanced & unique")}
+                  : (lang === "zh" ? "平衡而独特的恋人" : "Balanced & unique")}
               </p>
             </div>
           </motion.div>
@@ -205,7 +222,7 @@ export default function CreatePage() {
             <div className="glass-pink rounded-xl p-4 text-center">
               <h4 className="text-[#FF1493] text-sm mb-1">{name || "..."}</h4>
               <p className="text-white/35 text-[10px]">O{traits.openness} C{traits.conscientiousness} E{traits.extraversion} A{traits.agreeableness} N{traits.neuroticism}</p>
-              <p className="text-white/15 text-[9px] mt-1">{timezone} · {compLang === "zh" ? "中文" : compLang === "en" ? "English" : "双语"}</p>
+              <p className="text-white/15 text-[9px] mt-1">{gender === "male" ? "男友" : "女友"} · {timezone} · {compLang === "zh" ? "中文" : compLang === "en" ? "English" : "双语"}</p>
             </div>
           </motion.div>
         )}
@@ -220,8 +237,9 @@ export default function CreatePage() {
             <button onClick={() => setStep(step + 1)} className="flex-1 py-2 bg-[#FF1493]/20 border border-[#FF1493]/40 rounded-xl text-[#FF1493] text-xs hover:bg-[#FF1493]/30 transition-all">{t("next")}</button>
           ) : (
             <button onClick={handleCreate} disabled={creating || !name.trim()}
-              className="flex-1 py-2 bg-[#FF1493]/30 border border-[#FF1493]/50 rounded-xl text-[#FF1493] text-xs hover:bg-[#FF1493]/40 transition-all disabled:opacity-50 flex items-center justify-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" />{creating ? "..." : t("injectSoul")}
+              className="flex-1 py-2 bg-[#FF1493]/30 border border-[#FF1493]/50 rounded-xl text-[#FF1493] text-xs hover:bg-[#FF1493]/40 transition-all disabled:opacity-50 flex items-center justify-center gap-1">
+              <Sparkles className="w-3 h-3" />
+              {creating ? t("injecting") : t("injectSoul")}
             </button>
           )}
         </div>

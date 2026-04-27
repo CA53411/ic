@@ -180,6 +180,10 @@ export default function PlazaPage() {
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <h3 className="text-sm font-light tracking-wide">{persona.name}</h3>
+                        <span className="px-1.5 py-0.5 rounded text-[8px] tracking-wider flex items-center gap-0.5"
+                          style={{ color: persona.gender === "male" ? "#6366f1" : "#FF1493", background: (persona.gender === "male" ? "#6366f1" : "#FF1493") + "10", border: `1px solid ${(persona.gender === "male" ? "#6366f1" : "#FF1493")}30` }}>
+                          {persona.gender === "male" ? "男生" : persona.gender === "female" ? "女生" : "..."}
+                        </span>
                         {persona.is_unique && (
                           <span className="px-1.5 py-0.5 bg-[#FF1493]/8 border border-[#FF1493]/15 rounded text-[#FF1493]/70 text-[8px] tracking-wider flex items-center gap-0.5">
                             <Sparkles className="w-2.5 h-2.5" />{t("unique")}

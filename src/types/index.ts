@@ -34,6 +34,7 @@ export interface Companion {
   location?: string;
   backstory?: string;
   lang_preference?: "zh" | "en" | "both";
+  gender?: "male" | "female";
   created_at: string;
   updated_at: string;
   adopted_from_plaza?: boolean;
@@ -58,6 +59,7 @@ export interface PlazaPersona {
     agreeableness: number;
     neuroticism: number;
   };
+  gender?: "male" | "female";
   adopted_by?: string | null;
   created_at: string;
   is_unique: boolean;
