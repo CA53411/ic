@@ -6,7 +6,7 @@ import { useStore } from "../store";
 import { useLang } from "../context/LangContext";
 import BottomNav from "../components/BottomNav";
 import type { RelationshipStats } from "../types";
-import { Heart, Sparkles, MessageCircle, ArrowRight, Zap } from "lucide-react";
+import { Sparkles, MessageCircle, ArrowRight, Zap } from "lucide-react";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function HomePage() {
     if (!companion) return;
     setLoading(true);
     try {
-      const { data } = await supabase.from("relationship_stats").select("*").eq("companion_id", companion.id).single();
+      const { data } = await supabase.from("relationship_stats").select("*").eq("companion_id", companion.id).maybeSingle();
       if (data) setStats(data);
       else setStats(generateDemoStats(companion));
     } catch {
@@ -181,7 +181,7 @@ export default function HomePage() {
             onClick={() => navigate("/bond")}
             className="glass-dark rounded-2xl p-4 border border-white/5 hover:border-[#FF1493]/15 transition-all text-left"
           >
-            <Heart className="w-4 h-4 text-[#FF1493] mb-2" />
+            <img src="/platonic-logo.png" alt="" className="w-4 h-4 mb-2 opacity-80" />
             <p className="text-xs text-white/60">{t("bond")}</p>
             <p className="text-[9px] text-white/20 mt-0.5">{lang === "zh" ? "查看关系图谱" : "View bond graph"}</p>
           </motion.button>

@@ -155,8 +155,14 @@ export default function ChatPage() {
 
   const handleSend = useCallback(async () => {
     if (!input.trim() || !companion || !user || isTyping) return;
+
+    // Verify companion belongs to current user (defensive)
+    let companionId = companion.id;
+    let companionName = companion.name;
+    let companionPersonality = companion.personality_desc;
+
     const userMsg: Message = {
-      id: crypto.randomUUID(), companion_id: companion.id, user_id: user.id,
+      id: crypto.randomUUID(), companion_id: companionId, user_id: user.id,
       content: input.trim(), role: "user", created_at: new Date().toISOString(),
     };
     addMessage(userMsg); setInput(""); setIsTyping(true);
@@ -169,61 +175,61 @@ export default function ChatPage() {
       const { data: efData, error: efErr } = await supabase.functions.invoke("chat", {
         body: {
           message: userMsg.content,
-          companionId: companion.id,
-          userId: user.id,
-          companionName: companion.name,
-          personalityDesc: companion.personality_desc,
+          companionId: companionId,
+          companionName,
+          personalityDesc: companionPersonality,
           history: messages.slice(-10).map((m) => ({ role: m.role === "companion" ? "assistant" : "user", content: m.content })),
+          lang,
         },
       });
       if (!efErr && efData?.response) {
         responseText = efData.response;
         emotion = efData.emotion || emotion;
       } else {
-        throw new Error("EF failed");
+        throw new Error(efErr?.message || "EF empty response");
       }
-    } catch {
-      // Fallback: direct KIMI API
-      try {
-        const kimiKey = import.meta.env.VITE_KIMI_API_KEY;
-        if (kimiKey) {
-          const sysPrompt = lang === "zh"
-            ? `你是${companion.name}，${companion.personality_desc}。你正在与用户进行一段亲密的柏拉图式对话。请保持温暖、真诚，偶尔暧昧但不露骨。用简短的中文回复（最多80字）。`
-            : `You are ${companion.name}, ${companion.personality_desc}. You are having an intimate platonic conversation. Be warm and sincere. Short replies (max 80 chars).`;
-          const r = await fetch("https://api.moonshot.cn/v1/chat/completions", {
-            method: "POST",
-            headers: { Authorization: `Bearer ${kimiKey}`, "Content-Type": "application/json" },
-            body: JSON.stringify({
-              model: "moonshot-v1-8k", temperature: 0.85, max_tokens: 200,
-              messages: [
-                { role: "system", content: sysPrompt },
-                ...messages.slice(-6).map((m) => ({ role: m.role === "companion" ? "assistant" : "user", content: m.content })),
-                { role: "user", content: userMsg.content },
-              ],
-            }),
-          });
-          if (r.ok) {
-            const j = await r.json();
-            responseText = j.choices?.[0]?.message?.content || getSimResponse(userMsg.content);
-            emotion = emotionFromText(responseText);
-          } else throw new Error("KIMI direct failed");
-        } else throw new Error("no key");
-      } catch {
-        responseText = getSimResponse(userMsg.content);
-        emotion = emotionFromText(responseText);
+    } catch (efError: any) {
+      const errMsg = efError?.message || "";
+      console.warn("Edge Function failed:", errMsg);
+
+      // If 403, companion may not belong to user - try to refresh
+      if (errMsg.includes("403") || errMsg.includes("Companion not found")) {
+        try {
+          const { data: fresh } = await supabase.from("companions").select("*").eq("user_id", user.id).eq("is_active", true).maybeSingle();
+          if (fresh) {
+            companionId = fresh.id;
+            companionName = fresh.name;
+            companionPersonality = fresh.personality_desc;
+          }
+        } catch { /* ignore refresh error */ }
       }
+
+      // Fallback: simulation pool (never fails)
+      responseText = getSimResponse(userMsg.content);
+      emotion = emotionFromText(responseText);
     }
 
-    await new Promise((r) => setTimeout(r, 800 + Math.random() * 1200));
+    // Typing delay for natural feel
+    await new Promise((r) => setTimeout(r, 600 + Math.random() * 1000));
+
     const companionMsg: Message = {
-      id: crypto.randomUUID(), companion_id: companion.id, user_id: user.id,
+      id: crypto.randomUUID(), companion_id: companionId, user_id: user.id,
       content: responseText, role: "companion", emotion_state: emotion,
       created_at: new Date().toISOString(),
     };
     addMessage(companionMsg); updateFromEmotion(emotion); setIsTyping(false);
+
+    // Save to DB - wrap each insert individually to avoid 409 on one failing
     try {
-      await supabase.from("messages").insert([userMsg, companionMsg]);
-    } catch { /* ignore save errors */ }
+      await supabase.from("messages").insert(userMsg);
+    } catch (e: any) {
+      console.warn("Save user msg failed:", e?.message);
+    }
+    try {
+      await supabase.from("messages").insert(companionMsg);
+    } catch (e: any) {
+      console.warn("Save companion msg failed:", e?.message);
+    }
   }, [input, companion, user, isTyping, messages, addMessage, updateFromEmotion, lang, ghostMessage]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

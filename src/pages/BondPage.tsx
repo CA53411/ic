@@ -22,7 +22,7 @@ export default function BondPage() {
     if (!companion || !user) return;
     setLoading(true);
     try {
-      const { data: s } = await supabase.from("relationship_stats").select("*").eq("companion_id", companion.id).single();
+      const { data: s } = await supabase.from("relationship_stats").select("*").eq("companion_id", companion.id).maybeSingle();
       const { data: e } = await supabase.from("relationship_events").select("*").eq("companion_id", companion.id).order("created_at", { ascending: false }).limit(20);
       if (s) setStats(s);
       else setStats(generateDemoStats(companion));
