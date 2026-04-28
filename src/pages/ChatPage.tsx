@@ -131,7 +131,7 @@ export default function ChatPage() {
         else {
           const welcome: Message = {
             id: crypto.randomUUID(), companion_id: companion.id, user_id: user.id,
-            content: lang === "zh" ? `我是${companion.name}。我们终于见面了。` : `I'm ${companion.name}. We finally meet.`,
+            content: lang === "zh" ? `你好，我是${companion.name}。` : `Hi, I'm ${companion.name}.`,
             role: "companion", emotion_state: { mood: "calm", intensity: 0.4, valence: 0.6, arousal: 0.3 },
             created_at: new Date().toISOString(),
           };
@@ -140,7 +140,7 @@ export default function ChatPage() {
       } catch {
         const welcome: Message = {
           id: crypto.randomUUID(), companion_id: companion.id, user_id: user.id,
-          content: lang === "zh" ? `我是${companion.name}。我们终于见面了。` : `I'm ${companion.name}. We finally meet.`,
+          content: lang === "zh" ? `你好，我是${companion.name}。` : `Hi, I'm ${companion.name}.`,
           role: "companion", emotion_state: { mood: "calm", intensity: 0.4, valence: 0.6, arousal: 0.3 },
           created_at: new Date().toISOString(),
         };
