@@ -51,12 +51,9 @@ export default function SettingsPage() {
   const handleDeleteCompanion = async () => {
     if (!companion || !user) return;
     try {
-      // 硬删除所有伴侣相关数据
-      await supabase.from("messages").delete().eq("companion_id", companion.id);
-      await supabase.from("memories").delete().eq("companion_id", companion.id);
-      await supabase.from("relationship_stats").delete().eq("companion_id", companion.id);
-      await supabase.from("relationship_events").delete().eq("companion_id", companion.id);
-      await supabase.from("proactive_messages").delete().eq("companion_id", companion.id);
+      // 数据库级联删除：companions 的 ON DELETE CASCADE 会自动清理
+      // messages/memories/stats/events/proactive_messages
+      // 触发器 trg_companion_deleted 会自动回滚 plaza_personas
       await supabase.from("companions").delete().eq("id", companion.id);
       setCompanion(null); setMessages([]); setShowDeleteConfirm(false);
       navigate("/onboard");

@@ -26,6 +26,7 @@ interface AppState {
   // Messages
   messages: Message[];
   addMessage: (msg: Message) => void;
+  removeMessage: (msgId: string) => void;
   setMessages: (msgs: Message[]) => void;
 
   // Memories
@@ -99,6 +100,7 @@ export const useStore = create<AppState>()(
 
       messages: [],
       addMessage: (msg) => set((state) => ({ messages: [...state.messages, msg] })),
+      removeMessage: (msgId) => set((state) => ({ messages: state.messages.filter((m) => m.id !== msgId) })),
       setMessages: (msgs) => set({ messages: msgs }),
 
       memories: [],

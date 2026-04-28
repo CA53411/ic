@@ -101,7 +101,7 @@ function FileChip({ file, onRemove }: { file: UploadedFile; onRemove: () => void
 
 export default function ChatPage() {
   const navigate = useNavigate();
-  const { user, companion, messages, addMessage, setMessages, updateFromEmotion } = useStore();
+  const { user, companion, messages, addMessage, removeMessage, setMessages, updateFromEmotion } = useStore();
   const { lang, setLang, t } = useLang();
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -298,6 +298,7 @@ export default function ChatPage() {
     addMessage(userMsg);
     setInput("");
     setIsTyping(true);
+    setChatError("");
     if (ghostMessage) setGhostMessage(null);
 
     let responseText = "";
@@ -317,13 +318,13 @@ export default function ChatPage() {
       };
       addMessage(companionMsg);
       updateFromEmotion(emotion);
-      try { await supabase.from("messages").insert(userMsg); } catch { /* */ }
-      try { await supabase.from("messages").insert(companionMsg); } catch { /* */ }
+      // DB 写入已由 Edge Function 完成，前端不再重复插入（解决双写问题）
     } else {
-      // 不保存任何消息，显示错误提示让用户重试
+      // 发送失败：从本地 UI 移除 user 消息，避免"刷新后消失"的幻觉
+      removeMessage(userMsg.id);
       setChatError(lang === "zh" ? "连接失败了，再试一次吧..." : "Connection failed. Please try again...");
     }
-  }, [input, companion, user, isTyping, isStreaming, messages, addMessage, updateFromEmotion, lang, ghostMessage, uploadedFiles]);
+  }, [input, companion, user, isTyping, isStreaming, messages, addMessage, removeMessage, updateFromEmotion, lang, ghostMessage, uploadedFiles]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); }
