@@ -1,7 +1,10 @@
 import { useState, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import {User,
+import { toast } from 'sonner';
+import { supabase } from '@/lib/supabase';
+import {
+  User,
   Sparkles,
   BookOpen,
   Check,
@@ -11,7 +14,9 @@ import {User,
   CheckSquare,
   Users,
   Heart,
-  CloudRain} from 'lucide-react';
+  CloudRain,
+  Loader2,
+} from 'lucide-react';
 
 /* ──────────── Types ──────────── */
 interface BigFive {
@@ -233,6 +238,7 @@ export default function Customize() {
   const [step, setStep] = useState(0); // 0, 1, 2
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
   const [isComplete, setIsComplete] = useState(false);
+  const [creating, setCreating] = useState(false);
 
   // Step 1 state
   const [name, setName] = useState('');
@@ -264,17 +270,88 @@ export default function Customize() {
     return true;
   }, [step, name]);
 
+  const createCompanion = useCallback(async () => {
+    try {
+      setCreating(true);
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        toast.error('请先登录');
+        return;
+      }
+
+      // Parse birthday into month and day
+      let birthMonth: number | null = null;
+      let birthDay: number | null = null;
+      if (birthday) {
+        const parts = birthday.split('-');
+        if (parts.length === 3) {
+          birthMonth = parseInt(parts[1], 10);
+          birthDay = parseInt(parts[2], 10);
+        }
+      }
+
+      // 1. Insert companion
+      const { data: companion, error } = await supabase.from('companions').insert({
+        user_id: user.id,
+        nickname: name,
+        gender: gender,
+        age: age,
+        birth_month: birthMonth,
+        birth_day: birthDay,
+        background: backstory,
+        main_language: 'zh',
+        personality_openness: personality.openness,
+        personality_conscientiousness: personality.conscientiousness,
+        personality_extraversion: personality.extraversion,
+        personality_agreeableness: personality.agreeableness,
+        personality_neuroticism: personality.neuroticism,
+        welcome_message: firstMessage || `你好呀！我是${name}，很高兴认识你～`,
+      }).select().single();
+
+      if (error) throw error;
+
+      // 2. Create intimacy record (initial score 0, stage 1)
+      await supabase.from('intimacy_records').insert({
+        companion_id: companion.id,
+        user_id: user.id,
+        score: 0,
+        milestone_stage: 1,
+      });
+
+      // 3. Create mood record
+      await supabase.from('mood_records').insert({
+        companion_id: companion.id,
+        pleasure: 0.3,
+        arousal: 0.2,
+        dominance: 0.1,
+      });
+
+      // 4. Update user profile status
+      await supabase.from('profiles').update({
+        status: 'HAS_COMPANION',
+        current_companion_id: companion.id,
+      }).eq('id', user.id);
+
+      toast.success('伴侣创建成功！');
+      setIsComplete(true);
+      setTimeout(() => {
+        navigate('/chat');
+      }, 3500);
+    } catch (e: any) {
+      toast.error('创建失败: ' + (e.message || '未知错误'));
+    } finally {
+      setCreating(false);
+    }
+  }, [navigate, name, gender, age, birthday, backstory, personality, firstMessage]);
+
   const handleNext = useCallback(() => {
     if (step < 2) {
       setDirection(1);
       setStep((s) => s + 1);
     } else {
-      setIsComplete(true);
-      setTimeout(() => {
-        navigate('/chat');
-      }, 3500);
+      createCompanion();
     }
-  }, [step, navigate]);
+  }, [step, createCompanion]);
 
   const handlePrev = useCallback(() => {
     if (step > 0) {
@@ -803,9 +880,9 @@ export default function Customize() {
 
               <button
                 onClick={handleNext}
-                disabled={!canProceed}
+                disabled={!canProceed || creating}
                 className={`px-8 py-3 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
-                  canProceed
+                  canProceed && !creating
                     ? step === 2
                       ? 'accent-gradient text-white shadow-glow hover:brightness-110'
                       : 'accent-gradient text-white hover:brightness-110 shadow-md'
@@ -813,10 +890,17 @@ export default function Customize() {
                 }`}
               >
                 {step === 2 ? (
-                  <>
-                    <Sparkles size={16} />
-                    完成创建
-                  </>
+                  creating ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      创建中...
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles size={16} />
+                      完成创建
+                    </>
+                  )
                 ) : (
                   <>
                     下一步

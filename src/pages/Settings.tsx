@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { toast } from 'sonner';
 import {
   Settings as SettingsIcon,
   Globe,
@@ -13,6 +14,7 @@ import {
   Sun,
   Moon,
 } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -130,6 +132,12 @@ export default function Settings() {
   const [selectedTheme, setSelectedTheme] = useState('Pink');
   const [accentColor, setAccentColor] = useState('Default Pink');
   const [savedLanguage, setSavedLanguage] = useState(false);
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [registeredAt, setRegisteredAt] = useState('');
+  const [companionName, setCompanionName] = useState('');
+  const [avatar, setAvatar] = useState('/default-avatar.jpg');
+  const [loading, setLoading] = useState(true);
 
   // Notification states
   const [notifProactive, setNotifProactive] = useState(true);
@@ -140,18 +148,93 @@ export default function Settings() {
   const [showDisconnectModal, setShowDisconnectModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  // Account (mock)
-  const account = {
-    username: 'PlatonicUser_8823',
-    email: 'user@example.com',
-    registeredAt: '2024年12月1日',
-    companion: '小樱',
-    avatar: '/default-avatar.jpg',
-  };
+  // Load user data on mount
+  useEffect(() => {
+    loadUserData();
+    loadNotificationSettings();
+  }, []);
 
-  const handleLanguageSave = () => {
-    setSavedLanguage(true);
-    setTimeout(() => setSavedLanguage(false), 2000);
+  async function loadUserData() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        setEmail(user.email || '');
+        setUsername(user.user_metadata?.username || user.email?.split('@')[0] || 'User');
+
+        // Get profile
+        const { data: profile } = await supabase.from('profiles')
+          .select('*')
+          .eq('id', user.id)
+          .single();
+        if (profile) {
+          setLanguage((profile.language as Language) || 'zh');
+          setRegisteredAt(profile.created_at
+            ? new Date(profile.created_at).toLocaleDateString('zh-CN')
+            : '');
+          // If has companion, load companion name
+          if (profile.current_companion_id) {
+            const { data: companion } = await supabase.from('companions')
+              .select('nickname')
+              .eq('id', profile.current_companion_id)
+              .single();
+            if (companion) setCompanionName(companion.nickname);
+          }
+        }
+      }
+    } catch (e) {
+      console.error('加载用户数据失败:', e);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function loadNotificationSettings() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      const { data: settings } = await supabase.from('notification_settings')
+        .select('*')
+        .eq('user_id', user.id)
+        .single();
+
+      if (settings) {
+        setNotifProactive(settings.push_enabled ?? true);
+        setNotifEnergy(settings.energy_alert_threshold ? true : false);
+      }
+    } catch (e) {
+      // Use defaults - table may not exist yet
+    }
+  }
+
+  async function handleLanguageChange(lang: Language) {
+    setLanguage(lang);
+    setSavedLanguage(false);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        await supabase.from('profiles').update({ language: lang }).eq('id', user.id);
+      }
+    } catch (e) {
+      // Silent fail - will be saved when clicking Save button
+    }
+  }
+
+  const handleLanguageSave = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        await supabase.from('profiles').update({ language }).eq('id', user.id);
+      }
+      setSavedLanguage(true);
+      toast.success('语言已保存');
+      setTimeout(() => setSavedLanguage(false), 2000);
+    } catch (e) {
+      toast.error('保存失败');
+      // Still show local saved state for UX
+      setSavedLanguage(true);
+      setTimeout(() => setSavedLanguage(false), 2000);
+    }
   };
 
   return (
@@ -189,8 +272,7 @@ export default function Settings() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.05 }}
                   onClick={() => {
-                    setLanguage(lang.code);
-                    setSavedLanguage(false);
+                    handleLanguageChange(lang.code);
                   }}
                   className={`
                     flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer
@@ -272,17 +354,17 @@ export default function Settings() {
 
           <div className="flex items-center gap-4 mb-6">
             <img
-              src={account.avatar}
+              src={avatar}
               alt="avatar"
               className="w-16 h-16 rounded-full object-cover ring-2 ring-pink-200"
             />
             <div>
               <p className="font-body text-[18px] font-semibold text-plum-900">
-                {account.username}
+                {username}
               </p>
               <div className="flex items-center gap-1 mt-0.5">
                 <span className="font-body text-[13px] text-muted-plum">
-                  {account.email}
+                  {email}
                 </span>
                 <CheckCircle size={14} className="text-green-500" />
               </div>
@@ -292,14 +374,14 @@ export default function Settings() {
           {/* Account fields */}
           <div className="space-y-1">
             {[
-              { label: '用户名', value: account.username, icon: <Edit3 size={14} className="text-pink-400" /> },
-              { label: '邮箱', value: account.email, verified: true },
-              { label: '注册时间', value: account.registeredAt },
+              { label: '用户名', value: username, icon: <Edit3 size={14} className="text-pink-400" /> },
+              { label: '邮箱', value: email, verified: true },
+              { label: '注册时间', value: registeredAt },
               {
                 label: '伴侣',
                 value: (
                   <span className="flex items-center gap-1">
-                    {account.companion}
+                    {companionName || '未创建'}
                     <ChevronRight size={14} className="text-muted-plum" />
                   </span>
                 ),

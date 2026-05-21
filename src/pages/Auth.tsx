@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/lib/supabase';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -21,20 +22,6 @@ import { cn } from '@/lib/utils';
 
 type AuthMode = 'login' | 'signup';
 type SignupStep = 1 | 2 | 3;
-
-/* ------------------------------------------------------------------ */
-/*  Mock auth functions                                                */
-/* ------------------------------------------------------------------ */
-
-const mockLogin = async (_email: string, _password: string): Promise<{ success: boolean }> => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return { success: true };
-};
-
-const mockSignup = async (_email: string, _password: string): Promise<{ success: boolean }> => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return { success: true };
-};
 
 /* ------------------------------------------------------------------ */
 /*  Validation helpers                                                 */
@@ -339,8 +326,8 @@ function VerificationCodeInput({
 /* ------------------------------------------------------------------ */
 
 function SocialLoginButtons() {
-  const handleClick = (name: string) => {
-    toast.info(`${name} login coming soon!`, { position: 'top-center' });
+  const handleClick = () => {
+    toast.error('Not authorised OAuth pathway, try another way', { position: 'top-center' });
   };
 
   return (
@@ -349,7 +336,7 @@ function SocialLoginButtons() {
       <div className="flex gap-3">
         {/* Google */}
         <button
-          onClick={() => handleClick('Google')}
+          onClick={() => handleClick()}
           className={cn(
             'w-11 h-11 rounded-full border border-pink-100 flex items-center justify-center',
             'bg-white/60 backdrop-blur-sm transition-all duration-150',
@@ -379,7 +366,7 @@ function SocialLoginButtons() {
 
         {/* GitHub */}
         <button
-          onClick={() => handleClick('GitHub')}
+          onClick={() => handleClick()}
           className={cn(
             'w-11 h-11 rounded-full border border-pink-100 flex items-center justify-center',
             'bg-white/60 backdrop-blur-sm transition-all duration-150',
@@ -431,12 +418,17 @@ function LoginForm({
 
     setIsLoading(true);
     try {
-      const result = await mockLogin(email, password);
-      if (result.success) {
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        toast.error(error.message || 'Login failed. Please try again.', { position: 'top-center' });
+        return;
+      }
+      if (data.user) {
         toast.success('Welcome back!', { position: 'top-center' });
         setTimeout(() => navigate('/dashboard'), 800);
       }
-    } catch {
+    } catch (e) {
+      console.error('Login error:', e);
       toast.error('Login failed. Please try again.', { position: 'top-center' });
     } finally {
       setIsLoading(false);
@@ -619,6 +611,17 @@ function LoginForm({
         >
           Sign Up
         </button>
+      </motion.p>
+
+      {/* Test account hint */}
+      <motion.p
+        custom={7}
+        variants={fieldVariants}
+        initial="hidden"
+        animate="visible"
+        className="text-center text-[11px] text-pink-400/70 font-body pt-1"
+      >
+        Test account: test@platonic.ai / Test123456
       </motion.p>
     </motion.form>
   );
@@ -820,16 +823,19 @@ function SignupStep1({
 
 function SignupStep2({
   email,
+  code,
+  onCodeChange,
   onVerify,
   onBack,
   direction,
 }: {
   email: string;
+  code: string[];
+  onCodeChange: (vals: string[]) => void;
   onVerify: () => void;
   onBack: () => void;
   direction: number;
 }) {
-  const [code, setCode] = useState<string[]>(Array(6).fill(''));
   const [timer, setTimer] = useState(45);
   const [isResendActive, setIsResendActive] = useState(false);
 
@@ -878,7 +884,7 @@ function SignupStep2({
       {/* Code input */}
       <VerificationCodeInput
         value={code}
-        onChange={setCode}
+        onChange={onCodeChange}
         onComplete={() => {
           /* auto-submits when all 6 digits entered */
         }}
@@ -1003,6 +1009,7 @@ export default function Auth() {
     password: '',
     confirmPassword: '',
   });
+  const [verificationCode, setVerificationCode] = useState<string[]>(Array(6).fill(''));
 
   const switchMode = (newMode: AuthMode) => {
     setTabDirection(newMode === 'signup' ? 1 : -1);
@@ -1022,19 +1029,49 @@ export default function Auth() {
 
   const handleSignupNext = async () => {
     setStepDirection(1);
-    const result = await mockSignup(signupForm.email, signupForm.password);
-    if (result.success) {
-      setSignupStep(2);
-      toast.success('Verification code sent!', { position: 'top-center' });
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: signupForm.email,
+        password: signupForm.password,
+        options: {
+          data: { nickname: signupForm.username },
+        },
+      });
+      if (error) {
+        toast.error(error.message || 'Signup failed. Please try again.', { position: 'top-center' });
+        return;
+      }
+      if (data.user) {
+        setSignupStep(2);
+        toast.success('Please check your email for the verification code!', { position: 'top-center' });
+      }
+    } catch (e) {
+      console.error('Signup error:', e);
+      toast.error('Signup failed. Please try again.', { position: 'top-center' });
     }
   };
 
   const handleVerify = async () => {
     setStepDirection(1);
-    // Simulate verification delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    setSignupStep(3);
-    toast.success('Email verified!', { position: 'top-center' });
+    try {
+      const token = verificationCode.join('');
+      const { data, error } = await supabase.auth.verifyOtp({
+        email: signupForm.email,
+        token,
+        type: 'signup',
+      });
+      if (error) {
+        toast.error(error.message || 'Verification failed. Please try again.', { position: 'top-center' });
+        return;
+      }
+      if (data.user) {
+        setSignupStep(3);
+        toast.success('Email verified!', { position: 'top-center' });
+      }
+    } catch (e) {
+      console.error('Verification error:', e);
+      toast.error('Verification failed. Please try again.', { position: 'top-center' });
+    }
   };
 
   return (
@@ -1145,6 +1182,8 @@ export default function Auth() {
                   <SignupStep2
                     key="s2"
                     email={signupForm.email}
+                    code={verificationCode}
+                    onCodeChange={setVerificationCode}
                     onVerify={handleVerify}
                     onBack={() => goToStep(1)}
                     direction={stepDirection}

@@ -1,10 +1,15 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {ChevronLeft,
+import {
+  ChevronLeft,
   Send,
   Plus,
   Settings,
-  MoreVertical,ChevronDown} from 'lucide-react';
+  MoreVertical,
+  ChevronDown,
+} from 'lucide-react';
+import { supabase, fetchEdgeFunction } from '@/lib/supabase';
+import { toast } from 'sonner';
 
 interface ChatMessage {
   id: string;
@@ -140,10 +145,10 @@ const StreamingCursor = React.memo(function StreamingCursor() {
   );
 });
 
-import React from 'react';
-
 export default function Chat() {
-  const [messages, setMessages] = useState<ChatMessage[]>(initialMessages);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [companion, setCompanion] = useState<Record<string, unknown> | null>(null);
+  const [loading, setLoading] = useState(true);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [streamingText, setStreamingText] = useState('');
@@ -153,10 +158,89 @@ export default function Chat() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const streamingRef = useRef(false);
 
-  // Auto-scroll to bottom on new messages
-  const scrollToBottom = useCallback((behavior: ScrollBehavior = 'smooth') => {
-    messagesEndRef.current?.scrollIntoView({ behavior });
+  // Load messages and companion on mount
+  useEffect(() => {
+    loadCompanion().then(() => {
+      loadMessages();
+    });
   }, []);
+
+  async function loadCompanion() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+      const { data: comp } = await supabase
+        .from('companions')
+        .select('*')
+        .eq('user_id', user.id)
+        .single();
+      if (comp) setCompanion(comp);
+    } catch {
+      // Companion not found, use defaults
+    }
+  }
+
+  async function loadMessages() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        setMessages(initialMessages);
+        return;
+      }
+
+      const { data: comp } = await supabase
+        .from('companions')
+        .select('id')
+        .eq('user_id', user.id)
+        .single();
+      if (!comp) {
+        setMessages(initialMessages);
+        return;
+      }
+
+      const { data: msgs } = await supabase
+        .from('stm_messages')
+        .select('*')
+        .eq('companion_id', comp.id)
+        .eq('is_deleted', false)
+        .order('created_at', { ascending: true })
+        .limit(50);
+
+      if (msgs && msgs.length > 0) {
+        setMessages(
+          msgs.map((m: Record<string, unknown>) => ({
+            id: m.id as string,
+            role: m.speaker === 'user' ? 'user' : 'companion',
+            content: m.content as string,
+            timestamp: new Date(m.created_at as string),
+          }))
+        );
+      } else {
+        setMessages([
+          {
+            id: 'welcome',
+            role: 'companion',
+            content:
+              (companion?.welcome_message as string) ||
+              '你好呀！很高兴见到你～',
+            timestamp: new Date(),
+          },
+        ]);
+      }
+    } catch {
+      setMessages(initialMessages);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Auto-scroll to bottom on new messages
+  const scrollToBottom = useCallback(
+    (behavior: ScrollBehavior = 'smooth') => {
+      messagesEndRef.current?.scrollIntoView({ behavior });
+    },
+    []
+  );
 
   useEffect(() => {
     scrollToBottom('auto');
@@ -166,7 +250,9 @@ export default function Chat() {
   const handleScroll = useCallback(() => {
     const container = messagesContainerRef.current;
     if (!container) return;
-    const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 100;
+    const isNearBottom =
+      container.scrollHeight - container.scrollTop - container.clientHeight <
+      100;
     setShowScrollButton(!isNearBottom);
   }, []);
 
@@ -179,7 +265,7 @@ export default function Chat() {
     textarea.style.height = `${newHeight}px`;
   }, [inputValue]);
 
-  // SSE streaming simulation
+  // Fallback: SSE streaming simulation (used when Edge Function fails)
   const streamResponse = useCallback((text: string) => {
     streamingRef.current = true;
     let idx = 0;
@@ -213,7 +299,78 @@ export default function Chat() {
     streamChar();
   }, []);
 
-  const handleSend = useCallback(() => {
+  // Real SSE streaming via Edge Function
+  async function streamViaEdgeFunction(content: string) {
+    try {
+      const response = await fetchEdgeFunction('chat-stream', {
+        method: 'POST',
+        body: JSON.stringify({ message: content }),
+      });
+
+      if (!response.ok) {
+        if (response.status === 402) {
+          toast.error('电量不足，请充值');
+        } else {
+          toast.error('发送失败，请重试');
+        }
+        setIsTyping(false);
+        return false;
+      }
+
+      // Read SSE stream
+      const reader = response.body!.getReader();
+      const decoder = new TextDecoder();
+      let aiContent = '';
+      const aiId = 'ai-' + Date.now();
+
+      // Add empty AI message
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: aiId,
+          role: 'companion',
+          content: '',
+          timestamp: new Date(),
+          isStreaming: true,
+        },
+      ]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n');
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') break;
+            if (data.startsWith('[ERROR]')) {
+              toast.error('对话出错: ' + data.slice(7));
+              break;
+            }
+            aiContent += data;
+            setMessages((prev) =>
+              prev.map((m) =>
+                m.id === aiId ? { ...m, content: aiContent } : m
+              )
+            );
+          }
+        }
+      }
+
+      // Mark streaming as done
+      setMessages((prev) =>
+        prev.map((m) => (m.id === aiId ? { ...m, isStreaming: false } : m))
+      );
+      return true;
+    } catch {
+      toast.error('网络错误，请检查连接');
+      return false;
+    }
+  }
+
+  const handleSend = useCallback(async () => {
     const trimmed = inputValue.trim();
     if (!trimmed || streamingRef.current) return;
 
@@ -229,12 +386,20 @@ export default function Chat() {
 
     // Show typing indicator, then stream
     setIsTyping(true);
-    const response = aiResponses[Math.floor(Math.random() * aiResponses.length)];
 
-    setTimeout(() => {
+    // Try real SSE API first
+    const success = await streamViaEdgeFunction(trimmed);
+    if (success) {
       setIsTyping(false);
-      streamResponse(response);
-    }, 1200);
+    } else {
+      // Fallback to mock streaming
+      const response =
+        aiResponses[Math.floor(Math.random() * aiResponses.length)];
+      setTimeout(() => {
+        setIsTyping(false);
+        streamResponse(response);
+      }, 1200);
+    }
   }, [inputValue, streamResponse]);
 
   const handleKeyDown = useCallback(
@@ -247,13 +412,10 @@ export default function Chat() {
     [handleSend]
   );
 
-  const handleQuickReply = useCallback(
-    (text: string) => {
-      setInputValue(text);
-      textareaRef.current?.focus();
-    },
-    []
-  );
+  const handleQuickReply = useCallback((text: string) => {
+    setInputValue(text);
+    textareaRef.current?.focus();
+  }, []);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -261,6 +423,14 @@ export default function Chat() {
       streamingRef.current = false;
     };
   }, []);
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center">
+        <div className="text-[#A093A5] font-body text-[14px]">加载中...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 flex flex-col" style={{ marginLeft: 0 }}>
@@ -379,7 +549,7 @@ export default function Chat() {
 
         {/* Messages */}
         <AnimatePresence initial={false}>
-          {messages.map((msg, _idx) =>
+          {messages.map((msg) =>
             msg.role === 'companion' ? (
               <motion.div
                 key={msg.id}
@@ -406,6 +576,7 @@ export default function Chat() {
                     }}
                   >
                     {msg.content}
+                    {msg.isStreaming && <StreamingCursor />}
                   </div>
                   <span className="text-[11px] text-muted-plum ml-2 mt-1 block">
                     {formatTime(msg.timestamp)}
@@ -472,7 +643,7 @@ export default function Chat() {
           )}
         </AnimatePresence>
 
-        {/* Streaming message */}
+        {/* Streaming message (fallback mode) */}
         <AnimatePresence>
           {streamingText && (
             <motion.div

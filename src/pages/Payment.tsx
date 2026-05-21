@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { toast } from 'sonner';
 import {
   Zap,
   Clock,
@@ -8,6 +9,8 @@ import {
   RefreshCw,
   X,
 } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
+import { fetchEdgeFunction } from '@/lib/supabase';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -52,8 +55,20 @@ const TRANSACTIONS: Transaction[] = [
   { id: 't5', date: '2024-10-28 08:45', plan: '3000⚡ + 600⚡赠送', amount: '¥49.99', status: 'pending' },
 ];
 
-const BALANCE = 12800;
 const PER_UNIT_PRICE = '~¥0.02/次';
+
+// Supabase table row types
+interface EnergyAccount {
+  balance: number;
+}
+
+interface EnergyTransactionRow {
+  id: string;
+  created_at: string;
+  plan_name: string;
+  amount: number;
+  status: string;
+}
 
 /* ------------------------------------------------------------------ */
 /*  Sub-components                                                     */
@@ -132,23 +147,91 @@ export default function Payment() {
   const [showQrModal, setShowQrModal] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState<'waiting' | 'success'>('waiting');
   const [qrKey, setQrKey] = useState(0);
+  const [energy, setEnergy] = useState(0);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [paying, setPaying] = useState(false);
+  const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
 
   const selectedPlanData = PLANS.find((p) => p.id === selectedPlan);
+
+  // Load real energy data on mount
+  useEffect(() => {
+    loadEnergyData();
+  }, []);
+
+  async function loadEnergyData() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      // Query energy account
+      const { data: acct } = await supabase.from('energy_accounts')
+        .select('balance')
+        .eq('user_id', user.id)
+        .single();
+      if (acct) setEnergy(acct.balance);
+
+      // Query transaction records
+      const { data: txns } = await supabase.from('energy_transactions')
+        .select('id, created_at, plan_name, amount, status')
+        .eq('user_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(20);
+
+      if (txns) {
+        setTransactions(txns.map((t: EnergyTransactionRow) => ({
+          id: t.id,
+          date: new Date(t.created_at).toLocaleString('zh-CN'),
+          plan: t.plan_name,
+          amount: `¥${t.amount.toFixed(2)}`,
+          status: t.status as 'completed' | 'pending',
+        })));
+      }
+    } catch (e) {
+      console.error('加载电量数据失败:', e);
+    }
+  }
 
   const handlePlanSelect = (planId: string) => {
     setSelectedPlan(planId);
     setPaymentStatus('waiting');
   };
 
-  const handlePayClick = () => {
+  const handlePayClick = async () => {
     if (!selectedPlan) return;
-    setPaymentStatus('waiting');
-    setQrKey((k) => k + 1);
-    setShowQrModal(true);
+    await handlePayment(selectedPlan);
   };
+
+  async function handlePayment(planId: string) {
+    try {
+      setPaying(true);
+      const response = await fetchEdgeFunction('payment-create', {
+        method: 'POST',
+        body: JSON.stringify({ plan_id: planId }),
+      });
+      const data = await response.json();
+
+      if (data.payment_url) {
+        // Open Zpay payment page in new window
+        window.open(data.payment_url, '_blank');
+        // Show QR modal with payment URL
+        setQrCodeUrl(data.payment_url);
+        setPaymentStatus('waiting');
+        setQrKey((k) => k + 1);
+        setShowQrModal(true);
+      } else {
+        toast.error('获取支付链接失败');
+      }
+    } catch (e) {
+      toast.error('创建订单失败');
+    } finally {
+      setPaying(false);
+    }
+  }
 
   const handleCloseModal = () => {
     setShowQrModal(false);
+    setQrCodeUrl(null);
   };
 
   const handleRefreshQr = () => {
@@ -156,11 +239,13 @@ export default function Payment() {
     setQrKey((k) => k + 1);
   };
 
-  // Simulate payment polling after 8 seconds
+  // Simulate payment polling after 8 seconds (fallback for demo)
   useEffect(() => {
     if (showQrModal && paymentStatus === 'waiting') {
       const timer = setTimeout(() => {
         setPaymentStatus('success');
+        // Refresh energy data after successful payment
+        loadEnergyData();
       }, 8000);
       return () => clearTimeout(timer);
     }
@@ -184,7 +269,7 @@ export default function Payment() {
         <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-100">
           <Zap size={14} className="text-gold" />
           <span className="font-body text-[13px] text-gold font-semibold">
-            {BALANCE.toLocaleString()}
+            {energy.toLocaleString()}
           </span>
         </div>
       </motion.div>
@@ -209,13 +294,13 @@ export default function Payment() {
 
             {/* Balance Number */}
             <div className="flex items-baseline gap-2 mb-3">
-              <AnimatedNumber target={BALANCE} />
+              <AnimatedNumber target={energy} />
               <Zap size={28} className="text-white/90" />
             </div>
 
             {/* Sub-info */}
             <p className="font-body text-[13px] text-white/70 mb-4">
-              大约可支持 {(BALANCE / 100).toFixed(0)} 次普通对话
+              大约可支持 {(energy / 100).toFixed(0)} 次普通对话
             </p>
 
             {/* Progress bar */}
@@ -370,14 +455,20 @@ export default function Payment() {
                   {/* Pay Button */}
                   <button
                     onClick={handlePayClick}
-                    className="
+                    disabled={paying}
+                    className={`
                       w-full py-3.5 rounded-xl accent-gradient text-white font-body font-semibold
                       transition-all duration-150 hover:brightness-110 hover:shadow-glow active:brightness-95
                       flex items-center justify-center gap-2
-                    "
+                      ${paying ? 'opacity-70 cursor-not-allowed' : ''}
+                    `}
                   >
-                    <Zap size={18} />
-                    支付宝支付
+                    {paying ? (
+                      <Loader2 size={18} className="animate-spin" />
+                    ) : (
+                      <Zap size={18} />
+                    )}
+                    {paying ? '创建订单中...' : '支付宝支付'}
                   </button>
                 </div>
               </div>
@@ -408,7 +499,7 @@ export default function Payment() {
             </div>
 
             {/* Transaction Rows */}
-            {TRANSACTIONS.map((tx, i) => (
+            {transactions.map((tx, i) => (
               <motion.div
                 key={tx.id}
                 initial={{ opacity: 0, x: 10 }}

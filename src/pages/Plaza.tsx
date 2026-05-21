@@ -14,10 +14,11 @@ import {
   Users,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/lib/supabase';
 
 /* ─── Types ─── */
 interface Companion {
-  id: number;
+  id: string | number;
   name: string;
   avatar: string;
   description: string;
@@ -30,8 +31,8 @@ interface Companion {
   quote: string;
 }
 
-/* ─── Mock Data ─── */
-const companions: Companion[] = [
+/* ─── Mock Data (fallback) ─── */
+const mockCompanions: Companion[] = [
   {
     id: 1,
     name: '小樱',
@@ -147,6 +148,37 @@ const companions: Companion[] = [
     quote: '每一朵花都有它的语言，让我说给你听。',
   },
 ];
+
+function getPersonalityTags(c: Record<string, unknown>): string[] {
+  const tags: string[] = [];
+  const agreeableness = (c.personality_agreeableness as number) || 0;
+  const extraversion = (c.personality_extraversion as number) || 0;
+  const openness = (c.personality_openness as number) || 0;
+  const neuroticism = (c.personality_neuroticism as number) || 0;
+  const conscientiousness = (c.personality_conscientiousness as number) || 0;
+
+  if (agreeableness > 60) tags.push('温柔');
+  if (extraversion > 60) tags.push('活泼');
+  if (openness > 60) tags.push('知性');
+  if (neuroticism > 60) tags.push('敏感');
+  if (conscientiousness > 60) tags.push('认真');
+  if (tags.length === 0) tags.push('均衡');
+  return tags;
+}
+
+function getPersonalityType(c: Record<string, unknown>): string {
+  const extraversion = (c.personality_extraversion as number) || 50;
+  const openness = (c.personality_openness as number) || 50;
+  const neuroticism = (c.personality_neuroticism as number) || 50;
+  const agreeableness = (c.personality_agreeableness as number) || 50;
+
+  if (neuroticism > 60 && openness > 60) return '神秘型';
+  if (extraversion > 60 && openness > 60) return '知性型';
+  if (extraversion > 60) return '活泼型';
+  if (agreeableness > 60) return '温柔型';
+  if (openness > 60) return '知性型';
+  return '温柔型';
+}
 
 const filterTabs = ['全部', '温柔型', '活泼型', '知性型', '神秘型'];
 
@@ -446,6 +478,49 @@ export default function Plaza() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCompanion, setSelectedCompanion] = useState<Companion | null>(null);
   const [showFilterDrawer, setShowFilterDrawer] = useState(false);
+  const [companions, setCompanions] = useState<Companion[]>(mockCompanions);
+  const [loading, setLoading] = useState(true);
+
+  // Load companions from Supabase
+  useEffect(() => {
+    loadPlazaCompanions();
+  }, []);
+
+  async function loadPlazaCompanions() {
+    try {
+      setLoading(true);
+      const { data, error } = await supabase.from('companions').select('*');
+      if (error || !data || data.length === 0) {
+        // Fallback to mock data already set in state
+        return;
+      }
+      const mapped: Companion[] = data.map((c: Record<string, unknown>) => ({
+        id: c.id as string | number,
+        name: (c.nickname as string) || '未知伴侣',
+        avatar: `/companion-${Math.floor(Math.random() * 6) + 1}.jpg`,
+        description: (c.background as string) || '一个温暖的灵魂',
+        tags: getPersonalityTags(c),
+        likes: `${(Math.floor(Math.random() * 15) + 5)}k`,
+        chats: `${(Math.floor(Math.random() * 10) + 3)}k`,
+        personalityType: getPersonalityType(c),
+        gender: (c.gender as 'female' | 'male') || 'female',
+        bigFive: [
+          { trait: '开放性', value: (c.personality_openness as number) || 50 },
+          { trait: '尽责性', value: (c.personality_conscientiousness as number) || 50 },
+          { trait: '外向性', value: (c.personality_extraversion as number) || 50 },
+          { trait: '宜人性', value: (c.personality_agreeableness as number) || 50 },
+          { trait: '神经质', value: (c.personality_neuroticism as number) || 50 },
+        ],
+        quote: '很高兴认识你～',
+      }));
+      setCompanions(mapped);
+    } catch (e) {
+      console.error('Plaza load error:', e);
+      // Fallback to mock data already in state
+    } finally {
+      setLoading(false);
+    }
+  }
 
   // Filter companions
   const filteredCompanions = useMemo(() => {
@@ -466,7 +541,7 @@ export default function Plaza() {
     }
 
     return result;
-  }, [activeFilter, searchQuery]);
+  }, [activeFilter, searchQuery, companions]);
 
   // Close modal on escape
   useEffect(() => {
@@ -565,27 +640,33 @@ export default function Plaza() {
         </motion.div>
 
         {/* ─── Section 3: Companion Grid ─── */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          key={`${activeFilter}-${searchQuery}`}
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredCompanions.map((companion, index) => (
-              <CompanionCard
-                key={companion.id}
-                companion={companion}
-                index={index}
-                onClick={() => setSelectedCompanion(companion)}
-              />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        {loading ? (
+          <div className="flex items-center justify-center py-20">
+            <div className="text-[#A093A5] font-body text-[14px]">加载中...</div>
+          </div>
+        ) : (
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            key={`${activeFilter}-${searchQuery}`}
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredCompanions.map((companion, index) => (
+                <CompanionCard
+                  key={companion.id}
+                  companion={companion}
+                  index={index}
+                  onClick={() => setSelectedCompanion(companion)}
+                />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        )}
 
         {/* Empty state */}
-        {filteredCompanions.length === 0 && (
+        {!loading && filteredCompanions.length === 0 && (
           <motion.div
             className="flex flex-col items-center justify-center py-20"
             initial={{ opacity: 0 }}
@@ -598,7 +679,7 @@ export default function Plaza() {
         )}
 
         {/* ─── Section 4: Load More ─── */}
-        {filteredCompanions.length > 0 && (
+        {!loading && filteredCompanions.length > 0 && (
           <motion.div
             className="flex flex-col items-center mt-10 mb-6"
             initial={{ opacity: 0 }}

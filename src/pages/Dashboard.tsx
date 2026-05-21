@@ -18,6 +18,7 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/lib/supabase';
 
 /* ─── Types ─── */
 interface TraitData {
@@ -50,9 +51,6 @@ const stages: Stage[] = [
   { num: 4, name: '心意相通', nameEn: 'Heart Connection', description: '你们心灵相通，彼此深深吸引。' },
   { num: 5, name: '灵魂伴侣', nameEn: 'Soulmate', description: '你们已经成为彼此的灵魂伴侣。' },
 ];
-
-const currentStageNum = 3;
-const currentProgress = 53;
 
 // Generate 24h mood data (sine wave + noise)
 function generateMoodData(): number[] {
@@ -88,9 +86,25 @@ const cardVariants = {
 };
 
 /* ─── Big Five Radar Chart ─── */
-function BigFiveRadar() {
+function BigFiveRadar({ companion }: { companion?: any }) {
   const [hoveredTrait, setHoveredTrait] = useState<number | null>(null);
   const [animated, setAnimated] = useState(false);
+
+  // Build trait data from companion DB row or fallback to mock
+  const traitData: TraitData[] = useMemo(() => {
+    if (companion) {
+      return [
+        { name: '开放性', nameEn: 'Openness', value: companion.personality_openness ?? 75, description: '富有想象力，喜欢尝试新事物' },
+        { name: '尽责性', nameEn: 'Conscientiousness', value: companion.personality_conscientiousness ?? 60, description: '自律、有条理、追求成就' },
+        { name: '外向性', nameEn: 'Extraversion', value: companion.personality_extraversion ?? 45, description: '社交活跃，精力充沛' },
+        { name: '宜人性', nameEn: 'Agreeableness', value: companion.personality_agreeableness ?? 80, description: '友善、合作、富有同情心' },
+        { name: '神经质', nameEn: 'Neuroticism', value: companion.personality_neuroticism ?? 30, description: '情绪稳定，抗压能力强' },
+      ];
+    }
+    return bigFiveData;
+  }, [companion]);
+
+  const companionName = companion?.name ?? '小樱';
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 300);
@@ -124,13 +138,13 @@ function BigFiveRadar() {
     return polygons;
   }, [getPoint]);
 
-  const dataPoints = bigFiveData.map((trait, i) =>
+  const dataPoints = traitData.map((trait, i) =>
     getPoint(i, animated ? trait.value : 0, 100)
   );
 
   const dataPolygon = dataPoints.map((p) => `${p.x},${p.y}`).join(' ');
 
-  const labelPositions = bigFiveData.map((_, i) => {
+  const labelPositions = traitData.map((_, i) => {
     const angle = (Math.PI * 2 * i) / 5 - Math.PI / 2;
     const labelRadius = radius + 32;
     return {
@@ -139,7 +153,7 @@ function BigFiveRadar() {
     };
   });
 
-  const scorePositions = bigFiveData.map((trait, i) => {
+  const scorePositions = traitData.map((trait, i) => {
     const angle = (Math.PI * 2 * i) / 5 - Math.PI / 2;
     const scoreRadius = ((animated ? trait.value : 0) / 100) * radius + 16;
     return {
@@ -160,8 +174,8 @@ function BigFiveRadar() {
           <h3 className="font-body text-[22px] font-bold text-[#2D1B2E]">人格画像</h3>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[13px] text-pink-500 font-body">小樱</span>
-          <img src="/companion-1.jpg" alt="小樱" className="w-6 h-6 rounded-full object-cover" />
+          <span className="text-[13px] text-pink-500 font-body">{companionName}</span>
+          <img src="/companion-1.jpg" alt={companionName} className="w-6 h-6 rounded-full object-cover" />
         </div>
       </div>
       <p className="text-[12px] text-[#A093A5] font-body mb-5">基于 Big Five 人格模型</p>
@@ -183,7 +197,7 @@ function BigFiveRadar() {
             />
           ))}
           {/* Axis lines */}
-          {bigFiveData.map((_, i) => {
+          {traitData.map((_, i) => {
             const end = getPoint(i, 100, 100);
             return (
               <motion.line
@@ -236,7 +250,7 @@ function BigFiveRadar() {
           {/* Center dot */}
           <circle cx={center} cy={center} r={3} fill="#FF9EB5" />
           {/* Labels */}
-          {bigFiveData.map((trait, i) => (
+          {traitData.map((trait, i) => (
             <text
               key={i}
               x={labelPositions[i].x}
@@ -249,7 +263,7 @@ function BigFiveRadar() {
             </text>
           ))}
           {/* Score numbers */}
-          {bigFiveData.map((trait, i) => (
+          {traitData.map((trait, i) => (
             <motion.text
               key={`score-${i}`}
               x={scorePositions[i].x}
@@ -277,13 +291,13 @@ function BigFiveRadar() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-4 py-3 pointer-events-none z-10 border border-pink-100"
             >
               <p className="text-sm font-body font-semibold text-[#2D1B2E]">
-                {bigFiveData[hoveredTrait].name} ({bigFiveData[hoveredTrait].nameEn})
+                {traitData[hoveredTrait].name} ({traitData[hoveredTrait].nameEn})
               </p>
               <p className="text-xs text-[#E850A0] font-number font-semibold mt-0.5">
-                {bigFiveData[hoveredTrait].value}/100
+                {traitData[hoveredTrait].value}/100
               </p>
               <p className="text-xs text-[#6B5B6E] font-body mt-1">
-                {bigFiveData[hoveredTrait].description}
+                {traitData[hoveredTrait].description}
               </p>
             </motion.div>
           )}
@@ -292,7 +306,7 @@ function BigFiveRadar() {
 
       {/* Legend */}
       <div className="flex justify-center gap-3 mt-4">
-        {bigFiveData.map((trait, i) => (
+        {traitData.map((trait, i) => (
           <div key={i} className="flex items-center gap-1.5">
             <div className="w-1 h-5 rounded-full bg-gradient-to-b from-pink-200 to-pink-400" />
             <span className="text-[12px] text-[#6B5B6E] font-body">{trait.name}</span>
@@ -303,7 +317,7 @@ function BigFiveRadar() {
       {/* Personality Summary */}
       <div className="mt-4 pl-3 border-l-[3px] border-[#E8A0BF]">
         <p className="text-[13px] text-[#6B5B6E] font-body italic leading-relaxed">
-          小樱是一位开朗、友善且富有创造力的伴侣。她热情外向，善于倾听，总能带给你温暖与欢乐。
+          {companionName}是一位开朗、友善且富有创造力的伴侣。她热情外向，善于倾听，总能带给你温暖与欢乐。
         </p>
       </div>
     </motion.div>
@@ -311,8 +325,11 @@ function BigFiveRadar() {
 }
 
 /* ─── Milestone Progress Card ─── */
-function MilestoneProgress() {
+function MilestoneProgress({ intimacy }: { intimacy?: any }) {
   const [animated, setAnimated] = useState(false);
+
+  const currentStageNum = intimacy?.milestone_stage ?? 3;
+  const currentProgress = intimacy?.score ?? 53;
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 400);
@@ -429,12 +446,12 @@ function MilestoneProgress() {
 }
 
 /* ─── Energy Balance Card ─── */
-function EnergyCard() {
+function EnergyCard({ energy }: { energy?: number }) {
   const [count, setCount] = useState(0);
   const [animated, setAnimated] = useState(false);
   const navigate = useNavigate();
 
-  const target = 12800;
+  const target = energy ?? 12800;
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 600);
@@ -669,9 +686,10 @@ function MoodSparkline() {
 }
 
 /* ─── Quick Action Buttons ─── */
-function QuickActions() {
+function QuickActions({ currentStageNum }: { currentStageNum?: number }) {
   const navigate = useNavigate();
-  const showAdvancedDrama = currentStageNum >= 3;
+  const stage = currentStageNum ?? 3;
+  const showAdvancedDrama = stage >= 3;
 
   const actions = [
     {
@@ -936,6 +954,55 @@ function PreviewPanel() {
 
 /* ─── Main Dashboard Page ─── */
 export default function Dashboard() {
+  const [companion, setCompanion] = useState<any>(null);
+  const [intimacy, setIntimacy] = useState<any>(null);
+  const [energy, setEnergy] = useState<number>(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadDashboardData();
+  }, []);
+
+  async function loadDashboardData() {
+    try {
+      setLoading(true);
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      // 1. 获取伴侣
+      const { data: comp } = await supabase
+        .from('companions')
+        .select('*')
+        .eq('user_id', user.id)
+        .single();
+      if (comp) setCompanion(comp);
+
+      // 2. 获取好感度
+      if (comp) {
+        const { data: intim } = await supabase
+          .from('intimacy_records')
+          .select('*')
+          .eq('companion_id', comp.id)
+          .single();
+        setIntimacy(intim);
+      }
+
+      // 3. 获取电量
+      const { data: acct } = await supabase
+        .from('energy_accounts')
+        .select('*')
+        .eq('user_id', user.id)
+        .single();
+      setEnergy(acct?.balance || 0);
+    } catch (e) {
+      console.error('Dashboard load error:', e);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const currentStageNum = intimacy?.milestone_stage ?? 3;
+
   return (
     <div className="flex min-h-[100dvh]">
       {/* Main Content */}
@@ -984,19 +1051,19 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {/* Left column */}
             <div className="space-y-5">
-              <BigFiveRadar />
-              <EnergyCard />
+              <BigFiveRadar companion={companion} />
+              <EnergyCard energy={energy} />
             </div>
 
             {/* Right column */}
             <div className="space-y-5">
-              <MilestoneProgress />
+              <MilestoneProgress intimacy={intimacy} />
               <MoodSparkline />
             </div>
           </div>
 
           {/* Quick Actions */}
-          <QuickActions />
+          <QuickActions currentStageNum={currentStageNum} />
 
           {/* Bottom spacing */}
           <div className="h-4" />
