@@ -1,0 +1,15 @@
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF69B4"/>
+      <stop offset="100%" style="stop-color:#FFB6C1"/>
+    </linearGradient>
+  </defs>
+  <!-- Sparkle icon -->
+  <g transform="translate(4, 10)">
+    <path d="M8 0C8 0 9.5 6.5 16 8C9.5 9.5 8 16 8 16C8 16 6.5 9.5 0 8C6.5 6.5 8 0 8 0Z" fill="url(#logoGrad)"/>
+    <path d="M14 12C14 12 14.75 15.25 18 16C14.75 16.75 14 20 14 20C14 20 13.25 16.75 10 16C13.25 15.25 14 12 14 12Z" fill="#FF69B4" opacity="0.6"/>
+  </g>
+  <!-- Platonic text -->
+  <text x="28" y="26" font-family="'Nunito', 'Arial', sans-serif" font-size="22" font-weight="700" fill="url(#logoGrad)" letter-spacing="-0.02em">Platonic</text>
+</svg>
