@@ -55,7 +55,6 @@ interface EnergyTransactionRow {
   description: string | null;
   amount: number;
   balance_after: number;
-  status: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -196,15 +195,6 @@ export default function Payment() {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
 
-      // Get companion first (energy_accounts links via companion_id)
-      const { data: companion } = await supabase
-        .from('companions')
-        .select('id')
-        .eq('user_id', user.id)
-        .single();
-
-      const companionId = companion?.id;
-
       // Load pricing plans
       const { data: plansData } = await supabase
         .from('pricing_plans')
@@ -213,23 +203,22 @@ export default function Payment() {
         .order('sort_order');
       if (plansData) setPlans(plansData as RechargePlan[]);
 
-      if (!companionId) return;
-
-      // Query energy account
+      // Query energy account (by user_id)
       const { data: acct } = await supabase
         .from('energy_accounts')
-        .select('*')
+        .select('id, balance')
         .eq('user_id', user.id)
         .single();
-      if (acct) setEnergy((acct as EnergyAccount).balance);
+      if (acct) {
+        setEnergy((acct as EnergyAccount).balance);
 
-      // Query transaction records (linked via account_id = companion_id)
-      const { data: txns } = await supabase
-        .from('energy_transactions')
-        .select('id, created_at, txn_type, description, amount, balance_after, status')
-        .eq('account_id', companionId)
-        .order('created_at', { ascending: false })
-        .limit(20);
+        // Query transaction records (by account_id)
+        const { data: txns } = await supabase
+          .from('energy_transactions')
+          .select('id, created_at, txn_type, description, amount, balance_after')
+          .eq('account_id', acct.id)
+          .order('created_at', { ascending: false })
+          .limit(20);
 
       if (txns) {
         setTransactions(txns.map((t: EnergyTransactionRow) => ({
@@ -237,8 +226,9 @@ export default function Payment() {
           date: new Date(t.created_at).toLocaleString('zh-CN'),
           plan: t.description || t.txn_type,
           amount: `¥${(Math.abs(t.amount) / 100).toFixed(2)}`,
-          status: t.status as 'completed' | 'pending',
+          status: 'completed' as 'completed' | 'pending',
         })));
+        }
       }
     } catch (e) {
       console.error('加载电量数据失败:', e);
