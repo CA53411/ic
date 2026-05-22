@@ -12,9 +12,11 @@ import {
   X,
   Github,
   Sparkles,
+  Info,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
+import { useAuth } from '@/hooks/useAuth';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -326,23 +328,20 @@ function VerificationCodeInput({
 /* ------------------------------------------------------------------ */
 
 function SocialLoginButtons() {
-  const handleClick = () => {
-    toast.error('Not authorised OAuth pathway, try another way', { position: 'top-center' });
-  };
-
   return (
     <div className="flex flex-col items-center gap-3">
       <p className="text-xs text-[#A093A5] font-body">Sign in with</p>
       <div className="flex gap-3">
-        {/* Google */}
+        {/* Google - disabled */}
         <button
-          onClick={() => handleClick()}
+          disabled
+          title="Not authorised OAuth pathway, try another way"
           className={cn(
             'w-11 h-11 rounded-full border border-pink-100 flex items-center justify-center',
-            'bg-white/60 backdrop-blur-sm transition-all duration-150',
-            'hover:bg-pink-50 hover:scale-105 active:scale-95'
+            'bg-white/60 backdrop-blur-sm opacity-50 cursor-not-allowed'
           )}
           aria-label="Sign in with Google"
+          onClick={() => toast.error('Not authorised OAuth pathway, try another way', { position: 'top-center' })}
         >
           <svg width="20" height="20" viewBox="0 0 24 24">
             <path
@@ -364,15 +363,16 @@ function SocialLoginButtons() {
           </svg>
         </button>
 
-        {/* GitHub */}
+        {/* GitHub - disabled */}
         <button
-          onClick={() => handleClick()}
+          disabled
+          title="Not authorised OAuth pathway, try another way"
           className={cn(
             'w-11 h-11 rounded-full border border-pink-100 flex items-center justify-center',
-            'bg-white/60 backdrop-blur-sm transition-all duration-150',
-            'hover:bg-pink-50 hover:scale-105 active:scale-95'
+            'bg-white/60 backdrop-blur-sm opacity-50 cursor-not-allowed'
           )}
           aria-label="Sign in with GitHub"
+          onClick={() => toast.error('Not authorised OAuth pathway, try another way', { position: 'top-center' })}
         >
           <Github size={20} className="text-[#2D1B2E]" />
         </button>
@@ -425,7 +425,13 @@ function LoginForm({
       }
       if (data.user) {
         toast.success('Welcome back!', { position: 'top-center' });
-        setTimeout(() => navigate('/dashboard'), 800);
+        // Check if user has a companion and redirect accordingly
+        const { data: companion } = await supabase
+          .from('companions')
+          .select('id')
+          .eq('user_id', data.user.id)
+          .maybeSingle();
+        setTimeout(() => navigate(companion ? '/dashboard' : '/customize'), 800);
       }
     } catch (e) {
       console.error('Login error:', e);
@@ -614,15 +620,16 @@ function LoginForm({
       </motion.p>
 
       {/* Test account hint */}
-      <motion.p
+      <motion.div
         custom={7}
         variants={fieldVariants}
         initial="hidden"
         animate="visible"
-        className="text-center text-[11px] text-pink-400/70 font-body pt-1"
+        className="flex items-center justify-center gap-1.5 text-center text-[11px] text-pink-400/70 font-body pt-1"
       >
-        Test account: test@platonic.ai / Test123456
-      </motion.p>
+        <Info size={12} />
+        <span>Test account: test@platonic.ai / Test123456</span>
+      </motion.div>
     </motion.form>
   );
 }
@@ -963,7 +970,7 @@ function SignupStep3({ direction }: { direction: number }) {
         className="space-y-2"
       >
         <h2 className="text-2xl font-bold text-plum-900 font-body">
-          Welcome to Platonic
+          Welcome to Corolas | Platonic
         </h2>
         <p className="text-sm text-[#6B5B6E] font-body leading-relaxed">
           Your account has been created successfully.
@@ -981,13 +988,13 @@ function SignupStep3({ direction }: { direction: number }) {
           type="button"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => navigate('/dashboard')}
+          onClick={() => navigate('/customize')}
           className={cn(
             'w-full h-12 rounded-xl text-white font-semibold font-body text-sm',
             'accent-gradient hover:shadow-glow transition-all duration-150'
           )}
         >
-          Enter Platonic
+          Enter Corolas | Platonic
         </motion.button>
       </motion.div>
     </motion.div>
@@ -1097,7 +1104,7 @@ export default function Auth() {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Sparkles size={28} className="text-pink-400" />
-            <span className="text-2xl font-display text-pink-400">Platonic</span>
+            <span className="text-2xl font-display text-pink-400">Corolas | Platonic</span>
           </div>
           <p className="text-sm text-[#A093A5] font-body">Your AI Virtual Companion</p>
         </div>

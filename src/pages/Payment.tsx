@@ -8,9 +8,13 @@ import {
   Loader2,
   RefreshCw,
   X,
+  LogIn,
+  UserPlus,
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { fetchEdgeFunction } from '@/lib/supabase';
+import { useAuth } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -45,14 +49,6 @@ const PLANS: RechargePlan[] = [
   { id: 'advanced', name: '高级', energy: 1000, bonus: 150, price: '¥18.99' },
   { id: 'deluxe', name: '豪华', energy: 3000, bonus: 600, price: '¥49.99' },
   { id: 'premium', name: '至尊', energy: 10000, bonus: 2500, price: '¥149.99', badge: '超值', badgeColor: 'bg-pink-500' },
-];
-
-const TRANSACTIONS: Transaction[] = [
-  { id: 't1', date: '2024-12-15 14:32', plan: '500⚡ + 50⚡赠送', amount: '¥9.99', status: 'completed' },
-  { id: 't2', date: '2024-12-01 09:15', plan: '300⚡ + 20⚡赠送', amount: '¥4.99', status: 'completed' },
-  { id: 't3', date: '2024-11-20 22:48', plan: '1000⚡ + 150⚡赠送', amount: '¥18.99', status: 'completed' },
-  { id: 't4', date: '2024-11-05 16:22', plan: '100⚡', amount: '¥1.99', status: 'completed' },
-  { id: 't5', date: '2024-10-28 08:45', plan: '3000⚡ + 600⚡赠送', amount: '¥49.99', status: 'pending' },
 ];
 
 const PER_UNIT_PRICE = '~¥0.02/次';
@@ -138,6 +134,47 @@ function CountdownTimer({
   );
 }
 
+/** Login prompt for unauthenticated users */
+function LoginPrompt() {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="rounded-3xl accent-gradient p-8 sm:p-10 mb-8 relative overflow-hidden"
+    >
+      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4) 0%, transparent 50%)' }} />
+      <div className="relative z-10 text-center">
+        <Zap size={32} className="text-white/80 mx-auto mb-4" />
+        <h3 className="font-body text-[20px] font-bold text-white mb-2">
+          登录后查看电量余额
+        </h3>
+        <p className="font-body text-[14px] text-white/70 mb-6">
+          请登录以查看您的电量余额和充值记录
+        </p>
+        <div className="flex items-center justify-center gap-3">
+          <button
+            onClick={() => navigate('/auth')}
+            className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-pink-500 font-body font-semibold text-[14px] hover:bg-pink-50 transition-all duration-150"
+          >
+            <LogIn size={16} />
+            登录
+          </button>
+          <button
+            onClick={() => navigate('/auth')}
+            className="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-white/40 text-white font-body font-semibold text-[14px] hover:bg-white/10 transition-all duration-150"
+          >
+            <UserPlus size={16} />
+            创建账户
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /*  Main Component                                                     */
 /* ------------------------------------------------------------------ */
@@ -151,13 +188,15 @@ export default function Payment() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [paying, setPaying] = useState(false);
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
+  const { isAuthenticated } = useAuth();
 
   const selectedPlanData = PLANS.find((p) => p.id === selectedPlan);
 
   // Load real energy data on mount
   useEffect(() => {
+    if (!isAuthenticated) return;
     loadEnergyData();
-  }, []);
+  }, [isAuthenticated]);
 
   async function loadEnergyData() {
     try {
@@ -250,6 +289,50 @@ export default function Payment() {
       return () => clearTimeout(timer);
     }
   }, [showQrModal, paymentStatus]);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-[100dvh] bg-pink-50 pb-16">
+        {/* ── Top Bar ── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="flex items-center justify-between px-8 py-5"
+        >
+          <div className="flex items-center gap-2">
+            <Zap size={20} className="text-gold" />
+            <h2 className="font-body text-[28px] font-bold text-plum-900">
+              支付中心
+            </h2>
+          </div>
+        </motion.div>
+
+        <div className="px-8 max-w-[960px]">
+          <LoginPrompt />
+
+          {/* ── Section 5: Transaction History (empty for unauthenticated) ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Clock size={20} className="text-plum-800" />
+              <h2 className="font-body text-[28px] font-bold text-plum-900">
+                交易记录
+              </h2>
+            </div>
+            <div className="rounded-2xl bg-white border border-pink-100 shadow-md p-8 text-center">
+              <p className="text-[14px] text-muted-plum font-body">
+                登录后查看您的交易记录
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-[100dvh] bg-pink-50 pb-16">
@@ -499,40 +582,48 @@ export default function Payment() {
             </div>
 
             {/* Transaction Rows */}
-            {transactions.map((tx, i) => (
-              <motion.div
-                key={tx.id}
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 + i * 0.04 }}
-                className="
-                  grid grid-cols-1 sm:grid-cols-4 px-5 py-3.5 border-b border-pink-50 last:border-b-0
-                  hover:bg-pink-50 transition-colors duration-150 items-center gap-1 sm:gap-0
-                "
-              >
-                <span className="font-body text-[13px] text-plum-900 sm:text-left">
-                  {tx.date}
-                </span>
-                <span className="font-body text-[13px] text-plum-900">
-                  {tx.plan}
-                </span>
-                <span className="font-body text-[13px] text-plum-900 font-semibold">
-                  {tx.amount}
-                </span>
-                <div>
-                  {tx.status === 'completed' ? (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-semibold font-body">
-                      已完成
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-[11px] font-semibold font-body">
-                      <Loader2 size={10} className="animate-spin" />
-                      处理中
-                    </span>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+            {transactions.length > 0 ? (
+              transactions.map((tx, i) => (
+                <motion.div
+                  key={tx.id}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 + i * 0.04 }}
+                  className="
+                    grid grid-cols-1 sm:grid-cols-4 px-5 py-3.5 border-b border-pink-50 last:border-b-0
+                    hover:bg-pink-50 transition-colors duration-150 items-center gap-1 sm:gap-0
+                  "
+                >
+                  <span className="font-body text-[13px] text-plum-900 sm:text-left">
+                    {tx.date}
+                  </span>
+                  <span className="font-body text-[13px] text-plum-900">
+                    {tx.plan}
+                  </span>
+                  <span className="font-body text-[13px] text-plum-900 font-semibold">
+                    {tx.amount}
+                  </span>
+                  <div>
+                    {tx.status === 'completed' ? (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-[11px] font-semibold font-body">
+                        已完成
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-[11px] font-semibold font-body">
+                        <Loader2 size={10} className="animate-spin" />
+                        处理中
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <div className="px-5 py-8 text-center">
+                <p className="text-[14px] text-muted-plum font-body">
+                  暂无交易记录
+                </p>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>

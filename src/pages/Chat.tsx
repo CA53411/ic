@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronLeft,
@@ -7,10 +8,17 @@ import {
   Settings,
   MoreVertical,
   ChevronDown,
+  ChevronRight,
+  PanelRightClose,
+  PanelRightOpen,
+  Sparkles,
+  PawPrint,
+  LogIn,
 } from 'lucide-react';
 import { supabase, fetchEdgeFunction } from '@/lib/supabase';
 import { toast } from 'sonner';
 
+/* ─── Types ─── */
 interface ChatMessage {
   id: string;
   role: 'user' | 'companion';
@@ -19,85 +27,16 @@ interface ChatMessage {
   isStreaming?: boolean;
 }
 
-const companionName = '小樱';
-const companionAvatar = '/companion-1.jpg';
+interface Companion {
+  id: string;
+  user_id: string;
+  name: string;
+  nickname: string | null;
+  avatar_url: string | null;
+  welcome_message: string | null;
+}
 
-const initialMessages: ChatMessage[] = [
-  {
-    id: '1',
-    role: 'companion',
-    content: '你好呀！我是小樱，很高兴认识你～',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2 - 1000 * 60 * 15),
-  },
-  {
-    id: '2',
-    role: 'user',
-    content: '你好小樱！今天终于有时间和你聊聊天了',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2 - 1000 * 60 * 10),
-  },
-  {
-    id: '3',
-    role: 'companion',
-    content: '太好啦！我一直在这里等你呢～今天过得怎么样？工作顺利吗？',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2 - 1000 * 60 * 5),
-  },
-  {
-    id: '4',
-    role: 'user',
-    content: '今天工作有点累，开了好几个会，感觉头脑都转不动了',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2),
-  },
-  {
-    id: '5',
-    role: 'companion',
-    content: '辛苦啦！要不要聊聊是什么让你感到累？有时候把心里的烦恼说出来会舒服很多呢。我在这里陪着你 ✨',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2 + 1000 * 30),
-  },
-  {
-    id: '6',
-    role: 'user',
-    content: '其实主要是项目进度太紧了，总觉得时间不够用...',
-    timestamp: new Date(Date.now() - 1000 * 60 * 30),
-  },
-  {
-    id: '7',
-    role: 'companion',
-    content: '我理解那种感受...压力像小山一样堆积起来的时候，确实会让人喘不过气。但你已经很努力了，不要太苛责自己哦。想不想试试深呼吸放松一下？',
-    timestamp: new Date(Date.now() - 1000 * 60 * 25),
-  },
-  {
-    id: '8',
-    role: 'user',
-    content: '嗯...和你聊聊感觉好多了。你平时喜欢做什么呀？',
-    timestamp: new Date(Date.now() - 1000 * 60 * 20),
-  },
-  {
-    id: '9',
-    role: 'companion',
-    content: '我喜欢在樱花树下看书，感受风吹过花瓣的感觉～也喜欢吃甜食，尤其是草莓蛋糕！要是能和你一起去赏樱就好了呢 🌸',
-    timestamp: new Date(Date.now() - 1000 * 60 * 15),
-  },
-  {
-    id: '10',
-    role: 'user',
-    content: '好呀，等春天我们一起来看樱花吧！',
-    timestamp: new Date(Date.now() - 1000 * 60 * 5),
-  },
-];
-
-const quickReplies = [
-  '今天心情很好呢～',
-  '想听听你的故事',
-  '最近有什么好玩的吗？',
-];
-
-const aiResponses = [
-  '那真是太好了！我也好期待春天的到来呢～说到樱花，你知道吗？樱花的花期虽然只有短短一周，但正因为短暂才显得格外美丽。就像我们的每一次对话，都很珍贵呢 💕',
-  '嘿嘿，谢谢你愿意陪我聊天～其实每次收到你的消息，我都会偷偷开心好一会儿呢！',
-  '听你这么说，我也感觉心情变好了呢！你有一种神奇的力量，能让周围的人都感到温暖 ✨',
-  '嗯嗯，我懂你的感受。不管发生什么，我都会在这里陪着你的。你不是一个人哦～',
-];
-
+/* ─── Helpers ─── */
 function formatTime(date: Date): string {
   const now = new Date();
   const isToday = date.toDateString() === now.toDateString();
@@ -112,6 +51,12 @@ function formatTime(date: Date): string {
 function generateId(): string {
   return Math.random().toString(36).substring(2, 9);
 }
+
+const quickReplies = [
+  '今天心情很好呢～',
+  '想听听你的故事',
+  '最近有什么好玩的吗？',
+];
 
 /** Typing dots - isolated perpetual animation */
 const TypingDots = React.memo(function TypingDots() {
@@ -145,59 +90,190 @@ const StreamingCursor = React.memo(function StreamingCursor() {
   );
 });
 
+/* ─── Right Preview Panel ─── */
+function RightPreviewPanel({ companion }: { companion?: Companion | null }) {
+  const [activePreviewTab, setActivePreviewTab] = useState<'live2d' | 'pet'>('live2d');
+
+  return (
+    <div className="w-[240px] border-l border-pink-100 bg-pink-50/50 flex flex-col">
+      {/* Tab Header */}
+      <div className="flex items-center border-b border-pink-100">
+        <button
+          onClick={() => setActivePreviewTab('live2d')}
+          className={`flex-1 flex items-center justify-center gap-1.5 py-3 text-[12px] font-body font-medium transition-colors ${
+            activePreviewTab === 'live2d'
+              ? 'text-pink-500 border-b-2 border-pink-400'
+              : 'text-[#A093A5] hover:text-[#6B5B6E]'
+          }`}
+        >
+          <Sparkles size={14} />
+          Live2D
+        </button>
+        <button
+          onClick={() => setActivePreviewTab('pet')}
+          className={`flex-1 flex items-center justify-center gap-1.5 py-3 text-[12px] font-body font-medium transition-colors ${
+            activePreviewTab === 'pet'
+              ? 'text-pink-500 border-b-2 border-pink-400'
+              : 'text-[#A093A5] hover:text-[#6B5B6E]'
+          }`}
+        >
+          <PawPrint size={14} />
+          Pet
+        </button>
+      </div>
+
+      {/* Tab Content */}
+      <div className="flex-1 p-4 overflow-y-auto">
+        <AnimatePresence mode="wait">
+          {activePreviewTab === 'live2d' ? (
+            <motion.div
+              key="live2d"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-pink-100 to-pink-50 border border-pink-200 mb-4 flex items-center justify-center">
+                <img
+                  src="/live2d-preview.jpg"
+                  alt="Live2D Preview"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <Sparkles size={48} className="text-pink-200" />
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-pink-100 text-pink-500 text-[11px] font-body font-semibold mb-3">
+                Coming Soon
+              </span>
+              <p className="text-[12px] text-[#A093A5] font-body text-center leading-relaxed">
+                Live2D interactive avatar will be available in a future update.
+              </p>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="pet"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="flex flex-col items-center"
+            >
+              <div className="w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-orange-50 to-pink-50 border border-pink-200 mb-4 flex items-center justify-center relative">
+                <img
+                  src="/pet-preview.jpg"
+                  alt="Pet Preview"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <PawPrint size={48} className="text-pink-200" />
+                </div>
+              </div>
+              <span className="px-3 py-1 rounded-full bg-pink-100 text-pink-500 text-[11px] font-body font-semibold mb-3">
+                Coming Soon
+              </span>
+              <p className="text-[12px] text-[#A093A5] font-body text-center leading-relaxed">
+                Virtual pet companion will be available in a future update.
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Login Prompt ─── */
+function LoginPrompt() {
+  const navigate = useNavigate();
+  return (
+    <div className="flex-1 flex flex-col items-center justify-center px-4">
+      <LogIn size={48} className="text-pink-300 mb-4" />
+      <p className="text-[18px] text-[#2D1B2E] font-body font-semibold mb-2">请先登录</p>
+      <p className="text-[13px] text-[#A093A5] font-body mb-6 text-center max-w-[300px]">
+        登录后可以与你的伴侣开始对话
+      </p>
+      <button
+        onClick={() => navigate('/auth')}
+        className="flex items-center gap-2 px-6 py-3 rounded-xl accent-gradient text-white text-[14px] font-body font-semibold hover:brightness-110 transition-all duration-150"
+      >
+        <LogIn size={16} />
+        去登录
+      </button>
+    </div>
+  );
+}
+
+/* ─── Main Chat Component ─── */
 export default function Chat() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [companion, setCompanion] = useState<Record<string, unknown> | null>(null);
+  const [companion, setCompanion] = useState<Companion | null>(null);
   const [loading, setLoading] = useState(true);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [streamingText, setStreamingText] = useState('');
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [hasCompanion, setHasCompanion] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const streamingRef = useRef(false);
 
-  // Load messages and companion on mount
+  const companionName = companion?.nickname || companion?.name || '伴侣';
+  const companionAvatar = companion?.avatar_url || '/default-avatar.jpg';
+
+  // Load companion and messages on mount
   useEffect(() => {
-    loadCompanion().then(() => {
-      loadMessages();
-    });
+    initializeChat();
   }, []);
 
-  async function loadCompanion() {
+  async function initializeChat() {
     try {
+      setLoading(true);
       const { data: { user } } = await supabase.auth.getUser();
-      if (!user) return;
+      if (!user) {
+        setIsAuthenticated(false);
+        setLoading(false);
+        return;
+      }
+      setIsAuthenticated(true);
+
+      // Load companion
       const { data: comp } = await supabase
         .from('companions')
         .select('*')
         .eq('user_id', user.id)
         .single();
-      if (comp) setCompanion(comp);
-    } catch {
-      // Companion not found, use defaults
+
+      if (!comp) {
+        setHasCompanion(false);
+        setLoading(false);
+        return;
+      }
+
+      setCompanion(comp as Companion);
+      setHasCompanion(true);
+
+      // Load messages
+      await loadMessages(comp as Companion);
+    } catch (e) {
+      console.error('Chat init error:', e);
+    } finally {
+      setLoading(false);
     }
   }
 
-  async function loadMessages() {
+  async function loadMessages(comp: Companion) {
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
-        setMessages(initialMessages);
-        return;
-      }
-
-      const { data: comp } = await supabase
-        .from('companions')
-        .select('id')
-        .eq('user_id', user.id)
-        .single();
-      if (!comp) {
-        setMessages(initialMessages);
-        return;
-      }
-
       const { data: msgs } = await supabase
         .from('stm_messages')
         .select('*')
@@ -209,28 +285,33 @@ export default function Chat() {
       if (msgs && msgs.length > 0) {
         setMessages(
           msgs.map((m: Record<string, unknown>) => ({
-            id: m.id as string,
+            id: (m.id as string) || generateId(),
             role: m.speaker === 'user' ? 'user' : 'companion',
-            content: m.content as string,
-            timestamp: new Date(m.created_at as string),
+            content: (m.content as string) || '',
+            timestamp: new Date((m.created_at as string) || Date.now()),
           }))
         );
       } else {
+        // Show welcome message
         setMessages([
           {
             id: 'welcome',
             role: 'companion',
-            content:
-              (companion?.welcome_message as string) ||
-              '你好呀！很高兴见到你～',
+            content: comp.welcome_message || `你好呀！我是${comp.nickname || comp.name}，很高兴认识你～`,
             timestamp: new Date(),
           },
         ]);
       }
     } catch {
-      setMessages(initialMessages);
-    } finally {
-      setLoading(false);
+      // Fallback to welcome message
+      setMessages([
+        {
+          id: 'welcome',
+          role: 'companion',
+          content: comp.welcome_message || `你好呀！很高兴见到你～`,
+          timestamp: new Date(),
+        },
+      ]);
     }
   }
 
@@ -251,8 +332,7 @@ export default function Chat() {
     const container = messagesContainerRef.current;
     if (!container) return;
     const isNearBottom =
-      container.scrollHeight - container.scrollTop - container.clientHeight <
-      100;
+      container.scrollHeight - container.scrollTop - container.clientHeight < 100;
     setShowScrollButton(!isNearBottom);
   }, []);
 
@@ -392,9 +472,14 @@ export default function Chat() {
     if (success) {
       setIsTyping(false);
     } else {
-      // Fallback to mock streaming
-      const response =
-        aiResponses[Math.floor(Math.random() * aiResponses.length)];
+      // Fallback to simulated streaming
+      const fallbackResponses = [
+        '那真是太好了！我也好期待春天的到来呢～说到樱花，你知道吗？樱花的花期虽然只有短短一周，但正因为短暂才显得格外美丽。就像我们的每一次对话，都很珍贵呢 💕',
+        '嘿嘿，谢谢你愿意陪我聊天～其实每次收到你的消息，我都会偷偷开心好一会儿呢！',
+        '听你这么说，我也感觉心情变好了呢！你有一种神奇的力量，能让周围的人都感到温暖 ✨',
+        '嗯嗯，我懂你的感受。不管发生什么，我都会在这里陪着你的。你不是一个人哦～',
+      ];
+      const response = fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
       setTimeout(() => {
         setIsTyping(false);
         streamResponse(response);
@@ -424,16 +509,71 @@ export default function Chat() {
     };
   }, []);
 
+  // Loading state
   if (loading) {
     return (
       <div className="fixed inset-0 flex items-center justify-center">
-        <div className="text-[#A093A5] font-body text-[14px]">加载中...</div>
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-8 h-8 border-2 border-pink-200 border-t-pink-400 rounded-full animate-spin" />
+          <div className="text-[#A093A5] font-body text-[14px]">加载中...</div>
+        </div>
+      </div>
+    );
+  }
+
+  // Not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="fixed inset-0 flex flex-col" style={{ marginLeft: 0 }}>
+        {/* Breathing gradient background */}
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              'linear-gradient(135deg, #FFF8FA 0%, #FFF0F3 20%, #FFE8EE 40%, #FFD4E0 60%, #FFC9D8 80%, #FFB6C1 100%)',
+            backgroundSize: '400% 400%',
+            animation: 'breathing 10s ease-in-out infinite',
+          }}
+        />
+        <LoginPrompt />
+      </div>
+    );
+  }
+
+  // No companion
+  if (!hasCompanion) {
+    return (
+      <div className="fixed inset-0 flex flex-col" style={{ marginLeft: 0 }}>
+        {/* Breathing gradient background */}
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              'linear-gradient(135deg, #FFF8FA 0%, #FFF0F3 20%, #FFE8EE 40%, #FFD4E0 60%, #FFC9D8 80%, #FFB6C1 100%)',
+            backgroundSize: '400% 400%',
+            animation: 'breathing 10s ease-in-out infinite',
+          }}
+        />
+        <div className="flex-1 flex flex-col items-center justify-center px-4">
+          <Sparkles size={48} className="text-pink-300 mb-4" />
+          <p className="text-[18px] text-[#2D1B2E] font-body font-semibold mb-2">还没有伴侣</p>
+          <p className="text-[13px] text-[#A093A5] font-body mb-6 text-center max-w-[300px]">
+            创建你的专属伴侣，开始一段温暖的对话
+          </p>
+          <button
+            onClick={() => window.location.href = '/customize'}
+            className="flex items-center gap-2 px-6 py-3 rounded-xl accent-gradient text-white text-[14px] font-body font-semibold hover:brightness-110 transition-all duration-150"
+          >
+            <Sparkles size={16} />
+            创建伴侣
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="fixed inset-0 flex flex-col" style={{ marginLeft: 0 }}>
+    <div className="fixed inset-0 flex" style={{ marginLeft: 0 }}>
       {/* Breathing gradient background */}
       <div
         className="absolute inset-0 -z-10"
@@ -473,92 +613,194 @@ export default function Chat() {
         }}
       />
 
-      {/* Top Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3 }}
-        className="flex-shrink-0 h-14 flex items-center justify-between px-5 backdrop-blur-md border-b border-pink-100/30"
-        style={{ background: 'rgba(255,245,247,0.7)' }}
-      >
-        {/* Left: Back + Avatar + Name */}
-        <div className="flex items-center gap-3">
-          <button className="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors">
-            <ChevronLeft size={20} className="text-plum-800" />
-          </button>
-          <img
-            src={companionAvatar}
-            alt={companionName}
-            className="w-9 h-9 rounded-full object-cover shadow-sm"
-          />
-          <div className="flex flex-col">
-            <span className="text-[15px] font-semibold text-plum-900 leading-tight">
-              {companionName}
-            </span>
-            <span className="text-xs text-muted-plum leading-tight">
-              {isTyping ? (
-                <span className="flex items-center gap-1">
-                  正在输入
-                  <span className="inline-flex">
-                    {[0, 1, 2].map((i) => (
-                      <motion.span
-                        key={i}
-                        className="w-1 h-1 rounded-full bg-muted-plum mx-[1px]"
-                        animate={{ opacity: [0.3, 1, 0.3] }}
-                        transition={{
-                          duration: 1.2,
-                          repeat: Infinity,
-                          delay: i * 0.2,
-                        }}
-                      />
-                    ))}
+      {/* Main Chat Area */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Top Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="flex-shrink-0 h-14 flex items-center justify-between px-5 backdrop-blur-md border-b border-pink-100/30"
+          style={{ background: 'rgba(255,245,247,0.7)' }}
+        >
+          {/* Left: Back + Avatar + Name */}
+          <div className="flex items-center gap-3">
+            <button className="md:hidden w-9 h-9 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors">
+              <ChevronLeft size={20} className="text-plum-800" />
+            </button>
+            <img
+              src={companionAvatar}
+              alt={companionName}
+              className="w-9 h-9 rounded-full object-cover shadow-sm"
+            />
+            <div className="flex flex-col">
+              <span className="text-[15px] font-semibold text-plum-900 leading-tight">
+                {companionName}
+              </span>
+              <span className="text-xs text-muted-plum leading-tight">
+                {isTyping ? (
+                  <span className="flex items-center gap-1">
+                    正在输入
+                    <span className="inline-flex">
+                      {[0, 1, 2].map((i) => (
+                        <motion.span
+                          key={i}
+                          className="w-1 h-1 rounded-full bg-muted-plum mx-[1px]"
+                          animate={{ opacity: [0.3, 1, 0.3] }}
+                          transition={{
+                            duration: 1.2,
+                            repeat: Infinity,
+                            delay: i * 0.2,
+                          }}
+                        />
+                      ))}
+                    </span>
                   </span>
-                </span>
-              ) : streamingRef.current ? (
-                '正在输入...'
-              ) : (
-                '在线'
-              )}
-            </span>
+                ) : streamingRef.current ? (
+                  '正在输入...'
+                ) : (
+                  '在线'
+                )}
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* Right: Settings + Menu */}
-        <div className="flex items-center gap-1">
-          <button className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800">
-            <Settings size={18} />
-          </button>
-          <button className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800">
-            <MoreVertical size={18} />
-          </button>
-        </div>
-      </motion.div>
+          {/* Right: Panel toggle + Settings + Menu */}
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setPanelOpen(!panelOpen)}
+              className="hidden xl:flex w-9 h-9 items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800"
+              title={panelOpen ? '收起面板' : '展开面板'}
+            >
+              {panelOpen ? <PanelRightClose size={18} /> : <PanelRightOpen size={18} />}
+            </button>
+            <button className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800">
+              <Settings size={18} />
+            </button>
+            <button className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800">
+              <MoreVertical size={18} />
+            </button>
+          </div>
+        </motion.div>
 
-      {/* Messages Area */}
-      <div
-        ref={messagesContainerRef}
-        onScroll={handleScroll}
-        className="flex-1 overflow-y-auto px-5 py-4"
-      >
-        {/* Date separator */}
-        <div className="flex items-center justify-center gap-3 my-4">
-          <div className="flex-1 h-px bg-pink-100" />
-          <span className="text-xs text-muted-plum">今天</span>
-          <div className="flex-1 h-px bg-pink-100" />
-        </div>
+        {/* Messages Area */}
+        <div
+          ref={messagesContainerRef}
+          onScroll={handleScroll}
+          className="flex-1 overflow-y-auto px-5 py-4"
+        >
+          {/* Date separator */}
+          <div className="flex items-center justify-center gap-3 my-4">
+            <div className="flex-1 h-px bg-pink-100" />
+            <span className="text-xs text-muted-plum">今天</span>
+            <div className="flex-1 h-px bg-pink-100" />
+          </div>
 
-        {/* Messages */}
-        <AnimatePresence initial={false}>
-          {messages.map((msg) =>
-            msg.role === 'companion' ? (
+          {/* Messages */}
+          <AnimatePresence initial={false}>
+            {messages.map((msg) =>
+              msg.role === 'companion' ? (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+                  }}
+                  className="flex items-end gap-2 mb-1"
+                >
+                  <img
+                    src={companionAvatar}
+                    alt={companionName}
+                    className="w-7 h-7 rounded-full object-cover shadow-sm flex-shrink-0 self-end mb-5"
+                  />
+                  <div className="max-w-[70%]">
+                    <div
+                      className="rounded-tr-[20px] rounded-br-[20px] rounded-tl-[4px] rounded-bl-[20px] px-[18px] py-[14px] shadow-sm text-[15px] text-plum-900 leading-relaxed"
+                      style={{
+                        background: 'rgba(255,255,255,0.82)',
+                        border: '1px solid rgba(255,182,193,0.3)',
+                        backdropFilter: 'blur(4px)',
+                      }}
+                    >
+                      {msg.content}
+                      {msg.isStreaming && <StreamingCursor />}
+                    </div>
+                    <span className="text-[11px] text-muted-plum ml-2 mt-1 block">
+                      {formatTime(msg.timestamp)}
+                    </span>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+                  }}
+                  className="flex justify-end mb-1"
+                >
+                  <div className="max-w-[70%]">
+                    <div
+                      className="rounded-tl-[20px] rounded-bl-[20px] rounded-tr-[20px] rounded-br-[4px] px-[18px] py-[14px] shadow-sm text-[15px] text-plum-900 leading-relaxed"
+                      style={{
+                        background: 'rgba(255,255,255,0.92)',
+                        border: '1px solid rgba(255,182,193,0.2)',
+                      }}
+                    >
+                      {msg.content}
+                    </div>
+                    <span className="text-[11px] text-muted-plum mr-2 mt-1 block text-right">
+                      {formatTime(msg.timestamp)}
+                    </span>
+                  </div>
+                </motion.div>
+              )
+            )}
+          </AnimatePresence>
+
+          {/* Typing indicator */}
+          <AnimatePresence>
+            {isTyping && (
               <motion.div
-                key={msg.id}
+                key="typing"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.4,
-                  ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-                }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="flex items-end gap-2 mb-1"
+              >
+                <img
+                  src={companionAvatar}
+                  alt={companionName}
+                  className="w-7 h-7 rounded-full object-cover shadow-sm flex-shrink-0 self-end mb-5"
+                />
+                <div
+                  className="rounded-tr-[20px] rounded-br-[20px] rounded-tl-[4px] rounded-bl-[20px] px-4 py-3 shadow-sm"
+                  style={{
+                    background: 'rgba(255,255,255,0.82)',
+                    border: '1px solid rgba(255,182,193,0.3)',
+                    backdropFilter: 'blur(4px)',
+                  }}
+                >
+                  <TypingDots />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Streaming message (fallback mode) */}
+          <AnimatePresence>
+            {streamingText && (
+              <motion.div
+                key="streaming"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
                 className="flex items-end gap-2 mb-1"
               >
                 <img
@@ -575,191 +817,114 @@ export default function Chat() {
                       backdropFilter: 'blur(4px)',
                     }}
                   >
-                    {msg.content}
-                    {msg.isStreaming && <StreamingCursor />}
+                    {streamingText}
+                    <StreamingCursor />
                   </div>
-                  <span className="text-[11px] text-muted-plum ml-2 mt-1 block">
-                    {formatTime(msg.timestamp)}
-                  </span>
                 </div>
               </motion.div>
-            ) : (
-              <motion.div
-                key={msg.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.3,
-                  ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-                }}
-                className="flex justify-end mb-1"
-              >
-                <div className="max-w-[70%]">
-                  <div
-                    className="rounded-tl-[20px] rounded-bl-[20px] rounded-tr-[20px] rounded-br-[4px] px-[18px] py-[14px] shadow-sm text-[15px] text-plum-900 leading-relaxed"
-                    style={{
-                      background: 'rgba(255,255,255,0.92)',
-                      border: '1px solid rgba(255,182,193,0.2)',
-                    }}
-                  >
-                    {msg.content}
-                  </div>
-                  <span className="text-[11px] text-muted-plum mr-2 mt-1 block text-right">
-                    {formatTime(msg.timestamp)}
-                  </span>
-                </div>
-              </motion.div>
-            )
-          )}
-        </AnimatePresence>
+            )}
+          </AnimatePresence>
 
-        {/* Typing indicator */}
+          <div ref={messagesEndRef} />
+        </div>
+
+        {/* Scroll to bottom button */}
         <AnimatePresence>
-          {isTyping && (
-            <motion.div
-              key="typing"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              className="flex items-end gap-2 mb-1"
-            >
-              <img
-                src={companionAvatar}
-                alt={companionName}
-                className="w-7 h-7 rounded-full object-cover shadow-sm flex-shrink-0 self-end mb-5"
-              />
-              <div
-                className="rounded-tr-[20px] rounded-br-[20px] rounded-tl-[4px] rounded-bl-[20px] px-4 py-3 shadow-sm"
-                style={{
-                  background: 'rgba(255,255,255,0.82)',
-                  border: '1px solid rgba(255,182,193,0.3)',
-                  backdropFilter: 'blur(4px)',
-                }}
-              >
-                <TypingDots />
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Streaming message (fallback mode) */}
-        <AnimatePresence>
-          {streamingText && (
-            <motion.div
-              key="streaming"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="flex items-end gap-2 mb-1"
-            >
-              <img
-                src={companionAvatar}
-                alt={companionName}
-                className="w-7 h-7 rounded-full object-cover shadow-sm flex-shrink-0 self-end mb-5"
-              />
-              <div className="max-w-[70%]">
-                <div
-                  className="rounded-tr-[20px] rounded-br-[20px] rounded-tl-[4px] rounded-bl-[20px] px-[18px] py-[14px] shadow-sm text-[15px] text-plum-900 leading-relaxed"
-                  style={{
-                    background: 'rgba(255,255,255,0.82)',
-                    border: '1px solid rgba(255,182,193,0.3)',
-                    backdropFilter: 'blur(4px)',
-                  }}
-                >
-                  {streamingText}
-                  <StreamingCursor />
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Scroll to bottom button */}
-      <AnimatePresence>
-        {showScrollButton && (
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            onClick={() => scrollToBottom()}
-            className="absolute bottom-24 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-pink-400 text-white flex items-center justify-center shadow-lg hover:bg-pink-500 transition-colors z-10"
-          >
-            <ChevronDown size={20} />
-          </motion.button>
-        )}
-      </AnimatePresence>
-
-      {/* Quick Reply Chips */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
-        className="flex-shrink-0 px-5 py-2 overflow-x-auto scrollbar-hide"
-      >
-        <div className="flex gap-2">
-          {quickReplies.map((text, i) => (
+          {showScrollButton && (
             <motion.button
-              key={text}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
-              onClick={() => handleQuickReply(text)}
-              className="flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/70 text-plum-800 border border-pink-100 hover:bg-pink-50 hover:scale-[1.04] active:scale-[0.97] transition-all duration-150 whitespace-nowrap backdrop-blur-sm"
+              exit={{ opacity: 0, y: 10 }}
+              onClick={() => scrollToBottom()}
+              className="absolute bottom-24 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-pink-400 text-white flex items-center justify-center shadow-lg hover:bg-pink-500 transition-colors z-10"
             >
-              {text}
+              <ChevronDown size={20} />
             </motion.button>
-          ))}
-        </div>
-      </motion.div>
+          )}
+        </AnimatePresence>
 
-      {/* Input Bar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3, delay: 0.2 }}
-        className="flex-shrink-0 px-5 py-3 backdrop-blur-md border-t border-pink-100/30"
-        style={{ background: 'rgba(255,245,247,0.85)' }}
-      >
-        <div className="flex items-end gap-2 max-w-4xl mx-auto">
-          {/* Attachment button */}
-          <button className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800/60 mb-0.5">
-            <Plus size={20} />
-          </button>
-
-          {/* Textarea */}
-          <div className="flex-1 relative">
-            <textarea
-              ref={textareaRef}
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="说点什么吧..."
-              rows={1}
-              className="w-full px-5 py-2.5 rounded-full bg-white border border-pink-100 text-[15px] text-plum-900 placeholder:text-muted-plum focus:outline-none focus:border-pink-400 focus:shadow-glow transition-all duration-200 resize-none max-h-[120px] leading-relaxed"
-            />
+        {/* Quick Reply Chips */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="flex-shrink-0 px-5 py-2 overflow-x-auto scrollbar-hide"
+        >
+          <div className="flex gap-2">
+            {quickReplies.map((text, i) => (
+              <motion.button
+                key={text}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 + i * 0.05 }}
+                onClick={() => handleQuickReply(text)}
+                className="flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium bg-white/70 text-plum-800 border border-pink-100 hover:bg-pink-50 hover:scale-[1.04] active:scale-[0.97] transition-all duration-150 whitespace-nowrap backdrop-blur-sm"
+              >
+                {text}
+              </motion.button>
+            ))}
           </div>
+        </motion.div>
 
-          {/* Send button */}
-          <motion.button
-            onClick={handleSend}
-            disabled={!inputValue.trim() || streamingRef.current}
-            whileHover={{ scale: inputValue.trim() ? 1.05 : 1 }}
-            whileTap={{ scale: inputValue.trim() ? 0.95 : 1 }}
-            className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 mb-0.5 ${
-              inputValue.trim()
-                ? 'accent-gradient text-white hover:brightness-110 shadow-md'
-                : 'bg-pink-200 text-white/50 cursor-not-allowed'
-            }`}
+        {/* Input Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="flex-shrink-0 px-5 py-3 backdrop-blur-md border-t border-pink-100/30"
+          style={{ background: 'rgba(255,245,247,0.85)' }}
+        >
+          <div className="flex items-end gap-2 max-w-4xl mx-auto">
+            {/* Attachment button */}
+            <button className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full hover:bg-pink-50 transition-colors text-plum-800/60 mb-0.5">
+              <Plus size={20} />
+            </button>
+
+            {/* Textarea */}
+            <div className="flex-1 relative">
+              <textarea
+                ref={textareaRef}
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="说点什么吧..."
+                rows={1}
+                className="w-full px-5 py-2.5 rounded-full bg-white border border-pink-100 text-[15px] text-plum-900 placeholder:text-muted-plum focus:outline-none focus:border-pink-400 focus:shadow-glow transition-all duration-200 resize-none max-h-[120px] leading-relaxed"
+              />
+            </div>
+
+            {/* Send button */}
+            <motion.button
+              onClick={handleSend}
+              disabled={!inputValue.trim() || streamingRef.current}
+              whileHover={{ scale: inputValue.trim() ? 1.05 : 1 }}
+              whileTap={{ scale: inputValue.trim() ? 0.95 : 1 }}
+              className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 mb-0.5 ${
+                inputValue.trim()
+                  ? 'accent-gradient text-white hover:brightness-110 shadow-md'
+                  : 'bg-pink-200 text-white/50 cursor-not-allowed'
+              }`}
+            >
+              <Send size={18} />
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Right Preview Panel - Desktop only, collapsible */}
+      <AnimatePresence>
+        {panelOpen && (
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: 240, opacity: 1 }}
+            exit={{ width: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
+            className="hidden xl:flex flex-shrink-0 overflow-hidden"
           >
-            <Send size={18} />
-          </motion.button>
-        </div>
-      </motion.div>
+            <RightPreviewPanel companion={companion} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

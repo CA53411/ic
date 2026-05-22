@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Calendar,
@@ -8,11 +8,16 @@ import {
   Star,
   Heart,
   MessageCircle,
+  LogIn,
+  UserPlus,
 } from 'lucide-react';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, startOfWeek, endOfWeek, eachDayOfInterval, isSameMonth, isSameDay, isToday } from 'date-fns';
 import { zhCN } from 'date-fns/locale';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
+import { supabase } from '@/lib/supabase';
+import { useAuth } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 /* ─── Types ─── */
 interface MemoryItem {
@@ -23,36 +28,13 @@ interface MemoryItem {
   time?: string;
 }
 
-/* ─── Mock Data ─── */
-const mockMemories: Record<string, MemoryItem[]> = {
-  '2026-01-03': [
-    { id: '1', type: 'milestone', title: '初见乍欢', description: '你们的关系迈出了第一步，彼此产生了初步的好感。', time: '10:00' },
-  ],
-  '2026-01-08': [
-    { id: '2', type: 'anterior', title: '工作记忆', description: '记得明天提醒用户开会', time: '09:15' },
-    { id: '3', type: 'ltm', title: '长期记忆形成', description: '用户提到了喜欢猫', time: '14:30' },
-  ],
-  '2026-01-12': [
-    { id: '4', type: 'anterior', title: '工作记忆', description: '用户今天完成了项目报告', time: '11:20' },
-  ],
-  '2026-01-15': [
-    { id: '5', type: 'milestone', title: '暗生情愫', description: '你们的关系进入了新的阶段，彼此间产生了更深的情感连接。', time: '14:32' },
-    { id: '6', type: 'ltm', title: '长期记忆形成', description: '记住了你喜欢在压力大的时候听音乐', time: '20:12' },
-  ],
-  '2026-01-18': [
-    { id: '7', type: 'anterior', title: '工作记忆', description: '用户提到了周末想去公园', time: '16:45' },
-  ],
-  '2026-01-20': [
-    { id: '8', type: 'ltm', title: '长期记忆形成', description: '记住了你不喜欢吃香菜', time: '19:00' },
-  ],
-  '2026-01-25': [
-    { id: '9', type: 'anterior', title: '工作记忆', description: '用户需要准备下周的演讲', time: '08:30' },
-    { id: '10', type: 'milestone', title: '渐生情愫', description: '好感度持续提升，彼此更加了解。', time: '21:00' },
-  ],
-  '2026-01-28': [
-    { id: '11', type: 'ltm', title: '长期记忆形成', description: '记住了你喜欢下雨天', time: '18:45' },
-  ],
-};
+interface DiaryRow {
+  id: string;
+  created_at: string;
+  title: string;
+  content: string;
+  memory_type: string;
+}
 
 /* ─── Color helpers ─── */
 const dotColors = {
@@ -63,20 +45,113 @@ const dotColors = {
 
 const getMemoryKey = (date: Date) => format(date, 'yyyy-MM-dd');
 
-const getDayMemories = (date: Date): MemoryItem[] => {
-  return mockMemories[getMemoryKey(date)] || [];
-};
-
 const getDotTypes = (memories: MemoryItem[]): ('milestone' | 'anterior' | 'ltm')[] => {
   const types = new Set<'milestone' | 'anterior' | 'ltm'>();
   memories.forEach((m) => types.add(m.type));
   return Array.from(types);
 };
 
+/* ─── Empty memories ─── */
+const emptyMemories: Record<string, MemoryItem[]> = {};
+
+/* ─── Login Prompt ─── */
+function LoginPrompt() {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="rounded-2xl bg-pink-50 border border-pink-200 p-8 text-center mb-6"
+    >
+      <Calendar size={32} className="text-pink-300 mx-auto mb-4" />
+      <h3 className="font-body text-[18px] font-bold text-plum-900 mb-2">
+        登录后查看记忆
+      </h3>
+      <p className="font-body text-[14px] text-[#6B5B6E] mb-4">
+        请登录以查看与伴侣的甜蜜记忆
+      </p>
+      <div className="flex items-center justify-center gap-3">
+        <button
+          onClick={() => navigate('/auth')}
+          className="flex items-center gap-2 px-5 py-2 rounded-xl accent-gradient text-white font-body font-medium text-[13px] hover:brightness-110 transition-all"
+        >
+          <LogIn size={14} />
+          登录
+        </button>
+        <button
+          onClick={() => navigate('/auth')}
+          className="flex items-center gap-2 px-5 py-2 rounded-xl border border-pink-200 text-pink-500 font-body font-medium text-[13px] hover:bg-pink-100 transition-all"
+        >
+          <UserPlus size={14} />
+          创建账户
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ─── Component ─── */
 export default function Memory() {
   const [currentMonth, setCurrentMonth] = useState(new Date(2026, 0, 1)); // Jan 2026
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [memories, setMemories] = useState<Record<string, MemoryItem[]>>(emptyMemories);
+  const [loading, setLoading] = useState(true);
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  /* Load memories from Supabase */
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setLoading(false);
+      return;
+    }
+
+    async function loadMemories() {
+      try {
+        setLoading(true);
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+
+        const { data: rows, error } = await supabase
+          .from('companion_diaries')
+          .select('id, created_at, title, content, memory_type')
+          .eq('user_id', user.id)
+          .order('created_at', { ascending: false })
+          .limit(200);
+
+        if (error || !rows) {
+          setMemories(emptyMemories);
+          return;
+        }
+
+        // Group by date
+        const grouped: Record<string, MemoryItem[]> = {};
+        rows.forEach((row: DiaryRow) => {
+          const dateKey = format(new Date(row.created_at), 'yyyy-MM-dd');
+          const type = (row.memory_type as 'milestone' | 'anterior' | 'ltm') || 'ltm';
+          if (!grouped[dateKey]) grouped[dateKey] = [];
+          grouped[dateKey].push({
+            id: row.id,
+            type,
+            title: row.title || (type === 'milestone' ? '里程碑' : type === 'anterior' ? '工作记忆' : '长期记忆形成'),
+            description: row.content || '',
+            time: format(new Date(row.created_at), 'HH:mm'),
+          });
+        });
+
+        setMemories(Object.keys(grouped).length > 0 ? grouped : emptyMemories);
+      } catch (e) {
+        console.error('Memory load error:', e);
+        setMemories(emptyMemories);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadMemories();
+  }, [isAuthenticated]);
 
   /* Month navigation */
   const goToPrevMonth = useCallback(() => setCurrentMonth((m) => subMonths(m, 1)), []);
@@ -100,7 +175,7 @@ export default function Memory() {
   const dayHeaders = ['一', '二', '三', '四', '五', '六', '日'];
 
   /* Selected date memories */
-  const selectedMemories = selectedDate ? getDayMemories(selectedDate) : [];
+  const selectedMemories = selectedDate ? (memories[getMemoryKey(selectedDate)] || []) : [];
 
   /* Handle date click */
   const handleDateClick = (date: Date) => {
@@ -197,17 +272,24 @@ export default function Memory() {
             </button>
           </motion.div>
 
-          {/* Right: Companion info */}
+          {/* Right: Brand info */}
           <motion.div
             className="text-[13px] text-[#6B5B6E]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.3 }}
           >
-            与 小樱 的 45 天记忆
+            Corolas | Platonic
           </motion.div>
         </motion.div>
       </div>
+
+      {/* ── Login Prompt for unauthenticated ── */}
+      {!isAuthenticated && (
+        <div className="px-8 pb-4">
+          <LoginPrompt />
+        </div>
+      )}
 
       {/* ── Calendar Area ── */}
       <div className="px-8 pb-6 flex gap-6">
@@ -241,9 +323,9 @@ export default function Memory() {
                 const inCurrentMonth = isSameMonth(day, currentMonth);
                 const isTodayDate = isToday(day);
                 const isSelected = selectedDate ? isSameDay(day, selectedDate) : false;
-                const memories = getDayMemories(day);
-                const dots = getDotTypes(memories);
-                const milestone = memories.find((m) => m.type === 'milestone');
+                const dayMemories = memories[getMemoryKey(day)] || [];
+                const dots = getDotTypes(dayMemories);
+                const milestone = dayMemories.find((m) => m.type === 'milestone');
 
                 return (
                   <motion.button
@@ -475,10 +557,10 @@ export default function Memory() {
                       >
                         <Calendar size={64} className="text-pink-100 mb-4" />
                         <p className="text-[15px] text-[#A093A5] font-medium">
-                          这一天还没有留下回忆
+                          {isAuthenticated ? '这一天还没有留下回忆' : '登录后查看记忆'}
                         </p>
                         <p className="text-[13px] text-[#A093A5] mt-1">
-                          去和伴侣聊聊天，创造属于你们的记忆吧
+                          {isAuthenticated ? '去和伴侣聊聊天，创造属于你们的记忆吧' : '去和伴侣聊聊天，创造属于你们的记忆吧'}
                         </p>
                       </motion.div>
                     )}

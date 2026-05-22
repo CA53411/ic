@@ -16,6 +16,9 @@ import {
   Battery,
   PawPrint,
   ChevronDown,
+  RefreshCw,
+  AlertCircle,
+  LogIn,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
@@ -35,37 +38,56 @@ interface Stage {
   description: string;
 }
 
-/* ─── Mock Data ─── */
-const bigFiveData: TraitData[] = [
-  { name: '开放性', nameEn: 'Openness', value: 75, description: '富有想象力，喜欢尝试新事物' },
-  { name: '尽责性', nameEn: 'Conscientiousness', value: 60, description: '自律、有条理、追求成就' },
-  { name: '外向性', nameEn: 'Extraversion', value: 45, description: '社交活跃，精力充沛' },
-  { name: '宜人性', nameEn: 'Agreeableness', value: 80, description: '友善、合作、富有同情心' },
-  { name: '神经质', nameEn: 'Neuroticism', value: 30, description: '情绪稳定，抗压能力强' },
-];
-
-const stages: Stage[] = [
-  { num: 1, name: '初次相遇', nameEn: 'First Meeting', description: '你们第一次相遇，彼此还很陌生。' },
-  { num: 2, name: '渐生情愫', nameEn: 'Growing Feelings', description: '你们开始互相了解，产生了一些好感。' },
-  { num: 3, name: '暗生情愫', nameEn: 'Silent Understanding', description: '你们开始产生默契，她能理解你的情绪波动。' },
-  { num: 4, name: '心意相通', nameEn: 'Heart Connection', description: '你们心灵相通，彼此深深吸引。' },
-  { num: 5, name: '灵魂伴侣', nameEn: 'Soulmate', description: '你们已经成为彼此的灵魂伴侣。' },
-];
-
-// Generate 24h mood data (sine wave + noise)
-function generateMoodData(): number[] {
-  const points: number[] = [];
-  for (let i = 0; i < 24; i++) {
-    const base = Math.sin((i / 24) * Math.PI * 2 - Math.PI / 2) * 30 + 50;
-    const noise = (Math.random() - 0.5) * 20;
-    points.push(Math.max(10, Math.min(90, base + noise)));
-  }
-  return points;
+interface Companion {
+  id: string;
+  user_id: string;
+  name: string;
+  nickname: string | null;
+  avatar_url: string | null;
+  bf_openness: number | null;
+  bf_conscientiousness: number | null;
+  bf_extraversion: number | null;
+  bf_agreeableness: number | null;
+  bf_neuroticism: number | null;
+  welcome_message: string | null;
 }
 
-const moodData = generateMoodData();
-const moodLabels = ['悲伤', '平静', '开心', '兴奋', '狂喜'];
-const timeLabels = ['00:00', '06:00', '12:00', '18:00', '24:00'];
+interface IntimacyRecord {
+  id: string;
+  companion_id: string;
+  current_score: number;
+  current_stage: number;
+}
+
+interface EnergyAccount {
+  id: string;
+  user_id: string;
+  balance: number;
+}
+
+interface EnergyTransaction {
+  id: string;
+  amount: number;
+  type: string;
+  description: string | null;
+  created_at: string;
+}
+
+interface MoodRecord {
+  id: string;
+  companion_id: string;
+  mood_type: string;
+  intensity: number;
+  created_at: string;
+}
+
+interface MilestoneDefinition {
+  id: number;
+  stage_number: number;
+  name: string;
+  name_en: string;
+  description: string;
+}
 
 /* ─── Animation Variants ─── */
 const containerVariants = {
@@ -85,26 +107,114 @@ const cardVariants = {
   },
 };
 
+/* ─── Skeleton Loader ─── */
+function SkeletonCard({ className }: { className?: string }) {
+  return (
+    <div className={cn('card-gradient rounded-2xl border border-pink-100 p-7 shadow-md animate-pulse', className)}>
+      <div className="h-5 bg-pink-100 rounded w-1/3 mb-4" />
+      <div className="h-4 bg-pink-50 rounded w-2/3 mb-3" />
+      <div className="h-32 bg-pink-50/50 rounded-xl" />
+    </div>
+  );
+}
+
+function SkeletonEnergy() {
+  return (
+    <div className="card-gradient rounded-2xl border border-pink-100 p-6 shadow-md animate-pulse">
+      <div className="h-5 bg-pink-100 rounded w-1/3 mb-4" />
+      <div className="h-10 bg-pink-100 rounded w-1/2 mb-2" />
+      <div className="h-4 bg-pink-50 rounded w-2/3 mb-4" />
+      <div className="h-2 bg-pink-50 rounded-full mb-3" />
+      <div className="h-8 bg-pink-100 rounded-xl w-24" />
+    </div>
+  );
+}
+
+/* ─── Error State ─── */
+function ErrorState({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div className="flex flex-col items-center justify-center py-16 px-4">
+      <AlertCircle size={48} className="text-pink-300 mb-4" />
+      <p className="text-[15px] text-[#6B5B6E] font-body mb-4 text-center">{message}</p>
+      <button
+        onClick={onRetry}
+        className="flex items-center gap-2 px-5 py-2.5 rounded-xl accent-gradient text-white text-[13px] font-body font-semibold hover:brightness-110 transition-all duration-150"
+      >
+        <RefreshCw size={14} />
+        重试
+      </button>
+    </div>
+  );
+}
+
+/* ─── Login Prompt ─── */
+function LoginPrompt() {
+  const navigate = useNavigate();
+  return (
+    <div className="flex flex-col items-center justify-center py-16 px-4">
+      <LogIn size={48} className="text-pink-300 mb-4" />
+      <p className="text-[18px] text-[#2D1B2E] font-body font-semibold mb-2">请先登录</p>
+      <p className="text-[13px] text-[#A093A5] font-body mb-6 text-center">
+        登录后可以查看你的伴侣数据、好感度、电量等信息
+      </p>
+      <button
+        onClick={() => navigate('/auth')}
+        className="flex items-center gap-2 px-6 py-3 rounded-xl accent-gradient text-white text-[14px] font-body font-semibold hover:brightness-110 transition-all duration-150"
+      >
+        <LogIn size={16} />
+        去登录
+      </button>
+    </div>
+  );
+}
+
+/* ─── Empty Companion State ─── */
+function EmptyCompanionState() {
+  const navigate = useNavigate();
+  return (
+    <div className="flex flex-col items-center justify-center py-16 px-4">
+      <Sparkles size={48} className="text-pink-300 mb-4" />
+      <p className="text-[18px] text-[#2D1B2E] font-body font-semibold mb-2">还没有伴侣</p>
+      <p className="text-[13px] text-[#A093A5] font-body mb-6 text-center">
+        创建你的专属伴侣，开始一段温暖的陪伴之旅
+      </p>
+      <button
+        onClick={() => navigate('/customize')}
+        className="flex items-center gap-2 px-6 py-3 rounded-xl accent-gradient text-white text-[14px] font-body font-semibold hover:brightness-110 transition-all duration-150"
+      >
+        <Sparkles size={16} />
+        创建伴侣
+      </button>
+    </div>
+  );
+}
+
 /* ─── Big Five Radar Chart ─── */
-function BigFiveRadar({ companion }: { companion?: any }) {
+function BigFiveRadar({ companion, isLoading }: { companion?: Companion | null; isLoading: boolean }) {
   const [hoveredTrait, setHoveredTrait] = useState<number | null>(null);
   const [animated, setAnimated] = useState(false);
 
-  // Build trait data from companion DB row or fallback to mock
   const traitData: TraitData[] = useMemo(() => {
     if (companion) {
       return [
-        { name: '开放性', nameEn: 'Openness', value: companion.personality_openness ?? 75, description: '富有想象力，喜欢尝试新事物' },
-        { name: '尽责性', nameEn: 'Conscientiousness', value: companion.personality_conscientiousness ?? 60, description: '自律、有条理、追求成就' },
-        { name: '外向性', nameEn: 'Extraversion', value: companion.personality_extraversion ?? 45, description: '社交活跃，精力充沛' },
-        { name: '宜人性', nameEn: 'Agreeableness', value: companion.personality_agreeableness ?? 80, description: '友善、合作、富有同情心' },
-        { name: '神经质', nameEn: 'Neuroticism', value: companion.personality_neuroticism ?? 30, description: '情绪稳定，抗压能力强' },
+        { name: '开放性', nameEn: 'Openness', value: companion.bf_openness ?? 50, description: '富有想象力，喜欢尝试新事物' },
+        { name: '尽责性', nameEn: 'Conscientiousness', value: companion.bf_conscientiousness ?? 50, description: '自律、有条理、追求成就' },
+        { name: '外向性', nameEn: 'Extraversion', value: companion.bf_extraversion ?? 50, description: '社交活跃，精力充沛' },
+        { name: '宜人性', nameEn: 'Agreeableness', value: companion.bf_agreeableness ?? 50, description: '友善、合作、富有同情心' },
+        { name: '神经质', nameEn: 'Neuroticism', value: companion.bf_neuroticism ?? 50, description: '情绪稳定，抗压能力强' },
       ];
     }
-    return bigFiveData;
+    return [
+      { name: '开放性', nameEn: 'Openness', value: 50, description: '富有想象力，喜欢尝试新事物' },
+      { name: '尽责性', nameEn: 'Conscientiousness', value: 50, description: '自律、有条理、追求成就' },
+      { name: '外向性', nameEn: 'Extraversion', value: 50, description: '社交活跃，精力充沛' },
+      { name: '宜人性', nameEn: 'Agreeableness', value: 50, description: '友善、合作、富有同情心' },
+      { name: '神经质', nameEn: 'Neuroticism', value: 50, description: '情绪稳定，抗压能力强' },
+    ];
   }, [companion]);
 
-  const companionName = companion?.name ?? '小樱';
+  const companionName = companion?.nickname || companion?.name || '伴侣';
+  const avatarUrl = companion?.avatar_url || '/default-avatar.jpg';
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 300);
@@ -162,6 +272,8 @@ function BigFiveRadar({ companion }: { companion?: any }) {
     };
   });
 
+  if (isLoading) return <SkeletonCard />;
+
   return (
     <motion.div
       className="card-gradient rounded-2xl border border-pink-100 p-7 shadow-md"
@@ -175,7 +287,7 @@ function BigFiveRadar({ companion }: { companion?: any }) {
         </div>
         <div className="flex items-center gap-2">
           <span className="text-[13px] text-pink-500 font-body">{companionName}</span>
-          <img src="/companion-1.jpg" alt={companionName} className="w-6 h-6 rounded-full object-cover" />
+          <img src={avatarUrl} alt={companionName} className="w-6 h-6 rounded-full object-cover" />
         </div>
       </div>
       <p className="text-[12px] text-[#A093A5] font-body mb-5">基于 Big Five 人格模型</p>
@@ -317,26 +429,42 @@ function BigFiveRadar({ companion }: { companion?: any }) {
       {/* Personality Summary */}
       <div className="mt-4 pl-3 border-l-[3px] border-[#E8A0BF]">
         <p className="text-[13px] text-[#6B5B6E] font-body italic leading-relaxed">
-          {companionName}是一位开朗、友善且富有创造力的伴侣。她热情外向，善于倾听，总能带给你温暖与欢乐。
+          {companionName}是一位{getPersonalitySummary(traitData)}的伴侣。
         </p>
       </div>
     </motion.div>
   );
 }
 
+function getPersonalitySummary(traits: TraitData[]): string {
+  const highTraits = traits.filter(t => t.value >= 60);
+  if (highTraits.length === 0) return '性格温和，充满魅力';
+  const names = highTraits.map(t => t.name);
+  const map: Record<string, string> = {
+    '开放性': '富有想象力',
+    '尽责性': '自律认真',
+    '外向性': '开朗外向',
+    '宜人性': '友善体贴',
+    '神经质': '情绪细腻',
+  };
+  return names.map(n => map[n] || n).join('、');
+}
+
 /* ─── Milestone Progress Card ─── */
-function MilestoneProgress({ intimacy }: { intimacy?: any }) {
+function MilestoneProgress({ intimacy, stages, isLoading }: { intimacy?: IntimacyRecord | null; stages: Stage[]; isLoading: boolean }) {
   const [animated, setAnimated] = useState(false);
 
-  const currentStageNum = intimacy?.milestone_stage ?? 3;
-  const currentProgress = intimacy?.score ?? 53;
+  const currentStageNum = intimacy?.current_stage ?? 0;
+  const currentProgress = Math.min(intimacy?.current_score ?? 0, 100);
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 400);
     return () => clearTimeout(timer);
   }, []);
 
-  const currentStage = stages.find((s) => s.num === currentStageNum)!;
+  const currentStage = stages.find((s) => s.num === currentStageNum) || stages[0];
+
+  if (isLoading) return <SkeletonCard className="flex flex-col" />;
 
   return (
     <motion.div
@@ -350,23 +478,23 @@ function MilestoneProgress({ intimacy }: { intimacy?: any }) {
           <h3 className="font-body text-[22px] font-bold text-[#2D1B2E]">好感度旅程</h3>
         </div>
         <span className="px-3 py-1 rounded-full bg-[#FEF3C7] text-[#D4A574] text-[12px] font-body font-semibold">
-          阶段 {currentStageNum}/5
+          阶段 {currentStageNum}/{stages.length}
         </span>
       </div>
 
       {/* Current Stage */}
       <div className="mb-4">
-        <h2 className="font-body text-[28px] font-bold text-[#2D1B2E]">{currentStage.name}</h2>
-        <p className="text-[13px] text-[#A093A5] font-body italic">{currentStage.nameEn}</p>
+        <h2 className="font-body text-[28px] font-bold text-[#2D1B2E]">{currentStage?.name || '未知'}</h2>
+        <p className="text-[13px] text-[#A093A5] font-body italic">{currentStage?.nameEn || ''}</p>
         <p className="text-[13px] text-[#6B5B6E] font-body mt-2 leading-relaxed">
-          {currentStage.description}
+          {currentStage?.description || '开始你们的旅程吧'}
         </p>
       </div>
 
       {/* Progress Bar */}
       <div className="mb-5">
         <p className="text-[13px] text-[#6B5B6E] font-body mb-2">
-          {currentProgress}% — 距离下一阶段还需 {100 - currentProgress} 点好感度
+          {currentProgress}% — 距离下一阶段还需 {Math.max(0, 100 - currentProgress)} 点好感度
         </p>
         <div className="h-3 bg-pink-50 rounded-full overflow-hidden">
           <motion.div
@@ -438,7 +566,7 @@ function MilestoneProgress({ intimacy }: { intimacy?: any }) {
       <div className="mt-4 pt-3 border-t border-pink-50 flex items-center gap-1.5">
         <Star size={14} className="text-[#D4A574]" />
         <span className="text-[12px] font-body text-[#D4A574] font-semibold">
-          最近达成：渐生情愫 — 2024.12.15
+          当前阶段：{currentStage?.name || '未开始'}
         </span>
       </div>
     </motion.div>
@@ -446,12 +574,12 @@ function MilestoneProgress({ intimacy }: { intimacy?: any }) {
 }
 
 /* ─── Energy Balance Card ─── */
-function EnergyCard({ energy }: { energy?: number }) {
+function EnergyCard({ energy, transactions, isLoading }: { energy?: number; transactions: EnergyTransaction[]; isLoading: boolean }) {
   const [count, setCount] = useState(0);
   const [animated, setAnimated] = useState(false);
   const navigate = useNavigate();
 
-  const target = energy ?? 12800;
+  const target = energy ?? 0;
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 600);
@@ -475,6 +603,8 @@ function EnergyCard({ energy }: { energy?: number }) {
 
     requestAnimationFrame(animate);
   }, [animated, target]);
+
+  if (isLoading) return <SkeletonEnergy />;
 
   return (
     <motion.div
@@ -506,18 +636,23 @@ function EnergyCard({ energy }: { energy?: number }) {
       </div>
       <p className="text-[13px] text-[#A093A5] font-body mb-4">剩余电量</p>
 
-      {/* Usage Bar */}
-      <div className="mb-3">
-        <p className="text-[12px] text-[#6B5B6E] font-body mb-1">今日已用 45%</p>
-        <div className="h-1 bg-pink-50 rounded-full overflow-hidden">
-          <motion.div
-            className="h-full rounded-full accent-gradient"
-            initial={{ width: 0 }}
-            animate={{ width: animated ? '45%' : 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
-          />
+      {/* Recent Transactions */}
+      {transactions.length > 0 && (
+        <div className="mb-4 space-y-2">
+          <p className="text-[12px] text-[#A093A5] font-body">最近消费</p>
+          {transactions.map((tx) => (
+            <div key={tx.id} className="flex items-center justify-between py-1.5 border-b border-pink-50 last:border-b-0">
+              <span className="text-[12px] text-[#6B5B6E] font-body truncate flex-1">{tx.description || tx.type}</span>
+              <span className={cn(
+                'text-[12px] font-number font-semibold ml-2',
+                tx.amount < 0 ? 'text-red-400' : 'text-green-500'
+              )}>
+                {tx.amount > 0 ? '+' : ''}{tx.amount}
+              </span>
+            </div>
+          ))}
         </div>
-      </div>
+      )}
 
       {/* Recharge Button */}
       <motion.button
@@ -533,14 +668,40 @@ function EnergyCard({ energy }: { energy?: number }) {
   );
 }
 
-/* ─── 24h Mood Sparkline ─── */
-function MoodSparkline() {
+/* ─── Mood Sparkline ─── */
+function MoodSparkline({ mood, isLoading }: { mood?: MoodRecord | null; isLoading: boolean }) {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimated(true), 700);
     return () => clearTimeout(timer);
   }, []);
+
+  // Generate 24h mood data based on latest mood record, or use default
+  const moodData = useMemo(() => {
+    if (mood?.intensity) {
+      // Use mood intensity as a base to generate a varied curve
+      const base = mood.intensity;
+      const points: number[] = [];
+      for (let i = 0; i < 24; i++) {
+        const variation = Math.sin((i / 24) * Math.PI * 2) * 15;
+        const noise = (Math.random() - 0.5) * 10;
+        points.push(Math.max(10, Math.min(90, base + variation + noise)));
+      }
+      return points;
+    }
+    // Default gentle curve
+    const points: number[] = [];
+    for (let i = 0; i < 24; i++) {
+      const base = Math.sin((i / 24) * Math.PI * 2 - Math.PI / 2) * 20 + 50;
+      const noise = (Math.random() - 0.5) * 15;
+      points.push(Math.max(10, Math.min(90, base + noise)));
+    }
+    return points;
+  }, [mood]);
+
+  const moodLabels = ['悲伤', '平静', '开心', '兴奋', '狂喜'];
+  const timeLabels = ['00:00', '06:00', '12:00', '18:00', '24:00'];
 
   const width = 340;
   const height = 140;
@@ -565,6 +726,9 @@ function MoodSparkline() {
   const areaPath = `${linePath} L ${points[points.length - 1].x} ${padding.top + chartHeight} L ${padding.left} ${padding.top + chartHeight} Z`;
 
   const currentHour = new Date().getHours();
+  const currentMoodLabel = mood?.mood_type || '平静';
+
+  if (isLoading) return <SkeletonCard />;
 
   return (
     <motion.div
@@ -579,7 +743,7 @@ function MoodSparkline() {
         </div>
         <div className="flex items-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-green-400" />
-          <span className="text-[13px] text-[#6B5B6E] font-body">开心</span>
+          <span className="text-[13px] text-[#6B5B6E] font-body">{currentMoodLabel}</span>
         </div>
       </div>
 
@@ -675,10 +839,9 @@ function MoodSparkline() {
 
       {/* Mood Summary */}
       <div className="mt-3 flex items-center justify-between text-[12px] font-body text-[#6B5B6E]">
-        <span>平均心情：开心</span>
+        <span>当前心情：{currentMoodLabel}</span>
         <div className="flex gap-3">
-          <span className="text-[#A093A5]">最高：兴奋 (14:00)</span>
-          <span className="text-[#A093A5]">最低：平静 (03:00)</span>
+          <span className="text-[#A093A5]">强度：{mood?.intensity || 50}/100</span>
         </div>
       </div>
     </motion.div>
@@ -686,9 +849,9 @@ function MoodSparkline() {
 }
 
 /* ─── Quick Action Buttons ─── */
-function QuickActions({ currentStageNum }: { currentStageNum?: number }) {
+function QuickActions({ currentStageNum, isLoading }: { currentStageNum?: number; isLoading: boolean }) {
   const navigate = useNavigate();
-  const stage = currentStageNum ?? 3;
+  const stage = currentStageNum ?? 0;
   const showAdvancedDrama = stage >= 3;
 
   const actions = [
@@ -725,6 +888,15 @@ function QuickActions({ currentStageNum }: { currentStageNum?: number }) {
         ]
       : []),
   ];
+
+  if (isLoading) {
+    return (
+      <div className="grid grid-cols-2 gap-5">
+        <div className="h-24 bg-pink-50 rounded-2xl animate-pulse" />
+        <div className="h-24 bg-pink-50 rounded-2xl animate-pulse" />
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -791,8 +963,10 @@ function QuickActions({ currentStageNum }: { currentStageNum?: number }) {
 }
 
 /* ─── Preview Panel ─── */
-function PreviewPanel() {
+function PreviewPanel({ companion }: { companion?: Companion | null }) {
   const [currentTime, setCurrentTime] = useState('');
+  const companionName = companion?.nickname || companion?.name || '伴侣';
+  const avatarUrl = companion?.avatar_url || '/companion-1.jpg';
 
   useEffect(() => {
     const update = () => {
@@ -863,8 +1037,8 @@ function PreviewPanel() {
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
               <img
-                src="/companion-1.jpg"
-                alt="小樱"
+                src={avatarUrl}
+                alt={companionName}
                 className="w-40 h-40 object-cover rounded-2xl shadow-lg"
               />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green-400 border-2 border-white" />
@@ -872,7 +1046,7 @@ function PreviewPanel() {
 
             {/* Name */}
             <div className="flex items-center gap-1.5 mb-1">
-              <h4 className="font-body text-[18px] font-semibold text-[#2D1B2E]">小樱</h4>
+              <h4 className="font-body text-[18px] font-semibold text-[#2D1B2E]">{companionName}</h4>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -954,10 +1128,16 @@ function PreviewPanel() {
 
 /* ─── Main Dashboard Page ─── */
 export default function Dashboard() {
-  const [companion, setCompanion] = useState<any>(null);
-  const [intimacy, setIntimacy] = useState<any>(null);
+  const [companion, setCompanion] = useState<Companion | null>(null);
+  const [intimacy, setIntimacy] = useState<IntimacyRecord | null>(null);
   const [energy, setEnergy] = useState<number>(0);
-  const [loading, setLoading] = useState(true);
+  const [mood, setMood] = useState<MoodRecord | null>(null);
+  const [transactions, setTransactions] = useState<EnergyTransaction[]>([]);
+  const [stages, setStages] = useState<Stage[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [hasCompanion, setHasCompanion] = useState(false);
 
   useEffect(() => {
     loadDashboardData();
@@ -965,43 +1145,141 @@ export default function Dashboard() {
 
   async function loadDashboardData() {
     try {
-      setLoading(true);
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) return;
+      setIsLoading(true);
+      setError(null);
 
-      // 1. 获取伴侣
-      const { data: comp } = await supabase
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        setIsAuthenticated(false);
+        setIsLoading(false);
+        return;
+      }
+
+      setIsAuthenticated(true);
+
+      // 1. Get companion
+      const { data: comp, error: compError } = await supabase
         .from('companions')
         .select('*')
         .eq('user_id', user.id)
         .single();
-      if (comp) setCompanion(comp);
 
-      // 2. 获取好感度
-      if (comp) {
-        const { data: intim } = await supabase
+      if (compError || !comp) {
+        setHasCompanion(false);
+        setIsLoading(false);
+        return;
+      }
+
+      setCompanion(comp as Companion);
+      setHasCompanion(true);
+
+      // 2. Load all data in parallel
+      const [intimacyRes, energyRes, moodRes, txRes, stagesRes] = await Promise.all([
+        // Intimacy
+        supabase
           .from('intimacy_records')
           .select('*')
           .eq('companion_id', comp.id)
-          .single();
-        setIntimacy(intim);
-      }
+          .single(),
+        // Energy
+        supabase
+          .from('energy_accounts')
+          .select('*')
+          .eq('user_id', user.id)
+          .single(),
+        // Latest mood
+        supabase
+          .from('mood_records')
+          .select('*')
+          .eq('companion_id', comp.id)
+          .order('created_at', { ascending: false })
+          .limit(1)
+          .single(),
+        // Energy transactions
+        supabase
+          .from('energy_transactions')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('created_at', { ascending: false })
+          .limit(5),
+        // Milestone definitions
+        supabase
+          .from('milestone_definitions')
+          .select('*')
+          .order('stage_number', { ascending: true }),
+      ]);
 
-      // 3. 获取电量
-      const { data: acct } = await supabase
-        .from('energy_accounts')
-        .select('*')
-        .eq('user_id', user.id)
-        .single();
-      setEnergy(acct?.balance || 0);
-    } catch (e) {
+      if (intimacyRes.data) setIntimacy(intimacyRes.data as IntimacyRecord);
+      if (energyRes.data) setEnergy((energyRes.data as EnergyAccount).balance);
+      if (moodRes.data) setMood(moodRes.data as MoodRecord);
+      if (txRes.data) setTransactions(txRes.data as EnergyTransaction[]);
+
+      if (stagesRes.data) {
+        setStages((stagesRes.data as MilestoneDefinition[]).map(s => ({
+          num: s.stage_number,
+          name: s.name,
+          nameEn: s.name_en,
+          description: s.description,
+        })));
+      } else {
+        // Fallback stages if table is empty
+        setStages([
+          { num: 1, name: '初次相遇', nameEn: 'First Meeting', description: '你们第一次相遇，彼此还很陌生。' },
+          { num: 2, name: '渐生情愫', nameEn: 'Growing Feelings', description: '你们开始互相了解，产生了一些好感。' },
+          { num: 3, name: '暗生情愫', nameEn: 'Silent Understanding', description: '你们开始产生默契，她能理解你的情绪波动。' },
+          { num: 4, name: '心意相通', nameEn: 'Heart Connection', description: '你们心灵相通，彼此深深吸引。' },
+          { num: 5, name: '灵魂伴侣', nameEn: 'Soulmate', description: '你们已经成为彼此的灵魂伴侣。' },
+        ]);
+      }
+    } catch (e: any) {
       console.error('Dashboard load error:', e);
+      setError(e?.message || '加载数据失败，请重试');
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }
 
-  const currentStageNum = intimacy?.milestone_stage ?? 3;
+  // Determine what to show
+  if (!isAuthenticated && !isLoading) {
+    return (
+      <div className="flex min-h-[100dvh]">
+        <div className="flex-1 p-6 overflow-y-auto">
+          <LoginPrompt />
+        </div>
+        <div className="hidden xl:flex">
+          <PreviewPanel companion={null} />
+        </div>
+      </div>
+    );
+  }
+
+  if (isAuthenticated && !hasCompanion && !isLoading) {
+    return (
+      <div className="flex min-h-[100dvh]">
+        <div className="flex-1 p-6 overflow-y-auto">
+          <EmptyCompanionState />
+        </div>
+        <div className="hidden xl:flex">
+          <PreviewPanel companion={null} />
+        </div>
+      </div>
+    );
+  }
+
+  if (error && !isLoading) {
+    return (
+      <div className="flex min-h-[100dvh]">
+        <div className="flex-1 p-6 overflow-y-auto">
+          <ErrorState message={error} onRetry={loadDashboardData} />
+        </div>
+        <div className="hidden xl:flex">
+          <PreviewPanel companion={companion || null} />
+        </div>
+      </div>
+    );
+  }
+
+  const currentStageNum = intimacy?.current_stage ?? 0;
 
   return (
     <div className="flex min-h-[100dvh]">
@@ -1051,19 +1329,19 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {/* Left column */}
             <div className="space-y-5">
-              <BigFiveRadar companion={companion} />
-              <EnergyCard energy={energy} />
+              <BigFiveRadar companion={companion} isLoading={isLoading} />
+              <EnergyCard energy={energy} transactions={transactions} isLoading={isLoading} />
             </div>
 
             {/* Right column */}
             <div className="space-y-5">
-              <MilestoneProgress intimacy={intimacy} />
-              <MoodSparkline />
+              <MilestoneProgress intimacy={intimacy} stages={stages} isLoading={isLoading} />
+              <MoodSparkline mood={mood} isLoading={isLoading} />
             </div>
           </div>
 
           {/* Quick Actions */}
-          <QuickActions currentStageNum={currentStageNum} />
+          <QuickActions currentStageNum={currentStageNum} isLoading={isLoading} />
 
           {/* Bottom spacing */}
           <div className="h-4" />
@@ -1072,7 +1350,7 @@ export default function Dashboard() {
 
       {/* Preview Panel - Desktop only */}
       <div className="hidden xl:flex">
-        <PreviewPanel />
+        <PreviewPanel companion={companion} />
       </div>
     </div>
   );

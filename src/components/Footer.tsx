@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <Sparkles size={20} className="text-pink-200" />
-              <span className="text-pink-200 text-lg font-bold">Platonic</span>
+              <span className="text-pink-200 text-lg font-bold">Corolas | Platonic</span>
             </div>
             <p className="text-sm text-sidebar-text/80 leading-relaxed">
               AI虚拟伴侣，温暖每一个孤独的灵魂
@@ -64,9 +64,12 @@ export default function Footer() {
           {/* Col 4: Contact */}
           <div className="flex flex-col gap-3">
             <h4 className="text-white text-sm font-semibold mb-1">Contact Us</h4>
-            <p className="text-sm text-sidebar-text/80">
-              support@platonic.ai
-            </p>
+            <a
+              href="mailto:corolar@corolas.top"
+              className="text-sm text-sidebar-text/80 hover:text-pink-200 transition-colors"
+            >
+              corolar@corolas.top
+            </a>
             <div className="flex gap-3 mt-1">
               {/* Social placeholder icons */}
               <span className="w-8 h-8 rounded-full bg-sidebar-hover flex items-center justify-center text-sidebar-icon hover:text-pink-200 hover:bg-sidebar-active transition-all duration-150 cursor-pointer">
@@ -91,7 +94,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-sidebar-hover">
           <p className="text-center text-xs text-sidebar-text/60">
-            &copy; 2024 Platonic AI. All rights reserved.
+            &copy; 2026 Corolas | Platonic. All rights reserved.
           </p>
         </div>
       </div>

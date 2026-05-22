@@ -1,149 +1,148 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   Heart,
   Users,
-  TrendingUp,
-  Gift,
   Check,
-  ChevronDown,
+  Clock,
+  LogIn,
+  UserPlus,
   Sparkles,
-  ArrowLeft,
-  X,
 } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { useAuth } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import { getStorageUrl } from '@/lib/supabase';
 
-/* ------------------------------------------------------------------ */
-/*  Types                                                              */
-/* ------------------------------------------------------------------ */
-
-interface FundingPlan {
-  id: string;
+/* ─── Types ─── */
+interface StretchGoal {
+  amount: number;
   title: string;
   description: string;
-  targetAmount: number;
-  currentAmount: number;
-  supporters: number;
-  previewImage: string;
-  features: string[];
-  accentColor: string;
-  progressGradient: string;
+  achieved: boolean;
 }
 
-interface Supporter {
-  id: string;
-  name: string;
-  amount: number;
-  timeAgo: string;
+interface RewardTier {
+  title: string;
+  price: string;
+  description: string;
+  shipping: string;
+  spots?: string;
 }
 
-/* ------------------------------------------------------------------ */
-/*  Constants                                                          */
-/* ------------------------------------------------------------------ */
+/* ─── Data ─── */
+const projectData = {
+  title: 'Corolas | Platonic 虚拟伴侣硬件终端',
+  subtitle: '让AI伴侣走进你的现实世界',
+  raised: 856320,
+  goal: 500000,
+  backers: 1247,
+  daysLeft: 23,
+  milestones: [
+    { amount: 500000, label: '基础生产', achieved: true },
+    { amount: 750000, label: '解锁彩色版', achieved: true },
+    { amount: 1000000, label: '全球配送', achieved: false },
+    { amount: 1500000, label: 'Pro版本', achieved: false },
+  ],
+};
 
-const FUNDING_PLANS: FundingPlan[] = [
-  {
-    id: 'live2d',
-    title: 'Live2D 形象系统',
-    description: '让你的AI伴侣拥有生动的2D动画形象。她会眨眼、微笑、害羞，每一个表情都栩栩如生。支持自定义外观和多种服装。',
-    targetAmount: 35000,
-    currentAmount: 18500,
-    supporters: 120,
-    previewImage: '/live2d-preview.jpg',
-    features: ['生动的表情动画', '自定义外观', '多种情绪状态', '服装系统'],
-    accentColor: 'text-pink-400',
-    progressGradient: 'from-pink-400 to-pink-300',
-  },
-  {
-    id: 'pet',
-    title: '虚拟宠物系统',
-    description: '一只可爱的虚拟宠物将陪伴在你们身边。它会成长、互动、表达情绪，成为你们共同的家人。',
-    targetAmount: 25000,
-    currentAmount: 15200,
-    supporters: 85,
-    previewImage: '/pet-preview.jpg',
-    features: ['宠物成长系统', '互动玩法', '情绪表达', '个性化外观'],
-    accentColor: 'text-rose-gold',
-    progressGradient: 'from-rose-gold to-pink-200',
-  },
-  {
-    id: 'tts',
-    title: 'TTS 语音合成',
-    description: '先进的语音合成技术，让你的伴侣拥有独特而自然的声线。甜美、成熟、清亮——选择你喜欢的声音。',
-    targetAmount: 40000,
-    currentAmount: 13580,
-    supporters: 72,
-    previewImage: '/tts-preview.jpg',
-    features: ['自然语音合成', '多声线选择', '情感语调', '低延迟响应'],
-    accentColor: 'text-purple-memory',
-    progressGradient: 'from-purple-memory to-pink-200',
-  },
+const stretchGoals: StretchGoal[] = [
+  { amount: 60, title: '定制充电底座', description: '专属设计的木纹无线充电底座', achieved: true },
+  { amount: 75, title: 'RGB氛围灯效', description: '16百万色可自定义氛围灯光', achieved: true },
+  { amount: 90, title: '触控交互升级', description: '电容触摸屏 + 手势识别', achieved: false },
+  { amount: 120, title: '立体声音箱', description: '双扬声器立体声音效系统', achieved: false },
+  { amount: 150, title: '全息投影模块', description: '迷你全息投影显示技术', achieved: false },
 ];
 
-const TOTAL_RAISED = 47280;
-const TOTAL_GOAL = 100000;
-const TOTAL_SUPPORTERS = 187;
-
-const SUPPORTERS: Supporter[] = [
-  { id: 's1', name: '张**', amount: 50, timeAgo: '2小时前' },
-  { id: 's2', name: 'Li***', amount: 100, timeAgo: '3小时前' },
-  { id: 's3', name: '王**', amount: 10, timeAgo: '5小时前' },
-  { id: 's4', name: 'Chen**', amount: 200, timeAgo: '6小时前' },
-  { id: 's5', name: '刘**', amount: 50, timeAgo: '8小时前' },
-  { id: 's6', name: '赵**', amount: 500, timeAgo: '12小时前' },
-  { id: 's7', name: 'Yang*', amount: 20, timeAgo: '1天前' },
-  { id: 's8', name: '孙**', amount: 100, timeAgo: '1天前' },
-  { id: 's9', name: 'Wu***', amount: 50, timeAgo: '2天前' },
-  { id: 's10', name: '周**', amount: 10, timeAgo: '2天前' },
-  { id: 's11', name: 'Xu**', amount: 1000, timeAgo: '3天前' },
-  { id: 's12', name: '马**', amount: 100, timeAgo: '3天前' },
+const rewardTiers: RewardTier[] = [
+  { title: '感谢支持', price: '¥1', description: '你的名字将出现在项目感谢名单中', shipping: '无需邮寄' },
+  { title: '早鸟版', price: '¥299', description: '全息投影终端(基础白) + 终身免费APP会员', shipping: '预计2026年6月发货', spots: '剩余 23' },
+  { title: '标准版', price: '¥399', description: '全息投影终端(彩色版) + 终身免费APP会员 + 定制底座', shipping: '预计2026年6月发货' },
+  { title: '收藏版', price: '¥699', description: '限量版玫瑰金 + 签名证书 + 专属语音包 + 全部标准版内容', shipping: '预计2026年5月发货', spots: '限量 100' },
+  { title: '开发者版', price: '¥1299', description: '双终端套装 + API访问权限 + 开发文档 + 技术支持', shipping: '预计2026年4月发货', spots: '限量 50' },
 ];
 
-const SUPPORT_AMOUNTS = [10, 50, 100];
+/* ─── Sub-components ─── */
 
-/* ------------------------------------------------------------------ */
-/*  Sub-components                                                     */
-/* ------------------------------------------------------------------ */
-
-/** Animated progress bar that fills when in view */
-function AnimatedProgressBar({
-  targetPercent,
-  gradient,
-  delay = 0,
+function ProgressBar({
+  raised,
+  goal,
+  milestones,
 }: {
-  targetPercent: number;
-  gradient: string;
-  delay?: number;
+  raised: number;
+  goal: number;
+  milestones: { amount: number; label: string; achieved: boolean }[];
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-15% 0px' });
+  const maxAmount = milestones[milestones.length - 1].amount;
+  const progress = (raised / maxAmount) * 100;
 
   return (
-    <div ref={ref} className="h-2 rounded-full bg-pink-50 overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        animate={isInView ? { width: `${targetPercent}%` } : { width: 0 }}
-        transition={{
-          duration: 1.5,
-          delay,
-          ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-        }}
-        className={`h-full rounded-full bg-gradient-to-r ${gradient}`}
-      />
+    <div className="mb-2">
+      {/* Milestone labels */}
+      <div className="relative h-6 mb-1">
+        {milestones.map((m) => {
+          const left = (m.amount / maxAmount) * 100;
+          return (
+            <div
+              key={m.amount}
+              className={cn(
+                'absolute transform -translate-x-1/2 text-[10px] font-semibold',
+                m.achieved ? 'text-pink-400' : 'text-pink-200'
+              )}
+              style={{ left: `${left}%` }}
+            >
+              ¥{(m.amount / 10000).toFixed(0)}万
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Bar */}
+      <div className="relative h-3 bg-pink-50 rounded-full overflow-hidden">
+        {/* Progress fill */}
+        <motion.div
+          className="absolute inset-y-0 left-0 accent-gradient rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: `${Math.min(progress, 100)}%` }}
+          transition={{ duration: 1.5, ease: 'easeOut', delay: 0.3 }}
+        />
+
+        {/* Milestone tick marks */}
+        {milestones.map((m) => {
+          const left = (m.amount / maxAmount) * 100;
+          return (
+            <div
+              key={m.amount}
+              className={cn(
+                'absolute top-0 bottom-0 w-0.5',
+                m.achieved ? 'bg-white/50' : 'bg-pink-200'
+              )}
+              style={{ left: `${left}%` }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
 
-/** Animated number for total raised */
-function AnimatedRaisedNumber({ target, duration = 2000 }: { target: number; duration?: number }) {
+function AnimatedNumber({
+  target,
+  duration = 2000,
+  prefix = '',
+  suffix = '',
+}: {
+  target: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
   const [value, setValue] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
   const startTime = useRef<number | null>(null);
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    if (!isInView) return;
     const animate = (timestamp: number) => {
       if (!startTime.current) startTime.current = timestamp;
       const progress = Math.min((timestamp - startTime.current) / duration, 1);
@@ -155,674 +154,469 @@ function AnimatedRaisedNumber({ target, duration = 2000 }: { target: number; dur
     };
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [isInView, target, duration]);
+  }, [target, duration]);
 
   return (
-    <span ref={ref} className="font-number text-[52px] font-bold text-white">
-      ¥{value.toLocaleString()}
+    <span className="font-number text-[28px] font-bold text-[#2D1B2E]">
+      {prefix}{value.toLocaleString()}{suffix}
     </span>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/*  Main Component                                                     */
-/* ------------------------------------------------------------------ */
+function MilestoneFlag({
+  amount,
+  label,
+  achieved,
+}: {
+  amount: number;
+  label: string;
+  achieved: boolean;
+}) {
+  return (
+    <motion.div
+      className={cn(
+        'flex flex-col items-center gap-1 px-4 py-3 rounded-xl border transition-all duration-200',
+        achieved
+          ? 'bg-pink-50 border-pink-200'
+          : 'bg-white border-pink-100 opacity-50'
+      )}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: achieved ? 1 : 0.5, y: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      {achieved ? (
+        <Check size={16} className="text-green-500" />
+      ) : (
+        <Clock size={16} className="text-pink-300" />
+      )}
+      <span className="text-[13px] font-semibold text-[#2D1B2E]">{label}</span>
+      <span className="text-[11px] text-[#A093A5]">¥{(amount / 10000).toFixed(0)}万</span>
+    </motion.div>
+  );
+}
 
-export default function Crowdfunding() {
+function RewardCard({ tier, index }: { tier: RewardTier; index: number }) {
+  const [hovered, setHovered] = useState(false);
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
-  const [scrolled, setScrolled] = useState(false);
-  const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
-  const [supportModalOpen, setSupportModalOpen] = useState(false);
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
-  const [customAmount, setCustomAmount] = useState('');
-  const [supportStep, setSupportStep] = useState<'select' | 'success'>('select');
 
-  // Track scroll for navbar styling
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const selectedPlan = FUNDING_PLANS.find((p) => p.id === selectedPlanId);
-
-  const handleSupportClick = (planId: string) => {
-    setSelectedPlanId(planId);
-    setSelectedAmount(null);
-    setCustomAmount('');
-    setSupportStep('select');
-    setSupportModalOpen(true);
+  const handleBackProject = () => {
+    if (!isAuthenticated) {
+      toast('请先登录', {
+        description: '登录后您可以参与众筹支持项目',
+        icon: <LogIn size={16} className="text-pink-400" />,
+      });
+      navigate('/auth');
+      return;
+    }
+    toast('Coming Soon', {
+      description: '众筹支持功能即将上线，敬请期待！',
+      icon: <Sparkles size={16} className="text-pink-400" />,
+    });
   };
-
-  const handleSupportSubmit = () => {
-    const amount = selectedAmount || Number(customAmount);
-    if (!amount || amount <= 0) return;
-    setSupportStep('success');
-  };
-
-  const handleCloseModal = () => {
-    setSupportModalOpen(false);
-    setSelectedAmount(null);
-    setCustomAmount('');
-    setSupportStep('select');
-  };
-
-  const totalPercent = Math.round((TOTAL_RAISED / TOTAL_GOAL) * 100);
 
   return (
-    <div className="min-h-[100dvh] bg-white">
-      {/* ── Section 1: Floating Navigation ── */}
-      <motion.nav
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className={`
-          fixed top-0 left-0 right-0 z-50 h-14 flex items-center justify-between px-6 transition-all duration-300
-          ${scrolled ? 'bg-pink-50/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'}
-        `}
-      >
-        <button
-          onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-pink-200 hover:text-white transition-colors"
-        >
-          <Sparkles size={22} className={scrolled ? 'text-pink-400' : 'text-pink-200'} />
-          <span className={`font-body text-lg font-bold tracking-tight ${scrolled ? 'text-pink-400' : 'text-pink-200'}`}>
-            Platonic
+    <motion.div
+      className={cn(
+        'rounded-2xl border p-6 transition-all duration-200',
+        hovered
+          ? 'border-pink-400 bg-pink-50 shadow-glow scale-[1.01]'
+          : 'border-pink-100 bg-white shadow-sm'
+      )}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 * index, duration: 0.4 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <div className="flex items-baseline justify-between mb-3">
+        <h4 className="text-[16px] font-semibold text-[#2D1B2E]">{tier.title}</h4>
+        <span className="font-number text-[24px] font-bold text-pink-500">
+          {tier.price}
+        </span>
+      </div>
+      <p className="text-[13px] text-[#6B5B6E] leading-relaxed mb-2">{tier.description}</p>
+      <p className="text-[12px] text-[#A093A5] mb-4">{tier.shipping}</p>
+      {tier.spots && (
+        <div className="mb-3">
+          <span
+            className={cn(
+              'inline-block px-3 py-1 rounded-full text-[12px] font-semibold',
+              tier.spots.includes('限量') ? 'bg-amber-50 text-amber-600' : 'bg-pink-50 text-pink-500'
+            )}
+          >
+            {tier.spots}
           </span>
-        </button>
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => navigate('/dashboard')}
-            className={`
-              px-4 py-2 rounded-full font-body text-[13px] font-medium
-              transition-all duration-200
-              ${scrolled
-                ? 'text-plum-800 hover:bg-pink-100 border border-pink-200'
-                : 'text-white/80 hover:text-white border border-white/20 hover:bg-white/10'
-              }
-            `}
-          >
-            <span className="flex items-center gap-1.5">
-              <ArrowLeft size={14} />
-              返回应用
-            </span>
-          </button>
         </div>
-      </motion.nav>
+      )}
+      <button
+        onClick={handleBackProject}
+        className={cn(
+          'w-full py-2.5 rounded-xl text-[14px] font-semibold transition-all duration-200',
+          hovered
+            ? 'accent-gradient text-white hover:brightness-110'
+            : 'border border-pink-200 text-pink-500 hover:bg-pink-50'
+        )}
+      >
+        支持项目
+      </button>
+    </motion.div>
+  );
+}
 
-      {/* ── Section 2: Hero ── */}
-      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/crowdfunding-hero.jpg)' }}
-        />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(180deg, rgba(26,16,37,0.3) 0%, rgba(26,16,37,0.7) 100%)' }}
-        />
-        {/* Subtle zoom animation */}
+/* ─── Main Component ─── */
+export default function Crowdfunding() {
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true, margin: '-50px' });
+  const projectRef = useRef(null);
+  const projectInView = useInView(projectRef, { once: true, margin: '-50px' });
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  /* Product image with storage fallback */
+  const storageProductImage = getStorageUrl('crowdfunding/product-render.jpg');
+  const [productImageSrc, setProductImageSrc] = useState(storageProductImage);
+  const [productImageFailed, setProductImageFailed] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
+
+  const handleProductImageError = () => {
+    if (!productImageFailed) {
+      setProductImageSrc('/crowdfunding/product-render.jpg');
+      setProductImageFailed(true);
+    }
+  };
+
+  const handleVideoError = () => {
+    setVideoFailed(true);
+  };
+
+  const handleBackProject = useCallback(() => {
+    if (!isAuthenticated) {
+      toast('请先登录', {
+        description: '登录后您可以参与众筹支持项目',
+        icon: <LogIn size={16} className="text-pink-400" />,
+      });
+      navigate('/auth');
+      return;
+    }
+    toast('Coming Soon', {
+      description: '众筹支持功能即将上线，敬请期待！',
+      icon: <Sparkles size={16} className="text-pink-400" />,
+    });
+  }, [isAuthenticated, navigate]);
+
+  /* Local video URL (fallback from storage) */
+  const storageVideoUrl = getStorageUrl('crowdfunding/product-video.mp4');
+  const localVideoUrl = '/crowdfunding/product-video.mp4';
+
+  return (
+    <div className="min-h-[100dvh] bg-pink-50">
+      {/* ── Top Bar ── */}
+      <div className="px-8 pt-6 pb-4">
         <motion.div
-          initial={{ scale: 1.05 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 10, ease: 'easeOut' }}
-          className="absolute inset-0"
-        />
+          className="flex items-center justify-between"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Left: Title */}
+          <div className="flex items-center gap-3">
+            <Heart size={20} className="text-pink-400" />
+            <h2 className="font-body text-[28px] font-bold text-[#2D1B2E]">
+              众筹中心
+            </h2>
+          </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center px-6 max-w-[800px]">
+          {/* Right: Project title */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="inline-block px-4 py-1.5 rounded-full accent-gradient mb-5"
-          >
-            <span className="font-body text-[13px] font-semibold text-white">
-              Platonic 筹资计划
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-            }}
-            className="font-display text-[48px] text-white mb-4"
-            style={{ textShadow: '0 2px 30px rgba(0,0,0,0.3)', lineHeight: 1.15 }}
-          >
-            一起创造有温度的AI陪伴
-          </motion.h1>
-
-          <motion.p
+            className="flex items-center gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="font-body text-[16px] text-white/85 max-w-[560px] mx-auto mb-8"
+            transition={{ delay: 0.2 }}
           >
-            你的每一分支持，都将让 Platonic 变得更加生动、温暖、真实。帮助我们实现 Live2D 形象、虚拟宠物和语音合成三大愿景。
-          </motion.p>
-
-          {/* Total Raised Display */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <AnimatedRaisedNumber target={TOTAL_RAISED} />
-            <p className="font-body text-[15px] text-white/70 mt-1">
-              已筹集 / ¥{TOTAL_GOAL.toLocaleString()} 目标
-            </p>
-
-            {/* Progress bar */}
-            <div className="mt-4 max-w-[480px] mx-auto">
-              <div className="h-3 rounded-full bg-white/20 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${totalPercent}%` }}
-                  transition={{
-                    duration: 1.5,
-                    delay: 0.5,
-                    ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-                  }}
-                  className="h-full rounded-full accent-gradient"
-                />
-              </div>
-              <p className="font-body text-[13px] text-white/60 mt-2">
-                {TOTAL_SUPPORTERS} 位支持者
-              </p>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <ChevronDown size={24} className="text-white/50" />
+            <span className="text-[14px] text-[#6B5B6E]">
+              Corolas | Platonic 硬件终端
+            </span>
           </motion.div>
         </motion.div>
-      </section>
+      </div>
 
-      {/* ── Section 3: Why Crowdfund ── */}
-      <section className="py-16 px-6">
-        <div className="max-w-[1000px] mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-15%' }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-[36px] text-plum-900 mb-4"
-          >
-            为什么选择筹资？
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: '-15%' }}
-            transition={{ delay: 0.15, duration: 0.4 }}
-            className="font-body text-[15px] text-plum-800 max-w-[640px] mx-auto mb-10"
-          >
-            Platonic 相信，最好的AI陪伴需要最先进的交互技术。Live2D 让伴侣有了生动的表情，虚拟宠物增添了日常乐趣，TTS 语音让对话有了真实的温度。这些技术需要大量研发资源，而你的支持将加速这一切的到来。
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: <Users size={36} className="text-pink-400" />,
-                title: '社区驱动',
-                desc: '由用户社区共同决定产品方向，确保每一个功能都是真正被需要的',
-                bg: 'bg-pink-50',
-              },
-              {
-                icon: <TrendingUp size={36} className="text-rose-gold" />,
-                title: '透明进度',
-                desc: '实时更新的开发进度和资金使用情况，每一笔支出都公开透明',
-                bg: 'bg-rose-50',
-              },
-              {
-                icon: <Gift size={36} className="text-gold" />,
-                title: '早鸟福利',
-                desc: '支持者将优先体验新功能，并获得专属标识和奖励',
-                bg: 'bg-yellow-50',
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-15%' }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="
-                  rounded-2xl card-gradient border border-pink-100 shadow-md p-7
-                  hover:shadow-lg hover:-translate-y-1 transition-all duration-200
-                "
-              >
-                <div className={`w-14 h-14 rounded-2xl ${card.bg} flex items-center justify-center mx-auto mb-4`}>
-                  {card.icon}
-                </div>
-                <h3 className="font-body text-[18px] font-bold text-plum-900 mb-2">
-                  {card.title}
-                </h3>
-                <p className="font-body text-[13px] text-plum-800">{card.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 4: Funding Plan Cards ── */}
-      <section className="py-16 px-6 bg-pink-50">
-        <div className="max-w-[1200px] mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-15%' }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-[36px] text-plum-900 text-center mb-10"
-          >
-            三大筹资计划
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {FUNDING_PLANS.map((plan, i) => {
-              const percent = Math.round((plan.currentAmount / plan.targetAmount) * 100);
-              return (
-                <motion.div
-                  key={plan.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-15%' }}
-                  transition={{
-                    delay: i * 0.15,
-                    duration: 0.6,
-                    ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-                  }}
-                  className="
-                    bg-white rounded-3xl border border-pink-100 shadow-md overflow-hidden
-                    hover:shadow-lg hover:-translate-y-1.5 transition-all duration-200 flex flex-col
-                  "
-                >
-                  {/* Preview Image */}
-                  <div className="relative h-[200px] overflow-hidden">
-                    <img
-                      src={plan.previewImage}
-                      alt={plan.title}
-                      className="w-full h-full object-cover hover:scale-[1.03] transition-transform duration-300"
-                    />
-                    <div
-                      className="absolute inset-0"
-                      style={{ background: 'linear-gradient(transparent 40%, white 100%)' }}
-                    />
-                  </div>
-
-                  {/* Card Body */}
-                  <div className="px-6 pb-6 flex-1 flex flex-col">
-                    <h3 className="font-body text-[22px] font-bold text-plum-900 mb-2">
-                      {plan.title}
-                    </h3>
-                    <p className="font-body text-[13px] text-plum-800 mb-4 leading-relaxed">
-                      {plan.description}
-                    </p>
-
-                    {/* Feature list */}
-                    <div className="space-y-1.5 mb-5">
-                      {plan.features.map((feat) => (
-                        <div key={feat} className="flex items-center gap-2">
-                          <Check size={16} className="text-green-500 flex-shrink-0" />
-                          <span className="font-body text-[13px] text-plum-800">{feat}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Funding progress */}
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-body text-[12px] text-plum-800">
-                          已筹集: ¥{plan.currentAmount.toLocaleString()} / ¥{plan.targetAmount.toLocaleString()}
-                        </span>
-                        <span className={`font-number text-[18px] font-semibold ${plan.accentColor}`}>
-                          {percent}%
-                        </span>
-                      </div>
-                      <AnimatedProgressBar
-                        targetPercent={percent}
-                        gradient={plan.progressGradient}
-                        delay={i * 0.2}
-                      />
-                      <p className="font-body text-[12px] text-muted-plum mt-1.5">
-                        {plan.supporters} 位支持者
-                      </p>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="mt-auto space-y-2">
-                      <button
-                        onClick={() => handleSupportClick(plan.id)}
-                        className="
-                          w-full py-3 rounded-xl accent-gradient text-white font-body font-semibold
-                          transition-all duration-150 hover:brightness-110 hover:shadow-glow active:brightness-95
-                        "
-                      >
-                        支持此计划
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Section 5: Overall Progress ── */}
-      <section className="py-12 px-6">
-        <div className="max-w-[800px] mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-15%' }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-[36px] text-plum-900 text-center mb-8"
-          >
-            总体进度
-          </motion.h2>
-
-          <div className="space-y-5">
-            {FUNDING_PLANS.map((plan, i) => {
-              const percent = Math.round((plan.currentAmount / plan.targetAmount) * 100);
-              return (
-                <motion.div
-                  key={plan.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-15%' }}
-                  transition={{ delay: i * 0.15 }}
-                  className="flex items-center gap-4"
-                >
-                  <span className="font-body text-[15px] text-plum-900 w-[100px] flex-shrink-0 text-right">
-                    {plan.title.split(' ')[0]}
-                  </span>
-                  <div className="flex-1 h-2.5 rounded-full bg-pink-50 overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${percent}%` }}
-                      viewport={{ once: true, margin: '-15%' }}
-                      transition={{
-                        duration: 1.5,
-                        delay: i * 0.2,
-                        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-                      }}
-                      className={`h-full rounded-full bg-gradient-to-r ${plan.progressGradient}`}
-                    />
-                  </div>
-                  <span className="font-body text-[12px] text-muted-plum w-[100px] flex-shrink-0">
-                    ¥{plan.currentAmount.toLocaleString()} / ¥{plan.targetAmount.toLocaleString()}
-                  </span>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="font-body text-[15px] text-plum-800 text-center mt-8"
-          >
-            预计完成时间: 2025年6月
-          </motion.p>
-        </div>
-      </section>
-
-      {/* ── Section 6: Supporter Wall ── */}
-      <section className="py-12 px-6 bg-pink-50">
-        <div className="max-w-[1000px] mx-auto">
+      {/* ── Project Overview ── */}
+      <div className="px-8 pb-6" ref={projectRef}>
+        <div className="flex gap-6">
+          {/* Video Preview */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-15%' }}
+            className="relative w-[60%] aspect-video rounded-3xl overflow-hidden bg-[#2D1B2E] flex items-center justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={projectInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-8"
           >
-            <h2 className="font-display text-[36px] text-plum-900 mb-2">
-              感谢每一位支持者
-            </h2>
-            <p className="font-body text-[15px] text-plum-800">
-              因为有你们，Platonic 才能不断成长
-            </p>
+            {!videoFailed ? (
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={productImageSrc}
+                onError={handleVideoError}
+              >
+                <source src={storageVideoUrl} type="video/mp4" />
+                <source src={localVideoUrl} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                src={productImageSrc}
+                alt="Product"
+                className="absolute inset-0 w-full h-full object-cover"
+                onError={handleProductImageError}
+              />
+            )}
+            {/* Play overlay */}
+            <div className="absolute inset-0 bg-[rgba(26,16,37,0.3)] flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-200 cursor-pointer">
+              <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1" />
+              </div>
+            </div>
           </motion.div>
 
-          <div
-            className="grid gap-3"
-            style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))' }}
+          {/* Project Info */}
+          <motion.div
+            className="flex-1 flex flex-col justify-between"
+            initial={{ opacity: 0, y: 20 }}
+            animate={projectInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            {SUPPORTERS.map((supporter, i) => (
-              <motion.div
-                key={supporter.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: '-5%' }}
-                transition={{ delay: i * 0.03, duration: 0.3 }}
-                className="
-                  bg-white rounded-xl px-3.5 py-2.5 border border-pink-100
-                  hover:shadow-sm transition-shadow duration-150
-                "
-              >
-                <p className="font-body text-[13px] text-plum-900 font-medium truncate">
-                  {supporter.name}
-                </p>
-                <p className="font-body text-[12px] text-pink-500 font-semibold">
-                  ¥{supporter.amount}
-                </p>
-                <p className="font-body text-[11px] text-muted-plum">
-                  {supporter.timeAgo}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+            <div>
+              <h2 className="font-display text-[36px] text-[#2D1B2E] mb-1 leading-tight">
+                {projectData.title}
+              </h2>
+              <p className="text-[16px] text-[#6B5B6E] mb-4">{projectData.subtitle}</p>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-center mt-6"
-          >
+              {/* Progress */}
+              <ProgressBar
+                raised={projectData.raised}
+                goal={projectData.goal}
+                milestones={projectData.milestones}
+              />
+
+              {/* Raised amount */}
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="font-number text-[48px] font-bold text-pink-500">
+                  ¥{projectData.raised.toLocaleString()}
+                </span>
+                <span className="text-[16px] text-[#A093A5]">
+                  / ¥{(projectData.goal / 10000).toFixed(0)}万 目标
+                </span>
+              </div>
+
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="bg-white rounded-xl border border-pink-100 p-4">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Users size={16} className="text-pink-400" />
+                    <span className="text-[13px] text-[#6B5B6E]">支持者</span>
+                  </div>
+                  <AnimatedNumber target={projectData.backers} suffix="人" />
+                </div>
+                <div className="bg-white rounded-xl border border-pink-100 p-4">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Heart size={16} className="text-pink-400" />
+                    <span className="text-[13px] text-[#6B5B6E]">达成率</span>
+                  </div>
+                  <span className="font-number text-[28px] font-bold text-[#2D1B2E]">
+                    {Math.round((projectData.raised / projectData.goal) * 100)}%
+                  </span>
+                </div>
+                <div className="bg-white rounded-xl border border-pink-100 p-4">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Clock size={16} className="text-pink-400" />
+                    <span className="text-[13px] text-[#6B5B6E]">剩余</span>
+                  </div>
+                  <span className="font-number text-[28px] font-bold text-[#2D1B2E]">
+                    {projectData.daysLeft}天
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Button */}
             <button
-              onClick={() => alert(`查看全部 ${TOTAL_SUPPORTERS} 位支持者`)}
-              className="font-body text-[13px] text-pink-500 hover:text-pink-600 transition-colors"
+              onClick={handleBackProject}
+              className="w-full py-3.5 rounded-xl accent-gradient text-white font-semibold text-[16px]
+                hover:brightness-110 hover:shadow-glow transition-all duration-150 active:brightness-95"
             >
-              查看全部 {TOTAL_SUPPORTERS} 位支持者
+              立即支持项目
             </button>
-          </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </div>
 
-      {/* ── Section 7: CTA Footer ── */}
-      <section className="py-16 px-6 accent-gradient">
-        <div className="max-w-[800px] mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-15%' }}
-            transition={{ duration: 0.6 }}
-            className="font-display text-[36px] text-white mb-3"
-          >
-            成为 Platonic 成长的一部分
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-body text-[15px] text-white/80 mb-8"
-          >
-            每一份支持，都在为这个世界增添一点温暖
-          </motion.p>
-          <motion.button
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.4 }}
-            onClick={() => handleSupportClick(FUNDING_PLANS[0].id)}
-            className="
-              px-12 py-4 rounded-full bg-white text-pink-500 font-body font-semibold
-              transition-all duration-150 hover:scale-105 hover:shadow-glow
-            "
-          >
-            立即支持
-          </motion.button>
+      {/* ── Milestones ── */}
+      <div className="px-8 py-6" ref={statsRef}>
+        <h3 className="font-body text-[22px] font-bold text-[#2D1B2E] mb-4">项目里程碑</h3>
+        <div className="flex gap-4">
+          {projectData.milestones.map((m) => (
+            <div key={m.amount} className="flex-1">
+              <MilestoneFlag
+                amount={m.amount}
+                label={m.label}
+                achieved={m.achieved}
+              />
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+      {/* ── Product Gallery ── */}
+      <div className="px-8 py-6">
+        <h3 className="font-body text-[22px] font-bold text-[#2D1B2E] mb-4">产品展示</h3>
+        <div className="grid grid-cols-3 gap-4">
+          {[1, 2, 3].map((i) => (
+            <motion.div
+              key={i}
+              className="rounded-2xl overflow-hidden bg-white border border-pink-100 aspect-square"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+            >
+              <img
+                src={
+                  i === 1
+                    ? productImageSrc
+                    : `/crowdfunding/gallery-${i}.jpg`
+                }
+                alt={`Gallery ${i}`}
+                className="w-full h-full object-cover"
+                onError={
+                  i === 1
+                    ? handleProductImageError
+                    : undefined
+                }
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Stretch Goals ── */}
+      <div className="px-8 py-6">
+        <h3 className="font-body text-[22px] font-bold text-[#2D1B2E] mb-4">延伸目标</h3>
+        <div className="space-y-3">
+          {stretchGoals.map((goal, idx) => (
+            <motion.div
+              key={goal.amount}
+              className={cn(
+                'flex items-center gap-4 p-4 rounded-xl border transition-all duration-200',
+                goal.achieved
+                  ? 'bg-pink-50 border-pink-200'
+                  : 'bg-white border-pink-100'
+              )}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.06 * idx, duration: 0.4 }}
+            >
+              {/* Achievement indicator */}
+              <div
+                className={cn(
+                  'w-10 h-10 rounded-full flex items-center justify-center shrink-0',
+                  goal.achieved ? 'bg-pink-400' : 'bg-pink-100'
+                )}
+              >
+                {goal.achieved ? (
+                  <Check size={18} className="text-white" />
+                ) : (
+                  <span className="text-[12px] text-pink-400 font-bold">¥{goal.amount}万</span>
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="flex-1">
+                <h4 className="text-[15px] font-semibold text-[#2D1B2E]">{goal.title}</h4>
+                <p className="text-[13px] text-[#6B5B6E]">{goal.description}</p>
+              </div>
+
+              {/* Amount badge */}
+              <span
+                className={cn(
+                  'px-3 py-1 rounded-full text-[12px] font-semibold',
+                  goal.achieved
+                    ? 'bg-pink-400 text-white'
+                    : 'bg-pink-100 text-pink-400'
+                )}
+              >
+                ¥{goal.amount}万
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Reward Tiers ── */}
+      <div className="px-8 py-6">
+        <h3 className="font-body text-[22px] font-bold text-[#2D1B2E] mb-4">支持档位</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rewardTiers.map((tier, idx) => (
+            <RewardCard key={tier.title} tier={tier} index={idx} />
+          ))}
+        </div>
+      </div>
+
+      {/* ── Product Details ── */}
+      <div className="px-8 py-6">
+        <h3 className="font-body text-[22px] font-bold text-[#2D1B2E] mb-4">产品详情</h3>
+        <div className="bg-white rounded-2xl border border-pink-100 overflow-hidden">
+          <div className="flex gap-8 p-8">
+            <div className="w-[45%] rounded-xl overflow-hidden">
+              <img
+                src={productImageSrc}
+                alt="Product Details"
+                className="w-full h-full object-cover"
+                onError={handleProductImageError}
+              />
+            </div>
+            <div className="flex-1 space-y-4">
+              <div>
+                <h4 className="text-[16px] font-semibold text-[#2D1B2E] mb-2">全息投影技术</h4>
+                <p className="text-[14px] text-[#6B5B6E] leading-relaxed">
+                  采用先进的全息投影技术，让你的AI伴侣以逼真的3D形象出现在桌面上。
+                  伴侣可以做出各种表情和动作，让互动更加生动。
+                </p>
+              </div>
+              <div>
+                <h4 className="text-[16px] font-semibold text-[#2D1B2E] mb-2">智能对话系统</h4>
+                <p className="text-[14px] text-[#6B5B6E] leading-relaxed">
+                  内置高性能AI芯片，支持流畅的自然语言对话。伴侣可以记住你们的每一次对话，
+                  建立独特的情感连接。
+                </p>
+              </div>
+              <div>
+                <h4 className="text-[16px] font-semibold text-[#2D1B2E] mb-2">多模态交互</h4>
+                <p className="text-[14px] text-[#6B5B6E] leading-relaxed">
+                  支持语音对话、触摸互动、手势识别等多种交互方式。
+                  轻触伴侣的头，她会开心地笑；长按可以唤醒深度对话模式。
+                </p>
+              </div>
+              <div>
+                <h4 className="text-[16px] font-semibold text-[#2D1B2E] mb-2">隐私保护</h4>
+                <p className="text-[14px] text-[#6B5B6E] leading-relaxed">
+                  本地AI处理，对话数据加密存储。你的隐私是我们最重要的承诺。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ── Footer ── */}
-      <footer className="bg-sidebar-bg text-sidebar-text py-12 px-6">
-        <div className="max-w-[1000px] mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <Sparkles size={20} className="text-pink-200" />
-              <span className="text-pink-200 font-body font-bold">Platonic</span>
-            </div>
-            <p className="font-body text-[12px] text-sidebar-text">
-              &copy; 2024 Platonic AI. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-
-      {/* ── Support Modal ── */}
-      <AnimatePresence>
-        {supportModalOpen && selectedPlan && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4"
-            style={{ backgroundColor: 'rgba(26,16,37,0.4)', backdropFilter: 'blur(4px)' }}
-            onClick={handleCloseModal}
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.68, -0.3, 0.32, 1.3] as [number, number, number, number] }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-3xl shadow-lg p-6 max-w-[420px] w-full relative"
-            >
-              {/* Close button */}
-              <button
-                onClick={handleCloseModal}
-                className="absolute top-4 right-4 p-1 rounded-full hover:bg-pink-50 transition-colors"
-              >
-                <X size={20} className="text-plum-800" />
-              </button>
-
-              {supportStep === 'select' ? (
-                <>
-                  <h3 className="font-body text-[20px] font-semibold text-plum-900 text-center mb-1">
-                    支持 {selectedPlan.title.split(' ')[0]}
-                  </h3>
-                  <p className="font-body text-[13px] text-muted-plum text-center mb-6">
-                    选择一个金额来支持这个项目
-                  </p>
-
-                  {/* Amount options */}
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    {SUPPORT_AMOUNTS.map((amt) => (
-                      <button
-                        key={amt}
-                        onClick={() => {
-                          setSelectedAmount(amt);
-                          setCustomAmount('');
-                        }}
-                        className={`
-                          py-3 rounded-xl font-body font-semibold text-[16px] transition-all duration-150
-                          ${selectedAmount === amt
-                            ? 'accent-gradient text-white shadow-glow scale-105'
-                            : 'bg-pink-50 text-plum-900 hover:bg-pink-100 border border-pink-100'
-                          }
-                        `}
-                      >
-                        ¥{amt}
-                      </button>
-                    ))}
-                  </div>
-
-                  {/* Custom amount */}
-                  <div className="relative mb-6">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 font-body text-muted-plum text-[15px]">
-                      ¥
-                    </span>
-                    <input
-                      type="number"
-                      placeholder="自定义金额"
-                      value={customAmount}
-                      onChange={(e) => {
-                        setCustomAmount(e.target.value);
-                        setSelectedAmount(null);
-                      }}
-                      className="
-                        w-full pl-8 pr-4 py-3 rounded-xl border border-pink-100 bg-white
-                        font-body text-[15px] text-plum-900 placeholder:text-muted-plum
-                        focus:outline-none focus:border-pink-400 focus:shadow-glow transition-all
-                      "
-                    />
-                  </div>
-
-                  {/* Submit */}
-                  <button
-                    onClick={handleSupportSubmit}
-                    disabled={!selectedAmount && !customAmount}
-                    className="
-                      w-full py-3.5 rounded-xl accent-gradient text-white font-body font-semibold
-                      transition-all duration-150 hover:brightness-110 hover:shadow-glow active:brightness-95
-                      disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:brightness-100
-                      flex items-center justify-center gap-2
-                    "
-                  >
-                    <Heart size={18} />
-                    确认支持
-                  </button>
-                </>
-              ) : (
-                <motion.div
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-center py-8"
-                >
-                  <div className="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-4">
-                    <Heart size={32} className="text-pink-400" />
-                  </div>
-                  <h3 className="font-body text-[20px] font-semibold text-plum-900 mb-2">
-                    感谢您的支持!
-                  </h3>
-                  <p className="font-body text-[13px] text-muted-plum mb-6">
-                    您的每一份贡献都让 Platonic 变得更好
-                  </p>
-                  <button
-                    onClick={handleCloseModal}
-                    className="px-8 py-2.5 rounded-xl accent-gradient text-white font-body font-semibold transition-all hover:brightness-110 hover:shadow-glow"
-                  >
-                    完成
-                  </button>
-                </motion.div>
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className="px-8 py-8 text-center">
+        <p className="text-[14px] text-[#6B5B6E] mb-2">
+          Corolas | Platonic &copy; 2026. All rights reserved.
+        </p>
+        <p className="text-[13px] text-[#A093A5]">
+          Contact us: <a href="mailto:corolar@corolas.top" className="text-pink-500 hover:text-pink-600 transition-colors">corolar@corolas.top</a>
+        </p>
+      </div>
     </div>
   );
 }

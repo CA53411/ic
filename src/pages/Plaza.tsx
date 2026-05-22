@@ -12,15 +12,20 @@ import {
   ChevronRight,
   Sparkles,
   Users,
+  LogIn,
+  UserPlus,
+  Info,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { supabase } from '@/lib/supabase';
+import { supabase, getStorageUrl } from '@/lib/supabase';
+import { useAuth } from '@/hooks/useAuth';
 
 /* ─── Types ─── */
-interface Companion {
+interface PlazaCompanion {
   id: string | number;
-  name: string;
+  nickname: string;
   avatar: string;
+  storageAvatar: string;
   description: string;
   tags: string[];
   likes: string;
@@ -32,11 +37,12 @@ interface Companion {
 }
 
 /* ─── Mock Data (fallback) ─── */
-const mockCompanions: Companion[] = [
+const mockCompanions: PlazaCompanion[] = [
   {
     id: 1,
-    name: '小樱',
+    nickname: '小樱',
     avatar: '/companion-1.jpg',
+    storageAvatar: getStorageUrl('companions/1.jpg'),
     description: '开朗活泼的邻家女孩，喜欢樱花和甜点，总能带给你阳光般的笑容。',
     tags: ['开朗', '甜食控', '户外'],
     likes: '12.5k',
@@ -54,8 +60,9 @@ const mockCompanions: Companion[] = [
   },
   {
     id: 2,
-    name: '凌霜',
+    nickname: '凌霜',
     avatar: '/companion-2.jpg',
+    storageAvatar: getStorageUrl('companions/2.jpg'),
     description: '冷静理性的职场精英，热爱文学与哲学，适合深度对话与心灵交流。',
     tags: ['知性', '冷静', '文学'],
     likes: '9.8k',
@@ -73,8 +80,9 @@ const mockCompanions: Companion[] = [
   },
   {
     id: 3,
-    name: '银月',
+    nickname: '银月',
     avatar: '/companion-3.jpg',
+    storageAvatar: getStorageUrl('companions/3.jpg'),
     description: '害羞内敛的图书管理员，拥有丰富的知识和温柔无比的内心。',
     tags: ['害羞', '知性', '温柔'],
     likes: '8.3k',
@@ -92,8 +100,9 @@ const mockCompanions: Companion[] = [
   },
   {
     id: 4,
-    name: '炎夏',
+    nickname: '炎夏',
     avatar: '/companion-4.jpg',
+    storageAvatar: getStorageUrl('companions/4.jpg'),
     description: '元气满满的运动少女，活力四射，和她在一起永远不会无聊。',
     tags: ['活泼', '运动', '直率'],
     likes: '11.2k',
@@ -111,8 +120,9 @@ const mockCompanions: Companion[] = [
   },
   {
     id: 5,
-    name: '紫鸢',
+    nickname: '紫鸢',
     avatar: '/companion-5.jpg',
+    storageAvatar: getStorageUrl('companions/5.jpg'),
     description: '神秘优雅的古典美人，喜欢茶道与花艺，话少但每一句都有深意。',
     tags: ['神秘', '优雅', '艺术'],
     likes: '7.6k',
@@ -130,8 +140,9 @@ const mockCompanions: Companion[] = [
   },
   {
     id: 6,
-    name: '晴空',
+    nickname: '晴空',
     avatar: '/companion-6.jpg',
+    storageAvatar: getStorageUrl('companions/6.jpg'),
     description: '天真烂漫的花店女孩，对世界充满好奇，像小太阳一样温暖每个人。',
     tags: ['天真', '温暖', '好奇'],
     likes: '10.1k',
@@ -220,13 +231,40 @@ const modalPanelVariants = {
   },
 };
 
+/* ─── Companion Image Component ─── */
+function CompanionImage({ companion, className }: { companion: PlazaCompanion; className?: string }) {
+  const [src, setSrc] = useState(companion.storageAvatar);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    setSrc(companion.storageAvatar);
+    setFailed(false);
+  }, [companion.storageAvatar]);
+
+  const handleError = () => {
+    if (!failed) {
+      setSrc(companion.avatar);
+      setFailed(true);
+    }
+  };
+
+  return (
+    <img
+      src={src}
+      alt={companion.nickname}
+      className={className}
+      onError={handleError}
+    />
+  );
+}
+
 /* ─── Companion Card ─── */
 function CompanionCard({
   companion,
   index,
   onClick,
 }: {
-  companion: Companion;
+  companion: PlazaCompanion;
   index: number;
   onClick: () => void;
 }) {
@@ -243,9 +281,8 @@ function CompanionCard({
     >
       {/* Image Area - Top 65% */}
       <div className="relative h-[220px] overflow-hidden">
-        <img
-          src={companion.avatar}
-          alt={companion.name}
+        <CompanionImage
+          companion={companion}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         {/* Bottom gradient overlay */}
@@ -260,14 +297,14 @@ function CompanionCard({
             查看详情
           </button>
           <p className="text-white/80 text-[12px] font-body italic mt-2 px-6 text-center leading-relaxed">
-            "{companion.quote}"
+            &ldquo;{companion.quote}&rdquo;
           </p>
         </div>
 
         {/* Name overlay at bottom of image */}
         <div className="absolute bottom-3 left-4 right-4">
           <div className="flex items-center gap-2">
-            <h3 className="text-white text-[20px] font-body font-bold">{companion.name}</h3>
+            <h3 className="text-white text-[20px] font-body font-bold">{companion.nickname}</h3>
             <CheckCircle size={16} className="text-pink-400 fill-pink-400" />
           </div>
         </div>
@@ -313,10 +350,11 @@ function DetailModal({
   companion,
   onClose,
 }: {
-  companion: Companion;
+  companion: PlazaCompanion;
   onClose: () => void;
 }) {
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   return (
     <motion.div
@@ -348,9 +386,8 @@ function DetailModal({
         <div className="flex flex-col sm:flex-row">
           {/* Left Column - Image */}
           <div className="sm:w-[40%] relative h-[200px] sm:h-auto">
-            <img
-              src={companion.avatar}
-              alt={companion.name}
+            <CompanionImage
+              companion={companion}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,16,37,0.5)] to-transparent sm:bg-gradient-to-r" />
@@ -364,7 +401,7 @@ function DetailModal({
               transition={{ delay: 0.15, duration: 0.3 }}
             >
               <h2 className="font-display text-[36px] text-[#2D1B2E] leading-tight mb-1">
-                {companion.name}
+                {companion.nickname}
               </h2>
               <span className="inline-block px-3 py-0.5 rounded-full bg-pink-50 text-pink-500 text-[12px] font-body font-semibold mb-3">
                 {companion.personalityType}
@@ -379,7 +416,7 @@ function DetailModal({
             >
               {companion.description}
               <br />
-              <span className="text-[#A093A5] italic mt-1 block">"{companion.quote}"</span>
+              <span className="text-[#A093A5] italic mt-1 block">&ldquo;{companion.quote}&rdquo;</span>
             </motion.p>
 
             {/* Personality Tags */}
@@ -451,13 +488,23 @@ function DetailModal({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55, duration: 0.3 }}
             >
-              <button
-                onClick={() => navigate('/chat')}
-                className="w-full py-3 rounded-xl accent-gradient text-white font-body font-semibold text-[14px] hover:brightness-110 transition-all duration-150 flex items-center justify-center gap-2"
-              >
-                认识这个伴侣
-                <ChevronRight size={18} />
-              </button>
+              {isAuthenticated ? (
+                <button
+                  onClick={() => navigate('/chat')}
+                  className="w-full py-3 rounded-xl accent-gradient text-white font-body font-semibold text-[14px] hover:brightness-110 transition-all duration-150 flex items-center justify-center gap-2"
+                >
+                  认识这个伴侣
+                  <ChevronRight size={18} />
+                </button>
+              ) : (
+                <button
+                  onClick={() => navigate('/auth')}
+                  className="w-full py-3 rounded-xl accent-gradient text-white font-body font-semibold text-[14px] hover:brightness-110 transition-all duration-150 flex items-center justify-center gap-2"
+                >
+                  <LogIn size={16} />
+                  登录以领养
+                </button>
+              )}
               <button
                 onClick={onClose}
                 className="w-full py-2.5 rounded-xl border border-pink-100 text-[#6B5B6E] font-body text-[14px] hover:bg-pink-50 transition-colors duration-150"
@@ -472,14 +519,52 @@ function DetailModal({
   );
 }
 
+/* ─── Auth Banner ─── */
+function AuthBanner() {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      className="mb-6 rounded-xl bg-pink-50 border border-pink-200 p-4 flex items-center gap-4"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Info size={20} className="text-pink-400 flex-shrink-0" />
+      <div className="flex-1">
+        <p className="text-[13px] text-[#6B5B6E] font-body">
+          请登录以领养伴侣。
+        </p>
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          onClick={() => navigate('/auth')}
+          className="px-4 py-2 rounded-xl text-[13px] font-body font-medium text-pink-500 border border-pink-200 hover:bg-pink-100 transition-all duration-150 flex items-center gap-1.5"
+        >
+          <LogIn size={14} />
+          登录
+        </button>
+        <button
+          onClick={() => navigate('/auth')}
+          className="px-4 py-2 rounded-xl text-[13px] font-body font-medium text-white accent-gradient hover:brightness-110 transition-all duration-150 flex items-center gap-1.5"
+        >
+          <UserPlus size={14} />
+          创建账户
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ─── Main Plaza Page ─── */
 export default function Plaza() {
   const [activeFilter, setActiveFilter] = useState('全部');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCompanion, setSelectedCompanion] = useState<Companion | null>(null);
+  const [selectedCompanion, setSelectedCompanion] = useState<PlazaCompanion | null>(null);
   const [showFilterDrawer, setShowFilterDrawer] = useState(false);
-  const [companions, setCompanions] = useState<Companion[]>(mockCompanions);
+  const [companions, setCompanions] = useState<PlazaCompanion[]>(mockCompanions);
   const [loading, setLoading] = useState(true);
+  const { isAuthenticated } = useAuth();
 
   // Load companions from Supabase
   useEffect(() => {
@@ -492,12 +577,14 @@ export default function Plaza() {
       const { data, error } = await supabase.from('companions').select('*');
       if (error || !data || data.length === 0) {
         // Fallback to mock data already set in state
+        setLoading(false);
         return;
       }
-      const mapped: Companion[] = data.map((c: Record<string, unknown>) => ({
+      const mapped: PlazaCompanion[] = data.map((c: Record<string, unknown>) => ({
         id: c.id as string | number,
-        name: (c.nickname as string) || '未知伴侣',
+        nickname: (c.nickname as string) || '未知伴侣',
         avatar: `/companion-${Math.floor(Math.random() * 6) + 1}.jpg`,
+        storageAvatar: getStorageUrl(`companions/${c.id}.jpg`),
         description: (c.background as string) || '一个温暖的灵魂',
         tags: getPersonalityTags(c),
         likes: `${(Math.floor(Math.random() * 15) + 5)}k`,
@@ -505,11 +592,11 @@ export default function Plaza() {
         personalityType: getPersonalityType(c),
         gender: (c.gender as 'female' | 'male') || 'female',
         bigFive: [
-          { trait: '开放性', value: (c.personality_openness as number) || 50 },
-          { trait: '尽责性', value: (c.personality_conscientiousness as number) || 50 },
-          { trait: '外向性', value: (c.personality_extraversion as number) || 50 },
-          { trait: '宜人性', value: (c.personality_agreeableness as number) || 50 },
-          { trait: '神经质', value: (c.personality_neuroticism as number) || 50 },
+          { trait: '开放性', value: (c.bf_openness as number) || 50 },
+          { trait: '尽责性', value: (c.bf_conscientiousness as number) || 50 },
+          { trait: '外向性', value: (c.bf_extraversion as number) || 50 },
+          { trait: '宜人性', value: (c.bf_agreeableness as number) || 50 },
+          { trait: '神经质', value: (c.bf_neuroticism as number) || 50 },
         ],
         quote: '很高兴认识你～',
       }));
@@ -534,7 +621,7 @@ export default function Plaza() {
       const q = searchQuery.toLowerCase();
       result = result.filter(
         (c) =>
-          c.name.toLowerCase().includes(q) ||
+          c.nickname.toLowerCase().includes(q) ||
           c.description.toLowerCase().includes(q) ||
           c.tags.some((t) => t.toLowerCase().includes(q))
       );
@@ -558,6 +645,9 @@ export default function Plaza() {
   return (
     <div className="min-h-[100dvh] p-6">
       <div className="max-w-[1100px] mx-auto">
+        {/* ─── Section 0: Auth Banner (when not logged in) ─── */}
+        {!isAuthenticated && <AuthBanner />}
+
         {/* ─── Section 1: Top Bar ─── */}
         <motion.div
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"

@@ -1,9 +1,29 @@
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://iqylckwmmygqutycqmlb.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxeWxja3dtbXlncXV0eWNxbWxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwMDY3MjQsImV4cCI6MjA3MDU4MjcyNH0.2eHnVJ9r6jl1x9-7C3k9vT8y5u1q0r2s3t4u5v6w7x8'
+// Read from environment variables (set in Vercel dashboard or .env.local)
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string
+const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+if (!supabaseUrl || !supabaseKey) {
+  console.error(
+    '[Supabase] Missing environment variables. ' +
+    'Please set VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.'
+  )
+}
+
+export const supabase = createClient(supabaseUrl || '', supabaseKey || '')
+
+/** Storage bucket name for Corolas | Platonic assets */
+export const STORAGE_BUCKET = 'platonic-assets'
+
+/**
+ * Get a public URL for a file stored in the Corolas | Platonic storage bucket.
+ * @param path - The file path within the bucket (e.g. 'avatars/user1.png')
+ * @returns Full public URL to the file
+ */
+export function getStorageUrl(path: string): string {
+  return `${supabaseUrl}/storage/v1/object/public/${STORAGE_BUCKET}/${path}`
+}
 
 // Edge Functions base URL
 export const EDGE_FUNCTIONS_URL = `${supabaseUrl}/functions/v1`

@@ -1,10 +1,15 @@
+/**
+ * Layout.tsx - Application Root Layout
+ *
+ * Manages the sidebar visibility, dark mode theme, and toast notifications.
+ * Integrates with AuthContext to pass auth state to the Navbar.
+ */
 import { useLocation } from 'react-router-dom';
+import { Toaster } from 'sonner';
+import { useAuth } from '@/context/AuthContext';
 import Navbar from './Navbar';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
+/** Routes that should display the sidebar navigation */
 const sidebarRoutes = [
   '/dashboard',
   '/plaza',
@@ -14,17 +19,53 @@ const sidebarRoutes = [
   '/settings',
   '/payment',
   '/crowdfunding',
+  '/customize',
 ];
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  const { isAuthenticated, user, hasCompanion, logout } = useAuth();
+
+  // Determine if the sidebar should be visible for the current route
   const showSidebar = sidebarRoutes.some((route) =>
     location.pathname.startsWith(route)
   );
 
+  // Apply dark mode class based on localStorage theme preference
+  // This runs on every render to keep the theme in sync
+  const theme = localStorage.getItem('theme');
+  const isDark = theme === 'dark';
+  if (isDark) {
+    document.documentElement.classList.add('dark');
+  } else if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+  }
+
   return (
-    <div className="min-h-screen bg-pink-50">
-      {showSidebar && <Navbar />}
+    <div className={`min-h-screen bg-pink-50 dark:bg-gray-900 transition-colors duration-300`}>
+      {/* Global toast notifications */}
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: isDark ? '#1f2937' : '#fff',
+            color: isDark ? '#f3f4f6' : '#1f2937',
+            border: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
+          },
+        }}
+      />
+
+      {/* Conditionally render Navbar for sidebar routes */}
+      {showSidebar && (
+        <Navbar
+          isAuthenticated={isAuthenticated}
+          user={user}
+          hasCompanion={hasCompanion}
+          onLogout={logout}
+        />
+      )}
+
+      {/* Main content area with sidebar offset */}
       <div
         className={`
           min-h-screen transition-all duration-300

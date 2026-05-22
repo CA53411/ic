@@ -8,9 +8,14 @@ import {
   Sparkles,
   Check,
   Play,
+  LogIn,
+  UserPlus,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
+import { useAuth } from '@/hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import { getStorageUrl } from '@/lib/supabase';
 
 /* ─── Types ─── */
 interface DramaItem {
@@ -18,6 +23,7 @@ interface DramaItem {
   title: string;
   description: string;
   coverImage: string;
+  storageCoverImage: string;
   rating: number;
   ratingCount: string;
   genre: string;
@@ -46,6 +52,7 @@ const dramaData: DramaItem[] = [
     title: '樱花树下的约定',
     description: '春天的一个傍晚，你和她在盛开的樱花树下相遇。风轻轻吹过，花瓣飘落在她的发间...',
     coverImage: '/drama-cover-1.jpg',
+    storageCoverImage: getStorageUrl('dramas/cover-1.jpg'),
     rating: 4.9,
     ratingCount: '2.3k',
     genre: '浪漫',
@@ -59,6 +66,7 @@ const dramaData: DramaItem[] = [
     title: '雨夜咖啡馆',
     description: '一个下雨的夜晚，你们躲进了街角温馨的咖啡馆。窗外的雨滴和屋内的暖光交织...',
     coverImage: '/drama-cover-2.jpg',
+    storageCoverImage: getStorageUrl('dramas/cover-2.jpg'),
     rating: 4.7,
     ratingCount: '1.8k',
     genre: '日常',
@@ -72,6 +80,7 @@ const dramaData: DramaItem[] = [
     title: '星空下的告白',
     description: '湖畔的夏夜，繁星点点。你们并肩坐在草地上，萤火虫在身旁飞舞...',
     coverImage: '/drama-cover-3.jpg',
+    storageCoverImage: getStorageUrl('dramas/cover-3.jpg'),
     rating: 4.8,
     ratingCount: '3.1k',
     genre: '浪漫',
@@ -85,6 +94,7 @@ const dramaData: DramaItem[] = [
     title: '花园茶会',
     description: '维多利亚风格的花园中，一场优雅的茶会正在进行。玫瑰盛开，茶香四溢...',
     coverImage: '/drama-cover-4.jpg',
+    storageCoverImage: getStorageUrl('dramas/cover-4.jpg'),
     rating: 4.5,
     ratingCount: '950',
     genre: '日常',
@@ -98,6 +108,7 @@ const dramaData: DramaItem[] = [
     title: '迷雾庄园',
     description: '一座古老的庄园笼罩在神秘的迷雾中。你们需要携手解开隐藏百年的秘密...',
     coverImage: '/drama-cover-1.jpg',
+    storageCoverImage: getStorageUrl('dramas/cover-5.jpg'),
     rating: 4.6,
     ratingCount: '1.2k',
     genre: '悬疑',
@@ -111,6 +122,7 @@ const dramaData: DramaItem[] = [
     title: '梦境奇旅',
     description: '在奇幻的梦境世界中，你们化身为冒险者。独角兽、水晶城堡、彩虹桥...',
     coverImage: '/drama-cover-3.jpg',
+    storageCoverImage: getStorageUrl('dramas/cover-6.jpg'),
     rating: 4.8,
     ratingCount: '1.5k',
     genre: '奇幻',
@@ -165,10 +177,70 @@ const difficultyColors: Record<string, string> = {
   '困难': 'bg-red-100 text-red-700',
 };
 
+/* ─── Drama Cover Image with Storage fallback ─── */
+function DramaCoverImage({ drama, className }: { drama: DramaItem; className?: string }) {
+  const [src, setSrc] = useState(drama.storageCoverImage);
+  const [failed, setFailed] = useState(false);
+
+  const handleError = () => {
+    if (!failed) {
+      setSrc(drama.coverImage);
+      setFailed(true);
+    }
+  };
+
+  return (
+    <img
+      src={src}
+      alt={drama.title}
+      className={className}
+      onError={handleError}
+    />
+  );
+}
+
+/* ─── Login Banner ─── */
+function AuthBanner() {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      className="mb-6 rounded-xl bg-pink-50 border border-pink-200 p-4 flex items-center gap-4"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Sparkles size={20} className="text-pink-400 flex-shrink-0" />
+      <div className="flex-1">
+        <p className="text-[13px] text-[#6B5B6E] font-body">
+          登录后可以解锁并参与剧情互动。
+        </p>
+      </div>
+      <div className="flex items-center gap-2">
+        <button
+          onClick={() => navigate('/auth')}
+          className="px-4 py-2 rounded-xl text-[13px] font-body font-medium text-pink-500 border border-pink-200 hover:bg-pink-100 transition-all duration-150 flex items-center gap-1.5"
+        >
+          <LogIn size={14} />
+          登录
+        </button>
+        <button
+          onClick={() => navigate('/auth')}
+          className="px-4 py-2 rounded-xl text-[13px] font-body font-medium text-white accent-gradient hover:brightness-110 transition-all duration-150 flex items-center gap-1.5"
+        >
+          <UserPlus size={14} />
+          创建账户
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
 /* ─── Component ─── */
 export default function Drama() {
   const [activeView, setActiveView] = useState<'plaza' | 'my'>('plaza');
   const [activeFilter, setActiveFilter] = useState('全部');
+  const { isAuthenticated } = useAuth();
 
   /* Filtered dramas */
   const filteredDramas = useMemo(() => {
@@ -183,6 +255,13 @@ export default function Drama() {
 
   /* Handle enter drama */
   const handleEnterDrama = (title: string) => {
+    if (!isAuthenticated) {
+      toast('请先登录以参与剧情', {
+        description: '登录后可以解锁并体验剧情',
+        icon: <Sparkles size={16} className="text-pink-400" />,
+      });
+      return;
+    }
     toast('剧情空间即将开启...', {
       description: `正在进入「${title}」的剧情世界`,
       icon: <Sparkles size={16} className="text-pink-400" />,
@@ -267,6 +346,13 @@ export default function Drama() {
         </motion.div>
       </div>
 
+      {/* ── Auth Banner ── */}
+      {!isAuthenticated && (
+        <div className="px-8">
+          <AuthBanner />
+        </div>
+      )}
+
       {/* ── Content ── */}
       <div className="px-8 pb-8">
         <AnimatePresence mode="wait">
@@ -287,9 +373,8 @@ export default function Drama() {
                 transition={{ duration: 0.6 }}
                 onClick={() => handleEnterDrama('樱花树下的约定')}
               >
-                <img
-                  src="/drama-cover-1.jpg"
-                  alt="Featured"
+                <DramaCoverImage
+                  drama={dramaData[0]}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-400 group-hover:scale-[1.03]"
                 />
                 <div
@@ -390,9 +475,8 @@ export default function Drama() {
                             : handleLockedClick(drama.unlockCondition)
                         }
                       >
-                        <img
-                          src={drama.coverImage}
-                          alt={drama.title}
+                        <DramaCoverImage
+                          drama={drama}
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.06]"
                         />
                         {/* Bottom gradient */}

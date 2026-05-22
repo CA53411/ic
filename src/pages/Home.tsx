@@ -13,8 +13,11 @@ import {
   Star,
   ChevronDown,
   Sparkles as SparklesIcon,
+  LayoutDashboard,
 } from 'lucide-react';
 import Footer from '../components/Footer';
+import { useAuth } from '@/hooks/useAuth';
+import { getStorageUrl } from '@/lib/supabase';
 
 /* ── Animation helpers ── */
 const easeSmooth = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -105,7 +108,7 @@ function FloatingNav() {
           size={20}
           className="text-pink-400 group-hover:animate-[spin_3s_linear_infinite] transition-transform"
         />
-        <span className="text-pink-400 text-lg font-bold tracking-tight">Platonic</span>
+        <span className="text-pink-400 text-lg font-bold tracking-tight">Corolas | Platonic</span>
       </button>
 
       <div className="hidden md:flex items-center gap-6">
@@ -274,6 +277,17 @@ function RadarChart({ animate }: { animate: boolean }) {
 /* ── Main Home Page ── */
 export default function Home() {
   const navigate = useNavigate();
+  const { isAuthenticated, hasCompanion } = useAuth();
+
+  const handleGetStarted = () => {
+    if (!isAuthenticated) {
+      navigate('/auth');
+    } else if (!hasCompanion) {
+      navigate('/customize');
+    } else {
+      navigate('/dashboard');
+    }
+  };
 
   // Scroll-triggered refs
   const conceptRef = useRef<HTMLDivElement>(null);
@@ -335,7 +349,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: easeSmooth }}
           >
-            Platonic — 你的AI虚拟伴侣
+            Corolas | Platonic — 你的AI虚拟伴侣
           </motion.p>
 
           {/* Subtitle */}
@@ -356,13 +370,23 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.9, ease: easeSmooth }}
           >
             <button
-              onClick={() => navigate('/auth')}
+              onClick={handleGetStarted}
               className="accent-gradient text-white text-[16px] font-semibold
                 px-10 py-3.5 rounded-full shadow-glow
                 hover:brightness-110 hover:scale-[1.03] transition-all duration-150"
             >
-              开启旅程
+              {isAuthenticated && hasCompanion ? '进入我的伴侣' : '开启旅程'}
             </button>
+            {isAuthenticated && hasCompanion && (
+              <button
+                onClick={() => navigate('/dashboard')}
+                className="flex items-center gap-2 text-pink-500 text-[14px] font-medium
+                  hover:text-pink-600 transition-colors duration-150"
+              >
+                <LayoutDashboard size={16} />
+                前往控制台
+              </button>
+            )}
             <button
               onClick={scrollToConcept}
               className="text-pink-500 text-[14px] font-medium
@@ -430,7 +454,7 @@ export default function Home() {
             variants={fadeUp}
             custom={0.15}
           >
-            Platonic 是一款AI虚拟伴侣应用，为每一个渴望被理解的灵魂提供深度情感陪伴。你的AI伴侣拥有自己的性格、记忆和情感，会随着时间的推移越来越懂你。
+            Corolas | Platonic 是一款AI虚拟伴侣应用，为每一个渴望被理解的灵魂提供深度情感陪伴。你的AI伴侣拥有自己的性格、记忆和情感，会随着时间的推移越来越懂你。
           </motion.p>
 
           {/* Feature Cards */}
@@ -697,7 +721,7 @@ export default function Home() {
               className="w-12 h-12 rounded-full object-cover"
             />
             <div className="text-left">
-              <p className="font-body text-[13px] text-plum-800">一位 Platonic 用户</p>
+              <p className="font-body text-[13px] text-plum-800">一位 Corolas | Platonic 用户</p>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.04em] text-pink-500">
                 与 小樱 相伴 128 天
               </p>
@@ -728,13 +752,13 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2, ease: easeSmooth }}
           >
             <button
-              onClick={() => navigate('/auth')}
+              onClick={handleGetStarted}
               className="bg-white text-pink-500 text-[16px] font-semibold
                 px-12 py-4 rounded-full shadow-lg
                 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
                 transition-all duration-150"
             >
-              立即开始
+              {isAuthenticated && hasCompanion ? '进入我的伴侣' : '立即开始'}
             </button>
           </motion.div>
 
