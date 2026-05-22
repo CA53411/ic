@@ -219,7 +219,7 @@ export default function Payment() {
       const { data: acct } = await supabase
         .from('energy_accounts')
         .select('*')
-        .eq('companion_id', companionId)
+        .eq('user_id', user.id)
         .single();
       if (acct) setEnergy((acct as EnergyAccount).balance);
 

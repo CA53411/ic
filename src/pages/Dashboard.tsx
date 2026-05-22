@@ -1215,11 +1215,11 @@ export default function Dashboard() {
           .select('*')
           .eq('companion_id', companionId)
           .single(),
-        // Energy (linked via companion_id since there's no user_id)
+        // Energy (linked via user_id)
         supabase
           .from('energy_accounts')
           .select('*')
-          .eq('companion_id', companionId)
+          .eq('user_id', user.id)
           .single(),
         // Latest mood
         supabase

@@ -379,22 +379,9 @@ export default function Settings() {
   }
 
   async function loadNotificationSettings() {
-    try {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) return;
-
-      const { data: settings } = await supabase.from('notification_settings')
-        .select('*')
-        .eq('user_id', user.id)
-        .single();
-
-      if (settings) {
-        setNotifProactive(settings.push_enabled ?? true);
-        setNotifEnergy(settings.energy_alert_threshold ? true : false);
-      }
-    } catch (e) {
-      // Use defaults - table may not exist yet
-    }
+    // notification_settings table has no columns yet - use defaults
+    setNotifProactive(true);
+    setNotifEnergy(true);
   }
 
   function loadThemeSettings() {
