@@ -18,6 +18,7 @@ import {
   Sparkles,
   HelpCircle,
   Mail,
+  Clock,
   FileText,
   Shield,
   ChevronDown,
@@ -40,6 +41,12 @@ interface LanguageOption {
   tag?: string;
 }
 
+interface TimezoneOption {
+  value: string;
+  label: string;
+  region: string;
+}
+
 interface ToggleProps {
   label: string;
   description?: string;
@@ -56,6 +63,28 @@ const LANGUAGES: LanguageOption[] = [
   { code: 'en', label: 'English' },
   { code: 'ja', label: '日本語', tag: 'Japanese' },
   { code: 'ko', label: '한국어', tag: 'Korean' },
+];
+
+const TIMEZONES: TimezoneOption[] = [
+  { value: 'Asia/Shanghai', label: '北京时间 (UTC+8)', region: '中国' },
+  { value: 'Asia/Hong_Kong', label: '香港时间 (UTC+8)', region: '香港' },
+  { value: 'Asia/Singapore', label: '新加坡时间 (UTC+8)', region: '新加坡' },
+  { value: 'Asia/Taipei', label: '台北时间 (UTC+8)', region: '台湾' },
+  { value: 'Asia/Tokyo', label: '东京时间 (UTC+9)', region: '日本' },
+  { value: 'Asia/Seoul', label: '首尔时间 (UTC+9)', region: '韩国' },
+  { value: 'Asia/Bangkok', label: '曼谷时间 (UTC+7)', region: '泰国' },
+  { value: 'Asia/Dubai', label: '迪拜时间 (UTC+4)', region: '阿联酋' },
+  { value: 'Europe/London', label: '伦敦时间 (UTC+0/+1)', region: '英国' },
+  { value: 'Europe/Paris', label: '巴黎时间 (UTC+1/+2)', region: '法国' },
+  { value: 'Europe/Berlin', label: '柏林时间 (UTC+1/+2)', region: '德国' },
+  { value: 'Europe/Moscow', label: '莫斯科时间 (UTC+3)', region: '俄罗斯' },
+  { value: 'America/New_York', label: '纽约时间 (UTC-5/-4)', region: '美国东部' },
+  { value: 'America/Los_Angeles', label: '洛杉矶时间 (UTC-8/-7)', region: '美国西部' },
+  { value: 'America/Chicago', label: '芝加哥时间 (UTC-6/-5)', region: '美国中部' },
+  { value: 'America/Toronto', label: '多伦多时间 (UTC-5/-4)', region: '加拿大' },
+  { value: 'Australia/Sydney', label: '悉尼时间 (UTC+10/+11)', region: '澳大利亚' },
+  { value: 'Pacific/Auckland', label: '奥克兰时间 (UTC+12/+13)', region: '新西兰' },
+  { value: 'UTC', label: '协调世界时 (UTC)', region: '全球' },
 ];
 
 const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = [
@@ -296,6 +325,8 @@ function TextContent({ content }: { content: string }) {
 export default function Settings() {
   const navigate = useNavigate();
   const [language, setLanguage] = useState<Language>('zh');
+  const [timezone, setTimezone] = useState('Asia/Shanghai');
+  const [savedTimezone, setSavedTimezone] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('Pink');
   const [accentColor, setAccentColor] = useState('Default Pink');
   const [savedLanguage, setSavedLanguage] = useState(false);
@@ -348,6 +379,7 @@ export default function Settings() {
         if (profile) {
           const savedLang = (profile.language as Language) || localStorage.getItem('language') as Language || 'zh';
           setLanguage(savedLang);
+          setTimezone(profile.timezone || 'Asia/Shanghai');
           setRegisteredAt(profile.created_at
             ? new Date(profile.created_at).toLocaleDateString('zh-CN')
             : '');
@@ -427,6 +459,25 @@ export default function Settings() {
       toast.error('保存失败');
       setSavedLanguage(true);
       setTimeout(() => setSavedLanguage(false), 2000);
+    }
+  };
+
+  const handleTimezoneChange = async (tz: string) => {
+    setTimezone(tz);
+    setSavedTimezone(false);
+  };
+
+  const handleTimezoneSave = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        await supabase.from('profiles').update({ timezone }).eq('id', user.id);
+      }
+      setSavedTimezone(true);
+      toast.success('时区已保存');
+      setTimeout(() => setSavedTimezone(false), 2000);
+    } catch (e) {
+      toast.error('时区保存失败');
     }
   };
 
@@ -665,7 +716,91 @@ export default function Settings() {
           </div>
         </SectionCard>
 
-        {/* ── Section 3: Theme Settings (3-state) ── */}
+        {/* ── Section 3: Timezone Settings ── */}
+        <SectionCard delay={0.12}>
+          <h3 className="font-body text-[22px] font-bold text-plum-900 mb-1">
+            时区设置
+          </h3>
+          <p className="font-body text-[13px] text-muted-plum mb-4">
+            设置你所在的时区，伴侣会根据当地时间与你交流
+          </p>
+
+          <div className="flex flex-col gap-2 mb-5">
+            {TIMEZONES.map((tz, i) => {
+              const isSelected = timezone === tz.value;
+              return (
+                <motion.button
+                  key={tz.value}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.02 }}
+                  onClick={() => handleTimezoneChange(tz.value)}
+                  className={`
+                    flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer
+                    transition-all duration-200 w-full text-left
+                    ${isSelected ? 'bg-pink-50 border border-pink-200' : 'hover:bg-pink-50/50 border border-transparent'}
+                  `}
+                >
+                  <div
+                    className={`
+                      w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-150
+                      ${isSelected ? 'border-pink-400' : 'border-pink-200'}
+                    `}
+                  >
+                    {isSelected && (
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.15 }}
+                        className="w-2.5 h-2.5 rounded-full bg-pink-400"
+                      />
+                    )}
+                  </div>
+
+                  <span className="font-body text-[14px] text-plum-800 flex-1">
+                    {tz.label}
+                  </span>
+
+                  <span className="font-body text-[12px] text-muted-plum">
+                    {tz.region}
+                  </span>
+
+                  {isSelected && (
+                    <motion.div
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <Check size={16} className="text-pink-400" strokeWidth={2.5} />
+                    </motion.div>
+                  )}
+                </motion.button>
+              );
+            })}
+          </div>
+
+          <div className="flex justify-end">
+            <button
+              onClick={handleTimezoneSave}
+              className="
+                px-6 py-2.5 rounded-xl accent-gradient text-white font-body font-semibold
+                transition-all duration-150 hover:brightness-110 hover:shadow-glow active:brightness-95
+                disabled:opacity-50 disabled:cursor-not-allowed
+              "
+            >
+              {savedTimezone ? (
+                <span className="flex items-center gap-1.5">
+                  <Check size={16} strokeWidth={2.5} />
+                  已保存
+                </span>
+              ) : (
+                '保存'
+              )}
+            </button>
+          </div>
+        </SectionCard>
+
+        {/* ── Section 4: Theme Settings (3-state) ── */}
         <SectionCard delay={0.15}>
           <h3 className="font-body text-[22px] font-bold text-plum-900 mb-1">
             主题设置
