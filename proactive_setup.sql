@@ -1,1 +1,92 @@
-LS0g4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQCi0tIFByb2FjdGl2ZSDlip/og73mlbDmja7lupPorr7nva4KLS0g6K+35ZyoIFN1cGFiYXNlIERhc2hib2FyZCDihpIgU1FMIEVkaXRvciDkuK3miafooYwKLS0g4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQCgotLSAxLiDliJvlu7ogcHJvYWN0aXZlX3NjaGVkdWxlIOihqO+8iOeuoeeQhuS8tOS+o+S4u+WKqOa2iOaBr+inpuWPkeaXtumXtO+8iQpDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBwcm9hY3RpdmVfc2NoZWR1bGUgKAogIGlkIHV1aWQgUFJJTUFSWSBLRVkgREVGQVVMVCBnZW5fcmFuZG9tX3V1aWQoKSwKICB1c2VyX2lkIHV1aWQgTk9UIE5VTEwgUkVGRVJFTkNFUyBhdXRoLnVzZXJzKGlkKSBPTiBERUxFVEUgQ0FTQ0FERSwKICBjb21wYW5pb25faWQgdXVpZCBOT1QgTlVMTCBSRUZFUkVOQ0VTIGNvbXBhbmlvbnMoaWQpIE9OIERFTEVURSBDQVNDQURFLAogIG5leHRfdHJpZ2dlcl9hdCB0aW1lc3RhbXB0eiBOT1QgTlVMTCBERUZBVUxUIG5vdygpLAogIGxhc3RfdXNlcl9tZXNzYWdlX2F0IHRpbWVzdGFtcHR6LAogIGxhc3RfdHJpZ2dlcmVkX2F0IHRpbWVzdGFtcHR6LAogIGlzX3RyaWdnZXJlZCBib29sZWFuIE5PVCBOVUxMIERFRkFVTFQgZmFsc2UsCiAgY3JlYXRlZF9hdCB0aW1lc3RhbXB0eiBOT1QgTlVMTCBERUZBVUxUIG5vdygpLAogIHVwZGF0ZWRfYXQgdGltZXN0YW1wdHogTk9UIE5VTEwgREVGQVVMVCBub3coKSwKICBVTklRVUUodXNlcl9pZCwgY29tcGFuaW9uX2lkKQopOwoKLS0gMi4g5Yib5bu657Si5byV77yI5Yqg6YCf6LCD5bqm5Zmo5p+l6K+i77yJCkNSRUFURSBJTkRFWCBJRiBOT1QgRVhJU1RTIGlkeF9wcm9hY3RpdmVfc2NoZWR1bGVfdHJpZ2dlcgogIE9OIHByb2FjdGl2ZV9zY2hlZHVsZShuZXh0X3RyaWdnZXJfYXQpCiAgV0hFUkUgaXNfdHJpZ2dlcmVkID0gZmFsc2U7CgotLSAzLiDliJvlu7ogdXBkYXRlZF9hdCDoh6rliqjmm7TmlrDop6blj5HlmagKQ1JFQVRFIE9SIFJFUExBQ0UgRlVOQ1RJT04gdXBkYXRlX3Byb2FjdGl2ZV9zY2hlZHVsZV91cGRhdGVkX2F0KCkKUkVUVVJOUyBUUklHR0VSIEFTICQkIEJFR0lOCiAgTkVXLnVwZGF0ZWRfYXQgPSBub3coKTsKICBSRVRVUk4gTkVXOwpFTkQ7ICQkIExBTkdVQUdFIHBscGdzcWw7CgpEUk9QIFRSSUdHRVIgSUYgRVhJU1RTIHRyaWdnZXJfcHJvYWN0aXZlX3NjaGVkdWxlX3VwZGF0ZWRfYXQgT04gcHJvYWN0aXZlX3NjaGVkdWxlOwpDUkVBVEUgVFJJR0dFUiB0cmlnZ2VyX3Byb2FjdGl2ZV9zY2hlZHVsZV91cGRhdGVkX2F0CiAgQkVGT1JFIFVQREFURSBPTiBwcm9hY3RpdmVfc2NoZWR1bGUKICBGT1IgRUFDSCBST1cgRVhFQ1VURSBGVU5DVElPTiB1cGRhdGVfcHJvYWN0aXZlX3NjaGVkdWxlX3VwZGF0ZWRfYXQoKTsKCi0tIDQuIOWQr+eUqCBSTFMKQUxURVIgVEFCTEUgcHJvYWN0aXZlX3NjaGVkdWxlIEVOQUJMRSBST1cgTEVWRUwgU0VDVVJJVFk7CgotLSA1LiDliKDpmaTml6fnmoQgY3JvbiDku7vliqHvvIjlpoLmnpzlrZjlnKjvvIkKU0VMRUNUIGNyb24udW5zY2hlZHVsZSgncHJvYWN0aXZlLXNjaGVkdWxlcicpIFdIRVJFIEVYSVNUUyAoCiAgU0VMRUNUIDEgRlJPTSBjcm9uLmpvYiBXSEVSRSBqb2JuYW1lID0gJ3Byb2FjdGl2ZS1zY2hlZHVsZXInCik7CgotLSA2LiDliJvlu7ogcGdfY3JvbiDlrprml7bku7vliqHvvIjmr4/liIbpkp/mo4Dmn6XkuIDmrKHvvIkKLS0g5rOo5oSP77ya6ZyA6KaBIHBnX2Nyb24g5ZKMIHBnX25ldCDmianlsZXlt7LlkK/nlKgKRE8gJCQKREVDTEFSRQogIHN1cGFiYXNlX3VybCB0ZXh0IDo9IGN1cnJlbnRfc2V0dGluZygnYXBwLnNldHRpbmdzLnN1cGFiYXNlX3VybCcsIHRydWUpOwogIHNlcnZpY2Vfa2V5IHRleHQgOj0gY3VycmVudF9zZXR0aW5nKCdhcHAuc2V0dGluZ3Muc2VydmljZV9yb2xlX2tleScsIHRydWUpOwpCRUdJTgogIElGIHN1cGFiYXNlX3VybCBJUyBOVUxMIFRIRU4KICAgIFJBSVNFIE5PVElDRSAnYXBwLnNldHRpbmdzLnN1cGFiYXNlX3VybCBub3Qgc2V0LiBQbGVhc2Ugc2V0IGl0IGluIFN1cGFiYXNlIERhc2hib2FyZCA+IFNldHRpbmdzID4gQVBJLic7CiAgRU5EIElGOwoKICBQRVJGT1JNIGNyb24uc2NoZWR1bGUoCiAgICAncHJvYWN0aXZlLXNjaGVkdWxlcicsCiAgICAnKiAqICogKiAqJywgIC0tIOavj+WIhumSnwogICAgZm9ybWF0KCRTUUwkCiAgICAgIFNFTEVDVCBuZXQuaHR0cF9wb3N0KAogICAgICAgIHVybCA6PSAnJXMvZnVuY3Rpb25zL3YxL3Byb2FjdGl2ZS1zY2hlZHVsZXInLAogICAgICAgIGhlYWRlcnMgOj0ganNvbmJfYnVpbGRfb2JqZWN0KAogICAgICAgICAgJ0F1dGhvcml6YXRpb24nLCAnQmVhcmVyICVzJywKICAgICAgICAgICdDb250ZW50LVR5cGUnLCAnYXBwbGljYXRpb24vanNvbicKICAgICAgICApLAogICAgICAgIGJvZHkgOj0gJ3t9Jzo6anNvbmIKICAgICAgKSBBUyByZXF1ZXN0X2lkOwogICAgJFNRTCQsIHN1cGFiYXNlX3VybCwgc2VydmljZV9rZXkpCiAgKTsKRU5EICQkOwoKLS0g5aaC5p6c5LiK6Z2i55qEIERPIOWdl+WboOS4uuadg+mZkOmXrumimOWksei0pe+8jOivt+eUqOS4i+mdoueahOabv+S7o+aWueahiO+8mgotLSDvvIjpnIDopoHmiYvliqjmm7/mjaIgWU9VUl9TVVBBQkFTRV9VUkwg5ZKMIFlPVVJfU0VSVklDRV9ST0xFX0tFWe+8iQotLSBTRUxFQ1QgY3Jvbi5zY2hlZHVsZSgKLS0gICAncHJvYWN0aXZlLXNjaGVkdWxlcicsCi0tICAgJyogKiAqICogKicsCi0tICAgJCQKLS0gICBTRUxFQ1QgbmV0Lmh0dHBfcG9zdCgKLS0gICAgIHVybCA6PSAnaHR0cHM6Ly9pcXlsY2t3bW15Z3F1dHljcW1sYi5zdXBhYmFzZS5jby9mdW5jdGlvbnMvdjEvcHJvYWN0aXZlLXNjaGVkdWxlcicsCi0tICAgICBoZWFkZXJzIDo9IGpzb25iX2J1aWxkX29iamVjdCgKLS0gICAgICAgJ0F1dGhvcml6YXRpb24nLCAnQmVhcmVyIFlPVVJfU0VSVklDRV9ST0xFX0tFWScsCi0tICAgICAgICdDb250ZW50LVR5cGUnLCAnYXBwbGljYXRpb24vanNvbicKLS0gICAgICksCi0tICAgICBib2R5IDo9ICd7fSc6Ompzb25iCi0tICAgKSBBUyByZXF1ZXN0X2lkOwotLSAgICQkCi0tICk7CgotLSA3LiDpqozor4EgY3JvbiDku7vliqHmmK/lkKbliJvlu7rmiJDlip8KU0VMRUNUIGpvYm5hbWUsIHNjaGVkdWxlLCBhY3RpdmUKRlJPTSBjcm9uLmpvYgpXSEVSRSBqb2JuYW1lID0gJ3Byb2FjdGl2ZS1zY2hlZHVsZXInOwo=
+-- ═══════════════════════════════════════════════════════════
+-- Proactive 功能数据库设置
+-- 请在 Supabase Dashboard → SQL Editor 中执行
+-- ═══════════════════════════════════════════════════════════
+
+-- 1. 创建 proactive_schedule 表（管理伴侣主动消息触发时间）
+CREATE TABLE IF NOT EXISTS proactive_schedule (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  companion_id uuid NOT NULL REFERENCES companions(id) ON DELETE CASCADE,
+  next_trigger_at timestamptz NOT NULL DEFAULT now(),
+  last_user_message_at timestamptz,
+  last_triggered_at timestamptz,
+  is_triggered boolean NOT NULL DEFAULT false,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE(user_id, companion_id)
+);
+
+-- 2. 创建索引（加速调度器查询）
+CREATE INDEX IF NOT EXISTS idx_proactive_schedule_trigger
+  ON proactive_schedule(next_trigger_at)
+  WHERE is_triggered = false;
+
+-- 3. 创建 updated_at 自动更新触发器
+CREATE OR REPLACE FUNCTION update_proactive_schedule_updated_at()
+RETURNS TRIGGER AS $$ BEGIN
+  NEW.updated_at = now();
+  RETURN NEW;
+END; $$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trigger_proactive_schedule_updated_at ON proactive_schedule;
+CREATE TRIGGER trigger_proactive_schedule_updated_at
+  BEFORE UPDATE ON proactive_schedule
+  FOR EACH ROW EXECUTE FUNCTION update_proactive_schedule_updated_at();
+
+-- 4. 启用 RLS
+ALTER TABLE proactive_schedule ENABLE ROW LEVEL SECURITY;
+
+-- 5. 删除旧的 cron 任务（如果存在）
+SELECT cron.unschedule('proactive-scheduler') WHERE EXISTS (
+  SELECT 1 FROM cron.job WHERE jobname = 'proactive-scheduler'
+);
+
+-- 6. 创建 pg_cron 定时任务（每分钟检查一次）
+-- 注意：需要 pg_cron 和 pg_net 扩展已启用
+DO $$
+DECLARE
+  supabase_url text := current_setting('app.settings.supabase_url', true);
+  service_key text := current_setting('app.settings.service_role_key', true);
+BEGIN
+  IF supabase_url IS NULL THEN
+    RAISE NOTICE 'app.settings.supabase_url not set. Please set it in Supabase Dashboard > Settings > API.';
+  END IF;
+
+  PERFORM cron.schedule(
+    'proactive-scheduler',
+    '* * * * *',  -- 每分钟
+    format($SQL$
+      SELECT net.http_post(
+        url := '%s/functions/v1/proactive-scheduler',
+        headers := jsonb_build_object(
+          'Authorization', 'Bearer %s',
+          'Content-Type', 'application/json'
+        ),
+        body := '{}'::jsonb
+      ) AS request_id;
+    $SQL$, supabase_url, service_key)
+  );
+END $$;
+
+-- 如果上面的 DO 块因为权限问题失败，请用下面的替代方案：
+-- （需要手动替换 YOUR_SUPABASE_URL 和 YOUR_SERVICE_ROLE_KEY）
+-- SELECT cron.schedule(
+--   'proactive-scheduler',
+--   '* * * * *',
+--   $$
+--   SELECT net.http_post(
+--     url := 'https://iqylckwmmygqutycqmlb.supabase.co/functions/v1/proactive-scheduler',
+--     headers := jsonb_build_object(
+--       'Authorization', 'Bearer YOUR_SERVICE_ROLE_KEY',
+--       'Content-Type', 'application/json'
+--     ),
+--     body := '{}'::jsonb
+--   ) AS request_id;
+--   $$
+-- );
+
+-- 7. 验证 cron 任务是否创建成功
+SELECT jobname, schedule, active
+FROM cron.job
+WHERE jobname = 'proactive-scheduler';

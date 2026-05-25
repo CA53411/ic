@@ -1,1 +1,177 @@
-LyoqCiAqIEFwcC50c3ggLSBSb290IEFwcGxpY2F0aW9uIENvbXBvbmVudAogKgogKiBXcmFwcyB0aGUgZW50aXJlIGFwcGxpY2F0aW9uIHdpdGggQXV0aFByb3ZpZGVyIGFuZCBkZWZpbmVzIGFsbCByb3V0ZXMuCiAqIEluY2x1ZGVzIHJvdXRlIGd1YXJkcyBmb3IgYXV0aGVudGljYXRlZCBwYWdlcyBhbmQgY29tcGFuaW9uLXJlcXVpcmVkIHBhZ2VzLgogKi8KaW1wb3J0IHsgUm91dGVzLCBSb3V0ZSwgTmF2aWdhdGUgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJwppbXBvcnQgeyBBdXRoUHJvdmlkZXIsIHVzZUF1dGggfSBmcm9tICcuL2NvbnRleHQvQXV0aENvbnRleHQnCmltcG9ydCB7IFRoZW1lUHJvdmlkZXIgfSBmcm9tICcuL2NvbnRleHQvVGhlbWVDb250ZXh0JwppbXBvcnQgeyBJMThuUHJvdmlkZXIgfSBmcm9tICcuL2kxOG4vSTE4bkNvbnRleHQnCmltcG9ydCB7IHVzZUkxOG4gfSBmcm9tICcuL2kxOG4vSTE4bkNvbnRleHQnCmltcG9ydCBMYXlvdXQgZnJvbSAnLi9jb21wb25lbnRzL0xheW91dCcKaW1wb3J0IEhvbWUgZnJvbSAnLi9wYWdlcy9Ib21lJwppbXBvcnQgQXV0aCBmcm9tICcuL3BhZ2VzL0F1dGgnCmltcG9ydCBEYXNoYm9hcmQgZnJvbSAnLi9wYWdlcy9EYXNoYm9hcmQnCmltcG9ydCBQbGF6YSBmcm9tICcuL3BhZ2VzL1BsYXphJwppbXBvcnQgQ3VzdG9taXplIGZyb20gJy4vcGFnZXMvQ3VzdG9taXplJwppbXBvcnQgQ2hhdCBmcm9tICcuL3BhZ2VzL0NoYXQnCmltcG9ydCBNZW1vcnkgZnJvbSAnLi9wYWdlcy9NZW1vcnknCmltcG9ydCBEcmFtYSBmcm9tICcuL3BhZ2VzL0RyYW1hJwppbXBvcnQgRHJhbWFTcGFjZSBmcm9tICcuL3BhZ2VzL0RyYW1hU3BhY2UnCmltcG9ydCBQYXltZW50IGZyb20gJy4vcGFnZXMvUGF5bWVudCcKaW1wb3J0IFNldHRpbmdzIGZyb20gJy4vcGFnZXMvU2V0dGluZ3MnCmltcG9ydCBDcm93ZGZ1bmRpbmcgZnJvbSAnLi9wYWdlcy9Dcm93ZGZ1bmRpbmcnCmltcG9ydCB7IFNwaW5uZXIgfSBmcm9tICcuL2NvbXBvbmVudHMvdWkvc3Bpbm5lcicKCi8qKgogKiBQcm90ZWN0ZWRSb3V0ZSAtIFJlZGlyZWN0cyB1bmF1dGhlbnRpY2F0ZWQgdXNlcnMgdG8gL2F1dGguCiAqIFNob3dzIGEgbG9hZGluZyBzcGlubmVyIHdoaWxlIGF1dGggc3RhdGUgaXMgYmVpbmcgZGV0ZXJtaW5lZC4KICovCmZ1bmN0aW9uIFByb3RlY3RlZFJvdXRlKHsgY2hpbGRyZW4gfTogeyBjaGlsZHJlbjogUmVhY3QuUmVhY3ROb2RlIH0pIHsKICBjb25zdCB7IGlzQXV0aGVudGljYXRlZCwgaXNMb2FkaW5nIH0gPSB1c2VBdXRoKCkKCiAgaWYgKGlzTG9hZGluZykgewogICAgcmV0dXJuICgKICAgICAgPGRpdiBjbGFzc05hbWU9Im1pbi1oLXNjcmVlbiBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBiZy1waW5rLTUwIGRhcms6YmctZ3JheS05MDAiPgogICAgICAgIDxTcGlubmVyIGNsYXNzTmFtZT0idy0xMiBoLTEyIHRleHQtcGluay00MDAiIC8+CiAgICAgIDwvZGl2PgogICAgKQogIH0KCiAgaWYgKCFpc0F1dGhlbnRpY2F0ZWQpIHsKICAgIHJldHVybiA8TmF2aWdhdGUgdG89Ii9hdXRoIiByZXBsYWNlIC8+CiAgfQoKICByZXR1cm4gPD57Y2hpbGRyZW59PC8+Cn0KCi8qKgogKiBDb21wYW5pb25Sb3V0ZSAtIFJlZGlyZWN0cyBhdXRoZW50aWNhdGVkIHVzZXJzIHdpdGhvdXQgYSBjb21wYW5pb24gdG8gL3BsYXphLgogKiBBbHNvIGFjdHMgYXMgYSBwcm90ZWN0ZWQgcm91dGUgKHJlZGlyZWN0cyB1bmF1dGhlbnRpY2F0ZWQgdXNlcnMgdG8gL2F1dGgpLgogKi8KZnVuY3Rpb24gQ29tcGFuaW9uUm91dGUoeyBjaGlsZHJlbiB9OiB7IGNoaWxkcmVuOiBSZWFjdC5SZWFjdE5vZGUgfSkgewogIGNvbnN0IHsgaXNBdXRoZW50aWNhdGVkLCBoYXNDb21wYW5pb24sIGlzTG9hZGluZyB9ID0gdXNlQXV0aCgpCgogIGlmIChpc0xvYWRpbmcpIHsKICAgIHJldHVybiAoCiAgICAgIDxkaXYgY2xhc3NOYW1lPSJtaW4taC1zY3JlZW4gZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgYmctcGluay01MCBkYXJrOmJnLWdyYXktOTAwIj4KICAgICAgICA8U3Bpbm5lciBjbGFzc05hbWU9InctMTIgaC0xMiB0ZXh0LXBpbmstNDAwIiAvPgogICAgICA8L2Rpdj4KICAgICkKICB9CgogIGlmICghaXNBdXRoZW50aWNhdGVkKSB7CiAgICByZXR1cm4gPE5hdmlnYXRlIHRvPSIvYXV0aCIgcmVwbGFjZSAvPgogIH0KCiAgaWYgKCFoYXNDb21wYW5pb24pIHsKICAgIHJldHVybiA8TmF2aWdhdGUgdG89Ii9wbGF6YSIgcmVwbGFjZSAvPgogIH0KCiAgcmV0dXJuIDw+e2NoaWxkcmVufTwvPgp9CgovKiogQXV0aFJvdXRlIC0gUmVkaXJlY3RzIGFscmVhZHkgYXV0aGVudGljYXRlZCB1c2VycyB0byBkYXNoYm9hcmQuICovCmZ1bmN0aW9uIEF1dGhSb3V0ZSh7IGNoaWxkcmVuIH06IHsgY2hpbGRyZW46IFJlYWN0LlJlYWN0Tm9kZSB9KSB7CiAgY29uc3QgeyBpc0F1dGhlbnRpY2F0ZWQsIGlzTG9hZGluZyB9ID0gdXNlQXV0aCgpCgogIGlmIChpc0xvYWRpbmcpIHsKICAgIHJldHVybiAoCiAgICAgIDxkaXYgY2xhc3NOYW1lPSJtaW4taC1zY3JlZW4gZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgYmctcGluay01MCBkYXJrOmJnLWdyYXktOTAwIj4KICAgICAgICA8U3Bpbm5lciBjbGFzc05hbWU9InctMTIgaC0xMiB0ZXh0LXBpbmstNDAwIiAvPgogICAgICA8L2Rpdj4KICAgICkKICB9CgogIGlmIChpc0F1dGhlbnRpY2F0ZWQpIHsKICAgIHJldHVybiA8TmF2aWdhdGUgdG89Ii9kYXNoYm9hcmQiIHJlcGxhY2UgLz4KICB9CgogIHJldHVybiA8PntjaGlsZHJlbn08Lz4KfQoKZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQXBwKCkgewogIHJldHVybiAoCiAgICA8QXV0aFByb3ZpZGVyPgogICAgICA8STE4blByb3ZpZGVyPgogICAgICAgIDxUaGVtZVByb3ZpZGVyPgogICAgICAgICAgPExheW91dD4KICAgICAgICAgICAgPFJvdXRlcz4KICAgICAgICAgIHsvKiBQdWJsaWMgcm91dGVzIC0gYWNjZXNzaWJsZSB3aXRob3V0IGF1dGhlbnRpY2F0aW9uICovfQogICAgICAgICAgPFJvdXRlIHBhdGg9Ii8iIGVsZW1lbnQ9ezxIb21lIC8+fSAvPgogICAgICAgICAgPFJvdXRlIHBhdGg9Ii9hdXRoIiBlbGVtZW50PXs8QXV0aFJvdXRlPjxBdXRoIC8+PC9BdXRoUm91dGU+fSAvPgoKICAgICAgICAgIHsvKiBQcm90ZWN0ZWQgcm91dGVzIC0gcmVxdWlyZSBhdXRoZW50aWNhdGlvbiAqL30KICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvcGxhemEiIGVsZW1lbnQ9ezxQcm90ZWN0ZWRSb3V0ZT48UGxhemEgLz48L1Byb3RlY3RlZFJvdXRlPn0gLz4KICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvY3VzdG9taXplIiBlbGVtZW50PXs8UHJvdGVjdGVkUm91dGU+PEN1c3RvbWl6ZSAvPjwvUHJvdGVjdGVkUm91dGU+fSAvPgogICAgICAgICAgPFJvdXRlIHBhdGg9Ii9zZXR0aW5ncyIgZWxlbWVudD17PFByb3RlY3RlZFJvdXRlPjxTZXR0aW5ncyAvPjwvUHJvdGVjdGVkUm91dGU+fSAvPgogICAgICAgICAgPFJvdXRlIHBhdGg9Ii9wYXltZW50IiBlbGVtZW50PXs8UHJvdGVjdGVkUm91dGU+PFBheW1lbnQgLz48L1Byb3RlY3RlZFJvdXRlPn0gLz4KICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvY3Jvd2RmdW5kaW5nIiBlbGVtZW50PXs8UHJvdGVjdGVkUm91dGU+PENyb3dkZnVuZGluZyAvPjwvUHJvdGVjdGVkUm91dGU+fSAvPgoKICAgICAgICAgIHsvKiBDb21wYW5pb24gcm91dGVzIC0gcmVxdWlyZSBib3RoIGF1dGhlbnRpY2F0aW9uIEFORCBhIGNvbXBhbmlvbiAqL30KICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvZGFzaGJvYXJkIiBlbGVtZW50PXs8Q29tcGFuaW9uUm91dGU+PERhc2hib2FyZCAvPjwvQ29tcGFuaW9uUm91dGU+fSAvPgogICAgICAgICAgPFJvdXRlIHBhdGg9Ii9jaGF0IiBlbGVtZW50PXs8Q29tcGFuaW9uUm91dGU+PENoYXQgLz48L0NvbXBhbmlvblJvdXRlPn0gLz4KICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvbWVtb3J5IiBlbGVtZW50PXs8Q29tcGFuaW9uUm91dGU+PE1lbW9yeSAvPjwvQ29tcGFuaW9uUm91dGU+fSAvPgogICAgICAgICAgPFJvdXRlIHBhdGg9Ii9kcmFtYSIgZWxlbWVudD17PENvbXBhbmlvblJvdXRlPjxEcmFtYSAvPjwvQ29tcGFuaW9uUm91dGU+fSAvPgogICAgICAgICAgPFJvdXRlIHBhdGg9Ii9kcmFtYS1zcGFjZS86c2Vzc2lvbklkIiBlbGVtZW50PXs8Q29tcGFuaW9uUm91dGU+PERyYW1hU3BhY2UgLz48L0NvbXBhbmlvblJvdXRlPn0gLz4KCiAgICAgICAgICB7LyogTGVnYWwgcGFnZXMgKi99CiAgICAgICAgICA8Um91dGUgcGF0aD0iL3ByaXZhY3kiIGVsZW1lbnQ9ezxQcml2YWN5UGFnZSAvPn0gLz4KICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvdGVybXMiIGVsZW1lbnQ9ezxUZXJtc1BhZ2UgLz59IC8+CgogICAgICAgICAgey8qIEZhbGxiYWNrOiByZWRpcmVjdCB1bmtub3duIHJvdXRlcyB0byBob21lICovfQogICAgICAgICAgPFJvdXRlIHBhdGg9IioiIGVsZW1lbnQ9ezxOYXZpZ2F0ZSB0bz0iLyIgcmVwbGFjZSAvPn0gLz4KICAgICAgICA8L1JvdXRlcz4KICAgICAgICAgIDwvTGF5b3V0PgogICAgICAgIDwvVGhlbWVQcm92aWRlcj4KICAgICAgPC9JMThuUHJvdmlkZXI+CiAgICA8L0F1dGhQcm92aWRlcj4KICApCn0KCi8qKiBTaW1wbGUgUHJpdmFjeSBQb2xpY3kgcGxhY2Vob2xkZXIgcGFnZSAqLwpmdW5jdGlvbiBQcml2YWN5UGFnZSgpIHsKICBjb25zdCB7IHQgfSA9IHVzZUkxOG4oKTsKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9InAtOCBtYXgtdy1bODAwcHhdIG14LWF1dG8iPgogICAgICA8aDEgY2xhc3NOYW1lPSJmb250LWJvZHkgdGV4dC1bMjhweF0gZm9udC1ib2xkIHRleHQtWyMyRDFCMkVdIGRhcms6dGV4dC13aGl0ZSBtYi00Ij57dCgnc2V0dGluZ3MucHJpdmFjeScpfTwvaDE+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJzcGFjZS15LTQgdGV4dC1bMTRweF0gdGV4dC1bIzZCNUI2RV0gZGFyazp0ZXh0LWdyYXktMzAwIGZvbnQtYm9keSBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgIDxwPnt0KCdzZXR0aW5ncy51cGRhdGVkJyl9PC9wPgogICAgICAgIDxoMiBjbGFzc05hbWU9ImZvbnQtc2VtaWJvbGQgdGV4dC1bIzJEMUIyRV0gZGFyazp0ZXh0LXdoaXRlIG10LTQiPjEuIHt0KCdzZXR0aW5ncy5kYXRhQ29sbGVjdGlvbicpIHx8ICdEYXRhIENvbGxlY3Rpb24nfTwvaDI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLmRhdGFDb2xsZWN0aW9uRGVzYycpIHx8ICdXZSBvbmx5IGNvbGxlY3QgdGhlIG1pbmltdW0gaW5mb3JtYXRpb24gbmVjZXNzYXJ5IHRvIHByb3ZpZGUgdGhlIHNlcnZpY2UsIGluY2x1ZGluZzogYWNjb3VudCBpbmZvIChlbWFpbCwgdXNlcm5hbWUpLCBjb21wYW5pb24gY29uZmlndXJhdGlvbiwgY29udmVyc2F0aW9uIHJlY29yZHMsIGFuZCB1c2FnZSBzdGF0aXN0aWNzLid9PC9wPgogICAgICAgIDxoMiBjbGFzc05hbWU9ImZvbnQtc2VtaWJvbGQgdGV4dC1bIzJEMUIyRV0gZGFyazp0ZXh0LXdoaXRlIG10LTQiPjIuIHt0KCdzZXR0aW5ncy5kYXRhU3RvcmFnZScpIHx8ICdEYXRhIFN0b3JhZ2UnfTwvaDI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLmRhdGFTdG9yYWdlRGVzYycpIHx8ICdZb3VyIGNvbnZlcnNhdGlvbiBkYXRhIGlzIHN0b3JlZCBvbiBzZWN1cmUgY2xvdWQgc2VydmVycy4gU2Vuc2l0aXZlIGluZm9ybWF0aW9uIGlzIGVuY3J5cHRlZC4gWW91IGNhbiBleHBvcnQgb3IgZGVsZXRlIHlvdXIgZGF0YSBhdCBhbnkgdGltZS4nfTwvcD4KICAgICAgICA8aDIgY2xhc3NOYW1lPSJmb250LXNlbWlib2xkIHRleHQtWyMyRDFCMkVdIGRhcms6dGV4dC13aGl0ZSBtdC00Ij4zLiB7dCgnc2V0dGluZ3MuZGF0YVVzYWdlJykgfHwgJ0RhdGEgVXNhZ2UnfTwvaDI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLmRhdGFVc2FnZURlc2MnKSB8fCAnV2UgZG8gbm90IHNlbGwgeW91ciBwZXJzb25hbCBkYXRhIHRvIHRoaXJkIHBhcnRpZXMuIFdlIGRvIG5vdCB1c2UgeW91ciBjb252ZXJzYXRpb24gY29udGVudCB0byB0cmFpbiBBSSBtb2RlbHMgKHVubGVzcyB5b3UgZXhwbGljaXRseSBjb25zZW50KS4gRGF0YSBpcyBvbmx5IHVzZWQgZm9yIHByb3ZpZGluZyBzZXJ2aWNlcyBhbmQgdGVjaG5pY2FsIHN1cHBvcnQuJ308L3A+CiAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LVsjMkQxQjJFXSBkYXJrOnRleHQtd2hpdGUgbXQtNCI+NC4ge3QoJ3NldHRpbmdzLnlvdXJSaWdodHMnKSB8fCAnWW91ciBSaWdodHMnfTwvaDI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLnlvdXJSaWdodHNEZXNjJykgfHwgJ1lvdSBoYXZlIHRoZSByaWdodCB0byBhY2Nlc3MsIGNvcnJlY3QsIGRlbGV0ZSwgYW5kIGV4cG9ydCB5b3VyIGRhdGEuJ308L3A+CiAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LVsjMkQxQjJFXSBkYXJrOnRleHQtd2hpdGUgbXQtNCI+NS4ge3QoJ3NldHRpbmdzLmNvbnRhY3QnKSB8fCAnQ29udGFjdCd9PC9oMj4KICAgICAgICA8cD57dCgnc2V0dGluZ3MuY29udGFjdERlc2MnKSB8fCAnRm9yIHByaXZhY3ktcmVsYXRlZCBxdWVzdGlvbnMsIHBsZWFzZSBjb250YWN0J306IGNvcm9sYXJAY29yb2xhcy50b3A8L3A+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKQp9CgovKiogU2ltcGxlIFRlcm1zIG9mIFNlcnZpY2UgcGxhY2Vob2xkZXIgcGFnZSAqLwpmdW5jdGlvbiBUZXJtc1BhZ2UoKSB7CiAgY29uc3QgeyB0IH0gPSB1c2VJMThuKCk7CiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJwLTggbWF4LXctWzgwMHB4XSBteC1hdXRvIj4KICAgICAgPGgxIGNsYXNzTmFtZT0iZm9udC1ib2R5IHRleHQtWzI4cHhdIGZvbnQtYm9sZCB0ZXh0LVsjMkQxQjJFXSBkYXJrOnRleHQtd2hpdGUgbWItNCI+e3QoJ3NldHRpbmdzLnRlcm1zJyl9PC9oMT4KICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktNCB0ZXh0LVsxNHB4XSB0ZXh0LVsjNkI1QjZFXSBkYXJrOnRleHQtZ3JheS0zMDAgZm9udC1ib2R5IGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLnVwZGF0ZWQnKX08L3A+CiAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LVsjMkQxQjJFXSBkYXJrOnRleHQtd2hpdGUgbXQtNCI+MS4ge3QoJ3NldHRpbmdzLnNlcnZpY2VEZXNjJykgfHwgJ1NlcnZpY2UgRGVzY3JpcHRpb24nfTwvaDI+CiAgICAgICAgPHA+Q29yb2xhcyB8IFBsYXRvbmljIHt0KCdzZXR0aW5ncy5zZXJ2aWNlRGVzY0RldGFpbCcpIHx8ICdpcyBhbiBBSSB2aXJ0dWFsIGNvbXBhbmlvbiBhcHAgZGVzaWduZWQgdG8gcHJvdmlkZSBlbW90aW9uYWwgY29tcGFuaW9uc2hpcCBhbmQgaW50ZXJhY3RpdmUgZXhwZXJpZW5jZXMuJ308L3A+CiAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LVsjMkQxQjJFXSBkYXJrOnRleHQtd2hpdGUgbXQtNCI+Mi4ge3QoJ3NldHRpbmdzLnVzYWdlUnVsZXMnKSB8fCAnVXNhZ2UgUnVsZXMnfTwvaDI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLnVzYWdlUnVsZXNEZXNjJykgfHwgJ1VzZXJzIG11c3QgYmUgYXQgbGVhc3QgMTMgeWVhcnMgb2xkLiBVc2UgZm9yIGlsbGVnYWwsIGZyYXVkdWxlbnQsIG9yIGhhcmFzc21lbnQgcHVycG9zZXMgaXMgcHJvaGliaXRlZC4gUmV2ZXJzZSBlbmdpbmVlcmluZyBvciBpbnRlcmZlcmluZyB3aXRoIG5vcm1hbCBzZXJ2aWNlIG9wZXJhdGlvbiBpcyBwcm9oaWJpdGVkLiBVc2VycyBhcmUgcmVzcG9uc2libGUgZm9yIHRoZWlyIGFjY291bnQgYmVoYXZpb3IuJ308L3A+CiAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCB0ZXh0LVsjMkQxQjJFXSBkYXJrOnRleHQtd2hpdGUgbXQtNCI+My4ge3QoJ3NldHRpbmdzLmNvbnRlbnRQb2xpY3knKSB8fCAnQ29udGVudCBQb2xpY3knfTwvaDI+CiAgICAgICAgPHA+e3QoJ3NldHRpbmdzLmNvbnRlbnRQb2xpY3lEZXNjJykgfHwgJ0dlbmVyYXRpbmcgb3IgZGlzdHJpYnV0aW5nIGlsbGVnYWwsIHZpb2xlbnQsIG9yIGhhdGVmdWwgc3BlZWNoIGlzIHByb2hpYml0ZWQuIFVwbG9hZGluZyBjb250ZW50IHRoYXQgaW5mcmluZ2VzIG9uIG90aGVycyBpbnRlbGxlY3R1YWwgcHJvcGVydHkgcmlnaHRzIGlzIHByb2hpYml0ZWQuIFdlIHJlc2VydmUgdGhlIHJpZ2h0IHRvIHJlbW92ZSB2aW9sYXRpbmcgY29udGVudC4nfTwvcD4KICAgICAgICA8aDIgY2xhc3NOYW1lPSJmb250LXNlbWlib2xkIHRleHQtWyMyRDFCMkVdIGRhcms6dGV4dC13aGl0ZSBtdC00Ij40LiB7dCgnc2V0dGluZ3MuZGlzY2xhaW1lcicpIHx8ICdEaXNjbGFpbWVyJ308L2gyPgogICAgICAgIDxwPnt0KCdzZXR0aW5ncy5kaXNjbGFpbWVyRGVzYycpIHx8ICdBSSBjb21wYW5pb24gcmVzcG9uc2VzIGFyZSBnZW5lcmF0ZWQgYnkgYWxnb3JpdGhtcyBhbmQgZG8gbm90IGNvbnN0aXR1dGUgcHJvZmVzc2lvbmFsIGFkdmljZS4gVGhlIHNlcnZpY2UgaXMgcHJvdmlkZWQgImFzIGlzIiB3aXRob3V0IGFueSBleHByZXNzIG9yIGltcGxpZWQgd2FycmFudGllcy4nfTwvcD4KICAgICAgICA8aDIgY2xhc3NOYW1lPSJmb250LXNlbWlib2xkIHRleHQtWyMyRDFCMkVdIGRhcms6dGV4dC13aGl0ZSBtdC00Ij41LiB7dCgnc2V0dGluZ3MuY29udGFjdCcpIHx8ICdDb250YWN0IFVzJ308L2gyPgogICAgICAgIDxwPnt0KCdzZXR0aW5ncy5jb250YWN0RGVzYycpIHx8ICdGb3IgYW55IHF1ZXN0aW9ucywgcGxlYXNlIGNvbnRhY3QnfTogY29yb2xhckBjb3JvbGFzLnRvcDwvcD4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICApCn0K
+/**
+ * App.tsx - Root Application Component
+ *
+ * Wraps the entire application with AuthProvider and defines all routes.
+ * Includes route guards for authenticated pages and companion-required pages.
+ */
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider, useAuth } from './context/AuthContext'
+import { ThemeProvider } from './context/ThemeContext'
+import { I18nProvider } from './i18n/I18nContext'
+import { useI18n } from './i18n/I18nContext'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Auth from './pages/Auth'
+import Dashboard from './pages/Dashboard'
+import Plaza from './pages/Plaza'
+import Customize from './pages/Customize'
+import Chat from './pages/Chat'
+import Memory from './pages/Memory'
+import Drama from './pages/Drama'
+import DramaSpace from './pages/DramaSpace'
+import Payment from './pages/Payment'
+import Settings from './pages/Settings'
+import Crowdfunding from './pages/Crowdfunding'
+import { Spinner } from './components/ui/spinner'
+
+/**
+ * ProtectedRoute - Redirects unauthenticated users to /auth.
+ * Shows a loading spinner while auth state is being determined.
+ */
+function ProtectedRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated, isLoading } = useAuth()
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-pink-50 dark:bg-gray-900">
+        <Spinner className="w-12 h-12 text-pink-400" />
+      </div>
+    )
+  }
+
+  if (!isAuthenticated) {
+    return <Navigate to="/auth" replace />
+  }
+
+  return <>{children}</>
+}
+
+/**
+ * CompanionRoute - Redirects authenticated users without a companion to /plaza.
+ * Also acts as a protected route (redirects unauthenticated users to /auth).
+ */
+function CompanionRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated, hasCompanion, isLoading } = useAuth()
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-pink-50 dark:bg-gray-900">
+        <Spinner className="w-12 h-12 text-pink-400" />
+      </div>
+    )
+  }
+
+  if (!isAuthenticated) {
+    return <Navigate to="/auth" replace />
+  }
+
+  if (!hasCompanion) {
+    return <Navigate to="/plaza" replace />
+  }
+
+  return <>{children}</>
+}
+
+/** AuthRoute - Redirects already authenticated users to dashboard. */
+function AuthRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated, isLoading } = useAuth()
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-pink-50 dark:bg-gray-900">
+        <Spinner className="w-12 h-12 text-pink-400" />
+      </div>
+    )
+  }
+
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />
+  }
+
+  return <>{children}</>
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <I18nProvider>
+        <ThemeProvider>
+          <Layout>
+            <Routes>
+          {/* Public routes - accessible without authentication */}
+          <Route path="/" element={<Home />} />
+          <Route path="/auth" element={<AuthRoute><Auth /></AuthRoute>} />
+
+          {/* Protected routes - require authentication */}
+          <Route path="/plaza" element={<ProtectedRoute><Plaza /></ProtectedRoute>} />
+          <Route path="/customize" element={<ProtectedRoute><Customize /></ProtectedRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+          <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+          <Route path="/crowdfunding" element={<ProtectedRoute><Crowdfunding /></ProtectedRoute>} />
+
+          {/* Companion routes - require both authentication AND a companion */}
+          <Route path="/dashboard" element={<CompanionRoute><Dashboard /></CompanionRoute>} />
+          <Route path="/chat" element={<CompanionRoute><Chat /></CompanionRoute>} />
+          <Route path="/memory" element={<CompanionRoute><Memory /></CompanionRoute>} />
+          <Route path="/drama" element={<CompanionRoute><Drama /></CompanionRoute>} />
+          <Route path="/drama-space/:sessionId" element={<CompanionRoute><DramaSpace /></CompanionRoute>} />
+
+          {/* Legal pages */}
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+
+          {/* Fallback: redirect unknown routes to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+          </Layout>
+        </ThemeProvider>
+      </I18nProvider>
+    </AuthProvider>
+  )
+}
+
+/** Simple Privacy Policy placeholder page */
+function PrivacyPage() {
+  const { t } = useI18n();
+  return (
+    <div className="p-8 max-w-[800px] mx-auto">
+      <h1 className="font-body text-[28px] font-bold text-[#2D1B2E] dark:text-white mb-4">{t('settings.privacy')}</h1>
+      <div className="space-y-4 text-[14px] text-[#6B5B6E] dark:text-gray-300 font-body leading-relaxed">
+        <p>{t('settings.updated')}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">1. {t('settings.dataCollection') || 'Data Collection'}</h2>
+        <p>{t('settings.dataCollectionDesc') || 'We only collect the minimum information necessary to provide the service, including: account info (email, username), companion configuration, conversation records, and usage statistics.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">2. {t('settings.dataStorage') || 'Data Storage'}</h2>
+        <p>{t('settings.dataStorageDesc') || 'Your conversation data is stored on secure cloud servers. Sensitive information is encrypted. You can export or delete your data at any time.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">3. {t('settings.dataUsage') || 'Data Usage'}</h2>
+        <p>{t('settings.dataUsageDesc') || 'We do not sell your personal data to third parties. We do not use your conversation content to train AI models (unless you explicitly consent). Data is only used for providing services and technical support.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">4. {t('settings.yourRights') || 'Your Rights'}</h2>
+        <p>{t('settings.yourRightsDesc') || 'You have the right to access, correct, delete, and export your data.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">5. {t('settings.contact') || 'Contact'}</h2>
+        <p>{t('settings.contactDesc') || 'For privacy-related questions, please contact'}: corolar@corolas.top</p>
+      </div>
+    </div>
+  )
+}
+
+/** Simple Terms of Service placeholder page */
+function TermsPage() {
+  const { t } = useI18n();
+  return (
+    <div className="p-8 max-w-[800px] mx-auto">
+      <h1 className="font-body text-[28px] font-bold text-[#2D1B2E] dark:text-white mb-4">{t('settings.terms')}</h1>
+      <div className="space-y-4 text-[14px] text-[#6B5B6E] dark:text-gray-300 font-body leading-relaxed">
+        <p>{t('settings.updated')}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">1. {t('settings.serviceDesc') || 'Service Description'}</h2>
+        <p>Corolas | Platonic {t('settings.serviceDescDetail') || 'is an AI virtual companion app designed to provide emotional companionship and interactive experiences.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">2. {t('settings.usageRules') || 'Usage Rules'}</h2>
+        <p>{t('settings.usageRulesDesc') || 'Users must be at least 13 years old. Use for illegal, fraudulent, or harassment purposes is prohibited. Reverse engineering or interfering with normal service operation is prohibited. Users are responsible for their account behavior.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">3. {t('settings.contentPolicy') || 'Content Policy'}</h2>
+        <p>{t('settings.contentPolicyDesc') || 'Generating or distributing illegal, violent, or hateful speech is prohibited. Uploading content that infringes on others intellectual property rights is prohibited. We reserve the right to remove violating content.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">4. {t('settings.disclaimer') || 'Disclaimer'}</h2>
+        <p>{t('settings.disclaimerDesc') || 'AI companion responses are generated by algorithms and do not constitute professional advice. The service is provided "as is" without any express or implied warranties.'}</p>
+        <h2 className="font-semibold text-[#2D1B2E] dark:text-white mt-4">5. {t('settings.contact') || 'Contact Us'}</h2>
+        <p>{t('settings.contactDesc') || 'For any questions, please contact'}: corolar@corolas.top</p>
+      </div>
+    </div>
+  )
+}

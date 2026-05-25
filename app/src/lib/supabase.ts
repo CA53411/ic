@@ -1,1 +1,41 @@
-aW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnQHN1cGFiYXNlL3N1cGFiYXNlLWpzJwoKLy8gU3VwYWJhc2UgcHJvamVjdCBjb25maWd1cmF0aW9uCmNvbnN0IFNVUEFCQVNFX1VSTCA9ICdodHRwczovL2lxeWxja3dtbXlncXV0eWNxbWxiLnN1cGFiYXNlLmNvJwpjb25zdCBTVVBBQkFTRV9LRVkgPSAnZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKemRYQmhZbUZ6WlNJc0luSmxaaUk2SW1seGVXeGphM2R0YlhsbmNYVjBlV054Yld4aUlpd2ljbTlzWlNJNkltRnViMjRpTENKcFlYUWlPakUzTnpjeU1UazBNVFVzSW1WNGNDSTZNakE1TWpjNU5UUXhOWDAuTGR4UlA2TDFIUVFhUWJ4amVnbUtMYTBJRWFYR2FqWFEwbVN2ZjB6Rm84bycKCi8vIEZhbGxiYWNrIHRvIGVudmlyb25tZW50IHZhcmlhYmxlcyBpZiBzZXQgKGZvciBkZXZlbG9wbWVudCkKY29uc3Qgc3VwYWJhc2VVcmwgPSAoaW1wb3J0Lm1ldGEuZW52LlZJVEVfU1VQQUJBU0VfVVJMIGFzIHN0cmluZykgfHwgU1VQQUJBU0VfVVJMCmNvbnN0IHN1cGFiYXNlS2V5ID0gKGltcG9ydC5tZXRhLmVudi5WSVRFX1NVUEFCQVNFX1BVQkxJU0hBQkxFX0tFWSBhcyBzdHJpbmcpIHx8IFNVUEFCQVNFX0tFWQoKZXhwb3J0IGNvbnN0IHN1cGFiYXNlID0gY3JlYXRlQ2xpZW50KHN1cGFiYXNlVXJsLCBzdXBhYmFzZUtleSkKCi8qKiBTdG9yYWdlIGJ1Y2tldCBuYW1lIGZvciBDb3JvbGFzIHwgUGxhdG9uaWMgYXNzZXRzICovCmV4cG9ydCBjb25zdCBTVE9SQUdFX0JVQ0tFVCA9ICdwbGF0b25pYy1hc3NldHMnCgovKioKICogR2V0IGEgcHVibGljIFVSTCBmb3IgYSBmaWxlIHN0b3JlZCBpbiB0aGUgQ29yb2xhcyB8IFBsYXRvbmljIHN0b3JhZ2UgYnVja2V0LgogKiBAcGFyYW0gcGF0aCAtIFRoZSBmaWxlIHBhdGggd2l0aGluIHRoZSBidWNrZXQgKGUuZy4gJ2F2YXRhcnMvdXNlcjEucG5nJykKICogQHJldHVybnMgRnVsbCBwdWJsaWMgVVJMIHRvIHRoZSBmaWxlCiAqLwpleHBvcnQgZnVuY3Rpb24gZ2V0U3RvcmFnZVVybChwYXRoOiBzdHJpbmcpOiBzdHJpbmcgewogIHJldHVybiBgJHtzdXBhYmFzZVVybH0vc3RvcmFnZS92MS9vYmplY3QvcHVibGljLyR7U1RPUkFHRV9CVUNLRVR9LyR7cGF0aH1gCn0KCi8vIEVkZ2UgRnVuY3Rpb25zIGJhc2UgVVJMCmV4cG9ydCBjb25zdCBFREdFX0ZVTkNUSU9OU19VUkwgPSBgJHtzdXBhYmFzZVVybH0vZnVuY3Rpb25zL3YxYAoKLy8gSGVscGVyIGZvciBhdXRoZW50aWNhdGVkIGZldGNoCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBmZXRjaEVkZ2VGdW5jdGlvbihwYXRoOiBzdHJpbmcsIG9wdGlvbnM6IFJlcXVlc3RJbml0ID0ge30pIHsKICBjb25zdCB7IGRhdGE6IHsgc2Vzc2lvbiB9IH0gPSBhd2FpdCBzdXBhYmFzZS5hdXRoLmdldFNlc3Npb24oKQogIGNvbnN0IHRva2VuID0gc2Vzc2lvbj8uYWNjZXNzX3Rva2VuCgogIHJldHVybiBmZXRjaChgJHtFREdFX0ZVTkNUSU9OU19VUkx9LyR7cGF0aH1gLCB7CiAgICAuLi5vcHRpb25zLAogICAgaGVhZGVyczogewogICAgICAuLi5vcHRpb25zLmhlYWRlcnMsCiAgICAgICdBdXRob3JpemF0aW9uJzogdG9rZW4gPyBgQmVhcmVyICR7dG9rZW59YCA6ICcnLAogICAgICAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nLAogICAgfSwKICB9KQp9Cg==
+import { createClient } from '@supabase/supabase-js'
+
+// Supabase project configuration
+const SUPABASE_URL = 'https://iqylckwmmygqutycqmlb.supabase.co'
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxeWxja3dtbXlncXV0eWNxbWxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyMTk0MTUsImV4cCI6MjA5Mjc5NTQxNX0.LdxRP6L1HQQaQbxjegmKLa0IEaXGajXQ0mSvf0zFo8o'
+
+// Fallback to environment variables if set (for development)
+const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL as string) || SUPABASE_URL
+const supabaseKey = (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string) || SUPABASE_KEY
+
+export const supabase = createClient(supabaseUrl, supabaseKey)
+
+/** Storage bucket name for Corolas | Platonic assets */
+export const STORAGE_BUCKET = 'platonic-assets'
+
+/**
+ * Get a public URL for a file stored in the Corolas | Platonic storage bucket.
+ * @param path - The file path within the bucket (e.g. 'avatars/user1.png')
+ * @returns Full public URL to the file
+ */
+export function getStorageUrl(path: string): string {
+  return `${supabaseUrl}/storage/v1/object/public/${STORAGE_BUCKET}/${path}`
+}
+
+// Edge Functions base URL
+export const EDGE_FUNCTIONS_URL = `${supabaseUrl}/functions/v1`
+
+// Helper for authenticated fetch
+export async function fetchEdgeFunction(path: string, options: RequestInit = {}) {
+  const { data: { session } } = await supabase.auth.getSession()
+  const token = session?.access_token
+
+  return fetch(`${EDGE_FUNCTIONS_URL}/${path}`, {
+    ...options,
+    headers: {
+      ...options.headers,
+      'Authorization': token ? `Bearer ${token}` : '',
+      'Content-Type': 'application/json',
+    },
+  })
+}

@@ -1,1 +1,137 @@
-LyoqCiAqIGFjaGlldmVtZW50LWNoZWNrIEVkZ2UgRnVuY3Rpb24g4oCUIEFjaGlldmVtZW50IGRldGVjdGlvbiBlbmdpbmUKICogQ2hlY2tzIHVzZXIgYWN0aW9ucyBhZ2FpbnN0IGFjaGlldmVtZW50IGRlZmluaXRpb25zIGFuZCB1bmxvY2tzIGFjaGlldmVtZW50cy4KICogQ2FsbGVkIGJ5IGNoYXQtc3RyZWFtLCBtaWxlc3RvbmUtYWRqdXN0LCBhbmQgb3RoZXIgZnVuY3Rpb25zLgogKi8KCmNvbnN0IGNvcnNIZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0gewogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW4nOiAnaHR0cHM6Ly9wbGF0b25pYy5jb3JvbGFzLnRvcCcsCiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LUhlYWRlcnMnOiAnYXV0aG9yaXphdGlvbiwgeC1jbGllbnQtaW5mbywgYXBpa2V5LCBjb250ZW50LXR5cGUnLAogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzJzogJ1BPU1QsIE9QVElPTlMnLAp9OwoKaW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnbnBtOkBzdXBhYmFzZS9zdXBhYmFzZS1qc0AyLjM5LjAnOwoKZnVuY3Rpb24gZ2V0U3VwYWJhc2UoKSB7CiAgY29uc3QgdXJsID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9VUkwnKSE7CiAgY29uc3Qga2V5ID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9TRVJWSUNFX1JPTEVfS0VZJykhOwogIHJldHVybiBjcmVhdGVDbGllbnQodXJsLCBrZXksIHsgYXV0aDogeyBwZXJzaXN0U2Vzc2lvbjogZmFsc2UgfSB9KTsKfQoKaW50ZXJmYWNlIEFjaGlldmVtZW50RGVmIHsKICBpZDogc3RyaW5nOwogIG5hbWU6IHN0cmluZzsKICB0cmlnZ2VyX3R5cGU6IHN0cmluZzsKICB0cmlnZ2VyX3RhcmdldDogc3RyaW5nOwogIHRyaWdnZXJfdmFsdWU6IG51bWJlcjsKICByZXdhcmRfdHlwZTogc3RyaW5nIHwgbnVsbDsKICByZXdhcmRfYW1vdW50OiBudW1iZXIgfCBudWxsOwp9CgovLyDilIDilIAgQ2hlY2sgYW5kIHVubG9jayBhY2hpZXZlbWVudHMg4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGNoZWNrQWNoaWV2ZW1lbnRzKAogIHN1cGFiYXNlOiBhbnksCiAgdXNlcklkOiBzdHJpbmcsCiAgZXZlbnRUeXBlOiBzdHJpbmcsCiAgZXZlbnRUYXJnZXQ6IHN0cmluZywKICBldmVudFZhbHVlOiBudW1iZXIgPSAxLAopOiBQcm9taXNlPHsgdW5sb2NrZWQ6IHN0cmluZ1tdOyBlcnJvcnM6IHN0cmluZ1tdIH0+IHsKICBjb25zdCB1bmxvY2tlZDogc3RyaW5nW10gPSBbXTsKICBjb25zdCBlcnJvcnM6IHN0cmluZ1tdID0gW107CgogIC8vIEdldCBhbGwgYWN0aXZlIGFjaGlldmVtZW50IGRlZmluaXRpb25zIG1hdGNoaW5nIHRoaXMgZXZlbnQKICBjb25zdCB7IGRhdGE6IGRlZnMsIGVycm9yOiBkZWZFcnIgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAuZnJvbSgnYWNoaWV2ZW1lbnRfZGVmaW5pdGlvbnMnKQogICAgLnNlbGVjdCgnaWQsIG5hbWUsIHRyaWdnZXJfdHlwZSwgdHJpZ2dlcl90YXJnZXQsIHRyaWdnZXJfdmFsdWUsIHJld2FyZF90eXBlLCByZXdhcmRfYW1vdW50JykKICAgIC5lcSgnaXNfYWN0aXZlJywgdHJ1ZSk7CgogIGlmIChkZWZFcnIgfHwgIWRlZnMpIHsKICAgIHJldHVybiB7IHVubG9ja2VkOiBbXSwgZXJyb3JzOiBbZGVmRXJyPy5tZXNzYWdlIHx8ICdObyBkZWZpbml0aW9ucyddIH07CiAgfQoKICAvLyBGaWx0ZXIgbWF0Y2hpbmcgZGVmaW5pdGlvbnMKICBjb25zdCBtYXRjaGluZyA9IGRlZnMuZmlsdGVyKChkOiBBY2hpZXZlbWVudERlZikgPT4gewogICAgaWYgKGQudHJpZ2dlcl90eXBlID09PSAnb25lX3RpbWUnICYmIGQudHJpZ2dlcl90YXJnZXQgPT09IGV2ZW50VGFyZ2V0KSByZXR1cm4gdHJ1ZTsKICAgIGlmIChkLnRyaWdnZXJfdHlwZSA9PT0gJ2N1bXVsYXRpdmUnICYmIGQudHJpZ2dlcl90YXJnZXQgPT09IGV2ZW50VGFyZ2V0KSByZXR1cm4gdHJ1ZTsKICAgIGlmIChkLnRyaWdnZXJfdHlwZSA9PT0gJ3RocmVzaG9sZCcgJiYgZC50cmlnZ2VyX3RhcmdldCA9PT0gZXZlbnRUYXJnZXQgJiYgZXZlbnRWYWx1ZSA+PSBkLnRyaWdnZXJfdmFsdWUpIHJldHVybiB0cnVlOwogICAgcmV0dXJuIGZhbHNlOwogIH0pOwoKICBmb3IgKGNvbnN0IGRlZiBvZiBtYXRjaGluZykgewogICAgdHJ5IHsKICAgICAgLy8gQ2hlY2sgaWYgYWxyZWFkeSB1bmxvY2tlZAogICAgICBjb25zdCB7IGRhdGE6IGV4aXN0aW5nIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgICAgIC5mcm9tKCdhY2hpZXZlbWVudF9wcm9ncmVzcycpCiAgICAgICAgLnNlbGVjdCgnaWQsIGN1cnJlbnRfdmFsdWUsIGlzX3VubG9ja2VkJykKICAgICAgICAuZXEoJ3VzZXJfaWQnLCB1c2VySWQpCiAgICAgICAgLmVxKCdhY2hpZXZlbWVudF9pZCcsIGRlZi5pZCkKICAgICAgICAubWF5YmVTaW5nbGUoKTsKCiAgICAgIGlmIChleGlzdGluZz8uaXNfdW5sb2NrZWQpIGNvbnRpbnVlOyAvLyBBbHJlYWR5IHVubG9ja2VkCgogICAgICBjb25zdCBuZXdWYWx1ZSA9IChleGlzdGluZz8uY3VycmVudF92YWx1ZSB8fCAwKSArIGV2ZW50VmFsdWU7CiAgICAgIGNvbnN0IHNob3VsZFVubG9jayA9CiAgICAgICAgZGVmLnRyaWdnZXJfdHlwZSA9PT0gJ29uZV90aW1lJyB8fAogICAgICAgIGRlZi50cmlnZ2VyX3R5cGUgPT09ICd0aHJlc2hvbGQnICYmIG5ld1ZhbHVlID49IGRlZi50cmlnZ2VyX3ZhbHVlIHx8CiAgICAgICAgZGVmLnRyaWdnZXJfdHlwZSA9PT0gJ2N1bXVsYXRpdmUnICYmIG5ld1ZhbHVlID49IGRlZi50cmlnZ2VyX3ZhbHVlOwoKICAgICAgaWYgKHNob3VsZFVubG9jaykgewogICAgICAgIC8vIFVwc2VydCBwcm9ncmVzcyB3aXRoIHVubG9jawogICAgICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2FjaGlldmVtZW50X3Byb2dyZXNzJykudXBzZXJ0KHsKICAgICAgICAgIHVzZXJfaWQ6IHVzZXJJZCwKICAgICAgICAgIGFjaGlldmVtZW50X2lkOiBkZWYuaWQsCiAgICAgICAgICBjdXJyZW50X3ZhbHVlOiBuZXdWYWx1ZSwKICAgICAgICAgIGlzX3VubG9ja2VkOiB0cnVlLAogICAgICAgICAgdW5sb2NrZWRfYXQ6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgICAgICB9LCB7IG9uQ29uZmxpY3Q6ICd1c2VyX2lkLGFjaGlldmVtZW50X2lkJyB9KTsKCiAgICAgICAgdW5sb2NrZWQucHVzaChkZWYubmFtZSk7CiAgICAgICAgY29uc29sZS5sb2coYFtBY2hpZXZlbWVudF0gVW5sb2NrZWQ6ICR7ZGVmLm5hbWV9IGZvciB1c2VyICR7dXNlcklkLnN1YnN0cmluZygwLCA4KX1gKTsKICAgICAgfSBlbHNlIHsKICAgICAgICAvLyBKdXN0IHVwZGF0ZSBwcm9ncmVzcwogICAgICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2FjaGlldmVtZW50X3Byb2dyZXNzJykudXBzZXJ0KHsKICAgICAgICAgIHVzZXJfaWQ6IHVzZXJJZCwKICAgICAgICAgIGFjaGlldmVtZW50X2lkOiBkZWYuaWQsCiAgICAgICAgICBjdXJyZW50X3ZhbHVlOiBuZXdWYWx1ZSwKICAgICAgICB9LCB7IG9uQ29uZmxpY3Q6ICd1c2VyX2lkLGFjaGlldmVtZW50X2lkJyB9KTsKICAgICAgfQogICAgfSBjYXRjaCAoZTogYW55KSB7CiAgICAgIGVycm9ycy5wdXNoKGAke2RlZi5uYW1lfTogJHtlLm1lc3NhZ2V9YCk7CiAgICB9CiAgfQoKICByZXR1cm4geyB1bmxvY2tlZCwgZXJyb3JzIH07Cn0KCi8vIOKUgOKUgCBNYWluIOKUgOKUgApEZW5vLnNlcnZlKGFzeW5jIChyZXE6IFJlcXVlc3QpID0+IHsKICBpZiAocmVxLm1ldGhvZCA9PT0gJ09QVElPTlMnKSByZXR1cm4gbmV3IFJlc3BvbnNlKG51bGwsIHsgc3RhdHVzOiAyMDQsIGhlYWRlcnM6IGNvcnNIZWFkZXJzIH0pOwoKICB0cnkgewogICAgLy8gQXV0aAogICAgY29uc3Qgand0ID0gcmVxLmhlYWRlcnMuZ2V0KCdBdXRob3JpemF0aW9uJyk/LnJlcGxhY2UoJ0JlYXJlciAnLCAnJyk7CiAgICBpZiAoIWp3dCkgdGhyb3cgbmV3IEVycm9yKCdVbmF1dGhvcml6ZWQnKTsKCiAgICBjb25zdCBzdXBhYmFzZSA9IGdldFN1cGFiYXNlKCk7CiAgICBjb25zdCB7IGRhdGE6IHsgdXNlciB9LCBlcnJvcjogdXNlckVyciB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRVc2VyKGp3dCk7CiAgICBpZiAoIXVzZXIpIHRocm93IG5ldyBFcnJvcignVW5hdXRob3JpemVkOiAnICsgKHVzZXJFcnI/Lm1lc3NhZ2UgfHwgJ2ludmFsaWQgdG9rZW4nKSk7CgogICAgY29uc3QgYm9keSA9IGF3YWl0IHJlcS5qc29uKCkuY2F0Y2goKCkgPT4gKHt9KSk7CiAgICBjb25zdCBldmVudFR5cGUgPSBib2R5LmV2ZW50X3R5cGUgfHwgJ2NoYXQnOwogICAgY29uc3QgZXZlbnRUYXJnZXQgPSBib2R5LmV2ZW50X3RhcmdldCB8fCAnc2VuZF9tZXNzYWdlJzsKICAgIGNvbnN0IGV2ZW50VmFsdWUgPSBib2R5LmV2ZW50X3ZhbHVlIHx8IDE7CgogICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgY2hlY2tBY2hpZXZlbWVudHMoc3VwYWJhc2UsIHVzZXIuaWQsIGV2ZW50VHlwZSwgZXZlbnRUYXJnZXQsIGV2ZW50VmFsdWUpOwoKICAgIHJldHVybiBuZXcgUmVzcG9uc2UoCiAgICAgIEpTT04uc3RyaW5naWZ5KHJlc3VsdCksCiAgICAgIHsgc3RhdHVzOiAyMDAsIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSB9LAogICAgKTsKCiAgfSBjYXRjaCAoZTogYW55KSB7CiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKAogICAgICBKU09OLnN0cmluZ2lmeSh7IGVycm9yOiBlLm1lc3NhZ2UgfSksCiAgICAgIHsgc3RhdHVzOiA1MDAsIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSB9LAogICAgKTsKICB9Cn0pOwo=
+/**
+ * achievement-check Edge Function — Achievement detection engine
+ * Checks user actions against achievement definitions and unlocks achievements.
+ * Called by chat-stream, milestone-adjust, and other functions.
+ */
+
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': 'https://platonic.corolas.top',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+};
+
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+
+function getSupabase() {
+  const url = Deno.env.get('SUPABASE_URL')!;
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+interface AchievementDef {
+  id: string;
+  name: string;
+  trigger_type: string;
+  trigger_target: string;
+  trigger_value: number;
+  reward_type: string | null;
+  reward_amount: number | null;
+}
+
+// ── Check and unlock achievements ──
+async function checkAchievements(
+  supabase: any,
+  userId: string,
+  eventType: string,
+  eventTarget: string,
+  eventValue: number = 1,
+): Promise<{ unlocked: string[]; errors: string[] }> {
+  const unlocked: string[] = [];
+  const errors: string[] = [];
+
+  // Get all active achievement definitions matching this event
+  const { data: defs, error: defErr } = await supabase
+    .from('achievement_definitions')
+    .select('id, name, trigger_type, trigger_target, trigger_value, reward_type, reward_amount')
+    .eq('is_active', true);
+
+  if (defErr || !defs) {
+    return { unlocked: [], errors: [defErr?.message || 'No definitions'] };
+  }
+
+  // Filter matching definitions
+  const matching = defs.filter((d: AchievementDef) => {
+    if (d.trigger_type === 'one_time' && d.trigger_target === eventTarget) return true;
+    if (d.trigger_type === 'cumulative' && d.trigger_target === eventTarget) return true;
+    if (d.trigger_type === 'threshold' && d.trigger_target === eventTarget && eventValue >= d.trigger_value) return true;
+    return false;
+  });
+
+  for (const def of matching) {
+    try {
+      // Check if already unlocked
+      const { data: existing } = await supabase
+        .from('achievement_progress')
+        .select('id, current_value, is_unlocked')
+        .eq('user_id', userId)
+        .eq('achievement_id', def.id)
+        .maybeSingle();
+
+      if (existing?.is_unlocked) continue; // Already unlocked
+
+      const newValue = (existing?.current_value || 0) + eventValue;
+      const shouldUnlock =
+        def.trigger_type === 'one_time' ||
+        def.trigger_type === 'threshold' && newValue >= def.trigger_value ||
+        def.trigger_type === 'cumulative' && newValue >= def.trigger_value;
+
+      if (shouldUnlock) {
+        // Upsert progress with unlock
+        await supabase.from('achievement_progress').upsert({
+          user_id: userId,
+          achievement_id: def.id,
+          current_value: newValue,
+          is_unlocked: true,
+          unlocked_at: new Date().toISOString(),
+        }, { onConflict: 'user_id,achievement_id' });
+
+        unlocked.push(def.name);
+        console.log(`[Achievement] Unlocked: ${def.name} for user ${userId.substring(0, 8)}`);
+      } else {
+        // Just update progress
+        await supabase.from('achievement_progress').upsert({
+          user_id: userId,
+          achievement_id: def.id,
+          current_value: newValue,
+        }, { onConflict: 'user_id,achievement_id' });
+      }
+    } catch (e: any) {
+      errors.push(`${def.name}: ${e.message}`);
+    }
+  }
+
+  return { unlocked, errors };
+}
+
+// ── Main ──
+Deno.serve(async (req: Request) => {
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders });
+
+  try {
+    // Auth
+    const jwt = req.headers.get('Authorization')?.replace('Bearer ', '');
+    if (!jwt) throw new Error('Unauthorized');
+
+    const supabase = getSupabase();
+    const { data: { user }, error: userErr } = await supabase.auth.getUser(jwt);
+    if (!user) throw new Error('Unauthorized: ' + (userErr?.message || 'invalid token'));
+
+    const body = await req.json().catch(() => ({}));
+    const eventType = body.event_type || 'chat';
+    const eventTarget = body.event_target || 'send_message';
+    const eventValue = body.event_value || 1;
+
+    const result = await checkAchievements(supabase, user.id, eventType, eventTarget, eventValue);
+
+    return new Response(
+      JSON.stringify(result),
+      { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+    );
+
+  } catch (e: any) {
+    return new Response(
+      JSON.stringify({ error: e.message }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+    );
+  }
+});

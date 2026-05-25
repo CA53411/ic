@@ -1,1 +1,71 @@
-LyoqCiAqIGVuZXJneSBFZGdlIEZ1bmN0aW9uIOKAlCBRdWVyeS9jb25zdW1lIGVuZXJneSBiYWxhbmNlCiAqLwpjb25zdCBjb3JzSGVhZGVyczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiA9IHsKICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luJzogJ2h0dHBzOi8vcGxhdG9uaWMuY29yb2xhcy50b3AnLAogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1IZWFkZXJzJzogJ2F1dGhvcml6YXRpb24sIHgtY2xpZW50LWluZm8sIGFwaWtleSwgY29udGVudC10eXBlLCB4LXJlcXVlc3RlZC13aXRoJywKICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ctTWV0aG9kcyc6ICdHRVQsIFBPU1QsIE9QVElPTlMnLAogICdBY2Nlc3MtQ29udHJvbC1NYXgtQWdlJzogJzg2NDAwJywKfTsKaW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnbnBtOkBzdXBhYmFzZS9zdXBhYmFzZS1qc0AyLjM5LjAnOwpmdW5jdGlvbiBnZXRTdXBhYmFzZSgpIHsKICBjb25zdCB1cmwgPSBEZW5vLmVudi5nZXQoJ1NVUEFCQVNFX1VSTCcpITsKICBjb25zdCBrZXkgPSBEZW5vLmVudi5nZXQoJ1NVUEFCQVNFX1NFUlZJQ0VfUk9MRV9LRVknKSE7CiAgcmV0dXJuIGNyZWF0ZUNsaWVudCh1cmwsIGtleSwgeyBhdXRoOiB7IHBlcnNpc3RTZXNzaW9uOiBmYWxzZSB9IH0pOwp9CgpEZW5vLnNlcnZlKGFzeW5jIChyZXE6IFJlcXVlc3QpID0+IHsKICBpZiAocmVxLm1ldGhvZCA9PT0gJ09QVElPTlMnKSB7CiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKG51bGwsIHsgc3RhdHVzOiAyMDQsIGhlYWRlcnM6IGNvcnNIZWFkZXJzIH0pOwogIH0KCiAgdHJ5IHsKICAgIGNvbnN0IGF1dGhIZWFkZXIgPSByZXEuaGVhZGVycy5nZXQoJ0F1dGhvcml6YXRpb24nKSB8fCAnJzsKICAgIGNvbnN0IGp3dCA9IGF1dGhIZWFkZXIucmVwbGFjZSgnQmVhcmVyICcsICcnKTsKICAgIGNvbnN0IHN1cGFiYXNlID0gZ2V0U3VwYWJhc2UoKTsKICAgIGNvbnN0IHsgZGF0YTogeyB1c2VyIH0gfSA9IGF3YWl0IHN1cGFiYXNlLmF1dGguZ2V0VXNlcihqd3QpOwogICAgaWYgKCF1c2VyKSB0aHJvdyBuZXcgRXJyb3IoJ1VuYXV0aG9yaXplZCcpOwoKICAgIGlmIChyZXEubWV0aG9kID09PSAnR0VUJykgewogICAgICBjb25zdCB7IGRhdGE6IGFjY3QgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2VuZXJneV9hY2NvdW50cycpLnNlbGVjdCgnKicpLmVxKCd1c2VyX2lkJywgdXNlci5pZCkubWF5YmVTaW5nbGUoKTsKICAgICAgcmV0dXJuIG5ldyBSZXNwb25zZShKU09OLnN0cmluZ2lmeSh7CiAgICAgICAgYmFsYW5jZTogYWNjdD8uYmFsYW5jZSB8fCAwLAogICAgICAgIHRvdGFsX3JlY2hhcmdlZDogYWNjdD8udG90YWxfcmVjaGFyZ2VkIHx8IDAsCiAgICAgICAgdG90YWxfY29uc3VtZWQ6IGFjY3Q/LnRvdGFsX2NvbnN1bWVkIHx8IDAsCiAgICAgIH0pLCB7IGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSB9KTsKICAgIH0KCiAgICBpZiAocmVxLm1ldGhvZCA9PT0gJ1BPU1QnKSB7CiAgICAgIGNvbnN0IGJvZHkgPSBhd2FpdCByZXEuanNvbigpLmNhdGNoKCgpID0+ICh7fSkpOwogICAgICBjb25zdCBjb3N0ID0gYm9keS5hbW91bnQgfHwgMDsKICAgICAgaWYgKGNvc3QgPD0gMCkgdGhyb3cgbmV3IEVycm9yKCdJbnZhbGlkIGFtb3VudCcpOwoKICAgICAgLy8gT3B0aW1pc3RpYyBsb2NraW5nOiByZWFkIGJhbGFuY2UgKyB2ZXJzaW9uCiAgICAgIGNvbnN0IHsgZGF0YTogYWNjdCB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgnZW5lcmd5X2FjY291bnRzJykuc2VsZWN0KCdpZCwgYmFsYW5jZSwgdmVyc2lvbicpLmVxKCd1c2VyX2lkJywgdXNlci5pZCkubWF5YmVTaW5nbGUoKTsKICAgICAgaWYgKCFhY2N0IHx8IGFjY3QuYmFsYW5jZSA8IGNvc3QpIHsKICAgICAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgc3VjY2VzczogZmFsc2UsIHJlYXNvbjogJ2luc3VmZmljaWVudCcsIGJhbGFuY2U6IGFjY3Q/LmJhbGFuY2UgfHwgMCB9KSwgeyBoZWFkZXJzOiB7IC4uLmNvcnNIZWFkZXJzLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0gfSk7CiAgICAgIH0KCiAgICAgIGNvbnN0IG5ld0JhbGFuY2UgPSBhY2N0LmJhbGFuY2UgLSBjb3N0OwogICAgICBjb25zdCB7IGNvdW50IH0gPSBhd2FpdCBzdXBhYmFzZQogICAgICAgIC5mcm9tKCdlbmVyZ3lfYWNjb3VudHMnKQogICAgICAgIC51cGRhdGUoeyBiYWxhbmNlOiBuZXdCYWxhbmNlLCB2ZXJzaW9uOiAoYWNjdC52ZXJzaW9uIHx8IDApICsgMSB9KQogICAgICAgIC5lcSgnaWQnLCBhY2N0LmlkKQogICAgICAgIC5lcSgndmVyc2lvbicsIGFjY3QudmVyc2lvbikKICAgICAgICAuc2VsZWN0KCcqJywgeyBjb3VudDogJ2V4YWN0JywgaGVhZDogdHJ1ZSB9KTsKCiAgICAgIGlmIChjb3VudCA9PT0gMCkgewogICAgICAgIHJldHVybiBuZXcgUmVzcG9uc2UoSlNPTi5zdHJpbmdpZnkoeyBzdWNjZXNzOiBmYWxzZSwgcmVhc29uOiAnY29uY3VycmVudF9jb25mbGljdCcsIG1lc3NhZ2U6ICdSZXRyeSBuZWVkZWQgZHVlIHRvIGNvbmN1cnJlbnQgdXBkYXRlJyB9KSwgeyBoZWFkZXJzOiB7IC4uLmNvcnNIZWFkZXJzLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0gfSk7CiAgICAgIH0KCiAgICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2VuZXJneV90cmFuc2FjdGlvbnMnKS5pbnNlcnQoeyBhY2NvdW50X2lkOiBhY2N0LmlkLCB1c2VyX2lkOiB1c2VyLmlkLCB0eG5fdHlwZTogJ2NvbnN1bWUnLCBhbW91bnQ6IC1jb3N0LCBiYWxhbmNlX2FmdGVyOiBuZXdCYWxhbmNlLCBkZXNjcmlwdGlvbjogYm9keS5kZXNjcmlwdGlvbiB8fCAnY29uc3VtZScgfSk7CgogICAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgc3VjY2VzczogdHJ1ZSwgcmVtYWluaW5nX2JhbGFuY2U6IG5ld0JhbGFuY2UgfSksIHsgaGVhZGVyczogeyAuLi5jb3JzSGVhZGVycywgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9IH0pOwogICAgfQoKICAgIHJldHVybiBuZXcgUmVzcG9uc2UoJ01ldGhvZCBub3QgYWxsb3dlZCcsIHsgc3RhdHVzOiA0MDUsIGhlYWRlcnM6IGNvcnNIZWFkZXJzIH0pOwoKICB9IGNhdGNoIChlOiBhbnkpIHsKICAgIHJldHVybiBuZXcgUmVzcG9uc2UoSlNPTi5zdHJpbmdpZnkoeyBlcnJvcjogZS5tZXNzYWdlIH0pLCB7IHN0YXR1czogNTAwLCBoZWFkZXJzOiB7IC4uLmNvcnNIZWFkZXJzLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0gfSk7CiAgfQp9KTsK
+/**
+ * energy Edge Function — Query/consume energy balance
+ */
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': 'https://platonic.corolas.top',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-requested-with',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Max-Age': '86400',
+};
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+function getSupabase() {
+  const url = Deno.env.get('SUPABASE_URL')!;
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+Deno.serve(async (req: Request) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: corsHeaders });
+  }
+
+  try {
+    const authHeader = req.headers.get('Authorization') || '';
+    const jwt = authHeader.replace('Bearer ', '');
+    const supabase = getSupabase();
+    const { data: { user } } = await supabase.auth.getUser(jwt);
+    if (!user) throw new Error('Unauthorized');
+
+    if (req.method === 'GET') {
+      const { data: acct } = await supabase.from('energy_accounts').select('*').eq('user_id', user.id).maybeSingle();
+      return new Response(JSON.stringify({
+        balance: acct?.balance || 0,
+        total_recharged: acct?.total_recharged || 0,
+        total_consumed: acct?.total_consumed || 0,
+      }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    if (req.method === 'POST') {
+      const body = await req.json().catch(() => ({}));
+      const cost = body.amount || 0;
+      if (cost <= 0) throw new Error('Invalid amount');
+
+      // Optimistic locking: read balance + version
+      const { data: acct } = await supabase.from('energy_accounts').select('id, balance, version').eq('user_id', user.id).maybeSingle();
+      if (!acct || acct.balance < cost) {
+        return new Response(JSON.stringify({ success: false, reason: 'insufficient', balance: acct?.balance || 0 }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+
+      const newBalance = acct.balance - cost;
+      const { count } = await supabase
+        .from('energy_accounts')
+        .update({ balance: newBalance, version: (acct.version || 0) + 1 })
+        .eq('id', acct.id)
+        .eq('version', acct.version)
+        .select('*', { count: 'exact', head: true });
+
+      if (count === 0) {
+        return new Response(JSON.stringify({ success: false, reason: 'concurrent_conflict', message: 'Retry needed due to concurrent update' }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      }
+
+      await supabase.from('energy_transactions').insert({ account_id: acct.id, user_id: user.id, txn_type: 'consume', amount: -cost, balance_after: newBalance, description: body.description || 'consume' });
+
+      return new Response(JSON.stringify({ success: true, remaining_balance: newBalance }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    return new Response('Method not allowed', { status: 405, headers: corsHeaders });
+
+  } catch (e: any) {
+    return new Response(JSON.stringify({ error: e.message }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+  }
+});

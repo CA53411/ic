@@ -1,1 +1,63 @@
-LyoqCiAqIFRoZW1lIHV0aWxpdHkgZm9yIDMtc3RhdGUgdGhlbWUgc3VwcG9ydDogbGlnaHQgLyBkYXJrIC8gYXV0bwogKi8KCmV4cG9ydCB0eXBlIFRoZW1lID0gJ2xpZ2h0JyB8ICdkYXJrJyB8ICdhdXRvJzsKCi8qKgogKiBBcHBseSB0aGUgZ2l2ZW4gdGhlbWUgdG8gdGhlIGRvY3VtZW50LgogKiAtICdsaWdodCc6IGZvcmNlcyBsaWdodCBtb2RlCiAqIC0gJ2RhcmsnOiBmb3JjZXMgZGFyayBtb2RlCiAqIC0gJ2F1dG8nOiBmb2xsb3dzIHN5c3RlbSBwcmVmZXJlbmNlCiAqLwpleHBvcnQgZnVuY3Rpb24gYXBwbHlUaGVtZSh0aGVtZTogVGhlbWUpOiB2b2lkIHsKICBjb25zdCByb290ID0gZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50OwoKICBpZiAodGhlbWUgPT09ICdkYXJrJykgewogICAgcm9vdC5jbGFzc0xpc3QuYWRkKCdkYXJrJyk7CiAgfSBlbHNlIGlmICh0aGVtZSA9PT0gJ2xpZ2h0JykgewogICAgcm9vdC5jbGFzc0xpc3QucmVtb3ZlKCdkYXJrJyk7CiAgfSBlbHNlIHsKICAgIC8vIGF1dG86IGZvbGxvdyBzeXN0ZW0gcHJlZmVyZW5jZQogICAgY29uc3QgcHJlZmVyc0RhcmsgPSB3aW5kb3cubWF0Y2hNZWRpYSgnKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKScpLm1hdGNoZXM7CiAgICBpZiAocHJlZmVyc0RhcmspIHsKICAgICAgcm9vdC5jbGFzc0xpc3QuYWRkKCdkYXJrJyk7CiAgICB9IGVsc2UgewogICAgICByb290LmNsYXNzTGlzdC5yZW1vdmUoJ2RhcmsnKTsKICAgIH0KICB9Cn0KCi8qKgogKiBHZXQgdGhlIGVmZmVjdGl2ZSB0aGVtZSAocmVzb2x2ZWQgJ2F1dG8nIHRvIGFjdHVhbCBsaWdodC9kYXJrKQogKi8KZXhwb3J0IGZ1bmN0aW9uIGdldEVmZmVjdGl2ZVRoZW1lKHRoZW1lOiBUaGVtZSk6ICdsaWdodCcgfCAnZGFyaycgewogIGlmICh0aGVtZSA9PT0gJ2F1dG8nKSB7CiAgICByZXR1cm4gd2luZG93Lm1hdGNoTWVkaWEoJyhwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyayknKS5tYXRjaGVzID8gJ2RhcmsnIDogJ2xpZ2h0JzsKICB9CiAgcmV0dXJuIHRoZW1lOwp9CgovKioKICogTG9hZCBzYXZlZCB0aGVtZSBmcm9tIGxvY2FsU3RvcmFnZSwgZGVmYXVsdCB0byAnYXV0bycKICovCmV4cG9ydCBmdW5jdGlvbiBsb2FkU2F2ZWRUaGVtZSgpOiBUaGVtZSB7CiAgY29uc3Qgc3RvcmVkID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3RoZW1lJykgYXMgVGhlbWUgfCBudWxsOwogIGlmIChzdG9yZWQgPT09ICdsaWdodCcgfHwgc3RvcmVkID09PSAnZGFyaycgfHwgc3RvcmVkID09PSAnYXV0bycpIHsKICAgIHJldHVybiBzdG9yZWQ7CiAgfQogIHJldHVybiAnYXV0byc7Cn0KCi8qKgogKiBMaXN0ZW4gZm9yIHN5c3RlbSB0aGVtZSBjaGFuZ2VzIHdoZW4gaW4gYXV0byBtb2RlLgogKiBSZXR1cm5zIGEgY2xlYW51cCBmdW5jdGlvbi4KICovCmV4cG9ydCBmdW5jdGlvbiBsaXN0ZW5Ub1N5c3RlbVRoZW1lQ2hhbmdlcyhjYWxsYmFjazogKHRoZW1lOiAnbGlnaHQnIHwgJ2RhcmsnKSA9PiB2b2lkKTogKCkgPT4gdm9pZCB7CiAgY29uc3QgbXEgPSB3aW5kb3cubWF0Y2hNZWRpYSgnKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKScpOwogIGNvbnN0IGhhbmRsZXIgPSAoZTogTWVkaWFRdWVyeUxpc3RFdmVudCkgPT4gewogICAgY2FsbGJhY2soZS5tYXRjaGVzID8gJ2RhcmsnIDogJ2xpZ2h0Jyk7CiAgfTsKICBtcS5hZGRFdmVudExpc3RlbmVyKCdjaGFuZ2UnLCBoYW5kbGVyKTsKICByZXR1cm4gKCkgPT4gbXEucmVtb3ZlRXZlbnRMaXN0ZW5lcignY2hhbmdlJywgaGFuZGxlcik7Cn0K
+/**
+ * Theme utility for 3-state theme support: light / dark / auto
+ */
+
+export type Theme = 'light' | 'dark' | 'auto';
+
+/**
+ * Apply the given theme to the document.
+ * - 'light': forces light mode
+ * - 'dark': forces dark mode
+ * - 'auto': follows system preference
+ */
+export function applyTheme(theme: Theme): void {
+  const root = document.documentElement;
+
+  if (theme === 'dark') {
+    root.classList.add('dark');
+  } else if (theme === 'light') {
+    root.classList.remove('dark');
+  } else {
+    // auto: follow system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }
+}
+
+/**
+ * Get the effective theme (resolved 'auto' to actual light/dark)
+ */
+export function getEffectiveTheme(theme: Theme): 'light' | 'dark' {
+  if (theme === 'auto') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  return theme;
+}
+
+/**
+ * Load saved theme from localStorage, default to 'auto'
+ */
+export function loadSavedTheme(): Theme {
+  const stored = localStorage.getItem('theme') as Theme | null;
+  if (stored === 'light' || stored === 'dark' || stored === 'auto') {
+    return stored;
+  }
+  return 'auto';
+}
+
+/**
+ * Listen for system theme changes when in auto mode.
+ * Returns a cleanup function.
+ */
+export function listenToSystemThemeChanges(callback: (theme: 'light' | 'dark') => void): () => void {
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  const handler = (e: MediaQueryListEvent) => {
+    callback(e.matches ? 'dark' : 'light');
+  };
+  mq.addEventListener('change', handler);
+  return () => mq.removeEventListener('change', handler);
+}

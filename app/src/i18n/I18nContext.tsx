@@ -1,1 +1,52 @@
-LyoqCiAqIEkxOG5Db250ZXh0LnRzeCDigJQgR2xvYmFsIEludGVybmF0aW9uYWxpemF0aW9uCiAqIDQgbGFuZ3VhZ2VzOiBlbiAoZGVmYXVsdCksIHpoLCBqYSwga28KICogUGVyc2lzdHMgcHJlZmVyZW5jZSB0byBsb2NhbFN0b3JhZ2UgKyBwcm9maWxlcyB0YWJsZQogKi8KaW1wb3J0IFJlYWN0LCB7IGNyZWF0ZUNvbnRleHQsIHVzZUNvbnRleHQsIHVzZVN0YXRlLCB1c2VFZmZlY3QsIHVzZUNhbGxiYWNrIH0gZnJvbSAncmVhY3QnOwppbXBvcnQgeyB0cmFuc2xhdGlvbnMsIHR5cGUgTGFuZ3VhZ2UgfSBmcm9tICcuL3RyYW5zbGF0aW9ucyc7Cgpjb25zdCBJMThuQ29udGV4dCA9IGNyZWF0ZUNvbnRleHQ8ewogIGxhbmc6IExhbmd1YWdlOwogIHNldExhbmc6IChsOiBMYW5ndWFnZSkgPT4gdm9pZDsKICB0OiAoa2V5OiBzdHJpbmcpID0+IHN0cmluZzsKfT4oeyBsYW5nOiAnZW4nLCBzZXRMYW5nOiAoKSA9PiB7fSwgdDogKGspID0+IGsgfSk7CgpleHBvcnQgZnVuY3Rpb24gSTE4blByb3ZpZGVyKHsgY2hpbGRyZW4gfTogeyBjaGlsZHJlbjogUmVhY3QuUmVhY3ROb2RlIH0pIHsKICBjb25zdCBbbGFuZywgc2V0TGFuZ1N0YXRlXSA9IHVzZVN0YXRlPExhbmd1YWdlPigoKSA9PiB7CiAgICBjb25zdCBzdG9yZWQgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnbGFuZ3VhZ2UnKSBhcyBMYW5ndWFnZSB8IG51bGw7CiAgICByZXR1cm4gc3RvcmVkICYmIHRyYW5zbGF0aW9uc1tzdG9yZWRdID8gc3RvcmVkIDogJ2VuJzsKICB9KTsKCiAgY29uc3Qgc2V0TGFuZyA9IHVzZUNhbGxiYWNrKChsOiBMYW5ndWFnZSkgPT4gewogICAgc2V0TGFuZ1N0YXRlKGwpOwogICAgbG9jYWxTdG9yYWdlLnNldEl0ZW0oJ2xhbmd1YWdlJywgbCk7CiAgICBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQubGFuZyA9IGw7CiAgfSwgW10pOwoKICAvLyBTeW5jIGxhbmd1YWdlIGFjcm9zcyB0YWJzCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGNvbnN0IGhhbmRsZXIgPSAoZTogU3RvcmFnZUV2ZW50KSA9PiB7CiAgICAgIGlmIChlLmtleSA9PT0gJ2xhbmd1YWdlJyAmJiBlLm5ld1ZhbHVlICYmIHRyYW5zbGF0aW9uc1tlLm5ld1ZhbHVlIGFzIExhbmd1YWdlXSkgewogICAgICAgIHNldExhbmdTdGF0ZShlLm5ld1ZhbHVlIGFzIExhbmd1YWdlKTsKICAgICAgfQogICAgfTsKICAgIHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdzdG9yYWdlJywgaGFuZGxlcik7CiAgICByZXR1cm4gKCkgPT4gd2luZG93LnJlbW92ZUV2ZW50TGlzdGVuZXIoJ3N0b3JhZ2UnLCBoYW5kbGVyKTsKICB9LCBbXSk7CgogIGNvbnN0IHQgPSB1c2VDYWxsYmFjaygKICAgIChrZXk6IHN0cmluZykgPT4gewogICAgICByZXR1cm4gdHJhbnNsYXRpb25zW2xhbmddW2tleV0gPz8gdHJhbnNsYXRpb25zWydlbiddW2tleV0gPz8ga2V5OwogICAgfSwKICAgIFtsYW5nXQogICk7CgogIHJldHVybiAoCiAgICA8STE4bkNvbnRleHQuUHJvdmlkZXIgdmFsdWU9e3sgbGFuZywgc2V0TGFuZywgdCB9fT4KICAgICAge2NoaWxkcmVufQogICAgPC9JMThuQ29udGV4dC5Qcm92aWRlcj4KICApOwp9CgpleHBvcnQgY29uc3QgdXNlSTE4biA9ICgpID0+IHVzZUNvbnRleHQoSTE4bkNvbnRleHQpOwo=
+/**
+ * I18nContext.tsx — Global Internationalization
+ * 4 languages: en (default), zh, ja, ko
+ * Persists preference to localStorage + profiles table
+ */
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { translations, type Language } from './translations';
+
+const I18nContext = createContext<{
+  lang: Language;
+  setLang: (l: Language) => void;
+  t: (key: string) => string;
+}>({ lang: 'en', setLang: () => {}, t: (k) => k });
+
+export function I18nProvider({ children }: { children: React.ReactNode }) {
+  const [lang, setLangState] = useState<Language>(() => {
+    const stored = localStorage.getItem('language') as Language | null;
+    return stored && translations[stored] ? stored : 'en';
+  });
+
+  const setLang = useCallback((l: Language) => {
+    setLangState(l);
+    localStorage.setItem('language', l);
+    document.documentElement.lang = l;
+  }, []);
+
+  // Sync language across tabs
+  useEffect(() => {
+    const handler = (e: StorageEvent) => {
+      if (e.key === 'language' && e.newValue && translations[e.newValue as Language]) {
+        setLangState(e.newValue as Language);
+      }
+    };
+    window.addEventListener('storage', handler);
+    return () => window.removeEventListener('storage', handler);
+  }, []);
+
+  const t = useCallback(
+    (key: string) => {
+      return translations[lang][key] ?? translations['en'][key] ?? key;
+    },
+    [lang]
+  );
+
+  return (
+    <I18nContext.Provider value={{ lang, setLang, t }}>
+      {children}
+    </I18nContext.Provider>
+  );
+}
+
+export const useI18n = () => useContext(I18nContext);

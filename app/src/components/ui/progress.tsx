@@ -1,1 +1,29 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFByb2dyZXNzUHJpbWl0aXZlIGZyb20gIkByYWRpeC11aS9yZWFjdC1wcm9ncmVzcyIKCmltcG9ydCB7IGNuIH0gZnJvbSAiQC9saWIvdXRpbHMiCgpmdW5jdGlvbiBQcm9ncmVzcyh7CiAgY2xhc3NOYW1lLAogIHZhbHVlLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBQcm9ncmVzc1ByaW1pdGl2ZS5Sb290PikgewogIHJldHVybiAoCiAgICA8UHJvZ3Jlc3NQcmltaXRpdmUuUm9vdAogICAgICBkYXRhLXNsb3Q9InByb2dyZXNzIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJiZy1wcmltYXJ5LzIwIHJlbGF0aXZlIGgtMiB3LWZ1bGwgb3ZlcmZsb3ctaGlkZGVuIHJvdW5kZWQtZnVsbCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgID4KICAgICAgPFByb2dyZXNzUHJpbWl0aXZlLkluZGljYXRvcgogICAgICAgIGRhdGEtc2xvdD0icHJvZ3Jlc3MtaW5kaWNhdG9yIgogICAgICAgIGNsYXNzTmFtZT0iYmctcHJpbWFyeSBoLWZ1bGwgdy1mdWxsIGZsZXgtMSB0cmFuc2l0aW9uLWFsbCIKICAgICAgICBzdHlsZT17eyB0cmFuc2Zvcm06IGB0cmFuc2xhdGVYKC0kezEwMCAtICh2YWx1ZSB8fCAwKX0lKWAgfX0KICAgICAgLz4KICAgIDwvUHJvZ3Jlc3NQcmltaXRpdmUuUm9vdD4KICApCn0KCmV4cG9ydCB7IFByb2dyZXNzIH0K
+import * as React from "react"
+import * as ProgressPrimitive from "@radix-ui/react-progress"
+
+import { cn } from "@/lib/utils"
+
+function Progress({
+  className,
+  value,
+  ...props
+}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+  return (
+    <ProgressPrimitive.Root
+      data-slot="progress"
+      className={cn(
+        "bg-primary/20 relative h-2 w-full overflow-hidden rounded-full",
+        className
+      )}
+      {...props}
+    >
+      <ProgressPrimitive.Indicator
+        data-slot="progress-indicator"
+        className="bg-primary h-full w-full flex-1 transition-all"
+        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      />
+    </ProgressPrimitive.Root>
+  )
+}
+
+export { Progress }

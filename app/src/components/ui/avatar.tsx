@@ -1,1 +1,51 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIEF2YXRhclByaW1pdGl2ZSBmcm9tICJAcmFkaXgtdWkvcmVhY3QtYXZhdGFyIgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKCmZ1bmN0aW9uIEF2YXRhcih7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBBdmF0YXJQcmltaXRpdmUuUm9vdD4pIHsKICByZXR1cm4gKAogICAgPEF2YXRhclByaW1pdGl2ZS5Sb290CiAgICAgIGRhdGEtc2xvdD0iYXZhdGFyIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJyZWxhdGl2ZSBmbGV4IHNpemUtOCBzaHJpbmstMCBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1mdWxsIiwKICAgICAgICBjbGFzc05hbWUKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApCn0KCmZ1bmN0aW9uIEF2YXRhckltYWdlKHsKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIEF2YXRhclByaW1pdGl2ZS5JbWFnZT4pIHsKICByZXR1cm4gKAogICAgPEF2YXRhclByaW1pdGl2ZS5JbWFnZQogICAgICBkYXRhLXNsb3Q9ImF2YXRhci1pbWFnZSIKICAgICAgY2xhc3NOYW1lPXtjbigiYXNwZWN0LXNxdWFyZSBzaXplLWZ1bGwiLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICkKfQoKZnVuY3Rpb24gQXZhdGFyRmFsbGJhY2soewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgQXZhdGFyUHJpbWl0aXZlLkZhbGxiYWNrPikgewogIHJldHVybiAoCiAgICA8QXZhdGFyUHJpbWl0aXZlLkZhbGxiYWNrCiAgICAgIGRhdGEtc2xvdD0iYXZhdGFyLWZhbGxiYWNrIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJiZy1tdXRlZCBmbGV4IHNpemUtZnVsbCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsIiwKICAgICAgICBjbGFzc05hbWUKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApCn0KCmV4cG9ydCB7IEF2YXRhciwgQXZhdGFySW1hZ2UsIEF2YXRhckZhbGxiYWNrIH0K
+import * as React from "react"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+
+import { cn } from "@/lib/utils"
+
+function Avatar({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+  return (
+    <AvatarPrimitive.Root
+      data-slot="avatar"
+      className={cn(
+        "relative flex size-8 shrink-0 overflow-hidden rounded-full",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function AvatarImage({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+  return (
+    <AvatarPrimitive.Image
+      data-slot="avatar-image"
+      className={cn("aspect-square size-full", className)}
+      {...props}
+    />
+  )
+}
+
+function AvatarFallback({
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
+  return (
+    <AvatarPrimitive.Fallback
+      data-slot="avatar-fallback"
+      className={cn(
+        "bg-muted flex size-full items-center justify-center rounded-full",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Avatar, AvatarImage, AvatarFallback }

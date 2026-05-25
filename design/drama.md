@@ -1,1 +1,282 @@
-IyBEcmFtYSBQYWdlIChkcmFtYS5tZCkKClRoZSBBZHZhbmNlZCBEcmFtYSBTcGFjZSDigJQgYSBkdWFsLW1vZGUgcGFnZSBmZWF0dXJpbmcgYSBzdG9yeSBwbGF6YSB3aXRoIG5vdmVsLXJlYWRlci1zdHlsZSBzdG9yeSBjYXJkcyBhbmQgYW4gaW1tZXJzaXZlIHN0b3J5IGNoYXQgaW50ZXJmYWNlLiBVc2VycyBjYW4gYnJvd3NlIHN0b3J5IHNjZW5hcmlvcywgdW5sb2NrIHRoZW0sIGFuZCB0aGVuIGVudGVyIGRlZGljYXRlZCBzdG9yeSBzZXNzaW9ucyB3aXRoIHRoZWlyIGNvbXBhbmlvbi4KCnwgUHJvcGVydHkgfCBWYWx1ZSB8CnwtLS0tLS0tLS0tfC0tLS0tLS18CnwgUm91dGUgfCBgL2RyYW1hYCB8CnwgU3ViLXJvdXRlcyB8IGAvZHJhbWFgIChwbGF6YSksIGAvZHJhbWEvOmlkYCAoc3Rvcnkgc2Vzc2lvbikgfAp8IFNlY3Rpb25zIHwgMiBtb2RlcyAoUGxhemEgKyBTZXNzaW9uKSB8CnwgUHVycG9zZSB8IEltbWVyc2l2ZSBzdG9yeSBzY2VuYXJpb3MgYW5kIHJvbGVwbGF5IHdpdGggQUkgY29tcGFuaW9uIHwKCi0tLQoKIyMgTW9kZSBBOiBEcmFtYSBQbGF6YQoKIyMjIE92ZXJ2aWV3CkEgYnJvd3NpbmcgcGFnZSBmb3Igc3Rvcnkgc2NlbmFyaW9zIGRpc3BsYXllZCBhcyByaWNoIGNhcmRzIGluIGEgZ3JpZC4gRWFjaCBzdG9yeSBoYXMgYSBjb3ZlciBpbWFnZSwgdGl0bGUsIHN5bm9wc2lzLCByYXRpbmcsIGFuZCB1bmxvY2sgY29uZGl0aW9uLiBOb3ZlbC1yZWFkZXIgYWVzdGhldGljIHdpdGggd2FybSwgbGl0ZXJhcnkgc3R5bGluZy4KCiMjIyBQYWdlIExheW91dAoKU3RhbmRhcmQgYXBwIGxheW91dDogc2lkZWJhciArIGNvbnRlbnQgYXJlYS4KCmBgYArilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAK4pSCIFNpZGViYXIg4pSCICAgICAgICBEcmFtYSBQbGF6YSBDb250ZW50ICAgICAgICAgICAgICAgIOKUggrilIIgMjIwcHggICDilIIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAgVG9wIEJhcjogIuWJp+aDheepuumXtCIgKyBmaWx0ZXIgdGFicyAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSCIEZlYXR1cmVkIFN0b3J5IChsYXJnZSBiYW5uZXIgY2FyZCkgIOKUgiDilIIK4pSCICAgICAgICAg4pSCICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgg4pSCCuKUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICBUYWI6IFvlhajpg6hdIFvlt7Lop6PplIFdIFvng63pl6hdIFvmlrDlk4FdICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICDilIzilIDilIDilIDilIDilIDilIDilJAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSQIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUkCDilIzilIDilIDilIDilIDilIDilIDilJAgICDilIIK4pSCICAgICAgICAg4pSCICDilIJTdG9yeSDilIIg4pSCU3Rvcnkg4pSCIOKUglN0b3J5IOKUgiDilIJTdG9yeSDilIIgICDilIIK4pSCICAgICAgICAg4pSCICDilIJDYXJkICDilIIg4pSCQ2FyZCAg4pSCIOKUgkNhcmQgIOKUgiDilIJDYXJkICDilIIgICDilIIK4pSCICAgICAgICAg4pSCICDilJTilIDilIDilIDilIDilIDilIDilJgg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSYIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUmCDilJTilIDilIDilIDilIDilIDilIDilJggICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUkCDilIzilIDilIDilIDilIDilIDilIDilJAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSQIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgIOKUggrilIIgICAgICAgICDilIIgIOKUglN0b3J5IOKUgiDilIJTdG9yeSDilIIg4pSCU3Rvcnkg4pSCIOKUglN0b3J5IOKUgiAgIOKUggrilIIgICAgICAgICDilIIgIOKUgkNhcmQgIOKUgiDilIJDYXJkICDilIIg4pSCQ2FyZCAg4pSCIOKUgkNhcmQgIOKUgiAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUmCDilJTilIDilIDilIDilIDilIDilIDilJgg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSYIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgIOKUggrilIIgICAgICAgICDilIIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmApgYGAKCi0tLQoKIyMjIFNlY3Rpb24gMTogVG9wIEJhcgoKIyMjIEVsZW1lbnRzCi0gKipMZWZ0Kio6ICLliafmg4Xnqbrpl7QiIGluIGBoMmAsIHdpdGggYEJvb2tPcGVuYCBpY29uICgyMHB4LCBgcGluay00MDBgKQotICoqUmlnaHQqKjogIuW3suino+mUgSAzLzEyIiBiYWRnZSBpbiBgbGFiZWxgIGZvbnQsIGBwaW5rLTUwMGAKCiMjIyBBbmltYXRpb25zCi0gRmFkZSBpbiwgMzAwbXMKCi0tLQoKIyMjIFNlY3Rpb24gMjogRmVhdHVyZWQgU3RvcnkgQmFubmVyCgojIyMgT3ZlcnZpZXcKQSBsYXJnZSwgcHJvbWluZW50IGJhbm5lciBjYXJkIHNob3djYXNpbmcgdGhlIGZlYXR1cmVkL3JlY29tbWVuZGVkIHN0b3J5IHNjZW5hcmlvIGF0IHRoZSB0b3Agb2YgdGhlIHBsYXphLgoKIyMjIExheW91dAotIEZ1bGwgY29udGVudCB3aWR0aCwgaGVpZ2h0IH4yNDBweAotIENhcmQ6IGByYWRpdXMteGxgLCBvdmVyZmxvdyBoaWRkZW4KLSBIb3Jpem9udGFsIGxheW91dDogaW1hZ2UgbGVmdCAofjQwJSksIHRleHQgcmlnaHQgKH42MCUpCgojIyMgRWxlbWVudHMKCiMjIyMgSW1hZ2UgQXJlYQotIENvdmVyIGltYWdlIChgZHJhbWEtY292ZXItMS5qcGdgKSwgb2JqZWN0LWZpdCBjb3ZlciwgZnVsbCBoZWlnaHQKLSBHcmFkaWVudCBvdmVybGF5OiBgbGluZWFyLWdyYWRpZW50KDkwZGVnLCB0cmFuc3BhcmVudCAzMCUsIHJnYmEoMjYsMTYsMzcsMC44NSkgMTAwJSlgCgojIyMjIFRleHQgQXJlYSAob3ZlcmxhaWQgb24gcmlnaHQpCi0gKipCYWRnZSoqOiAi5o6o6I2Q5Ymn5oOFIiBwaWxsLCBgYWNjZW50LWdyYWRpZW50YCwgd2hpdGUgdGV4dAotICoqVGl0bGUqKjogIuaoseiKseagkeS4i+eahOe6puWumiIgaW4gYGgxYCwgd2hpdGUKLSAqKlN5bm9wc2lzKio6ICLmmKXlpKnnmoTkuIDkuKrlgo3mmZrvvIzkvaDlkozlpbnlnKjnm5vlvIDnmoTmqLHoirHmoJHkuIvnm7jpgYfjgILpo47ovbvovbvlkLnov4fvvIzoirHnk6Ppo5jokL3lnKjlpbnnmoTlj5Hpl7QuLi4iIGluIGBib2R5YCwgd2hpdGUgYXQgODAlCi0gKipNZXRhIHJvdyoqOiBgU3RhcmAgaWNvbiArICI0LjkiIHJhdGluZyArIGBVc2Vyc2AgaWNvbiArICIyLjNrIOS9k+mqjCIgKyBgTG9ja2AgaWNvbiArICLlhY3otLnop6PplIEiCi0gKipDVEEqKjogIuW8gOWni+S9k+mqjCIgYHByaW1hcnlgIGJ1dHRvbiwgd2hpdGUgYmcsIGBwaW5rLTUwMGAgdGV4dAoKIyMjIEFuaW1hdGlvbnMKLSBFbnRyYW5jZTogc2xpZGUgdXAgMzBweCArIGZhZGUsIDYwMG1zCi0gSG92ZXI6IGltYWdlIHN1YnRsZSBgc2NhbGUoMS4wMylgIHdpdGhpbiBjb250YWluZXIsIDQwMG1zCgotLS0KCiMjIyBTZWN0aW9uIDM6IEZpbHRlciBUYWJzCgojIyMgRWxlbWVudHMKLSBIb3Jpem9udGFsIHRhYiBncm91cCwgY2VudGVyZWQKLSBUYWJzOiAi5YWo6YOoIiAvICLlt7Lop6PplIEiIC8gIueDremXqCIgLyAi5paw5ZOBIiAvICLmtarmvKsiIC8gIuWGkumZqSIgLyAi5pel5bi4IgotIEFjdGl2ZTogYHByaW1hcnlgIGJ1dHRvbiBzdHlsZSAocGlsbCkKLSBJbmFjdGl2ZTogYGdob3N0YCBzdHlsZQotIEdhcDogOHB4CgojIyMgQW5pbWF0aW9ucwotIFRhYnM6IGZhZGUgaW4gMjAwbXMgYWZ0ZXIgYmFubmVyCi0gU3dpdGNoOiBhY3RpdmUgaW5kaWNhdG9yIHNsaWRlcyB3aXRoIHNwcmluZywgY29udGVudCBjcm9zcy1mYWRlcwoKLS0tCgojIyMgU2VjdGlvbiA0OiBTdG9yeSBDYXJkIEdyaWQKCiMjIyBPdmVydmlldwpUaGUgbWFpbiBncmlkIG9mIHN0b3J5IHNjZW5hcmlvIGNhcmRzLiBSaWNoLCBib29rLWNvdmVyLWluc3BpcmVkIGRlc2lnbi4KCiMjIyBMYXlvdXQKLSBDU1MgR3JpZDogYHJlcGVhdChhdXRvLWZpbGwsIG1pbm1heCgyNDBweCwgMWZyKSlgCi0gR2FwOiAyNHB4CgojIyMgU3RvcnkgQ2FyZCBEZXNpZ24KCkVhY2ggY2FyZDoKLSAqKkNvbnRhaW5lcioqOiBgQ2FyZCBDb21wb25lbnRgLCBwYWRkaW5nIDAsIG92ZXJmbG93IGhpZGRlbiwgYHJhZGl1cy1sZ2AKLSAqKkFzcGVjdCByYXRpbyoqOiB+Mzo0IHBvcnRyYWl0IChib29rIGNvdmVyIGZlZWwpCgojIyMjIENvdmVyIEltYWdlIEFyZWEgKHRvcCB+NzAlKQotIFN0b3J5IGNvdmVyIGltYWdlLCBvYmplY3QtZml0IGNvdmVyCi0gR3JhZGllbnQgb3ZlcmxheSBhdCBib3R0b206IGBsaW5lYXItZ3JhZGllbnQodHJhbnNwYXJlbnQgNTAlLCByZ2JhKDI2LDE2LDM3LDAuOCkgMTAwJSlgCi0gKipMb2NrIG92ZXJsYXkqKiAoaWYgbG9ja2VkKTogc2VtaS10cmFuc3BhcmVudCBkYXJrIG92ZXJsYXkgKyBgTG9ja2AgaWNvbiAoMzJweCwgd2hpdGUpIGNlbnRlcmVkCi0gKipEaWZmaWN1bHR5IGJhZGdlKio6IHRvcC1sZWZ0IGNvcm5lciwgc21hbGwgcGlsbCwgZS5nLiwgIueugOWNlSIgKGdyZWVuKSwgIuS4reetiSIgKGdvbGQpLCAi5Zuw6Zq+IiAocmVkKQoKIyMjIyBJbmZvIEFyZWEgKGJvdHRvbSB+MzAlKQotICoqUGFkZGluZyoqOiAxNnB4Ci0gKipUaXRsZSoqOiBpbiBgaDRgLCBgdGV4dC1wcmltYXJ5YCwgMi1saW5lIGNsYW1wCi0gKipSYXRpbmcqKjogYFN0YXJgIGljb24gKDEycHgsIGBnb2xkYCkgKyBudW1iZXIsIGBib2R5LXNtYAotICoqVW5sb2NrIGNvbmRpdGlvbioqOiBpbiBgYm9keS1zbWAgKDExcHgpLCBgdGV4dC1tdXRlZGAKICAtICLlhY3otLkiIChncmVlbikgLyAi6ZyANTDlpb3mhJ/luqYiIChnb2xkKSAvICLpnIAxMDDnlLXph48iIChwaW5rKQotICoqVGFncyoqOiAxLTIgc21hbGwgcGlsbHMsIGBwaW5rLTUwYCBiZwoKIyMjIyBDYXJkIEhvdmVyCi0gYHRyYW5zbGF0ZVkoLTZweClgICsgYHNoYWRvdy1sZ2AsIDIwMG1zCi0gQ292ZXIgaW1hZ2U6IGBzY2FsZSgxLjA2KWAsIDMwMG1zCi0gSWYgbG9ja2VkOiBvdmVybGF5IGxpZ2h0ZW5zIHNsaWdodGx5LCAi54K55Ye76Kej6ZSBIiB0ZXh0IGFwcGVhcnMKCiMjIyBTYW1wbGUgU3RvcnkgRGF0YQoKfCBUaXRsZSB8IENvdmVyIHwgUmF0aW5nIHwgQ29uZGl0aW9uIHwgVGFncyB8CnwtLS0tLS0tfC0tLS0tLS18LS0tLS0tLS18LS0tLS0tLS0tLS18LS0tLS0tfAp8IOaoseiKseagkeS4i+eahOe6puWumiB8IGBkcmFtYS1jb3Zlci0xLmpwZ2AgfCA0LjkgfCDlhY3otLkgfCDmtarmvKssIOaYpeaXpSB8Cnwg6Zuo5aSc5ZKW5ZWh6aaGIHwgYGRyYW1hLWNvdmVyLTIuanBnYCB8IDQuNyB8IOW3suino+mUgSB8IOaXpeW4uCwg5rip6aaoIHwKfCDmmJ/nqbrkuIvnmoTlkYrnmb0gfCBgZHJhbWEtY292ZXItMy5qcGdgIHwgNC44IHwg6ZyAODDlpb3mhJ/luqYgfCDmtarmvKssIOWknOaZmiB8Cnwg6Iqx5Zut6Iy25LyaIHwgYGRyYW1hLWNvdmVyLTQuanBnYCB8IDQuNSB8IOmcgDYw55S16YePIHwg5LyY6ZuFLCDlj6TlhbggfAoKIyMjIEFuaW1hdGlvbnMKLSAqKkdyaWQgZW50cmFuY2UqKjogQ2FyZHMgc3RhZ2dlciBpbiwgc2xpZGUgdXAgMzBweCArIGZhZGUsIDYwbXMgc3RhZ2dlciwgNDAwbXMKLSAqKkNhcmQgaG92ZXIqKjogQXMgZGVzY3JpYmVkCi0gKipGaWx0ZXIgY2hhbmdlKio6IE91dGdvaW5nIGNhcmRzIGZhZGUgMTUwbXMsIGluY29taW5nIHN0YWdnZXIgaW4KCi0tLQoKIyMjIFN0b3J5IFVubG9jayBNb2RhbAoKV2hlbiBjbGlja2luZyBhIGxvY2tlZCBzdG9yeToKLSBNb2RhbCBvdmVybGF5OiBgcmdiYSgyNiwxNiwzNywwLjUpYCArIGBiYWNrZHJvcC1ibHVyKDRweClgCi0gUGFuZWw6IHdoaXRlLCBgcmFkaXVzLXhsYCwgbWF4LXdpZHRoIDQyMHB4LCBjZW50ZXJlZAotIENvbnRlbnQ6CiAgLSBDb3ZlciBpbWFnZSB0aHVtYm5haWwgKDEyMHB4KQogIC0gVGl0bGU6ICLop6PplIEgW+aVheS6i+WQjV0/IgogIC0gRGVzY3JpcHRpb246IGJyaWVmIHN5bm9wc2lzCiAgLSBDb3N0IGRpc3BsYXk6IGUuZy4sICLpnIDopoE6IDUwIOWlveaEn+W6piIgd2l0aCBgSGVhcnRgIGljb24KICAtICLnoa7orqTop6PplIEiIGBwcmltYXJ5YCBidXR0b24gKyAi5Y+W5raIIiBgZ2hvc3RgIGJ1dHRvbgoKIyMjIEFuaW1hdGlvbnMKLSBNb2RhbDogc2NhbGUgMC45MuKGkjEgKyBmYWRlLCAzMDBtcyBlYXNlLWJvdW5jZQoKLS0tCgojIyBNb2RlIEI6IFN0b3J5IFNlc3Npb24KCiMjIyBPdmVydmlldwpXaGVuIGVudGVyaW5nIGEgc3RvcnksIHRoZSBVSSB0cmFuc2Zvcm1zIGludG8gYW4gaW1tZXJzaXZlIHN0b3J5IGNoYXQgaW50ZXJmYWNlLiBTaW1pbGFyIHRvIHRoZSBtYWluIGNoYXQgYnV0IHdpdGggc3Rvcnktc3BlY2lmaWMgdGhlbWluZywgcHJvZ3Jlc3MgdHJhY2tpbmcsIGFuZCBuYXJyYXRpdmUgZWxlbWVudHMuCgojIyMgUGFnZSBMYXlvdXQKCkZ1bGwtc2NyZWVuIGltbWVyc2l2ZSAobm8gc2lkZWJhciksIHNpbWlsYXIgdG8gY2hhdCBwYWdlIGJ1dCB3aXRoIHN0b3J5LXNwZWNpZmljIGNocm9tZS4KCmBgYArilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAK4pSCIFN0b3J5IFRvcCBCYXIgKDU2cHgpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgW0JhY2tdIFN0b3J5IFRpdGxlICsgQ2hhcHRlciAgICBbUHJvZ3Jlc3M6IDMvOF0gW01lbnVdICDilIIK4pSc4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSkCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICBTdG9yeSBDaGF0IEFyZWEgKHNjcm9sbGFibGUpICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAgICAgIOKUggrilIIgIOKUgiDwn5OWIOeroOiKgiAzOiDmqLHoirHpo5jokL0gICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgICDilIIK4pSCICDilIIg5b6u6aOO5ZC56L+H77yM6Iqx55Oj57q357q35oms5oms5Zyw6JC95LiLLi4uICAgICAgICAgICAgICDilIIgICAgICAg4pSCCuKUgiAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgICAgICDilIIK4pSCICDilIIgW+WJp+aDheaPj+i/sOawlOazoSDigJQg54m55q6K5qC35byPXSAgICAgICAgICAgICAgICAgICAg4pSCICAgICAgIOKUggrilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICAgICDilIIK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICDilIzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgIOKUgiBBSSBDb21wYW5pb24gTWVzc2FnZSAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAg4pSCIOS9oOeci++8jOiKseeTo+iQveWcqOS9oOeahOiCqeiGgOS4iuS6hi4uLuKUgiAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAg4pSCCuKUgiAg4pSCIPCfjq8g5Ymn5oOF6YCJ5oupICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUgiAgIOKUggrilIIgIOKUgiBb6L276L275biu5aW55ouC5Y676Iqx55OjXSBb5oqs5aS055yL5qix6Iqx5qCRXSBb5o+h5L2P5aW555qE5omLXSAg4pSCICAg4pSCCuKUgiAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSc4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSkCuKUgiBJbnB1dCBCYXIgKHNhbWUgYXMgbWFpbiBjaGF0KSAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCmBgYAoKLS0tCgojIyMgU2VjdGlvbiAxOiBTdG9yeSBUb3AgQmFyCgojIyMgRWxlbWVudHMKLSAqKkxlZnQqKjogYENoZXZyb25MZWZ0YCBiYWNrIGJ1dHRvbiArICLliafmg4Xnqbrpl7QiIGxhYmVsIChsaW5rcyBiYWNrIHRvIHBsYXphKQotICoqQ2VudGVyKio6IFN0b3J5IHRpdGxlICLmqLHoirHmoJHkuIvnmoTnuqblrpoiIGluIGBoNGAgKyBjdXJyZW50IGNoYXB0ZXIgIsK3IOesrDPnq6AiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCi0gKipSaWdodCoqOiBQcm9ncmVzcyAiMy84IiBpbiBgYm9keS1zbWAgKyBgTWVudWAgaWNvbiBkcm9wZG93bgoKIyMjIFByb2dyZXNzIEluZGljYXRvcgotIFRoaW4gaG9yaXpvbnRhbCBiYXIgYmVsb3cgdG9wIGJhciAoM3B4IGhlaWdodCkKLSBgYWNjZW50LWdyYWRpZW50YCBmaWxsIHNob3dpbmcgY3VycmVudCBwcm9ncmVzcwotIFdpZHRoOiBjaGFwdGVyIC8gdG90YWwsIGUuZy4sIDMvOCA9IDM3LjUlCgojIyMgQW5pbWF0aW9ucwotIFByb2dyZXNzIGJhcjogd2lkdGggYW5pbWF0ZXMgb24gY2hhcHRlciBjaGFuZ2UsIDQwMG1zCgotLS0KCiMjIyBTZWN0aW9uIDI6IFN0b3J5IENoYXQgQXJlYQoKU2FtZSBtZXNzYWdlIHN5c3RlbSBhcyBtYWluIGNoYXQsIGJ1dCB3aXRoIGFkZGl0aW9uYWwgZWxlbWVudHM6CgojIyMjIE5hcnJhdGl2ZSBEZXNjcmlwdGlvbiBCdWJibGVzCi0gU3BlY2lhbCBtZXNzYWdlIHR5cGUgZm9yIHN0b3J5IG5hcnJhdGlvbgotIEJhY2tncm91bmQ6IGByZ2JhKDI1NSwyNDUsMjQ3LDAuNilgICsgYGJhY2tkcm9wLWJsdXIoNHB4KWAKLSBCb3JkZXI6IDFweCBkYXNoZWQgYHBpbmstMjAwYAotIEJvcmRlciByYWRpdXM6IGByYWRpdXMtbGdgIGFsbCBjb3JuZXJzCi0gVGV4dDogYGJvZHlgLCBpdGFsaWMsIGB0ZXh0LXNlY29uZGFyeWAKLSBCb29rIGljb24gKGBCb29rT3BlbmApIGF0IHRvcC1sZWZ0IGNvcm5lciwgMTJweCwgYHBpbmstNDAwYAotIE1heCB3aWR0aDogODUlCi0gQ2VudGVyZWQgYWxpZ25tZW50CgojIyMjIENoYXB0ZXIgRGl2aWRlcnMKLSBXaGVuIGEgbmV3IGNoYXB0ZXIgYmVnaW5zOgogIC0gQ2VudGVyZWQgZGVjb3JhdGl2ZSBkaXZpZGVyCiAgLSBDaGFwdGVyIG51bWJlcjogIuesrOS4ieeroCIgaW4gYGxhYmVsYCwgYHBpbmstNTAwYAogIC0gQ2hhcHRlciB0aXRsZTogIuaoseiKsemjmOiQvSIgaW4gYGgzYAogIC0gRGVjb3JhdGl2ZSBsaW5lIGFib3ZlIGFuZCBiZWxvdzogMXB4IGBwaW5rLTEwMGAsIDYwcHggd2lkZQogIC0gU21hbGwgc3BhcmtsZSBhbmltYXRpb24gb24gdGhlIGRpdmlkZXIKCiMjIyMgU3RvcnkgQ2hvaWNlIFByb21wdHMKLSBBdCBkZWNpc2lvbiBwb2ludHMsIGEgc3BlY2lhbCBjYXJkIGFwcGVhcnM6CiAgLSBCYWNrZ3JvdW5kOiBgY2FyZC1ncmFkaWVudGAsIGByYWRpdXMtbGdgLCBgc2hhZG93LW1kYAogIC0gVGl0bGU6ICLkvaDnmoTpgInmi6kiIGluIGBoNGAsIHdpdGggYEdpdEZvcmtgIGljb24KICAtIDItMyBvcHRpb24gYnV0dG9ucyBzdGFja2VkIHZlcnRpY2FsbHkKICAtIEVhY2ggb3B0aW9uOiBmdWxsLXdpZHRoIGBnaG9zdGAgYnV0dG9uIHdpdGggdGV4dCBkZXNjcmlwdGlvbgogIC0gSG92ZXI6IGBwaW5rLTUwYCBiZyArIGJvcmRlciBgcGluay0zMDBgCiAgLSBTZWxlY3RlZDogYHByaW1hcnlgIGJ1dHRvbiBzdHlsZSwgZGlzYWJsZWQgb3RoZXJzCgojIyMgQW5pbWF0aW9ucwotIE5hcnJhdGl2ZSBidWJibGVzOiBmYWRlIGluICsgc2xpZ2h0IHNjYWxlIDAuOTjihpIxLCA1MDBtcwotIENoYXB0ZXIgZGl2aWRlcjogZGVjb3JhdGl2ZSBlbGVtZW50cyBzdGFnZ2VyIGluLCBjaGFwdGVyIHRpdGxlIHNsaWRlcyB1cCArIGZhZGVzCi0gQ2hvaWNlIGNhcmQ6IHNsaWRlIHVwIDIwcHggKyBmYWRlLCAzMDBtcwotIENob2ljZSBzZWxlY3Rpb246IHNlbGVjdGVkIGJ1dHRvbiB0cmFuc2l0aW9ucyB0byBgcHJpbWFyeWAsIG90aGVycyBmYWRlIG91dCAyMDBtcywgdGhlbiBjaGF0IGNvbnRpbnVlcwoKLS0tCgojIyMgU2VjdGlvbiAzOiBTdG9yeSBDb21wbGV0aW9uCgpXaGVuIGEgc3RvcnkgaXMgY29tcGxldGVkOgotIEEgY2VsZWJyYXRpb24gb3ZlcmxheSBhcHBlYXJzCi0gQ29uZmV0dGkgYW5pbWF0aW9uIChwaW5rIGFuZCBnb2xkIHBhcnRpY2xlcykKLSAi5Ymn5oOF5a6M5oiQISIgaW4gYGgxYCwgY2VudGVyZWQKLSBSZXdhcmRzOiAiKzUwIOWlveaEn+W6piIgKyAiKzIwIOeUtemHjyIgZGlzcGxheWVkIHdpdGggaWNvbnMKLSAi6L+U5Zue5bm/5Zy6IiBidXR0b24KLSBPcHRpb24gdG8gIumHjeaWsOS9k+mqjCIgKHJlc3RhcnQpCgojIyMgQW5pbWF0aW9ucwotIENvbmZldHRpOiBwYXJ0aWNsZXMgZmFsbCBmcm9tIHRvcCwgM3MsIHZhcmlvdXMgc2l6ZXMgYW5kIHNwZWVkcwotIFRleHQ6IGZhZGUgaW4gKyBzY2FsZSAwLjnihpIxLCA2MDBtcywgYWZ0ZXIgY29uZmV0dGkgc3RhcnRzCi0gUmV3YXJkczogc3RhZ2dlciBpbiBmcm9tIGJvdHRvbSwgMTAwbXMgc3RhZ2dlcgo=
+# Drama Page (drama.md)
+
+The Advanced Drama Space — a dual-mode page featuring a story plaza with novel-reader-style story cards and an immersive story chat interface. Users can browse story scenarios, unlock them, and then enter dedicated story sessions with their companion.
+
+| Property | Value |
+|----------|-------|
+| Route | `/drama` |
+| Sub-routes | `/drama` (plaza), `/drama/:id` (story session) |
+| Sections | 2 modes (Plaza + Session) |
+| Purpose | Immersive story scenarios and roleplay with AI companion |
+
+---
+
+## Mode A: Drama Plaza
+
+### Overview
+A browsing page for story scenarios displayed as rich cards in a grid. Each story has a cover image, title, synopsis, rating, and unlock condition. Novel-reader aesthetic with warm, literary styling.
+
+### Page Layout
+
+Standard app layout: sidebar + content area.
+
+```
+┌──────────────────────────────────────────────────────┐
+│ Sidebar │        Drama Plaza Content                │
+│ 220px   │                                           │
+│         │  Top Bar: "剧情空间" + filter tabs        │
+│         │                                           │
+│         │  ┌─────────────────────────────────────┐ │
+│         │  │ Featured Story (large banner card)  │ │
+│         │  └─────────────────────────────────────┘ │
+│         │                                           │
+│         │  Tab: [全部] [已解锁] [热门] [新品]      │
+│         │                                           │
+│         │  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐   │
+│         │  │Story │ │Story │ │Story │ │Story │   │
+│         │  │Card  │ │Card  │ │Card  │ │Card  │   │
+│         │  └──────┘ └──────┘ └──────┘ └──────┘   │
+│         │                                           │
+│         │  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐   │
+│         │  │Story │ │Story │ │Story │ │Story │   │
+│         │  │Card  │ │Card  │ │Card  │ │Card  │   │
+│         │  └──────┘ └──────┘ └──────┘ └──────┘   │
+│         │                                           │
+└─────────┴───────────────────────────────────────────┘
+```
+
+---
+
+### Section 1: Top Bar
+
+### Elements
+- **Left**: "剧情空间" in `h2`, with `BookOpen` icon (20px, `pink-400`)
+- **Right**: "已解锁 3/12" badge in `label` font, `pink-500`
+
+### Animations
+- Fade in, 300ms
+
+---
+
+### Section 2: Featured Story Banner
+
+### Overview
+A large, prominent banner card showcasing the featured/recommended story scenario at the top of the plaza.
+
+### Layout
+- Full content width, height ~240px
+- Card: `radius-xl`, overflow hidden
+- Horizontal layout: image left (~40%), text right (~60%)
+
+### Elements
+
+#### Image Area
+- Cover image (`drama-cover-1.jpg`), object-fit cover, full height
+- Gradient overlay: `linear-gradient(90deg, transparent 30%, rgba(26,16,37,0.85) 100%)`
+
+#### Text Area (overlaid on right)
+- **Badge**: "推荐剧情" pill, `accent-gradient`, white text
+- **Title**: "樱花树下的约定" in `h1`, white
+- **Synopsis**: "春天的一个傍晚，你和她在盛开的樱花树下相遇。风轻轻吹过，花瓣飘落在她的发间..." in `body`, white at 80%
+- **Meta row**: `Star` icon + "4.9" rating + `Users` icon + "2.3k 体验" + `Lock` icon + "免费解锁"
+- **CTA**: "开始体验" `primary` button, white bg, `pink-500` text
+
+### Animations
+- Entrance: slide up 30px + fade, 600ms
+- Hover: image subtle `scale(1.03)` within container, 400ms
+
+---
+
+### Section 3: Filter Tabs
+
+### Elements
+- Horizontal tab group, centered
+- Tabs: "全部" / "已解锁" / "热门" / "新品" / "浪漫" / "冒险" / "日常"
+- Active: `primary` button style (pill)
+- Inactive: `ghost` style
+- Gap: 8px
+
+### Animations
+- Tabs: fade in 200ms after banner
+- Switch: active indicator slides with spring, content cross-fades
+
+---
+
+### Section 4: Story Card Grid
+
+### Overview
+The main grid of story scenario cards. Rich, book-cover-inspired design.
+
+### Layout
+- CSS Grid: `repeat(auto-fill, minmax(240px, 1fr))`
+- Gap: 24px
+
+### Story Card Design
+
+Each card:
+- **Container**: `Card Component`, padding 0, overflow hidden, `radius-lg`
+- **Aspect ratio**: ~3:4 portrait (book cover feel)
+
+#### Cover Image Area (top ~70%)
+- Story cover image, object-fit cover
+- Gradient overlay at bottom: `linear-gradient(transparent 50%, rgba(26,16,37,0.8) 100%)`
+- **Lock overlay** (if locked): semi-transparent dark overlay + `Lock` icon (32px, white) centered
+- **Difficulty badge**: top-left corner, small pill, e.g., "简单" (green), "中等" (gold), "困难" (red)
+
+#### Info Area (bottom ~30%)
+- **Padding**: 16px
+- **Title**: in `h4`, `text-primary`, 2-line clamp
+- **Rating**: `Star` icon (12px, `gold`) + number, `body-sm`
+- **Unlock condition**: in `body-sm` (11px), `text-muted`
+  - "免费" (green) / "需50好感度" (gold) / "需100电量" (pink)
+- **Tags**: 1-2 small pills, `pink-50` bg
+
+#### Card Hover
+- `translateY(-6px)` + `shadow-lg`, 200ms
+- Cover image: `scale(1.06)`, 300ms
+- If locked: overlay lightens slightly, "点击解锁" text appears
+
+### Sample Story Data
+
+| Title | Cover | Rating | Condition | Tags |
+|-------|-------|--------|-----------|------|
+| 樱花树下的约定 | `drama-cover-1.jpg` | 4.9 | 免费 | 浪漫, 春日 |
+| 雨夜咖啡馆 | `drama-cover-2.jpg` | 4.7 | 已解锁 | 日常, 温馨 |
+| 星空下的告白 | `drama-cover-3.jpg` | 4.8 | 需80好感度 | 浪漫, 夜晚 |
+| 花园茶会 | `drama-cover-4.jpg` | 4.5 | 需60电量 | 优雅, 古典 |
+
+### Animations
+- **Grid entrance**: Cards stagger in, slide up 30px + fade, 60ms stagger, 400ms
+- **Card hover**: As described
+- **Filter change**: Outgoing cards fade 150ms, incoming stagger in
+
+---
+
+### Story Unlock Modal
+
+When clicking a locked story:
+- Modal overlay: `rgba(26,16,37,0.5)` + `backdrop-blur(4px)`
+- Panel: white, `radius-xl`, max-width 420px, centered
+- Content:
+  - Cover image thumbnail (120px)
+  - Title: "解锁 [故事名]?"
+  - Description: brief synopsis
+  - Cost display: e.g., "需要: 50 好感度" with `Heart` icon
+  - "确认解锁" `primary` button + "取消" `ghost` button
+
+### Animations
+- Modal: scale 0.92→1 + fade, 300ms ease-bounce
+
+---
+
+## Mode B: Story Session
+
+### Overview
+When entering a story, the UI transforms into an immersive story chat interface. Similar to the main chat but with story-specific theming, progress tracking, and narrative elements.
+
+### Page Layout
+
+Full-screen immersive (no sidebar), similar to chat page but with story-specific chrome.
+
+```
+┌──────────────────────────────────────────────────────────┐
+│ Story Top Bar (56px)                                     │
+│ [Back] Story Title + Chapter    [Progress: 3/8] [Menu]  │
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│  Story Chat Area (scrollable)                            │
+│                                                          │
+│  ┌──────────────────────────────────────────────┐       │
+│  │ 📖 章节 3: 樱花飘落                          │       │
+│  │ 微风吹过，花瓣纷纷扬扬地落下...              │       │
+│  │                                              │       │
+│  │ [剧情描述气泡 — 特殊样式]                    │       │
+│  └──────────────────────────────────────────────┘       │
+│                                                          │
+│      ┌──────────────────────────────┐                   │
+│      │ AI Companion Message         │                   │
+│      │ 你看，花瓣落在你的肩膀上了...│                   │
+│      └──────────────────────────────┘                   │
+│                                                          │
+│  ┌──────────────────────────────────────────────────┐   │
+│  │ 🎯 剧情选择                                     │   │
+│  │ [轻轻帮她拂去花瓣] [抬头看樱花树] [握住她的手]  │   │
+│  └──────────────────────────────────────────────────┘   │
+│                                                          │
+├──────────────────────────────────────────────────────────┤
+│ Input Bar (same as main chat)                            │
+└──────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Section 1: Story Top Bar
+
+### Elements
+- **Left**: `ChevronLeft` back button + "剧情空间" label (links back to plaza)
+- **Center**: Story title "樱花树下的约定" in `h4` + current chapter "· 第3章" in `body-sm`, `text-muted`
+- **Right**: Progress "3/8" in `body-sm` + `Menu` icon dropdown
+
+### Progress Indicator
+- Thin horizontal bar below top bar (3px height)
+- `accent-gradient` fill showing current progress
+- Width: chapter / total, e.g., 3/8 = 37.5%
+
+### Animations
+- Progress bar: width animates on chapter change, 400ms
+
+---
+
+### Section 2: Story Chat Area
+
+Same message system as main chat, but with additional elements:
+
+#### Narrative Description Bubbles
+- Special message type for story narration
+- Background: `rgba(255,245,247,0.6)` + `backdrop-blur(4px)`
+- Border: 1px dashed `pink-200`
+- Border radius: `radius-lg` all corners
+- Text: `body`, italic, `text-secondary`
+- Book icon (`BookOpen`) at top-left corner, 12px, `pink-400`
+- Max width: 85%
+- Centered alignment
+
+#### Chapter Dividers
+- When a new chapter begins:
+  - Centered decorative divider
+  - Chapter number: "第三章" in `label`, `pink-500`
+  - Chapter title: "樱花飘落" in `h3`
+  - Decorative line above and below: 1px `pink-100`, 60px wide
+  - Small sparkle animation on the divider
+
+#### Story Choice Prompts
+- At decision points, a special card appears:
+  - Background: `card-gradient`, `radius-lg`, `shadow-md`
+  - Title: "你的选择" in `h4`, with `GitFork` icon
+  - 2-3 option buttons stacked vertically
+  - Each option: full-width `ghost` button with text description
+  - Hover: `pink-50` bg + border `pink-300`
+  - Selected: `primary` button style, disabled others
+
+### Animations
+- Narrative bubbles: fade in + slight scale 0.98→1, 500ms
+- Chapter divider: decorative elements stagger in, chapter title slides up + fades
+- Choice card: slide up 20px + fade, 300ms
+- Choice selection: selected button transitions to `primary`, others fade out 200ms, then chat continues
+
+---
+
+### Section 3: Story Completion
+
+When a story is completed:
+- A celebration overlay appears
+- Confetti animation (pink and gold particles)
+- "剧情完成!" in `h1`, centered
+- Rewards: "+50 好感度" + "+20 电量" displayed with icons
+- "返回广场" button
+- Option to "重新体验" (restart)
+
+### Animations
+- Confetti: particles fall from top, 3s, various sizes and speeds
+- Text: fade in + scale 0.9→1, 600ms, after confetti starts
+- Rewards: stagger in from bottom, 100ms stagger

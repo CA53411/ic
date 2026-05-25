@@ -1,1 +1,385 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgbW90aW9uLCBBbmltYXRlUHJlc2VuY2UgfSBmcm9tICdmcmFtZXItbW90aW9uJzsKaW1wb3J0IHsKICBUcm9waHksCiAgTG9jaywKICBTdGFyLAogIFphcCwKICBUYXJnZXQsCiAgSGVhcnQsCiAgTWVzc2FnZUNpcmNsZSwKICBDYWxlbmRhciwKICBCb29rT3BlbiwKfSBmcm9tICdsdWNpZGUtcmVhY3QnOwppbXBvcnQgeyBjbiB9IGZyb20gJ0AvbGliL3V0aWxzJzsKaW1wb3J0IHsgdXNlQXV0aCB9IGZyb20gJ0AvaG9va3MvdXNlQXV0aCc7CmltcG9ydCB7IHN1cGFiYXNlIH0gZnJvbSAnQC9saWIvc3VwYWJhc2UnOwppbXBvcnQgeyB1c2VJMThuIH0gZnJvbSAnQC9pMThuL0kxOG5Db250ZXh0JzsKCi8qIOKUgOKUgOKUgCBUeXBlcyDilIDilIDilIAgKi8KaW50ZXJmYWNlIEFjaGlldmVtZW50SXRlbSB7CiAgaWQ6IHN0cmluZzsKICB0aXRsZTogc3RyaW5nOwogIGRlc2NyaXB0aW9uOiBzdHJpbmc7CiAgaWNvbjogc3RyaW5nOwogIHRvdGFsOiBudW1iZXI7CiAgY3VycmVudDogbnVtYmVyOwogIHVubG9ja2VkOiBib29sZWFuOwogIHVubG9ja2VkQXQ/OiBzdHJpbmc7Cn0KCi8qIOKUgOKUgOKUgCBJY29uIG1hcCDilIDilIDilIAgKi8KY29uc3QgaWNvbk1hcDogUmVjb3JkPHN0cmluZywgUmVhY3QuRWxlbWVudFR5cGU+ID0gewogIHRyb3BoeTogVHJvcGh5LAogIHN0YXI6IFN0YXIsCiAgemFwOiBaYXAsCiAgdGFyZ2V0OiBUYXJnZXQsCiAgaGVhcnQ6IEhlYXJ0LAogIG1lc3NhZ2U6IE1lc3NhZ2VDaXJjbGUsCiAgY2FsZW5kYXI6IENhbGVuZGFyLAogIGJvb2s6IEJvb2tPcGVuLAp9OwoKLyog4pSA4pSA4pSAIEFjaGlldmVtZW50IENhcmQg4pSA4pSA4pSAICovCmZ1bmN0aW9uIEFjaGlldmVtZW50Q2FyZCh7CiAgYWNoaWV2ZW1lbnQsCiAgaW5kZXgsCn06IHsKICBhY2hpZXZlbWVudDogQWNoaWV2ZW1lbnRJdGVtOwogIGluZGV4OiBudW1iZXI7Cn0pIHsKICBjb25zdCB7IHQgfSA9IHVzZUkxOG4oKTsKICBjb25zdCBJY29uID0gaWNvbk1hcFthY2hpZXZlbWVudC5pY29uXSB8fCBUcm9waHk7CiAgY29uc3QgcHJvZ3Jlc3NQZXJjZW50ID0gTWF0aC5taW4oCiAgICAoYWNoaWV2ZW1lbnQuY3VycmVudCAvIGFjaGlldmVtZW50LnRvdGFsKSAqIDEwMCwKICAgIDEwMAogICk7CgogIHJldHVybiAoCiAgICA8bW90aW9uLmRpdgogICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwIH19CiAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fQogICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiBpbmRleCAqIDAuMDYsIGR1cmF0aW9uOiAwLjQgfX0KICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAncm91bmRlZC0yeGwgYm9yZGVyIHAtNSB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi0yMDAnLAogICAgICAgIGFjaGlldmVtZW50LnVubG9ja2VkCiAgICAgICAgICA/ICdiZy13aGl0ZSBib3JkZXItcGluay0xMDAgaG92ZXI6c2hhZG93LWxnIGhvdmVyOi10cmFuc2xhdGUteS0xJwogICAgICAgICAgOiAnYmctcGluay01MC81MCBib3JkZXItcGluay01MCBvcGFjaXR5LTcwJwogICAgICApfQogICAgPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1zdGFydCBnYXAtNCI+CiAgICAgICAgey8qIEljb24gKi99CiAgICAgICAgPGRpdgogICAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICAgJ3ctMTIgaC0xMiByb3VuZGVkLXhsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIGZsZXgtc2hyaW5rLTAnLAogICAgICAgICAgICBhY2hpZXZlbWVudC51bmxvY2tlZAogICAgICAgICAgICAgID8gJ2JnLXBpbmstMTAwIHRleHQtcGluay01MDAnCiAgICAgICAgICAgICAgOiAnYmctcGluay01MCB0ZXh0LXBpbmstMzAwJwogICAgICAgICAgKX0KICAgICAgICA+CiAgICAgICAgICB7YWNoaWV2ZW1lbnQudW5sb2NrZWQgPyAoCiAgICAgICAgICAgIDxJY29uIHNpemU9ezI0fSAvPgogICAgICAgICAgKSA6ICgKICAgICAgICAgICAgPExvY2sgc2l6ZT17MjB9IC8+CiAgICAgICAgICApfQogICAgICAgIDwvZGl2PgoKICAgICAgICB7LyogSW5mbyAqL30KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleC0xIG1pbi13LTAiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIG1iLTEiPgogICAgICAgICAgICA8aDMgY2xhc3NOYW1lPSJmb250LWJvZHkgdGV4dC1bMTVweF0gZm9udC1zZW1pYm9sZCB0ZXh0LVsjMkQxQjJFXSI+CiAgICAgICAgICAgICAge2FjaGlldmVtZW50LnRpdGxlfQogICAgICAgICAgICA8L2gzPgogICAgICAgICAgICB7YWNoaWV2ZW1lbnQudW5sb2NrZWQgJiYgKAogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icHgtMiBweS0wLjUgcm91bmRlZC1mdWxsIHRleHQtWzEwcHhdIGZvbnQtc2VtaWJvbGQgYmctZ3JlZW4tMTAwIHRleHQtZ3JlZW4tNjAwIj4KICAgICAgICAgICAgICAgIHt0KCdhY2hpZXZlbWVudC51bmxvY2tlZCcpfQogICAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgKX0KICAgICAgICAgICAgeyFhY2hpZXZlbWVudC51bmxvY2tlZCAmJiAoCiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJweC0yIHB5LTAuNSByb3VuZGVkLWZ1bGwgdGV4dC1bMTBweF0gZm9udC1zZW1pYm9sZCBiZy1waW5rLTEwMCB0ZXh0LXBpbmstNDAwIj4KICAgICAgICAgICAgICAgIHt0KCdhY2hpZXZlbWVudC5sb2NrZWQnKX0KICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgICl9CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bMTJweF0gdGV4dC1bIzZCNUI2RV0gbWItMyBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICB7YWNoaWV2ZW1lbnQuZGVzY3JpcHRpb259CiAgICAgICAgICA8L3A+CgogICAgICAgICAgey8qIFByb2dyZXNzIGJhciAqL30KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gbWItMSI+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsxMXB4XSB0ZXh0LVsjQTA5M0E1XSI+CiAgICAgICAgICAgICAgICB7dCgnYWNoaWV2ZW1lbnQucHJvZ3Jlc3MnKX0KICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsxMXB4XSB0ZXh0LVsjNkI1QjZFXSBmb250LW1lZGl1bSI+CiAgICAgICAgICAgICAgICB7YWNoaWV2ZW1lbnQuY3VycmVudH0ve2FjaGlldmVtZW50LnRvdGFsfQogICAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLTIgYmctcGluay01MCByb3VuZGVkLWZ1bGwgb3ZlcmZsb3ctaGlkZGVuIj4KICAgICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAgICAgICAgICAgJ2gtZnVsbCByb3VuZGVkLWZ1bGwnLAogICAgICAgICAgICAgICAgICBhY2hpZXZlbWVudC51bmxvY2tlZAogICAgICAgICAgICAgICAgICAgID8gJ2JnLXBpbmstNDAwJwogICAgICAgICAgICAgICAgICAgIDogJ2JnLXBpbmstMjAwJwogICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgd2lkdGg6IDAgfX0KICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgd2lkdGg6IGAke3Byb2dyZXNzUGVyY2VudH0lYCB9fQogICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMC44LCBlYXNlOiAnZWFzZU91dCcsIGRlbGF5OiBpbmRleCAqIDAuMDYgfX0KICAgICAgICAgICAgICAvPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIHthY2hpZXZlbWVudC51bmxvY2tlZEF0ICYmICgKICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMXB4XSB0ZXh0LVsjQTA5M0E1XSBtdC0yIj4KICAgICAgICAgICAgICB7YWNoaWV2ZW1lbnQudW5sb2NrZWRBdH0KICAgICAgICAgICAgPC9wPgogICAgICAgICAgKX0KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L21vdGlvbi5kaXY+CiAgKTsKfQoKLyog4pSA4pSA4pSAIENvbXBvbmVudCDilIDilIDilIAgKi8KZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQWNoaWV2ZW1lbnQoKSB7CiAgY29uc3QgeyB0IH0gPSB1c2VJMThuKCk7CiAgY29uc3QgeyBpc0F1dGhlbnRpY2F0ZWQgfSA9IHVzZUF1dGgoKTsKICBjb25zdCBbYWNoaWV2ZW1lbnRzLCBzZXRBY2hpZXZlbWVudHNdID0gdXNlU3RhdGU8QWNoaWV2ZW1lbnRJdGVtW10+KFtdKTsKICBjb25zdCBbbG9hZGluZywgc2V0TG9hZGluZ10gPSB1c2VTdGF0ZSh0cnVlKTsKICBjb25zdCBbZmlsdGVyLCBzZXRGaWx0ZXJdID0gdXNlU3RhdGU8J2FsbCcgfCAndW5sb2NrZWQnIHwgJ2xvY2tlZCc+KCdhbGwnKTsKCiAgLyogTG9hZCBhY2hpZXZlbWVudHMgKi8KICB1c2VFZmZlY3QoKCkgPT4gewogICAgYXN5bmMgZnVuY3Rpb24gbG9hZEFjaGlldmVtZW50cygpIHsKICAgICAgdHJ5IHsKICAgICAgICBzZXRMb2FkaW5nKHRydWUpOwoKICAgICAgICBpZiAoIWlzQXV0aGVudGljYXRlZCkgewogICAgICAgICAgc2V0QWNoaWV2ZW1lbnRzKFtdKTsKICAgICAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgICAgICAgcmV0dXJuOwogICAgICAgIH0KCiAgICAgICAgY29uc3QgeyBkYXRhOiB7IHVzZXIgfSB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRVc2VyKCk7CiAgICAgICAgaWYgKCF1c2VyKSB7CiAgICAgICAgICBzZXRBY2hpZXZlbWVudHMoW10pOwogICAgICAgICAgc2V0TG9hZGluZyhmYWxzZSk7CiAgICAgICAgICByZXR1cm47CiAgICAgICAgfQoKICAgICAgICAvLyBMb2FkIHVzZXIgc3RhdHMgZm9yIGFjaGlldmVtZW50IGNhbGN1bGF0aW9uCiAgICAgICAgY29uc3QgWwogICAgICAgICAgbWVzc2FnZXNSZXN1bHQsCiAgICAgICAgICBkaWFyaWVzUmVzdWx0LAogICAgICAgICAgZHJhbWFzUmVzdWx0LAogICAgICAgIF0gPSBhd2FpdCBQcm9taXNlLmFsbChbCiAgICAgICAgICBzdXBhYmFzZQogICAgICAgICAgICAuZnJvbSgnY2hhdF9tZXNzYWdlcycpCiAgICAgICAgICAgIC5zZWxlY3QoJ2lkJywgeyBjb3VudDogJ2V4YWN0JywgaGVhZDogdHJ1ZSB9KQogICAgICAgICAgICAuZXEoJ3VzZXJfaWQnLCB1c2VyLmlkKSwKICAgICAgICAgIHN1cGFiYXNlCiAgICAgICAgICAgIC5mcm9tKCdjb21wYW5pb25fZGlhcmllcycpCiAgICAgICAgICAgIC5zZWxlY3QoJ2lkJywgeyBjb3VudDogJ2V4YWN0JywgaGVhZDogdHJ1ZSB9KQogICAgICAgICAgICAuZXEoJ3VzZXJfaWQnLCB1c2VyLmlkKSwKICAgICAgICAgIHN1cGFiYXNlCiAgICAgICAgICAgIC5mcm9tKCdkcmFtYV9wcm9ncmVzcycpCiAgICAgICAgICAgIC5zZWxlY3QoJ2lkJywgeyBjb3VudDogJ2V4YWN0JywgaGVhZDogdHJ1ZSB9KQogICAgICAgICAgICAuZXEoJ3VzZXJfaWQnLCB1c2VyLmlkKSwKICAgICAgICBdKTsKCiAgICAgICAgY29uc3QgbWVzc2FnZUNvdW50ID0gbWVzc2FnZXNSZXN1bHQuY291bnQgPz8gMDsKICAgICAgICBjb25zdCBkaWFyeUNvdW50ID0gZGlhcmllc1Jlc3VsdC5jb3VudCA/PyAwOwogICAgICAgIGNvbnN0IGRyYW1hQ291bnQgPSBkcmFtYXNSZXN1bHQuY291bnQgPz8gMDsKCiAgICAgICAgLy8gQnVpbGQgYWNoaWV2ZW1lbnQgbGlzdAogICAgICAgIGNvbnN0IGFjaGlldmVtZW50TGlzdDogQWNoaWV2ZW1lbnRJdGVtW10gPSBbCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAnZmlyc3QtY2hhdCcsCiAgICAgICAgICAgIHRpdGxlOiAn5Yid5qyh6YKC6YCFJywKICAgICAgICAgICAgZGVzY3JpcHRpb246ICflj5HpgIHkvaDnmoTnrKzkuIDmnaHmtojmga8nLAogICAgICAgICAgICBpY29uOiAnbWVzc2FnZScsCiAgICAgICAgICAgIHRvdGFsOiAxLAogICAgICAgICAgICBjdXJyZW50OiBNYXRoLm1pbihtZXNzYWdlQ291bnQsIDEpLAogICAgICAgICAgICB1bmxvY2tlZDogbWVzc2FnZUNvdW50ID49IDEsCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICBpZDogJ2NoYXQtMTAnLAogICAgICAgICAgICB0aXRsZTogJ+eVheiBiui+vuS6uicsCiAgICAgICAgICAgIGRlc2NyaXB0aW9uOiAn57Sv6K6h5Y+R6YCBIDEwIOadoea2iOaBrycsCiAgICAgICAgICAgIGljb246ICdtZXNzYWdlJywKICAgICAgICAgICAgdG90YWw6IDEwLAogICAgICAgICAgICBjdXJyZW50OiBNYXRoLm1pbihtZXNzYWdlQ291bnQsIDEwKSwKICAgICAgICAgICAgdW5sb2NrZWQ6IG1lc3NhZ2VDb3VudCA+PSAxMCwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAnY2hhdC0xMDAnLAogICAgICAgICAgICB0aXRsZTogJ+WNg+iogOS4h+ivrScsCiAgICAgICAgICAgIGRlc2NyaXB0aW9uOiAn57Sv6K6h5Y+R6YCBIDEwMCDmnaHmtojmga8nLAogICAgICAgICAgICBpY29uOiAnbWVzc2FnZScsCiAgICAgICAgICAgIHRvdGFsOiAxMDAsCiAgICAgICAgICAgIGN1cnJlbnQ6IE1hdGgubWluKG1lc3NhZ2VDb3VudCwgMTAwKSwKICAgICAgICAgICAgdW5sb2NrZWQ6IG1lc3NhZ2VDb3VudCA+PSAxMDAsCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICBpZDogJ2ZpcnN0LWRpYXJ5JywKICAgICAgICAgICAgdGl0bGU6ICforrDlv4bmlLbol4/lrrYnLAogICAgICAgICAgICBkZXNjcmlwdGlvbjogJ+aLpeacieesrOS4gOevh+aXpeiusCcsCiAgICAgICAgICAgIGljb246ICdib29rJywKICAgICAgICAgICAgdG90YWw6IDEsCiAgICAgICAgICAgIGN1cnJlbnQ6IE1hdGgubWluKGRpYXJ5Q291bnQsIDEpLAogICAgICAgICAgICB1bmxvY2tlZDogZGlhcnlDb3VudCA+PSAxLAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgaWQ6ICdmaXJzdC1kcmFtYScsCiAgICAgICAgICAgIHRpdGxlOiAn5Ymn5oOF5o6i57Si6ICFJywKICAgICAgICAgICAgZGVzY3JpcHRpb246ICfpppbmrKHlj4LkuI7liafmg4UnLAogICAgICAgICAgICBpY29uOiAnc3RhcicsCiAgICAgICAgICAgIHRvdGFsOiAxLAogICAgICAgICAgICBjdXJyZW50OiBNYXRoLm1pbihkcmFtYUNvdW50LCAxKSwKICAgICAgICAgICAgdW5sb2NrZWQ6IGRyYW1hQ291bnQgPj0gMSwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgIGlkOiAnbG9naW4tNycsCiAgICAgICAgICAgIHRpdGxlOiAn5LiD5pel5LmL57qmJywKICAgICAgICAgICAgZGVzY3JpcHRpb246ICfov57nu60gNyDlpKnnmbvlvZUnLAogICAgICAgICAgICBpY29uOiAnY2FsZW5kYXInLAogICAgICAgICAgICB0b3RhbDogNywKICAgICAgICAgICAgY3VycmVudDogMSwKICAgICAgICAgICAgdW5sb2NrZWQ6IGZhbHNlLAogICAgICAgICAgfSwKICAgICAgICBdOwoKICAgICAgICBzZXRBY2hpZXZlbWVudHMoYWNoaWV2ZW1lbnRMaXN0KTsKICAgICAgfSBjYXRjaCAoZSkgewogICAgICAgIGNvbnNvbGUuZXJyb3IoJ0FjaGlldmVtZW50IGxvYWQgZXJyb3I6JywgZSk7CiAgICAgICAgc2V0QWNoaWV2ZW1lbnRzKFtdKTsKICAgICAgfSBmaW5hbGx5IHsKICAgICAgICBzZXRMb2FkaW5nKGZhbHNlKTsKICAgICAgfQogICAgfQoKICAgIGxvYWRBY2hpZXZlbWVudHMoKTsKICB9LCBbaXNBdXRoZW50aWNhdGVkXSk7CgogIC8qIEZpbHRlcmVkIGFjaGlldmVtZW50cyAqLwogIGNvbnN0IGZpbHRlcmVkQWNoaWV2ZW1lbnRzID0gYWNoaWV2ZW1lbnRzLmZpbHRlcigoYSkgPT4gewogICAgaWYgKGZpbHRlciA9PT0gJ3VubG9ja2VkJykgcmV0dXJuIGEudW5sb2NrZWQ7CiAgICBpZiAoZmlsdGVyID09PSAnbG9ja2VkJykgcmV0dXJuICFhLnVubG9ja2VkOwogICAgcmV0dXJuIHRydWU7CiAgfSk7CgogIGNvbnN0IHVubG9ja2VkQ291bnQgPSBhY2hpZXZlbWVudHMuZmlsdGVyKChhKSA9PiBhLnVubG9ja2VkKS5sZW5ndGg7CgogIC8qIEFuaW1hdGlvbiAqLwogIGNvbnN0IGNvbnRhaW5lclZhcmlhbnRzID0gewogICAgaGlkZGVuOiB7IG9wYWNpdHk6IDAgfSwKICAgIHNob3c6IHsKICAgICAgb3BhY2l0eTogMSwKICAgICAgdHJhbnNpdGlvbjogeyBzdGFnZ2VyQ2hpbGRyZW46IDAuMDYgfSwKICAgIH0sCiAgfTsKCiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJtaW4taC1bMTAwZHZoXSBiZy1waW5rLTUwIj4KICAgICAgey8qIOKUgOKUgCBUb3AgQmFyIOKUgOKUgCAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9InB4LTggcHQtNiBwYi00Ij4KICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4iCiAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IC0xMCB9fQogICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19CiAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAwLjMgfX0KICAgICAgICA+CiAgICAgICAgICB7LyogTGVmdDogVGl0bGUgKi99CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTMiPgogICAgICAgICAgICA8VHJvcGh5IHNpemU9ezIwfSBjbGFzc05hbWU9InRleHQtcGluay00MDAiIC8+CiAgICAgICAgICAgIDxoMiBjbGFzc05hbWU9ImZvbnQtYm9keSB0ZXh0LVsyOHB4XSBmb250LWJvbGQgdGV4dC1bIzJEMUIyRV0iPgogICAgICAgICAgICAgIHt0KCdhY2hpZXZlbWVudC50aXRsZScpfQogICAgICAgICAgICA8L2gyPgogICAgICAgICAgPC9kaXY+CgogICAgICAgICAgey8qIFJpZ2h0OiBTdGF0cyAqL30KICAgICAgICAgIDxtb3Rpb24uZGl2CiAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTMiCiAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCB9fQogICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEgfX0KICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogMC4yIH19CiAgICAgICAgICA+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icHgtMyBweS0xIHJvdW5kZWQtZnVsbCB0ZXh0LVsxMnB4XSBmb250LXNlbWlib2xkIHRleHQtcGluay01MDAgYmctcGluay01MCBib3JkZXIgYm9yZGVyLXBpbmstMjAwIj4KICAgICAgICAgICAgICB7dW5sb2NrZWRDb3VudH0ve2FjaGlldmVtZW50cy5sZW5ndGh9CiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDwvbW90aW9uLmRpdj4KICAgICAgICA8L21vdGlvbi5kaXY+CgogICAgICAgIHsvKiBGaWx0ZXIgVGFicyAqL30KICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiBtdC01IgogICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwIH19CiAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEgfX0KICAgICAgICAgIHRyYW5zaXRpb249e3sgZGVsYXk6IDAuMTUgfX0KICAgICAgICA+CiAgICAgICAgICB7KFsKICAgICAgICAgICAgeyBrZXk6ICdhbGwnLCBsYWJlbDogJ+WFqOmDqCcgfSwKICAgICAgICAgICAgeyBrZXk6ICd1bmxvY2tlZCcsIGxhYmVsOiB0KCdhY2hpZXZlbWVudC51bmxvY2tlZCcpIH0sCiAgICAgICAgICAgIHsga2V5OiAnbG9ja2VkJywgbGFiZWw6IHQoJ2FjaGlldmVtZW50LmxvY2tlZCcpIH0sCiAgICAgICAgICBdIGFzIGNvbnN0KS5tYXAoKHRhYikgPT4gKAogICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAga2V5PXt0YWIua2V5fQogICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldEZpbHRlcih0YWIua2V5KX0KICAgICAgICAgICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICAgICAgICAgJ3B4LTUgcHktMiByb3VuZGVkLWZ1bGwgdGV4dC1bMTRweF0gZm9udC1tZWRpdW0gdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMjAwJywKICAgICAgICAgICAgICAgIGZpbHRlciA9PT0gdGFiLmtleQogICAgICAgICAgICAgICAgICA/ICdhY2NlbnQtZ3JhZGllbnQgdGV4dC13aGl0ZSBzaGFkb3ctbWQnCiAgICAgICAgICAgICAgICAgIDogJ2JnLXdoaXRlIHRleHQtWyM2QjVCNkVdIGJvcmRlciBib3JkZXItcGluay0xMDAgaG92ZXI6YmctcGluay01MCcKICAgICAgICAgICAgICApfQogICAgICAgICAgICA+CiAgICAgICAgICAgICAge3RhYi5sYWJlbH0KICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICApKX0KICAgICAgICA8L21vdGlvbi5kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgey8qIOKUgOKUgCBDb250ZW50IOKUgOKUgCAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9InB4LTggcGItOCI+CiAgICAgICAge2xvYWRpbmcgPyAoCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcHktMjAiPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idy04IGgtOCBib3JkZXItMiBib3JkZXItcGluay0zMDAgYm9yZGVyLXQtcGluay01MDAgcm91bmRlZC1mdWxsIGFuaW1hdGUtc3BpbiIgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgICkgOiAoCiAgICAgICAgICA8PgogICAgICAgICAgICB7ZmlsdGVyZWRBY2hpZXZlbWVudHMubGVuZ3RoID4gMCA/ICgKICAgICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJncmlkIGdyaWQtY29scy0yIGdhcC00IgogICAgICAgICAgICAgICAgdmFyaWFudHM9e2NvbnRhaW5lclZhcmlhbnRzfQogICAgICAgICAgICAgICAgaW5pdGlhbD0iaGlkZGVuIgogICAgICAgICAgICAgICAgYW5pbWF0ZT0ic2hvdyIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICA8QW5pbWF0ZVByZXNlbmNlPgogICAgICAgICAgICAgICAgICB7ZmlsdGVyZWRBY2hpZXZlbWVudHMubWFwKChhY2hpZXZlbWVudCwgaWR4KSA9PiAoCiAgICAgICAgICAgICAgICAgICAgPEFjaGlldmVtZW50Q2FyZAogICAgICAgICAgICAgICAgICAgICAga2V5PXthY2hpZXZlbWVudC5pZH0KICAgICAgICAgICAgICAgICAgICAgIGFjaGlldmVtZW50PXthY2hpZXZlbWVudH0KICAgICAgICAgICAgICAgICAgICAgIGluZGV4PXtpZHh9CiAgICAgICAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgICAgICA8L0FuaW1hdGVQcmVzZW5jZT4KICAgICAgICAgICAgICA8L21vdGlvbi5kaXY+CiAgICAgICAgICAgICkgOiAoCiAgICAgICAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcHktMjAiCiAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDEwIH19CiAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAgfX0KICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDAuMyB9fQogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIDxUcm9waHkgc2l6ZT17NjR9IGNsYXNzTmFtZT0idGV4dC1waW5rLTIwMCBtYi00IiAvPgogICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxNXB4XSB0ZXh0LVsjQTA5M0E1XSBmb250LW1lZGl1bSI+CiAgICAgICAgICAgICAgICAgIHt0KCdhY2hpZXZlbWVudC5ub0FjaGlldmVtZW50cycpfQogICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgIDwvbW90aW9uLmRpdj4KICAgICAgICAgICAgKX0KICAgICAgICAgIDwvPgogICAgICAgICl9CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Trophy,
+  Lock,
+  Star,
+  Zap,
+  Target,
+  Heart,
+  MessageCircle,
+  Calendar,
+  BookOpen,
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { useAuth } from '@/hooks/useAuth';
+import { supabase } from '@/lib/supabase';
+import { useI18n } from '@/i18n/I18nContext';
+
+/* ─── Types ─── */
+interface AchievementItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  total: number;
+  current: number;
+  unlocked: boolean;
+  unlockedAt?: string;
+}
+
+/* ─── Icon map ─── */
+const iconMap: Record<string, React.ElementType> = {
+  trophy: Trophy,
+  star: Star,
+  zap: Zap,
+  target: Target,
+  heart: Heart,
+  message: MessageCircle,
+  calendar: Calendar,
+  book: BookOpen,
+};
+
+/* ─── Achievement Card ─── */
+function AchievementCard({
+  achievement,
+  index,
+}: {
+  achievement: AchievementItem;
+  index: number;
+}) {
+  const { t } = useI18n();
+  const Icon = iconMap[achievement.icon] || Trophy;
+  const progressPercent = Math.min(
+    (achievement.current / achievement.total) * 100,
+    100
+  );
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.06, duration: 0.4 }}
+      className={cn(
+        'rounded-2xl border p-5 transition-all duration-200',
+        achievement.unlocked
+          ? 'bg-white border-pink-100 hover:shadow-lg hover:-translate-y-1'
+          : 'bg-pink-50/50 border-pink-50 opacity-70'
+      )}
+    >
+      <div className="flex items-start gap-4">
+        {/* Icon */}
+        <div
+          className={cn(
+            'w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0',
+            achievement.unlocked
+              ? 'bg-pink-100 text-pink-500'
+              : 'bg-pink-50 text-pink-300'
+          )}
+        >
+          {achievement.unlocked ? (
+            <Icon size={24} />
+          ) : (
+            <Lock size={20} />
+          )}
+        </div>
+
+        {/* Info */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <h3 className="font-body text-[15px] font-semibold text-[#2D1B2E]">
+              {achievement.title}
+            </h3>
+            {achievement.unlocked && (
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-green-100 text-green-600">
+                {t('achievement.unlocked')}
+              </span>
+            )}
+            {!achievement.unlocked && (
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-pink-100 text-pink-400">
+                {t('achievement.locked')}
+              </span>
+            )}
+          </div>
+          <p className="text-[12px] text-[#6B5B6E] mb-3 leading-relaxed">
+            {achievement.description}
+          </p>
+
+          {/* Progress bar */}
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[11px] text-[#A093A5]">
+                {t('achievement.progress')}
+              </span>
+              <span className="text-[11px] text-[#6B5B6E] font-medium">
+                {achievement.current}/{achievement.total}
+              </span>
+            </div>
+            <div className="h-2 bg-pink-50 rounded-full overflow-hidden">
+              <motion.div
+                className={cn(
+                  'h-full rounded-full',
+                  achievement.unlocked
+                    ? 'bg-pink-400'
+                    : 'bg-pink-200'
+                )}
+                initial={{ width: 0 }}
+                animate={{ width: `${progressPercent}%` }}
+                transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.06 }}
+              />
+            </div>
+          </div>
+
+          {achievement.unlockedAt && (
+            <p className="text-[11px] text-[#A093A5] mt-2">
+              {achievement.unlockedAt}
+            </p>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─── Component ─── */
+export default function Achievement() {
+  const { t } = useI18n();
+  const { isAuthenticated } = useAuth();
+  const [achievements, setAchievements] = useState<AchievementItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState<'all' | 'unlocked' | 'locked'>('all');
+
+  /* Load achievements */
+  useEffect(() => {
+    async function loadAchievements() {
+      try {
+        setLoading(true);
+
+        if (!isAuthenticated) {
+          setAchievements([]);
+          setLoading(false);
+          return;
+        }
+
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) {
+          setAchievements([]);
+          setLoading(false);
+          return;
+        }
+
+        // Load user stats for achievement calculation
+        const [
+          messagesResult,
+          diariesResult,
+          dramasResult,
+        ] = await Promise.all([
+          supabase
+            .from('chat_messages')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', user.id),
+          supabase
+            .from('companion_diaries')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', user.id),
+          supabase
+            .from('drama_progress')
+            .select('id', { count: 'exact', head: true })
+            .eq('user_id', user.id),
+        ]);
+
+        const messageCount = messagesResult.count ?? 0;
+        const diaryCount = diariesResult.count ?? 0;
+        const dramaCount = dramasResult.count ?? 0;
+
+        // Build achievement list
+        const achievementList: AchievementItem[] = [
+          {
+            id: 'first-chat',
+            title: '初次邂逅',
+            description: '发送你的第一条消息',
+            icon: 'message',
+            total: 1,
+            current: Math.min(messageCount, 1),
+            unlocked: messageCount >= 1,
+          },
+          {
+            id: 'chat-10',
+            title: '畅聊达人',
+            description: '累计发送 10 条消息',
+            icon: 'message',
+            total: 10,
+            current: Math.min(messageCount, 10),
+            unlocked: messageCount >= 10,
+          },
+          {
+            id: 'chat-100',
+            title: '千言万语',
+            description: '累计发送 100 条消息',
+            icon: 'message',
+            total: 100,
+            current: Math.min(messageCount, 100),
+            unlocked: messageCount >= 100,
+          },
+          {
+            id: 'first-diary',
+            title: '记忆收藏家',
+            description: '拥有第一篇日记',
+            icon: 'book',
+            total: 1,
+            current: Math.min(diaryCount, 1),
+            unlocked: diaryCount >= 1,
+          },
+          {
+            id: 'first-drama',
+            title: '剧情探索者',
+            description: '首次参与剧情',
+            icon: 'star',
+            total: 1,
+            current: Math.min(dramaCount, 1),
+            unlocked: dramaCount >= 1,
+          },
+          {
+            id: 'login-7',
+            title: '七日之约',
+            description: '连续 7 天登录',
+            icon: 'calendar',
+            total: 7,
+            current: 1,
+            unlocked: false,
+          },
+        ];
+
+        setAchievements(achievementList);
+      } catch (e) {
+        console.error('Achievement load error:', e);
+        setAchievements([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadAchievements();
+  }, [isAuthenticated]);
+
+  /* Filtered achievements */
+  const filteredAchievements = achievements.filter((a) => {
+    if (filter === 'unlocked') return a.unlocked;
+    if (filter === 'locked') return !a.unlocked;
+    return true;
+  });
+
+  const unlockedCount = achievements.filter((a) => a.unlocked).length;
+
+  /* Animation */
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.06 },
+    },
+  };
+
+  return (
+    <div className="min-h-[100dvh] bg-pink-50">
+      {/* ── Top Bar ── */}
+      <div className="px-8 pt-6 pb-4">
+        <motion.div
+          className="flex items-center justify-between"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {/* Left: Title */}
+          <div className="flex items-center gap-3">
+            <Trophy size={20} className="text-pink-400" />
+            <h2 className="font-body text-[28px] font-bold text-[#2D1B2E]">
+              {t('achievement.title')}
+            </h2>
+          </div>
+
+          {/* Right: Stats */}
+          <motion.div
+            className="flex items-center gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <span className="px-3 py-1 rounded-full text-[12px] font-semibold text-pink-500 bg-pink-50 border border-pink-200">
+              {unlockedCount}/{achievements.length}
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* Filter Tabs */}
+        <motion.div
+          className="flex items-center gap-2 mt-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.15 }}
+        >
+          {([
+            { key: 'all', label: '全部' },
+            { key: 'unlocked', label: t('achievement.unlocked') },
+            { key: 'locked', label: t('achievement.locked') },
+          ] as const).map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setFilter(tab.key)}
+              className={cn(
+                'px-5 py-2 rounded-full text-[14px] font-medium transition-all duration-200',
+                filter === tab.key
+                  ? 'accent-gradient text-white shadow-md'
+                  : 'bg-white text-[#6B5B6E] border border-pink-100 hover:bg-pink-50'
+              )}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* ── Content ── */}
+      <div className="px-8 pb-8">
+        {loading ? (
+          <div className="flex items-center justify-center py-20">
+            <div className="w-8 h-8 border-2 border-pink-300 border-t-pink-500 rounded-full animate-spin" />
+          </div>
+        ) : (
+          <>
+            {filteredAchievements.length > 0 ? (
+              <motion.div
+                className="grid grid-cols-2 gap-4"
+                variants={containerVariants}
+                initial="hidden"
+                animate="show"
+              >
+                <AnimatePresence>
+                  {filteredAchievements.map((achievement, idx) => (
+                    <AchievementCard
+                      key={achievement.id}
+                      achievement={achievement}
+                      index={idx}
+                    />
+                  ))}
+                </AnimatePresence>
+              </motion.div>
+            ) : (
+              <motion.div
+                className="flex flex-col items-center justify-center py-20"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Trophy size={64} className="text-pink-200 mb-4" />
+                <p className="text-[15px] text-[#A093A5] font-medium">
+                  {t('achievement.noAchievements')}
+                </p>
+              </motion.div>
+            )}
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

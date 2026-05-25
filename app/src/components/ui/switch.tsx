@@ -1,1 +1,31 @@
-InVzZSBjbGllbnQiCgppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIKaW1wb3J0ICogYXMgU3dpdGNoUHJpbWl0aXZlIGZyb20gIkByYWRpeC11aS9yZWFjdC1zd2l0Y2giCgppbXBvcnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKZnVuY3Rpb24gU3dpdGNoKHsKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFN3aXRjaFByaW1pdGl2ZS5Sb290PikgewogIHJldHVybiAoCiAgICA8U3dpdGNoUHJpbWl0aXZlLlJvb3QKICAgICAgZGF0YS1zbG90PSJzd2l0Y2giCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgInBlZXIgZGF0YS1bc3RhdGU9Y2hlY2tlZF06YmctcHJpbWFyeSBkYXRhLVtzdGF0ZT11bmNoZWNrZWRdOmJnLWlucHV0IGZvY3VzLXZpc2libGU6Ym9yZGVyLXJpbmcgZm9jdXMtdmlzaWJsZTpyaW5nLXJpbmcvNTAgZGFyazpkYXRhLVtzdGF0ZT11bmNoZWNrZWRdOmJnLWlucHV0LzgwIGlubGluZS1mbGV4IGgtWzEuMTVyZW1dIHctOCBzaHJpbmstMCBpdGVtcy1jZW50ZXIgcm91bmRlZC1mdWxsIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgc2hhZG93LXhzIHRyYW5zaXRpb24tYWxsIG91dGxpbmUtbm9uZSBmb2N1cy12aXNpYmxlOnJpbmctWzNweF0gZGlzYWJsZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAiLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICA+CiAgICAgIDxTd2l0Y2hQcmltaXRpdmUuVGh1bWIKICAgICAgICBkYXRhLXNsb3Q9InN3aXRjaC10aHVtYiIKICAgICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICAgImJnLWJhY2tncm91bmQgZGFyazpkYXRhLVtzdGF0ZT11bmNoZWNrZWRdOmJnLWZvcmVncm91bmQgZGFyazpkYXRhLVtzdGF0ZT1jaGVja2VkXTpiZy1wcmltYXJ5LWZvcmVncm91bmQgcG9pbnRlci1ldmVudHMtbm9uZSBibG9jayBzaXplLTQgcm91bmRlZC1mdWxsIHJpbmctMCB0cmFuc2l0aW9uLXRyYW5zZm9ybSBkYXRhLVtzdGF0ZT1jaGVja2VkXTp0cmFuc2xhdGUteC1bY2FsYygxMDAlLTJweCldIGRhdGEtW3N0YXRlPXVuY2hlY2tlZF06dHJhbnNsYXRlLXgtMCIKICAgICAgICApfQogICAgICAvPgogICAgPC9Td2l0Y2hQcmltaXRpdmUuUm9vdD4KICApCn0KCmV4cG9ydCB7IFN3aXRjaCB9Cg==
+"use client"
+
+import * as React from "react"
+import * as SwitchPrimitive from "@radix-ui/react-switch"
+
+import { cn } from "@/lib/utils"
+
+function Switch({
+  className,
+  ...props
+}: React.ComponentProps<typeof SwitchPrimitive.Root>) {
+  return (
+    <SwitchPrimitive.Root
+      data-slot="switch"
+      className={cn(
+        "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+        className
+      )}
+      {...props}
+    >
+      <SwitchPrimitive.Thumb
+        data-slot="switch-thumb"
+        className={cn(
+          "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"
+        )}
+      />
+    </SwitchPrimitive.Root>
+  )
+}
+
+export { Switch }

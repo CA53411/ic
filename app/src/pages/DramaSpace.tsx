@@ -1,1 +1,569 @@
-LyoqCiAqIERyYW1hU3BhY2UudHN4IOKAlCBJbmRlcGVuZGVudCBEcmFtYSBTcGFjZQogKiBFYWNoIGRyYW1hIGlzIGEgY29tcGxldGVseSBzZXBhcmF0ZSB2aXJ0dWFsIHdvcmxkLgogKiBVc2VycyBlbnRlciBhIHNjcmlwdGVkIHNjZW5lIGFuZCByb2xlLXBsYXkgd2l0aCB0aGVpciBjb21wYW5pb24uCiAqIEZ1bGx5IGluZGVwZW5kZW50IGZyb20gQ2hhdCDigJQgc2VwYXJhdGUgbWVzc2FnZSB0YWJsZSwgc2VwYXJhdGUgVUksIHNlcGFyYXRlIGV2ZXJ5dGhpbmcuCiAqLwoKaW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCwgdXNlUmVmLCB1c2VDYWxsYmFjayB9IGZyb20gJ3JlYWN0JzsKCmltcG9ydCB7IHVzZU5hdmlnYXRlLCB1c2VQYXJhbXMgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJzsKaW1wb3J0IHsgbW90aW9uLCBBbmltYXRlUHJlc2VuY2UgfSBmcm9tICdmcmFtZXItbW90aW9uJzsKaW1wb3J0IHsKICBBcnJvd0xlZnQsIFNlbmQsIExvYWRlcjIsIFNwYXJrbGVzLCBCb29rT3BlbiwKICBQbGF5LCBTcXVhcmUsIFNjcm9sbCwgV2FuZDIsIENsb2NrLCBaYXAsCiAgUGF1c2UsIFJvdGF0ZUNjdywgVGhlYXRlciwgRmVhdGhlciwKfSBmcm9tICdsdWNpZGUtcmVhY3QnOwppbXBvcnQgeyB1c2VJMThuIH0gZnJvbSAnQC9pMThuL0kxOG5Db250ZXh0JzsKaW1wb3J0IHsgc3VwYWJhc2UsIEVER0VfRlVOQ1RJT05TX1VSTCB9IGZyb20gJ0AvbGliL3N1cGFiYXNlJzsKCmNvbnN0IGVhc2VTbW9vdGggPSBbMC4yNSwgMC4xLCAwLjI1LCAxXSBhcyBbbnVtYmVyLCBudW1iZXIsIG51bWJlciwgbnVtYmVyXTsKCmludGVyZmFjZSBEcmFtYU1lc3NhZ2UgewogIGlkOiBzdHJpbmc7CiAgc2Vzc2lvbl9pZDogc3RyaW5nOwogIHNwZWFrZXI6ICd1c2VyJyB8ICdjb21wYW5pb24nIHwgJ25hcnJhdG9yJzsKICBjb250ZW50OiBzdHJpbmc7CiAgY3JlYXRlZF9hdDogc3RyaW5nOwp9CgppbnRlcmZhY2UgRHJhbWFJbmZvIHsKICBpZDogc3RyaW5nOwogIG5hbWU6IHN0cmluZzsKICBkZXNjcmlwdGlvbjogc3RyaW5nOwogIHNjZW5lX3NldHRpbmc6IHN0cmluZzsKICBjb3Zlcl9pbWFnZV9wYXRoOiBzdHJpbmcgfCBudWxsOwogIGRyYW1hX3Byb21wdDogc3RyaW5nOwp9CgppbnRlcmZhY2UgQ29tcGFuaW9uSW5mbyB7CiAgaWQ6IHN0cmluZzsKICBuaWNrbmFtZTogc3RyaW5nOwogIGF2YXRhcl91cmw6IHN0cmluZyB8IG51bGw7CiAgZ2VuZGVyOiBzdHJpbmc7Cn0KCmludGVyZmFjZSBTZXNzaW9uSW5mbyB7CiAgaWQ6IHN0cmluZzsKICBzdGF0dXM6IHN0cmluZzsKICBzdGFydGVkX2F0OiBzdHJpbmc7Cn0KCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIERyYW1hU3BhY2UoKSB7CiAgY29uc3QgbmF2aWdhdGUgPSB1c2VOYXZpZ2F0ZSgpOwogIGNvbnN0IHsgc2Vzc2lvbklkIH0gPSB1c2VQYXJhbXM8eyBzZXNzaW9uSWQ6IHN0cmluZyB9PigpOwogIGNvbnN0IHsgdCB9ID0gdXNlSTE4bigpOwoKICAvLyDilIDilIAgU3RhdGUg4pSA4pSACiAgY29uc3QgW2xvYWRpbmcsIHNldExvYWRpbmddID0gdXNlU3RhdGUodHJ1ZSk7CiAgY29uc3QgW2Vycm9yLCBzZXRFcnJvcl0gPSB1c2VTdGF0ZSgnJyk7CiAgY29uc3QgW2RyYW1hLCBzZXREcmFtYV0gPSB1c2VTdGF0ZTxEcmFtYUluZm8gfCBudWxsPihudWxsKTsKICBjb25zdCBbY29tcGFuaW9uLCBzZXRDb21wYW5pb25dID0gdXNlU3RhdGU8Q29tcGFuaW9uSW5mbyB8IG51bGw+KG51bGwpOwogIGNvbnN0IFtzZXNzaW9uLCBzZXRTZXNzaW9uXSA9IHVzZVN0YXRlPFNlc3Npb25JbmZvIHwgbnVsbD4obnVsbCk7CiAgY29uc3QgW21lc3NhZ2VzLCBzZXRNZXNzYWdlc10gPSB1c2VTdGF0ZTxEcmFtYU1lc3NhZ2VbXT4oW10pOwogIGNvbnN0IFtpbnB1dFZhbHVlLCBzZXRJbnB1dFZhbHVlXSA9IHVzZVN0YXRlKCcnKTsKICBjb25zdCBbaXNTdHJlYW1pbmcsIHNldElzU3RyZWFtaW5nXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbc2hvd1NjZW5lSW50cm8sIHNldFNob3dTY2VuZUludHJvXSA9IHVzZVN0YXRlKHRydWUpOwogIGNvbnN0IFtlbmVyZ3ksIHNldEVuZXJneV0gPSB1c2VTdGF0ZSgwKTsKICBjb25zdCBbaXNQYXVzZWQsIHNldElzUGF1c2VkXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbdHlwaW5nRG90cywgc2V0VHlwaW5nRG90c10gPSB1c2VTdGF0ZShmYWxzZSk7CgogIC8vIOKUgOKUgCBSZWZzIOKUgOKUgAogIGNvbnN0IG1lc3NhZ2VzRW5kUmVmID0gdXNlUmVmPEhUTUxEaXZFbGVtZW50PihudWxsKTsKICBjb25zdCBtZXNzYWdlc0NvbnRhaW5lclJlZiA9IHVzZVJlZjxIVE1MRGl2RWxlbWVudD4obnVsbCk7CiAgY29uc3Qgc3RyZWFtaW5nUmVmID0gdXNlUmVmKGZhbHNlKTsKICBjb25zdCB0ZXh0YXJlYVJlZiA9IHVzZVJlZjxIVE1MVGV4dEFyZWFFbGVtZW50PihudWxsKTsKCiAgLy8g4pSA4pSAIFNjcm9sbCB0byBib3R0b20g4pSA4pSACiAgY29uc3Qgc2Nyb2xsVG9Cb3R0b20gPSB1c2VDYWxsYmFjaygoKSA9PiB7CiAgICBtZXNzYWdlc0VuZFJlZi5jdXJyZW50Py5zY3JvbGxJbnRvVmlldyh7IGJlaGF2aW9yOiAnc21vb3RoJyB9KTsKICB9LCBbXSk7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBzY3JvbGxUb0JvdHRvbSgpOwogIH0sIFttZXNzYWdlcywgc2Nyb2xsVG9Cb3R0b21dKTsKCiAgLy8g4pSA4pSAIExvYWQgc2Vzc2lvbiBkYXRhIOKUgOKUgAogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBpZiAoIXNlc3Npb25JZCkgcmV0dXJuOwoKICAgIGNvbnN0IGxvYWRTZXNzaW9uID0gYXN5bmMgKCkgPT4gewogICAgICB0cnkgewogICAgICAgIHNldExvYWRpbmcodHJ1ZSk7CiAgICAgICAgY29uc3QgdG9rZW4gPSAoYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRTZXNzaW9uKCkpLmRhdGEuc2Vzc2lvbj8uYWNjZXNzX3Rva2VuOwogICAgICAgIGlmICghdG9rZW4pIHsgbmF2aWdhdGUoJy9hdXRoJyk7IHJldHVybjsgfQoKICAgICAgICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaChgJHtFREdFX0ZVTkNUSU9OU19VUkx9L2RyYW1hLXNlc3Npb25gLCB7CiAgICAgICAgICBtZXRob2Q6ICdQT1NUJywKICAgICAgICAgIGhlYWRlcnM6IHsgJ0F1dGhvcml6YXRpb24nOiBgQmVhcmVyICR7dG9rZW59YCwgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9LAogICAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBhY3Rpb246ICdnZXQnLCBzZXNzaW9uX2lkOiBzZXNzaW9uSWQgfSksCiAgICAgICAgfSk7CiAgICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlcy5qc29uKCk7CiAgICAgICAgaWYgKGRhdGEuZXJyb3IpIHRocm93IG5ldyBFcnJvcihkYXRhLmVycm9yKTsKCiAgICAgICAgc2V0RHJhbWEoZGF0YS5kcmFtYSk7CiAgICAgICAgc2V0Q29tcGFuaW9uKGRhdGEuY29tcGFuaW9uKTsKICAgICAgICBzZXRTZXNzaW9uKGRhdGEuc2Vzc2lvbik7CiAgICAgICAgc2V0TWVzc2FnZXMoZGF0YS5tZXNzYWdlcyB8fCBbXSk7CgogICAgICAgIC8vIEdldCBlbmVyZ3kKICAgICAgICBjb25zdCB7IGRhdGE6IGFjY3RSb3dzIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdlbmVyZ3lfYWNjb3VudHMnKQogICAgICAgICAgLnNlbGVjdCgnYmFsYW5jZScpLmxpbWl0KDEpOwogICAgICAgIHNldEVuZXJneShhY2N0Um93cz8uWzBdPy5iYWxhbmNlIHx8IDApOwoKICAgICAgICAvLyBIaWRlIHNjZW5lIGludHJvIGFmdGVyIDUgc2Vjb25kcwogICAgICAgIHNldFRpbWVvdXQoKCkgPT4gc2V0U2hvd1NjZW5lSW50cm8oZmFsc2UpLCA1MDAwKTsKICAgICAgfSBjYXRjaCAoZTogYW55KSB7CiAgICAgICAgc2V0RXJyb3IoZS5tZXNzYWdlKTsKICAgICAgfSBmaW5hbGx5IHsKICAgICAgICBzZXRMb2FkaW5nKGZhbHNlKTsKICAgICAgfQogICAgfTsKCiAgICBsb2FkU2Vzc2lvbigpOwogIH0sIFtzZXNzaW9uSWQsIG5hdmlnYXRlXSk7CgogIC8vIOKUgOKUgCBBdXRvLXJlc2l6ZSB0ZXh0YXJlYSDilIDilIAKICB1c2VFZmZlY3QoKCkgPT4gewogICAgY29uc3QgZWwgPSB0ZXh0YXJlYVJlZi5jdXJyZW50OwogICAgaWYgKCFlbCkgcmV0dXJuOwogICAgZWwuc3R5bGUuaGVpZ2h0ID0gJ2F1dG8nOwogICAgZWwuc3R5bGUuaGVpZ2h0ID0gTWF0aC5taW4oMTIwLCBlbC5zY3JvbGxIZWlnaHQpICsgJ3B4JzsKICB9LCBbaW5wdXRWYWx1ZV0pOwoKICAvLyDilIDilIAgU2VuZCBtZXNzYWdlIOKUgOKUgAogIGNvbnN0IGhhbmRsZVNlbmQgPSBhc3luYyAoKSA9PiB7CiAgICBjb25zdCB0ZXh0ID0gaW5wdXRWYWx1ZS50cmltKCk7CiAgICBpZiAoIXRleHQgfHwgaXNTdHJlYW1pbmcgfHwgIXNlc3Npb25JZCkgcmV0dXJuOwoKICAgIGlmIChlbmVyZ3kgPCAzMCkgewogICAgICBzZXRFcnJvcih0KCdjaGF0LmVuZXJneUxvdycpIHx8ICfog73ph4/kuI3otrPvvIzor7flhYjlhYXlgLwnKTsKICAgICAgcmV0dXJuOwogICAgfQoKICAgIHNldElucHV0VmFsdWUoJycpOwogICAgc2V0SXNTdHJlYW1pbmcodHJ1ZSk7CiAgICBzdHJlYW1pbmdSZWYuY3VycmVudCA9IHRydWU7CgogICAgLy8gT3B0aW1pc3RpYyBhZGQgdXNlciBtZXNzYWdlCiAgICBjb25zdCB1c2VyTXNnOiBEcmFtYU1lc3NhZ2UgPSB7CiAgICAgIGlkOiAndGVtcC0nICsgRGF0ZS5ub3coKSwgc2Vzc2lvbl9pZDogc2Vzc2lvbklkLAogICAgICBzcGVha2VyOiAndXNlcicsIGNvbnRlbnQ6IHRleHQsIGNyZWF0ZWRfYXQ6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgIH07CiAgICBzZXRNZXNzYWdlcyhwcmV2ID0+IFsuLi5wcmV2LCB1c2VyTXNnXSk7CgogICAgdHJ5IHsKICAgICAgY29uc3QgdG9rZW4gPSAoYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRTZXNzaW9uKCkpLmRhdGEuc2Vzc2lvbj8uYWNjZXNzX3Rva2VuOwogICAgICBpZiAoIXRva2VuKSB0aHJvdyBuZXcgRXJyb3IoJ05vdCBhdXRoZW50aWNhdGVkJyk7CgogICAgICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaChgJHtFREdFX0ZVTkNUSU9OU19VUkx9L2RyYW1hLWNoYXRgLCB7CiAgICAgICAgbWV0aG9kOiAnUE9TVCcsCiAgICAgICAgaGVhZGVyczogeyAnQXV0aG9yaXphdGlvbic6IGBCZWFyZXIgJHt0b2tlbn1gLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0sCiAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBzZXNzaW9uX2lkOiBzZXNzaW9uSWQsIG1lc3NhZ2U6IHRleHQgfSksCiAgICAgIH0pOwoKICAgICAgaWYgKCFyZXMub2spIHsKICAgICAgICBjb25zdCBlcnIgPSBhd2FpdCByZXMuanNvbigpOwogICAgICAgIHRocm93IG5ldyBFcnJvcihlcnIuZXJyb3IgfHwgJ0RyYW1hIGNoYXQgZmFpbGVkJyk7CiAgICAgIH0KCiAgICAgIGNvbnN0IHJlYWRlciA9IHJlcy5ib2R5Py5nZXRSZWFkZXIoKTsKICAgICAgY29uc3QgZGVjb2RlciA9IG5ldyBUZXh0RGVjb2RlcigpOwogICAgICBsZXQgcmVwbHlUZXh0ID0gJyc7CgogICAgICBpZiAocmVhZGVyKSB7CiAgICAgICAgd2hpbGUgKHRydWUpIHsKICAgICAgICAgIGNvbnN0IHsgZG9uZSwgdmFsdWUgfSA9IGF3YWl0IHJlYWRlci5yZWFkKCk7CiAgICAgICAgICBpZiAoZG9uZSkgYnJlYWs7CiAgICAgICAgICBjb25zdCBjaHVuayA9IGRlY29kZXIuZGVjb2RlKHZhbHVlLCB7IHN0cmVhbTogdHJ1ZSB9KTsKICAgICAgICAgIGZvciAoY29uc3QgbGluZSBvZiBjaHVuay5zcGxpdCgnXG4nKSkgewogICAgICAgICAgICBpZiAobGluZS5zdGFydHNXaXRoKCdkYXRhOiAnKSkgewogICAgICAgICAgICAgIGNvbnN0IGRhdGEgPSBsaW5lLnNsaWNlKDYpOwogICAgICAgICAgICAgIGlmIChkYXRhID09PSAnW0RPTkVdJykgYnJlYWs7CiAgICAgICAgICAgICAgaWYgKGRhdGEuc3RhcnRzV2l0aCgnW0VSUk9SXScpKSB0aHJvdyBuZXcgRXJyb3IoZGF0YS5zbGljZSg3KSk7CiAgICAgICAgICAgICAgcmVwbHlUZXh0ICs9IGRhdGE7CiAgICAgICAgICAgICAgc2V0TWVzc2FnZXMocHJldiA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBmaWx0ZXJlZCA9IHByZXYuZmlsdGVyKG0gPT4gbS5pZCAhPT0gJ3N0cmVhbWluZycpOwogICAgICAgICAgICAgICAgcmV0dXJuIFsuLi5maWx0ZXJlZCwgewogICAgICAgICAgICAgICAgICBpZDogJ3N0cmVhbWluZycsIHNlc3Npb25faWQ6IHNlc3Npb25JZCwKICAgICAgICAgICAgICAgICAgc3BlYWtlcjogJ2NvbXBhbmlvbicsIGNvbnRlbnQ6IHJlcGx5VGV4dCwKICAgICAgICAgICAgICAgICAgY3JlYXRlZF9hdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpLAogICAgICAgICAgICAgICAgfV07CiAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIH0KCiAgICAgIC8vIFVwZGF0ZSBlbmVyZ3kKICAgICAgc2V0RW5lcmd5KHByZXYgPT4gTWF0aC5tYXgoMCwgcHJldiAtIDMwKSk7CgogICAgICAvLyBSZWZyZXNoIG1lc3NhZ2VzCiAgICAgIGNvbnN0IHJlZnJlc2hSZXMgPSBhd2FpdCBmZXRjaChgJHtFREdFX0ZVTkNUSU9OU19VUkx9L2RyYW1hLXNlc3Npb25gLCB7CiAgICAgICAgbWV0aG9kOiAnUE9TVCcsCiAgICAgICAgaGVhZGVyczogeyAnQXV0aG9yaXphdGlvbic6IGBCZWFyZXIgJHt0b2tlbn1gLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0sCiAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBhY3Rpb246ICdnZXQnLCBzZXNzaW9uX2lkOiBzZXNzaW9uSWQgfSksCiAgICAgIH0pOwogICAgICBjb25zdCByZWZyZXNoRGF0YSA9IGF3YWl0IHJlZnJlc2hSZXMuanNvbigpOwogICAgICBpZiAocmVmcmVzaERhdGEubWVzc2FnZXMpIHsKICAgICAgICBzZXRNZXNzYWdlcyhyZWZyZXNoRGF0YS5tZXNzYWdlcyk7CiAgICAgIH0KICAgIH0gY2F0Y2ggKGU6IGFueSkgewogICAgICBzZXRFcnJvcihlLm1lc3NhZ2UpOwogICAgfSBmaW5hbGx5IHsKICAgICAgc2V0SXNTdHJlYW1pbmcoZmFsc2UpOwogICAgICBzdHJlYW1pbmdSZWYuY3VycmVudCA9IGZhbHNlOwogICAgfQogIH07CgogIC8vIOKUgOKUgCBDb21wbGV0ZSBkcmFtYSDilIDilIAKICBjb25zdCBoYW5kbGVDb21wbGV0ZSA9ICgpID0+IHsKICAgIG5hdmlnYXRlKCcvZHJhbWEnKTsKICB9OwoKICAvLyDilIDilIAgUmVzdGFydCBkcmFtYSDilIDilIAKICBjb25zdCBoYW5kbGVSZXN0YXJ0ID0gYXN5bmMgKCkgPT4gewogICAgaWYgKCFzZXNzaW9uIHx8ICFjb25maXJtKCfph43mlrDlvIDlp4vlsIbmuIXnqbror6XliafmnKznmoTmiYDmnInogYrlpKnorrDlvZXvvIznoa7lrprlkJfvvJ8nKSkgcmV0dXJuOwogICAgdHJ5IHsKICAgICAgY29uc3QgdG9rZW4gPSAoYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRTZXNzaW9uKCkpLmRhdGEuc2Vzc2lvbj8uYWNjZXNzX3Rva2VuOwogICAgICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaChgJHtFREdFX0ZVTkNUSU9OU19VUkx9L2RyYW1hLXNlc3Npb25gLCB7CiAgICAgICAgbWV0aG9kOiAnUE9TVCcsCiAgICAgICAgaGVhZGVyczogeyAnQXV0aG9yaXphdGlvbic6IGBCZWFyZXIgJHt0b2tlbn1gLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0sCiAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBhY3Rpb246ICdyZXN0YXJ0JywgZHJhbWFfaWQ6IGRyYW1hIS5pZCB9KSwKICAgICAgfSk7CiAgICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXMuanNvbigpOwogICAgICBpZiAoZGF0YS5lcnJvcikgdGhyb3cgbmV3IEVycm9yKGRhdGEuZXJyb3IpOwogICAgICBpZiAoZGF0YS5zZXNzaW9uPy5pZCkgewogICAgICAgIG5hdmlnYXRlKGAvZHJhbWEtc3BhY2UvJHtkYXRhLnNlc3Npb24uaWR9YCk7CiAgICAgICAgd2luZG93LmxvY2F0aW9uLnJlbG9hZCgpOwogICAgICB9CiAgICB9IGNhdGNoIChlOiBhbnkpIHsKICAgICAgc2V0RXJyb3IoJ+mHjeaWsOW8gOWni+Wksei0pTogJyArIGUubWVzc2FnZSk7CiAgICB9CiAgfTsKCiAgY29uc3QgaGFuZGxlS2V5RG93biA9IChlOiBSZWFjdC5LZXlib2FyZEV2ZW50KSA9PiB7CiAgICBpZiAoZS5rZXkgPT09ICdFbnRlcicgJiYgIWUuc2hpZnRLZXkpIHsgZS5wcmV2ZW50RGVmYXVsdCgpOyBpZiAoIWlzUGF1c2VkKSBoYW5kbGVTZW5kKCk7IH0KICB9OwoKICAvLyDilIDilIAgTG9hZGluZyDilIDilIAKICBpZiAobG9hZGluZykgewogICAgcmV0dXJuICgKICAgICAgPGRpdiBjbGFzc05hbWU9Imgtc2NyZWVuIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIGJnLWdyYWRpZW50LXRvLWIgZnJvbS1bIzFhMTAyNV0gdG8tWyMyYTFhM2FdIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1jZW50ZXIiPgogICAgICAgICAgPExvYWRlcjIgY2xhc3NOYW1lPSJ3LTggaC04IGFuaW1hdGUtc3BpbiB0ZXh0LXBpbmstNDAwIG14LWF1dG8gbWItNCIgLz4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC13aGl0ZS83MCI+5q2j5Zyo6L+b5YWl5Ymn5oOF56m66Ze0Li4uPC9wPgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICk7CiAgfQoKICBpZiAoZXJyb3IpIHsKICAgIHJldHVybiAoCiAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLXNjcmVlbiBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBiZy1ncmFkaWVudC10by1iIGZyb20tWyMxYTEwMjVdIHRvLVsjMmExYTNhXSI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtY2VudGVyIG1heC13LW1kIHB4LTQiPgogICAgICAgICAgPFNwYXJrbGVzIGNsYXNzTmFtZT0idy0xMiBoLTEyIHRleHQtcGluay00MDAgbXgtYXV0byBtYi00IiAvPgogICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXdoaXRlLzkwIG1iLTQiPntlcnJvcn08L3A+CiAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IG5hdmlnYXRlKCcvZHJhbWEnKX0KICAgICAgICAgICAgY2xhc3NOYW1lPSJweC02IHB5LTIgYmctcGluay00MDAvMjAgdGV4dC1waW5rLTMwMCByb3VuZGVkLWZ1bGwgaG92ZXI6YmctcGluay00MDAvMzAgdHJhbnNpdGlvbi1hbGwiPgogICAgICAgICAgICA8QXJyb3dMZWZ0IGNsYXNzTmFtZT0idy00IGgtNCBpbmxpbmUgbXItMiIgLz7ov5Tlm57liafmg4Xlub/lnLoKICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgIDwvZGl2PgogICAgICA8L2Rpdj4KICAgICk7CiAgfQoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9Imgtc2NyZWVuIGZsZXggZmxleC1jb2wgYmctZ3JhZGllbnQtdG8tYiBmcm9tLVsjMWExMDI1XSB2aWEtWyMxZTE1MzBdIHRvLVsjMmExYTNhXSByZWxhdGl2ZSBvdmVyZmxvdy1oaWRkZW4iPgogICAgICB7LyogRGVjb3JhdGl2ZSBiYWNrZ3JvdW5kIG9yYnMgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNvbHV0ZSBpbnNldC0wIG92ZXJmbG93LWhpZGRlbiBwb2ludGVyLWV2ZW50cy1ub25lIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYWJzb2x1dGUgdG9wLTIwIGxlZnQtMS80IHctOTYgaC05NiBiZy1wdXJwbGUtNTAwLzEwIHJvdW5kZWQtZnVsbCBibHVyLTN4bCIgLz4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYWJzb2x1dGUgYm90dG9tLTIwIHJpZ2h0LTEvNCB3LTgwIGgtODAgYmctcGluay01MDAvMTAgcm91bmRlZC1mdWxsIGJsdXItM3hsIiAvPgogICAgICA8L2Rpdj4KCiAgICAgIHsvKiDilIDilIAgU2NlbmUgSW50cm9kdWN0aW9uIE92ZXJsYXkg4pSA4pSAICovfQogICAgICA8QW5pbWF0ZVByZXNlbmNlPgogICAgICAgIHtzaG93U2NlbmVJbnRybyAmJiBkcmFtYSAmJiAoCiAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDEgfX0KICAgICAgICAgICAgZXhpdD17eyBvcGFjaXR5OiAwIH19CiAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDIsIGRlbGF5OiA0IH19CiAgICAgICAgICAgIGNsYXNzTmFtZT0iYWJzb2x1dGUgaW5zZXQtMCB6LTUwIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIgogICAgICAgICAgICBzdHlsZT17eyBiYWNrZ3JvdW5kOiAnbGluZWFyLWdyYWRpZW50KDE4MGRlZywgIzBkMGExYSAwJSwgIzFhMTAyNSA0MCUsICMyYTFhM2EgMTAwJSknIH19CiAgICAgICAgICA+CiAgICAgICAgICAgIHsvKiBBbmltYXRlZCBwYXJ0aWNsZXMgKi99CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJhYnNvbHV0ZSBpbnNldC0wIG92ZXJmbG93LWhpZGRlbiBwb2ludGVyLWV2ZW50cy1ub25lIj4KICAgICAgICAgICAgICB7Wy4uLkFycmF5KDIwKV0ubWFwKChfLCBpKSA9PiAoCiAgICAgICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgICAgICBrZXk9e2l9CiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iYWJzb2x1dGUgdy0xIGgtMSBiZy1waW5rLTQwMC8zMCByb3VuZGVkLWZ1bGwiCiAgICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeDogTWF0aC5yYW5kb20oKSAqIDEwMCArICclJywgeTogJzEwMCUnIH19CiAgICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogWzAsIDAuOCwgMF0sIHk6ICctMTAlJyB9fQogICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGR1cmF0aW9uOiAzICsgTWF0aC5yYW5kb20oKSAqIDQsIGRlbGF5OiBNYXRoLnJhbmRvbSgpICogMiwgcmVwZWF0OiBJbmZpbml0eSB9fQogICAgICAgICAgICAgICAgICBzdHlsZT17eyBsZWZ0OiBNYXRoLnJhbmRvbSgpICogMTAwICsgJyUnIH19CiAgICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgICkpfQogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxtb3Rpb24uZGl2CiAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCBzY2FsZTogMC44NSB9fQogICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgc2NhbGU6IDEgfX0KICAgICAgICAgICAgICBleGl0PXt7IG9wYWNpdHk6IDAsIHNjYWxlOiAxLjA1IH19CiAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMS4yLCBlYXNlOiBlYXNlU21vb3RoIH19CiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciBtYXgtdy14bCBweC04IHJlbGF0aXZlIHotMTAiCiAgICAgICAgICAgID4KICAgICAgICAgICAgICB7LyogVGhlYXRlciBpY29uICovfQogICAgICAgICAgICAgIDxtb3Rpb24uZGl2CiAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IC0yMCB9fQogICAgICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19CiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAwLjMsIGR1cmF0aW9uOiAwLjggfX0KICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICA8VGhlYXRlciBjbGFzc05hbWU9InctMTIgaC0xMiB0ZXh0LXBpbmstNDAwLzUwIG14LWF1dG8gbWItNiIgLz4KICAgICAgICAgICAgICA8L21vdGlvbi5kaXY+CgogICAgICAgICAgICAgIHsvKiBEcmFtYSBuYW1lICovfQogICAgICAgICAgICAgIDxtb3Rpb24uaDEKICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCwgeTogMjAgfX0KICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fQogICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogMC42LCBkdXJhdGlvbjogMC44IH19CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQtNHhsIGZvbnQtYm9sZCB0ZXh0LXdoaXRlIG1iLTQgZm9udC1kaXNwbGF5IHRyYWNraW5nLXdpZGUiCiAgICAgICAgICAgICAgICBzdHlsZT17eyB0ZXh0U2hhZG93OiAnMCAwIDQwcHggcmdiYSgyNTUsMTA1LDE4MCwwLjMpJyB9fQogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHtkcmFtYS5uYW1lfQogICAgICAgICAgICAgIDwvbW90aW9uLmgxPgoKICAgICAgICAgICAgICB7LyogRGl2aWRlciAqL30KICAgICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgICAgaW5pdGlhbD17eyBzY2FsZVg6IDAgfX0KICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgc2NhbGVYOiAxIH19CiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAxLCBkdXJhdGlvbjogMSB9fQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ3LTI0IGgtcHggYmctZ3JhZGllbnQtdG8tciBmcm9tLXRyYW5zcGFyZW50IHZpYS1waW5rLTQwMC81MCB0by10cmFuc3BhcmVudCBteC1hdXRvIG1iLTUiCiAgICAgICAgICAgICAgLz4KCiAgICAgICAgICAgICAgey8qIFNjZW5lIHNldHRpbmcgKi99CiAgICAgICAgICAgICAgPG1vdGlvbi5wCiAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAgfX0KICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSB9fQogICAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogMS4zLCBkdXJhdGlvbjogMC44IH19CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQtcHVycGxlLTIwMC83MCB0ZXh0LWJhc2UgbGVhZGluZy1yZWxheGVkIG1iLTMgaXRhbGljIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHtkcmFtYS5zY2VuZV9zZXR0aW5nfQogICAgICAgICAgICAgIDwvbW90aW9uLnA+CgogICAgICAgICAgICAgIHsvKiBEZXNjcmlwdGlvbiAqL30KICAgICAgICAgICAgICA8bW90aW9uLnAKICAgICAgICAgICAgICAgIGluaXRpYWw9e3sgb3BhY2l0eTogMCB9fQogICAgICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxIH19CiAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAxLjYsIGR1cmF0aW9uOiAwLjggfX0KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC13aGl0ZS80MCB0ZXh0LXNtIGxlYWRpbmctcmVsYXhlZCIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICB7ZHJhbWEuZGVzY3JpcHRpb259CiAgICAgICAgICAgICAgPC9tb3Rpb24ucD4KCiAgICAgICAgICAgICAgey8qIERyYW1hIHByb21wdCB0ZWFzZXIgKi99CiAgICAgICAgICAgICAge2RyYW1hLmRyYW1hX3Byb21wdCAmJiAoCiAgICAgICAgICAgICAgICA8bW90aW9uLnAKICAgICAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwIH19CiAgICAgICAgICAgICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSB9fQogICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAyLCBkdXJhdGlvbjogMSB9fQogICAgICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQtd2hpdGUvMzAgdGV4dC14cyBtdC02IGxlYWRpbmctcmVsYXhlZCBtYXgtdy1tZCBteC1hdXRvIgogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICB7ZHJhbWEuZHJhbWFfcHJvbXB0LnN1YnN0cmluZygwLCA4MCl9Li4uCiAgICAgICAgICAgICAgICA8L21vdGlvbi5wPgogICAgICAgICAgICAgICl9CgogICAgICAgICAgICAgIHsvKiBTa2lwIGJ1dHRvbiAqL30KICAgICAgICAgICAgICA8bW90aW9uLmJ1dHRvbgogICAgICAgICAgICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwIH19CiAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEgfX0KICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZGVsYXk6IDIuNSwgZHVyYXRpb246IDAuNSB9fQogICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4gc2V0U2hvd1NjZW5lSW50cm8oZmFsc2UpfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJtdC04IHRleHQtd2hpdGUvMjAgaG92ZXI6dGV4dC13aGl0ZS81MCB0ZXh0LXhzIHRyYW5zaXRpb24tY29sb3JzIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIOeCueWHu+i3s+i/h+W8gOWcugogICAgICAgICAgICAgIDwvbW90aW9uLmJ1dHRvbj4KICAgICAgICAgICAgPC9tb3Rpb24uZGl2PgogICAgICAgICAgPC9tb3Rpb24uZGl2PgogICAgICAgICl9CiAgICAgIDwvQW5pbWF0ZVByZXNlbmNlPgoKICAgICAgey8qIOKUgOKUgCBUb3AgQmFyIOKUgOKUgCAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXgtc2hyaW5rLTAgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHB4LTQgcHktMyBib3JkZXItYiBib3JkZXItd2hpdGUvMTAgYmFja2Ryb3AtYmx1ci1tZCBiZy1bIzFhMTAyNV0vODAgei0xMCI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIj4KICAgICAgICAgIDxidXR0b24gb25DbGljaz17KCkgPT4gbmF2aWdhdGUoJy9kcmFtYScpfQogICAgICAgICAgICBjbGFzc05hbWU9InctOSBoLTkgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsIGhvdmVyOmJnLXdoaXRlLzEwIHRyYW5zaXRpb24tYWxsIHRleHQtd2hpdGUvNjAgaG92ZXI6dGV4dC13aGl0ZSI+CiAgICAgICAgICAgIDxBcnJvd0xlZnQgc2l6ZT17MjB9IC8+CiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiI+CiAgICAgICAgICAgICAgPFNjcm9sbCBjbGFzc05hbWU9InctNCBoLTQgdGV4dC1waW5rLTQwMCIgLz4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtd2hpdGUgZm9udC1tZWRpdW0gdGV4dC1zbSI+e2RyYW1hPy5uYW1lfTwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC13aGl0ZS80MCB0ZXh0LXhzIj57Y29tcGFuaW9uPy5uaWNrbmFtZX0gwrcge3QoJ2RyYW1hLmltbWVyc2l2ZScpIHx8ICfliafmg4XmqKHlvI8nfTwvcD4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiI+CiAgICAgICAgICB7LyogTWVzc2FnZSBjb3VudCAqL30KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMS41IHB4LTIuNSBweS0xLjUgcm91bmRlZC1mdWxsIGJnLXdoaXRlLzUgYm9yZGVyIGJvcmRlci13aGl0ZS8xMCI+CiAgICAgICAgICAgIDxGZWF0aGVyIGNsYXNzTmFtZT0idy0zIGgtMyB0ZXh0LXB1cnBsZS00MDAvNjAiIC8+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC13aGl0ZS82MCB0ZXh0LXhzIj57bWVzc2FnZXMuZmlsdGVyKG0gPT4gbS5zcGVha2VyICE9PSAnbmFycmF0b3InKS5sZW5ndGh9PC9zcGFuPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgICB7LyogRW5lcmd5ICovfQogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUgcHgtMi41IHB5LTEuNSByb3VuZGVkLWZ1bGwgYmctd2hpdGUvNSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIj4KICAgICAgICAgICAgPFphcCBjbGFzc05hbWU9InctMyBoLTMgdGV4dC15ZWxsb3ctNDAwIiAvPgogICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtd2hpdGUvODAgdGV4dC14cyBmb250LW1lZGl1bSI+e2VuZXJneX08L3NwYW4+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIHsvKiBQYXVzZS9SZXN1bWUgKi99CiAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IHNldElzUGF1c2VkKCFpc1BhdXNlZCl9CiAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEgcHgtMi41IHB5LTEuNSByb3VuZGVkLWZ1bGwgYmctd2hpdGUvNSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGhvdmVyOmJnLXdoaXRlLzEwIHRyYW5zaXRpb24tYWxsIHRleHQtd2hpdGUvNjAgdGV4dC14cyI+CiAgICAgICAgICAgIHtpc1BhdXNlZCA/IDxQbGF5IGNsYXNzTmFtZT0idy0zIGgtMyIgLz4gOiA8UGF1c2UgY2xhc3NOYW1lPSJ3LTMgaC0zIiAvPn0KICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgey8qIFJlc3RhcnQgZHJhbWEgKi99CiAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9e2hhbmRsZVJlc3RhcnR9CiAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEgcHgtMi41IHB5LTEuNSByb3VuZGVkLWZ1bGwgYmctd2hpdGUvNSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIGhvdmVyOmJnLXB1cnBsZS01MDAvMjAgaG92ZXI6Ym9yZGVyLXB1cnBsZS01MDAvMzAgdHJhbnNpdGlvbi1hbGwgdGV4dC13aGl0ZS82MCBob3Zlcjp0ZXh0LXB1cnBsZS0zMDAgdGV4dC14cyIKICAgICAgICAgICAgdGl0bGU9IumHjeaWsOW8gOWniyI+CiAgICAgICAgICAgIDxSb3RhdGVDY3cgY2xhc3NOYW1lPSJ3LTMgaC0zIiAvPgogICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICB7LyogRW5kIGRyYW1hICovfQogICAgICAgICAgPGJ1dHRvbiBvbkNsaWNrPXtoYW5kbGVDb21wbGV0ZX0KICAgICAgICAgICAgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMSBweC0yLjUgcHktMS41IHJvdW5kZWQtZnVsbCBiZy13aGl0ZS81IGJvcmRlciBib3JkZXItd2hpdGUvMTAgaG92ZXI6YmctcmVkLTUwMC8yMCBob3Zlcjpib3JkZXItcmVkLTUwMC8zMCB0cmFuc2l0aW9uLWFsbCB0ZXh0LXdoaXRlLzYwIGhvdmVyOnRleHQtcmVkLTMwMCB0ZXh0LXhzIj4KICAgICAgICAgICAgPFNxdWFyZSBjbGFzc05hbWU9InctMyBoLTMiIC8+CiAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CgogICAgICB7Lyog4pSA4pSAIFBhdXNlIE92ZXJsYXkg4pSA4pSAICovfQogICAgICA8QW5pbWF0ZVByZXNlbmNlPgogICAgICAgIHtpc1BhdXNlZCAmJiAoCiAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAgfX0KICAgICAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxIH19CiAgICAgICAgICAgIGV4aXQ9e3sgb3BhY2l0eTogMCB9fQogICAgICAgICAgICBjbGFzc05hbWU9ImFic29sdXRlIGluc2V0LTAgei00MCBiZy1bIzFhMTAyNV0vODAgYmFja2Ryb3AtYmx1ci1zbSBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciIKICAgICAgICAgID4KICAgICAgICAgICAgPG1vdGlvbi5kaXYgaW5pdGlhbD17eyBzY2FsZTogMC45IH19IGFuaW1hdGU9e3sgc2NhbGU6IDEgfX0gY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciI+CiAgICAgICAgICAgICAgPFBhdXNlIGNsYXNzTmFtZT0idy0xMiBoLTEyIHRleHQtd2hpdGUvMzAgbXgtYXV0byBtYi0zIiAvPgogICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC13aGl0ZS81MCB0ZXh0LXNtIG1iLTQiPuWJp+aDheW3suaaguWBnDwvcD4KICAgICAgICAgICAgICA8YnV0dG9uIG9uQ2xpY2s9eygpID0+IHNldElzUGF1c2VkKGZhbHNlKX0KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0icHgtNSBweS0yIGJnLXBpbmstNTAwLzIwIHRleHQtcGluay0zMDAgcm91bmRlZC1mdWxsIHRleHQtc20gaG92ZXI6YmctcGluay01MDAvMzAgdHJhbnNpdGlvbi1hbGwiPgogICAgICAgICAgICAgICAgPFBsYXkgY2xhc3NOYW1lPSJ3LTQgaC00IGlubGluZSBtci0xLjUiIC8+57un57ut5Ymn5oOFCiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvbW90aW9uLmRpdj4KICAgICAgICAgIDwvbW90aW9uLmRpdj4KICAgICAgICApfQogICAgICA8L0FuaW1hdGVQcmVzZW5jZT4KCiAgICAgIHsvKiDilIDilIAgTWVzc2FnZXMgQXJlYSDilIDilIAgKi99CiAgICAgIDxkaXYgcmVmPXttZXNzYWdlc0NvbnRhaW5lclJlZn0gY2xhc3NOYW1lPSJmbGV4LTEgb3ZlcmZsb3cteS1hdXRvIHB4LTQgcHktNCBjaGF0LXNjcm9sbGJhciI+CiAgICAgICAge21lc3NhZ2VzLm1hcCgobXNnLCBpZHgpID0+ICgKICAgICAgICAgIDxEcmFtYU1lc3NhZ2VCdWJibGUga2V5PXttc2cuaWQgfHwgaWR4fSBtZXNzYWdlPXttc2d9IGNvbXBhbmlvbj17Y29tcGFuaW9ufSAvPgogICAgICAgICkpfQogICAgICAgIDxkaXYgcmVmPXttZXNzYWdlc0VuZFJlZn0gLz4KICAgICAgPC9kaXY+CgogICAgICB7Lyog4pSA4pSAIElucHV0IEJhciDilIDilIAgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4LXNocmluay0wIHB4LTQgcHktMyBib3JkZXItdCBib3JkZXItd2hpdGUvMTAgYmFja2Ryb3AtYmx1ci1tZCBiZy1bIzFhMTAyNV0vODAiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWVuZCBnYXAtMiBtYXgtdy0zeGwgbXgtYXV0byI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleC0xIHJlbGF0aXZlIj4KICAgICAgICAgICAgPHRleHRhcmVhCiAgICAgICAgICAgICAgcmVmPXt0ZXh0YXJlYVJlZn0KICAgICAgICAgICAgICB2YWx1ZT17aW5wdXRWYWx1ZX0KICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldElucHV0VmFsdWUoZS50YXJnZXQudmFsdWUpfQogICAgICAgICAgICAgIG9uS2V5RG93bj17aGFuZGxlS2V5RG93bn0KICAgICAgICAgICAgICBwbGFjZWhvbGRlcj17aXNQYXVzZWQgPyAn5Ymn5oOF5bey5pqC5YGcLi4uJyA6ICh0KCdkcmFtYS50eXBlSW5TY2VuZScpIHx8ICflnKjliafmg4XkuK3ovpPlhaXkvaDnmoTlj7Dor40uLi4nKX0KICAgICAgICAgICAgICByb3dzPXsxfQogICAgICAgICAgICAgIGRpc2FibGVkPXtpc1BhdXNlZH0KICAgICAgICAgICAgICBjbGFzc05hbWU9e2B3LWZ1bGwgcHgtNCBweS0yLjUgcm91bmRlZC14bCBib3JkZXIgdGV4dC13aGl0ZS85MCB0ZXh0LXNtIHBsYWNlaG9sZGVyOnRleHQtd2hpdGUvMzAgZm9jdXM6b3V0bGluZS1ub25lIHRyYW5zaXRpb24tYWxsIHJlc2l6ZS1ub25lIG1heC1oLVsxMDBweF0gbGVhZGluZy1yZWxheGVkICR7CiAgICAgICAgICAgICAgICBpc1BhdXNlZAogICAgICAgICAgICAgICAgICA/ICdiZy13aGl0ZS9bMC4wMl0gYm9yZGVyLXdoaXRlLzUgY3Vyc29yLW5vdC1hbGxvd2VkJwogICAgICAgICAgICAgICAgICA6ICdiZy13aGl0ZS81IGJvcmRlci13aGl0ZS8xMCBmb2N1czpib3JkZXItcGluay00MDAvNTAgZm9jdXM6Ymctd2hpdGUvMTAnCiAgICAgICAgICAgICAgfWB9CiAgICAgICAgICAgIC8+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxtb3Rpb24uYnV0dG9uCiAgICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZVNlbmR9CiAgICAgICAgICAgIGRpc2FibGVkPXshaW5wdXRWYWx1ZS50cmltKCkgfHwgaXNTdHJlYW1pbmcgfHwgaXNQYXVzZWR9CiAgICAgICAgICAgIHdoaWxlSG92ZXI9e3sgc2NhbGU6IGlucHV0VmFsdWUudHJpbSgpICYmICFpc1BhdXNlZCA/IDEuMDUgOiAxIH19CiAgICAgICAgICAgIHdoaWxlVGFwPXt7IHNjYWxlOiBpbnB1dFZhbHVlLnRyaW0oKSAmJiAhaXNQYXVzZWQgPyAwLjk1IDogMSB9fQogICAgICAgICAgICBjbGFzc05hbWU9e2BmbGV4LXNocmluay0wIHctMTAgaC0xMCByb3VuZGVkLXhsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRyYW5zaXRpb24tYWxsICR7CiAgICAgICAgICAgICAgaW5wdXRWYWx1ZS50cmltKCkgJiYgIWlzUGF1c2VkCiAgICAgICAgICAgICAgICA/ICdiZy1ncmFkaWVudC10by1yIGZyb20tcGluay01MDAgdG8tcHVycGxlLTUwMCB0ZXh0LXdoaXRlIHNoYWRvdy1sZyBzaGFkb3ctcGluay01MDAvMjUnCiAgICAgICAgICAgICAgICA6ICdiZy13aGl0ZS81IHRleHQtd2hpdGUvMjAgY3Vyc29yLW5vdC1hbGxvd2VkJwogICAgICAgICAgICB9YH0KICAgICAgICAgID4KICAgICAgICAgICAge2lzU3RyZWFtaW5nID8gPExvYWRlcjIgY2xhc3NOYW1lPSJ3LTQgaC00IGFuaW1hdGUtc3BpbiIgLz4gOiA8V2FuZDIgY2xhc3NOYW1lPSJ3LTQgaC00IiAvPn0KICAgICAgICAgIDwvbW90aW9uLmJ1dHRvbj4KICAgICAgICA8L2Rpdj4KICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtY2VudGVyIHRleHQtd2hpdGUvMjAgdGV4dC14cyBtdC0yIj4KICAgICAgICAgIDxDbG9jayBjbGFzc05hbWU9InctMyBoLTMgaW5saW5lIG1yLTEiIC8+CiAgICAgICAgICB7dCgnZHJhbWEuZW5lcmd5Q29zdCcpIHx8ICfmr4/mnaHmtojmga/mtojogJcgMzAg6IO96YePJ30KICAgICAgICA8L3A+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQoKLy8g4pSA4pSAIERyYW1hIE1lc3NhZ2UgQnViYmxlIOKUgOKUgApmdW5jdGlvbiBEcmFtYU1lc3NhZ2VCdWJibGUoeyBtZXNzYWdlLCBjb21wYW5pb24gfTogeyBtZXNzYWdlOiBEcmFtYU1lc3NhZ2U7IGNvbXBhbmlvbjogQ29tcGFuaW9uSW5mbyB8IG51bGwgfSkgewogIGNvbnN0IGlzTmFycmF0b3IgPSBtZXNzYWdlLnNwZWFrZXIgPT09ICduYXJyYXRvcic7CiAgY29uc3QgaXNVc2VyID0gbWVzc2FnZS5zcGVha2VyID09PSAndXNlcic7CiAgY29uc3QgaXNDb21wYW5pb24gPSBtZXNzYWdlLnNwZWFrZXIgPT09ICdjb21wYW5pb24nOwoKICBpZiAoaXNOYXJyYXRvcikgewogICAgcmV0dXJuICgKICAgICAgPG1vdGlvbi5kaXYKICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDEwIH19CiAgICAgICAgYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB5OiAwIH19CiAgICAgICAgY2xhc3NOYW1lPSJteS00IHRleHQtY2VudGVyIgogICAgICA+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImlubGluZS1ibG9jayBtYXgtdy1bODUlXSI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHgtNSBweS0zIHJvdW5kZWQtbGcgYmctcHVycGxlLTUwMC8xMCBib3JkZXIgYm9yZGVyLXB1cnBsZS00MDAvMjAiPgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1wdXJwbGUtMzAwLzYwIHRleHQteHMgbWItMSBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBnYXAtMSI+CiAgICAgICAgICAgICAgPEJvb2tPcGVuIGNsYXNzTmFtZT0idy0zIGgtMyIgLz7ml4Hnmb0KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LXdoaXRlLzgwIHRleHQtc20gbGVhZGluZy1yZWxheGVkIHdoaXRlc3BhY2UtcHJlLXdyYXAiCiAgICAgICAgICAgICAgZGFuZ2Vyb3VzbHlTZXRJbm5lckhUTUw9e3sgX19odG1sOiBmb3JtYXRDb250ZW50KG1lc3NhZ2UuY29udGVudCkgfX0gLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L21vdGlvbi5kaXY+CiAgICApOwogIH0KCiAgaWYgKGlzVXNlcikgewogICAgcmV0dXJuICgKICAgICAgPG1vdGlvbi5kaXYgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB4OiAyMCB9fSBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHg6IDAgfX0gY2xhc3NOYW1lPSJmbGV4IGp1c3RpZnktZW5kIG15LTMiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYXgtdy1bNzUlXSI+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icHgtNCBweS0yLjUgcm91bmRlZC0yeGwgcm91bmRlZC10ci1zbSBiZy1ncmFkaWVudC10by1yIGZyb20tcGluay01MDAvMjAgdG8tcHVycGxlLTUwMC8yMCBib3JkZXIgYm9yZGVyLXBpbmstNDAwLzIwIj4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXdoaXRlLzkwIHRleHQtc20gbGVhZGluZy1yZWxheGVkIHdoaXRlc3BhY2UtcHJlLXdyYXAiPnttZXNzYWdlLmNvbnRlbnR9PC9wPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvbW90aW9uLmRpdj4KICAgICk7CiAgfQoKICAvLyBDb21wYW5pb24KICByZXR1cm4gKAogICAgPG1vdGlvbi5kaXYgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB4OiAtMjAgfX0gYW5pbWF0ZT17eyBvcGFjaXR5OiAxLCB4OiAwIH19IGNsYXNzTmFtZT0iZmxleCBnYXAtMi41IG15LTMiPgogICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleC1zaHJpbmstMCB3LTggaC04IHJvdW5kZWQtZnVsbCBvdmVyZmxvdy1oaWRkZW4gcmluZy0yIHJpbmctcHVycGxlLTQwMC8zMCBtdC0xIj4KICAgICAgICA8aW1nIHNyYz17Y29tcGFuaW9uPy5hdmF0YXJfdXJsIHx8ICcvZGVmYXVsdC1hdmF0YXIuanBnJ30gYWx0PXtjb21wYW5pb24/Lm5pY2tuYW1lIHx8ICcnfQogICAgICAgICAgY2xhc3NOYW1lPSJ3LWZ1bGwgaC1mdWxsIG9iamVjdC1jb3ZlciIgb25FcnJvcj17KGUpID0+IHsgKGUudGFyZ2V0IGFzIEhUTUxJbWFnZUVsZW1lbnQpLnNyYyA9ICcvZGVmYXVsdC1hdmF0YXIuanBnJzsgfX0gLz4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYXgtdy1bNzUlXSI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIG1iLTAuNSI+CiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtcHVycGxlLTMwMC82MCB0ZXh0LXhzIGZvbnQtbWVkaXVtIj57Y29tcGFuaW9uPy5uaWNrbmFtZSB8fCAnQ29tcGFuaW9uJ308L3NwYW4+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9InB4LTQgcHktMi41IHJvdW5kZWQtMnhsIHJvdW5kZWQtdGwtc20gYmctd2hpdGUvNSBib3JkZXIgYm9yZGVyLXdoaXRlLzEwIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LXdoaXRlLzg1IHRleHQtc20gbGVhZGluZy1yZWxheGVkIHdoaXRlc3BhY2UtcHJlLXdyYXAiCiAgICAgICAgICAgIGRhbmdlcm91c2x5U2V0SW5uZXJIVE1MPXt7IF9faHRtbDogZm9ybWF0Q29udGVudChtZXNzYWdlLmNvbnRlbnQpIH19IC8+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9tb3Rpb24uZGl2PgogICk7Cn0KCi8vIEZvcm1hdCBjb250ZW50OiAqKmJvbGQqKiwgKml0YWxpYyosIGV0Yy4KZnVuY3Rpb24gZm9ybWF0Q29udGVudChjb250ZW50OiBzdHJpbmcpOiBzdHJpbmcgewogIHJldHVybiBjb250ZW50CiAgICAucmVwbGFjZSgvXCpcKiguKz8pXCpcKi9nLCAnPHN0cm9uZyBjbGFzcz0idGV4dC13aGl0ZSBmb250LXNlbWlib2xkIj4kMTwvc3Ryb25nPicpCiAgICAucmVwbGFjZSgvXCooLis/KVwqL2csICc8ZW0gY2xhc3M9InRleHQtd2hpdGUvNjAgaXRhbGljIj4kMTwvZW0+Jyk7Cn0K
+/**
+ * DramaSpace.tsx — Independent Drama Space
+ * Each drama is a completely separate virtual world.
+ * Users enter a scripted scene and role-play with their companion.
+ * Fully independent from Chat — separate message table, separate UI, separate everything.
+ */
+
+import { useState, useEffect, useRef, useCallback } from 'react';
+
+import { useNavigate, useParams } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  ArrowLeft, Send, Loader2, Sparkles, BookOpen,
+  Play, Square, Scroll, Wand2, Clock, Zap,
+  Pause, RotateCcw, Theater, Feather,
+} from 'lucide-react';
+import { useI18n } from '@/i18n/I18nContext';
+import { supabase, EDGE_FUNCTIONS_URL } from '@/lib/supabase';
+
+const easeSmooth = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
+interface DramaMessage {
+  id: string;
+  session_id: string;
+  speaker: 'user' | 'companion' | 'narrator';
+  content: string;
+  created_at: string;
+}
+
+interface DramaInfo {
+  id: string;
+  name: string;
+  description: string;
+  scene_setting: string;
+  cover_image_path: string | null;
+  drama_prompt: string;
+}
+
+interface CompanionInfo {
+  id: string;
+  nickname: string;
+  avatar_url: string | null;
+  gender: string;
+}
+
+interface SessionInfo {
+  id: string;
+  status: string;
+  started_at: string;
+}
+
+export default function DramaSpace() {
+  const navigate = useNavigate();
+  const { sessionId } = useParams<{ sessionId: string }>();
+  const { t } = useI18n();
+
+  // ── State ──
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [drama, setDrama] = useState<DramaInfo | null>(null);
+  const [companion, setCompanion] = useState<CompanionInfo | null>(null);
+  const [session, setSession] = useState<SessionInfo | null>(null);
+  const [messages, setMessages] = useState<DramaMessage[]>([]);
+  const [inputValue, setInputValue] = useState('');
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [showSceneIntro, setShowSceneIntro] = useState(true);
+  const [energy, setEnergy] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [typingDots, setTypingDots] = useState(false);
+
+  // ── Refs ──
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const streamingRef = useRef(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // ── Scroll to bottom ──
+  const scrollToBottom = useCallback(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, scrollToBottom]);
+
+  // ── Load session data ──
+  useEffect(() => {
+    if (!sessionId) return;
+
+    const loadSession = async () => {
+      try {
+        setLoading(true);
+        const token = (await supabase.auth.getSession()).data.session?.access_token;
+        if (!token) { navigate('/auth'); return; }
+
+        const res = await fetch(`${EDGE_FUNCTIONS_URL}/drama-session`, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'get', session_id: sessionId }),
+        });
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+
+        setDrama(data.drama);
+        setCompanion(data.companion);
+        setSession(data.session);
+        setMessages(data.messages || []);
+
+        // Get energy
+        const { data: acctRows } = await supabase.from('energy_accounts')
+          .select('balance').limit(1);
+        setEnergy(acctRows?.[0]?.balance || 0);
+
+        // Hide scene intro after 5 seconds
+        setTimeout(() => setShowSceneIntro(false), 5000);
+      } catch (e: any) {
+        setError(e.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadSession();
+  }, [sessionId, navigate]);
+
+  // ── Auto-resize textarea ──
+  useEffect(() => {
+    const el = textareaRef.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = Math.min(120, el.scrollHeight) + 'px';
+  }, [inputValue]);
+
+  // ── Send message ──
+  const handleSend = async () => {
+    const text = inputValue.trim();
+    if (!text || isStreaming || !sessionId) return;
+
+    if (energy < 30) {
+      setError(t('chat.energyLow') || '能量不足，请先充值');
+      return;
+    }
+
+    setInputValue('');
+    setIsStreaming(true);
+    streamingRef.current = true;
+
+    // Optimistic add user message
+    const userMsg: DramaMessage = {
+      id: 'temp-' + Date.now(), session_id: sessionId,
+      speaker: 'user', content: text, created_at: new Date().toISOString(),
+    };
+    setMessages(prev => [...prev, userMsg]);
+
+    try {
+      const token = (await supabase.auth.getSession()).data.session?.access_token;
+      if (!token) throw new Error('Not authenticated');
+
+      const res = await fetch(`${EDGE_FUNCTIONS_URL}/drama-chat`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId, message: text }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.error || 'Drama chat failed');
+      }
+
+      const reader = res.body?.getReader();
+      const decoder = new TextDecoder();
+      let replyText = '';
+
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value, { stream: true });
+          for (const line of chunk.split('\n')) {
+            if (line.startsWith('data: ')) {
+              const data = line.slice(6);
+              if (data === '[DONE]') break;
+              if (data.startsWith('[ERROR]')) throw new Error(data.slice(7));
+              replyText += data;
+              setMessages(prev => {
+                const filtered = prev.filter(m => m.id !== 'streaming');
+                return [...filtered, {
+                  id: 'streaming', session_id: sessionId,
+                  speaker: 'companion', content: replyText,
+                  created_at: new Date().toISOString(),
+                }];
+              });
+            }
+          }
+        }
+      }
+
+      // Update energy
+      setEnergy(prev => Math.max(0, prev - 30));
+
+      // Refresh messages
+      const refreshRes = await fetch(`${EDGE_FUNCTIONS_URL}/drama-session`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'get', session_id: sessionId }),
+      });
+      const refreshData = await refreshRes.json();
+      if (refreshData.messages) {
+        setMessages(refreshData.messages);
+      }
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setIsStreaming(false);
+      streamingRef.current = false;
+    }
+  };
+
+  // ── Complete drama ──
+  const handleComplete = () => {
+    navigate('/drama');
+  };
+
+  // ── Restart drama ──
+  const handleRestart = async () => {
+    if (!session || !confirm('重新开始将清空该剧本的所有聊天记录，确定吗？')) return;
+    try {
+      const token = (await supabase.auth.getSession()).data.session?.access_token;
+      const res = await fetch(`${EDGE_FUNCTIONS_URL}/drama-session`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'restart', drama_id: drama!.id }),
+      });
+      const data = await res.json();
+      if (data.error) throw new Error(data.error);
+      if (data.session?.id) {
+        navigate(`/drama-space/${data.session.id}`);
+        window.location.reload();
+      }
+    } catch (e: any) {
+      setError('重新开始失败: ' + e.message);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); if (!isPaused) handleSend(); }
+  };
+
+  // ── Loading ──
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-gradient-to-b from-[#1a1025] to-[#2a1a3a]">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin text-pink-400 mx-auto mb-4" />
+          <p className="text-white/70">正在进入剧情空间...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="h-screen flex items-center justify-center bg-gradient-to-b from-[#1a1025] to-[#2a1a3a]">
+        <div className="text-center max-w-md px-4">
+          <Sparkles className="w-12 h-12 text-pink-400 mx-auto mb-4" />
+          <p className="text-white/90 mb-4">{error}</p>
+          <button onClick={() => navigate('/drama')}
+            className="px-6 py-2 bg-pink-400/20 text-pink-300 rounded-full hover:bg-pink-400/30 transition-all">
+            <ArrowLeft className="w-4 h-4 inline mr-2" />返回剧情广场
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="h-screen flex flex-col bg-gradient-to-b from-[#1a1025] via-[#1e1530] to-[#2a1a3a] relative overflow-hidden">
+      {/* Decorative background orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl" />
+      </div>
+
+      {/* ── Scene Introduction Overlay ── */}
+      <AnimatePresence>
+        {showSceneIntro && drama && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, delay: 4 }}
+            className="absolute inset-0 z-50 flex items-center justify-center"
+            style={{ background: 'linear-gradient(180deg, #0d0a1a 0%, #1a1025 40%, #2a1a3a 100%)' }}
+          >
+            {/* Animated particles */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-pink-400/30 rounded-full"
+                  initial={{ opacity: 0, x: Math.random() * 100 + '%', y: '100%' }}
+                  animate={{ opacity: [0, 0.8, 0], y: '-10%' }}
+                  transition={{ duration: 3 + Math.random() * 4, delay: Math.random() * 2, repeat: Infinity }}
+                  style={{ left: Math.random() * 100 + '%' }}
+                />
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.05 }}
+              transition={{ duration: 1.2, ease: easeSmooth }}
+              className="text-center max-w-xl px-8 relative z-10"
+            >
+              {/* Theater icon */}
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                <Theater className="w-12 h-12 text-pink-400/50 mx-auto mb-6" />
+              </motion.div>
+
+              {/* Drama name */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="text-4xl font-bold text-white mb-4 font-display tracking-wide"
+                style={{ textShadow: '0 0 40px rgba(255,105,180,0.3)' }}
+              >
+                {drama.name}
+              </motion.h1>
+
+              {/* Divider */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 1 }}
+                className="w-24 h-px bg-gradient-to-r from-transparent via-pink-400/50 to-transparent mx-auto mb-5"
+              />
+
+              {/* Scene setting */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.3, duration: 0.8 }}
+                className="text-purple-200/70 text-base leading-relaxed mb-3 italic"
+              >
+                {drama.scene_setting}
+              </motion.p>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.6, duration: 0.8 }}
+                className="text-white/40 text-sm leading-relaxed"
+              >
+                {drama.description}
+              </motion.p>
+
+              {/* Drama prompt teaser */}
+              {drama.drama_prompt && (
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 2, duration: 1 }}
+                  className="text-white/30 text-xs mt-6 leading-relaxed max-w-md mx-auto"
+                >
+                  {drama.drama_prompt.substring(0, 80)}...
+                </motion.p>
+              )}
+
+              {/* Skip button */}
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.5, duration: 0.5 }}
+                onClick={() => setShowSceneIntro(false)}
+                className="mt-8 text-white/20 hover:text-white/50 text-xs transition-colors"
+              >
+                点击跳过开场
+              </motion.button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Top Bar ── */}
+      <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-b border-white/10 backdrop-blur-md bg-[#1a1025]/80 z-10">
+        <div className="flex items-center gap-3">
+          <button onClick={() => navigate('/drama')}
+            className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 transition-all text-white/60 hover:text-white">
+            <ArrowLeft size={20} />
+          </button>
+          <div>
+            <div className="flex items-center gap-2">
+              <Scroll className="w-4 h-4 text-pink-400" />
+              <span className="text-white font-medium text-sm">{drama?.name}</span>
+            </div>
+            <p className="text-white/40 text-xs">{companion?.nickname} · {t('drama.immersive') || '剧情模式'}</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          {/* Message count */}
+          <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/5 border border-white/10">
+            <Feather className="w-3 h-3 text-purple-400/60" />
+            <span className="text-white/60 text-xs">{messages.filter(m => m.speaker !== 'narrator').length}</span>
+          </div>
+          {/* Energy */}
+          <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/5 border border-white/10">
+            <Zap className="w-3 h-3 text-yellow-400" />
+            <span className="text-white/80 text-xs font-medium">{energy}</span>
+          </div>
+          {/* Pause/Resume */}
+          <button onClick={() => setIsPaused(!isPaused)}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white/60 text-xs">
+            {isPaused ? <Play className="w-3 h-3" /> : <Pause className="w-3 h-3" />}
+          </button>
+          {/* Restart drama */}
+          <button onClick={handleRestart}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-purple-500/20 hover:border-purple-500/30 transition-all text-white/60 hover:text-purple-300 text-xs"
+            title="重新开始">
+            <RotateCcw className="w-3 h-3" />
+          </button>
+          {/* End drama */}
+          <button onClick={handleComplete}
+            className="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white/5 border border-white/10 hover:bg-red-500/20 hover:border-red-500/30 transition-all text-white/60 hover:text-red-300 text-xs">
+            <Square className="w-3 h-3" />
+          </button>
+        </div>
+      </div>
+
+      {/* ── Pause Overlay ── */}
+      <AnimatePresence>
+        {isPaused && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-40 bg-[#1a1025]/80 backdrop-blur-sm flex items-center justify-center"
+          >
+            <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="text-center">
+              <Pause className="w-12 h-12 text-white/30 mx-auto mb-3" />
+              <p className="text-white/50 text-sm mb-4">剧情已暂停</p>
+              <button onClick={() => setIsPaused(false)}
+                className="px-5 py-2 bg-pink-500/20 text-pink-300 rounded-full text-sm hover:bg-pink-500/30 transition-all">
+                <Play className="w-4 h-4 inline mr-1.5" />继续剧情
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Messages Area ── */}
+      <div ref={messagesContainerRef} className="flex-1 overflow-y-auto px-4 py-4 chat-scrollbar">
+        {messages.map((msg, idx) => (
+          <DramaMessageBubble key={msg.id || idx} message={msg} companion={companion} />
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+
+      {/* ── Input Bar ── */}
+      <div className="flex-shrink-0 px-4 py-3 border-t border-white/10 backdrop-blur-md bg-[#1a1025]/80">
+        <div className="flex items-end gap-2 max-w-3xl mx-auto">
+          <div className="flex-1 relative">
+            <textarea
+              ref={textareaRef}
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder={isPaused ? '剧情已暂停...' : (t('drama.typeInScene') || '在剧情中输入你的台词...')}
+              rows={1}
+              disabled={isPaused}
+              className={`w-full px-4 py-2.5 rounded-xl border text-white/90 text-sm placeholder:text-white/30 focus:outline-none transition-all resize-none max-h-[100px] leading-relaxed ${
+                isPaused
+                  ? 'bg-white/[0.02] border-white/5 cursor-not-allowed'
+                  : 'bg-white/5 border-white/10 focus:border-pink-400/50 focus:bg-white/10'
+              }`}
+            />
+          </div>
+          <motion.button
+            onClick={handleSend}
+            disabled={!inputValue.trim() || isStreaming || isPaused}
+            whileHover={{ scale: inputValue.trim() && !isPaused ? 1.05 : 1 }}
+            whileTap={{ scale: inputValue.trim() && !isPaused ? 0.95 : 1 }}
+            className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
+              inputValue.trim() && !isPaused
+                ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg shadow-pink-500/25'
+                : 'bg-white/5 text-white/20 cursor-not-allowed'
+            }`}
+          >
+            {isStreaming ? <Loader2 className="w-4 h-4 animate-spin" /> : <Wand2 className="w-4 h-4" />}
+          </motion.button>
+        </div>
+        <p className="text-center text-white/20 text-xs mt-2">
+          <Clock className="w-3 h-3 inline mr-1" />
+          {t('drama.energyCost') || '每条消息消耗 30 能量'}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ── Drama Message Bubble ──
+function DramaMessageBubble({ message, companion }: { message: DramaMessage; companion: CompanionInfo | null }) {
+  const isNarrator = message.speaker === 'narrator';
+  const isUser = message.speaker === 'user';
+  const isCompanion = message.speaker === 'companion';
+
+  if (isNarrator) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="my-4 text-center"
+      >
+        <div className="inline-block max-w-[85%]">
+          <div className="px-5 py-3 rounded-lg bg-purple-500/10 border border-purple-400/20">
+            <div className="text-purple-300/60 text-xs mb-1 flex items-center justify-center gap-1">
+              <BookOpen className="w-3 h-3" />旁白
+            </div>
+            <div className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap"
+              dangerouslySetInnerHTML={{ __html: formatContent(message.content) }} />
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  if (isUser) {
+    return (
+      <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="flex justify-end my-3">
+        <div className="max-w-[75%]">
+          <div className="px-4 py-2.5 rounded-2xl rounded-tr-sm bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-400/20">
+            <p className="text-white/90 text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Companion
+  return (
+    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex gap-2.5 my-3">
+      <div className="flex-shrink-0 w-8 h-8 rounded-full overflow-hidden ring-2 ring-purple-400/30 mt-1">
+        <img src={companion?.avatar_url || '/default-avatar.jpg'} alt={companion?.nickname || ''}
+          className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).src = '/default-avatar.jpg'; }} />
+      </div>
+      <div className="max-w-[75%]">
+        <div className="flex items-center gap-2 mb-0.5">
+          <span className="text-purple-300/60 text-xs font-medium">{companion?.nickname || 'Companion'}</span>
+        </div>
+        <div className="px-4 py-2.5 rounded-2xl rounded-tl-sm bg-white/5 border border-white/10">
+          <div className="text-white/85 text-sm leading-relaxed whitespace-pre-wrap"
+            dangerouslySetInnerHTML={{ __html: formatContent(message.content) }} />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// Format content: **bold**, *italic*, etc.
+function formatContent(content: string): string {
+  return content
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em class="text-white/60 italic">$1</em>');
+}

@@ -1,1 +1,68 @@
-LyoqCiAqIFRoZW1lQ29udGV4dC50c3gg4oCUIFVuaWZpZWQgMy1zdGF0ZSB0aGVtZSBtYW5hZ2VtZW50CiAqIGxpZ2h0IC8gZGFyayAvIGF1dG8sIHBlcnNpc3RlZCB0byBsb2NhbFN0b3JhZ2UKICovCmltcG9ydCBSZWFjdCwgeyBjcmVhdGVDb250ZXh0LCB1c2VDb250ZXh0LCB1c2VTdGF0ZSwgdXNlRWZmZWN0LCB1c2VDYWxsYmFjayB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgYXBwbHlUaGVtZSwgbG9hZFNhdmVkVGhlbWUsIGdldEVmZmVjdGl2ZVRoZW1lLCBsaXN0ZW5Ub1N5c3RlbVRoZW1lQ2hhbmdlcyB9IGZyb20gJ0AvbGliL3RoZW1lJzsKaW1wb3J0IHR5cGUgeyBUaGVtZSB9IGZyb20gJ0AvbGliL3RoZW1lJzsKCmNvbnN0IFRoZW1lQ29udGV4dCA9IGNyZWF0ZUNvbnRleHQ8ewogIHRoZW1lOiBUaGVtZTsKICBlZmZlY3RpdmVUaGVtZTogJ2xpZ2h0JyB8ICdkYXJrJzsKICBzZXRUaGVtZTogKHQ6IFRoZW1lKSA9PiB2b2lkOwogIGN5Y2xlVGhlbWU6ICgpID0+IHZvaWQ7Cn0+KHsKICB0aGVtZTogJ2F1dG8nLAogIGVmZmVjdGl2ZVRoZW1lOiAnbGlnaHQnLAogIHNldFRoZW1lOiAoKSA9PiB7fSwKICBjeWNsZVRoZW1lOiAoKSA9PiB7fSwKfSk7CgpleHBvcnQgZnVuY3Rpb24gVGhlbWVQcm92aWRlcih7IGNoaWxkcmVuIH06IHsgY2hpbGRyZW46IFJlYWN0LlJlYWN0Tm9kZSB9KSB7CiAgY29uc3QgW3RoZW1lLCBzZXRUaGVtZVN0YXRlXSA9IHVzZVN0YXRlPFRoZW1lPigoKSA9PiBsb2FkU2F2ZWRUaGVtZSgpKTsKCiAgY29uc3QgZWZmZWN0aXZlVGhlbWUgPSBnZXRFZmZlY3RpdmVUaGVtZSh0aGVtZSk7CiAgY29uc3QgaXNEYXJrID0gZWZmZWN0aXZlVGhlbWUgPT09ICdkYXJrJzsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGFwcGx5VGhlbWUodGhlbWUpOwogIH0sIFt0aGVtZV0pOwoKICAvLyBMaXN0ZW4gZm9yIHN5c3RlbSB0aGVtZSBjaGFuZ2VzIHdoZW4gaW4gYXV0byBtb2RlCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGlmICh0aGVtZSAhPT0gJ2F1dG8nKSByZXR1cm47CiAgICByZXR1cm4gbGlzdGVuVG9TeXN0ZW1UaGVtZUNoYW5nZXMoKCkgPT4gYXBwbHlUaGVtZSgnYXV0bycpKTsKICB9LCBbdGhlbWVdKTsKCiAgY29uc3Qgc2V0VGhlbWUgPSB1c2VDYWxsYmFjaygodDogVGhlbWUpID0+IHsKICAgIHNldFRoZW1lU3RhdGUodCk7CiAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgndGhlbWUnLCB0KTsKICAgIGFwcGx5VGhlbWUodCk7CiAgfSwgW10pOwoKICBjb25zdCBjeWNsZVRoZW1lID0gdXNlQ2FsbGJhY2soKCkgPT4gewogICAgY29uc3QgY3ljbGU6IFRoZW1lW10gPSBbJ2xpZ2h0JywgJ2RhcmsnLCAnYXV0byddOwogICAgY29uc3QgbmV4dCA9IGN5Y2xlWyhjeWNsZS5pbmRleE9mKHRoZW1lKSArIDEpICUgY3ljbGUubGVuZ3RoXTsKICAgIHNldFRoZW1lKG5leHQpOwogIH0sIFt0aGVtZSwgc2V0VGhlbWVdKTsKCiAgLy8gU3luYyBhY3Jvc3MgdGFicwogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBjb25zdCBoYW5kbGVyID0gKGU6IFN0b3JhZ2VFdmVudCkgPT4gewogICAgICBpZiAoZS5rZXkgPT09ICd0aGVtZScgJiYgZS5uZXdWYWx1ZSAmJiBbJ2xpZ2h0JywgJ2RhcmsnLCAnYXV0byddLmluY2x1ZGVzKGUubmV3VmFsdWUpKSB7CiAgICAgICAgc2V0VGhlbWVTdGF0ZShlLm5ld1ZhbHVlIGFzIFRoZW1lKTsKICAgICAgICBhcHBseVRoZW1lKGUubmV3VmFsdWUgYXMgVGhlbWUpOwogICAgICB9CiAgICB9OwogICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3N0b3JhZ2UnLCBoYW5kbGVyKTsKICAgIHJldHVybiAoKSA9PiB3aW5kb3cucmVtb3ZlRXZlbnRMaXN0ZW5lcignc3RvcmFnZScsIGhhbmRsZXIpOwogIH0sIFtdKTsKCiAgcmV0dXJuICgKICAgIDxUaGVtZUNvbnRleHQuUHJvdmlkZXIgdmFsdWU9e3sgdGhlbWUsIGVmZmVjdGl2ZVRoZW1lLCBzZXRUaGVtZSwgY3ljbGVUaGVtZSB9fT4KICAgICAge2NoaWxkcmVufQogICAgPC9UaGVtZUNvbnRleHQuUHJvdmlkZXI+CiAgKTsKfQoKZXhwb3J0IGNvbnN0IHVzZVRoZW1lQ29udGV4dCA9ICgpID0+IHVzZUNvbnRleHQoVGhlbWVDb250ZXh0KTsK
+/**
+ * ThemeContext.tsx — Unified 3-state theme management
+ * light / dark / auto, persisted to localStorage
+ */
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { applyTheme, loadSavedTheme, getEffectiveTheme, listenToSystemThemeChanges } from '@/lib/theme';
+import type { Theme } from '@/lib/theme';
+
+const ThemeContext = createContext<{
+  theme: Theme;
+  effectiveTheme: 'light' | 'dark';
+  setTheme: (t: Theme) => void;
+  cycleTheme: () => void;
+}>({
+  theme: 'auto',
+  effectiveTheme: 'light',
+  setTheme: () => {},
+  cycleTheme: () => {},
+});
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setThemeState] = useState<Theme>(() => loadSavedTheme());
+
+  const effectiveTheme = getEffectiveTheme(theme);
+  const isDark = effectiveTheme === 'dark';
+
+  useEffect(() => {
+    applyTheme(theme);
+  }, [theme]);
+
+  // Listen for system theme changes when in auto mode
+  useEffect(() => {
+    if (theme !== 'auto') return;
+    return listenToSystemThemeChanges(() => applyTheme('auto'));
+  }, [theme]);
+
+  const setTheme = useCallback((t: Theme) => {
+    setThemeState(t);
+    localStorage.setItem('theme', t);
+    applyTheme(t);
+  }, []);
+
+  const cycleTheme = useCallback(() => {
+    const cycle: Theme[] = ['light', 'dark', 'auto'];
+    const next = cycle[(cycle.indexOf(theme) + 1) % cycle.length];
+    setTheme(next);
+  }, [theme, setTheme]);
+
+  // Sync across tabs
+  useEffect(() => {
+    const handler = (e: StorageEvent) => {
+      if (e.key === 'theme' && e.newValue && ['light', 'dark', 'auto'].includes(e.newValue)) {
+        setThemeState(e.newValue as Theme);
+        applyTheme(e.newValue as Theme);
+      }
+    };
+    window.addEventListener('storage', handler);
+    return () => window.removeEventListener('storage', handler);
+  }, []);
+
+  return (
+    <ThemeContext.Provider value={{ theme, effectiveTheme, setTheme, cycleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export const useThemeContext = () => useContext(ThemeContext);

@@ -1,1 +1,118 @@
-LyoqCiAqIHBheW1lbnQtY3JlYXRlIEVkZ2UgRnVuY3Rpb24g4oCUIFpwYXkgcGF5bWVudCBvcmRlcgogKiBTZWxmLWNvbnRhaW5lZAogKi8KCmNvbnN0IGNvcnNIZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0gewogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW4nOiAnaHR0cHM6Ly9wbGF0b25pYy5jb3JvbGFzLnRvcCcsCiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LUhlYWRlcnMnOiAnYXV0aG9yaXphdGlvbiwgeC1jbGllbnQtaW5mbywgYXBpa2V5LCBjb250ZW50LXR5cGUsIHgtcmVxdWVzdGVkLXdpdGgnLAogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzJzogJ1BPU1QsIE9QVElPTlMnLAogICdBY2Nlc3MtQ29udHJvbC1NYXgtQWdlJzogJzg2NDAwJywKfTsKCmltcG9ydCB7IGNyZWF0ZUNsaWVudCB9IGZyb20gJ25wbTpAc3VwYWJhc2Uvc3VwYWJhc2UtanNAMi4zOS4wJzsKaW1wb3J0IENyeXB0b0pTIGZyb20gJ25wbTpjcnlwdG8tanNANC4yLjAnOwoKZnVuY3Rpb24gZ2V0U3VwYWJhc2VDbGllbnQoKSB7CiAgY29uc3QgdXJsID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9VUkwnKSE7CiAgY29uc3Qga2V5ID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9TRVJWSUNFX1JPTEVfS0VZJykhOwogIHJldHVybiBjcmVhdGVDbGllbnQodXJsLCBrZXksIHsgYXV0aDogeyBwZXJzaXN0U2Vzc2lvbjogZmFsc2UgfSB9KTsKfQoKZnVuY3Rpb24gZ2V0WnBheUNvbmZpZygpIHsKICByZXR1cm4geyBwaWQ6IERlbm8uZW52LmdldCgnWlBBWV9QSUQnKSEsIGtleTogRGVuby5lbnYuZ2V0KCdaUEFZX0tFWScpISB9Owp9CgpmdW5jdGlvbiBtZDVTaWduKHBhcmFtczogUmVjb3JkPHN0cmluZywgc3RyaW5nPiwga2V5OiBzdHJpbmcpOiBzdHJpbmcgewogIGNvbnN0IHNvcnRlZCA9IE9iamVjdC5rZXlzKHBhcmFtcykKICAgIC5maWx0ZXIoayA9PiBrICE9PSAnc2lnbicgJiYgayAhPT0gJ3NpZ25fdHlwZScgJiYgcGFyYW1zW2tdICE9PSAnJykKICAgIC5zb3J0KCkKICAgIC5tYXAoayA9PiBgJHtrfT0ke3BhcmFtc1trXX1gKQogICAgLmpvaW4oJyYnKTsKICByZXR1cm4gQ3J5cHRvSlMuTUQ1KHNvcnRlZCArIGtleSkudG9TdHJpbmcoKTsKfQoKZnVuY3Rpb24gZ2VuZXJhdGVPcmRlck5vKCk6IHN0cmluZyB7CiAgcmV0dXJuIGBQTEFUT05JQ18ke0RhdGUubm93KCl9XyR7TWF0aC5yYW5kb20oKS50b1N0cmluZygzNikuc3Vic3RyaW5nKDIsIDYpLnRvVXBwZXJDYXNlKCl9YDsKfQoKRGVuby5zZXJ2ZShhc3luYyAocmVxOiBSZXF1ZXN0KSA9PiB7CiAgaWYgKHJlcS5tZXRob2QgPT09ICdPUFRJT05TJykgewogICAgcmV0dXJuIG5ldyBSZXNwb25zZShudWxsLCB7IHN0YXR1czogMjA0LCBoZWFkZXJzOiBjb3JzSGVhZGVycyB9KTsKICB9CgogIHRyeSB7CiAgICBjb25zdCBhdXRoSGVhZGVyID0gcmVxLmhlYWRlcnMuZ2V0KCdBdXRob3JpemF0aW9uJykgfHwgJyc7CiAgICBjb25zdCBqd3QgPSBhdXRoSGVhZGVyLnJlcGxhY2UoJ0JlYXJlciAnLCAnJyk7CiAgICBjb25zdCBzdXBhYmFzZSA9IGdldFN1cGFiYXNlQ2xpZW50KCk7CiAgICBjb25zdCB7IGRhdGE6IHsgdXNlciB9IH0gPSBhd2FpdCBzdXBhYmFzZS5hdXRoLmdldFVzZXIoand0KTsKICAgIGlmICghdXNlcikgdGhyb3cgbmV3IEVycm9yKCdVbmF1dGhvcml6ZWQnKTsKCiAgICBjb25zdCBib2R5ID0gYXdhaXQgcmVxLmpzb24oKS5jYXRjaCgoKSA9PiAoe30pKTsKICAgIGNvbnN0IHBsYW5JZCA9IGJvZHkucGxhbl9pZDsKCiAgICBjb25zdCB7IGRhdGE6IHBsYW4sIGVycm9yOiBwbGFuRXJyIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgICAuZnJvbSgncHJpY2luZ19wbGFucycpCiAgICAgIC5zZWxlY3QoJyonKQogICAgICAuZXEoJ2lkJywgcGxhbklkKQogICAgICAuZXEoJ2lzX2FjdGl2ZScsIHRydWUpCiAgICAgIC5zaW5nbGUoKTsKCiAgICBpZiAocGxhbkVyciB8fCAhcGxhbikgdGhyb3cgbmV3IEVycm9yKCdJbnZhbGlkIHBsYW4nKTsKCiAgICBjb25zdCBwcmljZUNlbnRzID0gcGxhbi5wcmljZV9jZW50cyB8fCAwOwogICAgY29uc3QgYW1vdW50ID0gKHByaWNlQ2VudHMgLyAxMDApLnRvRml4ZWQoMik7CiAgICBjb25zdCB0b3RhbEVuZXJneSA9IChwbGFuLmVuZXJneV9hbW91bnQgfHwgMCkgKyAocGxhbi5ib251c19hbW91bnQgfHwgMCk7CiAgICBjb25zdCBwbGFuTmFtZSA9IHBsYW4ubmFtZSB8fCAnRW5lcmd5IFBhY2snOwoKICAgIGNvbnN0IHsgcGlkLCBrZXkgfSA9IGdldFpwYXlDb25maWcoKTsKICAgIGNvbnN0IG9yZGVyTm8gPSBnZW5lcmF0ZU9yZGVyTm8oKTsKICAgIGNvbnN0IGNhbGxiYWNrVXJsID0gYGh0dHBzOi8vaXF5bGNrd21teWdxdXR5Y3FtbGIuc3VwYWJhc2UuY28vZnVuY3Rpb25zL3YxL3BheW1lbnQtY2FsbGJhY2tgOwoKICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ3BheW1lbnRfb3JkZXJzJykuaW5zZXJ0KHsKICAgICAgdXNlcl9pZDogdXNlci5pZCwKICAgICAgb3JkZXJfbm86IG9yZGVyTm8sCiAgICAgIHJlcXVlc3RfaWQ6IGNyeXB0by5yYW5kb21VVUlEKCksCiAgICAgIGlkZW1wb3RlbmN5X2tleTogY3J5cHRvLnJhbmRvbVVVSUQoKSwKICAgICAgYW1vdW50X2NlbnRzOiBwcmljZUNlbnRzLAogICAgICBwYWlkX2NlbnRzOiAwLAogICAgICBlbmVyZ3lfYW1vdW50OiB0b3RhbEVuZXJneSwKICAgICAgY3VycmVuY3k6ICdDTlknLAogICAgICBzdGF0dXM6ICdwZW5kaW5nJywKICAgICAgcGF5bWVudF9tZXRob2Q6ICdhbGlwYXknLAogICAgICB2ZXJzaW9uOiAxLAogICAgICBleHBpcmVkX2F0OiBuZXcgRGF0ZShEYXRlLm5vdygpICsgMzAgKiA2MCAqIDEwMDApLnRvSVNPU3RyaW5nKCksCiAgICB9KTsKCiAgICBjb25zdCBwYXJhbXM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7CiAgICAgIHBpZCwKICAgICAgdHlwZTogJ2FsaXBheScsCiAgICAgIG91dF90cmFkZV9ubzogb3JkZXJObywKICAgICAgbm90aWZ5X3VybDogY2FsbGJhY2tVcmwsCiAgICAgIHJldHVybl91cmw6ICdodHRwczovL3BsYXRvbmljLmNvcm9sYXMudG9wLyMvcGF5bWVudD9zdWNjZXNzPTEnLAogICAgICBuYW1lOiBwbGFuTmFtZSwKICAgICAgbW9uZXk6IGFtb3VudCwKICAgICAgY2xpZW50aXA6ICcxMjcuMC4wLjEnLAogICAgICBkZXZpY2U6ICdwYycsCiAgICB9OwogICAgY29uc3Qgc2lnbiA9IG1kNVNpZ24ocGFyYW1zLCBrZXkpOwoKICAgIGNvbnN0IHF1ZXJ5ID0gbmV3IFVSTFNlYXJjaFBhcmFtcyh7IC4uLnBhcmFtcywgc2lnbiwgc2lnbl90eXBlOiAnTUQ1JyB9KTsKICAgIGNvbnN0IHBheW1lbnRVcmwgPSBgaHR0cHM6Ly96cGF5ei5jbi9zdWJtaXQucGhwPyR7cXVlcnkudG9TdHJpbmcoKX1gOwoKICAgIHJldHVybiBuZXcgUmVzcG9uc2UoSlNPTi5zdHJpbmdpZnkoewogICAgICBvcmRlcl9ubzogb3JkZXJObywKICAgICAgcGF5bWVudF91cmw6IHBheW1lbnRVcmwsCiAgICAgIGFtb3VudCwKICAgICAgZW5lcmd5X2Ftb3VudDogdG90YWxFbmVyZ3ksCiAgICB9KSwgewogICAgICBoZWFkZXJzOiB7IC4uLmNvcnNIZWFkZXJzLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0sCiAgICB9KTsKCiAgfSBjYXRjaCAoZTogYW55KSB7CiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgZXJyb3I6IGUubWVzc2FnZSB9KSwgewogICAgICBzdGF0dXM6IDUwMCwKICAgICAgaGVhZGVyczogeyAuLi5jb3JzSGVhZGVycywgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9LAogICAgfSk7CiAgfQp9KTsK
+/**
+ * payment-create Edge Function — Zpay payment order
+ * Self-contained
+ */
+
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': 'https://platonic.corolas.top',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-requested-with',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Max-Age': '86400',
+};
+
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+import CryptoJS from 'npm:crypto-js@4.2.0';
+
+function getSupabaseClient() {
+  const url = Deno.env.get('SUPABASE_URL')!;
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+function getZpayConfig() {
+  return { pid: Deno.env.get('ZPAY_PID')!, key: Deno.env.get('ZPAY_KEY')! };
+}
+
+function md5Sign(params: Record<string, string>, key: string): string {
+  const sorted = Object.keys(params)
+    .filter(k => k !== 'sign' && k !== 'sign_type' && params[k] !== '')
+    .sort()
+    .map(k => `${k}=${params[k]}`)
+    .join('&');
+  return CryptoJS.MD5(sorted + key).toString();
+}
+
+function generateOrderNo(): string {
+  return `PLATONIC_${Date.now()}_${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+}
+
+Deno.serve(async (req: Request) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: corsHeaders });
+  }
+
+  try {
+    const authHeader = req.headers.get('Authorization') || '';
+    const jwt = authHeader.replace('Bearer ', '');
+    const supabase = getSupabaseClient();
+    const { data: { user } } = await supabase.auth.getUser(jwt);
+    if (!user) throw new Error('Unauthorized');
+
+    const body = await req.json().catch(() => ({}));
+    const planId = body.plan_id;
+
+    const { data: plan, error: planErr } = await supabase
+      .from('pricing_plans')
+      .select('*')
+      .eq('id', planId)
+      .eq('is_active', true)
+      .single();
+
+    if (planErr || !plan) throw new Error('Invalid plan');
+
+    const priceCents = plan.price_cents || 0;
+    const amount = (priceCents / 100).toFixed(2);
+    const totalEnergy = (plan.energy_amount || 0) + (plan.bonus_amount || 0);
+    const planName = plan.name || 'Energy Pack';
+
+    const { pid, key } = getZpayConfig();
+    const orderNo = generateOrderNo();
+    const callbackUrl = `https://iqylckwmmygqutycqmlb.supabase.co/functions/v1/payment-callback`;
+
+    await supabase.from('payment_orders').insert({
+      user_id: user.id,
+      order_no: orderNo,
+      request_id: crypto.randomUUID(),
+      idempotency_key: crypto.randomUUID(),
+      amount_cents: priceCents,
+      paid_cents: 0,
+      energy_amount: totalEnergy,
+      currency: 'CNY',
+      status: 'pending',
+      payment_method: 'alipay',
+      version: 1,
+      expired_at: new Date(Date.now() + 30 * 60 * 1000).toISOString(),
+    });
+
+    const params: Record<string, string> = {
+      pid,
+      type: 'alipay',
+      out_trade_no: orderNo,
+      notify_url: callbackUrl,
+      return_url: 'https://platonic.corolas.top/#/payment?success=1',
+      name: planName,
+      money: amount,
+      clientip: '127.0.0.1',
+      device: 'pc',
+    };
+    const sign = md5Sign(params, key);
+
+    const query = new URLSearchParams({ ...params, sign, sign_type: 'MD5' });
+    const paymentUrl = `https://zpayz.cn/submit.php?${query.toString()}`;
+
+    return new Response(JSON.stringify({
+      order_no: orderNo,
+      payment_url: paymentUrl,
+      amount,
+      energy_amount: totalEnergy,
+    }), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+
+  } catch (e: any) {
+    return new Response(JSON.stringify({ error: e.message }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+});

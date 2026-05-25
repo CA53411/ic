@@ -1,1 +1,54 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCB7IEdyaXBWZXJ0aWNhbEljb24gfSBmcm9tICJsdWNpZGUtcmVhY3QiCmltcG9ydCAqIGFzIFJlc2l6YWJsZVByaW1pdGl2ZSBmcm9tICJyZWFjdC1yZXNpemFibGUtcGFuZWxzIgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKCmZ1bmN0aW9uIFJlc2l6YWJsZVBhbmVsR3JvdXAoewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgUmVzaXphYmxlUHJpbWl0aXZlLkdyb3VwPikgewogIHJldHVybiAoCiAgICA8UmVzaXphYmxlUHJpbWl0aXZlLkdyb3VwCiAgICAgIGRhdGEtc2xvdD0icmVzaXphYmxlLXBhbmVsLWdyb3VwIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJmbGV4IGgtZnVsbCB3LWZ1bGwgZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTpmbGV4LWNvbCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKQp9CgpmdW5jdGlvbiBSZXNpemFibGVQYW5lbCh7CiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFJlc2l6YWJsZVByaW1pdGl2ZS5QYW5lbD4pIHsKICByZXR1cm4gPFJlc2l6YWJsZVByaW1pdGl2ZS5QYW5lbCBkYXRhLXNsb3Q9InJlc2l6YWJsZS1wYW5lbCIgey4uLnByb3BzfSAvPgp9CgpmdW5jdGlvbiBSZXNpemFibGVIYW5kbGUoewogIHdpdGhIYW5kbGUsCiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBSZXNpemFibGVQcmltaXRpdmUuU2VwYXJhdG9yPiAmIHsKICB3aXRoSGFuZGxlPzogYm9vbGVhbgp9KSB7CiAgcmV0dXJuICgKICAgIDxSZXNpemFibGVQcmltaXRpdmUuU2VwYXJhdG9yCiAgICAgIGRhdGEtc2xvdD0icmVzaXphYmxlLWhhbmRsZSIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAiYmctYm9yZGVyIGZvY3VzLXZpc2libGU6cmluZy1yaW5nIHJlbGF0aXZlIGZsZXggdy1weCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6aW5zZXQteS0wIGFmdGVyOmxlZnQtMS8yIGFmdGVyOnctMSBhZnRlcjotdHJhbnNsYXRlLXgtMS8yIGZvY3VzLXZpc2libGU6cmluZy0xIGZvY3VzLXZpc2libGU6cmluZy1vZmZzZXQtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtaGlkZGVuIGRhdGEtW3BhbmVsLWdyb3VwLWRpcmVjdGlvbj12ZXJ0aWNhbF06aC1weCBkYXRhLVtwYW5lbC1ncm91cC1kaXJlY3Rpb249dmVydGljYWxdOnctZnVsbCBkYXRhLVtwYW5lbC1ncm91cC1kaXJlY3Rpb249dmVydGljYWxdOmFmdGVyOmxlZnQtMCBkYXRhLVtwYW5lbC1ncm91cC1kaXJlY3Rpb249dmVydGljYWxdOmFmdGVyOmgtMSBkYXRhLVtwYW5lbC1ncm91cC1kaXJlY3Rpb249dmVydGljYWxdOmFmdGVyOnctZnVsbCBkYXRhLVtwYW5lbC1ncm91cC1kaXJlY3Rpb249dmVydGljYWxdOmFmdGVyOnRyYW5zbGF0ZS14LTAgZGF0YS1bcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXTphZnRlcjotdHJhbnNsYXRlLXktMS8yIFsmW2RhdGEtcGFuZWwtZ3JvdXAtZGlyZWN0aW9uPXZlcnRpY2FsXT5kaXZdOnJvdGF0ZS05MCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgID4KICAgICAge3dpdGhIYW5kbGUgJiYgKAogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJiZy1ib3JkZXIgei0xMCBmbGV4IGgtNCB3LTMgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQteHMgYm9yZGVyIj4KICAgICAgICAgIDxHcmlwVmVydGljYWxJY29uIGNsYXNzTmFtZT0ic2l6ZS0yLjUiIC8+CiAgICAgICAgPC9kaXY+CiAgICAgICl9CiAgICA8L1Jlc2l6YWJsZVByaW1pdGl2ZS5TZXBhcmF0b3I+CiAgKQp9CgpleHBvcnQgeyBSZXNpemFibGVQYW5lbEdyb3VwLCBSZXNpemFibGVQYW5lbCwgUmVzaXphYmxlSGFuZGxlIH0K
+import * as React from "react"
+import { GripVerticalIcon } from "lucide-react"
+import * as ResizablePrimitive from "react-resizable-panels"
+
+import { cn } from "@/lib/utils"
+
+function ResizablePanelGroup({
+  className,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.Group>) {
+  return (
+    <ResizablePrimitive.Group
+      data-slot="resizable-panel-group"
+      className={cn(
+        "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function ResizablePanel({
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.Panel>) {
+  return <ResizablePrimitive.Panel data-slot="resizable-panel" {...props} />
+}
+
+function ResizableHandle({
+  withHandle,
+  className,
+  ...props
+}: React.ComponentProps<typeof ResizablePrimitive.Separator> & {
+  withHandle?: boolean
+}) {
+  return (
+    <ResizablePrimitive.Separator
+      data-slot="resizable-handle"
+      className={cn(
+        "bg-border focus-visible:ring-ring relative flex w-px items-center justify-center after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:outline-hidden data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:translate-x-0 data-[panel-group-direction=vertical]:after:-translate-y-1/2 [&[data-panel-group-direction=vertical]>div]:rotate-90",
+        className
+      )}
+      {...props}
+    >
+      {withHandle && (
+        <div className="bg-border z-10 flex h-4 w-3 items-center justify-center rounded-xs border">
+          <GripVerticalIcon className="size-2.5" />
+        </div>
+      )}
+    </ResizablePrimitive.Separator>
+  )
+}
+
+export { ResizablePanelGroup, ResizablePanel, ResizableHandle }

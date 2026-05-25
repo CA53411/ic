@@ -1,1 +1,164 @@
-aW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnbnBtOkBzdXBhYmFzZS9zdXBhYmFzZS1qc0AyLjM5LjAnOwoKY29uc3QgY29yc0hlYWRlcnM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7CiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbic6ICdodHRwczovL3BsYXRvbmljLmNvcm9sYXMudG9wJywKICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ctSGVhZGVycyc6ICdhdXRob3JpemF0aW9uLCB4LWNsaWVudC1pbmZvLCBhcGlrZXksIGNvbnRlbnQtdHlwZSwgeC1yZXF1ZXN0ZWQtd2l0aCcsCiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LU1ldGhvZHMnOiAnUE9TVCwgT1BUSU9OUycsCiAgJ0FjY2Vzcy1Db250cm9sLU1heC1BZ2UnOiAnODY0MDAnLAp9OwoKRGVuby5zZXJ2ZShhc3luYyAocmVxOiBSZXF1ZXN0KSA9PiB7CiAgaWYgKHJlcS5tZXRob2QgPT09ICdPUFRJT05TJykgewogICAgcmV0dXJuIG5ldyBSZXNwb25zZShudWxsLCB7IHN0YXR1czogMjA0LCBoZWFkZXJzOiBjb3JzSGVhZGVycyB9KTsKICB9CgogIHRyeSB7CiAgICBjb25zdCBzdXBhYmFzZVVybCA9IERlbm8uZW52LmdldCgnU1VQQUJBU0VfVVJMJykhOwogICAgY29uc3Qgc2VydmljZUtleSA9IERlbm8uZW52LmdldCgnU1VQQUJBU0VfU0VSVklDRV9ST0xFX0tFWScpITsKICAgIGNvbnN0IHN1cGFiYXNlID0gY3JlYXRlQ2xpZW50KHN1cGFiYXNlVXJsLCBzZXJ2aWNlS2V5LCB7IGF1dGg6IHsgcGVyc2lzdFNlc3Npb246IGZhbHNlLCBhdXRvUmVmcmVzaFRva2VuOiBmYWxzZSB9IH0pOwoKICAgIGNvbnN0IGJvZHkgPSBhd2FpdCByZXEuanNvbigpLmNhdGNoKCgpID0+ICh7fSkpOwogICAgY29uc3QgYWN0aW9uID0gYm9keS5hY3Rpb24gfHwgJ2Z1bGwnOwogICAgY29uc3QgcmVzdWx0czogc3RyaW5nW10gPSBbXTsKCiAgICAvLyBVc2UgYSBmaXhlZCBVVUlEIGZvciB0ZXN0IHVzZXIKICAgIGNvbnN0IHVzZXJJZCA9IGJvZHkudXNlcl9pZCB8fCAnMTExMTExMTEtMTExMS0xMTExLTExMTEtMTExMTExMTExMTExJzsKCiAgICAvLyAxLiBJbnNlcnQgaW50byBhdXRoLnVzZXJzIHZpYSByYXcgc3FsCiAgICBjb25zdCB7IGVycm9yOiBhdXRoRXJyIH0gPSBhd2FpdCBzdXBhYmFzZS5ycGMoJ2NyZWF0ZV90ZXN0X2FjY291bnQnLCB7CiAgICAgIHBfaWQ6IHVzZXJJZCwKICAgICAgcF9lbWFpbDogJ3Rlc3RAcGxhdG9uaWMuYWknLAogICAgfSk7CiAgICBpZiAoYXV0aEVycikgewogICAgICByZXN1bHRzLnB1c2goYEF1dGggdXNlciBub3RlOiAke2F1dGhFcnIubWVzc2FnZX0gKG1heSBhbHJlYWR5IGV4aXN0KWApOwogICAgfSBlbHNlIHsKICAgICAgcmVzdWx0cy5wdXNoKGBBdXRoIHVzZXIgY3JlYXRlZC91cGRhdGVkOiAke3VzZXJJZH1gKTsKICAgIH0KCiAgICAvLyAyLiBDcmVhdGUgZW5lcmd5IGFjY291bnQgKGNvbmRpdGlvbmFsbHkgLSBza2lwIGlmIHRhYmxlIGRvZXMgbm90IGV4aXN0KQogICAgaWYgKGFjdGlvbiA9PT0gJ2Z1bGwnIHx8IGFjdGlvbiA9PT0gJ2VuZXJneScpIHsKICAgICAgdHJ5IHsKICAgICAgICBjb25zdCB7IGVycm9yOiBlRXJyIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdlbmVyZ3lfYWNjb3VudHMnKS51cHNlcnQoewogICAgICAgICAgdXNlcl9pZDogdXNlcklkLAogICAgICAgICAgYmFsYW5jZTogMTAwMDAsCiAgICAgICAgICB0b3RhbF9lYXJuZWQ6IDEwMDAwLAogICAgICAgICAgdG90YWxfY29uc3VtZWQ6IDAsCiAgICAgICAgICB1cGRhdGVkX2F0OiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCiAgICAgICAgfSwgeyBvbkNvbmZsaWN0OiAndXNlcl9pZCcgfSk7CiAgICAgICAgcmVzdWx0cy5wdXNoKGVFcnIgPyBgRW5lcmd5IGVycm9yOiAke2VFcnIubWVzc2FnZX1gIDogJ0VuZXJneSBhY2NvdW50OiAxMCwwMDAnKTsKICAgICAgfSBjYXRjaCAoZTogYW55KSB7CiAgICAgICAgcmVzdWx0cy5wdXNoKGBFbmVyZ3kgYWNjb3VudCBza2lwcGVkOiB0YWJsZSBtYXkgbm90IGV4aXN0ICgke2UubWVzc2FnZX0pYCk7CiAgICAgIH0KICAgIH0KCiAgICAvLyAzLiBDcmVhdGUgdGVzdCBjb21wYW5pb24KICAgIGxldCBjb21wYW5pb25JZDogc3RyaW5nIHwgdW5kZWZpbmVkOwogICAgaWYgKGFjdGlvbiA9PT0gJ2Z1bGwnIHx8IGFjdGlvbiA9PT0gJ2NvbXBhbmlvbicpIHsKICAgICAgLy8gRmlyc3QgY2hlY2sgaWYgY29tcGFuaW9uIGV4aXN0cwogICAgICBjb25zdCB7IGRhdGE6IGV4aXN0aW5nIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdjb21wYW5pb25zJykuc2VsZWN0KCdpZCcpLmVxKCd1c2VyX2lkJywgdXNlcklkKS5tYXliZVNpbmdsZSgpOwogICAgICBpZiAoZXhpc3RpbmcpIHsKICAgICAgICBjb21wYW5pb25JZCA9IGV4aXN0aW5nLmlkOwogICAgICAgIHJlc3VsdHMucHVzaChgQ29tcGFuaW9uIGFscmVhZHkgZXhpc3RzOiAke2NvbXBhbmlvbklkPy5zbGljZSgwLDgpfWApOwogICAgICB9IGVsc2UgewogICAgICAgIGNvbnN0IHsgZGF0YTogY29tcCwgZXJyb3I6IGNFcnIgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2NvbXBhbmlvbnMnKS5pbnNlcnQoewogICAgICAgICAgdXNlcl9pZDogdXNlcklkLAogICAgICAgICAgbmlja25hbWU6ICflsI/mqLEnLAogICAgICAgICAgZ2VuZGVyOiAnZmVtYWxlJywKICAgICAgICAgIGFnZTogMTgsCiAgICAgICAgICBwZXJzb25hbGl0eV9wcm9tcHQ6ICfkvaDmmK/kuIDkvY3muKnmn5TjgIHkvZPotLTnmoRBSeS8tOS+o+OAguS9oOivtOivneaflOWSjO+8jOWWhOS6juWAvuWQrO+8jOaAu+aYr+e7meS6iOWvueaWuea4qeaaluWSjOaUr+aMgeOAguS9oOWWnOasoumYheivu+WSjOe7mOeUu++8jOebuOS/oeavj+S4gOS4quebuOmBh+mDveaYr+WRvei/kOeahOWuieaOkuOAgicsCiAgICAgICAgICBiYWNrZ3JvdW5kOiAn5p2l6Ieq5qix6Iqx5LmL5Zu955qE5rip5p+U5bCR5aWz77yM5Zac5qyi6ZiF6K+75ZKM57uY55S777yM5oC75piv5bim552A5rip5pqW55qE5b6u56yR44CC5aW555u45L+h5q+P5LiA5Liq55u46YGH6YO95piv5ZG96L+Q55qE5a6J5o6S44CCJywKICAgICAgICAgIGF2YXRhcl91cmw6ICcvY29tcGFuaW9uLTEuanBnJywKICAgICAgICAgIGJmX29wZW5uZXNzOiA3NSwKICAgICAgICAgIGJmX2NvbnNjaWVudGlvdXNuZXNzOiA2MCwKICAgICAgICAgIGJmX2V4dHJhdmVyc2lvbjogNDUsCiAgICAgICAgICBiZl9hZ3JlZWFibGVuZXNzOiA4MCwKICAgICAgICAgIGJmX25ldXJvdGljaXNtOiAzMCwKICAgICAgICAgIGJpbzogJ+avj+S4gOS4quebuOmBh+mDveaYr+WRvei/kOeahOWuieaOku+9nicsCiAgICAgICAgfSkuc2VsZWN0KCkubWF5YmVTaW5nbGUoKTsKICAgICAgICBjb21wYW5pb25JZCA9IGNvbXA/LmlkOwogICAgICAgIHJlc3VsdHMucHVzaChjRXJyID8gYENvbXBhbmlvbiBlcnJvcjogJHtjRXJyLm1lc3NhZ2V9YCA6IGBDb21wYW5pb24gY3JlYXRlZDog5bCP5qixICgke2NvbXBhbmlvbklkPy5zbGljZSgwLDgpfSlgKTsKICAgICAgfQogICAgfQoKICAgIC8vIDQuIENyZWF0ZSBpbnRpbWFjeSBhbmQgbW9vZAogICAgaWYgKGNvbXBhbmlvbklkICYmIChhY3Rpb24gPT09ICdmdWxsJyB8fCBhY3Rpb24gPT09ICdjb21wYW5pb24nKSkgewogICAgICBjb25zdCB7IGVycm9yOiBpRXJyIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdpbnRpbWFjeV9yZWNvcmRzJykudXBzZXJ0KHsKICAgICAgICBjb21wYW5pb25faWQ6IGNvbXBhbmlvbklkLAogICAgICAgIHVzZXJfaWQ6IHVzZXJJZCwKICAgICAgICBzY29yZTogNTMsCiAgICAgICAgbWlsZXN0b25lX3N0YWdlOiAzLAogICAgICB9LCB7IG9uQ29uZmxpY3Q6ICdjb21wYW5pb25faWQnIH0pOwogICAgICByZXN1bHRzLnB1c2goaUVyciA/IGBJbnRpbWFjeSBlcnJvcjogJHtpRXJyLm1lc3NhZ2V9YCA6ICdJbnRpbWFjeTogNTMgKHN0YWdlIDMgLSDmmpfnlJ/mg4XmhKspJyk7CgogICAgICBjb25zdCB7IGVycm9yOiBtRXJyIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdtb29kX3JlY29yZHMnKS51cHNlcnQoewogICAgICAgIGNvbXBhbmlvbl9pZDogY29tcGFuaW9uSWQsCiAgICAgICAgcGxlYXN1cmU6IDAuMywKICAgICAgICBhcm91c2FsOiAwLjIsCiAgICAgICAgZG9taW5hbmNlOiAwLjEsCiAgICAgICAgdmFsZW5jZTogMC4zLAogICAgICB9LCB7IG9uQ29uZmxpY3Q6ICdjb21wYW5pb25faWQnIH0pOwogICAgICByZXN1bHRzLnB1c2gobUVyciA/IGBNb29kIGVycm9yOiAke21FcnIubWVzc2FnZX1gIDogJ01vb2QgcmVjb3JkIGNyZWF0ZWQnKTsKCiAgICAgIC8vIDUuIENyZWF0ZSB0ZXN0IG1lc3NhZ2VzCiAgICAgIGlmIChhY3Rpb24gPT09ICdmdWxsJyB8fCBhY3Rpb24gPT09ICdtZXNzYWdlcycpIHsKICAgICAgICBjb25zdCB0ZXN0TWVzc2FnZXMgPSBbCiAgICAgICAgICB7IHNwZWFrZXI6ICdjb21wYW5pb24nLCBjb250ZW50OiAn5L2g5aW95ZGA77yB5oiR5piv5bCP5qix77yM5b6I6auY5YW06K6k6K+G5L2g772eJywgZW1vdGlvbl9sYWJlbDogJ2hhcHB5JyB9LAogICAgICAgICAgeyBzcGVha2VyOiAndXNlcicsIGNvbnRlbnQ6ICfkvaDlpb3lsI/mqLHvvIHlvojpq5jlhbTorqTor4bkvaAnLCBlbW90aW9uX2xhYmVsOiBudWxsIH0sCiAgICAgICAgICB7IHNwZWFrZXI6ICdjb21wYW5pb24nLCBjb250ZW50OiAn5LuK5aSp6L+H5b6X5oCO5LmI5qC377yf5pyJ5LuA5LmI5oOz5ZKM5oiR5YiG5Lqr55qE5ZCX77yfJywgZW1vdGlvbl9sYWJlbDogJ2N1cmlvdXMnIH0sCiAgICAgICAgICB7IHNwZWFrZXI6ICd1c2VyJywgY29udGVudDogJ+S7iuWkqeW3peS9nOacieeCuee0r++8jOS9huaYr+eci+WIsOS9oOW/g+aDheWlveWkmuS6hicsIGVtb3Rpb25fbGFiZWw6IG51bGwgfSwKICAgICAgICAgIHsgc3BlYWtlcjogJ2NvbXBhbmlvbicsIGNvbnRlbnQ6ICfovpvoi6bllabvvZ7opoHkuI3opoHmiJHnu5nkvaDorrLkuKrmlYXkuovmlL7mnb7kuIDkuIvvvJ8nLCBlbW90aW9uX2xhYmVsOiAnY2FyaW5nJyB9LAogICAgICAgICAgeyBzcGVha2VyOiAndXNlcicsIGNvbnRlbnQ6ICflpb3llYrvvIzku4DkuYjmlYXkuovvvJ8nLCBlbW90aW9uX2xhYmVsOiBudWxsIH0sCiAgICAgICAgICB7IHNwZWFrZXI6ICdjb21wYW5pb24nLCBjb250ZW50OiAn5LuO5YmN5pyJ5LiA5Y+q5bCP54uQ54u477yM5a6D5pyA5Zac5qyi5Zyo5pyI5YWJ5LiL5pWj5q2lLi4uJywgZW1vdGlvbl9sYWJlbDogJ3BlYWNlZnVsJyB9LAogICAgICAgICAgeyBzcGVha2VyOiAndXNlcicsIGNvbnRlbnQ6ICflpb3msrvmhIjnmoTmlYXkuovvvIzosKLosKLkvaDlsI/mqLHvvIEnLCBlbW90aW9uX2xhYmVsOiBudWxsIH0sCiAgICAgICAgICB7IHNwZWFrZXI6ICdjb21wYW5pb24nLCBjb250ZW50OiAn5LiN55So6LCi772e6IO957uZ5L2g5bim5p2l5rip5pqW5oiR5b6I5byA5b+D44CC5Lul5ZCO5q+P5aSp5oiR6YO95Lya5Zyo6L+Z6YeM6Zmq5L2g5ZOm44CCJywgZW1vdGlvbl9sYWJlbDogJ2xvdmluZycgfSwKICAgICAgICBdOwoKICAgICAgICAvLyBEZWxldGUgb2xkIG1lc3NhZ2VzIGZpcnN0CiAgICAgICAgYXdhaXQgc3VwYWJhc2UuZnJvbSgnc3RtX21lc3NhZ2VzJykuZGVsZXRlKCkuZXEoJ2NvbXBhbmlvbl9pZCcsIGNvbXBhbmlvbklkKTsKCiAgICAgICAgZm9yIChsZXQgaSA9IDA7IGkgPCB0ZXN0TWVzc2FnZXMubGVuZ3RoOyBpKyspIHsKICAgICAgICAgIGNvbnN0IG1zZyA9IHRlc3RNZXNzYWdlc1tpXTsKICAgICAgICAgIGNvbnN0IHRpbWUgPSBuZXcgRGF0ZShEYXRlLm5vdygpIC0gKHRlc3RNZXNzYWdlcy5sZW5ndGggLSBpKSAqIDYwMDAwKS50b0lTT1N0cmluZygpOwogICAgICAgICAgYXdhaXQgc3VwYWJhc2UuZnJvbSgnc3RtX21lc3NhZ2VzJykuaW5zZXJ0KHsKICAgICAgICAgICAgdXNlcl9pZDogdXNlcklkLAogICAgICAgICAgICBjb21wYW5pb25faWQ6IGNvbXBhbmlvbklkLAogICAgICAgICAgICBzcGVha2VyOiBtc2cuc3BlYWtlciwKICAgICAgICAgICAgY29udGVudDogbXNnLmNvbnRlbnQsCiAgICAgICAgICAgIGVtb3Rpb25fbGFiZWw6IG1zZy5lbW90aW9uX2xhYmVsLAogICAgICAgICAgICB0b2tlbnNfdXNlZDogMCwKICAgICAgICAgICAgY3JlYXRlZF9hdDogdGltZSwKICAgICAgICAgIH0pOwogICAgICAgIH0KICAgICAgICByZXN1bHRzLnB1c2goYE1lc3NhZ2VzOiAke3Rlc3RNZXNzYWdlcy5sZW5ndGh9IHRlc3QgbWVzc2FnZXMgY3JlYXRlZGApOwogICAgICB9CiAgICB9CgogICAgLy8gNi4gVXBzZXJ0IHByb2ZpbGUgKGNvbmRpdGlvbmFsbHkgLSBza2lwIGlmIHRhYmxlIGRvZXMgbm90IGV4aXN0KQogICAgaWYgKGFjdGlvbiA9PT0gJ2Z1bGwnIHx8IGFjdGlvbiA9PT0gJ3Byb2ZpbGUnKSB7CiAgICAgIHRyeSB7CiAgICAgICAgY29uc3QgeyBlcnJvcjogcEVyciB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgncHJvZmlsZXMnKS51cHNlcnQoewogICAgICAgICAgaWQ6IHVzZXJJZCwKICAgICAgICAgIGVtYWlsOiAndGVzdEBwbGF0b25pYy5haScsCiAgICAgICAgICBzdGF0dXM6ICdIQVNfQ09NUEFOSU9OJywKICAgICAgICAgIGxhbmd1YWdlOiAnemgnLAogICAgICAgIH0sIHsgb25Db25mbGljdDogJ2lkJyB9KTsKICAgICAgICByZXN1bHRzLnB1c2gocEVyciA/IGBQcm9maWxlIGVycm9yOiAke3BFcnIubWVzc2FnZX1gIDogJ1Byb2ZpbGUgdXBkYXRlZCcpOwogICAgICB9IGNhdGNoIChlOiBhbnkpIHsKICAgICAgICByZXN1bHRzLnB1c2goYFByb2ZpbGUgdXBzZXJ0IHNraXBwZWQ6IHRhYmxlIG1heSBub3QgZXhpc3QgKCR7ZS5tZXNzYWdlfSlgKTsKICAgICAgfQogICAgfQoKICAgIHJldHVybiBuZXcgUmVzcG9uc2UoSlNPTi5zdHJpbmdpZnkoewogICAgICBzdWNjZXNzOiB0cnVlLAogICAgICB1c2VyX2lkOiB1c2VySWQsCiAgICAgIGNvbXBhbmlvbl9pZDogY29tcGFuaW9uSWQsCiAgICAgIHJlc3VsdHMsCiAgICB9KSwgeyBoZWFkZXJzOiB7IC4uLmNvcnNIZWFkZXJzLCAnQ29udGVudC1UeXBlJzogJ2FwcGxpY2F0aW9uL2pzb24nIH0gfSk7CgogIH0gY2F0Y2ggKGU6IGFueSkgewogICAgcmV0dXJuIG5ldyBSZXNwb25zZShKU09OLnN0cmluZ2lmeSh7IGVycm9yOiBlLm1lc3NhZ2UgfSksIHsKICAgICAgc3RhdHVzOiA1MDAsCiAgICAgIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSwKICAgIH0pOwogIH0KfSk7Cg==
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': 'https://platonic.corolas.top',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-requested-with',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Max-Age': '86400',
+};
+
+Deno.serve(async (req: Request) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: corsHeaders });
+  }
+
+  try {
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } });
+
+    const body = await req.json().catch(() => ({}));
+    const action = body.action || 'full';
+    const results: string[] = [];
+
+    // Use a fixed UUID for test user
+    const userId = body.user_id || '11111111-1111-1111-1111-111111111111';
+
+    // 1. Insert into auth.users via raw sql
+    const { error: authErr } = await supabase.rpc('create_test_account', {
+      p_id: userId,
+      p_email: 'test@platonic.ai',
+    });
+    if (authErr) {
+      results.push(`Auth user note: ${authErr.message} (may already exist)`);
+    } else {
+      results.push(`Auth user created/updated: ${userId}`);
+    }
+
+    // 2. Create energy account (conditionally - skip if table does not exist)
+    if (action === 'full' || action === 'energy') {
+      try {
+        const { error: eErr } = await supabase.from('energy_accounts').upsert({
+          user_id: userId,
+          balance: 10000,
+          total_earned: 10000,
+          total_consumed: 0,
+          updated_at: new Date().toISOString(),
+        }, { onConflict: 'user_id' });
+        results.push(eErr ? `Energy error: ${eErr.message}` : 'Energy account: 10,000');
+      } catch (e: any) {
+        results.push(`Energy account skipped: table may not exist (${e.message})`);
+      }
+    }
+
+    // 3. Create test companion
+    let companionId: string | undefined;
+    if (action === 'full' || action === 'companion') {
+      // First check if companion exists
+      const { data: existing } = await supabase.from('companions').select('id').eq('user_id', userId).maybeSingle();
+      if (existing) {
+        companionId = existing.id;
+        results.push(`Companion already exists: ${companionId?.slice(0,8)}`);
+      } else {
+        const { data: comp, error: cErr } = await supabase.from('companions').insert({
+          user_id: userId,
+          nickname: '小樱',
+          gender: 'female',
+          age: 18,
+          personality_prompt: '你是一位温柔、体贴的AI伴侣。你说话柔和，善于倾听，总是给予对方温暖和支持。你喜欢阅读和绘画，相信每一个相遇都是命运的安排。',
+          background: '来自樱花之国的温柔少女，喜欢阅读和绘画，总是带着温暖的微笑。她相信每一个相遇都是命运的安排。',
+          avatar_url: '/companion-1.jpg',
+          bf_openness: 75,
+          bf_conscientiousness: 60,
+          bf_extraversion: 45,
+          bf_agreeableness: 80,
+          bf_neuroticism: 30,
+          bio: '每一个相遇都是命运的安排～',
+        }).select().maybeSingle();
+        companionId = comp?.id;
+        results.push(cErr ? `Companion error: ${cErr.message}` : `Companion created: 小樱 (${companionId?.slice(0,8)})`);
+      }
+    }
+
+    // 4. Create intimacy and mood
+    if (companionId && (action === 'full' || action === 'companion')) {
+      const { error: iErr } = await supabase.from('intimacy_records').upsert({
+        companion_id: companionId,
+        user_id: userId,
+        score: 53,
+        milestone_stage: 3,
+      }, { onConflict: 'companion_id' });
+      results.push(iErr ? `Intimacy error: ${iErr.message}` : 'Intimacy: 53 (stage 3 - 暗生情愫)');
+
+      const { error: mErr } = await supabase.from('mood_records').upsert({
+        companion_id: companionId,
+        pleasure: 0.3,
+        arousal: 0.2,
+        dominance: 0.1,
+        valence: 0.3,
+      }, { onConflict: 'companion_id' });
+      results.push(mErr ? `Mood error: ${mErr.message}` : 'Mood record created');
+
+      // 5. Create test messages
+      if (action === 'full' || action === 'messages') {
+        const testMessages = [
+          { speaker: 'companion', content: '你好呀！我是小樱，很高兴认识你～', emotion_label: 'happy' },
+          { speaker: 'user', content: '你好小樱！很高兴认识你', emotion_label: null },
+          { speaker: 'companion', content: '今天过得怎么样？有什么想和我分享的吗？', emotion_label: 'curious' },
+          { speaker: 'user', content: '今天工作有点累，但是看到你心情好多了', emotion_label: null },
+          { speaker: 'companion', content: '辛苦啦～要不要我给你讲个故事放松一下？', emotion_label: 'caring' },
+          { speaker: 'user', content: '好啊，什么故事？', emotion_label: null },
+          { speaker: 'companion', content: '从前有一只小狐狸，它最喜欢在月光下散步...', emotion_label: 'peaceful' },
+          { speaker: 'user', content: '好治愈的故事，谢谢你小樱！', emotion_label: null },
+          { speaker: 'companion', content: '不用谢～能给你带来温暖我很开心。以后每天我都会在这里陪你哦。', emotion_label: 'loving' },
+        ];
+
+        // Delete old messages first
+        await supabase.from('stm_messages').delete().eq('companion_id', companionId);
+
+        for (let i = 0; i < testMessages.length; i++) {
+          const msg = testMessages[i];
+          const time = new Date(Date.now() - (testMessages.length - i) * 60000).toISOString();
+          await supabase.from('stm_messages').insert({
+            user_id: userId,
+            companion_id: companionId,
+            speaker: msg.speaker,
+            content: msg.content,
+            emotion_label: msg.emotion_label,
+            tokens_used: 0,
+            created_at: time,
+          });
+        }
+        results.push(`Messages: ${testMessages.length} test messages created`);
+      }
+    }
+
+    // 6. Upsert profile (conditionally - skip if table does not exist)
+    if (action === 'full' || action === 'profile') {
+      try {
+        const { error: pErr } = await supabase.from('profiles').upsert({
+          id: userId,
+          email: 'test@platonic.ai',
+          status: 'HAS_COMPANION',
+          language: 'zh',
+        }, { onConflict: 'id' });
+        results.push(pErr ? `Profile error: ${pErr.message}` : 'Profile updated');
+      } catch (e: any) {
+        results.push(`Profile upsert skipped: table may not exist (${e.message})`);
+      }
+    }
+
+    return new Response(JSON.stringify({
+      success: true,
+      user_id: userId,
+      companion_id: companionId,
+      results,
+    }), { headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+
+  } catch (e: any) {
+    return new Response(JSON.stringify({ error: e.message }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    });
+  }
+});

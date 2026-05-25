@@ -1,1 +1,243 @@
-LyoqCiAqIGRyYW1hLXNlc3Npb24gRWRnZSBGdW5jdGlvbiDigJQgRHJhbWEgc2Vzc2lvbiBtYW5hZ2VtZW50CiAqLwoKY29uc3QgY29yc0hlYWRlcnM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7CiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbic6ICdodHRwczovL3BsYXRvbmljLmNvcm9sYXMudG9wJywKICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ctSGVhZGVycyc6ICdhdXRob3JpemF0aW9uLCB4LWNsaWVudC1pbmZvLCBhcGlrZXksIGNvbnRlbnQtdHlwZSwgeC1yZXF1ZXN0ZWQtd2l0aCcsCiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LU1ldGhvZHMnOiAnUE9TVCwgR0VULCBPUFRJT05TJywKICAnQWNjZXNzLUNvbnRyb2wtTWF4LUFnZSc6ICc4NjQwMCcsCn07CgppbXBvcnQgeyBjcmVhdGVDbGllbnQgfSBmcm9tICducG06QHN1cGFiYXNlL3N1cGFiYXNlLWpzQDIuMzkuMCc7CgpmdW5jdGlvbiBnZXRTdXBhYmFzZSgpIHsKICBjb25zdCB1cmwgPSBEZW5vLmVudi5nZXQoJ1NVUEFCQVNFX1VSTCcpITsKICBjb25zdCBrZXkgPSBEZW5vLmVudi5nZXQoJ1NVUEFCQVNFX1NFUlZJQ0VfUk9MRV9LRVknKSE7CiAgcmV0dXJuIGNyZWF0ZUNsaWVudCh1cmwsIGtleSwgeyBhdXRoOiB7IHBlcnNpc3RTZXNzaW9uOiBmYWxzZSB9IH0pOwp9CgpmdW5jdGlvbiBoYW5kbGVDb3JzKHJlcTogUmVxdWVzdCk6IFJlc3BvbnNlIHwgbnVsbCB7CiAgaWYgKHJlcS5tZXRob2QgPT09ICdPUFRJT05TJykgcmV0dXJuIG5ldyBSZXNwb25zZShudWxsLCB7IHN0YXR1czogMjA0LCBoZWFkZXJzOiBjb3JzSGVhZGVycyB9KTsKICByZXR1cm4gbnVsbDsKfQoKYXN5bmMgZnVuY3Rpb24gYXV0aGVudGljYXRlKHJlcTogUmVxdWVzdCwgc3VwYWJhc2U6IGFueSk6IFByb21pc2U8eyB1c2VyOiBhbnkgfT4gewogIC8vIFRyeSBzZXJ2aWNlX3JvbGVfa2V5IGZpcnN0IChmb3IgaW50ZXJuYWwvcGdfY3JvbiBjYWxscykKICBjb25zdCBzcktleSA9IHJlcS5oZWFkZXJzLmdldCgneC1zZXJ2aWNlLXJvbGUta2V5Jyk7CiAgaWYgKHNyS2V5KSB7CiAgICBjb25zdCBleHBlY3RlZCA9IERlbm8uZW52LmdldCgnU1VQQUJBU0VfU0VSVklDRV9ST0xFX0tFWScpIHx8ICcnOwogICAgaWYgKHNyS2V5ID09PSBleHBlY3RlZCkgewogICAgICAvLyBGb3Igc2VydmljZSByb2xlLCB3ZSBuZWVkIGEgdXNlcl9pZCBpbiB0aGUgYm9keQogICAgICAvLyBUaGlzIGlzIGEgc3BlY2lhbCBjYXNlIGZvciB0ZXN0aW5nL2ludGVybmFsIHVzZQogICAgICB0aHJvdyBuZXcgRXJyb3IoJ1NlcnZpY2Ugcm9sZSBub3Qgc3VwcG9ydGVkIGZvciB1c2VyIGFjdGlvbnMnKTsKICAgIH0KICAgIHRocm93IG5ldyBFcnJvcignVW5hdXRob3JpemVkOiBpbnZhbGlkIHNlcnZpY2Uga2V5Jyk7CiAgfQoKICAvLyBOb3JtYWwgSldUIGF1dGgKICBjb25zdCBqd3QgPSByZXEuaGVhZGVycy5nZXQoJ0F1dGhvcml6YXRpb24nKT8ucmVwbGFjZSgnQmVhcmVyICcsICcnKTsKICBpZiAoIWp3dCkgdGhyb3cgbmV3IEVycm9yKCdVbmF1dGhvcml6ZWQ6IG5vIHRva2VuJyk7CiAgY29uc3QgeyBkYXRhOiB7IHVzZXIgfSwgZXJyb3IgfSA9IGF3YWl0IHN1cGFiYXNlLmF1dGguZ2V0VXNlcihqd3QpOwogIGlmICghdXNlcikgdGhyb3cgbmV3IEVycm9yKCdVbmF1dGhvcml6ZWQ6ICcgKyAoZXJyb3I/Lm1lc3NhZ2UgfHwgJ2ludmFsaWQgdG9rZW4nKSk7CiAgcmV0dXJuIHsgdXNlciB9Owp9CgovLyDilIDilIAgR2V0IGRyYW1hIGxpc3Qg4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGdldERyYW1hTGlzdChzdXBhYmFzZTogYW55LCB1c2VySWQ6IHN0cmluZykgewogIGNvbnNvbGUubG9nKGBbRFNdIGdldERyYW1hTGlzdCBmb3IgJHt1c2VySWQuc3Vic3RyaW5nKDAsOCl9YCk7CiAgY29uc3QgeyBkYXRhOiBkcmFtYXMsIGVycm9yOiBkRXJyIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgLmZyb20oJ2RyYW1hX2RlZmluaXRpb25zJykKICAgIC5zZWxlY3QoJ2lkLCBuYW1lLCBkZXNjcmlwdGlvbiwgc2NlbmVfc2V0dGluZywgY292ZXJfaW1hZ2VfcGF0aCwgdW5sb2NrX2NvbmRpdGlvbiwgaXNfYWN0aXZlLCBzb3J0X29yZGVyLCBjcmVhdGVkX2F0JykKICAgIC5lcSgnaXNfYWN0aXZlJywgdHJ1ZSkKICAgIC5vcmRlcignc29ydF9vcmRlcicsIHsgYXNjZW5kaW5nOiB0cnVlIH0pOwogIGlmIChkRXJyKSB0aHJvdyBuZXcgRXJyb3IoJ2RyYW1hX2RlZmluaXRpb25zOiAnICsgZEVyci5tZXNzYWdlKTsKICBjb25zb2xlLmxvZyhgW0RTXSBGb3VuZCAke2RyYW1hcz8ubGVuZ3RoIHx8IDB9IGRyYW1hc2ApOwoKICBjb25zdCB7IGRhdGE6IHByb2dyZXNzIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdkcmFtYV9wcm9ncmVzcycpLnNlbGVjdCgnKicpLmVxKCd1c2VyX2lkJywgdXNlcklkKTsKICBjb25zdCB7IGRhdGE6IHNlc3Npb25zIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdkcmFtYV9zZXNzaW9ucycpLnNlbGVjdCgnaWQsIGRyYW1hX2lkLCBzdGF0dXMsIHN0YXJ0ZWRfYXQnKS5lcSgndXNlcl9pZCcsIHVzZXJJZCkuaW4oJ3N0YXR1cycsIFsnYWN0aXZlJywgJ3BhdXNlZCddKTsKCiAgcmV0dXJuIChkcmFtYXMgfHwgW10pLm1hcCgoZDogYW55KSA9PiB7CiAgICBjb25zdCBwID0gKHByb2dyZXNzIHx8IFtdKS5maW5kKChwcjogYW55KSA9PiBwci5kcmFtYV9pZCA9PT0gZC5pZCk7CiAgICBjb25zdCBzID0gKHNlc3Npb25zIHx8IFtdKS5maW5kKChzZTogYW55KSA9PiBzZS5kcmFtYV9pZCA9PT0gZC5pZCk7CiAgICByZXR1cm4geyAuLi5kLCBpc191bmxvY2tlZDogISFwPy5pc191bmxvY2tlZCwgdW5sb2NrZWRfYXQ6IHA/LnVubG9ja2VkX2F0LCBjb21wbGV0ZWRfYXQ6IHA/LmNvbXBsZXRlZF9hdCwgYWN0aXZlX3Nlc3Npb246IHMgfHwgbnVsbCB9OwogIH0pOwp9CgovLyDilIDilIAgQ3JlYXRlIG9yIGdldCBzZXNzaW9uIOKUgOKUgAphc3luYyBmdW5jdGlvbiBjcmVhdGVPckdldFNlc3Npb24oc3VwYWJhc2U6IGFueSwgdXNlcklkOiBzdHJpbmcsIGRyYW1hSWQ6IHN0cmluZykgewogIGNvbnNvbGUubG9nKGBbRFNdIGNyZWF0ZU9yR2V0U2Vzc2lvbiB1c2VyPSR7dXNlcklkLnN1YnN0cmluZygwLDgpfSBkcmFtYT0ke2RyYW1hSWQuc3Vic3RyaW5nKDAsOCl9YCk7CgogIC8vIENoZWNrIGZvciBhY3RpdmUgc2Vzc2lvbgogIGNvbnN0IHsgZGF0YTogZXhpc3RpbmcgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAuZnJvbSgnZHJhbWFfc2Vzc2lvbnMnKQogICAgLnNlbGVjdCgnaWQsIHN0YXR1cywgY29udGV4dF9tZW1vcnksIHN0YXJ0ZWRfYXQnKQogICAgLmVxKCd1c2VyX2lkJywgdXNlcklkKQogICAgLmVxKCdkcmFtYV9pZCcsIGRyYW1hSWQpCiAgICAuaW4oJ3N0YXR1cycsIFsnYWN0aXZlJywgJ3BhdXNlZCddKQogICAgLmxpbWl0KDEpOwogIAogIGlmIChleGlzdGluZyAmJiBleGlzdGluZy5sZW5ndGggPiAwKSB7CiAgICBjb25zb2xlLmxvZyhgW0RTXSBGb3VuZCBleGlzdGluZyBzZXNzaW9uICR7ZXhpc3RpbmdbMF0uaWQuc3Vic3RyaW5nKDAsOCl9YCk7CiAgICByZXR1cm4geyBzZXNzaW9uOiBleGlzdGluZ1swXSwgaXNfbmV3OiBmYWxzZSB9OwogIH0KCiAgLy8gR2V0IGNvbXBhbmlvbgogIGNvbnNvbGUubG9nKGBbRFNdIEZpbmRpbmcgY29tcGFuaW9uIGZvciAke3VzZXJJZC5zdWJzdHJpbmcoMCw4KX1gKTsKICBjb25zdCB7IGRhdGE6IGNvbXBhbmlvbnMgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAuZnJvbSgnY29tcGFuaW9ucycpCiAgICAuc2VsZWN0KCdpZCcpCiAgICAuZXEoJ3VzZXJfaWQnLCB1c2VySWQpCiAgICAubGltaXQoMSk7CiAgCiAgaWYgKCFjb21wYW5pb25zIHx8IGNvbXBhbmlvbnMubGVuZ3RoID09PSAwKSB0aHJvdyBuZXcgRXJyb3IoJ05vIGNvbXBhbmlvbiBmb3VuZCcpOwogIGNvbnN0IGNvbXBhbmlvbklkID0gY29tcGFuaW9uc1swXS5pZDsKICBjb25zb2xlLmxvZyhgW0RTXSBDb21wYW5pb249JHtjb21wYW5pb25JZC5zdWJzdHJpbmcoMCw4KX1gKTsKCiAgLy8gQ3JlYXRlIHNlc3Npb24KICBjb25zb2xlLmxvZyhgW0RTXSBDcmVhdGluZyBzZXNzaW9uYCk7CiAgY29uc3QgeyBkYXRhOiBpbnNlcnRlZCwgZXJyb3I6IGluc0VyciB9ID0gYXdhaXQgc3VwYWJhc2UKICAgIC5mcm9tKCdkcmFtYV9zZXNzaW9ucycpCiAgICAuaW5zZXJ0KHsgdXNlcl9pZDogdXNlcklkLCBjb21wYW5pb25faWQ6IGNvbXBhbmlvbklkLCBkcmFtYV9pZDogZHJhbWFJZCwgc3RhdHVzOiAnYWN0aXZlJywgY29udGV4dF9tZW1vcnk6IHt9IH0pCiAgICAuc2VsZWN0KCdpZCwgc3RhdHVzLCBjb250ZXh0X21lbW9yeSwgc3RhcnRlZF9hdCcpOwogIAogIGlmIChpbnNFcnIpIHRocm93IG5ldyBFcnJvcignSW5zZXJ0IHNlc3Npb246ICcgKyBpbnNFcnIubWVzc2FnZSk7CiAgaWYgKCFpbnNlcnRlZCB8fCBpbnNlcnRlZC5sZW5ndGggPT09IDApIHRocm93IG5ldyBFcnJvcignSW5zZXJ0IHNlc3Npb24gcmV0dXJuZWQgbm8gcm93cycpOwogIGNvbnN0IHNlc3Npb24gPSBpbnNlcnRlZFswXTsKICBjb25zb2xlLmxvZyhgW0RTXSBTZXNzaW9uIGNyZWF0ZWQgJHtzZXNzaW9uLmlkLnN1YnN0cmluZygwLDgpfWApOwoKICAvLyBHZXQgZHJhbWEgZm9yIGludHJvCiAgY29uc3QgeyBkYXRhOiBkcmFtYXMgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2RyYW1hX2RlZmluaXRpb25zJykuc2VsZWN0KCduYW1lLCBkZXNjcmlwdGlvbiwgc2NlbmVfc2V0dGluZywgZHJhbWFfcHJvbXB0JykuZXEoJ2lkJywgZHJhbWFJZCkubGltaXQoMSk7CiAgY29uc3QgZHJhbWEgPSBkcmFtYXM/LlswXTsKCiAgaWYgKGRyYW1hKSB7CiAgICBjb25zdCBpbnRybyA9IGAqKiR7ZHJhbWEubmFtZX0qKlxuXG4ke2RyYW1hLnNjZW5lX3NldHRpbmcgfHwgJyd9XG5cbiR7ZHJhbWEuZGVzY3JpcHRpb24gfHwgJyd9XG5cbirkvaDmt7HlkLjkuIDlj6PmsJTvvIzouI/lhaXkuobov5nkuKrlhajmlrDnmoTkuJbnlYwuLi4qYDsKICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2RyYW1hX21lc3NhZ2VzJykuaW5zZXJ0KHsgc2Vzc2lvbl9pZDogc2Vzc2lvbi5pZCwgdXNlcl9pZDogdXNlcklkLCBzcGVha2VyOiAnbmFycmF0b3InLCBjb250ZW50OiBpbnRybyB9KTsKICAgIGNvbnNvbGUubG9nKGBbRFNdIE5hcnJhdG9yIGludHJvIGluc2VydGVkYCk7CiAgfQoKICAvLyBUcmFjayBwcm9ncmVzcwogIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2RyYW1hX3Byb2dyZXNzJykudXBzZXJ0KAogICAgeyB1c2VyX2lkOiB1c2VySWQsIGRyYW1hX2lkOiBkcmFtYUlkLCBpc191bmxvY2tlZDogdHJ1ZSwgdW5sb2NrZWRfYXQ6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSB9LAogICAgeyBvbkNvbmZsaWN0OiAndXNlcl9pZCxkcmFtYV9pZCcgfQogICk7CgogIHJldHVybiB7IHNlc3Npb24sIGlzX25ldzogdHJ1ZSB9Owp9CgovLyDilIDilIAgR2V0IHNlc3Npb24gd2l0aCBtZXNzYWdlcyDilIDilIAKYXN5bmMgZnVuY3Rpb24gZ2V0U2Vzc2lvbk1lc3NhZ2VzKHN1cGFiYXNlOiBhbnksIHNlc3Npb25JZDogc3RyaW5nLCB1c2VySWQ6IHN0cmluZykgewogIGNvbnNvbGUubG9nKGBbRFNdIGdldFNlc3Npb25NZXNzYWdlcyBzZXNzaW9uPSR7c2Vzc2lvbklkLnN1YnN0cmluZygwLDgpfSB1c2VyPSR7dXNlcklkLnN1YnN0cmluZygwLDgpfWApOwoKICBjb25zdCB7IGRhdGE6IHNlc3NSb3dzIH0gPSBhd2FpdCBzdXBhYmFzZQogICAgLmZyb20oJ2RyYW1hX3Nlc3Npb25zJykKICAgIC5zZWxlY3QoJ2lkLCB1c2VyX2lkLCBkcmFtYV9pZCwgc3RhdHVzLCBjb250ZXh0X21lbW9yeSwgc3RhcnRlZF9hdCcpCiAgICAuZXEoJ2lkJywgc2Vzc2lvbklkKQogICAgLmVxKCd1c2VyX2lkJywgdXNlcklkKQogICAgLmxpbWl0KDEpOwogIAogIGlmICghc2Vzc1Jvd3MgfHwgc2Vzc1Jvd3MubGVuZ3RoID09PSAwKSB0aHJvdyBuZXcgRXJyb3IoJ1Nlc3Npb24gbm90IGZvdW5kJyk7CiAgY29uc3Qgc2VzcyA9IHNlc3NSb3dzWzBdOwoKICBjb25zdCB7IGRhdGE6IGRyYW1hcyB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgnZHJhbWFfZGVmaW5pdGlvbnMnKS5zZWxlY3QoJ2lkLCBuYW1lLCBkZXNjcmlwdGlvbiwgc2NlbmVfc2V0dGluZywgY292ZXJfaW1hZ2VfcGF0aCwgZHJhbWFfcHJvbXB0JykuZXEoJ2lkJywgc2Vzcy5kcmFtYV9pZCkubGltaXQoMSk7CiAgY29uc3QgZHJhbWEgPSBkcmFtYXM/LlswXSB8fCBudWxsOwoKICBjb25zdCB7IGRhdGE6IGNvbXBSb3dzIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdjb21wYW5pb25zJykuc2VsZWN0KCdpZCwgbmlja25hbWUsIGF2YXRhcl91cmwsIGdlbmRlcicpLmVxKCd1c2VyX2lkJywgdXNlcklkKS5saW1pdCgxKTsKICBjb25zdCBjb21wYW5pb24gPSBjb21wUm93cz8uWzBdIHx8IG51bGw7CgogIGNvbnN0IHsgZGF0YTogbWVzc2FnZXMsIGVycm9yOiBtRXJyIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdkcmFtYV9tZXNzYWdlcycpLnNlbGVjdCgnKicpLmVxKCdzZXNzaW9uX2lkJywgc2Vzc2lvbklkKS5vcmRlcignY3JlYXRlZF9hdCcsIHsgYXNjZW5kaW5nOiB0cnVlIH0pOwogIGlmIChtRXJyKSB0aHJvdyBuZXcgRXJyb3IoJ2RyYW1hX21lc3NhZ2VzOiAnICsgbUVyci5tZXNzYWdlKTsKCiAgcmV0dXJuIHsgc2Vzc2lvbjogc2VzcywgZHJhbWEsIGNvbXBhbmlvbiwgbWVzc2FnZXM6IG1lc3NhZ2VzIHx8IFtdIH07Cn0KCi8vIOKUgOKUgCBDb21wbGV0ZSBzZXNzaW9uIOKUgOKUgAphc3luYyBmdW5jdGlvbiBjb21wbGV0ZVNlc3Npb24oc3VwYWJhc2U6IGFueSwgc2Vzc2lvbklkOiBzdHJpbmcsIHVzZXJJZDogc3RyaW5nKSB7CiAgY29uc3QgeyBkYXRhOiByb3dzIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdkcmFtYV9zZXNzaW9ucycpLnNlbGVjdCgnaWQsIGRyYW1hX2lkJykuZXEoJ2lkJywgc2Vzc2lvbklkKS5lcSgndXNlcl9pZCcsIHVzZXJJZCkubGltaXQoMSk7CiAgaWYgKCFyb3dzIHx8IHJvd3MubGVuZ3RoID09PSAwKSB0aHJvdyBuZXcgRXJyb3IoJ1Nlc3Npb24gbm90IGZvdW5kJyk7CiAgCiAgYXdhaXQgc3VwYWJhc2UuZnJvbSgnZHJhbWFfc2Vzc2lvbnMnKS51cGRhdGUoeyBzdGF0dXM6ICdjb21wbGV0ZWQnLCBlbmRlZF9hdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpIH0pLmVxKCdpZCcsIHNlc3Npb25JZCk7CiAgYXdhaXQgc3VwYWJhc2UuZnJvbSgnZHJhbWFfcHJvZ3Jlc3MnKS51cHNlcnQoCiAgICB7IHVzZXJfaWQ6IHVzZXJJZCwgZHJhbWFfaWQ6IHJvd3NbMF0uZHJhbWFfaWQsIGNvbXBsZXRlZF9hdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpIH0sCiAgICB7IG9uQ29uZmxpY3Q6ICd1c2VyX2lkLGRyYW1hX2lkJyB9CiAgKTsKICByZXR1cm4geyBzdWNjZXNzOiB0cnVlIH07Cn0KCi8vIOKUgOKUgCBNYWluIOKUgOKUgApEZW5vLnNlcnZlKGFzeW5jIChyZXE6IFJlcXVlc3QpID0+IHsKICBjb25zdCBjb3JzID0gaGFuZGxlQ29ycyhyZXEpOwogIGlmIChjb3JzKSByZXR1cm4gY29yczsKCiAgdHJ5IHsKICAgIGxldCBib2R5OiBhbnkgPSB7fTsKICAgIGlmIChyZXEubWV0aG9kID09PSAnUE9TVCcpIHsKICAgICAgYm9keSA9IGF3YWl0IHJlcS5qc29uKCkuY2F0Y2goKCkgPT4gKHt9KSk7CiAgICB9CgogICAgY29uc3Qgc3VwYWJhc2UgPSBnZXRTdXBhYmFzZSgpOwogICAgY29uc3QgeyB1c2VyIH0gPSBhd2FpdCBhdXRoZW50aWNhdGUocmVxLCBzdXBhYmFzZSk7CiAgICBjb25zdCBhY3Rpb24gPSBib2R5LmFjdGlvbiB8fCAnJzsKCiAgICBjb25zb2xlLmxvZyhgW0RTXSBhY3Rpb249JHthY3Rpb259IHVzZXI9JHt1c2VyLmlkLnN1YnN0cmluZygwLDgpfWApOwoKICAgIHN3aXRjaCAoYWN0aW9uKSB7CiAgICAgIGNhc2UgJ2xpc3QnOiB7CiAgICAgICAgY29uc3QgZHJhbWFzID0gYXdhaXQgZ2V0RHJhbWFMaXN0KHN1cGFiYXNlLCB1c2VyLmlkKTsKICAgICAgICByZXR1cm4ganNvblJlc3BvbnNlKHsgZHJhbWFzIH0pOwogICAgICB9CiAgICAgIGNhc2UgJ3N0YXJ0JzogewogICAgICAgIGNvbnN0IGRyYW1hSWQgPSBib2R5LmRyYW1hX2lkOwogICAgICAgIGlmICghZHJhbWFJZCkgdGhyb3cgbmV3IEVycm9yKCdNaXNzaW5nIGRyYW1hX2lkJyk7CiAgICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgY3JlYXRlT3JHZXRTZXNzaW9uKHN1cGFiYXNlLCB1c2VyLmlkLCBkcmFtYUlkKTsKICAgICAgICByZXR1cm4ganNvblJlc3BvbnNlKHJlc3VsdCk7CiAgICAgIH0KICAgICAgY2FzZSAnZ2V0JzogewogICAgICAgIGNvbnN0IHNlc3Npb25JZCA9IGJvZHkuc2Vzc2lvbl9pZDsKICAgICAgICBpZiAoIXNlc3Npb25JZCkgdGhyb3cgbmV3IEVycm9yKCdNaXNzaW5nIHNlc3Npb25faWQnKTsKICAgICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBnZXRTZXNzaW9uTWVzc2FnZXMoc3VwYWJhc2UsIHNlc3Npb25JZCwgdXNlci5pZCk7CiAgICAgICAgcmV0dXJuIGpzb25SZXNwb25zZShyZXN1bHQpOwogICAgICB9CiAgICAgIGNhc2UgJ2NvbXBsZXRlJzogewogICAgICAgIGNvbnN0IHNlc3Npb25JZCA9IGJvZHkuc2Vzc2lvbl9pZDsKICAgICAgICBpZiAoIXNlc3Npb25JZCkgdGhyb3cgbmV3IEVycm9yKCdNaXNzaW5nIHNlc3Npb25faWQnKTsKICAgICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBjb21wbGV0ZVNlc3Npb24oc3VwYWJhc2UsIHNlc3Npb25JZCwgdXNlci5pZCk7CiAgICAgICAgcmV0dXJuIGpzb25SZXNwb25zZShyZXN1bHQpOwogICAgICB9CiAgICAgIGNhc2UgJ3Jlc3RhcnQnOiB7CiAgICAgICAgY29uc3QgZHJhbWFJZCA9IGJvZHkuZHJhbWFfaWQ7CiAgICAgICAgaWYgKCFkcmFtYUlkKSB0aHJvdyBuZXcgRXJyb3IoJ01pc3NpbmcgZHJhbWFfaWQnKTsKCiAgICAgICAgLy8gMS4gRmluZCBhbGwgc2Vzc2lvbnMgZm9yIHRoaXMgdXNlcitkcmFtYQogICAgICAgIGNvbnN0IHsgZGF0YTogb2xkU2Vzc2lvbnMgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAgICAgICAuZnJvbSgnZHJhbWFfc2Vzc2lvbnMnKQogICAgICAgICAgLnNlbGVjdCgnaWQnKQogICAgICAgICAgLmVxKCd1c2VyX2lkJywgdXNlci5pZCkKICAgICAgICAgIC5lcSgnZHJhbWFfaWQnLCBkcmFtYUlkKTsKCiAgICAgICAgLy8gMi4gRGVsZXRlIGFsbCBtZXNzYWdlcyBmb3IgdGhvc2Ugc2Vzc2lvbnMKICAgICAgICBmb3IgKGNvbnN0IHMgb2YgKG9sZFNlc3Npb25zIHx8IFtdKSkgewogICAgICAgICAgYXdhaXQgc3VwYWJhc2UuZnJvbSgnZHJhbWFfbWVzc2FnZXMnKS5kZWxldGUoKS5lcSgnc2Vzc2lvbl9pZCcsIHMuaWQpOwogICAgICAgIH0KCiAgICAgICAgLy8gMy4gRGVsZXRlIG9sZCBzZXNzaW9ucwogICAgICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2RyYW1hX3Nlc3Npb25zJykuZGVsZXRlKCkuZXEoJ3VzZXJfaWQnLCB1c2VyLmlkKS5lcSgnZHJhbWFfaWQnLCBkcmFtYUlkKTsKCiAgICAgICAgLy8gNC4gQ3JlYXRlIG5ldyBzZXNzaW9uIChyZXVzZSBjcmVhdGVPckdldFNlc3Npb24gbG9naWMpCiAgICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgY3JlYXRlT3JHZXRTZXNzaW9uKHN1cGFiYXNlLCB1c2VyLmlkLCBkcmFtYUlkKTsKICAgICAgICByZXR1cm4ganNvblJlc3BvbnNlKHJlc3VsdCk7CiAgICAgIH0KICAgICAgZGVmYXVsdDogewogICAgICAgIGNvbnN0IGRyYW1hcyA9IGF3YWl0IGdldERyYW1hTGlzdChzdXBhYmFzZSwgdXNlci5pZCk7CiAgICAgICAgcmV0dXJuIGpzb25SZXNwb25zZSh7IGRyYW1hcyB9KTsKICAgICAgfQogICAgfQogIH0gY2F0Y2ggKGU6IGFueSkgewogICAgY29uc29sZS5lcnJvcihgW0RTXSBFUlJPUjogJHtlLm1lc3NhZ2V9YCk7CiAgICByZXR1cm4ganNvblJlc3BvbnNlKHsgZXJyb3I6IGUubWVzc2FnZSwgZGV0YWlsOiBlLnN0YWNrPy5zcGxpdCgnXG4nKVswXSB8fCAnJyB9LCA1MDApOwogIH0KfSk7CgpmdW5jdGlvbiBqc29uUmVzcG9uc2UoZGF0YTogYW55LCBzdGF0dXMgPSAyMDApIHsKICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KGRhdGEpLCB7IHN0YXR1cywgaGVhZGVyczogeyAuLi5jb3JzSGVhZGVycywgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9IH0pOwp9Cg==
+/**
+ * drama-session Edge Function — Drama session management
+ */
+
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': 'https://platonic.corolas.top',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-requested-with',
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+  'Access-Control-Max-Age': '86400',
+};
+
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+
+function getSupabase() {
+  const url = Deno.env.get('SUPABASE_URL')!;
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+function handleCors(req: Request): Response | null {
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders });
+  return null;
+}
+
+async function authenticate(req: Request, supabase: any): Promise<{ user: any }> {
+  // Try service_role_key first (for internal/pg_cron calls)
+  const srKey = req.headers.get('x-service-role-key');
+  if (srKey) {
+    const expected = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
+    if (srKey === expected) {
+      // For service role, we need a user_id in the body
+      // This is a special case for testing/internal use
+      throw new Error('Service role not supported for user actions');
+    }
+    throw new Error('Unauthorized: invalid service key');
+  }
+
+  // Normal JWT auth
+  const jwt = req.headers.get('Authorization')?.replace('Bearer ', '');
+  if (!jwt) throw new Error('Unauthorized: no token');
+  const { data: { user }, error } = await supabase.auth.getUser(jwt);
+  if (!user) throw new Error('Unauthorized: ' + (error?.message || 'invalid token'));
+  return { user };
+}
+
+// ── Get drama list ──
+async function getDramaList(supabase: any, userId: string) {
+  console.log(`[DS] getDramaList for ${userId.substring(0,8)}`);
+  const { data: dramas, error: dErr } = await supabase
+    .from('drama_definitions')
+    .select('id, name, description, scene_setting, cover_image_path, unlock_condition, is_active, sort_order, created_at')
+    .eq('is_active', true)
+    .order('sort_order', { ascending: true });
+  if (dErr) throw new Error('drama_definitions: ' + dErr.message);
+  console.log(`[DS] Found ${dramas?.length || 0} dramas`);
+
+  const { data: progress } = await supabase.from('drama_progress').select('*').eq('user_id', userId);
+  const { data: sessions } = await supabase.from('drama_sessions').select('id, drama_id, status, started_at').eq('user_id', userId).in('status', ['active', 'paused']);
+
+  return (dramas || []).map((d: any) => {
+    const p = (progress || []).find((pr: any) => pr.drama_id === d.id);
+    const s = (sessions || []).find((se: any) => se.drama_id === d.id);
+    return { ...d, is_unlocked: !!p?.is_unlocked, unlocked_at: p?.unlocked_at, completed_at: p?.completed_at, active_session: s || null };
+  });
+}
+
+// ── Create or get session ──
+async function createOrGetSession(supabase: any, userId: string, dramaId: string) {
+  console.log(`[DS] createOrGetSession user=${userId.substring(0,8)} drama=${dramaId.substring(0,8)}`);
+
+  // Check for active session
+  const { data: existing } = await supabase
+    .from('drama_sessions')
+    .select('id, status, context_memory, started_at')
+    .eq('user_id', userId)
+    .eq('drama_id', dramaId)
+    .in('status', ['active', 'paused'])
+    .limit(1);
+  
+  if (existing && existing.length > 0) {
+    console.log(`[DS] Found existing session ${existing[0].id.substring(0,8)}`);
+    return { session: existing[0], is_new: false };
+  }
+
+  // Get companion
+  console.log(`[DS] Finding companion for ${userId.substring(0,8)}`);
+  const { data: companions } = await supabase
+    .from('companions')
+    .select('id')
+    .eq('user_id', userId)
+    .limit(1);
+  
+  if (!companions || companions.length === 0) throw new Error('No companion found');
+  const companionId = companions[0].id;
+  console.log(`[DS] Companion=${companionId.substring(0,8)}`);
+
+  // Create session
+  console.log(`[DS] Creating session`);
+  const { data: inserted, error: insErr } = await supabase
+    .from('drama_sessions')
+    .insert({ user_id: userId, companion_id: companionId, drama_id: dramaId, status: 'active', context_memory: {} })
+    .select('id, status, context_memory, started_at');
+  
+  if (insErr) throw new Error('Insert session: ' + insErr.message);
+  if (!inserted || inserted.length === 0) throw new Error('Insert session returned no rows');
+  const session = inserted[0];
+  console.log(`[DS] Session created ${session.id.substring(0,8)}`);
+
+  // Get drama for intro
+  const { data: dramas } = await supabase.from('drama_definitions').select('name, description, scene_setting, drama_prompt').eq('id', dramaId).limit(1);
+  const drama = dramas?.[0];
+
+  if (drama) {
+    const intro = `**${drama.name}**\n\n${drama.scene_setting || ''}\n\n${drama.description || ''}\n\n*你深吸一口气，踏入了这个全新的世界...*`;
+    await supabase.from('drama_messages').insert({ session_id: session.id, user_id: userId, speaker: 'narrator', content: intro });
+    console.log(`[DS] Narrator intro inserted`);
+  }
+
+  // Track progress
+  await supabase.from('drama_progress').upsert(
+    { user_id: userId, drama_id: dramaId, is_unlocked: true, unlocked_at: new Date().toISOString() },
+    { onConflict: 'user_id,drama_id' }
+  );
+
+  return { session, is_new: true };
+}
+
+// ── Get session with messages ──
+async function getSessionMessages(supabase: any, sessionId: string, userId: string) {
+  console.log(`[DS] getSessionMessages session=${sessionId.substring(0,8)} user=${userId.substring(0,8)}`);
+
+  const { data: sessRows } = await supabase
+    .from('drama_sessions')
+    .select('id, user_id, drama_id, status, context_memory, started_at')
+    .eq('id', sessionId)
+    .eq('user_id', userId)
+    .limit(1);
+  
+  if (!sessRows || sessRows.length === 0) throw new Error('Session not found');
+  const sess = sessRows[0];
+
+  const { data: dramas } = await supabase.from('drama_definitions').select('id, name, description, scene_setting, cover_image_path, drama_prompt').eq('id', sess.drama_id).limit(1);
+  const drama = dramas?.[0] || null;
+
+  const { data: compRows } = await supabase.from('companions').select('id, nickname, avatar_url, gender').eq('user_id', userId).limit(1);
+  const companion = compRows?.[0] || null;
+
+  const { data: messages, error: mErr } = await supabase.from('drama_messages').select('*').eq('session_id', sessionId).order('created_at', { ascending: true });
+  if (mErr) throw new Error('drama_messages: ' + mErr.message);
+
+  return { session: sess, drama, companion, messages: messages || [] };
+}
+
+// ── Complete session ──
+async function completeSession(supabase: any, sessionId: string, userId: string) {
+  const { data: rows } = await supabase.from('drama_sessions').select('id, drama_id').eq('id', sessionId).eq('user_id', userId).limit(1);
+  if (!rows || rows.length === 0) throw new Error('Session not found');
+  
+  await supabase.from('drama_sessions').update({ status: 'completed', ended_at: new Date().toISOString() }).eq('id', sessionId);
+  await supabase.from('drama_progress').upsert(
+    { user_id: userId, drama_id: rows[0].drama_id, completed_at: new Date().toISOString() },
+    { onConflict: 'user_id,drama_id' }
+  );
+  return { success: true };
+}
+
+// ── Main ──
+Deno.serve(async (req: Request) => {
+  const cors = handleCors(req);
+  if (cors) return cors;
+
+  try {
+    let body: any = {};
+    if (req.method === 'POST') {
+      body = await req.json().catch(() => ({}));
+    }
+
+    const supabase = getSupabase();
+    const { user } = await authenticate(req, supabase);
+    const action = body.action || '';
+
+    console.log(`[DS] action=${action} user=${user.id.substring(0,8)}`);
+
+    switch (action) {
+      case 'list': {
+        const dramas = await getDramaList(supabase, user.id);
+        return jsonResponse({ dramas });
+      }
+      case 'start': {
+        const dramaId = body.drama_id;
+        if (!dramaId) throw new Error('Missing drama_id');
+        const result = await createOrGetSession(supabase, user.id, dramaId);
+        return jsonResponse(result);
+      }
+      case 'get': {
+        const sessionId = body.session_id;
+        if (!sessionId) throw new Error('Missing session_id');
+        const result = await getSessionMessages(supabase, sessionId, user.id);
+        return jsonResponse(result);
+      }
+      case 'complete': {
+        const sessionId = body.session_id;
+        if (!sessionId) throw new Error('Missing session_id');
+        const result = await completeSession(supabase, sessionId, user.id);
+        return jsonResponse(result);
+      }
+      case 'restart': {
+        const dramaId = body.drama_id;
+        if (!dramaId) throw new Error('Missing drama_id');
+
+        // 1. Find all sessions for this user+drama
+        const { data: oldSessions } = await supabase
+          .from('drama_sessions')
+          .select('id')
+          .eq('user_id', user.id)
+          .eq('drama_id', dramaId);
+
+        // 2. Delete all messages for those sessions
+        for (const s of (oldSessions || [])) {
+          await supabase.from('drama_messages').delete().eq('session_id', s.id);
+        }
+
+        // 3. Delete old sessions
+        await supabase.from('drama_sessions').delete().eq('user_id', user.id).eq('drama_id', dramaId);
+
+        // 4. Create new session (reuse createOrGetSession logic)
+        const result = await createOrGetSession(supabase, user.id, dramaId);
+        return jsonResponse(result);
+      }
+      default: {
+        const dramas = await getDramaList(supabase, user.id);
+        return jsonResponse({ dramas });
+      }
+    }
+  } catch (e: any) {
+    console.error(`[DS] ERROR: ${e.message}`);
+    return jsonResponse({ error: e.message, detail: e.stack?.split('\n')[0] || '' }, 500);
+  }
+});
+
+function jsonResponse(data: any, status = 200) {
+  return new Response(JSON.stringify(data), { status, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+}

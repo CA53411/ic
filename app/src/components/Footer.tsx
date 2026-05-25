@@ -1,1 +1,105 @@
-aW1wb3J0IHsgdXNlTmF2aWdhdGUgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJzsKaW1wb3J0IHsgU3BhcmtsZXMgfSBmcm9tICdsdWNpZGUtcmVhY3QnOwppbXBvcnQgeyB1c2VJMThuIH0gZnJvbSAnQC9pMThuL0kxOG5Db250ZXh0JzsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEZvb3RlcigpIHsKICBjb25zdCBuYXZpZ2F0ZSA9IHVzZU5hdmlnYXRlKCk7CiAgY29uc3QgeyB0IH0gPSB1c2VJMThuKCk7CgogIGNvbnN0IHByb2R1Y3RMaW5rcyA9IFsKICAgIHsgbGFiZWw6ICdEYXNoYm9hcmQnLCBwYXRoOiAnL2Rhc2hib2FyZCcgfSwKICAgIHsgbGFiZWw6ICdQbGF6YScsIHBhdGg6ICcvcGxhemEnIH0sCiAgICB7IGxhYmVsOiAnQ2hhdCcsIHBhdGg6ICcvY2hhdCcgfSwKICAgIHsgbGFiZWw6ICdNZW1vcnknLCBwYXRoOiAnL21lbW9yeScgfSwKICBdOwoKICBjb25zdCByZXNvdXJjZUxpbmtzID0gWwogICAgeyBsYWJlbDogJ0hlbHAgQ2VudGVyJywgcGF0aDogJyMnIH0sCiAgICB7IGxhYmVsOiAnUHJpdmFjeScsIHBhdGg6ICcjJyB9LAogICAgeyBsYWJlbDogJ1Rlcm1zJywgcGF0aDogJyMnIH0sCiAgICB7IGxhYmVsOiAnQ3Jvd2RmdW5kaW5nJywgcGF0aDogJy9jcm93ZGZ1bmRpbmcnIH0sCiAgXTsKCiAgcmV0dXJuICgKICAgIDxmb290ZXIgY2xhc3NOYW1lPSJiZy1zaWRlYmFyLWJnIHRleHQtc2lkZWJhci10ZXh0Ij4KICAgICAgPGRpdiBjbGFzc05hbWU9Im1heC13LVsxMjAwcHhdIG14LWF1dG8gcHgtNiBsZzpweC04IHB5LTEyIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMSBzbTpncmlkLWNvbHMtMiBsZzpncmlkLWNvbHMtNCBnYXAtOCBsZzpnYXAtMTIiPgogICAgICAgICAgey8qIENvbCAxOiBCcmFuZCAqL30KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtY29sIGdhcC0zIj4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIj4KICAgICAgICAgICAgICA8U3BhcmtsZXMgc2l6ZT17MjB9IGNsYXNzTmFtZT0idGV4dC1waW5rLTIwMCIgLz4KICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQtcGluay0yMDAgdGV4dC1sZyBmb250LWJvbGQiPkNvcm9sYXMgfCBQbGF0b25pYzwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXNpZGViYXItdGV4dC84MCBsZWFkaW5nLXJlbGF4ZWQiPgogICAgICAgICAgICAgIHt0KCdmb290ZXIudGFnbGluZScpfQogICAgICAgICAgICA8L3A+CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICB7LyogQ29sIDI6IFByb2R1Y3QgbGlua3MgKi99CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBmbGV4LWNvbCBnYXAtMyI+CiAgICAgICAgICAgIDxoNCBjbGFzc05hbWU9InRleHQtd2hpdGUgdGV4dC1zbSBmb250LXNlbWlib2xkIG1iLTEiPlByb2R1Y3Q8L2g0PgogICAgICAgICAgICB7cHJvZHVjdExpbmtzLm1hcCgobGluaykgPT4gKAogICAgICAgICAgICAgIDxidXR0b24KICAgICAgICAgICAgICAgIGtleT17bGluay5sYWJlbH0KICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IG5hdmlnYXRlKGxpbmsucGF0aCl9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9InRleHQtbGVmdCB0ZXh0LXNtIHRleHQtc2lkZWJhci10ZXh0IGhvdmVyOnRleHQtd2hpdGUgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMTUwIgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIHtsaW5rLmxhYmVsfQogICAgICAgICAgICAgIDwvYnV0dG9uPgogICAgICAgICAgICApKX0KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIHsvKiBDb2wgMzogUmVzb3VyY2VzICovfQogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggZmxleC1jb2wgZ2FwLTMiPgogICAgICAgICAgICA8aDQgY2xhc3NOYW1lPSJ0ZXh0LXdoaXRlIHRleHQtc20gZm9udC1zZW1pYm9sZCBtYi0xIj5SZXNvdXJjZXM8L2g0PgogICAgICAgICAgICB7cmVzb3VyY2VMaW5rcy5tYXAoKGxpbmspID0+ICgKICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICBrZXk9e2xpbmsubGFiZWx9CiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBsaW5rLnBhdGggIT09ICcjJyAmJiBuYXZpZ2F0ZShsaW5rLnBhdGgpfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LWxlZnQgdGV4dC1zbSB0ZXh0LXNpZGViYXItdGV4dCBob3Zlcjp0ZXh0LXdoaXRlIHRyYW5zaXRpb24tY29sb3JzIGR1cmF0aW9uLTE1MCIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICB7bGluay5sYWJlbH0KICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgKSl9CiAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICB7LyogQ29sIDQ6IENvbnRhY3QgKi99CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCBmbGV4LWNvbCBnYXAtMyI+CiAgICAgICAgICAgIDxoNCBjbGFzc05hbWU9InRleHQtd2hpdGUgdGV4dC1zbSBmb250LXNlbWlib2xkIG1iLTEiPkNvbnRhY3QgVXM8L2g0PgogICAgICAgICAgICA8YQogICAgICAgICAgICAgIGhyZWY9Im1haWx0bzpjb3JvbGFyQGNvcm9sYXMudG9wIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0idGV4dC1zbSB0ZXh0LXNpZGViYXItdGV4dC84MCBob3Zlcjp0ZXh0LXBpbmstMjAwIHRyYW5zaXRpb24tY29sb3JzIgogICAgICAgICAgICA+CiAgICAgICAgICAgICAgY29yb2xhckBjb3JvbGFzLnRvcAogICAgICAgICAgICA8L2E+CiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGdhcC0zIG10LTEiPgogICAgICAgICAgICAgIHsvKiBTb2NpYWwgcGxhY2Vob2xkZXIgaWNvbnMgKi99CiAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ3LTggaC04IHJvdW5kZWQtZnVsbCBiZy1zaWRlYmFyLWhvdmVyIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtc2lkZWJhci1pY29uIGhvdmVyOnRleHQtcGluay0yMDAgaG92ZXI6Ymctc2lkZWJhci1hY3RpdmUgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMTUwIGN1cnNvci1wb2ludGVyIj4KICAgICAgICAgICAgICAgIDxzdmcgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9ImN1cnJlbnRDb2xvciI+CiAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xOC4yNDQgMi4yNWgzLjMwOGwtNy4yMjcgOC4yNiA4LjUwMiAxMS4yNEgxNi4xN2wtNS4yMTQtNi44MTdMNC45OSAyMS43NUgxLjY4bDcuNzMtOC44MzVMMS4yNTQgMi4yNUg4LjA4bDQuNzEzIDYuMjMxem0tMS4xNjEgMTcuNTJoMS44MzNMNy4wODQgNC4xMjZINS4xMTd6IiAvPgogICAgICAgICAgICAgICAgPC9zdmc+CiAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idy04IGgtOCByb3VuZGVkLWZ1bGwgYmctc2lkZWJhci1ob3ZlciBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciB0ZXh0LXNpZGViYXItaWNvbiBob3Zlcjp0ZXh0LXBpbmstMjAwIGhvdmVyOmJnLXNpZGViYXItYWN0aXZlIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTE1MCBjdXJzb3ItcG9pbnRlciI+CiAgICAgICAgICAgICAgICA8c3ZnIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJjdXJyZW50Q29sb3IiPgogICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTIgMi4xNjNjMy4yMDQgMCAzLjU4NC4wMTIgNC44NS4wNyAzLjI1Mi4xNDggNC43NzEgMS42OTEgNC45MTkgNC45MTkuMDU4IDEuMjY1LjA2OSAxLjY0NS4wNjkgNC44NDkgMCAzLjIwNS0uMDEyIDMuNTg0LS4wNjkgNC44NDktLjE0OSAzLjIyNS0xLjY2NCA0Ljc3MS00LjkxOSA0LjkxOS0xLjI2Ni4wNTgtMS42NDQuMDctNC44NS4wNy0zLjIwNCAwLTMuNTg0LS4wMTItNC44NDktLjA3LTMuMjYtLjE0OS00Ljc3MS0xLjY5OS00LjkxOS00LjkyLS4wNTgtMS4yNjUtLjA3LTEuNjQ0LS4wNy00Ljg0OSAwLTMuMjA0LjAxMy0zLjU4My4wNy00Ljg0OS4xNDktMy4yMjcgMS42NjQtNC43NzEgNC45MTktNC45MTkgMS4yNjYtLjA1NyAxLjY0NS0uMDY5IDQuODQ5LS4wNjl6TTEyIDBDOC43NDEgMCA4LjMzMy4wMTQgNy4wNTMuMDcyIDIuNjk1LjI3Mi4yNzMgMi42OS4wNzMgNy4wNTIuMDE0IDguMzMzIDAgOC43NDEgMCAxMmMwIDMuMjU5LjAxNCAzLjY2OC4wNzIgNC45NDguMiA0LjM1OCAyLjYxOCA2Ljc4IDYuOTggNi45OEM4LjMzMyAyMy45ODYgOC43NDEgMjQgMTIgMjRjMy4yNTkgMCAzLjY2OC0uMDE0IDQuOTQ4LS4wNzIgNC4zNTQtLjIgNi43ODItMi42MTggNi45NzktNi45OC4wNTktMS4yOC4wNzMtMS42ODkuMDczLTQuOTQ4IDAtMy4yNTktLjAxNC0zLjY2Ny0uMDcyLTQuOTQ3LS4xOTYtNC4zNTQtMi42MTctNi43OC02Ljk3OS02Ljk4QzE1LjY2OC4wMTQgMTUuMjU5IDAgMTIgMHptMCA1LjgzOGE2LjE2MiA2LjE2MiAwIDEwMCAxMi4zMjQgNi4xNjIgNi4xNjIgMCAwMDAtMTIuMzI0ek0xMiAxNmE0IDQgMCAxMTAtOCA0IDQgMCAwMTAgOHptNi40MDYtMTEuODQ1YTEuNDQgMS40NCAwIDEwMCAyLjg4MSAxLjQ0IDEuNDQgMCAwMDAtMi44ODF6IiAvPgogICAgICAgICAgICAgICAgPC9zdmc+CiAgICAgICAgICAgICAgPC9zcGFuPgogICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idy04IGgtOCByb3VuZGVkLWZ1bGwgYmctc2lkZWJhci1ob3ZlciBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciB0ZXh0LXNpZGViYXItaWNvbiBob3Zlcjp0ZXh0LXBpbmstMjAwIGhvdmVyOmJnLXNpZGViYXItYWN0aXZlIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTE1MCBjdXJzb3ItcG9pbnRlciI+CiAgICAgICAgICAgICAgICA8c3ZnIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJjdXJyZW50Q29sb3IiPgogICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTkuNTkgNi42OWE0LjgzIDQuODMgMCAwMS0zLjc3LTQuMjVWMmgtMy40NXYxMy42N2EyLjg5IDIuODkgMCAwMS01LjIgMS43NCAyLjg5IDIuODkgMCAwMTIuMzEtNC42NCAyLjkzIDIuOTMgMCAwMS44OC4xM1Y5LjRhNi44NCA2Ljg0IDAgMDAtMS0uMDVBNi4zMyA2LjMzIDAgMDA1IDIwLjFhNi4zNCA2LjM0IDAgMDAxMC44Ni00LjQzdi03YTguMTYgOC4xNiAwIDAwNC43NyAxLjUydi0zLjRhNC44NSA0Ljg1IDAgMDEtMS0uMXoiIC8+CiAgICAgICAgICAgICAgICA8L3N2Zz4KICAgICAgICAgICAgICA8L3NwYW4+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CgogICAgICAgIHsvKiBCb3R0b20gYmFyICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC0xMCBwdC02IGJvcmRlci10IGJvcmRlci1zaWRlYmFyLWhvdmVyIj4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1jZW50ZXIgdGV4dC14cyB0ZXh0LXNpZGViYXItdGV4dC82MCI+CiAgICAgICAgICAgICZjb3B5OyAyMDI2IENvcm9sYXMgfCBQbGF0b25pYy4gQWxsIHJpZ2h0cyByZXNlcnZlZC4KICAgICAgICAgIDwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L2Zvb3Rlcj4KICApOwp9Cg==
+import { useNavigate } from 'react-router-dom';
+import { Sparkles } from 'lucide-react';
+import { useI18n } from '@/i18n/I18nContext';
+
+export default function Footer() {
+  const navigate = useNavigate();
+  const { t } = useI18n();
+
+  const productLinks = [
+    { label: 'Dashboard', path: '/dashboard' },
+    { label: 'Plaza', path: '/plaza' },
+    { label: 'Chat', path: '/chat' },
+    { label: 'Memory', path: '/memory' },
+  ];
+
+  const resourceLinks = [
+    { label: 'Help Center', path: '#' },
+    { label: 'Privacy', path: '#' },
+    { label: 'Terms', path: '#' },
+    { label: 'Crowdfunding', path: '/crowdfunding' },
+  ];
+
+  return (
+    <footer className="bg-sidebar-bg text-sidebar-text">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Col 1: Brand */}
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <Sparkles size={20} className="text-pink-200" />
+              <span className="text-pink-200 text-lg font-bold">Corolas | Platonic</span>
+            </div>
+            <p className="text-sm text-sidebar-text/80 leading-relaxed">
+              {t('footer.tagline')}
+            </p>
+          </div>
+
+          {/* Col 2: Product links */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-white text-sm font-semibold mb-1">Product</h4>
+            {productLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => navigate(link.path)}
+                className="text-left text-sm text-sidebar-text hover:text-white transition-colors duration-150"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Col 3: Resources */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-white text-sm font-semibold mb-1">Resources</h4>
+            {resourceLinks.map((link) => (
+              <button
+                key={link.label}
+                onClick={() => link.path !== '#' && navigate(link.path)}
+                className="text-left text-sm text-sidebar-text hover:text-white transition-colors duration-150"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Col 4: Contact */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-white text-sm font-semibold mb-1">Contact Us</h4>
+            <a
+              href="mailto:corolar@corolas.top"
+              className="text-sm text-sidebar-text/80 hover:text-pink-200 transition-colors"
+            >
+              corolar@corolas.top
+            </a>
+            <div className="flex gap-3 mt-1">
+              {/* Social placeholder icons */}
+              <span className="w-8 h-8 rounded-full bg-sidebar-hover flex items-center justify-center text-sidebar-icon hover:text-pink-200 hover:bg-sidebar-active transition-all duration-150 cursor-pointer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </span>
+              <span className="w-8 h-8 rounded-full bg-sidebar-hover flex items-center justify-center text-sidebar-icon hover:text-pink-200 hover:bg-sidebar-active transition-all duration-150 cursor-pointer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+              </span>
+              <span className="w-8 h-8 rounded-full bg-sidebar-hover flex items-center justify-center text-sidebar-icon hover:text-pink-200 hover:bg-sidebar-active transition-all duration-150 cursor-pointer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-10 pt-6 border-t border-sidebar-hover">
+          <p className="text-center text-xs text-sidebar-text/60">
+            &copy; 2026 Corolas | Platonic. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

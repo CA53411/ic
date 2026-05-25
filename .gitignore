@@ -1,1 +1,49 @@
-IyBEZXBlbmRlbmNpZXMKYXBwL25vZGVfbW9kdWxlcwpiYWNrZW5kL25vZGVfbW9kdWxlcwoKIyBCdWlsZCBvdXRwdXQKYXBwL2Rpc3QKCiMgRW52aXJvbm1lbnQgZmlsZXMKYXBwLy5lbnYKYXBwLy5lbnYubG9jYWwKYXBwLy5lbnYuKi5sb2NhbAoKIyBMb2dzCioubG9nCm5wbS1kZWJ1Zy5sb2cqCgojIElERQoudnNjb2RlCi5pZGVhCgojIE9TCi5EU19TdG9yZQpUaHVtYnMuZGIKCiMgTGFyZ2UgYmluYXJ5IGZpbGVzIChzY3JlZW5zaG90cykKKi5wbmcKKi5qcGcKKi5qcGVnCiouZ2lmCioubXA0CioubW92CgojIFJlcG9ydHMgKGdlbmVyYXRlZCkKKnJlcG9ydCoubWQKKmF1ZGl0Ki5tZAoqdmFsaWRhdGlvbioubWQKKnZlcmlmaWNhdGlvbioubWQKKm9wdGltaXphdGlvbioubWQKKnJlc2VhcmNoKi5tZAphaV9jb21wYW5pb25fKi5tZAphcmNoaXRlY3R1cmVfKi5tZApoYXJkY29kZWRfKi5tZApmcm9udGVuZF9yZWZhY3Rvcl8qLm1kCmZ1bGxfYXVkaXRfKi5tZApzY2hlbWFfdmFsaWRhdGlvbioubWQKc2VjdXJpdHlfKi5tZApzdXBhYmFzZV90ZWNobmljYWxfKi5tZAp3b3JrZmxvd18qLm1kCnJvdW5kKi5tZAo=
+# Dependencies
+app/node_modules
+backend/node_modules
+
+# Build output
+app/dist
+
+# Environment files
+app/.env
+app/.env.local
+app/.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large binary files (screenshots)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.mov
+
+# Reports (generated)
+*report*.md
+*audit*.md
+*validation*.md
+*verification*.md
+*optimization*.md
+*research*.md
+ai_companion_*.md
+architecture_*.md
+hardcoded_*.md
+frontend_refactor_*.md
+full_audit_*.md
+schema_validation*.md
+security_*.md
+supabase_technical_*.md
+workflow_*.md
+round*.md

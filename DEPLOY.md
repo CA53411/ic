@@ -1,1 +1,164 @@
-IyBQbGF0b25pYyBBSSDigJQg6YOo572y5oyH5Y2XCgojIyAxLiBTdXBhYmFzZSDmlbDmja7lupPpg6jnvbIKCiMjIyAxLjEg5Yib5bu66aG555uuCjEuIOeZu+W9lSBbU3VwYWJhc2UgRGFzaGJvYXJkXShodHRwczovL2FwcC5zdXBhYmFzZS5jb20pCjIuIOaWsOW7uumhueebru+8iOaIluS9v+eUqOeOsOaciemhueebru+8iQozLiDorrDlvZUgUHJvamVjdCBVUkwg5ZKMIFNlcnZpY2UgUm9sZSBLZXkKCiMjIyAxLjIg5omn6KGM5pWw5o2u5bqTU2NoZW1hCjEuIOi/m+WFpemhueebrueahCBTUUwgRWRpdG9yCjIuIOaJk+W8gCBgc2NoZW1hLnNxbGAg5paH5Lu277yI57qmMTIwS0LvvIkKMy4g5a6M5pW05aSN5Yi257KY6LS05omn6KGMCjQuIOehruiupOaJgOacieihqOWIm+W7uuaIkOWKn++8iDUx5Liq6KGo77yJCgojIyMgMS4zIOmFjee9rnBnX2Nyb27lrprml7bku7vliqEK5ZyoIFNRTCBFZGl0b3Ig5Lit5omn6KGM77yaCmBgYHNxbAotLSDlkK/nlKhwZ19jcm9u5omp5bGVCkNSRUFURSBFWFRFTlNJT04gSUYgTk9UIEVYSVNUUyBwZ19jcm9uOwoKLS0g5re75Yqg5a6a5pe25Lu75Yqh77yI5qC55o2uc2NoZW1hLnNxbOS4reeahOWumuS5ie+8iQotLSBDb25zb2xpZGF0aW9uOiDmr4/lpKnlh4zmmagy54K5Ci0tIE1pbGVzdG9uZSBBZGp1c3Q6IOavj+WkqeWHjOaZqDPngrkKLS0gU1RNIENsZWFudXA6IOavj+WkqeWHjOaZqDTngrkKYGBgCgojIyAyLiBFZGdlIEZ1bmN0aW9ucyDpg6jnvbIKCiMjIyDmlrnlvI9B77yaU3VwYWJhc2UgRGFzaGJvYXJk77yI5o6o6I2Q77yJCjEuIOi/m+WFpemhueebriDihpIgRWRnZSBGdW5jdGlvbnMg4oaSIOaWsOW7uiBGdW5jdGlvbgoyLiDpgJDkuKrliJvlu7rku6XkuIs35Liq5Ye95pWw77yaCgp8IOWHveaVsOWQjSB8IOi3r+W+hCB8IOeOr+Wig+WPmOmHjyB8CnwtLS0tLS0tLXwtLS0tLS18LS0tLS0tLS0tfAp8IGNoYXQtc3RyZWFtIHwgL2NoYXQtc3RyZWFtIHwgREVFUFNFRUtfQVBJX0tFWSB8CnwgcGF5bWVudC1jcmVhdGUgfCAvcGF5bWVudC9jcmVhdGUgfCBaUEFZX1BJRCwgWlBBWV9LRVkgfAp8IHBheW1lbnQtY2FsbGJhY2sgfCAvcGF5bWVudC9jYWxsYmFjayB8IFpQQVlfUElELCBaUEFZX0tFWSB8CnwgY29uc29saWRhdGlvbiB8IC9jb25zb2xpZGF0aW9uIHwgREVFUFNFRUtfQVBJX0tFWSB8CnwgbWlsZXN0b25lLWFkanVzdCB8IC9taWxlc3RvbmUvYWRqdXN0IHwgREVFUFNFRUtfQVBJX0tFWSB8CnwgZW5lcmd5IHwgL2VuZXJneSB8IOaXoOmineWkliB8CnwgcHJvYWN0aXZlIHwgL3Byb2FjdGl2ZSB8IERFRVBTRUVLX0FQSV9LRVkgfAoKMy4g5q+P5Liq5Ye95pWw55qE5Luj56CB5ZyoIGBzdXBhYmFzZS9mdW5jdGlvbnMvPG5hbWU+L2luZGV4LnRzYAo0LiDlhbHkuqvmqKHlnZcgYF9zaGFyZWQvKi50c2Ag6ZyA6KaB5aSN5Yi25Yiw5q+P5Liq5Ye95pWw55qEIGAuLi9fc2hhcmVkL2Ag6Lev5b6ECgojIyMg5pa55byPQu+8mlN1cGFiYXNlIENMSQpgYGBiYXNoCiMgMS4g5a6J6KOFQ0xJCm5wbSBpbnN0YWxsIC1nIHN1cGFiYXNlCgojIDIuIOeZu+W9lQpzdXBhYmFzZSBsb2dpbgoKIyAzLiDpk77mjqXpobnnm64Kc3VwYWJhc2UgbGluayAtLXByb2plY3QtcmVmIDx5b3VyLXByb2plY3QtcmVmPgoKIyA0LiDlpI3liLblh73mlbDku6PnoIHliLDpobnnm64KbWtkaXIgLXAgc3VwYWJhc2UvZnVuY3Rpb25zCmNwIC1yIGJhY2tlbmQvc3VwYWJhc2UvZnVuY3Rpb25zLyogc3VwYWJhc2UvZnVuY3Rpb25zLwoKIyA1LiDpg6jnvbLmiYDmnInlh73mlbAKc3VwYWJhc2UgZnVuY3Rpb25zIGRlcGxveSBjaGF0LXN0cmVhbQpzdXBhYmFzZSBmdW5jdGlvbnMgZGVwbG95IHBheW1lbnQtY3JlYXRlCnN1cGFiYXNlIGZ1bmN0aW9ucyBkZXBsb3kgcGF5bWVudC1jYWxsYmFjawpzdXBhYmFzZSBmdW5jdGlvbnMgZGVwbG95IGNvbnNvbGlkYXRpb24Kc3VwYWJhc2UgZnVuY3Rpb25zIGRlcGxveSBtaWxlc3RvbmUtYWRqdXN0CnN1cGFiYXNlIGZ1bmN0aW9ucyBkZXBsb3kgZW5lcmd5CnN1cGFiYXNlIGZ1bmN0aW9ucyBkZXBsb3kgcHJvYWN0aXZlCmBgYAoKIyMgMy4g546v5aKD5Y+Y6YeP6YWN572uCgojIyMgU3VwYWJhc2UgRWRnZSBGdW5jdGlvbnMg546v5aKD5Y+Y6YePCuWcqCBTdXBhYmFzZSBEYXNoYm9hcmQg4oaSIEVkZ2UgRnVuY3Rpb25zIOKGkiDnjq/looPlj5jph48g5Lit5re75Yqg77yaCgpgYGAKREVFUFNFRUtfQVBJX0tFWT1zay02ZDAzNzI5NDcxZjU0Mjg3YTY0YjQzYjc1N2EyOWIwNQpaUEFZX1BJRD085L2g55qEWnBheeWVhuaIt0lEPgpaUEFZX0tFWT085L2g55qEWnBheeWvhumSpT4KYGBgCgojIyMgVmVyY2VsIOWJjeerr+eOr+Wig+WPmOmHjwrlnKggVmVyY2VsIERhc2hib2FyZCDihpIgUHJvamVjdCDihpIgU2V0dGluZ3Mg4oaSIEVudmlyb25tZW50IFZhcmlhYmxlcyDkuK3mt7vliqDvvJoKCmBgYApWSVRFX1NVUEFCQVNFX1VSTD1odHRwczovLzx5b3VyLXByb2plY3Q+LnN1cGFiYXNlLmNvClZJVEVfU1VQQUJBU0VfUFVCTElTSEFCTEVfS0VZPTx5b3VyLWFub24ta2V5PgpgYGAKCiMjIDQuIFpwYXkg5pSv5LuY6YWN572uCgojIyMgNC4xIFpwYXnllYbmiLforr7nva4KMS4g55m75b2VIFtacGF55ZWG5oi35Lit5b+DXShodHRwczovL3pwYXl6LmNuKQoyLiDojrflj5YgUElEIOWSjCBLRVkKMy4g6K6+572u5Zue6LCD5Zyw5Z2A77yaYGh0dHBzOi8vPHlvdXItcHJvamVjdD4uc3VwYWJhc2UuY28vZnVuY3Rpb25zL3YxL3BheW1lbnQtY2FsbGJhY2tgCgojIyMgNC4yIOa1i+ivleaUr+S7mAoxLiDkvb/nlKhacGF55rKZ566x546v5aKD5rWL6K+VCjIuIOehruiupOWbnuiwg+iDveato+ehruabtOaWsOeUtemHj+S9meminQoKIyMgNS4g6aqM6K+B6YOo572yCgojIyMgNS4xIOaVsOaNruW6k+mqjOivgQpgYGBzcWwKLS0g5qOA5p+l6KGo5pWw6YePClNFTEVDVCBDT1VOVCgqKSBGUk9NIGluZm9ybWF0aW9uX3NjaGVtYS50YWJsZXMgV0hFUkUgdGFibGVfc2NoZW1hID0gJ3B1YmxpYyc7Ci0tIOW6lOivpei/lOWbniA1MQoKLS0g5qOA5p+lUkxTIFBvbGljaWVzClNFTEVDVCBDT1VOVCgqKSBGUk9NIHBnX3BvbGljaWVzIFdIRVJFIHNjaGVtYW5hbWUgPSAncHVibGljJzsKLS0g5bqU6K+l6L+U5ZueIDEwNQpgYGAKCiMjIyA1LjIgRWRnZSBGdW5jdGlvbnPpqozor4EKYGBgYmFzaAojIOa1i+ivleWvueivnea1geW8j0FQSQpjdXJsIC1YIFBPU1QgaHR0cHM6Ly88eW91ci1wcm9qZWN0Pi5zdXBhYmFzZS5jby9mdW5jdGlvbnMvdjEvY2hhdC1zdHJlYW0gXAogIC1IICJBdXRob3JpemF0aW9uOiBCZWFyZXIgPGp3dC10b2tlbj4iIFwKICAtSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiBcCiAgLWQgJ3sibWVzc2FnZSI6IuS9oOWlvSJ9JwoKIyDmtYvor5XnlLXph4/mn6Xor6IKY3VybCBodHRwczovLzx5b3VyLXByb2plY3Q+LnN1cGFiYXNlLmNvL2Z1bmN0aW9ucy92MS9lbmVyZ3kgXAogIC1IICJBdXRob3JpemF0aW9uOiBCZWFyZXIgPGp3dC10b2tlbj4iCmBgYAoKIyMgNi4g5YmN56uv5pu05pawCgojIyMgNi4xIOabtOaWsOeOr+Wig+WPmOmHj+WQjumHjeaWsOmDqOe9sgpgYGBiYXNoCiMgVmVyY2Vs6Ieq5Yqo5LuOR2l0SHVi5ouJ5Y+W5pyA5paw5Luj56CB5bm25p6E5bu6CiMg56Gu5L+d546v5aKD5Y+Y6YeP5bey6YWN572uCmBgYAoKIyMjIDYuMiDmm7/mjaJNb2NrIEFQSeS4uuecn+WunkFQSQrliY3nq6/ku6PnoIHkuK3pnIDopoHkv67mlLnku6XkuIvmlofku7bvvIzlsIZtb2Nr5pWw5o2u5pu/5o2i5Li655yf5a6eQVBJ6LCD55So77yaCi0gYHNyYy9saWIvc3VwYWJhc2UudHNgIOKAlCDnoa7orqRTdXBhYmFzZeWuouaIt+err+mFjee9rgotIGBzcmMvcGFnZXMvQ2hhdC50c3hgIOKAlCDov57mjqUvY2hhdC1zdHJlYW0gRWRnZSBGdW5jdGlvbgotIGBzcmMvcGFnZXMvUGF5bWVudC50c3hgIOKAlCDov57mjqUvcGF5bWVudC9jcmVhdGUgRWRnZSBGdW5jdGlvbgotIGBzcmMvcGFnZXMvRGFzaGJvYXJkLnRzeGAg4oCUIOi/nuaOpS9lbmVyZ3kgRWRnZSBGdW5jdGlvbuafpeivoueUtemHjwoKIyMgNy4g55Sf5Lqn546v5aKD5qOA5p+l5riF5Y2VCgotIFsgXSDmlbDmja7lupNTY2hlbWHlt7LmiafooYzvvIg1MeS4quihqO+8iQotIFsgXSBSTFMgUG9saWNpZXPlt7LlkK/nlKjvvIgxMDXkuKrnrZbnlaXvvIkKLSBbIF0gN+S4qkVkZ2UgRnVuY3Rpb25z5bey6YOo572yCi0gWyBdIOeOr+Wig+WPmOmHj+W3sumFjee9ru+8iERFRVBTRUVLX0FQSV9LRVksIFpQQVlfUElELCBaUEFZX0tFWe+8iQotIFsgXSDliY3nq6/njq/looPlj5jph4/lt7LphY3nva7vvIhWSVRFX1NVUEFCQVNFX1VSTCwgVklURV9TVVBBQkFTRV9QVUJMSVNIQUJMRV9LRVnvvIkKLSBbIF0gWnBheeWbnuiwg+WcsOWdgOW3suiuvue9rgotIFsgXSBwZ19jcm9u5a6a5pe25Lu75Yqh5bey5ZCv55SoCi0gWyBdIOaVsOaNruW6k+enjeWtkOaVsOaNruW3suaPkuWFpe+8iE1pbGVzdG9uZeWumuS5ieOAgeaDhee7quagh+etvuetie+8iQotIFsgXSDliY3nq69BUEnnq6/ngrnlt7Lmm7TmlrDkuLrnlJ/kuqfnjq/looMKCiMjIOaWh+S7tuS9jee9rgoKfCDmlofku7YgfCDot6/lvoQgfCDor7TmmI4gfAp8LS0tLS0tfC0tLS0tLXwtLS0tLS18Cnwg5pWw5o2u5bqTU2NoZW1hIHwgYC9tbnQvYWdlbnRzL291dHB1dC9zY2hlbWEuc3FsYCB8IOWujOaVtERETCB8CnwgRWRnZSBGdW5jdGlvbnMgfCBgL21udC9hZ2VudHMvb3V0cHV0L2JhY2tlbmQvc3VwYWJhc2UvZnVuY3Rpb25zL2AgfCA35Liq5Ye95pWwKzTlhbHkuqvmqKHlnZcgfAp8IOWJjeerr+S7o+eggSB8IGAvbW50L2FnZW50cy9vdXRwdXQvYXBwL2AgfCBSZWFjdCtWaXRl6aG555uuIHwKfCDmnrbmnoTmlofmoaMgfCBgL21udC9hZ2VudHMvb3V0cHV0L3BsYXRvbmljX2FyY2hpdGVjdHVyZS5tZGAgfCDlrozmlbTmnrbmnoTmlrnmoYggfAp8IFByb21wdOiuvuiuoSB8IGAvbW50L2FnZW50cy9vdXRwdXQvcHJvbXB0cy5tZGAgfCA15LiqUHJvbXB06K+m57uG6K6+6K6hIHwKfCDpg6jnvbLmjIfljZcgfCBgL21udC9hZ2VudHMvb3V0cHV0L0RFUExPWS5tZGAgfCDmnKzmlofku7YgfAo=
+# Platonic AI — 部署指南
+
+## 1. Supabase 数据库部署
+
+### 1.1 创建项目
+1. 登录 [Supabase Dashboard](https://app.supabase.com)
+2. 新建项目（或使用现有项目）
+3. 记录 Project URL 和 Service Role Key
+
+### 1.2 执行数据库Schema
+1. 进入项目的 SQL Editor
+2. 打开 `schema.sql` 文件（约120KB）
+3. 完整复制粘贴执行
+4. 确认所有表创建成功（51个表）
+
+### 1.3 配置pg_cron定时任务
+在 SQL Editor 中执行：
+```sql
+-- 启用pg_cron扩展
+CREATE EXTENSION IF NOT EXISTS pg_cron;
+
+-- 添加定时任务（根据schema.sql中的定义）
+-- Consolidation: 每天凌晨2点
+-- Milestone Adjust: 每天凌晨3点
+-- STM Cleanup: 每天凌晨4点
+```
+
+## 2. Edge Functions 部署
+
+### 方式A：Supabase Dashboard（推荐）
+1. 进入项目 → Edge Functions → 新建 Function
+2. 逐个创建以下7个函数：
+
+| 函数名 | 路径 | 环境变量 |
+|--------|------|---------|
+| chat-stream | /chat-stream | DEEPSEEK_API_KEY |
+| payment-create | /payment/create | ZPAY_PID, ZPAY_KEY |
+| payment-callback | /payment/callback | ZPAY_PID, ZPAY_KEY |
+| consolidation | /consolidation | DEEPSEEK_API_KEY |
+| milestone-adjust | /milestone/adjust | DEEPSEEK_API_KEY |
+| energy | /energy | 无额外 |
+| proactive | /proactive | DEEPSEEK_API_KEY |
+
+3. 每个函数的代码在 `supabase/functions/<name>/index.ts`
+4. 共享模块 `_shared/*.ts` 需要复制到每个函数的 `../_shared/` 路径
+
+### 方式B：Supabase CLI
+```bash
+# 1. 安装CLI
+npm install -g supabase
+
+# 2. 登录
+supabase login
+
+# 3. 链接项目
+supabase link --project-ref <your-project-ref>
+
+# 4. 复制函数代码到项目
+mkdir -p supabase/functions
+cp -r backend/supabase/functions/* supabase/functions/
+
+# 5. 部署所有函数
+supabase functions deploy chat-stream
+supabase functions deploy payment-create
+supabase functions deploy payment-callback
+supabase functions deploy consolidation
+supabase functions deploy milestone-adjust
+supabase functions deploy energy
+supabase functions deploy proactive
+```
+
+## 3. 环境变量配置
+
+### Supabase Edge Functions 环境变量
+在 Supabase Dashboard → Edge Functions → 环境变量 中添加：
+
+```
+DEEPSEEK_API_KEY=sk-6d03729471f54287a64b43b757a29b05
+ZPAY_PID=<你的Zpay商户ID>
+ZPAY_KEY=<你的Zpay密钥>
+```
+
+### Vercel 前端环境变量
+在 Vercel Dashboard → Project → Settings → Environment Variables 中添加：
+
+```
+VITE_SUPABASE_URL=https://<your-project>.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=<your-anon-key>
+```
+
+## 4. Zpay 支付配置
+
+### 4.1 Zpay商户设置
+1. 登录 [Zpay商户中心](https://zpayz.cn)
+2. 获取 PID 和 KEY
+3. 设置回调地址：`https://<your-project>.supabase.co/functions/v1/payment-callback`
+
+### 4.2 测试支付
+1. 使用Zpay沙箱环境测试
+2. 确认回调能正确更新电量余额
+
+## 5. 验证部署
+
+### 5.1 数据库验证
+```sql
+-- 检查表数量
+SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public';
+-- 应该返回 51
+
+-- 检查RLS Policies
+SELECT COUNT(*) FROM pg_policies WHERE schemaname = 'public';
+-- 应该返回 105
+```
+
+### 5.2 Edge Functions验证
+```bash
+# 测试对话流式API
+curl -X POST https://<your-project>.supabase.co/functions/v1/chat-stream \
+  -H "Authorization: Bearer <jwt-token>" \
+  -H "Content-Type: application/json" \
+  -d '{"message":"你好"}'
+
+# 测试电量查询
+curl https://<your-project>.supabase.co/functions/v1/energy \
+  -H "Authorization: Bearer <jwt-token>"
+```
+
+## 6. 前端更新
+
+### 6.1 更新环境变量后重新部署
+```bash
+# Vercel自动从GitHub拉取最新代码并构建
+# 确保环境变量已配置
+```
+
+### 6.2 替换Mock API为真实API
+前端代码中需要修改以下文件，将mock数据替换为真实API调用：
+- `src/lib/supabase.ts` — 确认Supabase客户端配置
+- `src/pages/Chat.tsx` — 连接/chat-stream Edge Function
+- `src/pages/Payment.tsx` — 连接/payment/create Edge Function
+- `src/pages/Dashboard.tsx` — 连接/energy Edge Function查询电量
+
+## 7. 生产环境检查清单
+
+- [ ] 数据库Schema已执行（51个表）
+- [ ] RLS Policies已启用（105个策略）
+- [ ] 7个Edge Functions已部署
+- [ ] 环境变量已配置（DEEPSEEK_API_KEY, ZPAY_PID, ZPAY_KEY）
+- [ ] 前端环境变量已配置（VITE_SUPABASE_URL, VITE_SUPABASE_PUBLISHABLE_KEY）
+- [ ] Zpay回调地址已设置
+- [ ] pg_cron定时任务已启用
+- [ ] 数据库种子数据已插入（Milestone定义、情绪标签等）
+- [ ] 前端API端点已更新为生产环境
+
+## 文件位置
+
+| 文件 | 路径 | 说明 |
+|------|------|------|
+| 数据库Schema | `/mnt/agents/output/schema.sql` | 完整DDL |
+| Edge Functions | `/mnt/agents/output/backend/supabase/functions/` | 7个函数+4共享模块 |
+| 前端代码 | `/mnt/agents/output/app/` | React+Vite项目 |
+| 架构文档 | `/mnt/agents/output/platonic_architecture.md` | 完整架构方案 |
+| Prompt设计 | `/mnt/agents/output/prompts.md` | 5个Prompt详细设计 |
+| 部署指南 | `/mnt/agents/output/DEPLOY.md` | 本文件 |

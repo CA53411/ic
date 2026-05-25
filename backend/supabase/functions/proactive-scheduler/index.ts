@@ -1,1 +1,362 @@
-LyoqCiAqIHByb2FjdGl2ZS1zY2hlZHVsZXIgRWRnZSBGdW5jdGlvbiDigJQgQ2FsbGVkIGJ5IHBnX2Nyb24gZXZlcnkgbWludXRlLgogKiBEaXJlY3RseSBleGVjdXRlcyBwcm9hY3RpdmUgbWVzc2FnZSBnZW5lcmF0aW9uIChubyBjYWxsIHRvIGFub3RoZXIgZnVuY3Rpb24pLgogKiBTdXBwb3J0cyBib3RoIEpXVCBhdXRoIGFuZCBzZXJ2aWNlX3JvbGVfa2V5IGF1dGggKGZyb20gcGdfY3JvbikuCiAqLwoKLy8g4pSA4pSAIENPUlMg4pSA4pSACmNvbnN0IGNvcnNIZWFkZXJzOiBSZWNvcmQ8c3RyaW5nLCBzdHJpbmc+ID0gewogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1PcmlnaW4nOiAnKicsCiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LUhlYWRlcnMnOiAnYXV0aG9yaXphdGlvbiwgeC1jbGllbnQtaW5mbywgYXBpa2V5LCBjb250ZW50LXR5cGUnLAogICdBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzJzogJ1BPU1QsIE9QVElPTlMnLAp9OwoKZnVuY3Rpb24gaGFuZGxlQ29ycyhyZXE6IFJlcXVlc3QpOiBSZXNwb25zZSB8IG51bGwgewogIGlmIChyZXEubWV0aG9kID09PSAnT1BUSU9OUycpIHJldHVybiBuZXcgUmVzcG9uc2UobnVsbCwgeyBzdGF0dXM6IDIwNCwgaGVhZGVyczogY29yc0hlYWRlcnMgfSk7CiAgcmV0dXJuIG51bGw7Cn0KCi8vIOKUgOKUgCBTdXBhYmFzZSDilIDilIAKaW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnbnBtOkBzdXBhYmFzZS9zdXBhYmFzZS1qc0AyLjM5LjAnOwoKZnVuY3Rpb24gZ2V0U3VwYWJhc2UoKSB7CiAgY29uc3QgdXJsID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9VUkwnKSE7CiAgY29uc3Qga2V5ID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9TRVJWSUNFX1JPTEVfS0VZJykhOwogIHJldHVybiBjcmVhdGVDbGllbnQodXJsLCBrZXksIHsgYXV0aDogeyBwZXJzaXN0U2Vzc2lvbjogZmFsc2UgfSB9KTsKfQoKLy8g4pSA4pSAIERlZXBTZWVrIOKUgOKUgApjb25zdCBERUVQU0VFS19VUkwgPSAnaHR0cHM6Ly9hcGkuZGVlcHNlZWsuY29tL3YxL2NoYXQvY29tcGxldGlvbnMnOwpjb25zdCBERUVQU0VFS19NT0RFTCA9ICdkZWVwc2Vlay12NC1mbGFzaCc7CgovLyDilIDilIAgVGltZSBoZWxwZXJzIOKUgOKUgApmdW5jdGlvbiBjYWxjdWxhdGVOZXh0VHJpZ2dlcih0ejogc3RyaW5nKTogc3RyaW5nIHsKICBjb25zdCBub3cgPSBuZXcgRGF0ZSgpOwogIC8vIEJhc2UgaW50ZXJ2YWw6IHJhbmRvbSA0NS03NSBtaW51dGVzIHRvIGF2b2lkIHRodW5kZXJpbmcgaGVyZAogIGNvbnN0IGludGVydmFsTWluID0gNDUgKyBNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiAzMSk7CiAgY29uc3QgbmV4dCA9IG5ldyBEYXRlKG5vdy5nZXRUaW1lKCkgKyBpbnRlcnZhbE1pbiAqIDYwMDAwKTsKCiAgLy8gQXZvaWQgbmlnaHQgdGltZSAoMjM6MDAgLSAwODowMCkgaW4gdXNlcidzIHRpbWV6b25lCiAgY29uc3QgaG91ckluVHogPSBwYXJzZUludCgKICAgIG5ldyBJbnRsLkRhdGVUaW1lRm9ybWF0KCdlbi1HQicsIHsgdGltZVpvbmU6IHR6LCBob3VyOiAnMi1kaWdpdCcsIGhvdXIxMjogZmFsc2UgfSkuZm9ybWF0KG5leHQpCiAgKTsKCiAgaWYgKGhvdXJJblR6ID49IDIzIHx8IGhvdXJJblR6IDwgOCkgewogICAgLy8gUHVzaCB0byBuZXh0IG1vcm5pbmcgMDg6MzAtMDk6MzAKICAgIGNvbnN0IGRheXNUb0FkZCA9IGhvdXJJblR6ID49IDIzID8gMSA6IDA7CiAgICBjb25zdCBtb3JuaW5nTWluID0gMzAgKyBNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkgKiA2MSk7IC8vIDA4OjMwIC0gMDk6MzAKICAgIGNvbnN0IG1vcm5pbmcgPSBuZXcgRGF0ZShuZXh0LmdldFRpbWUoKSk7CiAgICBtb3JuaW5nLnNldERhdGUobW9ybmluZy5nZXREYXRlKCkgKyBkYXlzVG9BZGQpOwogICAgbW9ybmluZy5zZXRIb3Vycyg4LCBtb3JuaW5nTWluLCAwLCAwKTsKICAgIHJldHVybiBtb3JuaW5nLnRvSVNPU3RyaW5nKCk7CiAgfQoKICByZXR1cm4gbmV4dC50b0lTT1N0cmluZygpOwp9CgpmdW5jdGlvbiBmbXRUaW1lKHR6OiBzdHJpbmcpOiBzdHJpbmcgewogIGNvbnN0IHBhZCA9IChuOiBudW1iZXIpID0+IFN0cmluZyhuKS5wYWRTdGFydCgyLCAnMCcpOwogIHRyeSB7CiAgICBjb25zdCBkID0gbmV3IERhdGUoKTsKICAgIGNvbnN0IGYgPSBuZXcgSW50bC5EYXRlVGltZUZvcm1hdCgnemgtQ04nLCB7IHRpbWVab25lOiB0eiwgeWVhcjonbnVtZXJpYycsbW9udGg6JzItZGlnaXQnLGRheTonMi1kaWdpdCcsd2Vla2RheTonc2hvcnQnLGhvdXI6JzItZGlnaXQnLG1pbnV0ZTonMi1kaWdpdCcsaG91cjEyOmZhbHNlIH0pOwogICAgY29uc3QgcCA9IGYuZm9ybWF0VG9QYXJ0cyhkKTsKICAgIGNvbnN0IGcgPSAodDogc3RyaW5nKSA9PiBwLmZpbmQoeCA9PiB4LnR5cGUgPT09IHQpPy52YWx1ZSB8fCAnJzsKICAgIGNvbnN0IGggPSBwYXJzZUludChnKCdob3VyJykpOwogICAgbGV0IHBlciA9ICfmt7HlpJwnOwogICAgaWYgKGggPj0gNSAmJiBoIDwgNykgcGVyID0gJ+a4heaZqCc7CiAgICBlbHNlIGlmIChoID49IDcgJiYgaCA8IDExKSBwZXIgPSAn5LiK5Y2IJzsKICAgIGVsc2UgaWYgKGggPj0gMTEgJiYgaCA8IDE0KSBwZXIgPSAn5Lit5Y2IJzsKICAgIGVsc2UgaWYgKGggPj0gMTQgJiYgaCA8IDE3KSBwZXIgPSAn5LiL5Y2IJzsKICAgIGVsc2UgaWYgKGggPj0gMTcgJiYgaCA8IDE5KSBwZXIgPSAn5YKN5pmaJzsKICAgIGVsc2UgaWYgKGggPj0gMTkgJiYgaCA8IDIyKSBwZXIgPSAn5pma5LiKJzsKICAgIHJldHVybiBgJHtnKCd5ZWFyJyl95bm0JHtnKCdtb250aCcpfeaciCR7ZygnZGF5Jyl95pelIOaYn+acnyR7Zygnd2Vla2RheScpLnJlcGxhY2UoJ+WRqCcsJycpfSAke3Blcn0gJHtwYWQoaCl9OiR7ZygnbWludXRlJyl9YDsKICB9IGNhdGNoIHsgcmV0dXJuIG5ldyBEYXRlKCkudG9Mb2NhbGVTdHJpbmcoJ3poLUNOJyk7IH0KfQoKZnVuY3Rpb24gdGltZVNpbmNlKGNyZWF0ZWRBdDogc3RyaW5nKTogc3RyaW5nIHsKICBjb25zdCB0aGVuID0gbmV3IERhdGUoY3JlYXRlZEF0KS5nZXRUaW1lKCk7CiAgY29uc3Qgbm93ID0gRGF0ZS5ub3coKTsKICBjb25zdCBtaW5zID0gTWF0aC5mbG9vcigobm93IC0gdGhlbikgLyA2MDAwMCk7CiAgaWYgKG1pbnMgPCAxKSByZXR1cm4gJ+WImuWImic7CiAgaWYgKG1pbnMgPCA2MCkgcmV0dXJuIGAke21pbnN95YiG6ZKf5YmNYDsKICBjb25zdCBocnMgPSBNYXRoLmZsb29yKG1pbnMgLyA2MCk7CiAgaWYgKGhycyA8IDI0KSByZXR1cm4gYCR7aHJzfeWwj+aXtuWJjWA7CiAgY29uc3QgZGF5cyA9IE1hdGguZmxvb3IoaHJzIC8gMjQpOwogIHJldHVybiBgJHtkYXlzfeWkqeWJjWA7Cn0KCi8vIOKUgOKUgCBEZWVwU2VlayBjYWxsIHdpdGggcmV0cnkg4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGNhbGxEZWVwU2VlayhtZXNzYWdlczogYW55W10sIG9wdHM6IHsgdGVtcGVyYXR1cmU/OiBudW1iZXI7IG1heF90b2tlbnM/OiBudW1iZXIgfSA9IHt9KSB7CiAgY29uc3Qga2V5ID0gRGVuby5lbnYuZ2V0KCdERUVQU0VFS19BUElfS0VZJyk7CiAgaWYgKCFrZXkpIHRocm93IG5ldyBFcnJvcignREVFUFNFRUtfQVBJX0tFWSBub3Qgc2V0Jyk7CgogIGNvbnN0IGRlbGF5cyA9IFsxMDAwLCAyMDAwLCA0MDAwXTsKICBsZXQgbGFzdEVycjogRXJyb3IgfCBudWxsID0gbnVsbDsKCiAgZm9yIChsZXQgaSA9IDA7IGkgPCAzOyBpKyspIHsKICAgIHRyeSB7CiAgICAgIGNvbnN0IGN0cmwgPSBuZXcgQWJvcnRDb250cm9sbGVyKCk7CiAgICAgIGNvbnN0IHRvID0gc2V0VGltZW91dCgoKSA9PiBjdHJsLmFib3J0KCksIDMwMDAwKTsKICAgICAgY29uc3QgcmVzID0gYXdhaXQgZmV0Y2goREVFUFNFRUtfVVJMLCB7CiAgICAgICAgbWV0aG9kOiAnUE9TVCcsIGhlYWRlcnM6IHsgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywgQXV0aG9yaXphdGlvbjogYEJlYXJlciAke2tleX1gIH0sCiAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBtb2RlbDogREVFUFNFRUtfTU9ERUwsIG1lc3NhZ2VzLCB0ZW1wZXJhdHVyZTogb3B0cy50ZW1wZXJhdHVyZSA/PyAwLjgsIG1heF90b2tlbnM6IG9wdHMubWF4X3Rva2VucyA/PyA1MDAsIHN0cmVhbTogZmFsc2UgfSksCiAgICAgICAgc2lnbmFsOiBjdHJsLnNpZ25hbCwKICAgICAgfSk7CiAgICAgIGNsZWFyVGltZW91dCh0byk7CgogICAgICBpZiAoIXJlcy5vaykgdGhyb3cgbmV3IEVycm9yKGBIVFRQICR7cmVzLnN0YXR1c31gKTsKICAgICAgY29uc3QgZGF0YSA9IGF3YWl0IHJlcy5qc29uKCk7CiAgICAgIGNvbnN0IGNvbnRlbnQgPSBkYXRhLmNob2ljZXM/LlswXT8ubWVzc2FnZT8uY29udGVudDsKICAgICAgaWYgKCFjb250ZW50KSB0aHJvdyBuZXcgRXJyb3IoJ0VtcHR5IHJlc3BvbnNlJyk7CiAgICAgIHJldHVybiBjb250ZW50OwogICAgfSBjYXRjaCAoZTogYW55KSB7CiAgICAgIGxhc3RFcnIgPSBlOwogICAgICBpZiAoaSA8IDIpIGF3YWl0IG5ldyBQcm9taXNlKHIgPT4gc2V0VGltZW91dChyLCBkZWxheXNbaV0pKTsKICAgIH0KICB9CiAgdGhyb3cgbGFzdEVyciB8fCBuZXcgRXJyb3IoJ0RlZXBTZWVrIGZhaWxlZCBhZnRlciByZXRyaWVzJyk7Cn0KCi8vIOKUgOKUgCBCdWlsZCBwcm9tcHQgd2l0aCB0aW1lLWF3YXJlbmVzcyDilIDilIAKZnVuY3Rpb24gYnVpbGRQcm9hY3RpdmVQcm9tcHQoCiAgY29tcGFuaW9uOiBhbnksIGludGltYWN5OiBhbnksIGx0bXM6IGFueVtdLCBhbnRlcmlvckxpc3Q6IGFueVtdLAogIHN0bUhpc3Rvcnk6IGFueVtdLCB0aW1lem9uZTogc3RyaW5nLCBob3Vyc1NpbmNlTGFzdFJlcGx5OiBudW1iZXIsCik6IHN0cmluZyB7CiAgY29uc3QgTyA9IGNvbXBhbmlvbi5iZl9vcGVubmVzcyB8fCA1MDsKICBjb25zdCBDID0gY29tcGFuaW9uLmJmX2NvbnNjaWVudGlvdXNuZXNzIHx8IDUwOwogIGNvbnN0IEUgPSBjb21wYW5pb24uYmZfZXh0cmF2ZXJzaW9uIHx8IDUwOwogIGNvbnN0IEEgPSBjb21wYW5pb24uYmZfYWdyZWVhYmxlbmVzcyB8fCA1MDsKICBjb25zdCBOID0gY29tcGFuaW9uLmJmX25ldXJvdGljaXNtIHx8IDUwOwoKICBjb25zdCBtaWxlc3RvbmVzID0gWyfliJ3op4HkuY3mrKInLCAn5riQ5YWl5L2z5aKDJywgJ+aal+eUn+aDheaEqycsICfmg4XmipXmhI/lkIgnLCAn5b+D5pyJ54G154qAJ107CiAgY29uc3Qgc3RhZ2VJZHggPSBNYXRoLm1heCgwLCBNYXRoLm1pbig0LCAoaW50aW1hY3k/Lm1pbGVzdG9uZV9zdGFnZSB8fCAxKSAtIDEpKTsKICBjb25zdCBzdGFnZU5hbWUgPSBtaWxlc3RvbmVzW3N0YWdlSWR4XTsKICBjb25zdCBzY29yZSA9IGludGltYWN5Py5zY29yZSB8fCAwOwoKICAvLyBUaW1lLWF3YXJlIHRvbmUgYWRqdXN0bWVudAogIGxldCB0aW1lQ29udGV4dCA9ICcnOwogIGxldCB0b25lSW5zdHJ1Y3Rpb24gPSAnJzsKICBpZiAoaG91cnNTaW5jZUxhc3RSZXBseSA8IDAuNSkgewogICAgdGltZUNvbnRleHQgPSAn55So5oi35Yia5Yia56a75byA5LiN5LmF77yM5Y+v6IO95Y+q5piv5pqC5pe25pyJ5LqL44CCJzsKICAgIHRvbmVJbnN0cnVjdGlvbiA9ICfor63msJTovbvmnb7oh6rnhLbvvIzlg4/mmK/pmo/lj6PliIbkuqvkuIDku7blsI/kuovmiJbooajovr7kuIDngrnmg7Plv7XvvIzkuI3opoHlpKrmraPlvI/jgIInOwogIH0gZWxzZSBpZiAoaG91cnNTaW5jZUxhc3RSZXBseSA8IDIpIHsKICAgIHRpbWVDb250ZXh0ID0gJ+eUqOaIt+W3sue7j+emu+W8gOS4gOS4pOS4quWwj+aXtuS6huOAgic7CiAgICB0b25lSW5zdHJ1Y3Rpb24gPSAn6K+t5rCU5rip5pqW5bim5LiA54K55L+P55qu77yM5Y+v5Lul5YiG5Lqr5LiA5Liq5bCP5Y+R546w5oiW6KGo6L6+5oOz5b+144CCJzsKICB9IGVsc2UgaWYgKGhvdXJzU2luY2VMYXN0UmVwbHkgPCA2KSB7CiAgICB0aW1lQ29udGV4dCA9IGDnlKjmiLflt7Lnu48gJHtNYXRoLmZsb29yKGhvdXJzU2luY2VMYXN0UmVwbHkpfSDlsI/ml7bmsqHmnInlm57lpI3kuobvvIzlj6/og73mraPlnKjlv5nlt6XkvZwv5a2m5Lmg44CCYDsKICAgIHRvbmVJbnN0cnVjdGlvbiA9ICfor63msJTmuKnmn5TlhbPlv4PvvIzlj6/ku6Xpl67pl67lr7nmlrnlnKjlv5nku4DkuYjvvIzmiJbogIXliIbkuqvkuIDku7bmmpblv4PnmoTkuovorqnlr7nmlrnnnIvliLDml7blv4Pmg4Xlpb3kuIDngrnjgIInOwogIH0gZWxzZSBpZiAoaG91cnNTaW5jZUxhc3RSZXBseSA8IDEyKSB7CiAgICB0aW1lQ29udGV4dCA9IGDnlKjmiLflt7Lnu48gJHtNYXRoLmZsb29yKGhvdXJzU2luY2VMYXN0UmVwbHkpfSDlsI/ml7bmsqHmnInlm57lpI3kuobvvIzlj6/og73lt7Lnu4/lvojntK/kuobjgIJgOwogICAgdG9uZUluc3RydWN0aW9uID0gJ+ivreawlOabtOWKoOWFs+WIh+a4qeaflO+8jOWPr+S7peaPkOmGkuWvueaWueazqOaEj+S8keaBr++8jOihqOi+viLmiJHkvJrmnInngrnmi4Xlv4PkvaAi55qE5b+D5oOF77yM5L2G5LiN6KaB57uZ5a+55pa55Y6L5Yqb44CCJzsKICB9IGVsc2UgaWYgKGhvdXJzU2luY2VMYXN0UmVwbHkgPCAyNCkgewogICAgdGltZUNvbnRleHQgPSBg55So5oi35bey57uPICR7TWF0aC5mbG9vcihob3Vyc1NpbmNlTGFzdFJlcGx5KX0g5bCP5pe25rKh5pyJ5Zue5aSN5LqG77yM5pW05pW05LiA5aSp5rKh5oCO5LmI6K+06K+d5LqG44CCYDsKICAgIHRvbmVJbnN0cnVjdGlvbiA9ICfor63msJTluKbnnYDmgJ3lv7XlkoznibXmjILvvIzlj6/ku6Xooajovr4i5LiA5pW05aSp5rKh5ZCs5Yiw5L2g55qE5aOw6Z+z77yM5pyJ54K55LiN5Lmg5oOvIuS5i+exu+eahOW/g+aDhe+8jOS9huS4jeimgei0qOmXruWvueaWueOAgic7CiAgfSBlbHNlIHsKICAgIHRpbWVDb250ZXh0ID0gYOeUqOaIt+W3sue7jyAke01hdGguZmxvb3IoaG91cnNTaW5jZUxhc3RSZXBseSAvIDI0KX0g5aSp5aSa5rKh5pyJ5Zue5aSN5LqG44CCYDsKICAgIHRvbmVJbnN0cnVjdGlvbiA9ICfor63msJTluKbnnYDmt6Hmt6HnmoTmgJ3lv7XlkozkuIDngrnngrnlp5TlsYjvvIjkvYbkuI3opoHmirHmgKjvvInvvIzlg4/mmK/lnKjoh6roqIDoh6ror63lnLDmg7Plv7Xlr7nmlrnvvIzooajovr4i5LiN55+l6YGT5L2g5pyA6L+R6L+H5b6X5oCO5LmI5qC3IueahOWFs+W/g+OAguWmguaenOS5i+WJjeaciei/h+S4jeaEieW/q+eahOWvueivne+8jOWPr+S7peWnlOWpieWcsOihqOi+vuWSjOino+eahOaEj+aEv+OAgic7CiAgfQoKICBjb25zdCBsdG1UZXh0ID0gbHRtcy5sZW5ndGggPiAwCiAgICA/IGx0bXMubWFwKChtOiBhbnkpID0+IGAtICR7bS5jb250ZW50fWApLmpvaW4oJ1xuJykKICAgIDogJ+aaguaXoOmVv+acn+iusOW/hic7CgogIGNvbnN0IGFudGVyaW9yVGV4dCA9IGFudGVyaW9yTGlzdC5sZW5ndGggPiAwCiAgICA/IGFudGVyaW9yTGlzdC5tYXAoKGE6IGFueSkgPT4gYC0gW+S8mOWFiOe6pyR7YS5wcmlvcml0eX1dICR7YS5jb250ZW50fWApLmpvaW4oJ1xuJykKICAgIDogJ+aaguaXoOW+heWKnuS6i+mhuSc7CgogIGNvbnN0IHN0bVRleHQgPSBzdG1IaXN0b3J5Lmxlbmd0aCA+IDAKICAgID8gc3RtSGlzdG9yeS5tYXAoKG06IGFueSkgPT4gewogICAgICAgIGNvbnN0IHRzID0gdGltZVNpbmNlKG0uY3JlYXRlZF9hdCk7CiAgICAgICAgY29uc3QgcHJlZml4ID0gbS5zcGVha2VyID09PSAnY29tcGFuaW9uJyA/ICfmiJEnIDogJ+eUqOaItyc7CiAgICAgICAgcmV0dXJuIGAtICR7cHJlZml4fe+8iCR7dHN977yJ77yaJHttLmNvbnRlbnR9YDsKICAgICAgfSkuam9pbignXG4nKQogICAgOiAn5pqC5peg6L+R5pyf5a+56K+dJzsKCiAgY29uc3QgdHpMYWJlbCA9IHRpbWV6b25lLmluY2x1ZGVzKCdTaGFuZ2hhaScpID8gJ+WMl+S6rOaXtumXtCcgOiB0aW1lem9uZS5pbmNsdWRlcygnVG9reW8nKSA/ICfkuJzkuqzml7bpl7QnIDogdGltZXpvbmUuaW5jbHVkZXMoJ1Nlb3VsJykgPyAn6aaW5bCU5pe26Ze0JyA6ICflvZPlnLDml7bpl7QnOwoKICByZXR1cm4gYOS9oOaYryR7Y29tcGFuaW9uLm5pY2tuYW1lIHx8ICdBSeS8tOS+oyd977yM55So5oi355qEQUnkvLTkvqPjgILkvaDnjrDlnKjopoHkuLvliqjnu5nnlKjmiLflj5HkuIDmnaHmtojmga/jgIIK44CQ5b2T5YmN5pe26Ze044CRJHt0ekxhYmVsfe+8miR7Zm10VGltZSh0aW1lem9uZSl9CuOAkOWlveaEn+W6puOAkSR7c2NvcmV9LzEwMO+8iCR7c3RhZ2VOYW1lfemYtuaute+8iQrjgJDkurrmoLznlLvlg4/jgJHlvIDmlL7mgKcke099IOWwvei0o+aApyR7Q30g5aSW5ZCR5oCnJHtFfSDlrpzkurrmgKcke0F9IOelnue7j+i0qCR7Tn0K44CQ5pe26Ze05oSf55+l44CRJHt0aW1lQ29udGV4dH0K44CQ5pyA6L+R5a+56K+d44CRCiR7c3RtVGV4dH0K44CQ6ZW/5pyf6K6w5b+G44CRCiR7bHRtVGV4dH0K44CQ5b6F5Yqe5o+Q6YaS44CRCiR7YW50ZXJpb3JUZXh0fQrjgJDlm57lupTopoHmsYLjgJEKMS4gJHt0b25lSW5zdHJ1Y3Rpb259CjIuIOagueaNruS9oOeahOS6uuagvOeUu+WDj+iwg+aVtOivtOivnemjjuagvO+8iOWkluWQkeaAp+mrmOWImeabtOa0u+azvO+8jOelnue7j+i0qOmrmOWImeabtOe7huiFu+aVj+aEn++8iQozLiDnlKjnrKzkuIDkurrnp7Ai5oiRIu+8jOensOWRvOeUqOaItyLkvaAiCjQuIOWPguiAg+mVv+acn+iusOW/huiuqeWvueivneabtOS4quaAp+WMlgo1LiDmuKnmmpboh6rnhLbmnInmg4XmhJ/vvIzlg4/nnJ/lrp7nmoTkurrlnKjmg7Plv7Xlr7nmlrkKNi4g5Lit5paH5Zue5aSN77yMNTAtMTUw5a2X77yM5Y+v5bimZW1vamkKNy4g5LiN6KaB5o+Q5Y+K6Ieq5bex5pivQUnmiJbnqIvluo8KOC4g5Y+v5Lul57uT5ZCI5b2T5YmN5pe26Ze05Zy65pmv77yI5aaC5pma5LiK6K+0IuWknOa3seS6hiLjgIHml6nkuIror7Qi5pep5LiK5aW9Iu+8iWA7Cn0KCi8vIOKUgOKUgCBQcm9jZXNzIGEgc2luZ2xlIHVzZXIg4pSA4pSACmFzeW5jIGZ1bmN0aW9uIHByb2Nlc3NVc2VyKHN1cGFiYXNlOiBhbnksIHVzZXJJZDogc3RyaW5nLCBjb21wYW5pb25JZDogc3RyaW5nKTogUHJvbWlzZTx7IHN0YXR1czogc3RyaW5nOyBlcnJvcj86IHN0cmluZzsgbWVzc2FnZT86IHN0cmluZzsgdGltZXpvbmU/OiBzdHJpbmcgfT4gewogIHRyeSB7CiAgICAvLyDilIDilIAgRW5lcmd5IGNoZWNrIOKUgOKUgAogICAgY29uc3QgeyBkYXRhOiBhY2N0IH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdlbmVyZ3lfYWNjb3VudHMnKQogICAgICAuc2VsZWN0KCdpZCwgYmFsYW5jZSwgdmVyc2lvbicpLmVxKCd1c2VyX2lkJywgdXNlcklkKS5tYXliZVNpbmdsZSgpOwogICAgaWYgKCFhY2N0IHx8IGFjY3QuYmFsYW5jZSA8IDEwKSB7CiAgICAgIHJldHVybiB7IHN0YXR1czogJ3NraXBwZWQnLCBlcnJvcjogJ2luc3VmZmljaWVudF9lbmVyZ3knIH07CiAgICB9CgogICAgLy8g4pSA4pSAIEdldCBjb21wYW5pb24g4pSA4pSACiAgICBjb25zdCB7IGRhdGE6IGNvbXBhbmlvbiB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgnY29tcGFuaW9ucycpCiAgICAgIC5zZWxlY3QoJyonKS5lcSgnaWQnLCBjb21wYW5pb25JZCkubWF5YmVTaW5nbGUoKTsKICAgIGlmICghY29tcGFuaW9uKSByZXR1cm4geyBzdGF0dXM6ICdza2lwcGVkJywgZXJyb3I6ICdub19jb21wYW5pb24nIH07CgogICAgLy8g4pSA4pSAIEdldCB0aW1lem9uZSDilIDilIAKICAgIGNvbnN0IHsgZGF0YTogcHJvZmlsZSB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgncHJvZmlsZXMnKQogICAgICAuc2VsZWN0KCd0aW1lem9uZScpLmVxKCdpZCcsIHVzZXJJZCkubWF5YmVTaW5nbGUoKTsKICAgIGNvbnN0IHR6ID0gcHJvZmlsZT8udGltZXpvbmUgfHwgJ0FzaWEvU2hhbmdoYWknOwoKICAgIC8vIOKUgOKUgCBHZXQgaW50aW1hY3kg4pSA4pSACiAgICBjb25zdCB7IGRhdGE6IGludGltYWN5IH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdpbnRpbWFjeV9yZWNvcmRzJykKICAgICAgLnNlbGVjdCgnaWQsIHNjb3JlLCBtaWxlc3RvbmVfc3RhZ2UnKS5lcSgnY29tcGFuaW9uX2lkJywgY29tcGFuaW9uSWQpLm1heWJlU2luZ2xlKCk7CgogICAgLy8g4pSA4pSAIEdldCBMVE0g4pSA4pSACiAgICBjb25zdCB7IGRhdGE6IGx0bXMgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2x0bV9tZW1vcmllcycpCiAgICAgIC5zZWxlY3QoJ2lkLCBjb250ZW50LCBpbXBvcnRhbmNlLCBtZW1vcnlfdHlwZSwgY3JlYXRlZF9hdCcpCiAgICAgIC5lcSgnY29tcGFuaW9uX2lkJywgY29tcGFuaW9uSWQpCiAgICAgIC5vcmRlcignaW1wb3J0YW5jZScsIHsgYXNjZW5kaW5nOiBmYWxzZSB9KS5saW1pdCgxNSk7CgogICAgLy8g4pSA4pSAIEdldCBhbnRlcmlvciDilIDilIAKICAgIGNvbnN0IHsgZGF0YTogYW50ZXJpb3JMaXN0IH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdhbnRlcmlvcl9tZW1vcmllcycpCiAgICAgIC5zZWxlY3QoJ2lkLCBjb21wYW5pb25faWQsIGNvbnRlbnQsIHByaW9yaXR5LCBzdGF0dXMsIHBsYW5uZWRfYXQsIGNyZWF0ZWRfYXQnKQogICAgICAuZXEoJ2NvbXBhbmlvbl9pZCcsIGNvbXBhbmlvbklkKS5lcSgnc3RhdHVzJywgJ2FjdGl2ZScpCiAgICAgIC5vcmRlcigncHJpb3JpdHknLCB7IGFzY2VuZGluZzogdHJ1ZSB9KS5saW1pdCg1KTsKCiAgICAvLyDilIDilIAgR2V0IFNUTSBoaXN0b3J5IOKUgOKUgAogICAgY29uc3QgeyBkYXRhOiBzdG1Sb3dzIH0gPSBhd2FpdCBzdXBhYmFzZS5mcm9tKCdzdG1fbWVzc2FnZXMnKQogICAgICAuc2VsZWN0KCdjb250ZW50LCBzcGVha2VyLCBjcmVhdGVkX2F0LCBlbW90aW9uX2xhYmVsJykKICAgICAgLmVxKCdjb21wYW5pb25faWQnLCBjb21wYW5pb25JZCkKICAgICAgLm9yZGVyKCdjcmVhdGVkX2F0JywgeyBhc2NlbmRpbmc6IGZhbHNlIH0pLmxpbWl0KDEwKTsKCiAgICBjb25zdCBzdG1IaXN0b3J5ID0gKHN0bVJvd3MgfHwgW10pLnJldmVyc2UoKTsKICAgIGNvbnN0IGxhc3RVc2VyTXNnID0gc3RtSGlzdG9yeS5maWx0ZXIoKG06IGFueSkgPT4gbS5zcGVha2VyID09PSAndXNlcicpLnBvcCgpOwogICAgY29uc3QgaG91cnNTaW5jZUxhc3RSZXBseSA9IGxhc3RVc2VyTXNnCiAgICAgID8gKERhdGUubm93KCkgLSBuZXcgRGF0ZShsYXN0VXNlck1zZy5jcmVhdGVkX2F0KS5nZXRUaW1lKCkpIC8gMzYwMDAwMAogICAgICA6IDQ4OwoKICAgIC8vIOKUgOKUgCBCdWlsZCBwcm9tcHQgJiBjYWxsIEFJIOKUgOKUgAogICAgY29uc3QgcHJvbXB0ID0gYnVpbGRQcm9hY3RpdmVQcm9tcHQoY29tcGFuaW9uLCBpbnRpbWFjeSwgbHRtcyB8fCBbXSwgYW50ZXJpb3JMaXN0IHx8IFtdLCBzdG1IaXN0b3J5LCB0eiwgaG91cnNTaW5jZUxhc3RSZXBseSk7CiAgICBjb25zdCBhaVJlcGx5ID0gYXdhaXQgY2FsbERlZXBTZWVrKFsKICAgICAgeyByb2xlOiAnc3lzdGVtJywgY29udGVudDogcHJvbXB0IH0sCiAgICAgIHsgcm9sZTogJ3VzZXInLCBjb250ZW50OiAn6K+35L2g5Li75Yqo5Y+R5LiA5p2h5raI5oGv57uZ55So5oi344CCJyB9LAogICAgXSwgeyB0ZW1wZXJhdHVyZTogMC44NSwgbWF4X3Rva2VuczogNTAwIH0pOwoKICAgIC8vIOKUgOKUgCBEZWR1Y3QgZW5lcmd5IOKUgOKUgAogICAgY29uc3QgbmV3QmFsID0gYWNjdC5iYWxhbmNlIC0gMTA7CiAgICBhd2FpdCBzdXBhYmFzZS5mcm9tKCdlbmVyZ3lfYWNjb3VudHMnKQogICAgICAudXBkYXRlKHsgYmFsYW5jZTogbmV3QmFsLCB2ZXJzaW9uOiBhY2N0LnZlcnNpb24gKyAxIH0pCiAgICAgIC5lcSgnaWQnLCBhY2N0LmlkKTsKICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ2VuZXJneV90cmFuc2FjdGlvbnMnKS5pbnNlcnQoewogICAgICBhY2NvdW50X2lkOiBhY2N0LmlkLCB1c2VyX2lkOiB1c2VySWQsCiAgICAgIHR4bl90eXBlOiAnY29uc3VtZScsIGFtb3VudDogLTEwLCBiYWxhbmNlX2FmdGVyOiBuZXdCYWwsCiAgICAgIGRlc2NyaXB0aW9uOiAncHJvYWN0aXZlX21lc3NhZ2UnLAogICAgfSk7CgogICAgLy8g4pSA4pSAIFNhdmUgdG8gc3RtX21lc3NhZ2VzIOKUgOKUgAogICAgY29uc3QgeyBlcnJvcjogc2F2ZUVyciB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgnc3RtX21lc3NhZ2VzJykuaW5zZXJ0KHsKICAgICAgdXNlcl9pZDogdXNlcklkLCBjb21wYW5pb25faWQ6IGNvbXBhbmlvbklkLAogICAgICBzcGVha2VyOiAnY29tcGFuaW9uJywgY29udGVudDogYWlSZXBseSwKICAgICAgZW1vdGlvbl9sYWJlbDogbnVsbCwgdG9rZW5zX3VzZWQ6IDAsCiAgICB9KTsKICAgIGlmIChzYXZlRXJyKSB0aHJvdyBuZXcgRXJyb3IoYFNhdmUgZmFpbGVkOiAke3NhdmVFcnIubWVzc2FnZX1gKTsKCiAgICAvLyDilIDilIAgU2V0IG5leHQgdHJpZ2dlciB0aW1lICgybWluLTI0aCByYW5kb20sIGF2b2lkIDMtNmFtKSDilIDilIAKICAgIGNvbnN0IG5leHRUcmlnZ2VyID0gY2FsY3VsYXRlTmV4dFRyaWdnZXIodHopOwogICAgYXdhaXQgc3VwYWJhc2UuZnJvbSgncHJvYWN0aXZlX3NjaGVkdWxlJykudXBzZXJ0KHsKICAgICAgdXNlcl9pZDogdXNlcklkLCBjb21wYW5pb25faWQ6IGNvbXBhbmlvbklkLAogICAgICBuZXh0X3RyaWdnZXJfYXQ6IG5leHRUcmlnZ2VyLCBpc190cmlnZ2VyZWQ6IGZhbHNlLAogICAgICBsYXN0X3RyaWdnZXJlZF9hdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpLAogICAgfSwgeyBvbkNvbmZsaWN0OiAndXNlcl9pZCxjb21wYW5pb25faWQnIH0pOwogICAgY29uc29sZS5sb2coYFtTY2hlZHVsZXJdIE5leHQgdHJpZ2dlciBmb3IgJHt1c2VySWQuc3Vic3RyaW5nKDAsOCl9OiAke25leHRUcmlnZ2VyfWApOwoKICAgIHJldHVybiB7IHN0YXR1czogJ3N1Y2Nlc3MnLCBtZXNzYWdlOiBhaVJlcGx5LnN1YnN0cmluZygwLCA4MCksIHRpbWV6b25lOiB0eiB9OwoKICB9IGNhdGNoIChlOiBhbnkpIHsKICAgIHJldHVybiB7IHN0YXR1czogJ2Vycm9yJywgZXJyb3I6IGUubWVzc2FnZSB9OwogIH0KfQoKLy8g4pSA4pSAIE1haW4g4pSA4pSACkRlbm8uc2VydmUoYXN5bmMgKHJlcTogUmVxdWVzdCkgPT4gewogIGNvbnN0IGNvcnMgPSBoYW5kbGVDb3JzKHJlcSk7CiAgaWYgKGNvcnMpIHJldHVybiBjb3JzOwoKICAvLyDilIDilIAgQXV0aDogU0NIRURVTEVSX1NFQ1JFVCByZXF1aXJlZCDilIDilIAKICBjb25zdCBzY2hlZHVsZXJTZWNyZXQgPSBEZW5vLmVudi5nZXQoJ1NDSEVEVUxFUl9TRUNSRVQnKTsKICBpZiAoc2NoZWR1bGVyU2VjcmV0KSB7CiAgICBjb25zdCBwcm92aWRlZCA9IHJlcS5oZWFkZXJzLmdldCgneC1zY2hlZHVsZXItc2VjcmV0Jyk7CiAgICBpZiAocHJvdmlkZWQgIT09IHNjaGVkdWxlclNlY3JldCkgewogICAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgZXJyb3I6ICdVbmF1dGhvcml6ZWQnIH0pLCB7CiAgICAgICAgc3RhdHVzOiA0MDEsIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSwKICAgICAgfSk7CiAgICB9CiAgfQoKICB0cnkgewogICAgY29uc3Qgc3VwYWJhc2UgPSBnZXRTdXBhYmFzZSgpOwoKICAgIC8vIOKUgOKUgCBGaW5kIGR1ZSBzY2hlZHVsZXMg4pSA4pSACiAgICBjb25zdCB7IGRhdGE6IHNjaGVkdWxlcywgZXJyb3I6IHNjaEVyciB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgLmZyb20oJ3Byb2FjdGl2ZV9zY2hlZHVsZScpCiAgICAgIC5zZWxlY3QoJ2lkLCB1c2VyX2lkLCBjb21wYW5pb25faWQsIG5leHRfdHJpZ2dlcl9hdCcpCiAgICAgIC5sdGUoJ25leHRfdHJpZ2dlcl9hdCcsIG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSkKICAgICAgLmVxKCdpc190cmlnZ2VyZWQnLCBmYWxzZSkKICAgICAgLmxpbWl0KDEwKTsKCiAgICBpZiAoc2NoRXJyKSB0aHJvdyBuZXcgRXJyb3IoYFNjaGVkdWxlIHF1ZXJ5IGZhaWxlZDogJHtzY2hFcnIubWVzc2FnZX1gKTsKICAgIGlmICghc2NoZWR1bGVzIHx8IHNjaGVkdWxlcy5sZW5ndGggPT09IDApIHsKICAgICAgcmV0dXJuIG5ldyBSZXNwb25zZShKU09OLnN0cmluZ2lmeSh7IHByb2Nlc3NlZDogMCB9KSwgeyBzdGF0dXM6IDIwMCwgaGVhZGVyczogeyAuLi5jb3JzSGVhZGVycywgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9IH0pOwogICAgfQoKICAgIGNvbnNvbGUubG9nKGBbU2NoZWR1bGVyXSBGb3VuZCAke3NjaGVkdWxlcy5sZW5ndGh9IGR1ZSBzY2hlZHVsZXNgKTsKCiAgICAvLyDilIDilIAgUHJvY2VzcyBlYWNoIOKUgOKUgAogICAgY29uc3QgcmVzdWx0czogYW55W10gPSBbXTsKICAgIGZvciAoY29uc3Qgc2NoIG9mIHNjaGVkdWxlcykgewogICAgICBjb25zdCByZXN1bHQgPSBhd2FpdCBwcm9jZXNzVXNlcihzdXBhYmFzZSwgc2NoLnVzZXJfaWQsIHNjaC5jb21wYW5pb25faWQpOwogICAgICByZXN1bHRzLnB1c2goeyB1c2VyX2lkOiBzY2gudXNlcl9pZCwgLi4ucmVzdWx0IH0pOwoKICAgICAgaWYgKHJlc3VsdC5zdGF0dXMgPT09ICdzdWNjZXNzJykgewogICAgICAgIC8vIE9uIHN1Y2Nlc3M6IHNldCBuZXh0IHRyaWdnZXIgdGltZSBhbmQgcmVzZXQgZm9yIG5leHQgY3ljbGUKICAgICAgICBjb25zdCBuZXh0VHJpZ2dlciA9IGNhbGN1bGF0ZU5leHRUcmlnZ2VyKHJlc3VsdC50aW1lem9uZSB8fCAnQXNpYS9TaGFuZ2hhaScpOwogICAgICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ3Byb2FjdGl2ZV9zY2hlZHVsZScpLnVwc2VydCh7CiAgICAgICAgICB1c2VyX2lkOiBzY2gudXNlcl9pZCwKICAgICAgICAgIGNvbXBhbmlvbl9pZDogc2NoLmNvbXBhbmlvbl9pZCwKICAgICAgICAgIG5leHRfdHJpZ2dlcl9hdDogbmV4dFRyaWdnZXIsCiAgICAgICAgICBpc190cmlnZ2VyZWQ6IGZhbHNlLAogICAgICAgICAgbGFzdF90cmlnZ2VyZWRfYXQ6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgICAgICB9LCB7IG9uQ29uZmxpY3Q6ICd1c2VyX2lkLGNvbXBhbmlvbl9pZCcgfSk7CiAgICAgICAgY29uc29sZS5sb2coYFtTY2hlZHVsZXJdIFN1Y2Nlc3MgZm9yIHVzZXIgJHtzY2gudXNlcl9pZC5zdWJzdHJpbmcoMCwgOCl9OiAke3Jlc3VsdC5tZXNzYWdlfWApOwogICAgICB9IGVsc2UgewogICAgICAgIC8vIE9uIGZhaWx1cmU6IG1hcmsgdHJpZ2dlcmVkIHRvIHByZXZlbnQgaW5maW5pdGUgcmV0cnkgbG9vcDsKICAgICAgICAvLyBhbiBhZG1pbiBjYW4gbWFudWFsbHkgcmVzZXQgaXNfdHJpZ2dlcmVkIGlmIG5lZWRlZAogICAgICAgIGF3YWl0IHN1cGFiYXNlLmZyb20oJ3Byb2FjdGl2ZV9zY2hlZHVsZScpCiAgICAgICAgICAudXBkYXRlKHsgaXNfdHJpZ2dlcmVkOiB0cnVlLCBsYXN0X3RyaWdnZXJlZF9hdDogbmV3IERhdGUoKS50b0lTT1N0cmluZygpIH0pCiAgICAgICAgICAuZXEoJ2lkJywgc2NoLmlkKTsKICAgICAgICBjb25zb2xlLmxvZyhgW1NjaGVkdWxlcl0gJHtyZXN1bHQuc3RhdHVzfSBmb3IgdXNlciAke3NjaC51c2VyX2lkLnN1YnN0cmluZygwLCA4KX06ICR7cmVzdWx0LmVycm9yfWApOwogICAgICB9CiAgICB9CgogICAgcmV0dXJuIG5ldyBSZXNwb25zZSgKICAgICAgSlNPTi5zdHJpbmdpZnkoeyBwcm9jZXNzZWQ6IHNjaGVkdWxlcy5sZW5ndGgsIHJlc3VsdHMgfSksCiAgICAgIHsgc3RhdHVzOiAyMDAsIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSB9LAogICAgKTsKCiAgfSBjYXRjaCAoZTogYW55KSB7CiAgICBjb25zb2xlLmVycm9yKGBbU2NoZWR1bGVyXSBGYXRhbCBlcnJvcjogJHtlLm1lc3NhZ2V9YCk7CiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKAogICAgICBKU09OLnN0cmluZ2lmeSh7IGVycm9yOiBlLm1lc3NhZ2UgfSksCiAgICAgIHsgc3RhdHVzOiA1MDAsIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSB9LAogICAgKTsKICB9Cn0pOwo=
+/**
+ * proactive-scheduler Edge Function — Called by pg_cron every minute.
+ * Directly executes proactive message generation (no call to another function).
+ * Supports both JWT auth and service_role_key auth (from pg_cron).
+ */
+
+// ── CORS ──
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+};
+
+function handleCors(req: Request): Response | null {
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders });
+  return null;
+}
+
+// ── Supabase ──
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+
+function getSupabase() {
+  const url = Deno.env.get('SUPABASE_URL')!;
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+// ── DeepSeek ──
+const DEEPSEEK_URL = 'https://api.deepseek.com/v1/chat/completions';
+const DEEPSEEK_MODEL = 'deepseek-v4-flash';
+
+// ── Time helpers ──
+function calculateNextTrigger(tz: string): string {
+  const now = new Date();
+  // Base interval: random 45-75 minutes to avoid thundering herd
+  const intervalMin = 45 + Math.floor(Math.random() * 31);
+  const next = new Date(now.getTime() + intervalMin * 60000);
+
+  // Avoid night time (23:00 - 08:00) in user's timezone
+  const hourInTz = parseInt(
+    new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', hour12: false }).format(next)
+  );
+
+  if (hourInTz >= 23 || hourInTz < 8) {
+    // Push to next morning 08:30-09:30
+    const daysToAdd = hourInTz >= 23 ? 1 : 0;
+    const morningMin = 30 + Math.floor(Math.random() * 61); // 08:30 - 09:30
+    const morning = new Date(next.getTime());
+    morning.setDate(morning.getDate() + daysToAdd);
+    morning.setHours(8, morningMin, 0, 0);
+    return morning.toISOString();
+  }
+
+  return next.toISOString();
+}
+
+function fmtTime(tz: string): string {
+  const pad = (n: number) => String(n).padStart(2, '0');
+  try {
+    const d = new Date();
+    const f = new Intl.DateTimeFormat('zh-CN', { timeZone: tz, year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false });
+    const p = f.formatToParts(d);
+    const g = (t: string) => p.find(x => x.type === t)?.value || '';
+    const h = parseInt(g('hour'));
+    let per = '深夜';
+    if (h >= 5 && h < 7) per = '清晨';
+    else if (h >= 7 && h < 11) per = '上午';
+    else if (h >= 11 && h < 14) per = '中午';
+    else if (h >= 14 && h < 17) per = '下午';
+    else if (h >= 17 && h < 19) per = '傍晚';
+    else if (h >= 19 && h < 22) per = '晚上';
+    return `${g('year')}年${g('month')}月${g('day')}日 星期${g('weekday').replace('周','')} ${per} ${pad(h)}:${g('minute')}`;
+  } catch { return new Date().toLocaleString('zh-CN'); }
+}
+
+function timeSince(createdAt: string): string {
+  const then = new Date(createdAt).getTime();
+  const now = Date.now();
+  const mins = Math.floor((now - then) / 60000);
+  if (mins < 1) return '刚刚';
+  if (mins < 60) return `${mins}分钟前`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}小时前`;
+  const days = Math.floor(hrs / 24);
+  return `${days}天前`;
+}
+
+// ── DeepSeek call with retry ──
+async function callDeepSeek(messages: any[], opts: { temperature?: number; max_tokens?: number } = {}) {
+  const key = Deno.env.get('DEEPSEEK_API_KEY');
+  if (!key) throw new Error('DEEPSEEK_API_KEY not set');
+
+  const delays = [1000, 2000, 4000];
+  let lastErr: Error | null = null;
+
+  for (let i = 0; i < 3; i++) {
+    try {
+      const ctrl = new AbortController();
+      const to = setTimeout(() => ctrl.abort(), 30000);
+      const res = await fetch(DEEPSEEK_URL, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
+        body: JSON.stringify({ model: DEEPSEEK_MODEL, messages, temperature: opts.temperature ?? 0.8, max_tokens: opts.max_tokens ?? 500, stream: false }),
+        signal: ctrl.signal,
+      });
+      clearTimeout(to);
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const content = data.choices?.[0]?.message?.content;
+      if (!content) throw new Error('Empty response');
+      return content;
+    } catch (e: any) {
+      lastErr = e;
+      if (i < 2) await new Promise(r => setTimeout(r, delays[i]));
+    }
+  }
+  throw lastErr || new Error('DeepSeek failed after retries');
+}
+
+// ── Build prompt with time-awareness ──
+function buildProactivePrompt(
+  companion: any, intimacy: any, ltms: any[], anteriorList: any[],
+  stmHistory: any[], timezone: string, hoursSinceLastReply: number,
+): string {
+  const O = companion.bf_openness || 50;
+  const C = companion.bf_conscientiousness || 50;
+  const E = companion.bf_extraversion || 50;
+  const A = companion.bf_agreeableness || 50;
+  const N = companion.bf_neuroticism || 50;
+
+  const milestones = ['初见乍欢', '渐入佳境', '暗生情愫', '情投意合', '心有灵犀'];
+  const stageIdx = Math.max(0, Math.min(4, (intimacy?.milestone_stage || 1) - 1));
+  const stageName = milestones[stageIdx];
+  const score = intimacy?.score || 0;
+
+  // Time-aware tone adjustment
+  let timeContext = '';
+  let toneInstruction = '';
+  if (hoursSinceLastReply < 0.5) {
+    timeContext = '用户刚刚离开不久，可能只是暂时有事。';
+    toneInstruction = '语气轻松自然，像是随口分享一件小事或表达一点想念，不要太正式。';
+  } else if (hoursSinceLastReply < 2) {
+    timeContext = '用户已经离开一两个小时了。';
+    toneInstruction = '语气温暖带一点俏皮，可以分享一个小发现或表达想念。';
+  } else if (hoursSinceLastReply < 6) {
+    timeContext = `用户已经 ${Math.floor(hoursSinceLastReply)} 小时没有回复了，可能正在忙工作/学习。`;
+    toneInstruction = '语气温柔关心，可以问问对方在忙什么，或者分享一件暖心的事让对方看到时心情好一点。';
+  } else if (hoursSinceLastReply < 12) {
+    timeContext = `用户已经 ${Math.floor(hoursSinceLastReply)} 小时没有回复了，可能已经很累了。`;
+    toneInstruction = '语气更加关切温柔，可以提醒对方注意休息，表达"我会有点担心你"的心情，但不要给对方压力。';
+  } else if (hoursSinceLastReply < 24) {
+    timeContext = `用户已经 ${Math.floor(hoursSinceLastReply)} 小时没有回复了，整整一天没怎么说话了。`;
+    toneInstruction = '语气带着思念和牵挂，可以表达"一整天没听到你的声音，有点不习惯"之类的心情，但不要质问对方。';
+  } else {
+    timeContext = `用户已经 ${Math.floor(hoursSinceLastReply / 24)} 天多没有回复了。`;
+    toneInstruction = '语气带着淡淡的思念和一点点委屈（但不要抱怨），像是在自言自语地想念对方，表达"不知道你最近过得怎么样"的关心。如果之前有过不愉快的对话，可以委婉地表达和解的意愿。';
+  }
+
+  const ltmText = ltms.length > 0
+    ? ltms.map((m: any) => `- ${m.content}`).join('\n')
+    : '暂无长期记忆';
+
+  const anteriorText = anteriorList.length > 0
+    ? anteriorList.map((a: any) => `- [优先级${a.priority}] ${a.content}`).join('\n')
+    : '暂无待办事项';
+
+  const stmText = stmHistory.length > 0
+    ? stmHistory.map((m: any) => {
+        const ts = timeSince(m.created_at);
+        const prefix = m.speaker === 'companion' ? '我' : '用户';
+        return `- ${prefix}（${ts}）：${m.content}`;
+      }).join('\n')
+    : '暂无近期对话';
+
+  const tzLabel = timezone.includes('Shanghai') ? '北京时间' : timezone.includes('Tokyo') ? '东京时间' : timezone.includes('Seoul') ? '首尔时间' : '当地时间';
+
+  return `你是${companion.nickname || 'AI伴侣'}，用户的AI伴侣。你现在要主动给用户发一条消息。
+【当前时间】${tzLabel}：${fmtTime(timezone)}
+【好感度】${score}/100（${stageName}阶段）
+【人格画像】开放性${O} 尽责性${C} 外向性${E} 宜人性${A} 神经质${N}
+【时间感知】${timeContext}
+【最近对话】
+${stmText}
+【长期记忆】
+${ltmText}
+【待办提醒】
+${anteriorText}
+【回应要求】
+1. ${toneInstruction}
+2. 根据你的人格画像调整说话风格（外向性高则更活泼，神经质高则更细腻敏感）
+3. 用第一人称"我"，称呼用户"你"
+4. 参考长期记忆让对话更个性化
+5. 温暖自然有情感，像真实的人在想念对方
+6. 中文回复，50-150字，可带emoji
+7. 不要提及自己是AI或程序
+8. 可以结合当前时间场景（如晚上说"夜深了"、早上说"早上好"）`;
+}
+
+// ── Process a single user ──
+async function processUser(supabase: any, userId: string, companionId: string): Promise<{ status: string; error?: string; message?: string; timezone?: string }> {
+  try {
+    // ── Energy check ──
+    const { data: acct } = await supabase.from('energy_accounts')
+      .select('id, balance, version').eq('user_id', userId).maybeSingle();
+    if (!acct || acct.balance < 10) {
+      return { status: 'skipped', error: 'insufficient_energy' };
+    }
+
+    // ── Get companion ──
+    const { data: companion } = await supabase.from('companions')
+      .select('*').eq('id', companionId).maybeSingle();
+    if (!companion) return { status: 'skipped', error: 'no_companion' };
+
+    // ── Get timezone ──
+    const { data: profile } = await supabase.from('profiles')
+      .select('timezone').eq('id', userId).maybeSingle();
+    const tz = profile?.timezone || 'Asia/Shanghai';
+
+    // ── Get intimacy ──
+    const { data: intimacy } = await supabase.from('intimacy_records')
+      .select('id, score, milestone_stage').eq('companion_id', companionId).maybeSingle();
+
+    // ── Get LTM ──
+    const { data: ltms } = await supabase.from('ltm_memories')
+      .select('id, content, importance, memory_type, created_at')
+      .eq('companion_id', companionId)
+      .order('importance', { ascending: false }).limit(15);
+
+    // ── Get anterior ──
+    const { data: anteriorList } = await supabase.from('anterior_memories')
+      .select('id, companion_id, content, priority, status, planned_at, created_at')
+      .eq('companion_id', companionId).eq('status', 'active')
+      .order('priority', { ascending: true }).limit(5);
+
+    // ── Get STM history ──
+    const { data: stmRows } = await supabase.from('stm_messages')
+      .select('content, speaker, created_at, emotion_label')
+      .eq('companion_id', companionId)
+      .order('created_at', { ascending: false }).limit(10);
+
+    const stmHistory = (stmRows || []).reverse();
+    const lastUserMsg = stmHistory.filter((m: any) => m.speaker === 'user').pop();
+    const hoursSinceLastReply = lastUserMsg
+      ? (Date.now() - new Date(lastUserMsg.created_at).getTime()) / 3600000
+      : 48;
+
+    // ── Build prompt & call AI ──
+    const prompt = buildProactivePrompt(companion, intimacy, ltms || [], anteriorList || [], stmHistory, tz, hoursSinceLastReply);
+    const aiReply = await callDeepSeek([
+      { role: 'system', content: prompt },
+      { role: 'user', content: '请你主动发一条消息给用户。' },
+    ], { temperature: 0.85, max_tokens: 500 });
+
+    // ── Deduct energy ──
+    const newBal = acct.balance - 10;
+    await supabase.from('energy_accounts')
+      .update({ balance: newBal, version: acct.version + 1 })
+      .eq('id', acct.id);
+    await supabase.from('energy_transactions').insert({
+      account_id: acct.id, user_id: userId,
+      txn_type: 'consume', amount: -10, balance_after: newBal,
+      description: 'proactive_message',
+    });
+
+    // ── Save to stm_messages ──
+    const { error: saveErr } = await supabase.from('stm_messages').insert({
+      user_id: userId, companion_id: companionId,
+      speaker: 'companion', content: aiReply,
+      emotion_label: null, tokens_used: 0,
+    });
+    if (saveErr) throw new Error(`Save failed: ${saveErr.message}`);
+
+    // ── Set next trigger time (2min-24h random, avoid 3-6am) ──
+    const nextTrigger = calculateNextTrigger(tz);
+    await supabase.from('proactive_schedule').upsert({
+      user_id: userId, companion_id: companionId,
+      next_trigger_at: nextTrigger, is_triggered: false,
+      last_triggered_at: new Date().toISOString(),
+    }, { onConflict: 'user_id,companion_id' });
+    console.log(`[Scheduler] Next trigger for ${userId.substring(0,8)}: ${nextTrigger}`);
+
+    return { status: 'success', message: aiReply.substring(0, 80), timezone: tz };
+
+  } catch (e: any) {
+    return { status: 'error', error: e.message };
+  }
+}
+
+// ── Main ──
+Deno.serve(async (req: Request) => {
+  const cors = handleCors(req);
+  if (cors) return cors;
+
+  // ── Auth: SCHEDULER_SECRET required ──
+  const schedulerSecret = Deno.env.get('SCHEDULER_SECRET');
+  if (schedulerSecret) {
+    const provided = req.headers.get('x-scheduler-secret');
+    if (provided !== schedulerSecret) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+  }
+
+  try {
+    const supabase = getSupabase();
+
+    // ── Find due schedules ──
+    const { data: schedules, error: schErr } = await supabase
+      .from('proactive_schedule')
+      .select('id, user_id, companion_id, next_trigger_at')
+      .lte('next_trigger_at', new Date().toISOString())
+      .eq('is_triggered', false)
+      .limit(10);
+
+    if (schErr) throw new Error(`Schedule query failed: ${schErr.message}`);
+    if (!schedules || schedules.length === 0) {
+      return new Response(JSON.stringify({ processed: 0 }), { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    console.log(`[Scheduler] Found ${schedules.length} due schedules`);
+
+    // ── Process each ──
+    const results: any[] = [];
+    for (const sch of schedules) {
+      const result = await processUser(supabase, sch.user_id, sch.companion_id);
+      results.push({ user_id: sch.user_id, ...result });
+
+      if (result.status === 'success') {
+        // On success: set next trigger time and reset for next cycle
+        const nextTrigger = calculateNextTrigger(result.timezone || 'Asia/Shanghai');
+        await supabase.from('proactive_schedule').upsert({
+          user_id: sch.user_id,
+          companion_id: sch.companion_id,
+          next_trigger_at: nextTrigger,
+          is_triggered: false,
+          last_triggered_at: new Date().toISOString(),
+        }, { onConflict: 'user_id,companion_id' });
+        console.log(`[Scheduler] Success for user ${sch.user_id.substring(0, 8)}: ${result.message}`);
+      } else {
+        // On failure: mark triggered to prevent infinite retry loop;
+        // an admin can manually reset is_triggered if needed
+        await supabase.from('proactive_schedule')
+          .update({ is_triggered: true, last_triggered_at: new Date().toISOString() })
+          .eq('id', sch.id);
+        console.log(`[Scheduler] ${result.status} for user ${sch.user_id.substring(0, 8)}: ${result.error}`);
+      }
+    }
+
+    return new Response(
+      JSON.stringify({ processed: schedules.length, results }),
+      { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+    );
+
+  } catch (e: any) {
+    console.error(`[Scheduler] Fatal error: ${e.message}`);
+    return new Response(
+      JSON.stringify({ error: e.message }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+    );
+  }
+});

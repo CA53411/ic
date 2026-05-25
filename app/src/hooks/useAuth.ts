@@ -1,1 +1,73 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgc3VwYWJhc2UgfSBmcm9tICdAL2xpYi9zdXBhYmFzZSc7CgppbnRlcmZhY2UgQXV0aFN0YXRlIHsKICBpc0F1dGhlbnRpY2F0ZWQ6IGJvb2xlYW47CiAgdXNlcjogeyBpZDogc3RyaW5nOyBlbWFpbDogc3RyaW5nIH0gfCBudWxsOwogIGhhc0NvbXBhbmlvbjogYm9vbGVhbjsKICBpc0xvYWRpbmc6IGJvb2xlYW47Cn0KCmV4cG9ydCBmdW5jdGlvbiB1c2VBdXRoKCk6IEF1dGhTdGF0ZSB7CiAgY29uc3QgW3N0YXRlLCBzZXRTdGF0ZV0gPSB1c2VTdGF0ZTxBdXRoU3RhdGU+KHsKICAgIGlzQXV0aGVudGljYXRlZDogZmFsc2UsCiAgICB1c2VyOiBudWxsLAogICAgaGFzQ29tcGFuaW9uOiBmYWxzZSwKICAgIGlzTG9hZGluZzogdHJ1ZSwKICB9KTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIGxldCBtb3VudGVkID0gdHJ1ZTsKCiAgICBhc3luYyBmdW5jdGlvbiBjaGVja0F1dGgoKSB7CiAgICAgIHRyeSB7CiAgICAgICAgY29uc3QgeyBkYXRhOiB7IHVzZXIgfSB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRVc2VyKCk7CiAgICAgICAgaWYgKCFtb3VudGVkKSByZXR1cm47CgogICAgICAgIGlmICghdXNlcikgewogICAgICAgICAgc2V0U3RhdGUoeyBpc0F1dGhlbnRpY2F0ZWQ6IGZhbHNlLCB1c2VyOiBudWxsLCBoYXNDb21wYW5pb246IGZhbHNlLCBpc0xvYWRpbmc6IGZhbHNlIH0pOwogICAgICAgICAgcmV0dXJuOwogICAgICAgIH0KCiAgICAgICAgLy8gQ2hlY2sgaWYgdXNlciBoYXMgYSBjb21wYW5pb24KICAgICAgICBjb25zdCB7IGRhdGE6IGNvbXBhbmlvbiB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgICAgIC5mcm9tKCdjb21wYW5pb25zJykKICAgICAgICAgIC5zZWxlY3QoJ2lkJykKICAgICAgICAgIC5lcSgndXNlcl9pZCcsIHVzZXIuaWQpCiAgICAgICAgICAubWF5YmVTaW5nbGUoKTsKCiAgICAgICAgaWYgKCFtb3VudGVkKSByZXR1cm47CgogICAgICAgIHNldFN0YXRlKHsKICAgICAgICAgIGlzQXV0aGVudGljYXRlZDogdHJ1ZSwKICAgICAgICAgIHVzZXI6IHsgaWQ6IHVzZXIuaWQsIGVtYWlsOiB1c2VyLmVtYWlsIHx8ICcnIH0sCiAgICAgICAgICBoYXNDb21wYW5pb246ICEhY29tcGFuaW9uLAogICAgICAgICAgaXNMb2FkaW5nOiBmYWxzZSwKICAgICAgICB9KTsKICAgICAgfSBjYXRjaCB7CiAgICAgICAgaWYgKCFtb3VudGVkKSByZXR1cm47CiAgICAgICAgc2V0U3RhdGUoeyBpc0F1dGhlbnRpY2F0ZWQ6IGZhbHNlLCB1c2VyOiBudWxsLCBoYXNDb21wYW5pb246IGZhbHNlLCBpc0xvYWRpbmc6IGZhbHNlIH0pOwogICAgICB9CiAgICB9CgogICAgY2hlY2tBdXRoKCk7CgogICAgLy8gTGlzdGVuIGZvciBhdXRoIHN0YXRlIGNoYW5nZXMKICAgIGNvbnN0IHsgZGF0YTogeyBzdWJzY3JpcHRpb24gfSB9ID0gc3VwYWJhc2UuYXV0aC5vbkF1dGhTdGF0ZUNoYW5nZSgoX2V2ZW50LCBzZXNzaW9uKSA9PiB7CiAgICAgIGlmICghbW91bnRlZCkgcmV0dXJuOwogICAgICBpZiAoIXNlc3Npb24/LnVzZXIpIHsKICAgICAgICBzZXRTdGF0ZSh7IGlzQXV0aGVudGljYXRlZDogZmFsc2UsIHVzZXI6IG51bGwsIGhhc0NvbXBhbmlvbjogZmFsc2UsIGlzTG9hZGluZzogZmFsc2UgfSk7CiAgICAgICAgcmV0dXJuOwogICAgICB9CiAgICAgIC8vIFJlLWNoZWNrIGNvbXBhbmlvbiBvbiBhdXRoIGNoYW5nZQogICAgICBjaGVja0F1dGgoKTsKICAgIH0pOwoKICAgIHJldHVybiAoKSA9PiB7CiAgICAgIG1vdW50ZWQgPSBmYWxzZTsKICAgICAgc3Vic2NyaXB0aW9uLnVuc3Vic2NyaWJlKCk7CiAgICB9OwogIH0sIFtdKTsKCiAgcmV0dXJuIHN0YXRlOwp9Cg==
+import { useState, useEffect } from 'react';
+import { supabase } from '@/lib/supabase';
+
+interface AuthState {
+  isAuthenticated: boolean;
+  user: { id: string; email: string } | null;
+  hasCompanion: boolean;
+  isLoading: boolean;
+}
+
+export function useAuth(): AuthState {
+  const [state, setState] = useState<AuthState>({
+    isAuthenticated: false,
+    user: null,
+    hasCompanion: false,
+    isLoading: true,
+  });
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function checkAuth() {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!mounted) return;
+
+        if (!user) {
+          setState({ isAuthenticated: false, user: null, hasCompanion: false, isLoading: false });
+          return;
+        }
+
+        // Check if user has a companion
+        const { data: companion } = await supabase
+          .from('companions')
+          .select('id')
+          .eq('user_id', user.id)
+          .maybeSingle();
+
+        if (!mounted) return;
+
+        setState({
+          isAuthenticated: true,
+          user: { id: user.id, email: user.email || '' },
+          hasCompanion: !!companion,
+          isLoading: false,
+        });
+      } catch {
+        if (!mounted) return;
+        setState({ isAuthenticated: false, user: null, hasCompanion: false, isLoading: false });
+      }
+    }
+
+    checkAuth();
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!mounted) return;
+      if (!session?.user) {
+        setState({ isAuthenticated: false, user: null, hasCompanion: false, isLoading: false });
+        return;
+      }
+      // Re-check companion on auth change
+      checkAuth();
+    });
+
+    return () => {
+      mounted = false;
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  return state;
+}

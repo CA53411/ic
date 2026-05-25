@@ -1,1 +1,206 @@
-IyBNZW1vcnkgUGFnZSAobWVtb3J5Lm1kKQoKVGhlIHN3ZWV0IG1lbW9yeSBjYWxlbmRhciDigJQgYSA3w5c1IGdyaWQgY2FsZW5kYXIgdmlldyB3aGVyZSB1c2VycyBjYW4gYnJvd3NlIHRoZWlyIHNoYXJlZCBoaXN0b3J5IHdpdGggdGhlaXIgQUkgY29tcGFuaW9uLiBTcGVjaWFsIGRhdGVzIGFyZSBoaWdobGlnaHRlZCB3aXRoIG1lYW5pbmdmdWwgY29sb3JzOiBnb2xkIGZvciBtaWxlc3RvbmVzLCBwdXJwbGUgZm9yIGFudGVyaW9yIG1lbW9yaWVzLCBwaW5rIGZvciBsb25nLXRlcm0gbWVtb3JpZXMuIENsaWNraW5nIGEgZGF0ZSBvcGVucyBhIGRldGFpbCBzaWRlYmFyIHNob3dpbmcgdGhlIGRheSdzIGNvbnZlcnNhdGlvbnMgYW5kIGV2ZW50cy4KCnwgUHJvcGVydHkgfCBWYWx1ZSB8CnwtLS0tLS0tLS0tfC0tLS0tLS18CnwgUm91dGUgfCBgL21lbW9yeWAgfAp8IFNlY3Rpb25zIHwgMyB8CnwgUHVycG9zZSB8IEJyb3dzZSBzaGFyZWQgbWVtb3JpZXMgd2l0aCBjb21wYW5pb24gdmlhIGNhbGVuZGFyIHZpZXcgfAoKLS0tCgojIyBQYWdlIExheW91dAoKU3RhbmRhcmQgYXBwIGxheW91dDogc2lkZWJhciArIGNvbnRlbnQgYXJlYSB3aXRoIGEgZGV0YWlsIGRyYXdlciBvbiB0aGUgcmlnaHQuCgpgYGAK4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiBTaWRlYmFyIOKUgiAgICAgICAgQ2FsZW5kYXIgQXJlYSAgICAgICAgICAgICAg4pSCIERldGFpbCBEcmF3ZXIg4pSCCuKUgiAyMjBweCAgIOKUgiAgICAgICAgZmxleC0xICAgICAgICAgICAgICAgICAgICAg4pSCIChjb2xsYXBzaWJsZSkg4pSCCuKUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCIDM2MHB4ICAgICAgICAg4pSCCuKUgiBMb2dvICAgIOKUgiAgVG9wIEJhcjogIueUnOicnOiusOW/hiIgICAgICAgICAgICAgICDilIIgICAgICAgICAgICAgICDilIIK4pSCIE5hdiAgICAg4pSCICArIE1vbnRoIE5hdmlnYXRpb24gICAgICAgICAgICAgICDilIIgRGF0ZSBEZXRhaWxzICDilIIK4pSCIEl0ZW1zICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgKG9wZW5zIG9uICAgICDilIIK4pSCIFVzZXIgICAg4pSCICDilIzilIDilIDilKzilIDilIDilKzilIDilIDilKzilIDilIDilKzilIDilIDilKzilIDilIDilKzilIDilIDilJAgICAgICAgICDilIIgIGRhdGUgY2xpY2spICDilIIK4pSCIFByb2ZpbGUg4pSCICDilIJNb27ilIJUdWXilIJXZWTilIJUaHXilIJGcmnilIJTYXTilIJTdW7ilIIgICAgICAgICDilIIgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICDilJzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilKQgICAgICAgICDilIIgTWVtb3J5IExpc3QgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgIOKUgiAg4pSCICDilIIgIOKUgiAg4pSCIDHilIIgMuKUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUnOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUpCAgICAgICAgIOKUgiBNaWxlc3RvbmUgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUgiAz4pSCIDTilIIgNeKUgiA24pSCIDfilIIgOOKUgiA54pSCICAgICAgICAg4pSCIEluZm8gICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSc4pSA4pSA4pS84pSA4pSA4pS84pSA4pSA4pS84pSA4pSA4pS84pSA4pSA4pS84pSA4pSA4pS84pSA4pSA4pSkICAgICAgICAg4pSCICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSCMTDilIIxMeKUgjEy4pSCMTPilIIxNOKUgjE14pSCMTbilIIgICAgICAgICDilIIgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICDilJzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilLzilIDilIDilKQgICAgICAgICDilIIgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIxN+KUgjE44pSCMTnilIIyMOKUgjIx4pSCMjLilIIyM+KUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUnOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUvOKUgOKUgOKUpCAgICAgICAgIOKUgiAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUgjI04pSCMjXilIIyNuKUgjI34pSCMjjilIIyOeKUgjMw4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSU4pSA4pSA4pS04pSA4pSA4pS04pSA4pSA4pS04pSA4pSA4pS04pSA4pSA4pS04pSA4pSA4pSYICAgICAgICAg4pSCICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAgTGVnZW5kICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCICAgICAgICAgICAgICAg4pSCCuKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmApgYGAKCi0tLQoKIyMgU2VjdGlvbiAxOiBUb3AgQmFyCgojIyMgRWxlbWVudHMKLSAqKkxlZnQqKjogIueUnOicnOiusOW/hiIgaW4gYGgyYCwgd2l0aCBgQ2FsZW5kYXJgIGljb24gKDIwcHgsIGBwaW5rLTQwMGApCi0gKipDZW50ZXIqKjogTW9udGggTmF2aWdhdGlvbgogIC0gYENoZXZyb25MZWZ0YCBidXR0b24g4oCUIHByZXZpb3VzIG1vbnRoCiAgLSBNb250aC9ZZWFyIGRpc3BsYXk6ICIyMDI05bm0MTLmnIgiIGluIGBoM2AKICAtIGBDaGV2cm9uUmlnaHRgIGJ1dHRvbiDigJQgbmV4dCBtb250aAogIC0gIuWbnuWIsOS7iuWkqSIgbGluay9idXR0b24gaW4gYGJvZHktc21gLCBgcGluay01MDBgLCBiZXNpZGUgbmF2aWdhdGlvbgotICoqUmlnaHQqKjogIuS4jiDlsI/mqLEg55qEIDQ1IOWkqeiusOW/hiIgaW4gYGJvZHktc21gLCBgdGV4dC1zZWNvbmRhcnlgCgojIyMgQW5pbWF0aW9ucwotIFRpdGxlOiBmYWRlIGluLCAzMDBtcwotIE1vbnRoIG5hdmlnYXRpb246IGZhZGUgaW4sIDIwMG1zIGRlbGF5Ci0gTW9udGggdHJhbnNpdGlvbjogY2FsZW5kYXIgZ3JpZCBjcm9zcy1mYWRlcyAob3V0Z29pbmcgZmFkZXMgMTUwbXMsIGluY29taW5nIGZhZGVzIGluIDIwMG1zKQoKLS0tCgojIyBTZWN0aW9uIDI6IENhbGVuZGFyIEdyaWQKCiMjIyBPdmVydmlldwpBIDfDlzUgZGF5IGdyaWQgc2hvd2luZyB0aGUgY3VycmVudCBtb250aC4gRWFjaCBkYXkgY2VsbCBjYW4gZGlzcGxheSBpbmRpY2F0b3JzIGZvciBkaWZmZXJlbnQgbWVtb3J5IHR5cGVzLiBUaGUgZGVzaWduIGlzIGNsZWFuLCB3YXJtLCBhbmQgZW1vdGlvbmFsbHkgcmVzb25hbnQuCgojIyMgTGF5b3V0Ci0gR3JpZDogNyBjb2x1bW5zIChNb24tU3VuKSwgNSByb3dzCi0gR2FwOiA4cHgKLSBQYWRkaW5nOiAyNHB4CgojIyMgRGF5IEhlYWRlciBSb3cKLSA3IGRheSBsYWJlbHM6IOS4gCDkuowg5LiJIOWbmyDkupQg5YWtIOaXpQotIEZvbnQ6IGBsYWJlbGAgdG9rZW4sIGB0ZXh0LW11dGVkYAotIEhlaWdodDogMzZweCwgY2VudGVyZWQKLSBXZWVrZW5kIGNvbHVtbnMgKOWFrSDml6UpOiBzbGlnaHQgYHBpbmstNTBgIGJhY2tncm91bmQgdGludCBvbiBoZWFkZXIKCiMjIyBEYXkgQ2VsbCBEZXNpZ24KCkVhY2ggY2VsbDoKLSAqKkFzcGVjdCByYXRpbyoqOiB+MToxIChzcXVhcmUtaXNoKQotICoqQmFja2dyb3VuZCoqOiB3aGl0ZSwgYHJhZGl1cy1tZGAKLSAqKkJvcmRlcioqOiAxcHggYHBpbmstNTBgCi0gKipQYWRkaW5nKio6IDhweAotICoqQ29udGVudCBsYXlvdXQqKjoKICAtIFRvcC1sZWZ0OiBkYXkgbnVtYmVyLCBgbnVtYmVyLXNtYCAoMTRweCksIGB0ZXh0LXByaW1hcnlgCiAgLSBDZW50ZXI6IG1lbW9yeSBpbmRpY2F0b3JzIChjb2xvcmVkIGRvdHMpCiAgLSBCb3R0b206IGJyaWVmIGV2ZW50IGhpbnQgKGlmIGFueSkKCiMjIyMgRGF0ZSBOdW1iZXIgU3RhdGVzCi0gKipDdXJyZW50IG1vbnRoKio6IGB0ZXh0LXByaW1hcnlgLCBub3JtYWwgd2VpZ2h0Ci0gKipPdGhlciBtb250aHMqKiAocGFkZGluZyBkYXlzKTogYHRleHQtbXV0ZWRgLCA2MCUgb3BhY2l0eQotICoqVG9kYXkqKjogYHBpbmstNDAwYCBjaXJjbGUgYmcgKDI0cHgpLCB3aGl0ZSBudW1iZXIgdGV4dCwgYm9sZAotICoqU2VsZWN0ZWQqKjogYHNpZGViYXItYmdgIGJvcmRlciAycHggKyBzdWJ0bGUgYHNoYWRvdy1nbG93YAoKIyMjIyBNZW1vcnkgVHlwZSBJbmRpY2F0b3JzCgpDb2xvcmVkIGRvdHMgcG9zaXRpb25lZCBhdCBib3R0b20tY2VudGVyIG9mIGNlbGwgKGhvcml6b250YWwgcm93LCBtYXggMyBkb3RzKToKCnwgVHlwZSB8IENvbG9yIHwgRG90IFNpemUgfCBNZWFuaW5nIHwKfC0tLS0tLXwtLS0tLS0tfC0tLS0tLS0tLS18LS0tLS0tLS0tfAp8IE1pbGVzdG9uZSB8IGBnb2xkYCAoI0Q0QUYzNykgfCA4cHggfCBSZWxhdGlvbnNoaXAgbWlsZXN0b25lIHJlYWNoZWQgfAp8IEFudGVyaW9yIE1lbW9yeSB8IGBwdXJwbGUtbWVtb3J5YCAoI0M4QThFOSkgfCA2cHggfCBTaG9ydC10ZXJtL3dvcmtpbmcgbWVtb3J5IHwKfCBMVE0gfCBgcGluay1tZW1vcnlgICgjRkZCNkMxKSB8IDZweCB8IExvbmctdGVybSBtZW1vcnkgZm9ybWVkIHwKCi0gTXVsdGlwbGUgZG90cyBzdGFjayBob3Jpem9udGFsbHkgd2l0aCA0cHggZ2FwCi0gT24gaG92ZXI6IHRvb2x0aXAgc2hvd3MgIljkuKrph4znqIvnopEiIC8gIljmnaHlt6XkvZzorrDlv4YiIC8gIljmnaHplb/mnJ/orrDlv4YiCgojIyMjIENlbGwgSG92ZXIKLSBgc2hhZG93LW1kYCArIGB0cmFuc2xhdGVZKC0ycHgpYCwgMjAwbXMKLSBCYWNrZ3JvdW5kOiBgcGluay01MGAsIDE1MG1zCi0gQ3Vyc29yOiBwb2ludGVyCgojIyMjIEV2ZW50IFByZXZpZXcgKGluIGNlbGwpCi0gSWYgYSBkYXkgaGFzIGEgbWlsZXN0b25lLCBzaG93IG1pbGVzdG9uZSBuYW1lIHRydW5jYXRlZCBiZWxvdyBkb3RzCi0gRm9udDogMTBweCwgYGdvbGRgIGNvbG9yLCBzaW5nbGUgbGluZSwgZWxsaXBzaXMKCiMjIyBTYW1wbGUgQ2FsZW5kYXIgRGF0YSAoRGVjZW1iZXIgMjAyNCkKLSBEZWMgMTogTWlsZXN0b25lICLliJ3op4HkuY3mrKIiIChnb2xkIGRvdCArIGxhYmVsKQotIERlYyA4OiBBbnRlcmlvciBNZW1vcnkgKHB1cnBsZSBkb3QpCi0gRGVjIDEyOiBMVE0gKHBpbmsgZG90KSArIEFudGVyaW9yIE1lbW9yeSAocHVycGxlIGRvdCkKLSBEZWMgMTU6IE1pbGVzdG9uZSAi5riQ55Sf5oOF5oSrIiAoZ29sZCBkb3QgKyBsYWJlbCkKLSBEZWMgMjA6IExUTSAocGluayBkb3QpCi0gRGVjIDI1OiBBbnRlcmlvciBNZW1vcnkgKHB1cnBsZSBkb3QpCgojIyMgQW5pbWF0aW9ucwotICoqR3JpZCBlbnRyYW5jZSoqOiBEYXkgY2VsbHMgc3RhZ2dlciBpbiwgZWFjaCBmYWRlcyBpbiArIHNjYWxlIDAuOeKGkjEsIDIwbXMgc3RhZ2dlciAodmVyeSBmYXN0IHJpcHBsZSksIDMwMG1zIGVhY2gsIHN0YXJ0aW5nIGZyb20gdG9wLWxlZnQKLSAqKk1vbnRoIHRyYW5zaXRpb24qKjogT3V0Z29pbmcgZ3JpZCBmYWRlcyArIHNocmlua3Mgc2xpZ2h0bHkgMTUwbXMsIGluY29taW5nIGdyaWQgc3RhZ2dlcnMgaW4gYXMgYWJvdmUKLSAqKlRvZGF5IGhpZ2hsaWdodCoqOiBTdWJ0bGUgcHVsc2UgcmluZyBhbmltYXRpb24gb24gdGhlIGhpZ2hsaWdodGVkIGNpcmNsZSAoMnMgaW5maW5pdGUpCi0gKipDZWxsIGhvdmVyKio6IEFzIGRlc2NyaWJlZAoKLS0tCgojIyBMZWdlbmQKCkJlbG93IGNhbGVuZGFyIGdyaWQ6Ci0gSG9yaXpvbnRhbCByb3cgb2YgbGVnZW5kIGl0ZW1zCi0gRWFjaDogY29sb3JlZCBkb3QgKDhweCkgKyBsYWJlbCBpbiBgYm9keS1zbWAKLSBJdGVtczoKICAtIGBnb2xkYCBkb3QgKyAi6YeM56iL56KRIiAKICAtIGBwdXJwbGUtbWVtb3J5YCBkb3QgKyAi5bel5L2c6K6w5b+GIgogIC0gYHBpbmstbWVtb3J5YCBkb3QgKyAi6ZW/5pyf6K6w5b+GIgogIC0gYHBpbmstNDAwYCBjaXJjbGUgKyAi5LuK5aSpIgoKIyMjIEFuaW1hdGlvbnMKLSBGYWRlIGluIDQwMG1zIGFmdGVyIGNhbGVuZGFyIGxvYWRzCgotLS0KCiMjIFNlY3Rpb24gMzogRGV0YWlsIERyYXdlcgoKIyMjIE92ZXJ2aWV3CldoZW4gYSB1c2VyIGNsaWNrcyBhIGRhdGUgY2VsbCwgYSBkZXRhaWwgZHJhd2VyIHNsaWRlcyBpbiBmcm9tIHRoZSByaWdodCBzaG93aW5nIGFsbCBtZW1vcmllcywgY29udmVyc2F0aW9ucywgYW5kIG1pbGVzdG9uZXMgZm9yIHRoYXQgZGF5LgoKIyMjIExheW91dAotIFNsaWRlcyBmcm9tIHJpZ2h0LCAzODBweCB3aWRlLCBmdWxsIGhlaWdodAotIEJhY2tncm91bmQ6IHdoaXRlCi0gQm9yZGVyLWxlZnQ6IDFweCBgcGluay0xMDBgCi0gU2hhZG93OiBgc2hhZG93LWxnYCAobGVmdCBzaWRlKQotIEhlYWRlcjogZml4ZWQsIDYwcHggaGVpZ2h0Ci0gQ29udGVudDogc2Nyb2xsYWJsZQoKIyMjIEVsZW1lbnRzCgojIyMjIERyYXdlciBIZWFkZXIKLSAqKkRhdGUgZGlzcGxheSoqOiAiMTLmnIgxNeaXpSDmmJ/mnJ/ml6UiIGluIGBoMmAKLSAqKkNsb3NlIGJ1dHRvbioqOiBgWGAgaWNvbiwgdG9wLXJpZ2h0LCAzNnB4IGNpcmNsZSwgYGdob3N0YCBzdHlsZQotICoqUXVpY2sgYWN0aW9ucyoqOiAi5Zyo5a+56K+d5Lit5Zue6aG+IiBidXR0b24sIHNtYWxsIGBzZWNvbmRhcnlgIHZhcmlhbnQKCiMjIyMgTWVtb3J5IExpc3QKCkZvciBlYWNoIG1lbW9yeSBvbiB0aGF0IGRheSAoY2hyb25vbG9naWNhbCk6CgoqKk1pbGVzdG9uZSBDYXJkOioqCi0gYGdvbGRgIGxlZnQgYm9yZGVyICgzcHgpCi0gYFN0YXJgIGljb24gKDE2cHgsIGBnb2xkYCkKLSBNaWxlc3RvbmUgbmFtZTogIua4kOeUn+aDheaEqyIgaW4gYGg0YCwgYHRleHQtcHJpbWFyeWAKLSBEZXNjcmlwdGlvbjogIuS9oOS7rOeahOWFs+ezu+i/m+WFpeS6huaWsOeahOmYtuautS4uLiIgaW4gYGJvZHktc21gLCBgdGV4dC1zZWNvbmRhcnlgCi0gVGltZTogIjE0OjMyIiBpbiBgYm9keS1zbWAsIGB0ZXh0LW11dGVkYAotIEJhY2tncm91bmQ6IGBnb2xkYCBhdCAzJSBvcGFjaXR5CgoqKkNvbnZlcnNhdGlvbiBNZW1vcnkgQ2FyZDoqKgotIE1lbW9yeSB0eXBlIGluZGljYXRvcjogcHVycGxlIG9yIHBpbmsgZG90Ci0gUHJldmlldyBvZiBjb252ZXJzYXRpb24gc25pcHBldDogIuS9oOivtO+8muS7iuWkqeW3peS9nOWlvee0ry4uLiIgaW4gYGJvZHktc21gCi0gQ29tcGFuaW9uIHJlcGx5IHByZXZpZXc6ICLlpbnlm57lpI3vvJrovpvoi6bllabvvIzopoHkuI3opoEuLi4iIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgLCBpdGFsaWMKLSBUaW1lOiAiMTg6NDUiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCi0gQ2xpY2s6IGV4cGFuZHMgdG8gc2hvdyBmdWxsIGNvbnZlcnNhdGlvbiBmb3IgdGhhdCBtZW1vcnkKCioqTFRNIE1lbW9yeSBDYXJkOioqCi0gYEhlYXJ0YCBpY29uICgxNnB4LCBgcGluay00MDBgKQotICLplb/mnJ/orrDlv4blvaLmiJAiIGxhYmVsIGluIGBsYWJlbGAgZm9udCwgYHBpbmstNTAwYAotIE1lbW9yeSBjb250ZW50OiAi6K6w5L2P5LqG5L2g5Zac5qyi5Zyo5Y6L5Yqb5aSn55qE5pe25YCZ5ZCs6Z+z5LmQIiBpbiBgYm9keS1zbWAKLSBUaW1lOiAiMjA6MTIiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCi0gQmFja2dyb3VuZDogYHBpbmstNTBgCgojIyMjIEVtcHR5IFN0YXRlCi0gSWYgbm8gbWVtb3JpZXM6IGNlbnRlcmVkIGlsbHVzdHJhdGlvbiAoc29mdCBlbXB0eSBjYWxlbmRhciBpY29uLCA4MHB4LCBgcGluay0xMDBgKQotIFRleHQ6ICLov5nkuIDlpKnov5jmsqHmnInnlZnkuIvlm57lv4YiIGluIGBib2R5YCwgYHRleHQtbXV0ZWRgCi0gU3VidGV4dDogIuWOu+WSjOS8tOS+o+iBiuiBiuWkqe+8jOWIm+mAoOWxnuS6juS9oOS7rOeahOiusOW/huWQpyIgaW4gYGJvZHktc21gCgojIyMgQW5pbWF0aW9ucwotICoqRHJhd2VyIG9wZW4qKjogU2xpZGUgZnJvbSByaWdodCA0MDBtcyBlYXNlLXNtb290aCwgY29udGVudCBhcmVhIHNsaWdodGx5IGRpbXMgKG92ZXJsYXkgcmdiYSgwLDAsMCwwLjA1KSkKLSAqKkRyYXdlciBjbG9zZSoqOiBTbGlkZSByaWdodCArIGZhZGUgMzAwbXMKLSAqKk1lbW9yeSBjYXJkcyoqOiBTdGFnZ2VyIGluLCBzbGlkZSB1cCAxNXB4ICsgZmFkZSwgNjBtcyBzdGFnZ2VyCi0gKipDYXJkIGV4cGFuZCoqOiBIZWlnaHQgYW5pbWF0ZXMsIGNvbnRlbnQgZmFkZXMgaW4sIDMwMG1zCg==
+# Memory Page (memory.md)
+
+The sweet memory calendar — a 7×5 grid calendar view where users can browse their shared history with their AI companion. Special dates are highlighted with meaningful colors: gold for milestones, purple for anterior memories, pink for long-term memories. Clicking a date opens a detail sidebar showing the day's conversations and events.
+
+| Property | Value |
+|----------|-------|
+| Route | `/memory` |
+| Sections | 3 |
+| Purpose | Browse shared memories with companion via calendar view |
+
+---
+
+## Page Layout
+
+Standard app layout: sidebar + content area with a detail drawer on the right.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Sidebar │        Calendar Area              │ Detail Drawer │
+│ 220px   │        flex-1                     │ (collapsible) │
+│         │                                   │ 360px         │
+│ Logo    │  Top Bar: "甜蜜记忆"               │               │
+│ Nav     │  + Month Navigation               │ Date Details  │
+│ Items   │                                   │ (opens on     │
+│ User    │  ┌──┬──┬──┬──┬──┬──┬──┐         │  date click)  │
+│ Profile │  │Mon│Tue│Wed│Thu│Fri│Sat│Sun│         │               │
+│         │  ├──┼──┼──┼──┼──┼──┼──┤         │ Memory List   │
+│         │  │  │  │  │  │  │ 1│ 2│         │               │
+│         │  ├──┼──┼──┼──┼──┼──┼──┤         │ Milestone     │
+│         │  │ 3│ 4│ 5│ 6│ 7│ 8│ 9│         │ Info          │
+│         │  ├──┼──┼──┼──┼──┼──┼──┤         │               │
+│         │  │10│11│12│13│14│15│16│         │               │
+│         │  ├──┼──┼──┼──┼──┼──┼──┤         │               │
+│         │  │17│18│19│20│21│22│23│         │               │
+│         │  ├──┼──┼──┼──┼──┼──┼──┤         │               │
+│         │  │24│25│26│27│28│29│30│         │               │
+│         │  └──┴──┴──┴──┴──┴──┘         │               │
+│         │                                   │               │
+│         │  Legend                           │               │
+└─────────┴───────────────────────────────────┴───────────────┘
+```
+
+---
+
+## Section 1: Top Bar
+
+### Elements
+- **Left**: "甜蜜记忆" in `h2`, with `Calendar` icon (20px, `pink-400`)
+- **Center**: Month Navigation
+  - `ChevronLeft` button — previous month
+  - Month/Year display: "2024年12月" in `h3`
+  - `ChevronRight` button — next month
+  - "回到今天" link/button in `body-sm`, `pink-500`, beside navigation
+- **Right**: "与 小樱 的 45 天记忆" in `body-sm`, `text-secondary`
+
+### Animations
+- Title: fade in, 300ms
+- Month navigation: fade in, 200ms delay
+- Month transition: calendar grid cross-fades (outgoing fades 150ms, incoming fades in 200ms)
+
+---
+
+## Section 2: Calendar Grid
+
+### Overview
+A 7×5 day grid showing the current month. Each day cell can display indicators for different memory types. The design is clean, warm, and emotionally resonant.
+
+### Layout
+- Grid: 7 columns (Mon-Sun), 5 rows
+- Gap: 8px
+- Padding: 24px
+
+### Day Header Row
+- 7 day labels: 一 二 三 四 五 六 日
+- Font: `label` token, `text-muted`
+- Height: 36px, centered
+- Weekend columns (六 日): slight `pink-50` background tint on header
+
+### Day Cell Design
+
+Each cell:
+- **Aspect ratio**: ~1:1 (square-ish)
+- **Background**: white, `radius-md`
+- **Border**: 1px `pink-50`
+- **Padding**: 8px
+- **Content layout**:
+  - Top-left: day number, `number-sm` (14px), `text-primary`
+  - Center: memory indicators (colored dots)
+  - Bottom: brief event hint (if any)
+
+#### Date Number States
+- **Current month**: `text-primary`, normal weight
+- **Other months** (padding days): `text-muted`, 60% opacity
+- **Today**: `pink-400` circle bg (24px), white number text, bold
+- **Selected**: `sidebar-bg` border 2px + subtle `shadow-glow`
+
+#### Memory Type Indicators
+
+Colored dots positioned at bottom-center of cell (horizontal row, max 3 dots):
+
+| Type | Color | Dot Size | Meaning |
+|------|-------|----------|---------|
+| Milestone | `gold` (#D4AF37) | 8px | Relationship milestone reached |
+| Anterior Memory | `purple-memory` (#C8A8E9) | 6px | Short-term/working memory |
+| LTM | `pink-memory` (#FFB6C1) | 6px | Long-term memory formed |
+
+- Multiple dots stack horizontally with 4px gap
+- On hover: tooltip shows "X个里程碑" / "X条工作记忆" / "X条长期记忆"
+
+#### Cell Hover
+- `shadow-md` + `translateY(-2px)`, 200ms
+- Background: `pink-50`, 150ms
+- Cursor: pointer
+
+#### Event Preview (in cell)
+- If a day has a milestone, show milestone name truncated below dots
+- Font: 10px, `gold` color, single line, ellipsis
+
+### Sample Calendar Data (December 2024)
+- Dec 1: Milestone "初见乍欢" (gold dot + label)
+- Dec 8: Anterior Memory (purple dot)
+- Dec 12: LTM (pink dot) + Anterior Memory (purple dot)
+- Dec 15: Milestone "渐生情愫" (gold dot + label)
+- Dec 20: LTM (pink dot)
+- Dec 25: Anterior Memory (purple dot)
+
+### Animations
+- **Grid entrance**: Day cells stagger in, each fades in + scale 0.9→1, 20ms stagger (very fast ripple), 300ms each, starting from top-left
+- **Month transition**: Outgoing grid fades + shrinks slightly 150ms, incoming grid staggers in as above
+- **Today highlight**: Subtle pulse ring animation on the highlighted circle (2s infinite)
+- **Cell hover**: As described
+
+---
+
+## Legend
+
+Below calendar grid:
+- Horizontal row of legend items
+- Each: colored dot (8px) + label in `body-sm`
+- Items:
+  - `gold` dot + "里程碑" 
+  - `purple-memory` dot + "工作记忆"
+  - `pink-memory` dot + "长期记忆"
+  - `pink-400` circle + "今天"
+
+### Animations
+- Fade in 400ms after calendar loads
+
+---
+
+## Section 3: Detail Drawer
+
+### Overview
+When a user clicks a date cell, a detail drawer slides in from the right showing all memories, conversations, and milestones for that day.
+
+### Layout
+- Slides from right, 380px wide, full height
+- Background: white
+- Border-left: 1px `pink-100`
+- Shadow: `shadow-lg` (left side)
+- Header: fixed, 60px height
+- Content: scrollable
+
+### Elements
+
+#### Drawer Header
+- **Date display**: "12月15日 星期日" in `h2`
+- **Close button**: `X` icon, top-right, 36px circle, `ghost` style
+- **Quick actions**: "在对话中回顾" button, small `secondary` variant
+
+#### Memory List
+
+For each memory on that day (chronological):
+
+**Milestone Card:**
+- `gold` left border (3px)
+- `Star` icon (16px, `gold`)
+- Milestone name: "渐生情愫" in `h4`, `text-primary`
+- Description: "你们的关系进入了新的阶段..." in `body-sm`, `text-secondary`
+- Time: "14:32" in `body-sm`, `text-muted`
+- Background: `gold` at 3% opacity
+
+**Conversation Memory Card:**
+- Memory type indicator: purple or pink dot
+- Preview of conversation snippet: "你说：今天工作好累..." in `body-sm`
+- Companion reply preview: "她回复：辛苦啦，要不要..." in `body-sm`, `text-muted`, italic
+- Time: "18:45" in `body-sm`, `text-muted`
+- Click: expands to show full conversation for that memory
+
+**LTM Memory Card:**
+- `Heart` icon (16px, `pink-400`)
+- "长期记忆形成" label in `label` font, `pink-500`
+- Memory content: "记住了你喜欢在压力大的时候听音乐" in `body-sm`
+- Time: "20:12" in `body-sm`, `text-muted`
+- Background: `pink-50`
+
+#### Empty State
+- If no memories: centered illustration (soft empty calendar icon, 80px, `pink-100`)
+- Text: "这一天还没有留下回忆" in `body`, `text-muted`
+- Subtext: "去和伴侣聊聊天，创造属于你们的记忆吧" in `body-sm`
+
+### Animations
+- **Drawer open**: Slide from right 400ms ease-smooth, content area slightly dims (overlay rgba(0,0,0,0.05))
+- **Drawer close**: Slide right + fade 300ms
+- **Memory cards**: Stagger in, slide up 15px + fade, 60ms stagger
+- **Card expand**: Height animates, content fades in, 300ms
