@@ -50,20 +50,37 @@ Deno.serve(async (req: Request) => {
 
     const body = await req.json().catch(() => ({}));
     const planId = body.plan_id;
+    const customAmountCents = body.amount_cents;
+    const customName = body.name || 'Buy me a coffee';
 
-    const { data: plan, error: planErr } = await supabase
-      .from('pricing_plans')
-      .select('*')
-      .eq('id', planId)
-      .eq('is_active', true)
-      .single();
+    let priceCents: number;
+    let totalEnergy: number;
+    let planName: string;
+    let metadata: Record<string, unknown> | null = null;
 
-    if (planErr || !plan) throw new Error('Invalid plan');
+    if (planId) {
+      const { data: plan, error: planErr } = await supabase
+        .from('pricing_plans')
+        .select('*')
+        .eq('id', planId)
+        .eq('is_active', true)
+        .single();
 
-    const priceCents = plan.price_cents || 0;
+      if (planErr || !plan) throw new Error('Invalid plan');
+
+      priceCents = plan.price_cents || 0;
+      totalEnergy = (plan.energy_amount || 0) + (plan.bonus_amount || 0);
+      planName = plan.name || 'Energy Pack';
+    } else if (customAmountCents && customAmountCents > 0) {
+      priceCents = Math.round(customAmountCents);
+      totalEnergy = 0;
+      planName = customName;
+      metadata = { type: 'coffee', description: customName };
+    } else {
+      throw new Error('Missing plan_id or amount_cents');
+    }
+
     const amount = (priceCents / 100).toFixed(2);
-    const totalEnergy = (plan.energy_amount || 0) + (plan.bonus_amount || 0);
-    const planName = plan.name || 'Energy Pack';
 
     const { pid, key } = getZpayConfig();
     const orderNo = generateOrderNo();
@@ -82,6 +99,7 @@ Deno.serve(async (req: Request) => {
       payment_method: 'alipay',
       version: 1,
       expired_at: new Date(Date.now() + 30 * 60 * 1000).toISOString(),
+      ...(metadata ? { metadata } : {}),
     });
 
     const params: Record<string, string> = {
