@@ -1,1 +1,214 @@
-LyoqCiAqIEF1dGhDb250ZXh0IC0gR2xvYmFsIEF1dGhlbnRpY2F0aW9uIFN0YXRlIE1hbmFnZW1lbnQKICoKICogUHJvdmlkZXMgYXV0aGVudGljYXRpb24gc3RhdGUsIHVzZXIgcHJvZmlsZSwgY29tcGFuaW9uIHN0YXR1cywKICogYW5kIHJlbGF0ZWQgYWN0aW9ucyB0aHJvdWdob3V0IHRoZSBhcHBsaWNhdGlvbi4KICovCmltcG9ydCB7IGNyZWF0ZUNvbnRleHQsIHVzZUNvbnRleHQsIHVzZUVmZmVjdCwgdXNlU3RhdGUsIHVzZUNhbGxiYWNrLCB1c2VSZWYgfSBmcm9tICdyZWFjdCc7CmltcG9ydCB7IHN1cGFiYXNlIH0gZnJvbSAnQC9saWIvc3VwYWJhc2UnOwppbXBvcnQgdHlwZSB7IENvbXBhbmlvbiB9IGZyb20gJ0AvdHlwZXMnOwppbXBvcnQgdHlwZSB7IFVzZXIgfSBmcm9tICdAc3VwYWJhc2Uvc3VwYWJhc2UtanMnOwppbXBvcnQgeyB0b2FzdCB9IGZyb20gJ3Nvbm5lcic7CgovKiogQXV0aCBjb250ZXh0IHZhbHVlIGludGVyZmFjZSAqLwppbnRlcmZhY2UgQXV0aENvbnRleHRUeXBlIHsKICAvKiogV2hldGhlciB0aGUgdXNlciBpcyBjdXJyZW50bHkgYXV0aGVudGljYXRlZCAqLwogIGlzQXV0aGVudGljYXRlZDogYm9vbGVhbjsKICAvKiogQ3VycmVudCBTdXBhYmFzZSB1c2VyIG9iamVjdCAqLwogIHVzZXI6IFVzZXIgfCBudWxsOwogIC8qKiBVc2VyJ3MgY29tcGFuaW9uIHByb2ZpbGUsIG51bGwgaWYgbm90IGNyZWF0ZWQgeWV0ICovCiAgY29tcGFuaW9uOiBDb21wYW5pb24gfCBudWxsOwogIC8qKiBXaGV0aGVyIHRoZSB1c2VyIGhhcyBhIGNvbXBhbmlvbiAqLwogIGhhc0NvbXBhbmlvbjogYm9vbGVhbjsKICAvKiogTG9hZGluZyBzdGF0ZSBmb3IgaW5pdGlhbCBhdXRoIGNoZWNrICovCiAgaXNMb2FkaW5nOiBib29sZWFuOwogIC8qKiBTaWduIG91dCB0aGUgY3VycmVudCB1c2VyICovCiAgbG9nb3V0OiAoKSA9PiBQcm9taXNlPHZvaWQ+OwogIC8qKiBSZS1mZXRjaCBjb21wYW5pb24gZGF0YSBmcm9tIFN1cGFiYXNlICovCiAgcmVmcmVzaENvbXBhbmlvbjogKCkgPT4gUHJvbWlzZTx2b2lkPjsKfQoKLy8gQ3JlYXRlIHRoZSBjb250ZXh0IHdpdGggdW5kZWZpbmVkIGRlZmF1bHQKY29uc3QgQXV0aENvbnRleHQgPSBjcmVhdGVDb250ZXh0PEF1dGhDb250ZXh0VHlwZSB8IHVuZGVmaW5lZD4odW5kZWZpbmVkKTsKCi8qKiBIb29rIHRvIGFjY2VzcyB0aGUgYXV0aCBjb250ZXh0LiBNdXN0IGJlIHVzZWQgd2l0aGluIGFuIEF1dGhQcm92aWRlci4gKi8KZXhwb3J0IGZ1bmN0aW9uIHVzZUF1dGgoKTogQXV0aENvbnRleHRUeXBlIHsKICBjb25zdCBjb250ZXh0ID0gdXNlQ29udGV4dChBdXRoQ29udGV4dCk7CiAgaWYgKGNvbnRleHQgPT09IHVuZGVmaW5lZCkgewogICAgdGhyb3cgbmV3IEVycm9yKCd1c2VBdXRoIG11c3QgYmUgdXNlZCB3aXRoaW4gYW4gQXV0aFByb3ZpZGVyJyk7CiAgfQogIHJldHVybiBjb250ZXh0Owp9CgovKiogUHJvcHMgZm9yIHRoZSBBdXRoUHJvdmlkZXIgY29tcG9uZW50ICovCmludGVyZmFjZSBBdXRoUHJvdmlkZXJQcm9wcyB7CiAgY2hpbGRyZW46IFJlYWN0LlJlYWN0Tm9kZTsKfQoKLyoqCiAqIEF1dGhQcm92aWRlciAtIFdyYXBzIHRoZSBhcHBsaWNhdGlvbiB0byBwcm92aWRlIGdsb2JhbCBhdXRoIHN0YXRlLgogKgogKiBMaXN0ZW5zIHRvIFN1cGFiYXNlIGF1dGggc3RhdGUgY2hhbmdlcyBhbmQgYXV0b21hdGljYWxseToKICogLSBVcGRhdGVzIHVzZXIgb2JqZWN0IG9uIHNpZ24gaW4gLyBzaWduIG91dCAvIHRva2VuIHJlZnJlc2gKICogLSBRdWVyaWVzIHRoZSBjb21wYW5pb25zIHRhYmxlIHRvIGNoZWNrIGNvbXBhbmlvbiBzdGF0dXMKICogLSBIYW5kbGVzIGxvYWRpbmcgc3RhdGVzIGZvciBpbml0aWFsIHNlc3Npb24gcmVjb3ZlcnkKICovCmV4cG9ydCBmdW5jdGlvbiBBdXRoUHJvdmlkZXIoeyBjaGlsZHJlbiB9OiBBdXRoUHJvdmlkZXJQcm9wcykgewogIGNvbnN0IFt1c2VyLCBzZXRVc2VyXSA9IHVzZVN0YXRlPFVzZXIgfCBudWxsPihudWxsKTsKICBjb25zdCBbY29tcGFuaW9uLCBzZXRDb21wYW5pb25dID0gdXNlU3RhdGU8Q29tcGFuaW9uIHwgbnVsbD4obnVsbCk7CiAgY29uc3QgW2lzTG9hZGluZywgc2V0SXNMb2FkaW5nXSA9IHVzZVN0YXRlKHRydWUpOwoKICAvLyBVc2UgYSByZWYgdG8gdHJhY2sgd2hldGhlciB0aGUgaW5pdGlhbCBzZXNzaW9uIGNoZWNrIGlzIGNvbXBsZXRlLgogIC8vIFRoaXMgcHJldmVudHMgdGhlIG9uQXV0aFN0YXRlQ2hhbmdlIGxpc3RlbmVyIGZyb20gb3ZlcndyaXRpbmcgdGhlCiAgLy8gcmVjb3ZlcmVkIHNlc3Npb24gd2l0aCBhIHN0YWxlIHZhbHVlLgogIGNvbnN0IGluaXRpYWxDaGVja0RvbmUgPSB1c2VSZWYoZmFsc2UpOwoKICAvKioKICAgKiBGZXRjaCB0aGUgdXNlcidzIGNvbXBhbmlvbiBmcm9tIFN1cGFiYXNlLgogICAqIFF1ZXJpZXMgdGhlICdjb21wYW5pb25zJyB0YWJsZSBmb3IgYSByb3cgbWF0Y2hpbmcgdGhlIHVzZXIncyBJRC4KICAgKi8KICBjb25zdCBmZXRjaENvbXBhbmlvbiA9IHVzZUNhbGxiYWNrKGFzeW5jICh1c2VySWQ6IHN0cmluZykgPT4gewogICAgdHJ5IHsKICAgICAgY29uc3QgeyBkYXRhLCBlcnJvciB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgICAuZnJvbSgnY29tcGFuaW9ucycpCiAgICAgICAgLnNlbGVjdCgnKicpCiAgICAgICAgLmVxKCd1c2VyX2lkJywgdXNlcklkKQogICAgICAgIC5tYXliZVNpbmdsZSgpOwoKICAgICAgaWYgKGVycm9yKSB7CiAgICAgICAgLy8gU2lsZW50bHkgaGFuZGxlIG5vLXJvdyBlcnJvcnM7IGxvZyBvdGhlcnMKICAgICAgICBpZiAoZXJyb3IuY29kZSAhPT0gJ1BHUlNUMTE2JykgewogICAgICAgICAgY29uc29sZS5lcnJvcignW0F1dGhDb250ZXh0XSBFcnJvciBmZXRjaGluZyBjb21wYW5pb246JywgZXJyb3IubWVzc2FnZSk7CiAgICAgICAgfQogICAgICAgIHNldENvbXBhbmlvbihudWxsKTsKICAgICAgICByZXR1cm47CiAgICAgIH0KCiAgICAgIGlmIChkYXRhKSB7CiAgICAgICAgLy8gTWFwIERCIHJvdyB0byBDb21wYW5pb24gdHlwZQogICAgICAgIGNvbnN0IG1hcHBlZDogQ29tcGFuaW9uID0gewogICAgICAgICAgaWQ6IGRhdGEuaWQsCiAgICAgICAgICBuYW1lOiBkYXRhLm5hbWUgPz8gJycsCiAgICAgICAgICBhdmF0YXI6IGRhdGEuYXZhdGFyID8/ICcnLAogICAgICAgICAgZGVzY3JpcHRpb246IGRhdGEuZGVzY3JpcHRpb24gPz8gJycsCiAgICAgICAgICBwZXJzb25hbGl0eTogZGF0YS5wZXJzb25hbGl0eSA/PyB7fSwKICAgICAgICAgIHRhZ3M6IGRhdGEudGFncyA/PyBbXSwKICAgICAgICAgIGlzRGVmYXVsdDogZGF0YS5pc19kZWZhdWx0ID8/IGZhbHNlLAogICAgICAgICAgY3JlYXRlZEF0OiBkYXRhLmNyZWF0ZWRfYXQsCiAgICAgICAgfTsKICAgICAgICBzZXRDb21wYW5pb24obWFwcGVkKTsKICAgICAgfSBlbHNlIHsKICAgICAgICBzZXRDb21wYW5pb24obnVsbCk7CiAgICAgIH0KICAgIH0gY2F0Y2ggKGVycikgewogICAgICBjb25zb2xlLmVycm9yKCdbQXV0aENvbnRleHRdIFVuZXhwZWN0ZWQgZXJyb3IgaW4gZmV0Y2hDb21wYW5pb246JywgZXJyKTsKICAgICAgc2V0Q29tcGFuaW9uKG51bGwpOwogICAgfQogIH0sIFtdKTsKCiAgLyoqCiAgICogQ2hlY2sgdGhlIGN1cnJlbnQgc2Vzc2lvbiBvbiBtb3VudC4KICAgKiBUaGlzIHJ1bnMgb25jZSB0byByZWNvdmVyIGFueSBleGlzdGluZyBzZXNzaW9uIGZyb20gbG9jYWxTdG9yYWdlLgogICAqLwogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBsZXQgY2FuY2VsbGVkID0gZmFsc2U7CgogICAgYXN5bmMgZnVuY3Rpb24gY2hlY2tTZXNzaW9uKCkgewogICAgICB0cnkgewogICAgICAgIGNvbnN0IHsgZGF0YSwgZXJyb3IgfSA9IGF3YWl0IHN1cGFiYXNlLmF1dGguZ2V0U2Vzc2lvbigpOwogICAgICAgIGlmIChjYW5jZWxsZWQpIHJldHVybjsKCiAgICAgICAgaWYgKGVycm9yKSB7CiAgICAgICAgICBjb25zb2xlLmVycm9yKCdbQXV0aENvbnRleHRdIGdldFNlc3Npb24gZXJyb3I6JywgZXJyb3IubWVzc2FnZSk7CiAgICAgICAgICBzZXRVc2VyKG51bGwpOwogICAgICAgICAgc2V0Q29tcGFuaW9uKG51bGwpOwogICAgICAgIH0gZWxzZSBpZiAoZGF0YS5zZXNzaW9uPy51c2VyKSB7CiAgICAgICAgICBzZXRVc2VyKGRhdGEuc2Vzc2lvbi51c2VyKTsKICAgICAgICAgIGF3YWl0IGZldGNoQ29tcGFuaW9uKGRhdGEuc2Vzc2lvbi51c2VyLmlkKTsKICAgICAgICB9CiAgICAgIH0gY2F0Y2ggKGVycikgewogICAgICAgIGNvbnNvbGUuZXJyb3IoJ1tBdXRoQ29udGV4dF0gU2Vzc2lvbiBjaGVjayBmYWlsZWQ6JywgZXJyKTsKICAgICAgICBzZXRVc2VyKG51bGwpOwogICAgICAgIHNldENvbXBhbmlvbihudWxsKTsKICAgICAgfSBmaW5hbGx5IHsKICAgICAgICBpZiAoIWNhbmNlbGxlZCkgewogICAgICAgICAgc2V0SXNMb2FkaW5nKGZhbHNlKTsKICAgICAgICAgIGluaXRpYWxDaGVja0RvbmUuY3VycmVudCA9IHRydWU7CiAgICAgICAgfQogICAgICB9CiAgICB9CgogICAgY2hlY2tTZXNzaW9uKCk7CgogICAgcmV0dXJuICgpID0+IHsKICAgICAgY2FuY2VsbGVkID0gdHJ1ZTsKICAgIH07CiAgfSwgW2ZldGNoQ29tcGFuaW9uXSk7CgogIC8qKgogICAqIFN1YnNjcmliZSB0byBTdXBhYmFzZSBhdXRoIHN0YXRlIGNoYW5nZXMuCiAgICogSGFuZGxlcyBTSUdORURfSU4sIFNJR05FRF9PVVQsIGFuZCBUT0tFTl9SRUZSRVNIRUQgZXZlbnRzLgogICAqLwogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBjb25zdCB7IGRhdGE6IGF1dGhMaXN0ZW5lciB9ID0gc3VwYWJhc2UuYXV0aC5vbkF1dGhTdGF0ZUNoYW5nZSgKICAgICAgYXN5bmMgKGV2ZW50LCBzZXNzaW9uKSA9PiB7CiAgICAgICAgLy8gU2tpcCB1bnRpbCBpbml0aWFsIGdldFNlc3Npb24oKSBjb21wbGV0ZXMgdG8gYXZvaWQgcmFjZSBjb25kaXRpb25zCiAgICAgICAgaWYgKCFpbml0aWFsQ2hlY2tEb25lLmN1cnJlbnQpIHJldHVybjsKCiAgICAgICAgY29uc3QgY3VycmVudFVzZXIgPSBzZXNzaW9uPy51c2VyID8/IG51bGw7CiAgICAgICAgc2V0VXNlcihjdXJyZW50VXNlcik7CgogICAgICAgIGlmIChldmVudCA9PT0gJ1NJR05FRF9JTicgJiYgY3VycmVudFVzZXIpIHsKICAgICAgICAgIGF3YWl0IGZldGNoQ29tcGFuaW9uKGN1cnJlbnRVc2VyLmlkKTsKICAgICAgICAgIHRvYXN0LnN1Y2Nlc3MoJ1NpZ25lZCBpbiBzdWNjZXNzZnVsbHknKTsKICAgICAgICB9IGVsc2UgaWYgKGV2ZW50ID09PSAnU0lHTkVEX09VVCcpIHsKICAgICAgICAgIHNldENvbXBhbmlvbihudWxsKTsKICAgICAgICAgIHRvYXN0LmluZm8oJ1NpZ25lZCBvdXQnKTsKICAgICAgICB9IGVsc2UgaWYgKGV2ZW50ID09PSAnVE9LRU5fUkVGUkVTSEVEJyAmJiBjdXJyZW50VXNlcikgewogICAgICAgICAgLy8gQ29tcGFuaW9uIGRhdGEgbGlrZWx5IHVuY2hhbmdlZCwgYnV0IHJlZnJlc2gganVzdCBpbiBjYXNlCiAgICAgICAgICBhd2FpdCBmZXRjaENvbXBhbmlvbihjdXJyZW50VXNlci5pZCk7CiAgICAgICAgfQogICAgICB9CiAgICApOwoKICAgIHJldHVybiAoKSA9PiB7CiAgICAgIGF1dGhMaXN0ZW5lci5zdWJzY3JpcHRpb24udW5zdWJzY3JpYmUoKTsKICAgIH07CiAgfSwgW2ZldGNoQ29tcGFuaW9uXSk7CgogIC8qKiBTaWduIG91dCB0aGUgY3VycmVudCB1c2VyIHZpYSBTdXBhYmFzZS4gKi8KICBjb25zdCBsb2dvdXQgPSB1c2VDYWxsYmFjayhhc3luYyAoKSA9PiB7CiAgICB0cnkgewogICAgICBjb25zdCB7IGVycm9yIH0gPSBhd2FpdCBzdXBhYmFzZS5hdXRoLnNpZ25PdXQoKTsKICAgICAgaWYgKGVycm9yKSB7CiAgICAgICAgdG9hc3QuZXJyb3IoYFNpZ24gb3V0IGZhaWxlZDogJHtlcnJvci5tZXNzYWdlfWApOwogICAgICAgIHRocm93IGVycm9yOwogICAgICB9CiAgICAgIC8vIFN0YXRlIGNsZWFudXAgaXMgaGFuZGxlZCBieSBvbkF1dGhTdGF0ZUNoYW5nZSBTSUdORURfT1VUIGV2ZW50CiAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgY29uc29sZS5lcnJvcignW0F1dGhDb250ZXh0XSBMb2dvdXQgZXJyb3I6JywgZXJyKTsKICAgICAgdGhyb3cgZXJyOwogICAgfQogIH0sIFtdKTsKCiAgLyoqIE1hbnVhbGx5IHJlZnJlc2ggY29tcGFuaW9uIGRhdGEuICovCiAgY29uc3QgcmVmcmVzaENvbXBhbmlvbiA9IHVzZUNhbGxiYWNrKGFzeW5jICgpID0+IHsKICAgIGlmICghdXNlcj8uaWQpIHsKICAgICAgc2V0Q29tcGFuaW9uKG51bGwpOwogICAgICByZXR1cm47CiAgICB9CiAgICBhd2FpdCBmZXRjaENvbXBhbmlvbih1c2VyLmlkKTsKICB9LCBbdXNlciwgZmV0Y2hDb21wYW5pb25dKTsKCiAgY29uc3QgdmFsdWU6IEF1dGhDb250ZXh0VHlwZSA9IHsKICAgIGlzQXV0aGVudGljYXRlZDogdXNlciAhPT0gbnVsbCwKICAgIHVzZXIsCiAgICBjb21wYW5pb24sCiAgICBoYXNDb21wYW5pb246IGNvbXBhbmlvbiAhPT0gbnVsbCwKICAgIGlzTG9hZGluZywKICAgIGxvZ291dCwKICAgIHJlZnJlc2hDb21wYW5pb24sCiAgfTsKCiAgcmV0dXJuIDxBdXRoQ29udGV4dC5Qcm92aWRlciB2YWx1ZT17dmFsdWV9PntjaGlsZHJlbn08L0F1dGhDb250ZXh0LlByb3ZpZGVyPjsKfQo=
+/**
+ * AuthContext - Global Authentication State Management
+ *
+ * Provides authentication state, user profile, companion status,
+ * and related actions throughout the application.
+ */
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
+import { supabase } from '@/lib/supabase';
+import type { Companion } from '@/types';
+import type { User } from '@supabase/supabase-js';
+import { toast } from 'sonner';
+
+/** Auth context value interface */
+interface AuthContextType {
+  /** Whether the user is currently authenticated */
+  isAuthenticated: boolean;
+  /** Current Supabase user object */
+  user: User | null;
+  /** User's companion profile, null if not created yet */
+  companion: Companion | null;
+  /** Whether the user has a companion */
+  hasCompanion: boolean;
+  /** Loading state for initial auth check */
+  isLoading: boolean;
+  /** Sign out the current user */
+  logout: () => Promise<void>;
+  /** Re-fetch companion data from Supabase */
+  refreshCompanion: () => Promise<void>;
+}
+
+// Create the context with undefined default
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+/** Hook to access the auth context. Must be used within an AuthProvider. */
+export function useAuth(): AuthContextType {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+}
+
+/** Props for the AuthProvider component */
+interface AuthProviderProps {
+  children: React.ReactNode;
+}
+
+/**
+ * AuthProvider - Wraps the application to provide global auth state.
+ *
+ * Listens to Supabase auth state changes and automatically:
+ * - Updates user object on sign in / sign out / token refresh
+ * - Queries the companions table to check companion status
+ * - Handles loading states for initial session recovery
+ */
+export function AuthProvider({ children }: AuthProviderProps) {
+  const [user, setUser] = useState<User | null>(null);
+  const [companion, setCompanion] = useState<Companion | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Use a ref to track whether the initial session check is complete.
+  // This prevents the onAuthStateChange listener from overwriting the
+  // recovered session with a stale value.
+  const initialCheckDone = useRef(false);
+
+  /**
+   * Fetch the user's companion from Supabase.
+   * Queries the 'companions' table for a row matching the user's ID.
+   */
+  const fetchCompanion = useCallback(async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('companions')
+        .select('*')
+        .eq('user_id', userId)
+        .maybeSingle();
+
+      if (error) {
+        // Silently handle no-row errors; log others
+        if (error.code !== 'PGRST116') {
+          console.error('[AuthContext] Error fetching companion:', error.message);
+        }
+        setCompanion(null);
+        return;
+      }
+
+      if (data) {
+        // Map DB row to Companion type
+        const mapped: Companion = {
+          id: data.id,
+          name: data.name ?? '',
+          avatar: data.avatar ?? '',
+          description: data.description ?? '',
+          personality: data.personality ?? {},
+          tags: data.tags ?? [],
+          isDefault: data.is_default ?? false,
+          createdAt: data.created_at,
+        };
+        setCompanion(mapped);
+      } else {
+        setCompanion(null);
+      }
+    } catch (err) {
+      console.error('[AuthContext] Unexpected error in fetchCompanion:', err);
+      setCompanion(null);
+    }
+  }, []);
+
+  /**
+   * Check the current session on mount.
+   * This runs once to recover any existing session from localStorage.
+   */
+  useEffect(() => {
+    let cancelled = false;
+
+    async function checkSession() {
+      try {
+        const { data, error } = await supabase.auth.getSession();
+        if (cancelled) return;
+
+        if (error) {
+          console.error('[AuthContext] getSession error:', error.message);
+          setUser(null);
+          setCompanion(null);
+        } else if (data.session?.user) {
+          setUser(data.session.user);
+          await fetchCompanion(data.session.user.id);
+        }
+      } catch (err) {
+        console.error('[AuthContext] Session check failed:', err);
+        setUser(null);
+        setCompanion(null);
+      } finally {
+        if (!cancelled) {
+          setIsLoading(false);
+          initialCheckDone.current = true;
+        }
+      }
+    }
+
+    checkSession();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [fetchCompanion]);
+
+  /**
+   * Subscribe to Supabase auth state changes.
+   * Handles SIGNED_IN, SIGNED_OUT, and TOKEN_REFRESHED events.
+   */
+  useEffect(() => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(
+      async (event, session) => {
+        // Skip until initial getSession() completes to avoid race conditions
+        if (!initialCheckDone.current) return;
+
+        const currentUser = session?.user ?? null;
+        setUser(currentUser);
+
+        if (event === 'SIGNED_IN' && currentUser) {
+          await fetchCompanion(currentUser.id);
+          toast.success('Signed in successfully');
+        } else if (event === 'SIGNED_OUT') {
+          setCompanion(null);
+          toast.info('Signed out');
+        } else if (event === 'TOKEN_REFRESHED' && currentUser) {
+          // Companion data likely unchanged, but refresh just in case
+          await fetchCompanion(currentUser.id);
+        }
+      }
+    );
+
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, [fetchCompanion]);
+
+  /** Sign out the current user via Supabase. */
+  const logout = useCallback(async () => {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) {
+        toast.error(`Sign out failed: ${error.message}`);
+        throw error;
+      }
+      // State cleanup is handled by onAuthStateChange SIGNED_OUT event
+    } catch (err) {
+      console.error('[AuthContext] Logout error:', err);
+      throw err;
+    }
+  }, []);
+
+  /** Manually refresh companion data. */
+  const refreshCompanion = useCallback(async () => {
+    if (!user?.id) {
+      setCompanion(null);
+      return;
+    }
+    await fetchCompanion(user.id);
+  }, [user, fetchCompanion]);
+
+  const value: AuthContextType = {
+    isAuthenticated: user !== null,
+    user,
+    companion,
+    hasCompanion: companion !== null,
+    isLoading,
+    logout,
+    refreshCompanion,
+  };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+}

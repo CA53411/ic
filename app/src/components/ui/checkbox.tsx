@@ -1,1 +1,32 @@
-InVzZSBjbGllbnQiCgppbXBvcnQgKiBhcyBSZWFjdCBmcm9tICJyZWFjdCIKaW1wb3J0ICogYXMgQ2hlY2tib3hQcmltaXRpdmUgZnJvbSAiQHJhZGl4LXVpL3JlYWN0LWNoZWNrYm94IgppbXBvcnQgeyBDaGVja0ljb24gfSBmcm9tICJsdWNpZGUtcmVhY3QiCgppbXBvcnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKZnVuY3Rpb24gQ2hlY2tib3goewogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgQ2hlY2tib3hQcmltaXRpdmUuUm9vdD4pIHsKICByZXR1cm4gKAogICAgPENoZWNrYm94UHJpbWl0aXZlLlJvb3QKICAgICAgZGF0YS1zbG90PSJjaGVja2JveCIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAicGVlciBib3JkZXItaW5wdXQgZGFyazpiZy1pbnB1dC8zMCBkYXRhLVtzdGF0ZT1jaGVja2VkXTpiZy1wcmltYXJ5IGRhdGEtW3N0YXRlPWNoZWNrZWRdOnRleHQtcHJpbWFyeS1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1bc3RhdGU9Y2hlY2tlZF06YmctcHJpbWFyeSBkYXRhLVtzdGF0ZT1jaGVja2VkXTpib3JkZXItcHJpbWFyeSBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1yaW5nLzUwIGFyaWEtaW52YWxpZDpyaW5nLWRlc3RydWN0aXZlLzIwIGRhcms6YXJpYS1pbnZhbGlkOnJpbmctZGVzdHJ1Y3RpdmUvNDAgYXJpYS1pbnZhbGlkOmJvcmRlci1kZXN0cnVjdGl2ZSBzaXplLTQgc2hyaW5rLTAgcm91bmRlZC1bNHB4XSBib3JkZXIgc2hhZG93LXhzIHRyYW5zaXRpb24tc2hhZG93IG91dGxpbmUtbm9uZSBmb2N1cy12aXNpYmxlOnJpbmctWzNweF0gZGlzYWJsZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIGRpc2FibGVkOm9wYWNpdHktNTAiLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICA+CiAgICAgIDxDaGVja2JveFByaW1pdGl2ZS5JbmRpY2F0b3IKICAgICAgICBkYXRhLXNsb3Q9ImNoZWNrYm94LWluZGljYXRvciIKICAgICAgICBjbGFzc05hbWU9ImdyaWQgcGxhY2UtY29udGVudC1jZW50ZXIgdGV4dC1jdXJyZW50IHRyYW5zaXRpb24tbm9uZSIKICAgICAgPgogICAgICAgIDxDaGVja0ljb24gY2xhc3NOYW1lPSJzaXplLTMuNSIgLz4KICAgICAgPC9DaGVja2JveFByaW1pdGl2ZS5JbmRpY2F0b3I+CiAgICA8L0NoZWNrYm94UHJpbWl0aXZlLlJvb3Q+CiAgKQp9CgpleHBvcnQgeyBDaGVja2JveCB9Cg==
+"use client"
+
+import * as React from "react"
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
+import { CheckIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+function Checkbox({
+  className,
+  ...props
+}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {
+  return (
+    <CheckboxPrimitive.Root
+      data-slot="checkbox"
+      className={cn(
+        "peer border-input dark:bg-input/30 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground dark:data-[state=checked]:bg-primary data-[state=checked]:border-primary focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+        className
+      )}
+      {...props}
+    >
+      <CheckboxPrimitive.Indicator
+        data-slot="checkbox-indicator"
+        className="grid place-content-center text-current transition-none"
+      >
+        <CheckIcon className="size-3.5" />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  )
+}
+
+export { Checkbox }

@@ -1,1 +1,188 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFNlbGVjdFByaW1pdGl2ZSBmcm9tICJAcmFkaXgtdWkvcmVhY3Qtc2VsZWN0IgppbXBvcnQgeyBDaGVja0ljb24sIENoZXZyb25Eb3duSWNvbiwgQ2hldnJvblVwSWNvbiB9IGZyb20gImx1Y2lkZS1yZWFjdCIKCmltcG9ydCB7IGNuIH0gZnJvbSAiQC9saWIvdXRpbHMiCgpmdW5jdGlvbiBTZWxlY3QoewogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBTZWxlY3RQcmltaXRpdmUuUm9vdD4pIHsKICByZXR1cm4gPFNlbGVjdFByaW1pdGl2ZS5Sb290IGRhdGEtc2xvdD0ic2VsZWN0IiB7Li4ucHJvcHN9IC8+Cn0KCmZ1bmN0aW9uIFNlbGVjdEdyb3VwKHsKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgU2VsZWN0UHJpbWl0aXZlLkdyb3VwPikgewogIHJldHVybiA8U2VsZWN0UHJpbWl0aXZlLkdyb3VwIGRhdGEtc2xvdD0ic2VsZWN0LWdyb3VwIiB7Li4ucHJvcHN9IC8+Cn0KCmZ1bmN0aW9uIFNlbGVjdFZhbHVlKHsKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgU2VsZWN0UHJpbWl0aXZlLlZhbHVlPikgewogIHJldHVybiA8U2VsZWN0UHJpbWl0aXZlLlZhbHVlIGRhdGEtc2xvdD0ic2VsZWN0LXZhbHVlIiB7Li4ucHJvcHN9IC8+Cn0KCmZ1bmN0aW9uIFNlbGVjdFRyaWdnZXIoewogIGNsYXNzTmFtZSwKICBzaXplID0gImRlZmF1bHQiLAogIGNoaWxkcmVuLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBTZWxlY3RQcmltaXRpdmUuVHJpZ2dlcj4gJiB7CiAgc2l6ZT86ICJzbSIgfCAiZGVmYXVsdCIKfSkgewogIHJldHVybiAoCiAgICA8U2VsZWN0UHJpbWl0aXZlLlRyaWdnZXIKICAgICAgZGF0YS1zbG90PSJzZWxlY3QtdHJpZ2dlciIKICAgICAgZGF0YS1zaXplPXtzaXplfQogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJib3JkZXItaW5wdXQgZGF0YS1bcGxhY2Vob2xkZXJdOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBbJl9zdmc6bm90KFtjbGFzcyo9J3RleHQtJ10pXTp0ZXh0LW11dGVkLWZvcmVncm91bmQgZm9jdXMtdmlzaWJsZTpib3JkZXItcmluZyBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBhcmlhLWludmFsaWQ6cmluZy1kZXN0cnVjdGl2ZS8yMCBkYXJrOmFyaWEtaW52YWxpZDpyaW5nLWRlc3RydWN0aXZlLzQwIGFyaWEtaW52YWxpZDpib3JkZXItZGVzdHJ1Y3RpdmUgZGFyazpiZy1pbnB1dC8zMCBkYXJrOmhvdmVyOmJnLWlucHV0LzUwIGZsZXggdy1maXQgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBnYXAtMiByb3VuZGVkLW1kIGJvcmRlciBiZy10cmFuc3BhcmVudCBweC0zIHB5LTIgdGV4dC1zbSB3aGl0ZXNwYWNlLW5vd3JhcCBzaGFkb3cteHMgdHJhbnNpdGlvbi1bY29sb3IsYm94LXNoYWRvd10gb3V0bGluZS1ub25lIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBkaXNhYmxlZDpjdXJzb3Itbm90LWFsbG93ZWQgZGlzYWJsZWQ6b3BhY2l0eS01MCBkYXRhLVtzaXplPWRlZmF1bHRdOmgtOSBkYXRhLVtzaXplPXNtXTpoLTggKjpkYXRhLVtzbG90PXNlbGVjdC12YWx1ZV06bGluZS1jbGFtcC0xICo6ZGF0YS1bc2xvdD1zZWxlY3QtdmFsdWVdOmZsZXggKjpkYXRhLVtzbG90PXNlbGVjdC12YWx1ZV06aXRlbXMtY2VudGVyICo6ZGF0YS1bc2xvdD1zZWxlY3QtdmFsdWVdOmdhcC0yIFsmX3N2Z106cG9pbnRlci1ldmVudHMtbm9uZSBbJl9zdmddOnNocmluay0wIFsmX3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgID4KICAgICAge2NoaWxkcmVufQogICAgICA8U2VsZWN0UHJpbWl0aXZlLkljb24gYXNDaGlsZD4KICAgICAgICA8Q2hldnJvbkRvd25JY29uIGNsYXNzTmFtZT0ic2l6ZS00IG9wYWNpdHktNTAiIC8+CiAgICAgIDwvU2VsZWN0UHJpbWl0aXZlLkljb24+CiAgICA8L1NlbGVjdFByaW1pdGl2ZS5UcmlnZ2VyPgogICkKfQoKZnVuY3Rpb24gU2VsZWN0Q29udGVudCh7CiAgY2xhc3NOYW1lLAogIGNoaWxkcmVuLAogIHBvc2l0aW9uID0gIml0ZW0tYWxpZ25lZCIsCiAgYWxpZ24gPSAiY2VudGVyIiwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgU2VsZWN0UHJpbWl0aXZlLkNvbnRlbnQ+KSB7CiAgcmV0dXJuICgKICAgIDxTZWxlY3RQcmltaXRpdmUuUG9ydGFsPgogICAgICA8U2VsZWN0UHJpbWl0aXZlLkNvbnRlbnQKICAgICAgICBkYXRhLXNsb3Q9InNlbGVjdC1jb250ZW50IgogICAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgICAiYmctcG9wb3ZlciB0ZXh0LXBvcG92ZXItZm9yZWdyb3VuZCBkYXRhLVtzdGF0ZT1vcGVuXTphbmltYXRlLWluIGRhdGEtW3N0YXRlPWNsb3NlZF06YW5pbWF0ZS1vdXQgZGF0YS1bc3RhdGU9Y2xvc2VkXTpmYWRlLW91dC0wIGRhdGEtW3N0YXRlPW9wZW5dOmZhZGUtaW4tMCBkYXRhLVtzdGF0ZT1jbG9zZWRdOnpvb20tb3V0LTk1IGRhdGEtW3N0YXRlPW9wZW5dOnpvb20taW4tOTUgZGF0YS1bc2lkZT1ib3R0b21dOnNsaWRlLWluLWZyb20tdG9wLTIgZGF0YS1bc2lkZT1sZWZ0XTpzbGlkZS1pbi1mcm9tLXJpZ2h0LTIgZGF0YS1bc2lkZT1yaWdodF06c2xpZGUtaW4tZnJvbS1sZWZ0LTIgZGF0YS1bc2lkZT10b3BdOnNsaWRlLWluLWZyb20tYm90dG9tLTIgcmVsYXRpdmUgei01MCBtYXgtaC0oLS1yYWRpeC1zZWxlY3QtY29udGVudC1hdmFpbGFibGUtaGVpZ2h0KSBtaW4tdy1bOHJlbV0gb3JpZ2luLSgtLXJhZGl4LXNlbGVjdC1jb250ZW50LXRyYW5zZm9ybS1vcmlnaW4pIG92ZXJmbG93LXgtaGlkZGVuIG92ZXJmbG93LXktYXV0byByb3VuZGVkLW1kIGJvcmRlciBzaGFkb3ctbWQiLAogICAgICAgICAgcG9zaXRpb24gPT09ICJwb3BwZXIiICYmCiAgICAgICAgICAgICJkYXRhLVtzaWRlPWJvdHRvbV06dHJhbnNsYXRlLXktMSBkYXRhLVtzaWRlPWxlZnRdOi10cmFuc2xhdGUteC0xIGRhdGEtW3NpZGU9cmlnaHRdOnRyYW5zbGF0ZS14LTEgZGF0YS1bc2lkZT10b3BdOi10cmFuc2xhdGUteS0xIiwKICAgICAgICAgIGNsYXNzTmFtZQogICAgICAgICl9CiAgICAgICAgcG9zaXRpb249e3Bvc2l0aW9ufQogICAgICAgIGFsaWduPXthbGlnbn0KICAgICAgICB7Li4ucHJvcHN9CiAgICAgID4KICAgICAgICA8U2VsZWN0U2Nyb2xsVXBCdXR0b24gLz4KICAgICAgICA8U2VsZWN0UHJpbWl0aXZlLlZpZXdwb3J0CiAgICAgICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICAgICAicC0xIiwKICAgICAgICAgICAgcG9zaXRpb24gPT09ICJwb3BwZXIiICYmCiAgICAgICAgICAgICAgImgtW3ZhcigtLXJhZGl4LXNlbGVjdC10cmlnZ2VyLWhlaWdodCldIHctZnVsbCBtaW4tdy1bdmFyKC0tcmFkaXgtc2VsZWN0LXRyaWdnZXItd2lkdGgpXSBzY3JvbGwtbXktMSIKICAgICAgICAgICl9CiAgICAgICAgPgogICAgICAgICAge2NoaWxkcmVufQogICAgICAgIDwvU2VsZWN0UHJpbWl0aXZlLlZpZXdwb3J0PgogICAgICAgIDxTZWxlY3RTY3JvbGxEb3duQnV0dG9uIC8+CiAgICAgIDwvU2VsZWN0UHJpbWl0aXZlLkNvbnRlbnQ+CiAgICA8L1NlbGVjdFByaW1pdGl2ZS5Qb3J0YWw+CiAgKQp9CgpmdW5jdGlvbiBTZWxlY3RMYWJlbCh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBTZWxlY3RQcmltaXRpdmUuTGFiZWw+KSB7CiAgcmV0dXJuICgKICAgIDxTZWxlY3RQcmltaXRpdmUuTGFiZWwKICAgICAgZGF0YS1zbG90PSJzZWxlY3QtbGFiZWwiCiAgICAgIGNsYXNzTmFtZT17Y24oInRleHQtbXV0ZWQtZm9yZWdyb3VuZCBweC0yIHB5LTEuNSB0ZXh0LXhzIiwgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApCn0KCmZ1bmN0aW9uIFNlbGVjdEl0ZW0oewogIGNsYXNzTmFtZSwKICBjaGlsZHJlbiwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgU2VsZWN0UHJpbWl0aXZlLkl0ZW0+KSB7CiAgcmV0dXJuICgKICAgIDxTZWxlY3RQcmltaXRpdmUuSXRlbQogICAgICBkYXRhLXNsb3Q9InNlbGVjdC1pdGVtIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJmb2N1czpiZy1hY2NlbnQgZm9jdXM6dGV4dC1hY2NlbnQtZm9yZWdyb3VuZCBbJl9zdmc6bm90KFtjbGFzcyo9J3RleHQtJ10pXTp0ZXh0LW11dGVkLWZvcmVncm91bmQgcmVsYXRpdmUgZmxleCB3LWZ1bGwgY3Vyc29yLWRlZmF1bHQgaXRlbXMtY2VudGVyIGdhcC0yIHJvdW5kZWQtc20gcHktMS41IHByLTggcGwtMiB0ZXh0LXNtIG91dGxpbmUtaGlkZGVuIHNlbGVjdC1ub25lIGRhdGEtW2Rpc2FibGVkXTpwb2ludGVyLWV2ZW50cy1ub25lIGRhdGEtW2Rpc2FibGVkXTpvcGFjaXR5LTUwIFsmX3N2Z106cG9pbnRlci1ldmVudHMtbm9uZSBbJl9zdmddOnNocmluay0wIFsmX3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCAqOltzcGFuXTpsYXN0OmZsZXggKjpbc3Bhbl06bGFzdDppdGVtcy1jZW50ZXIgKjpbc3Bhbl06bGFzdDpnYXAtMiIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgID4KICAgICAgPHNwYW4KICAgICAgICBkYXRhLXNsb3Q9InNlbGVjdC1pdGVtLWluZGljYXRvciIKICAgICAgICBjbGFzc05hbWU9ImFic29sdXRlIHJpZ2h0LTIgZmxleCBzaXplLTMuNSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIiCiAgICAgID4KICAgICAgICA8U2VsZWN0UHJpbWl0aXZlLkl0ZW1JbmRpY2F0b3I+CiAgICAgICAgICA8Q2hlY2tJY29uIGNsYXNzTmFtZT0ic2l6ZS00IiAvPgogICAgICAgIDwvU2VsZWN0UHJpbWl0aXZlLkl0ZW1JbmRpY2F0b3I+CiAgICAgIDwvc3Bhbj4KICAgICAgPFNlbGVjdFByaW1pdGl2ZS5JdGVtVGV4dD57Y2hpbGRyZW59PC9TZWxlY3RQcmltaXRpdmUuSXRlbVRleHQ+CiAgICA8L1NlbGVjdFByaW1pdGl2ZS5JdGVtPgogICkKfQoKZnVuY3Rpb24gU2VsZWN0U2VwYXJhdG9yKHsKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFNlbGVjdFByaW1pdGl2ZS5TZXBhcmF0b3I+KSB7CiAgcmV0dXJuICgKICAgIDxTZWxlY3RQcmltaXRpdmUuU2VwYXJhdG9yCiAgICAgIGRhdGEtc2xvdD0ic2VsZWN0LXNlcGFyYXRvciIKICAgICAgY2xhc3NOYW1lPXtjbigiYmctYm9yZGVyIHBvaW50ZXItZXZlbnRzLW5vbmUgLW14LTEgbXktMSBoLXB4IiwgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApCn0KCmZ1bmN0aW9uIFNlbGVjdFNjcm9sbFVwQnV0dG9uKHsKICBjbGFzc05hbWUsCiAgLi4ucHJvcHMKfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8dHlwZW9mIFNlbGVjdFByaW1pdGl2ZS5TY3JvbGxVcEJ1dHRvbj4pIHsKICByZXR1cm4gKAogICAgPFNlbGVjdFByaW1pdGl2ZS5TY3JvbGxVcEJ1dHRvbgogICAgICBkYXRhLXNsb3Q9InNlbGVjdC1zY3JvbGwtdXAtYnV0dG9uIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJmbGV4IGN1cnNvci1kZWZhdWx0IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBweS0xIiwKICAgICAgICBjbGFzc05hbWUKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgPgogICAgICA8Q2hldnJvblVwSWNvbiBjbGFzc05hbWU9InNpemUtNCIgLz4KICAgIDwvU2VsZWN0UHJpbWl0aXZlLlNjcm9sbFVwQnV0dG9uPgogICkKfQoKZnVuY3Rpb24gU2VsZWN0U2Nyb2xsRG93bkJ1dHRvbih7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBTZWxlY3RQcmltaXRpdmUuU2Nyb2xsRG93bkJ1dHRvbj4pIHsKICByZXR1cm4gKAogICAgPFNlbGVjdFByaW1pdGl2ZS5TY3JvbGxEb3duQnV0dG9uCiAgICAgIGRhdGEtc2xvdD0ic2VsZWN0LXNjcm9sbC1kb3duLWJ1dHRvbiIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAiZmxleCBjdXJzb3ItZGVmYXVsdCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcHktMSIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgID4KICAgICAgPENoZXZyb25Eb3duSWNvbiBjbGFzc05hbWU9InNpemUtNCIgLz4KICAgIDwvU2VsZWN0UHJpbWl0aXZlLlNjcm9sbERvd25CdXR0b24+CiAgKQp9CgpleHBvcnQgewogIFNlbGVjdCwKICBTZWxlY3RDb250ZW50LAogIFNlbGVjdEdyb3VwLAogIFNlbGVjdEl0ZW0sCiAgU2VsZWN0TGFiZWwsCiAgU2VsZWN0U2Nyb2xsRG93bkJ1dHRvbiwKICBTZWxlY3RTY3JvbGxVcEJ1dHRvbiwKICBTZWxlY3RTZXBhcmF0b3IsCiAgU2VsZWN0VHJpZ2dlciwKICBTZWxlY3RWYWx1ZSwKfQo=
+import * as React from "react"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+function Select({
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Root>) {
+  return <SelectPrimitive.Root data-slot="select" {...props} />
+}
+
+function SelectGroup({
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Group>) {
+  return <SelectPrimitive.Group data-slot="select-group" {...props} />
+}
+
+function SelectValue({
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Value>) {
+  return <SelectPrimitive.Value data-slot="select-value" {...props} />
+}
+
+function SelectTrigger({
+  className,
+  size = "default",
+  children,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Trigger> & {
+  size?: "sm" | "default"
+}) {
+  return (
+    <SelectPrimitive.Trigger
+      data-slot="select-trigger"
+      data-size={size}
+      className={cn(
+        "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:bg-input/30 dark:hover:bg-input/50 flex w-fit items-center justify-between gap-2 rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <SelectPrimitive.Icon asChild>
+        <ChevronDownIcon className="size-4 opacity-50" />
+      </SelectPrimitive.Icon>
+    </SelectPrimitive.Trigger>
+  )
+}
+
+function SelectContent({
+  className,
+  children,
+  position = "item-aligned",
+  align = "center",
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Content>) {
+  return (
+    <SelectPrimitive.Portal>
+      <SelectPrimitive.Content
+        data-slot="select-content"
+        className={cn(
+          "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-(--radix-select-content-available-height) min-w-[8rem] origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border shadow-md",
+          position === "popper" &&
+            "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
+          className
+        )}
+        position={position}
+        align={align}
+        {...props}
+      >
+        <SelectScrollUpButton />
+        <SelectPrimitive.Viewport
+          className={cn(
+            "p-1",
+            position === "popper" &&
+              "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)] scroll-my-1"
+          )}
+        >
+          {children}
+        </SelectPrimitive.Viewport>
+        <SelectScrollDownButton />
+      </SelectPrimitive.Content>
+    </SelectPrimitive.Portal>
+  )
+}
+
+function SelectLabel({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Label>) {
+  return (
+    <SelectPrimitive.Label
+      data-slot="select-label"
+      className={cn("text-muted-foreground px-2 py-1.5 text-xs", className)}
+      {...props}
+    />
+  )
+}
+
+function SelectItem({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Item>) {
+  return (
+    <SelectPrimitive.Item
+      data-slot="select-item"
+      className={cn(
+        "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground relative flex w-full cursor-default items-center gap-2 rounded-sm py-1.5 pr-8 pl-2 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+        className
+      )}
+      {...props}
+    >
+      <span
+        data-slot="select-item-indicator"
+        className="absolute right-2 flex size-3.5 items-center justify-center"
+      >
+        <SelectPrimitive.ItemIndicator>
+          <CheckIcon className="size-4" />
+        </SelectPrimitive.ItemIndicator>
+      </span>
+      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+    </SelectPrimitive.Item>
+  )
+}
+
+function SelectSeparator({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.Separator>) {
+  return (
+    <SelectPrimitive.Separator
+      data-slot="select-separator"
+      className={cn("bg-border pointer-events-none -mx-1 my-1 h-px", className)}
+      {...props}
+    />
+  )
+}
+
+function SelectScrollUpButton({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>) {
+  return (
+    <SelectPrimitive.ScrollUpButton
+      data-slot="select-scroll-up-button"
+      className={cn(
+        "flex cursor-default items-center justify-center py-1",
+        className
+      )}
+      {...props}
+    >
+      <ChevronUpIcon className="size-4" />
+    </SelectPrimitive.ScrollUpButton>
+  )
+}
+
+function SelectScrollDownButton({
+  className,
+  ...props
+}: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {
+  return (
+    <SelectPrimitive.ScrollDownButton
+      data-slot="select-scroll-down-button"
+      className={cn(
+        "flex cursor-default items-center justify-center py-1",
+        className
+      )}
+      {...props}
+    >
+      <ChevronDownIcon className="size-4" />
+    </SelectPrimitive.ScrollDownButton>
+  )
+}
+
+export {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+}

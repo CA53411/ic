@@ -1,1 +1,36 @@
-IyBQbGF0b25pYyBBSSBCYWNrZW5kIOKAlCBTUEVDLm1kCgojIyBBcmNoaXRlY3R1cmUKLSBTdXBhYmFzZSBFZGdlIEZ1bmN0aW9ucyAoRGVubyBSdW50aW1lKQotIFN1cGFiYXNlIFBvc3RncmVTUUwgKFJMUyBQb2xpY2llcykKLSBEZWVwU2Vlay1WNC1GbGFzaCBBUEkgKFNTRSBTdHJlYW1pbmcpCi0gWnBheSBQYXltZW50IEdhdGV3YXkKCiMjIEVkZ2UgRnVuY3Rpb25zICg3IGNvcmUpCgp8IEZ1bmN0aW9uIHwgUGF0aCB8IE1ldGhvZCB8IEF1dGggfCBEZXNjcmlwdGlvbiB8CnwtLS0tLS0tLS0tfC0tLS0tLXwtLS0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLS0tLXwKfCBjaGF0LXN0cmVhbSB8IC9jaGF0LXN0cmVhbSB8IFBPU1QgfCBKV1QgfCBTU0Ugc3RyZWFtaW5nIGNvbnZlcnNhdGlvbiB3aXRoIERlZXBTZWVrIHwKfCBwYXltZW50LWNyZWF0ZSB8IC9wYXltZW50L2NyZWF0ZSB8IFBPU1QgfCBKV1QgfCBDcmVhdGUgWnBheSBwYXltZW50IG9yZGVyIHwKfCBwYXltZW50LWNhbGxiYWNrIHwgL3BheW1lbnQvY2FsbGJhY2sgfCBHRVQgfCBOb25lIHwgWnBheSBhc3luYyBjYWxsYmFjayB8CnwgY29uc29saWRhdGlvbiB8IC9jb25zb2xpZGF0aW9uIHwgUE9TVCB8IFNlcnZpY2UgfCBTVE3ihpJMVE0gbWVtb3J5IGNvbnNvbGlkYXRpb24gfAp8IG1pbGVzdG9uZS1hZGp1c3QgfCAvbWlsZXN0b25lL2FkanVzdCB8IFBPU1QgfCBTZXJ2aWNlIHwgRGFpbHkgaW50aW1hY3kgYWRqdXN0bWVudCB8CnwgZW5lcmd5IHwgL2VuZXJneSB8IEdFVC9QT1NUIHwgSldUIHwgUXVlcnkvY29uc3VtZSBlbmVyZ3kgfAp8IHByb2FjdGl2ZSB8IC9wcm9hY3RpdmUgfCBQT1NUIHwgSldUIHwgR2VuZXJhdGUgcHJvYWN0aXZlIG1lc3NhZ2UgfAoKIyMgU2hhcmVkIFV0aWxpdGllcwotIGBzdXBhYmFzZS9mdW5jdGlvbnMvX3NoYXJlZC9jb3JzLnRzYCDigJQgQ09SUyBoZWFkZXJzCi0gYHN1cGFiYXNlL2Z1bmN0aW9ucy9fc2hhcmVkL3N1cGFiYXNlLnRzYCDigJQgU3VwYWJhc2UgY2xpZW50Ci0gYHN1cGFiYXNlL2Z1bmN0aW9ucy9fc2hhcmVkL2RlZXBzZWVrLnRzYCDigJQgRGVlcFNlZWsgQVBJIGNsaWVudAotIGBzdXBhYmFzZS9mdW5jdGlvbnMvX3NoYXJlZC96cGF5LnRzYCDigJQgWnBheSBBUEkgY2xpZW50CgojIyBFbnZpcm9ubWVudCBWYXJpYWJsZXMKLSBERUVQU0VFS19BUElfS0VZIOKAlCBEZWVwU2VlayBBUEkga2V5Ci0gWlBBWV9QSUQg4oCUIFpwYXkgbWVyY2hhbnQgSUQKLSBaUEFZX0tFWSDigJQgWnBheSBzZWNyZXQga2V5Ci0gU1VQQUJBU0VfVVJMIOKAlCBBdXRvLWluamVjdGVkCi0gU1VQQUJBU0VfU0VSVklDRV9ST0xFX0tFWSDigJQgQXV0by1pbmplY3RlZAoKIyMgRGF0YWJhc2UKLSBTY2hlbWE6IC9tbnQvYWdlbnRzL291dHB1dC9zY2hlbWEuc3FsCi0gRGVwbG95IHZpYSBTdXBhYmFzZSBEYXNoYm9hcmQgU1FMIEVkaXRvcgo=
+# Platonic AI Backend — SPEC.md
+
+## Architecture
+- Supabase Edge Functions (Deno Runtime)
+- Supabase PostgreSQL (RLS Policies)
+- DeepSeek-V4-Flash API (SSE Streaming)
+- Zpay Payment Gateway
+
+## Edge Functions (7 core)
+
+| Function | Path | Method | Auth | Description |
+|----------|------|--------|------|-------------|
+| chat-stream | /chat-stream | POST | JWT | SSE streaming conversation with DeepSeek |
+| payment-create | /payment/create | POST | JWT | Create Zpay payment order |
+| payment-callback | /payment/callback | GET | None | Zpay async callback |
+| consolidation | /consolidation | POST | Service | STM→LTM memory consolidation |
+| milestone-adjust | /milestone/adjust | POST | Service | Daily intimacy adjustment |
+| energy | /energy | GET/POST | JWT | Query/consume energy |
+| proactive | /proactive | POST | JWT | Generate proactive message |
+
+## Shared Utilities
+- `supabase/functions/_shared/cors.ts` — CORS headers
+- `supabase/functions/_shared/supabase.ts` — Supabase client
+- `supabase/functions/_shared/deepseek.ts` — DeepSeek API client
+- `supabase/functions/_shared/zpay.ts` — Zpay API client
+
+## Environment Variables
+- DEEPSEEK_API_KEY — DeepSeek API key
+- ZPAY_PID — Zpay merchant ID
+- ZPAY_KEY — Zpay secret key
+- SUPABASE_URL — Auto-injected
+- SUPABASE_SERVICE_ROLE_KEY — Auto-injected
+
+## Database
+- Schema: /mnt/agents/output/schema.sql
+- Deploy via Supabase Dashboard SQL Editor

@@ -1,1 +1,21 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCgppbXBvcnQgeyBjbiB9IGZyb20gIkAvbGliL3V0aWxzIgoKZnVuY3Rpb24gSW5wdXQoeyBjbGFzc05hbWUsIHR5cGUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCJpbnB1dCI+KSB7CiAgcmV0dXJuICgKICAgIDxpbnB1dAogICAgICB0eXBlPXt0eXBlfQogICAgICBkYXRhLXNsb3Q9ImlucHV0IgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJmaWxlOnRleHQtZm9yZWdyb3VuZCBwbGFjZWhvbGRlcjp0ZXh0LW11dGVkLWZvcmVncm91bmQgc2VsZWN0aW9uOmJnLXByaW1hcnkgc2VsZWN0aW9uOnRleHQtcHJpbWFyeS1mb3JlZ3JvdW5kIGRhcms6YmctaW5wdXQvMzAgYm9yZGVyLWlucHV0IGgtOSB3LWZ1bGwgbWluLXctMCByb3VuZGVkLW1kIGJvcmRlciBiZy10cmFuc3BhcmVudCBweC0zIHB5LTEgdGV4dC1iYXNlIHNoYWRvdy14cyB0cmFuc2l0aW9uLVtjb2xvcixib3gtc2hhZG93XSBvdXRsaW5lLW5vbmUgZmlsZTppbmxpbmUtZmxleCBmaWxlOmgtNyBmaWxlOmJvcmRlci0wIGZpbGU6YmctdHJhbnNwYXJlbnQgZmlsZTp0ZXh0LXNtIGZpbGU6Zm9udC1tZWRpdW0gZGlzYWJsZWQ6cG9pbnRlci1ldmVudHMtbm9uZSBkaXNhYmxlZDpjdXJzb3Itbm90LWFsbG93ZWQgZGlzYWJsZWQ6b3BhY2l0eS01MCBtZDp0ZXh0LXNtIiwKICAgICAgICAiZm9jdXMtdmlzaWJsZTpib3JkZXItcmluZyBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOnJpbmctWzNweF0iLAogICAgICAgICJhcmlhLWludmFsaWQ6cmluZy1kZXN0cnVjdGl2ZS8yMCBkYXJrOmFyaWEtaW52YWxpZDpyaW5nLWRlc3RydWN0aXZlLzQwIGFyaWEtaW52YWxpZDpib3JkZXItZGVzdHJ1Y3RpdmUiLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICkKfQoKZXhwb3J0IHsgSW5wdXQgfQo=
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+  return (
+    <input
+      type={type}
+      data-slot="input"
+      className={cn(
+        "file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+        "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Input }

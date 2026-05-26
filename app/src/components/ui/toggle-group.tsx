@@ -1,1 +1,81 @@
-aW1wb3J0ICogYXMgUmVhY3QgZnJvbSAicmVhY3QiCmltcG9ydCAqIGFzIFRvZ2dsZUdyb3VwUHJpbWl0aXZlIGZyb20gIkByYWRpeC11aS9yZWFjdC10b2dnbGUtZ3JvdXAiCmltcG9ydCB7IHR5cGUgVmFyaWFudFByb3BzIH0gZnJvbSAiY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5IgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKaW1wb3J0IHsgdG9nZ2xlVmFyaWFudHMgfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvdG9nZ2xlIgoKY29uc3QgVG9nZ2xlR3JvdXBDb250ZXh0ID0gUmVhY3QuY3JlYXRlQ29udGV4dDwKICBWYXJpYW50UHJvcHM8dHlwZW9mIHRvZ2dsZVZhcmlhbnRzPiAmIHsKICAgIHNwYWNpbmc/OiBudW1iZXIKICB9Cj4oewogIHNpemU6ICJkZWZhdWx0IiwKICB2YXJpYW50OiAiZGVmYXVsdCIsCiAgc3BhY2luZzogMCwKfSkKCmZ1bmN0aW9uIFRvZ2dsZUdyb3VwKHsKICBjbGFzc05hbWUsCiAgdmFyaWFudCwKICBzaXplLAogIHNwYWNpbmcgPSAwLAogIGNoaWxkcmVuLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBUb2dnbGVHcm91cFByaW1pdGl2ZS5Sb290PiAmCiAgVmFyaWFudFByb3BzPHR5cGVvZiB0b2dnbGVWYXJpYW50cz4gJiB7CiAgICBzcGFjaW5nPzogbnVtYmVyCiAgfSkgewogIHJldHVybiAoCiAgICA8VG9nZ2xlR3JvdXBQcmltaXRpdmUuUm9vdAogICAgICBkYXRhLXNsb3Q9InRvZ2dsZS1ncm91cCIKICAgICAgZGF0YS12YXJpYW50PXt2YXJpYW50fQogICAgICBkYXRhLXNpemU9e3NpemV9CiAgICAgIGRhdGEtc3BhY2luZz17c3BhY2luZ30KICAgICAgc3R5bGU9e3sgIi0tZ2FwIjogc3BhY2luZyB9IGFzIFJlYWN0LkNTU1Byb3BlcnRpZXN9CiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgImdyb3VwL3RvZ2dsZS1ncm91cCBmbGV4IHctZml0IGl0ZW1zLWNlbnRlciBnYXAtWy0tc3BhY2luZyh2YXIoLS1nYXApKV0gcm91bmRlZC1tZCBkYXRhLVtzcGFjaW5nPWRlZmF1bHRdOmRhdGEtW3ZhcmlhbnQ9b3V0bGluZV06c2hhZG93LXhzIiwKICAgICAgICBjbGFzc05hbWUKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgPgogICAgICA8VG9nZ2xlR3JvdXBDb250ZXh0LlByb3ZpZGVyIHZhbHVlPXt7IHZhcmlhbnQsIHNpemUsIHNwYWNpbmcgfX0+CiAgICAgICAge2NoaWxkcmVufQogICAgICA8L1RvZ2dsZUdyb3VwQ29udGV4dC5Qcm92aWRlcj4KICAgIDwvVG9nZ2xlR3JvdXBQcmltaXRpdmUuUm9vdD4KICApCn0KCmZ1bmN0aW9uIFRvZ2dsZUdyb3VwSXRlbSh7CiAgY2xhc3NOYW1lLAogIGNoaWxkcmVuLAogIHZhcmlhbnQsCiAgc2l6ZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczx0eXBlb2YgVG9nZ2xlR3JvdXBQcmltaXRpdmUuSXRlbT4gJgogIFZhcmlhbnRQcm9wczx0eXBlb2YgdG9nZ2xlVmFyaWFudHM+KSB7CiAgY29uc3QgY29udGV4dCA9IFJlYWN0LnVzZUNvbnRleHQoVG9nZ2xlR3JvdXBDb250ZXh0KQoKICByZXR1cm4gKAogICAgPFRvZ2dsZUdyb3VwUHJpbWl0aXZlLkl0ZW0KICAgICAgZGF0YS1zbG90PSJ0b2dnbGUtZ3JvdXAtaXRlbSIKICAgICAgZGF0YS12YXJpYW50PXtjb250ZXh0LnZhcmlhbnQgfHwgdmFyaWFudH0KICAgICAgZGF0YS1zaXplPXtjb250ZXh0LnNpemUgfHwgc2l6ZX0KICAgICAgZGF0YS1zcGFjaW5nPXtjb250ZXh0LnNwYWNpbmd9CiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgdG9nZ2xlVmFyaWFudHMoewogICAgICAgICAgdmFyaWFudDogY29udGV4dC52YXJpYW50IHx8IHZhcmlhbnQsCiAgICAgICAgICBzaXplOiBjb250ZXh0LnNpemUgfHwgc2l6ZSwKICAgICAgICB9KSwKICAgICAgICAidy1hdXRvIG1pbi13LTAgc2hyaW5rLTAgcHgtMyBmb2N1czp6LTEwIGZvY3VzLXZpc2libGU6ei0xMCIsCiAgICAgICAgImRhdGEtW3NwYWNpbmc9MF06cm91bmRlZC1ub25lIGRhdGEtW3NwYWNpbmc9MF06c2hhZG93LW5vbmUgZGF0YS1bc3BhY2luZz0wXTpmaXJzdDpyb3VuZGVkLWwtbWQgZGF0YS1bc3BhY2luZz0wXTpsYXN0OnJvdW5kZWQtci1tZCBkYXRhLVtzcGFjaW5nPTBdOmRhdGEtW3ZhcmlhbnQ9b3V0bGluZV06Ym9yZGVyLWwtMCBkYXRhLVtzcGFjaW5nPTBdOmRhdGEtW3ZhcmlhbnQ9b3V0bGluZV06Zmlyc3Q6Ym9yZGVyLWwiLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICA+CiAgICAgIHtjaGlsZHJlbn0KICAgIDwvVG9nZ2xlR3JvdXBQcmltaXRpdmUuSXRlbT4KICApCn0KCmV4cG9ydCB7IFRvZ2dsZUdyb3VwLCBUb2dnbGVHcm91cEl0ZW0gfQo=
+import * as React from "react"
+import * as ToggleGroupPrimitive from "@radix-ui/react-toggle-group"
+import { type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+import { toggleVariants } from "@/components/ui/toggle"
+
+const ToggleGroupContext = React.createContext<
+  VariantProps<typeof toggleVariants> & {
+    spacing?: number
+  }
+>({
+  size: "default",
+  variant: "default",
+  spacing: 0,
+})
+
+function ToggleGroup({
+  className,
+  variant,
+  size,
+  spacing = 0,
+  children,
+  ...props
+}: React.ComponentProps<typeof ToggleGroupPrimitive.Root> &
+  VariantProps<typeof toggleVariants> & {
+    spacing?: number
+  }) {
+  return (
+    <ToggleGroupPrimitive.Root
+      data-slot="toggle-group"
+      data-variant={variant}
+      data-size={size}
+      data-spacing={spacing}
+      style={{ "--gap": spacing } as React.CSSProperties}
+      className={cn(
+        "group/toggle-group flex w-fit items-center gap-[--spacing(var(--gap))] rounded-md data-[spacing=default]:data-[variant=outline]:shadow-xs",
+        className
+      )}
+      {...props}
+    >
+      <ToggleGroupContext.Provider value={{ variant, size, spacing }}>
+        {children}
+      </ToggleGroupContext.Provider>
+    </ToggleGroupPrimitive.Root>
+  )
+}
+
+function ToggleGroupItem({
+  className,
+  children,
+  variant,
+  size,
+  ...props
+}: React.ComponentProps<typeof ToggleGroupPrimitive.Item> &
+  VariantProps<typeof toggleVariants>) {
+  const context = React.useContext(ToggleGroupContext)
+
+  return (
+    <ToggleGroupPrimitive.Item
+      data-slot="toggle-group-item"
+      data-variant={context.variant || variant}
+      data-size={context.size || size}
+      data-spacing={context.spacing}
+      className={cn(
+        toggleVariants({
+          variant: context.variant || variant,
+          size: context.size || size,
+        }),
+        "w-auto min-w-0 shrink-0 px-3 focus:z-10 focus-visible:z-10",
+        "data-[spacing=0]:rounded-none data-[spacing=0]:shadow-none data-[spacing=0]:first:rounded-l-md data-[spacing=0]:last:rounded-r-md data-[spacing=0]:data-[variant=outline]:border-l-0 data-[spacing=0]:data-[variant=outline]:first:border-l",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </ToggleGroupPrimitive.Item>
+  )
+}
+
+export { ToggleGroup, ToggleGroupItem }

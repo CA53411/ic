@@ -1,1 +1,281 @@
-IyBDaGF0IFBhZ2UgKGNoYXQubWQpCgpUaGUgZnVsbC1zY3JlZW4gY2hhdCBpbnRlcmZhY2Ug4oCUIHRoZSBoZWFydCBvZiB0aGUgUGxhdG9uaWMgQUkgZXhwZXJpZW5jZS4gRmVhdHVyZXMgYSBtZXNtZXJpemluZyBwaW5rIGJyZWF0aGluZyBncmFkaWVudCBiYWNrZ3JvdW5kLCByZWFsLXRpbWUgU1NFIHN0cmVhbWluZyBtZXNzYWdlcyB3aXRoIHR5cGV3cml0ZXIgZWZmZWN0cywgZGlzdGluY3QgbWVzc2FnZSBidWJibGVzIGZvciB1c2VyIGFuZCBBSSwgYW5kIGEgZml4ZWQgYm90dG9tIGlucHV0IGJhciB3aXRoIHF1aWNrLWFjdGlvbiBidXR0b25zLiBUaGlzIHBhZ2UgaGFzIG5vIHNpZGViYXIgdG8gbWF4aW1pemUgaW1tZXJzaW9uLgoKfCBQcm9wZXJ0eSB8IFZhbHVlIHwKfC0tLS0tLS0tLS18LS0tLS0tLXwKfCBSb3V0ZSB8IGAvY2hhdGAgfAp8IFNlY3Rpb25zIHwgNSB8CnwgUHVycG9zZSB8IFByaW1hcnkgY29udmVyc2F0aW9uIGludGVyZmFjZSB3aXRoIEFJIGNvbXBhbmlvbiB8CnwgTGF5b3V0IHwgRnVsbC1zY3JlZW4gaW1tZXJzaXZlIChubyBzaWRlYmFyKSB8CgotLS0KCiMjIFBhZ2UgTGF5b3V0CgpGdWxsIHZpZXdwb3J0LCBubyBzaWRlYmFyLiBUaGUgZW50aXJlIHNjcmVlbiBpcyB0aGUgY2hhdCBjYW52YXMuCgpgYGAK4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiBDaGF0IFRvcCBCYXIgKDU2cHgpICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCIOKUjOKUgOKUgOKUgOKUgOKUkCBDb21wYW5pb24gTmFtZSArIFN0YXR1cyAgICAgICAgICBbU2V0dGluZ3NdW01lbnVdIOKUggrilJzilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilKQK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgIE1lc3NhZ2UgSGlzdG9yeSBBcmVhIChzY3JvbGxhYmxlLCBmbGV4LTEpICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgIOKUgiBBSSBNZXNzYWdlIEJ1YmJsZSAocGluaykgICAg4pSCICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgIOKUgiDkvaDlpb3lkYDvvIHku4rlpKnov4flvpfmgI7kuYjmoLfvvJ8gICAgIOKUgiAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJggICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICAgICAgICAgICAgICAgICAgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICAgICAgICDilIIK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICDilIIgVXNlciBNZXNzYWdlICh3aGl0ZSnilIIgICAgICAgICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCIOS7iuWkqeW3peS9nOacieeCuee0ry4uLiAgIOKUgiAgICAgICAgICDilIIK4pSCICAgICAgICAgICAgICAgICAgICAgICAgICDilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJggICAgICAgICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAgICAgICDilIIK4pSCICAgICAg4pSCIEFJIE1lc3NhZ2UgKHBpbmspIOKAlCBzdHJlYW1pbmcgdGV4dCAgICAgICDilIIgICAgICAgIOKUggrilIIgICAgICDilIIg6L6b6Ium5ZWm77yB6KaB5LiN6KaB6IGK6IGK5piv5LuA5LmI6K6p5L2g5oSf5Yiw57SvLi4uIOKWiCAgIOKUgiAgICAgICAg4pSCCuKUgiAgICAgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICAgICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICBEYXRlIFNlcGFyYXRvcjogIuKAlOKAlCDku4rlpKkg4oCU4oCUIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSc4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSkCuKUgiBRdWljayBBY3Rpb25zIFJvdyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCIFvlj5HpgIHlm77niYddIFvooajmg4VdIFvor63pn7NdIFvmm7TlpJpdICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUnOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUpArilIIgSW5wdXQgQmFyIChmaXhlZCBib3R0b20pICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiBbQXR0YWNobWVudF0gW1RleHQgSW5wdXQuLi4uLi4uLi4uLi4uLi4uLl0gW1NlbmRdICAgICAgICDilIIK4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYCmBgYAoKLSAqKkJhY2tncm91bmQqKjogYGJyZWF0aGluZy1ncmFkaWVudGAgYW5pbWF0aW9uICg4cyBjeWNsZSkgKyAyLTMgZmxvYXRpbmcgc29mdCBvcmJzCi0gKipUb3AgYmFyKio6IHRyYW5zcGFyZW50IHdpdGggYGJhY2tkcm9wLWJsdXIoOHB4KWAsIHN1YnRsZSBib3R0b20gYm9yZGVyIGBwaW5rLTEwMGAKLSAqKk1lc3NhZ2UgYXJlYSoqOiBzY3JvbGxhYmxlLCBwYWRkaW5nIDI0cHgsIG1lc3NhZ2VzIGFsaWduZWQgYWx0ZXJuYXRlbHkKLSAqKklucHV0IGFyZWEqKjogZml4ZWQgYXQgYm90dG9tLCBgYmFja2Ryb3AtYmx1cigxMnB4KWAsIHNlbWktdHJhbnNwYXJlbnQgd2hpdGUgYmcKCi0tLQoKIyMgQmFja2dyb3VuZAoKIyMjIEJyZWF0aGluZyBHcmFkaWVudApTYW1lIGFuaW1hdGlvbiBhcyBhdXRoIHBhZ2UgYnV0IHNsaWdodGx5IG1vcmUgc3VidGxlOgpgYGBjc3MKYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgI0ZGRjhGQSAwJSwgI0ZGRjBGMyAyMCUsICNGRkU4RUUgNDAlLCAjRkZENEUwIDYwJSwgI0ZGQzlEOCA4MCUsICNGRkI2QzEgMTAwJSk7CmJhY2tncm91bmQtc2l6ZTogNDAwJSA0MDAlOwphbmltYXRpb246IGJyZWF0aGluZy1ncmFkaWVudCAxMHMgZWFzZS1pbi1vdXQgaW5maW5pdGU7CmBgYApTbGlnaHRseSBzbG93ZXIgKDEwcyB2cyA4cykgZm9yIGEgY2FsbWVyIGNvbnZlcnNhdGlvbiBhdG1vc3BoZXJlLgoKIyMjIEZsb2F0aW5nIE9yYnMKLSAyIG9yYnMgb25seSAobGVzcyBkaXN0cmFjdGluZyBkdXJpbmcgY29udmVyc2F0aW9uKToKICAtIE9yYiAxOiAzNTBweCwgYHJnYmEoMjU1LDE4MiwxOTMsMC4xMilgLCBibHVyKDEwMHB4KSwgdG9wLWxlZnQsIGBmbG9hdC1vcmJgIDE2cwogIC0gT3JiIDI6IDI4MHB4LCBgcmdiYSgyMzIsMTYwLDE5MSwwLjEpYCwgYmx1cigxMjBweCksIGJvdHRvbS1yaWdodCwgYGZsb2F0LW9yYmAgMTRzLCA0cyBkZWxheQoKLS0tCgojIyBTZWN0aW9uIDE6IENoYXQgVG9wIEJhcgoKIyMjIExheW91dAotIEhlaWdodDogNTZweCwgZml4ZWQgdG9wCi0gQmFja2dyb3VuZDogYHJnYmEoMjU1LDI0NSwyNDcsMC43KWAgKyBgYmFja2Ryb3AtYmx1cig4cHgpYAotIEJvcmRlci1ib3R0b206IDFweCBgcmdiYSgyNTUsMTgyLDE5MywwLjIpYAotIFBhZGRpbmc6IDAgMjBweAoKIyMjIEVsZW1lbnRzCgojIyMjIExlZnQgU2lkZQotICoqQmFjayBidXR0b24qKjogYENoZXZyb25MZWZ0YCBpY29uLCAyMHB4LCBgdGV4dC1zZWNvbmRhcnlgLCBvbmx5IG9uIG1vYmlsZSAoPCA3NjhweCkKLSAqKkNvbXBhbmlvbiBBdmF0YXIqKjogMzZweCBjaXJjbGUsIGBjb21wYW5pb24tMS5qcGdgLCBgc2hhZG93LXNtYAotICoqTmFtZSArIFN0YXR1cyoqIChiZXNpZGUgYXZhdGFyKToKICAtIE5hbWU6ICLlsI/mqLEiIGluIGBoNGAKICAtIFN0YXR1czogIuWcqOe6vyDwn5KaIiBvciAi5q2j5Zyo6L6T5YWlLi4uIiBpbiBgYm9keS1zbWAsIGB0ZXh0LW11dGVkYAogIC0gIuato+WcqOi+k+WFpS4uLiIgc2hvd3MgYW5pbWF0ZWQgZG90cyAoMyBkb3RzIGN5Y2xpbmcgb3BhY2l0eSkKCiMjIyMgUmlnaHQgU2lkZQotICoqQ29tcGFuaW9uIFNldHRpbmdzKio6IGBTZXR0aW5nc2AgaWNvbiBidXR0b24sIGBnaG9zdGAgc3R5bGUsIDM2cHggY2lyY2xlIOKAlCBvcGVucyBjb21wYW5pb24gY29uZmlnIGRyYXdlcgotICoqTW9yZSBNZW51Kio6IGBNb3JlVmVydGljYWxgIGljb24gYnV0dG9uLCBkcm9wZG93biBtZW51IHdpdGg6IOa4heepuuWvueivnSAvIOWvvOWHuuiusOW9lSAvIOS4vuaKpQoKIyMjIEFuaW1hdGlvbnMKLSBUb3AgYmFyOiBmYWRlcyBpbiBvbiBwYWdlIGxvYWQsIDMwMG1zCi0gIuato+WcqOi+k+WFpS4uLiI6IGRvdHMgcHVsc2Ugb3BhY2l0eSAwLjPihpIxLCBzdGFnZ2VyZWQgMjAwbXMsIGluZmluaXRlCi0gU2V0dGluZ3MgZHJhd2VyOiBzbGlkZXMgZnJvbSByaWdodCwgNDAwbXMgZWFzZS1zbW9vdGgKCi0tLQoKIyMgU2VjdGlvbiAyOiBNZXNzYWdlIEhpc3RvcnkgQXJlYQoKIyMjIExheW91dAotIEZsZXgtMSwgZmlsbHMgYWxsIHNwYWNlIGJldHdlZW4gdG9wIGJhciBhbmQgaW5wdXQgYXJlYQotIFNjcm9sbGFibGUgKGF1dG8tc2Nyb2xsIHRvIGJvdHRvbSBvbiBuZXcgbWVzc2FnZXMpCi0gUGFkZGluZzogMjBweCBob3Jpem9udGFsLCAxNnB4IHZlcnRpY2FsCi0gTWVzc2FnZXMgYWxpZ25lZDogQUkgbGVmdC1hbGlnbmVkLCB1c2VyIHJpZ2h0LWFsaWduZWQKCiMjIyBNZXNzYWdlIEJ1YmJsZSBEZXNpZ24KCiMjIyMgQUkgTWVzc2FnZSBCdWJibGUKLSAqKkJhY2tncm91bmQqKjogYHJnYmEoMjU1LDI1NSwyNTUsMC44MilgICsgYGJhY2tkcm9wLWJsdXIoNHB4KWAKLSAqKkJvcmRlcioqOiAxcHggYHJnYmEoMjU1LDE4MiwxOTMsMC4zKWAKLSAqKkJvcmRlciByYWRpdXMqKjogMjBweCB0b3AtcmlnaHQsIDIwcHggYm90dG9tLXJpZ2h0LCA0cHggdG9wLWxlZnQsIDIwcHggYm90dG9tLWxlZnQKICAoc29mdCByb3VuZGVkIHdpdGggc2xpZ2h0IHBvaW50IG9uIGF2YXRhciBzaWRlKQotICoqUGFkZGluZyoqOiAxNHB4IDE4cHgKLSAqKk1heCB3aWR0aCoqOiA3MCUgb2YgY2hhdCB3aWR0aAotICoqU2hhZG93Kio6IGBzaGFkb3ctc21gCi0gKipUZXh0Kio6IGBib2R5YCBmb250LCBgdGV4dC1wcmltYXJ5YCwgbGluZS1oZWlnaHQgMS42NQoKIyMjIyBVc2VyIE1lc3NhZ2UgQnViYmxlCi0gKipCYWNrZ3JvdW5kKio6IGByZ2JhKDI1NSwyNTUsMjU1LDAuOTIpYAotICoqQm9yZGVyKio6IDFweCBgcmdiYSgyNTUsMTgyLDE5MywwLjIpYAotICoqQm9yZGVyIHJhZGl1cyoqOiAyMHB4IHRvcC1sZWZ0LCAyMHB4IGJvdHRvbS1sZWZ0LCAyMHB4IHRvcC1yaWdodCwgNHB4IGJvdHRvbS1yaWdodAotICoqUGFkZGluZyoqOiAxNHB4IDE4cHgKLSAqKk1heCB3aWR0aCoqOiA3MCUgb2YgY2hhdCB3aWR0aAotICoqU2hhZG93Kio6IGBzaGFkb3ctc21gCi0gKipUZXh0Kio6IGBib2R5YCBmb250LCBgdGV4dC1wcmltYXJ5YAoKIyMjIyBTdHJlYW1pbmcgTWVzc2FnZSAoQUkgdHlwaW5nKQotIFNhbWUgc3R5bGUgYXMgQUkgYnViYmxlCi0gKipDdXJzb3IqKjogQmxpbmtpbmcgYmxvY2sgY3Vyc29yIGDilohgIGF0IGVuZCBvZiB0ZXh0Ci0gQ3Vyc29yIGFuaW1hdGlvbjogb3BhY2l0eSAw4oaSMSwgNTAwbXMsIGluZmluaXRlCi0gVGV4dCBhcHBlYXJzIGNoYXJhY3RlciBieSBjaGFyYWN0ZXIgKFNTRSBzdHJlYW0pCi0gU21vb3RoIHNjcm9sbDogbWVzc2FnZSBhcmVhIGdlbnRseSBzY3JvbGxzIGFzIGNvbnRlbnQgZ3Jvd3MKCiMjIyMgTWVzc2FnZSBNZXRhZGF0YQotIEJlbG93IGVhY2ggYnViYmxlOiB0aW1lc3RhbXAgaW4gYGJvZHktc21gICgxMXB4KSwgYHRleHQtbXV0ZWRgCi0gRm9ybWF0OiAiMTQ6MzIiIG9yICLmmKjlpKkgMTQ6MzIiCgojIyMjIEF2YXRhciBCZXNpZGUgQUkgTWVzc2FnZXMKLSBTbWFsbCBhdmF0YXIgKDI4cHggY2lyY2xlKSBvbiB0aGUgbGVmdCBvZiBBSSBidWJibGVzCi0gUG9zaXRpb25lZCBhdCBib3R0b20tbGVmdCBvZiBidWJibGUKLSBTdWJ0bGUgYHNoYWRvdy1zbWAKCiMjIyBEYXRlIFNlcGFyYXRvcnMKLSBDZW50ZXJlZCB0ZXh0OiAi4oCU4oCUIOS7iuWkqSDigJTigJQiIG9yICLigJTigJQgMTLmnIgxNeaXpSDigJTigJQiCi0gRm9udDogYGJvZHktc21gLCBgdGV4dC1tdXRlZGAKLSBNYXJnaW46IDI0cHggdmVydGljYWwKLSBIb3Jpem9udGFsIGxpbmVzICgxcHggYHBpbmstMTAwYCkgZXh0ZW5kaW5nIGZyb20gdGV4dCB0byBlZGdlcwoKIyMjIFNwZWNpYWwgTWVzc2FnZSBUeXBlcwoKIyMjIyBJbWFnZSBNZXNzYWdlCi0gVGh1bWJuYWlsIGluc2lkZSBidWJibGUsIGByYWRpdXMtbWRgCi0gQ2xpY2sgdG8gZXhwYW5kIChsaWdodGJveCBtb2RhbCkKLSBNYXggaGVpZ2h0IDIwMHB4IGluIGJ1YmJsZQoKIyMjIyBTeXN0ZW0gTWVzc2FnZQotIENlbnRlcmVkLCBubyBidWJibGUKLSBCYWNrZ3JvdW5kOiBgcGluay01MGAgcGlsbCwgYHJhZGl1cy1mdWxsYAotIFRleHQ6ICLlsI/mqLEg5bey5oiQ5Li65L2g55qE5Ly05L6jIPCfkpUiIGluIGBib2R5LXNtYCwgYHBpbmstNTAwYAoKIyMjIEFuaW1hdGlvbnMKLSAqKkFJIG1lc3NhZ2UgZW50cmFuY2UqKjogU2xpZGUgaW4gZnJvbSBsZWZ0IDIwcHggKyBmYWRlIGluLCA0MDBtcywgZWFzZS1zbW9vdGgKLSAqKlVzZXIgbWVzc2FnZSBlbnRyYW5jZSoqOiBTbGlkZSBpbiBmcm9tIHJpZ2h0IDIwcHggKyBmYWRlIGluLCAzMDBtcywgZWFzZS1zbW9vdGgKLSAqKlN0cmVhbWluZyB0ZXh0Kio6IEVhY2ggY2hhcmFjdGVyIGFwcGVhcnMgd2l0aCBtaWNyby1zdGFnZ2VyIChTU0UgZHJpdmVuLCB+MzAtNTBtcyBwZXIgY2h1bmspCi0gKipNZXNzYWdlIGJ1YmJsZSBob3ZlcioqOiBWZXJ5IHN1YnRsZSBgc2hhZG93LW1kYCBpbmNyZWFzZSwgMTUwbXMKLSAqKkF1dG8tc2Nyb2xsKio6IFNtb290aCBzY3JvbGwgdG8gYm90dG9tLCAzMDBtcywgd2hlbiBuZXcgbWVzc2FnZSBhcnJpdmVzCi0gKipTY3JvbGwgdG8gYm90dG9tIGJ1dHRvbioqOiBBcHBlYXJzIHdoZW4gc2Nyb2xsZWQgdXAsIGZsb2F0aW5nIHBpbGwgYXQgYm90dG9tLWNlbnRlciwgYENoZXZyb25Eb3duYCBpY29uLCBgcGluay00MDBgIGJnLCB3aGl0ZSBpY29uLCBjbGljayBzbW9vdGgtc2Nyb2xscyB0byBib3R0b20KCi0tLQoKIyMgU2VjdGlvbiAzOiBRdWljayBBY3Rpb25zIFJvdwoKIyMjIExheW91dAotIEFib3ZlIGlucHV0IGJhciwgZnVsbCB3aWR0aAotIEhlaWdodDogNDRweAotIEJhY2tncm91bmQ6IHRyYW5zcGFyZW50IChwYXJ0IG9mIGdyYWRpZW50IGJhY2tncm91bmQgdmlzaWJsZSkKLSBIb3Jpem9udGFsIHNjcm9sbGFibGUgcm93IG9mIHBpbGwgYnV0dG9ucwotIFBhZGRpbmc6IDAgMjBweAoKIyMjIEVsZW1lbnRzCgpRdWljayBhY3Rpb24gcGlsbCBidXR0b25zIChhbGwgYGdob3N0YCB2YXJpYW50LCBzbWFsbCwgYHJhZGl1cy1mdWxsYCk6CjEuICLlj5HpgIHlm77niYciIOKAlCBgSW1hZ2VgIGljb24gKyB0ZXh0CjIuICLooajmg4UiIOKAlCBgU21pbGVgIGljb24gKyB0ZXh0CjMuICLor63pn7Pmtojmga8iIOKAlCBgTWljYCBpY29uICsgdGV4dCAgCjQuICLliIbkuqvlv4Pmg4UiIOKAlCBgSGVhcnRgIGljb24gKyB0ZXh0CjUuICLorrDlv4blm57pob4iIOKAlCBgQ2FsZW5kYXJgIGljb24gKyB0ZXh0CjYuICLmm7TlpJoiIOKAlCBgUGx1c2AgaWNvbiArIHRleHQgKG9wZW5zIGFkZGl0aW9uYWwgYWN0aW9ucykKCi0gRWFjaCBwaWxsOiBgcGluay01MGAgYmcsIGBwaW5rLTUwMGAgdGV4dCwgcGFkZGluZyA2cHggMTRweAotIEdhcDogOHB4IGJldHdlZW4gcGlsbHMKLSBIb3Jpem9udGFsIHNjcm9sbCBvbiBvdmVyZmxvdyAoaGlkZGVuIHNjcm9sbGJhcikKCiMjIyBBbmltYXRpb25zCi0gUGlsbHM6IGZhZGUgaW4gKyBzbGlkZSB1cCAxMHB4LCBzdGFnZ2VyZWQgNDBtcywgd2hlbiBjaGF0IHBhZ2UgbG9hZHMKLSBIb3ZlcjogYHNjYWxlKDEuMDQpYCArIGJnIGRhcmtlbnMgdG8gYHBpbmstMTAwYCwgMTUwbXMKLSBDbGljazogYHNjYWxlKDAuOTcpYCBmZWVkYmFjaywgMTAwbXMKLSBDdXJyZW50bHk6IHNob3cgdG9hc3QgIuWKn+iDveWNs+WwhuaOqOWHuiIgb24gY2xpY2sgKHBsYWNlaG9sZGVyKQoKLS0tCgojIyBTZWN0aW9uIDQ6IElucHV0IEJhcgoKIyMjIExheW91dAotIEZpeGVkIGF0IGJvdHRvbSBvZiB2aWV3cG9ydAotIEhlaWdodDogYXV0byAobWluIDU2cHgsIGV4cGFuZHMgZm9yIG11bHRpbGluZSkKLSBCYWNrZ3JvdW5kOiBgcmdiYSgyNTUsMjQ1LDI0NywwLjg1KWAgKyBgYmFja2Ryb3AtYmx1cigxMnB4KWAKLSBCb3JkZXItdG9wOiAxcHggYHJnYmEoMjU1LDE4MiwxOTMsMC4yKWAKLSBQYWRkaW5nOiAxMnB4IDIwcHgKLSBIb3Jpem9udGFsIGxheW91dDogYXR0YWNobWVudCBidXR0b24g4oaSIHRleHQgYXJlYSDihpIgc2VuZCBidXR0b24KCiMjIyBFbGVtZW50cwoKIyMjIyBBdHRhY2htZW50IEJ1dHRvbgotIGBQYXBlcmNsaXBgIGljb24sIDIwcHgsIGB0ZXh0LXNlY29uZGFyeWAKLSA0MHB4IGNpcmNsZSBidXR0b24sIGBnaG9zdGAgc3R5bGUKLSBIb3ZlcjogYHBpbmstNTBgIGJnLCAxNTBtcwotIENsaWNrOiBvcGVucyBmaWxlIHBpY2tlciAocGxhY2Vob2xkZXIpCgojIyMjIFRleHQgSW5wdXQKLSBBdXRvLWV4cGFuZGluZyB0ZXh0YXJlYSwgMS01IHJvd3MKLSBCYWNrZ3JvdW5kOiB3aGl0ZSwgYHJhZGl1cy1mdWxsYCAocGlsbCBzaGFwZSB3aGVuIDEgbGluZSwgYHJhZGl1cy1sZ2Agd2hlbiBtdWx0aWxpbmUpCi0gQm9yZGVyOiAxcHggYHBpbmstMTAwYAotIFBhZGRpbmc6IDEwcHggMThweAotIFBsYWNlaG9sZGVyOiAi6K+054K55LuA5LmI5ZCnLi4uIiBpbiBgdGV4dC1tdXRlZGAKLSBGb2N1czogYm9yZGVyIGBwaW5rLTQwMGAgKyBgc2hhZG93LWdsb3dgCi0gRm9udDogYGJvZHlgIDE1cHgKLSAqKkVudGVyIHRvIHNlbmQqKiAoc2luZ2xlIEVudGVyKSwgU2hpZnQrRW50ZXIgZm9yIG5ld2xpbmUKCiMjIyMgU2VuZCBCdXR0b24KLSBgU2VuZGAgaWNvbiAocGFwZXIgcGxhbmUpLCAyMHB4Ci0gNDBweCBjaXJjbGUsIGBwcmltYXJ5YCB2YXJpYW50IChgYWNjZW50LWdyYWRpZW50YCkKLSBXaGl0ZSBpY29uCi0gRGlzYWJsZWQgc3RhdGU6IGBwaW5rLTIwMGAgYmcsIHdoaXRlIGljb24gYXQgNTAlIG9wYWNpdHkgKHdoZW4gaW5wdXQgZW1wdHkpCi0gSG92ZXIgKGVuYWJsZWQpOiBicmlnaHRuZXNzKDEuMSkgKyBgc2NhbGUoMS4wNSlgLCAxNTBtcwotIEFjdGl2ZTogYHNjYWxlKDAuOTUpYCwgMTAwbXMKLSAqKlNlbmQgYW5pbWF0aW9uKio6IEljb24gYnJpZWZseSByb3RhdGVzIC00NcKwIGFuZCBtb3ZlcyB1cCA1cHggKHBsYW5lIGZseWluZyksIDMwMG1zLCB0aGVuIHJlc2V0cwoKIyMjIEFuaW1hdGlvbnMKLSBJbnB1dCBiYXI6IGZhZGVzIGluIG9uIHBhZ2UgbG9hZCwgMzAwbXMsIDIwMG1zIGRlbGF5Ci0gU2VuZCBidXR0b24gZW5hYmxlOiBzbW9vdGggdHJhbnNpdGlvbiBmcm9tIGRpc2FibGVk4oaSZW5hYmxlZCBzdGF0ZSwgMjAwbXMKLSBNZXNzYWdlIHNlbnQ6IElucHV0IGNsZWFycyB3aXRoIHF1aWNrIGZhZGUsIGJ1YmJsZSBhcHBlYXJzIGFzIGRlc2NyaWJlZCBhYm92ZQoKLS0tCgojIyBTZWN0aW9uIDU6IFR5cGluZyBJbmRpY2F0b3IKCiMjIyBXaGVuIGNvbXBhbmlvbiBpcyAidHlwaW5nIgotIEEgdGVtcG9yYXJ5IEFJIGJ1YmJsZSBhcHBlYXJzIGF0IHRoZSBib3R0b20KLSBDb250YWlucyAzIGFuaW1hdGVkIGRvdHMgaW5zdGVhZCBvZiB0ZXh0Ci0gRG90IGFuaW1hdGlvbjogZWFjaCBkb3QgKDZweCBjaXJjbGUsIGBwaW5rLTQwMGApIGJvdW5jZXMgdXAgNnB4LCBzdGFnZ2VyZWQgMTUwbXMsIGluZmluaXRlIGxvb3AKLSBCdWJibGUgZGlzYXBwZWFycyB3aGVuIGZpcnN0IFNTRSBjaHVuayBhcnJpdmVzIChyZXBsYWNlZCBieSBhY3R1YWwgbWVzc2FnZSkKCi0tLQoKIyMgQ29tcGFuaW9uIFNldHRpbmdzIERyYXdlcgoKIyMjIFRyaWdnZXJlZCBmcm9tIHRvcCBiYXIgc2V0dGluZ3MgaWNvbgotIFNsaWRlcyBmcm9tIHJpZ2h0LCAzNjBweCB3aWRlCi0gQmFja2dyb3VuZDogd2hpdGUsIGBzaGFkb3ctbGdgCgojIyMgRWxlbWVudHMKLSAqKkhlYWRlcioqOiBDb21wYW5pb24gYXZhdGFyICg0OHB4KSArIG5hbWUgKyBjbG9zZSBgWGAgYnV0dG9uCi0gKipCaWcgRml2ZSBTdW1tYXJ5Kio6IE1pbmkgNS1iYXIgZGlzcGxheSBvZiBjdXJyZW50IHBlcnNvbmFsaXR5Ci0gKipNaWxlc3RvbmUgSW5mbyoqOiBDdXJyZW50IHN0YWdlICsgcHJvZ3Jlc3MKLSAqKkFjdGlvbnMqKjoKICAtICLmn6XnnIvorrDlv4YiIGJ1dHRvbiDihpIgbGlua3MgdG8gYC9tZW1vcnlgCiAgLSAi5Ymn5oOF56m66Ze0IiBidXR0b24g4oaSIGxpbmtzIHRvIGAvZHJhbWFgCiAgLSAi6LCD5pW06K6+572uIiBidXR0b24g4oaSIGNvbXBhbmlvbiBjb25maWcgKGZ1dHVyZSkKICAtICLop6PpmaTkvLTkvqPlhbPns7siIGRhbmdlciB0ZXh0IGJ1dHRvbiBhdCBib3R0b20KCiMjIyBBbmltYXRpb25zCi0gU2xpZGUgaW4gNDAwbXMgZWFzZS1zbW9vdGgsIG92ZXJsYXkgZmFkZSAyMDBtcwo=
+# Chat Page (chat.md)
+
+The full-screen chat interface — the heart of the Platonic AI experience. Features a mesmerizing pink breathing gradient background, real-time SSE streaming messages with typewriter effects, distinct message bubbles for user and AI, and a fixed bottom input bar with quick-action buttons. This page has no sidebar to maximize immersion.
+
+| Property | Value |
+|----------|-------|
+| Route | `/chat` |
+| Sections | 5 |
+| Purpose | Primary conversation interface with AI companion |
+| Layout | Full-screen immersive (no sidebar) |
+
+---
+
+## Page Layout
+
+Full viewport, no sidebar. The entire screen is the chat canvas.
+
+```
+┌──────────────────────────────────────────────────────────┐
+│ Chat Top Bar (56px)                                      │
+│ ┌────┐ Companion Name + Status          [Settings][Menu] │
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│  Message History Area (scrollable, flex-1)               │
+│                                                          │
+│      ┌─────────────────────────────┐                     │
+│      │ AI Message Bubble (pink)    │                     │
+│      │ 你好呀！今天过得怎么样？     │                     │
+│      └─────────────────────────────┘                     │
+│                                                          │
+│                          ┌────────────────────┐          │
+│                          │ User Message (white)│          │
+│                          │ 今天工作有点累...   │          │
+│                          └────────────────────┘          │
+│                                                          │
+│      ┌──────────────────────────────────────────┐        │
+│      │ AI Message (pink) — streaming text       │        │
+│      │ 辛苦啦！要不要聊聊是什么让你感到累... █   │        │
+│      └──────────────────────────────────────────┘        │
+│                                                          │
+│  Date Separator: "—— 今天 ——"                             │
+│                                                          │
+├──────────────────────────────────────────────────────────┤
+│ Quick Actions Row                                        │
+│ [发送图片] [表情] [语音] [更多]                           │
+├──────────────────────────────────────────────────────────┤
+│ Input Bar (fixed bottom)                                 │
+│ [Attachment] [Text Input.................] [Send]        │
+└──────────────────────────────────────────────────────────┘
+```
+
+- **Background**: `breathing-gradient` animation (8s cycle) + 2-3 floating soft orbs
+- **Top bar**: transparent with `backdrop-blur(8px)`, subtle bottom border `pink-100`
+- **Message area**: scrollable, padding 24px, messages aligned alternately
+- **Input area**: fixed at bottom, `backdrop-blur(12px)`, semi-transparent white bg
+
+---
+
+## Background
+
+### Breathing Gradient
+Same animation as auth page but slightly more subtle:
+```css
+background: linear-gradient(135deg, #FFF8FA 0%, #FFF0F3 20%, #FFE8EE 40%, #FFD4E0 60%, #FFC9D8 80%, #FFB6C1 100%);
+background-size: 400% 400%;
+animation: breathing-gradient 10s ease-in-out infinite;
+```
+Slightly slower (10s vs 8s) for a calmer conversation atmosphere.
+
+### Floating Orbs
+- 2 orbs only (less distracting during conversation):
+  - Orb 1: 350px, `rgba(255,182,193,0.12)`, blur(100px), top-left, `float-orb` 16s
+  - Orb 2: 280px, `rgba(232,160,191,0.1)`, blur(120px), bottom-right, `float-orb` 14s, 4s delay
+
+---
+
+## Section 1: Chat Top Bar
+
+### Layout
+- Height: 56px, fixed top
+- Background: `rgba(255,245,247,0.7)` + `backdrop-blur(8px)`
+- Border-bottom: 1px `rgba(255,182,193,0.2)`
+- Padding: 0 20px
+
+### Elements
+
+#### Left Side
+- **Back button**: `ChevronLeft` icon, 20px, `text-secondary`, only on mobile (< 768px)
+- **Companion Avatar**: 36px circle, `companion-1.jpg`, `shadow-sm`
+- **Name + Status** (beside avatar):
+  - Name: "小樱" in `h4`
+  - Status: "在线 💚" or "正在输入..." in `body-sm`, `text-muted`
+  - "正在输入..." shows animated dots (3 dots cycling opacity)
+
+#### Right Side
+- **Companion Settings**: `Settings` icon button, `ghost` style, 36px circle — opens companion config drawer
+- **More Menu**: `MoreVertical` icon button, dropdown menu with: 清空对话 / 导出记录 / 举报
+
+### Animations
+- Top bar: fades in on page load, 300ms
+- "正在输入...": dots pulse opacity 0.3→1, staggered 200ms, infinite
+- Settings drawer: slides from right, 400ms ease-smooth
+
+---
+
+## Section 2: Message History Area
+
+### Layout
+- Flex-1, fills all space between top bar and input area
+- Scrollable (auto-scroll to bottom on new messages)
+- Padding: 20px horizontal, 16px vertical
+- Messages aligned: AI left-aligned, user right-aligned
+
+### Message Bubble Design
+
+#### AI Message Bubble
+- **Background**: `rgba(255,255,255,0.82)` + `backdrop-blur(4px)`
+- **Border**: 1px `rgba(255,182,193,0.3)`
+- **Border radius**: 20px top-right, 20px bottom-right, 4px top-left, 20px bottom-left
+  (soft rounded with slight point on avatar side)
+- **Padding**: 14px 18px
+- **Max width**: 70% of chat width
+- **Shadow**: `shadow-sm`
+- **Text**: `body` font, `text-primary`, line-height 1.65
+
+#### User Message Bubble
+- **Background**: `rgba(255,255,255,0.92)`
+- **Border**: 1px `rgba(255,182,193,0.2)`
+- **Border radius**: 20px top-left, 20px bottom-left, 20px top-right, 4px bottom-right
+- **Padding**: 14px 18px
+- **Max width**: 70% of chat width
+- **Shadow**: `shadow-sm`
+- **Text**: `body` font, `text-primary`
+
+#### Streaming Message (AI typing)
+- Same style as AI bubble
+- **Cursor**: Blinking block cursor `█` at end of text
+- Cursor animation: opacity 0→1, 500ms, infinite
+- Text appears character by character (SSE stream)
+- Smooth scroll: message area gently scrolls as content grows
+
+#### Message Metadata
+- Below each bubble: timestamp in `body-sm` (11px), `text-muted`
+- Format: "14:32" or "昨天 14:32"
+
+#### Avatar Beside AI Messages
+- Small avatar (28px circle) on the left of AI bubbles
+- Positioned at bottom-left of bubble
+- Subtle `shadow-sm`
+
+### Date Separators
+- Centered text: "—— 今天 ——" or "—— 12月15日 ——"
+- Font: `body-sm`, `text-muted`
+- Margin: 24px vertical
+- Horizontal lines (1px `pink-100`) extending from text to edges
+
+### Special Message Types
+
+#### Image Message
+- Thumbnail inside bubble, `radius-md`
+- Click to expand (lightbox modal)
+- Max height 200px in bubble
+
+#### System Message
+- Centered, no bubble
+- Background: `pink-50` pill, `radius-full`
+- Text: "小樱 已成为你的伴侣 💕" in `body-sm`, `pink-500`
+
+### Animations
+- **AI message entrance**: Slide in from left 20px + fade in, 400ms, ease-smooth
+- **User message entrance**: Slide in from right 20px + fade in, 300ms, ease-smooth
+- **Streaming text**: Each character appears with micro-stagger (SSE driven, ~30-50ms per chunk)
+- **Message bubble hover**: Very subtle `shadow-md` increase, 150ms
+- **Auto-scroll**: Smooth scroll to bottom, 300ms, when new message arrives
+- **Scroll to bottom button**: Appears when scrolled up, floating pill at bottom-center, `ChevronDown` icon, `pink-400` bg, white icon, click smooth-scrolls to bottom
+
+---
+
+## Section 3: Quick Actions Row
+
+### Layout
+- Above input bar, full width
+- Height: 44px
+- Background: transparent (part of gradient background visible)
+- Horizontal scrollable row of pill buttons
+- Padding: 0 20px
+
+### Elements
+
+Quick action pill buttons (all `ghost` variant, small, `radius-full`):
+1. "发送图片" — `Image` icon + text
+2. "表情" — `Smile` icon + text
+3. "语音消息" — `Mic` icon + text  
+4. "分享心情" — `Heart` icon + text
+5. "记忆回顾" — `Calendar` icon + text
+6. "更多" — `Plus` icon + text (opens additional actions)
+
+- Each pill: `pink-50` bg, `pink-500` text, padding 6px 14px
+- Gap: 8px between pills
+- Horizontal scroll on overflow (hidden scrollbar)
+
+### Animations
+- Pills: fade in + slide up 10px, staggered 40ms, when chat page loads
+- Hover: `scale(1.04)` + bg darkens to `pink-100`, 150ms
+- Click: `scale(0.97)` feedback, 100ms
+- Currently: show toast "功能即将推出" on click (placeholder)
+
+---
+
+## Section 4: Input Bar
+
+### Layout
+- Fixed at bottom of viewport
+- Height: auto (min 56px, expands for multiline)
+- Background: `rgba(255,245,247,0.85)` + `backdrop-blur(12px)`
+- Border-top: 1px `rgba(255,182,193,0.2)`
+- Padding: 12px 20px
+- Horizontal layout: attachment button → text area → send button
+
+### Elements
+
+#### Attachment Button
+- `Paperclip` icon, 20px, `text-secondary`
+- 40px circle button, `ghost` style
+- Hover: `pink-50` bg, 150ms
+- Click: opens file picker (placeholder)
+
+#### Text Input
+- Auto-expanding textarea, 1-5 rows
+- Background: white, `radius-full` (pill shape when 1 line, `radius-lg` when multiline)
+- Border: 1px `pink-100`
+- Padding: 10px 18px
+- Placeholder: "说点什么吧..." in `text-muted`
+- Focus: border `pink-400` + `shadow-glow`
+- Font: `body` 15px
+- **Enter to send** (single Enter), Shift+Enter for newline
+
+#### Send Button
+- `Send` icon (paper plane), 20px
+- 40px circle, `primary` variant (`accent-gradient`)
+- White icon
+- Disabled state: `pink-200` bg, white icon at 50% opacity (when input empty)
+- Hover (enabled): brightness(1.1) + `scale(1.05)`, 150ms
+- Active: `scale(0.95)`, 100ms
+- **Send animation**: Icon briefly rotates -45° and moves up 5px (plane flying), 300ms, then resets
+
+### Animations
+- Input bar: fades in on page load, 300ms, 200ms delay
+- Send button enable: smooth transition from disabled→enabled state, 200ms
+- Message sent: Input clears with quick fade, bubble appears as described above
+
+---
+
+## Section 5: Typing Indicator
+
+### When companion is "typing"
+- A temporary AI bubble appears at the bottom
+- Contains 3 animated dots instead of text
+- Dot animation: each dot (6px circle, `pink-400`) bounces up 6px, staggered 150ms, infinite loop
+- Bubble disappears when first SSE chunk arrives (replaced by actual message)
+
+---
+
+## Companion Settings Drawer
+
+### Triggered from top bar settings icon
+- Slides from right, 360px wide
+- Background: white, `shadow-lg`
+
+### Elements
+- **Header**: Companion avatar (48px) + name + close `X` button
+- **Big Five Summary**: Mini 5-bar display of current personality
+- **Milestone Info**: Current stage + progress
+- **Actions**:
+  - "查看记忆" button → links to `/memory`
+  - "剧情空间" button → links to `/drama`
+  - "调整设置" button → companion config (future)
+  - "解除伴侣关系" danger text button at bottom
+
+### Animations
+- Slide in 400ms ease-smooth, overlay fade 200ms

@@ -1,1 +1,74 @@
-LyoqCiAqIExheW91dC50c3ggLSBBcHBsaWNhdGlvbiBSb290IExheW91dAogKgogKiBNYW5hZ2VzIHRoZSBzaWRlYmFyIHZpc2liaWxpdHksIGRhcmsgbW9kZSB0aGVtZSAoMy1zdGF0ZTogbGlnaHQvZGFyay9hdXRvKSwKICogYW5kIHRvYXN0IG5vdGlmaWNhdGlvbnMuCiAqIEludGVncmF0ZXMgd2l0aCBBdXRoQ29udGV4dCB0byBwYXNzIGF1dGggc3RhdGUgdG8gdGhlIE5hdmJhci4KICovCmltcG9ydCB7IHVzZUxvY2F0aW9uIH0gZnJvbSAncmVhY3Qtcm91dGVyLWRvbSc7CmltcG9ydCB7IFRvYXN0ZXIgfSBmcm9tICdzb25uZXInOwppbXBvcnQgeyB1c2VBdXRoIH0gZnJvbSAnQC9jb250ZXh0L0F1dGhDb250ZXh0JzsKaW1wb3J0IHsgdXNlVGhlbWVDb250ZXh0IH0gZnJvbSAnQC9jb250ZXh0L1RoZW1lQ29udGV4dCc7CmltcG9ydCB7IGFwcGx5VGhlbWUsIGxvYWRTYXZlZFRoZW1lLCBnZXRFZmZlY3RpdmVUaGVtZSB9IGZyb20gJ0AvbGliL3RoZW1lJzsKaW1wb3J0IE5hdmJhciBmcm9tICcuL05hdmJhcic7CgovKiogUm91dGVzIHRoYXQgc2hvdWxkIGRpc3BsYXkgdGhlIHNpZGViYXIgbmF2aWdhdGlvbiAqLwpjb25zdCBzaWRlYmFyUm91dGVzID0gWwogICcvZGFzaGJvYXJkJywKICAnL3BsYXphJywKICAnL2NoYXQnLAogICcvbWVtb3J5JywKICAnL2RyYW1hJywKICAnL3NldHRpbmdzJywKICAnL3BheW1lbnQnLAogICcvY3Jvd2RmdW5kaW5nJywKICAnL2N1c3RvbWl6ZScsCl07CgpleHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBMYXlvdXQoeyBjaGlsZHJlbiB9OiB7IGNoaWxkcmVuOiBSZWFjdC5SZWFjdE5vZGUgfSkgewogIGNvbnN0IGxvY2F0aW9uID0gdXNlTG9jYXRpb24oKTsKICBjb25zdCB7IGlzQXV0aGVudGljYXRlZCwgdXNlciwgaGFzQ29tcGFuaW9uLCBsb2dvdXQgfSA9IHVzZUF1dGgoKTsKICBjb25zdCB7IGVmZmVjdGl2ZVRoZW1lIH0gPSB1c2VUaGVtZUNvbnRleHQoKTsKICBjb25zdCBpc0RhcmsgPSBlZmZlY3RpdmVUaGVtZSA9PT0gJ2RhcmsnOwoKICAvLyBEZXRlcm1pbmUgaWYgdGhlIHNpZGViYXIgc2hvdWxkIGJlIHZpc2libGUgZm9yIHRoZSBjdXJyZW50IHJvdXRlCiAgY29uc3Qgc2hvd1NpZGViYXIgPSBzaWRlYmFyUm91dGVzLnNvbWUoKHJvdXRlKSA9PgogICAgbG9jYXRpb24ucGF0aG5hbWUuc3RhcnRzV2l0aChyb3V0ZSkKICApOwoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9Im1pbi1oLXNjcmVlbiBiZy1waW5rLTUwIGRhcms6YmctZ3JheS05MDAgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMzAwIj4KICAgICAgey8qIEdsb2JhbCB0b2FzdCBub3RpZmljYXRpb25zICovfQogICAgICA8VG9hc3RlcgogICAgICAgIHBvc2l0aW9uPSJ0b3AtY2VudGVyIgogICAgICAgIHRvYXN0T3B0aW9ucz17ewogICAgICAgICAgc3R5bGU6IHsKICAgICAgICAgICAgYmFja2dyb3VuZDogaXNEYXJrID8gJyMxZjI5MzcnIDogJyNmZmYnLAogICAgICAgICAgICBjb2xvcjogaXNEYXJrID8gJyNmM2Y0ZjYnIDogJyMxZjI5MzcnLAogICAgICAgICAgICBib3JkZXI6IGlzRGFyayA/ICcxcHggc29saWQgIzM3NDE1MScgOiAnMXB4IHNvbGlkICNlNWU3ZWInLAogICAgICAgICAgfSwKICAgICAgICB9fQogICAgICAvPgoKICAgICAgey8qIENvbmRpdGlvbmFsbHkgcmVuZGVyIE5hdmJhciBmb3Igc2lkZWJhciByb3V0ZXMgKi99CiAgICAgIHtzaG93U2lkZWJhciAmJiAoCiAgICAgICAgPE5hdmJhcgogICAgICAgICAgaXNBdXRoZW50aWNhdGVkPXtpc0F1dGhlbnRpY2F0ZWR9CiAgICAgICAgICB1c2VyPXt1c2VyfQogICAgICAgICAgaGFzQ29tcGFuaW9uPXtoYXNDb21wYW5pb259CiAgICAgICAgICBvbkxvZ291dD17bG9nb3V0fQogICAgICAgIC8+CiAgICAgICl9CgogICAgICB7LyogTWFpbiBjb250ZW50IGFyZWEgd2l0aCBzaWRlYmFyIG9mZnNldCAqL30KICAgICAgPGRpdgogICAgICAgIGNsYXNzTmFtZT17YAogICAgICAgICAgbWluLWgtc2NyZWVuIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTMwMAogICAgICAgICAgJHtzaG93U2lkZWJhciA/ICdtbC1bMjIwcHhdJyA6ICcnfQogICAgICAgIGB9CiAgICAgID4KICAgICAgICA8bWFpbiBjbGFzc05hbWU9Im1pbi1oLXNjcmVlbiI+e2NoaWxkcmVufTwvbWFpbj4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICApOwp9Cg==
+/**
+ * Layout.tsx - Application Root Layout
+ *
+ * Manages the sidebar visibility, dark mode theme (3-state: light/dark/auto),
+ * and toast notifications.
+ * Integrates with AuthContext to pass auth state to the Navbar.
+ */
+import { useLocation } from 'react-router-dom';
+import { Toaster } from 'sonner';
+import { useAuth } from '@/context/AuthContext';
+import { useThemeContext } from '@/context/ThemeContext';
+import { applyTheme, loadSavedTheme, getEffectiveTheme } from '@/lib/theme';
+import Navbar from './Navbar';
+
+/** Routes that should display the sidebar navigation */
+const sidebarRoutes = [
+  '/dashboard',
+  '/plaza',
+  '/chat',
+  '/memory',
+  '/drama',
+  '/settings',
+  '/payment',
+  '/crowdfunding',
+  '/customize',
+];
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  const { isAuthenticated, user, hasCompanion, logout } = useAuth();
+  const { effectiveTheme } = useThemeContext();
+  const isDark = effectiveTheme === 'dark';
+
+  // Determine if the sidebar should be visible for the current route
+  const showSidebar = sidebarRoutes.some((route) =>
+    location.pathname.startsWith(route)
+  );
+
+  return (
+    <div className="min-h-screen bg-pink-50 dark:bg-gray-900 transition-colors duration-300">
+      {/* Global toast notifications */}
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: isDark ? '#1f2937' : '#fff',
+            color: isDark ? '#f3f4f6' : '#1f2937',
+            border: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
+          },
+        }}
+      />
+
+      {/* Conditionally render Navbar for sidebar routes */}
+      {showSidebar && (
+        <Navbar
+          isAuthenticated={isAuthenticated}
+          user={user}
+          hasCompanion={hasCompanion}
+          onLogout={logout}
+        />
+      )}
+
+      {/* Main content area with sidebar offset */}
+      <div
+        className={`
+          min-h-screen transition-all duration-300
+          ${showSidebar ? 'ml-[220px]' : ''}
+        `}
+      >
+        <main className="min-h-screen">{children}</main>
+      </div>
+    </div>
+  );
+}

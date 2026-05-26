@@ -1,1 +1,197 @@
-IyBBdXRoIFBhZ2UgKGF1dGgubWQpCgpFbWFpbC1iYXNlZCBsb2dpbiBhbmQgc2lnbnVwIHdpdGggYSBtZXNtZXJpemluZyBwaW5rIGJyZWF0aGluZyBhbmltYXRpb24gYmFja2dyb3VuZC4gVGhlIGVudGlyZSBleHBlcmllbmNlIHNob3VsZCBmZWVsIHdhcm0sIGludml0aW5nLCBhbmQgc2VjdXJlIOKAlCBsaWtlIGJlaW5nIHdlbGNvbWVkIGludG8gYSBzYWZlIHNwYWNlLgoKfCBQcm9wZXJ0eSB8IFZhbHVlIHwKfC0tLS0tLS0tLS18LS0tLS0tLXwKfCBSb3V0ZSB8IGAvYXV0aGAgfAp8IFNlY3Rpb25zIHwgMSAoc2luZ2xlIHZpZXcgd2l0aCB0YWIgdG9nZ2xlKSB8CnwgUHVycG9zZSB8IEF1dGhlbnRpY2F0ZSB1c2VycyB2aWEgZW1haWwgKyBwYXNzd29yZCB8CgotLS0KCiMjIFBhZ2UgTGF5b3V0CgotIEZ1bGwgdmlld3BvcnQgKDEwMHZ3IMOXIDEwMHZoKSwgbm8gc2lkZWJhciwgbm8gc2Nyb2xsCi0gQmFja2dyb3VuZDogYGJyZWF0aGluZy1ncmFkaWVudGAgYW5pbWF0aW9uICg4cyBjeWNsZSkgKyAzIGZsb2F0aW5nIHNvZnQgcGluayBvcmJzCi0gQ2VudGVyZWQgYXV0aCBjYXJkLCBtYXgtd2lkdGggNDIwcHgKCi0tLQoKIyMgQmFja2dyb3VuZAoKIyMjIEJyZWF0aGluZyBHcmFkaWVudCBBbmltYXRpb24KYGBgY3NzCmJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNGRkY1RjcgMCUsICNGRkU0RUMgMjAlLCAjRkZCNkMxIDQ1JSwgI0U4QTBCRiA3MCUsICNENEE1RDQgMTAwJSk7CmJhY2tncm91bmQtc2l6ZTogNDAwJSA0MDAlOwphbmltYXRpb246IGJyZWF0aGluZy1ncmFkaWVudCA4cyBlYXNlLWluLW91dCBpbmZpbml0ZTsKYGBgClRoZSBncmFkaWVudCBzaGlmdHMgc2xvd2x5IGJldHdlZW4gd2FybSBwaW5rIGFuZCBzb2Z0IGxhdmVuZGVyLCBjcmVhdGluZyBhIGxpdmluZywgYnJlYXRoaW5nIGF0bW9zcGhlcmUuCgojIyMgRmxvYXRpbmcgT3JicwotIE9yYiAxOiAzMDBweCwgYHJnYmEoMjU1LDE4MiwxOTMsMC4yNSlgLCBibHVyKDgwcHgpLCB0b3AtbGVmdCBhcmVhLCBgZmxvYXQtb3JiYCAxNHMKLSBPcmIgMjogMjUwcHgsIGByZ2JhKDIzMiwxNjAsMTkxLDAuMilgLCBibHVyKDEwMHB4KSwgYm90dG9tLXJpZ2h0IGFyZWEsIGBmbG9hdC1vcmJgIDEycywgM3MgZGVsYXkKLSBPcmIgMzogMjAwcHgsIGByZ2JhKDIxMiwxNjUsMjEyLDAuMilgLCBibHVyKDkwcHgpLCBjZW50ZXItcmlnaHQsIGBmbG9hdC1vcmJgIDE2cywgNnMgZGVsYXkKCi0tLQoKIyMgQXV0aCBDYXJkCgojIyMgQ29udGFpbmVyCi0gQmFja2dyb3VuZDogYHJnYmEoMjU1LDI1NSwyNTUsMC44NSlgIHdpdGggYGJhY2tkcm9wLWZpbHRlcjogYmx1cigyMHB4KWAKLSBCb3JkZXI6IDFweCBzb2xpZCBgcmdiYSgyNTUsMTgyLDE5MywwLjMpYAotIEJvcmRlciByYWRpdXM6IGByYWRpdXMteGxgICgyNHB4KQotIFBhZGRpbmc6IDQwcHgKLSBTaGFkb3c6IGBzaGFkb3ctbGdgICsgc29mdCBwaW5rIGdsb3cgYDAgMCA2MHB4IHJnYmEoMjU1LDE4MiwxOTMsMC4xNSlgCi0gV2lkdGg6IDEwMCUsIG1heC13aWR0aCA0MjBweAoKIyMjIExvZ28gQXJlYSAoQ2FyZCBUb3ApCi0gYGxvZ28uc3ZnYCBjZW50ZXJlZCwgMTQwcHggd2lkZQotIEJlbG93OiAiUGxhdG9uaWMiIHdvcmRtYXJrIGluIGBwaW5rLTQwMGAsIGBoM2Agc2l6ZQotIEJlbG93OiAi5L2g55qEQUnomZrmi5/kvLTkvqMiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCi0gTWFyZ2luLWJvdHRvbTogMzJweAoKIyMjIFRhYiBUb2dnbGUKLSBUd28gdGFiczogIueZu+W9lSIgKExvZ2luKSB8ICLms6jlhowiIChTaWduIFVwKQotIENvbnRhaW5lcjogcGlsbC1zaGFwZWQgYmFja2dyb3VuZCBgcGluay01MGAsIHJhZGl1cy1mdWxsLCBwYWRkaW5nIDRweAotIEFjdGl2ZSB0YWI6IHdoaXRlIGJnLCBgcGluay01MDBgIHRleHQsIGBzaGFkb3ctc21gLCByYWRpdXMtZnVsbAotIEluYWN0aXZlIHRhYjogdHJhbnNwYXJlbnQsIGB0ZXh0LW11dGVkYAotIFRhYiBzd2l0Y2g6IGNvbnRlbnQgY3Jvc3MtZmFkZXMgKDIwMG1zKSwgZm9ybSBmaWVsZHMgYW5pbWF0ZSB3aXRoIHNsaWdodCBzbGlkZQoKLS0tCgojIyBMb2dpbiBGb3JtCgojIyMgRW1haWwgSW5wdXQKLSBMYWJlbDogIumCrueuseWcsOWdgCIgaW4gYGxhYmVsYCBmb250LCBgdGV4dC1zZWNvbmRhcnlgCi0gSW5wdXQ6IGBJbnB1dCBDb21wb25lbnRgIGZyb20gZGVzaWduLm1kCi0gSWNvbjogYE1haWxgIChsdWNpZGUpIGluc2lkZSBsZWZ0IG9mIGlucHV0LCBgdGV4dC1tdXRlZGAsIDE4cHgKLSBQbGFjZWhvbGRlcjogInlvdXJAZW1haWwuY29tIgotIFZhbGlkYXRpb246IGVtYWlsIGZvcm1hdCBvbiBibHVyCgojIyMgUGFzc3dvcmQgSW5wdXQKLSBMYWJlbDogIuWvhueggSIgaW4gYGxhYmVsYCBmb250Ci0gSW5wdXQ6IGBJbnB1dCBDb21wb25lbnRgIHdpdGggYHR5cGU9InBhc3N3b3JkImAKLSBJY29uOiBgTG9ja2AgaW5zaWRlIGxlZnQsIGBFeWVgIC8gYEV5ZU9mZmAgdG9nZ2xlIGJ1dHRvbiBpbnNpZGUgcmlnaHQKLSBQbGFjZWhvbGRlcjogIui+k+WFpeWvhueggSIKCiMjIyBGb3Jnb3QgUGFzc3dvcmQKLSAi5b+Y6K6w5a+G56CB77yfIiBsaW5rIGJlbG93IHBhc3N3b3JkIGZpZWxkLCByaWdodC1hbGlnbmVkCi0gRm9udDogYGJvZHktc21gLCBgcGluay01MDBgCi0gSG92ZXI6IHVuZGVybGluZQoKIyMjIFN1Ym1pdCBCdXR0b24KLSAi55m75b2VIiDigJQgZnVsbCB3aWR0aCwgYHByaW1hcnlgIGJ1dHRvbiB2YXJpYW50LCBoZWlnaHQgNDhweAotIExvYWRpbmcgc3RhdGU6IHNwaW5uZXIgaWNvbiByZXBsYWNlcyB0ZXh0LCBkaXNhYmxlZAotIFN1Y2Nlc3M6IGJyaWVmIGNoZWNrbWFyayBhbmltYXRpb24sIHRoZW4gcmVkaXJlY3QKCiMjIyBEaXZpZGVyCi0gIuaIliIgdGV4dCBjZW50ZXJlZCBiZXR3ZWVuIHR3byBob3Jpem9udGFsIGxpbmVzICgxcHggYHBpbmstMTAwYCkKLSBNYXJnaW46IDIwcHggdmVydGljYWwKCiMjIyBTb2NpYWwgTG9naW4gKFBsYWNlaG9sZGVyKQotICLkvb/nlKjlhbbku5bmlrnlvI/nmbvlvZUiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCi0gUm93IG9mIDMgaWNvbiBidXR0b25zIChHb29nbGUsIEFwcGxlLCBXZUNoYXQpIOKAlCBnaG9zdCBzdHlsZSwgNDRweCBjaXJjbGUKLSBDdXJyZW50bHkgZGVjb3JhdGl2ZSwgY2xpY2sgc2hvd3MgIuWNs+WwhuaOqOWHuiIgdG9hc3QKCiMjIyBBbmltYXRpb25zIChMb2dpbikKLSAqKkNhcmQgZW50cmFuY2UqKjogU2NhbGUgMC45MuKGkjEgKyBvcGFjaXR5IDDihpIxLCA2MDBtcywgZWFzZS1ib3VuY2UsIDIwMG1zIHBhZ2UtbG9hZCBkZWxheQotICoqRm9ybSBmaWVsZHMqKjogU3RhZ2dlciBmYWRlIGluICsgc2xpZGUgdXAgMTVweCwgNjBtcyBzdGFnZ2VyLCA0MDBtcyBhZnRlciBjYXJkCi0gKipUYWIgc3dpdGNoKio6IE91dGdvaW5nIGZvcm0gZmFkZXMgb3V0IDE1MG1zLCBpbmNvbWluZyBmYWRlcyBpbiArIHNsaWRlcyBmcm9tIG9wcG9zaXRlIGRpcmVjdGlvbiAyMDBtcwotICoqU3VibWl0IGhvdmVyKio6IGBzaGFkb3ctZ2xvd2AgaW50ZW5zaWZpZXMsIDE1MG1zCi0gKipTdWJtaXQgYWN0aXZlKio6IFNjYWxlIDAuOTgsIDEwMG1zCi0gKipFcnJvciBzaGFrZSoqOiBIb3Jpem9udGFsIHNoYWtlICh0cmFuc2xhdGVYIMKxNnB4LCAzIGN5Y2xlcywgNDAwbXMgdG90YWwpIG9uIHZhbGlkYXRpb24gZXJyb3IKCi0tLQoKIyMgU2lnbnVwIEZvcm0KCiMjIyBTdGVwIEluZGljYXRvcgotIDMgZG90cyBpbiBhIHJvdzog5Z+65pys5L+h5oGvIOKGkiDpgq7nrrHpqozor4Eg4oaSIOWujOaIkAotIEFjdGl2ZSBkb3Q6IGBwaW5rLTQwMGAgZmlsbGVkLCAxMHB4Ci0gSW5hY3RpdmUgZG90OiBgcGluay0xMDBgIGZpbGxlZCwgOHB4Ci0gQ29ubmVjdG9yIGxpbmU6IDFweCBgcGluay0xMDBgIGJldHdlZW4gZG90cwotIFVwZGF0ZXMgYXMgdXNlciBwcm9ncmVzc2VzCgojIyMgU3RlcCAxOiBCYXNpYyBJbmZvCgojIyMjIFVzZXJuYW1lIElucHV0Ci0gTGFiZWw6ICLmmLXnp7AiIGluIGBsYWJlbGAgZm9udAotIElucHV0OiBgSW5wdXQgQ29tcG9uZW50YAotIEljb246IGBVc2VyYCBpbnNpZGUgbGVmdAotIFBsYWNlaG9sZGVyOiAi57uZ5L2g55qE5Ly05L6j5LiA5Liq56ew5ZG85L2g55qE5pa55byPIgotIE1heCBsZW5ndGg6IDIwIGNoYXJzLCBjb3VudGVyIHNob3duCgojIyMjIEVtYWlsIElucHV0Ci0gU2FtZSBhcyBsb2dpbiBlbWFpbCBmaWVsZAoKIyMjIyBQYXNzd29yZCBJbnB1dAotIExhYmVsOiAi6K6+572u5a+G56CBIiBpbiBgbGFiZWxgIGZvbnQKLSBJbnB1dDogcGFzc3dvcmQgdHlwZSB3aXRoIHZpc2liaWxpdHkgdG9nZ2xlCi0gKipQYXNzd29yZCBTdHJlbmd0aCBJbmRpY2F0b3IqKiAoYmVsb3cgaW5wdXQpOgogIC0gNC1zZWdtZW50IGhvcml6b250YWwgYmFyLCA0cHggaGVpZ2h0IGVhY2gKICAtIENvbG9ycyBieSBzdHJlbmd0aDogZ3JheSAoZW1wdHkpIOKGkiByZWQgKHdlYWspIOKGkiBvcmFuZ2UgKGZhaXIpIOKGkiBgcm9zZS1nb2xkYCAoZ29vZCkg4oaSIGBwaW5rLTQwMGAgKHN0cm9uZykKICAtIExhYmVsIGJlbG93OiAi5a+G56CB5by65bqm77ya5byxL+S4gOiIrC/oia/lpb0v5by6IiBpbiBgYm9keS1zbWAKICAtIFJ1bGVzIGNoZWNrZWQ6IDgrIGNoYXJzLCB1cHBlcmNhc2UsIGxvd2VyY2FzZSwgbnVtYmVyLCBzcGVjaWFsIGNoYXIKICAtIEVhY2ggcnVsZSBzaG93biBhcyBzbWFsbCBjaGVjayBpdGVtIHdpdGggYENoZWNrYCBvciBgWGAgaWNvbgoKIyMjIyBDb25maXJtIFBhc3N3b3JkCi0gTGFiZWw6ICLnoa7orqTlr4bnoIEiCi0gSW5wdXQ6IHBhc3N3b3JkIHR5cGUKLSBWYWxpZGF0aW9uOiBtdXN0IG1hdGNoIHBhc3N3b3JkLCBncmVlbiBgQ2hlY2tgIHdoZW4gbWF0Y2hpbmcsIHJlZCB3YXJuaW5nIHdoZW4gZGlmZmVyZW50CgojIyMjIE5leHQgQnV0dG9uCi0gIuS4i+S4gOatpSIg4oCUIGZ1bGwgd2lkdGgsIHByaW1hcnkgYnV0dG9uCi0gRGlzYWJsZWQgdW50aWwgYWxsIGZpZWxkcyB2YWxpZAoKIyMjIFN0ZXAgMjogRW1haWwgVmVyaWZpY2F0aW9uCgojIyMjIFN0YXR1cyBEaXNwbGF5Ci0gTGFyZ2UgZW52ZWxvcGUgaWNvbiAoYE1haWxgIGZyb20gbHVjaWRlKSwgNjRweCwgYHBpbmstNDAwYAotIFRpdGxlOiAi6aqM6K+B5L2g55qE6YKu566xIiBpbiBgaDJgCi0gRGVzY3JpcHRpb246ICLmiJHku6zlt7LlkJEgKip1c2VyQGVtYWlsLmNvbSoqIOWPkemAgeS6humqjOivgeegge+8jOivt+afpeaUtuW5tui+k+WFpSIgaW4gYGJvZHlgLCBlbWFpbCBpbiBib2xkCgojIyMjIENvZGUgSW5wdXQKLSA2IHNpbmdsZS1jaGFyYWN0ZXIgaW5wdXQgYm94ZXMgaW4gYSByb3cKLSBFYWNoOiA0OHB4IMOXIDU2cHgsIGNlbnRlcmVkIHRleHQsIGBudW1iZXJgIGZvbnQgMjRweCwgYm9yZGVyIGBwaW5rLTIwMGAKLSBGb2N1czogYm9yZGVyIGBwaW5rLTQwMGAgKyBgc2hhZG93LWdsb3dgCi0gQXV0by1hZHZhbmNlIHRvIG5leHQgYm94IG9uIGlucHV0Ci0gQmFja3NwYWNlIG1vdmVzIHRvIHByZXZpb3VzCi0gUGFzdGUgc3VwcG9ydDogcGFzdGUgNi1kaWdpdCBjb2RlIGZpbGxzIGFsbCBib3hlcwoKIyMjIyBSZXNlbmQgVGltZXIKLSAi6YeN5paw5Y+R6YCBICg0NXMpIiDigJQgY291bnRkb3duIHRpbWVyLCBzdGFydHMgYXQgNjBzCi0gV2hlbiBleHBpcmVkOiBiZWNvbWVzIGNsaWNrYWJsZSBsaW5rIGluIGBwaW5rLTUwMGAKCiMjIyMgVmVyaWZ5IEJ1dHRvbgotICLpqozor4EiIOKAlCBwcmltYXJ5IGJ1dHRvbiwgZGlzYWJsZWQgdW50aWwgNiBkaWdpdHMgZW50ZXJlZAoKIyMjIFN0ZXAgMzogQ29tcGxldGUKCiMjIyMgU3VjY2VzcyBBbmltYXRpb24KLSBBbmltYXRlZCBjaGVja21hcmsgY2lyY2xlOiBTVkcgY2lyY2xlIGRyYXdzICsgY2hlY2ttYXJrIGFwcGVhcnMsIDgwMG1zCi0gQ2lyY2xlOiA4MHB4LCBgcGluay00MDBgIHN0cm9rZSwgM3B4IHdpZHRoCi0gQ2hlY2ttYXJrOiB3aGl0ZSBmaWxsIGluc2lkZQoKIyMjIyBXZWxjb21lIE1lc3NhZ2UKLSBUaXRsZTogIuasoui/juWKoOWFpSBQbGF0b25pYyIgaW4gYGgyYAotIERlc2NyaXB0aW9uOiAi5L2g55qE6LSm5Y+35bey5Yib5bu65oiQ5Yqf44CC546w5Zyo77yM5Y676YGH6KeB5L2g55qE54G16a2C5Ly05L6j5ZCn44CCIiBpbiBgYm9keWAKCiMjIyMgQ1RBCi0gIui/m+WFpSBQbGF0b25pYyIg4oCUIGxhcmdlIHByaW1hcnkgYnV0dG9uCi0gUmVkaXJlY3RzIHRvIGAvZGFzaGJvYXJkYCBvbiBjbGljawoKIyMjIEFuaW1hdGlvbnMgKFNpZ251cCkKLSAqKlN0ZXAgdHJhbnNpdGlvbnMqKjogT3V0Z29pbmcgc3RlcCBzbGlkZXMgbGVmdCArIGZhZGVzIG91dCAyNTBtcywgaW5jb21pbmcgc2xpZGVzIGZyb20gcmlnaHQgKyBmYWRlcyBpbiAzMDBtcwotICoqUGFzc3dvcmQgc3RyZW5ndGggYmFyKio6IFdpZHRoICsgY29sb3IgdHJhbnNpdGlvbnMgMjAwbXMgc21vb3RoCi0gKipDb2RlIGlucHV0IGZvY3VzKio6IGBzaGFkb3ctZ2xvd2AgcHVsc2VzIG9uIGFjdGl2ZSBib3gKLSAqKlN1Y2Nlc3MgY2hlY2ttYXJrKio6IFNWRyBzdHJva2UtZGFzaG9mZnNldCBhbmltYXRpb24gZHJhd3MgdGhlIGNpcmNsZSAoNjAwbXMpLCB0aGVuIGNoZWNrbWFyayBkcmF3cyAoMjAwbXMgZGVsYXkpCi0gKipXZWxjb21lIGNvbnRlbnQqKjogRmFkZSBpbiArIHNsaWRlIHVwIDIwcHgsIDQwMG1zIGFmdGVyIGNoZWNrbWFyayBjb21wbGV0ZXMKCi0tLQoKIyMgUmVzcG9uc2l2ZQoKLSBNb2JpbGUgKDwgNzY4cHgpOiBDYXJkIGJlY29tZXMgZnVsbC13aWR0aCB3aXRoIDE2cHggbWFyZ2luLCBwYWRkaW5nIHJlZHVjZXMgdG8gMjhweCwgb3JicyBoaWRkZW4gZm9yIHBlcmZvcm1hbmNlCi0gVGFibGV0OiBDYXJkIGF0IDQwMHB4IHdpZHRoLCBzdGFuZGFyZCBwYWRkaW5nCi0gT3JicyBhcmUgaGlkZGVuIG9uIG1vYmlsZSBmb3IgcGVyZm9ybWFuY2U7IGdyYWRpZW50IGFuaW1hdGlvbiByZW1haW5zCg==
+# Auth Page (auth.md)
+
+Email-based login and signup with a mesmerizing pink breathing animation background. The entire experience should feel warm, inviting, and secure — like being welcomed into a safe space.
+
+| Property | Value |
+|----------|-------|
+| Route | `/auth` |
+| Sections | 1 (single view with tab toggle) |
+| Purpose | Authenticate users via email + password |
+
+---
+
+## Page Layout
+
+- Full viewport (100vw × 100vh), no sidebar, no scroll
+- Background: `breathing-gradient` animation (8s cycle) + 3 floating soft pink orbs
+- Centered auth card, max-width 420px
+
+---
+
+## Background
+
+### Breathing Gradient Animation
+```css
+background: linear-gradient(135deg, #FFF5F7 0%, #FFE4EC 20%, #FFB6C1 45%, #E8A0BF 70%, #D4A5D4 100%);
+background-size: 400% 400%;
+animation: breathing-gradient 8s ease-in-out infinite;
+```
+The gradient shifts slowly between warm pink and soft lavender, creating a living, breathing atmosphere.
+
+### Floating Orbs
+- Orb 1: 300px, `rgba(255,182,193,0.25)`, blur(80px), top-left area, `float-orb` 14s
+- Orb 2: 250px, `rgba(232,160,191,0.2)`, blur(100px), bottom-right area, `float-orb` 12s, 3s delay
+- Orb 3: 200px, `rgba(212,165,212,0.2)`, blur(90px), center-right, `float-orb` 16s, 6s delay
+
+---
+
+## Auth Card
+
+### Container
+- Background: `rgba(255,255,255,0.85)` with `backdrop-filter: blur(20px)`
+- Border: 1px solid `rgba(255,182,193,0.3)`
+- Border radius: `radius-xl` (24px)
+- Padding: 40px
+- Shadow: `shadow-lg` + soft pink glow `0 0 60px rgba(255,182,193,0.15)`
+- Width: 100%, max-width 420px
+
+### Logo Area (Card Top)
+- `logo.svg` centered, 140px wide
+- Below: "Platonic" wordmark in `pink-400`, `h3` size
+- Below: "你的AI虚拟伴侣" in `body-sm`, `text-muted`
+- Margin-bottom: 32px
+
+### Tab Toggle
+- Two tabs: "登录" (Login) | "注册" (Sign Up)
+- Container: pill-shaped background `pink-50`, radius-full, padding 4px
+- Active tab: white bg, `pink-500` text, `shadow-sm`, radius-full
+- Inactive tab: transparent, `text-muted`
+- Tab switch: content cross-fades (200ms), form fields animate with slight slide
+
+---
+
+## Login Form
+
+### Email Input
+- Label: "邮箱地址" in `label` font, `text-secondary`
+- Input: `Input Component` from design.md
+- Icon: `Mail` (lucide) inside left of input, `text-muted`, 18px
+- Placeholder: "your@email.com"
+- Validation: email format on blur
+
+### Password Input
+- Label: "密码" in `label` font
+- Input: `Input Component` with `type="password"`
+- Icon: `Lock` inside left, `Eye` / `EyeOff` toggle button inside right
+- Placeholder: "输入密码"
+
+### Forgot Password
+- "忘记密码？" link below password field, right-aligned
+- Font: `body-sm`, `pink-500`
+- Hover: underline
+
+### Submit Button
+- "登录" — full width, `primary` button variant, height 48px
+- Loading state: spinner icon replaces text, disabled
+- Success: brief checkmark animation, then redirect
+
+### Divider
+- "或" text centered between two horizontal lines (1px `pink-100`)
+- Margin: 20px vertical
+
+### Social Login (Placeholder)
+- "使用其他方式登录" in `body-sm`, `text-muted`
+- Row of 3 icon buttons (Google, Apple, WeChat) — ghost style, 44px circle
+- Currently decorative, click shows "即将推出" toast
+
+### Animations (Login)
+- **Card entrance**: Scale 0.92→1 + opacity 0→1, 600ms, ease-bounce, 200ms page-load delay
+- **Form fields**: Stagger fade in + slide up 15px, 60ms stagger, 400ms after card
+- **Tab switch**: Outgoing form fades out 150ms, incoming fades in + slides from opposite direction 200ms
+- **Submit hover**: `shadow-glow` intensifies, 150ms
+- **Submit active**: Scale 0.98, 100ms
+- **Error shake**: Horizontal shake (translateX ±6px, 3 cycles, 400ms total) on validation error
+
+---
+
+## Signup Form
+
+### Step Indicator
+- 3 dots in a row: 基本信息 → 邮箱验证 → 完成
+- Active dot: `pink-400` filled, 10px
+- Inactive dot: `pink-100` filled, 8px
+- Connector line: 1px `pink-100` between dots
+- Updates as user progresses
+
+### Step 1: Basic Info
+
+#### Username Input
+- Label: "昵称" in `label` font
+- Input: `Input Component`
+- Icon: `User` inside left
+- Placeholder: "给你的伴侣一个称呼你的方式"
+- Max length: 20 chars, counter shown
+
+#### Email Input
+- Same as login email field
+
+#### Password Input
+- Label: "设置密码" in `label` font
+- Input: password type with visibility toggle
+- **Password Strength Indicator** (below input):
+  - 4-segment horizontal bar, 4px height each
+  - Colors by strength: gray (empty) → red (weak) → orange (fair) → `rose-gold` (good) → `pink-400` (strong)
+  - Label below: "密码强度：弱/一般/良好/强" in `body-sm`
+  - Rules checked: 8+ chars, uppercase, lowercase, number, special char
+  - Each rule shown as small check item with `Check` or `X` icon
+
+#### Confirm Password
+- Label: "确认密码"
+- Input: password type
+- Validation: must match password, green `Check` when matching, red warning when different
+
+#### Next Button
+- "下一步" — full width, primary button
+- Disabled until all fields valid
+
+### Step 2: Email Verification
+
+#### Status Display
+- Large envelope icon (`Mail` from lucide), 64px, `pink-400`
+- Title: "验证你的邮箱" in `h2`
+- Description: "我们已向 **user@email.com** 发送了验证码，请查收并输入" in `body`, email in bold
+
+#### Code Input
+- 6 single-character input boxes in a row
+- Each: 48px × 56px, centered text, `number` font 24px, border `pink-200`
+- Focus: border `pink-400` + `shadow-glow`
+- Auto-advance to next box on input
+- Backspace moves to previous
+- Paste support: paste 6-digit code fills all boxes
+
+#### Resend Timer
+- "重新发送 (45s)" — countdown timer, starts at 60s
+- When expired: becomes clickable link in `pink-500`
+
+#### Verify Button
+- "验证" — primary button, disabled until 6 digits entered
+
+### Step 3: Complete
+
+#### Success Animation
+- Animated checkmark circle: SVG circle draws + checkmark appears, 800ms
+- Circle: 80px, `pink-400` stroke, 3px width
+- Checkmark: white fill inside
+
+#### Welcome Message
+- Title: "欢迎加入 Platonic" in `h2`
+- Description: "你的账号已创建成功。现在，去遇见你的灵魂伴侣吧。" in `body`
+
+#### CTA
+- "进入 Platonic" — large primary button
+- Redirects to `/dashboard` on click
+
+### Animations (Signup)
+- **Step transitions**: Outgoing step slides left + fades out 250ms, incoming slides from right + fades in 300ms
+- **Password strength bar**: Width + color transitions 200ms smooth
+- **Code input focus**: `shadow-glow` pulses on active box
+- **Success checkmark**: SVG stroke-dashoffset animation draws the circle (600ms), then checkmark draws (200ms delay)
+- **Welcome content**: Fade in + slide up 20px, 400ms after checkmark completes
+
+---
+
+## Responsive
+
+- Mobile (< 768px): Card becomes full-width with 16px margin, padding reduces to 28px, orbs hidden for performance
+- Tablet: Card at 400px width, standard padding
+- Orbs are hidden on mobile for performance; gradient animation remains

@@ -1,1 +1,246 @@
-aW1wb3J0IHsgdXNlTWVtbyB9IGZyb20gInJlYWN0IgppbXBvcnQgeyBjdmEsIHR5cGUgVmFyaWFudFByb3BzIH0gZnJvbSAiY2xhc3MtdmFyaWFuY2UtYXV0aG9yaXR5IgoKaW1wb3J0IHsgY24gfSBmcm9tICJAL2xpYi91dGlscyIKaW1wb3J0IHsgTGFiZWwgfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvbGFiZWwiCmltcG9ydCB7IFNlcGFyYXRvciB9IGZyb20gIkAvY29tcG9uZW50cy91aS9zZXBhcmF0b3IiCgpmdW5jdGlvbiBGaWVsZFNldCh7IGNsYXNzTmFtZSwgLi4ucHJvcHMgfTogUmVhY3QuQ29tcG9uZW50UHJvcHM8ImZpZWxkc2V0Ij4pIHsKICByZXR1cm4gKAogICAgPGZpZWxkc2V0CiAgICAgIGRhdGEtc2xvdD0iZmllbGQtc2V0IgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJmbGV4IGZsZXgtY29sIGdhcC02IiwKICAgICAgICAiaGFzLVs+W2RhdGEtc2xvdD1jaGVja2JveC1ncm91cF1dOmdhcC0zIGhhcy1bPltkYXRhLXNsb3Q9cmFkaW8tZ3JvdXBdXTpnYXAtMyIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKQp9CgpmdW5jdGlvbiBGaWVsZExlZ2VuZCh7CiAgY2xhc3NOYW1lLAogIHZhcmlhbnQgPSAibGVnZW5kIiwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwibGVnZW5kIj4gJiB7IHZhcmlhbnQ/OiAibGVnZW5kIiB8ICJsYWJlbCIgfSkgewogIHJldHVybiAoCiAgICA8bGVnZW5kCiAgICAgIGRhdGEtc2xvdD0iZmllbGQtbGVnZW5kIgogICAgICBkYXRhLXZhcmlhbnQ9e3ZhcmlhbnR9CiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgIm1iLTMgZm9udC1tZWRpdW0iLAogICAgICAgICJkYXRhLVt2YXJpYW50PWxlZ2VuZF06dGV4dC1iYXNlIiwKICAgICAgICAiZGF0YS1bdmFyaWFudD1sYWJlbF06dGV4dC1zbSIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKQp9CgpmdW5jdGlvbiBGaWVsZEdyb3VwKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwiZGl2Ij4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9ImZpZWxkLWdyb3VwIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJncm91cC9maWVsZC1ncm91cCBAY29udGFpbmVyL2ZpZWxkLWdyb3VwIGZsZXggdy1mdWxsIGZsZXgtY29sIGdhcC03IGRhdGEtW3Nsb3Q9Y2hlY2tib3gtZ3JvdXBdOmdhcC0zIFsmPltkYXRhLXNsb3Q9ZmllbGQtZ3JvdXBdXTpnYXAtNCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKQp9Cgpjb25zdCBmaWVsZFZhcmlhbnRzID0gY3ZhKAogICJncm91cC9maWVsZCBmbGV4IHctZnVsbCBnYXAtMyBkYXRhLVtpbnZhbGlkPXRydWVdOnRleHQtZGVzdHJ1Y3RpdmUiLAogIHsKICAgIHZhcmlhbnRzOiB7CiAgICAgIG9yaWVudGF0aW9uOiB7CiAgICAgICAgdmVydGljYWw6IFsiZmxleC1jb2wgWyY+Kl06dy1mdWxsIFsmPi5zci1vbmx5XTp3LWF1dG8iXSwKICAgICAgICBob3Jpem9udGFsOiBbCiAgICAgICAgICAiZmxleC1yb3cgaXRlbXMtY2VudGVyIiwKICAgICAgICAgICJbJj5bZGF0YS1zbG90PWZpZWxkLWxhYmVsXV06ZmxleC1hdXRvIiwKICAgICAgICAgICJoYXMtWz5bZGF0YS1zbG90PWZpZWxkLWNvbnRlbnRdXTppdGVtcy1zdGFydCBoYXMtWz5bZGF0YS1zbG90PWZpZWxkLWNvbnRlbnRdXTpbJj5bcm9sZT1jaGVja2JveF0sW3JvbGU9cmFkaW9dXTptdC1weCIsCiAgICAgICAgXSwKICAgICAgICByZXNwb25zaXZlOiBbCiAgICAgICAgICAiZmxleC1jb2wgWyY+Kl06dy1mdWxsIFsmPi5zci1vbmx5XTp3LWF1dG8gQG1kL2ZpZWxkLWdyb3VwOmZsZXgtcm93IEBtZC9maWVsZC1ncm91cDppdGVtcy1jZW50ZXIgQG1kL2ZpZWxkLWdyb3VwOlsmPipdOnctYXV0byIsCiAgICAgICAgICAiQG1kL2ZpZWxkLWdyb3VwOlsmPltkYXRhLXNsb3Q9ZmllbGQtbGFiZWxdXTpmbGV4LWF1dG8iLAogICAgICAgICAgIkBtZC9maWVsZC1ncm91cDpoYXMtWz5bZGF0YS1zbG90PWZpZWxkLWNvbnRlbnRdXTppdGVtcy1zdGFydCBAbWQvZmllbGQtZ3JvdXA6aGFzLVs+W2RhdGEtc2xvdD1maWVsZC1jb250ZW50XV06WyY+W3JvbGU9Y2hlY2tib3hdLFtyb2xlPXJhZGlvXV06bXQtcHgiLAogICAgICAgIF0sCiAgICAgIH0sCiAgICB9LAogICAgZGVmYXVsdFZhcmlhbnRzOiB7CiAgICAgIG9yaWVudGF0aW9uOiAidmVydGljYWwiLAogICAgfSwKICB9CikKCmZ1bmN0aW9uIEZpZWxkKHsKICBjbGFzc05hbWUsCiAgb3JpZW50YXRpb24gPSAidmVydGljYWwiLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCJkaXYiPiAmIFZhcmlhbnRQcm9wczx0eXBlb2YgZmllbGRWYXJpYW50cz4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICByb2xlPSJncm91cCIKICAgICAgZGF0YS1zbG90PSJmaWVsZCIKICAgICAgZGF0YS1vcmllbnRhdGlvbj17b3JpZW50YXRpb259CiAgICAgIGNsYXNzTmFtZT17Y24oZmllbGRWYXJpYW50cyh7IG9yaWVudGF0aW9uIH0pLCBjbGFzc05hbWUpfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICkKfQoKZnVuY3Rpb24gRmllbGRDb250ZW50KHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwiZGl2Ij4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9ImZpZWxkLWNvbnRlbnQiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgImdyb3VwL2ZpZWxkLWNvbnRlbnQgZmxleCBmbGV4LTEgZmxleC1jb2wgZ2FwLTEuNSBsZWFkaW5nLXNudWciLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICkKfQoKZnVuY3Rpb24gRmllbGRMYWJlbCh7CiAgY2xhc3NOYW1lLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPHR5cGVvZiBMYWJlbD4pIHsKICByZXR1cm4gKAogICAgPExhYmVsCiAgICAgIGRhdGEtc2xvdD0iZmllbGQtbGFiZWwiCiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgImdyb3VwL2ZpZWxkLWxhYmVsIHBlZXIvZmllbGQtbGFiZWwgZmxleCB3LWZpdCBnYXAtMiBsZWFkaW5nLXNudWcgZ3JvdXAtZGF0YS1bZGlzYWJsZWQ9dHJ1ZV0vZmllbGQ6b3BhY2l0eS01MCIsCiAgICAgICAgImhhcy1bPltkYXRhLXNsb3Q9ZmllbGRdXTp3LWZ1bGwgaGFzLVs+W2RhdGEtc2xvdD1maWVsZF1dOmZsZXgtY29sIGhhcy1bPltkYXRhLXNsb3Q9ZmllbGRdXTpyb3VuZGVkLW1kIGhhcy1bPltkYXRhLXNsb3Q9ZmllbGRdXTpib3JkZXIgWyY+Kl06ZGF0YS1bc2xvdD1maWVsZF06cC00IiwKICAgICAgICAiaGFzLWRhdGEtW3N0YXRlPWNoZWNrZWRdOmJnLXByaW1hcnkvNSBoYXMtZGF0YS1bc3RhdGU9Y2hlY2tlZF06Ym9yZGVyLXByaW1hcnkgZGFyazpoYXMtZGF0YS1bc3RhdGU9Y2hlY2tlZF06YmctcHJpbWFyeS8xMCIsCiAgICAgICAgY2xhc3NOYW1lCiAgICAgICl9CiAgICAgIHsuLi5wcm9wc30KICAgIC8+CiAgKQp9CgpmdW5jdGlvbiBGaWVsZFRpdGxlKHsgY2xhc3NOYW1lLCAuLi5wcm9wcyB9OiBSZWFjdC5Db21wb25lbnRQcm9wczwiZGl2Ij4pIHsKICByZXR1cm4gKAogICAgPGRpdgogICAgICBkYXRhLXNsb3Q9ImZpZWxkLWxhYmVsIgogICAgICBjbGFzc05hbWU9e2NuKAogICAgICAgICJmbGV4IHctZml0IGl0ZW1zLWNlbnRlciBnYXAtMiB0ZXh0LXNtIGxlYWRpbmctc251ZyBmb250LW1lZGl1bSBncm91cC1kYXRhLVtkaXNhYmxlZD10cnVlXS9maWVsZDpvcGFjaXR5LTUwIiwKICAgICAgICBjbGFzc05hbWUKICAgICAgKX0KICAgICAgey4uLnByb3BzfQogICAgLz4KICApCn0KCmZ1bmN0aW9uIEZpZWxkRGVzY3JpcHRpb24oeyBjbGFzc05hbWUsIC4uLnByb3BzIH06IFJlYWN0LkNvbXBvbmVudFByb3BzPCJwIj4pIHsKICByZXR1cm4gKAogICAgPHAKICAgICAgZGF0YS1zbG90PSJmaWVsZC1kZXNjcmlwdGlvbiIKICAgICAgY2xhc3NOYW1lPXtjbigKICAgICAgICAidGV4dC1tdXRlZC1mb3JlZ3JvdW5kIHRleHQtc20gbGVhZGluZy1ub3JtYWwgZm9udC1ub3JtYWwgZ3JvdXAtaGFzLVtbZGF0YS1vcmllbnRhdGlvbj1ob3Jpem9udGFsXV0vZmllbGQ6dGV4dC1iYWxhbmNlIiwKICAgICAgICAibGFzdDptdC0wIG50aC1sYXN0LTI6LW10LTEgW1tkYXRhLXZhcmlhbnQ9bGVnZW5kXSsmXTotbXQtMS41IiwKICAgICAgICAiWyY+YTpob3Zlcl06dGV4dC1wcmltYXJ5IFsmPmFdOnVuZGVybGluZSBbJj5hXTp1bmRlcmxpbmUtb2Zmc2V0LTQiLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICAvPgogICkKfQoKZnVuY3Rpb24gRmllbGRTZXBhcmF0b3IoewogIGNoaWxkcmVuLAogIGNsYXNzTmFtZSwKICAuLi5wcm9wcwp9OiBSZWFjdC5Db21wb25lbnRQcm9wczwiZGl2Ij4gJiB7CiAgY2hpbGRyZW4/OiBSZWFjdC5SZWFjdE5vZGUKfSkgewogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGRhdGEtc2xvdD0iZmllbGQtc2VwYXJhdG9yIgogICAgICBkYXRhLWNvbnRlbnQ9eyEhY2hpbGRyZW59CiAgICAgIGNsYXNzTmFtZT17Y24oCiAgICAgICAgInJlbGF0aXZlIC1teS0yIGgtNSB0ZXh0LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9b3V0bGluZV0vZmllbGQtZ3JvdXA6LW1iLTIiLAogICAgICAgIGNsYXNzTmFtZQogICAgICApfQogICAgICB7Li4ucHJvcHN9CiAgICA+CiAgICAgIDxTZXBhcmF0b3IgY2xhc3NOYW1lPSJhYnNvbHV0ZSBpbnNldC0wIHRvcC0xLzIiIC8+CiAgICAgIHtjaGlsZHJlbiAmJiAoCiAgICAgICAgPHNwYW4KICAgICAgICAgIGNsYXNzTmFtZT0iYmctYmFja2dyb3VuZCB0ZXh0LW11dGVkLWZvcmVncm91bmQgcmVsYXRpdmUgbXgtYXV0byBibG9jayB3LWZpdCBweC0yIgogICAgICAgICAgZGF0YS1zbG90PSJmaWVsZC1zZXBhcmF0b3ItY29udGVudCIKICAgICAgICA+CiAgICAgICAgICB7Y2hpbGRyZW59CiAgICAgICAgPC9zcGFuPgogICAgICApfQogICAgPC9kaXY+CiAgKQp9CgpmdW5jdGlvbiBGaWVsZEVycm9yKHsKICBjbGFzc05hbWUsCiAgY2hpbGRyZW4sCiAgZXJyb3JzLAogIC4uLnByb3BzCn06IFJlYWN0LkNvbXBvbmVudFByb3BzPCJkaXYiPiAmIHsKICBlcnJvcnM/OiBBcnJheTx7IG1lc3NhZ2U/OiBzdHJpbmcgfSB8IHVuZGVmaW5lZD4KfSkgewogIGNvbnN0IGNvbnRlbnQgPSB1c2VNZW1vKCgpID0+IHsKICAgIGlmIChjaGlsZHJlbikgewogICAgICByZXR1cm4gY2hpbGRyZW4KICAgIH0KCiAgICBpZiAoIWVycm9ycz8ubGVuZ3RoKSB7CiAgICAgIHJldHVybiBudWxsCiAgICB9CgogICAgY29uc3QgdW5pcXVlRXJyb3JzID0gWwogICAgICAuLi5uZXcgTWFwKGVycm9ycy5tYXAoKGVycm9yKSA9PiBbZXJyb3I/Lm1lc3NhZ2UsIGVycm9yXSkpLnZhbHVlcygpLAogICAgXQoKICAgIGlmICh1bmlxdWVFcnJvcnM/Lmxlbmd0aCA9PSAxKSB7CiAgICAgIHJldHVybiB1bmlxdWVFcnJvcnNbMF0/Lm1lc3NhZ2UKICAgIH0KCiAgICByZXR1cm4gKAogICAgICA8dWwgY2xhc3NOYW1lPSJtbC00IGZsZXggbGlzdC1kaXNjIGZsZXgtY29sIGdhcC0xIj4KICAgICAgICB7dW5pcXVlRXJyb3JzLm1hcCgKICAgICAgICAgIChlcnJvciwgaW5kZXgpID0+CiAgICAgICAgICAgIGVycm9yPy5tZXNzYWdlICYmIDxsaSBrZXk9e2luZGV4fT57ZXJyb3IubWVzc2FnZX08L2xpPgogICAgICAgICl9CiAgICAgIDwvdWw+CiAgICApCiAgfSwgW2NoaWxkcmVuLCBlcnJvcnNdKQoKICBpZiAoIWNvbnRlbnQpIHsKICAgIHJldHVybiBudWxsCiAgfQoKICByZXR1cm4gKAogICAgPGRpdgogICAgICByb2xlPSJhbGVydCIKICAgICAgZGF0YS1zbG90PSJmaWVsZC1lcnJvciIKICAgICAgY2xhc3NOYW1lPXtjbigidGV4dC1kZXN0cnVjdGl2ZSB0ZXh0LXNtIGZvbnQtbm9ybWFsIiwgY2xhc3NOYW1lKX0KICAgICAgey4uLnByb3BzfQogICAgPgogICAgICB7Y29udGVudH0KICAgIDwvZGl2PgogICkKfQoKZXhwb3J0IHsKICBGaWVsZCwKICBGaWVsZExhYmVsLAogIEZpZWxkRGVzY3JpcHRpb24sCiAgRmllbGRFcnJvciwKICBGaWVsZEdyb3VwLAogIEZpZWxkTGVnZW5kLAogIEZpZWxkU2VwYXJhdG9yLAogIEZpZWxkU2V0LAogIEZpZWxkQ29udGVudCwKICBGaWVsZFRpdGxlLAp9Cg==
+import { useMemo } from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+import { Label } from "@/components/ui/label"
+import { Separator } from "@/components/ui/separator"
+
+function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
+  return (
+    <fieldset
+      data-slot="field-set"
+      className={cn(
+        "flex flex-col gap-6",
+        "has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldLegend({
+  className,
+  variant = "legend",
+  ...props
+}: React.ComponentProps<"legend"> & { variant?: "legend" | "label" }) {
+  return (
+    <legend
+      data-slot="field-legend"
+      data-variant={variant}
+      className={cn(
+        "mb-3 font-medium",
+        "data-[variant=legend]:text-base",
+        "data-[variant=label]:text-sm",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="field-group"
+      className={cn(
+        "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 [&>[data-slot=field-group]]:gap-4",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+const fieldVariants = cva(
+  "group/field flex w-full gap-3 data-[invalid=true]:text-destructive",
+  {
+    variants: {
+      orientation: {
+        vertical: ["flex-col [&>*]:w-full [&>.sr-only]:w-auto"],
+        horizontal: [
+          "flex-row items-center",
+          "[&>[data-slot=field-label]]:flex-auto",
+          "has-[>[data-slot=field-content]]:items-start has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+        ],
+        responsive: [
+          "flex-col [&>*]:w-full [&>.sr-only]:w-auto @md/field-group:flex-row @md/field-group:items-center @md/field-group:[&>*]:w-auto",
+          "@md/field-group:[&>[data-slot=field-label]]:flex-auto",
+          "@md/field-group:has-[>[data-slot=field-content]]:items-start @md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+        ],
+      },
+    },
+    defaultVariants: {
+      orientation: "vertical",
+    },
+  }
+)
+
+function Field({
+  className,
+  orientation = "vertical",
+  ...props
+}: React.ComponentProps<"div"> & VariantProps<typeof fieldVariants>) {
+  return (
+    <div
+      role="group"
+      data-slot="field"
+      data-orientation={orientation}
+      className={cn(fieldVariants({ orientation }), className)}
+      {...props}
+    />
+  )
+}
+
+function FieldContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="field-content"
+      className={cn(
+        "group/field-content flex flex-1 flex-col gap-1.5 leading-snug",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldLabel({
+  className,
+  ...props
+}: React.ComponentProps<typeof Label>) {
+  return (
+    <Label
+      data-slot="field-label"
+      className={cn(
+        "group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50",
+        "has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border [&>*]:data-[slot=field]:p-4",
+        "has-data-[state=checked]:bg-primary/5 has-data-[state=checked]:border-primary dark:has-data-[state=checked]:bg-primary/10",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="field-label"
+      className={cn(
+        "flex w-fit items-center gap-2 text-sm leading-snug font-medium group-data-[disabled=true]/field:opacity-50",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
+  return (
+    <p
+      data-slot="field-description"
+      className={cn(
+        "text-muted-foreground text-sm leading-normal font-normal group-has-[[data-orientation=horizontal]]/field:text-balance",
+        "last:mt-0 nth-last-2:-mt-1 [[data-variant=legend]+&]:-mt-1.5",
+        "[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4",
+        className
+      )}
+      {...props}
+    />
+  )
+}
+
+function FieldSeparator({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<"div"> & {
+  children?: React.ReactNode
+}) {
+  return (
+    <div
+      data-slot="field-separator"
+      data-content={!!children}
+      className={cn(
+        "relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2",
+        className
+      )}
+      {...props}
+    >
+      <Separator className="absolute inset-0 top-1/2" />
+      {children && (
+        <span
+          className="bg-background text-muted-foreground relative mx-auto block w-fit px-2"
+          data-slot="field-separator-content"
+        >
+          {children}
+        </span>
+      )}
+    </div>
+  )
+}
+
+function FieldError({
+  className,
+  children,
+  errors,
+  ...props
+}: React.ComponentProps<"div"> & {
+  errors?: Array<{ message?: string } | undefined>
+}) {
+  const content = useMemo(() => {
+    if (children) {
+      return children
+    }
+
+    if (!errors?.length) {
+      return null
+    }
+
+    const uniqueErrors = [
+      ...new Map(errors.map((error) => [error?.message, error])).values(),
+    ]
+
+    if (uniqueErrors?.length == 1) {
+      return uniqueErrors[0]?.message
+    }
+
+    return (
+      <ul className="ml-4 flex list-disc flex-col gap-1">
+        {uniqueErrors.map(
+          (error, index) =>
+            error?.message && <li key={index}>{error.message}</li>
+        )}
+      </ul>
+    )
+  }, [children, errors])
+
+  if (!content) {
+    return null
+  }
+
+  return (
+    <div
+      role="alert"
+      data-slot="field-error"
+      className={cn("text-destructive text-sm font-normal", className)}
+      {...props}
+    >
+      {content}
+    </div>
+  )
+}
+
+export {
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLegend,
+  FieldSeparator,
+  FieldSet,
+  FieldContent,
+  FieldTitle,
+}

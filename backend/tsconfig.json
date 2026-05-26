@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "types": [],
+    "typeRoots": [
+      "./types"
+    ]
+  },
+  "include": [
+    "supabase/functions/**/*.ts"
+  ]
+}

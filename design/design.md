@@ -1,1 +1,320 @@
-IyBQbGF0b25pYyBBSSDigJQgR2xvYmFsIERlc2lnbiBEb2N1bWVudAoKQSBoZWFsaW5nLCByb21hbnRpYyBBSSB2aXJ0dWFsIGNvbXBhbmlvbiB3ZWIgYXBwbGljYXRpb24uIFRoZSBkZXNpZ24gZXZva2VzIHdhcm10aCwgZW1vdGlvbmFsIGludGltYWN5LCBhbmQgZ2VudGxlIHRlY2hub2xvZ3kgdGhyb3VnaCBhIHNvZnQgcGluayB2aXN1YWwgbGFuZ3VhZ2UsIGJyZWF0aGluZyBncmFkaWVudCBhbmltYXRpb25zLCBhbmQgZGVsaWNhdGUgbWljcm8taW50ZXJhY3Rpb25zLgoKLS0tCgojIyBQYWdlIExpc3QKCnwgUGFnZSB8IEZpbGUgfCBSb3V0ZSB8IERlc2NyaXB0aW9uIHwKfC0tLS0tLXwtLS0tLS18LS0tLS0tLXwtLS0tLS0tLS0tLS0tfAp8IExhbmRpbmcgfCBgaG9tZS5tZGAgfCBgL2AgfCBNYXJrZXRpbmcgaG9tZXBhZ2Ugd2l0aCBoZXJvLCBmZWF0dXJlcywgZW1vdGlvbmFsIGludHJvIHwKfCBBdXRoIHwgYGF1dGgubWRgIHwgYC9hdXRoYCB8IEVtYWlsIGxvZ2luL3NpZ251cCB3aXRoIHBpbmsgYnJlYXRoaW5nIGFuaW1hdGlvbiBiYWNrZ3JvdW5kIHwKfCBEYXNoYm9hcmQgfCBgZGFzaGJvYXJkLm1kYCB8IGAvZGFzaGJvYXJkYCB8IE1haW4gY29uc29sZTogQmlnIEZpdmUgcmFkYXIsIG1pbGVzdG9uZXMsIGVuZXJneSwgbW9vZCBwcmV2aWV3IHwKfCBQbGF6YSB8IGBwbGF6YS5tZGAgfCBgL3BsYXphYCB8IEdyaWQgb2YgYnJvd3NlYWJsZSBBSSBjb21wYW5pb24gY2FyZHMgd2l0aCBwZXJzb25hbGl0eSB0YWdzIHwKfCBDdXN0b21pemUgfCBgY3VzdG9taXplLm1kYCB8IGAvY3VzdG9taXplYCB8IFN0ZXAtYnktc3RlcCBjb21wYW5pb24gY3JlYXRpb24gd2l0aCBCaWcgRml2ZSBzbGlkZXJzIHwKfCBDaGF0IHwgYGNoYXQubWRgIHwgYC9jaGF0YCB8IEZ1bGwtc2NyZWVuIFNTRSBzdHJlYW1pbmcgY2hhdCB3aXRoIGJyZWF0aGluZyBncmFkaWVudCBiZyB8CnwgTWVtb3J5IHwgYG1lbW9yeS5tZGAgfCBgL21lbW9yeWAgfCA3eDUgY2FsZW5kYXIgZ3JpZCB3aXRoIGNvbG9yZWQgZGF0ZSBoaWdobGlnaHRzIGFuZCBkZXRhaWwgc2lkZWJhciB8CnwgRHJhbWEgfCBgZHJhbWEubWRgIHwgYC9kcmFtYWAgfCBTdG9yeSBwbGF6YSArIGltbWVyc2l2ZSBzdG9yeSBjaGF0IGludGVyZmFjZSB8CnwgUGF5bWVudCB8IGBwYXltZW50Lm1kYCB8IGAvcGF5bWVudGAgfCBFbmVyZ3kgcmVjaGFyZ2UgY2VudGVyIHdpdGggcGxhbnMgYW5kIEFsaXBheSBRUiB8CnwgU2V0dGluZ3MgfCBgc2V0dGluZ3MubWRgIHwgYC9zZXR0aW5nc2AgfCBMYW5ndWFnZSwgYWNjb3VudCBpbmZvLCB0aGVtZSBwcmVmZXJlbmNlcyB8CnwgQ3Jvd2RmdW5kaW5nIHwgYGNyb3dkZnVuZGluZy5tZGAgfCBgL2Nyb3dkZnVuZGluZ2AgfCBQbGF0b25pYyBmZWF0dXJlIGZ1bmRpbmcgcGxhbnMgd2l0aCBwcm9ncmVzcyB0cmFja2luZyB8CgotLS0KCiMjIENvbG9yIFBhbGV0dGUKCiMjIyBQcmltYXJ5IOKAlCBTb2Z0IFBpbmsgR3JhZGllbnQKfCBUb2tlbiB8IEhleCB8IFVzYWdlIHwKfC0tLS0tLS18LS0tLS18LS0tLS0tLXwKfCBgcGluay01MGAgfCBgI0ZGRjVGN2AgfCBQYWdlIGJhY2tncm91bmRzLCBjYXJkIGJhY2tncm91bmRzIHwKfCBgcGluay0xMDBgIHwgYCNGRkU0RUNgIHwgTGlnaHQgaG92ZXIgc3RhdGVzLCBzZWNvbmRhcnkgYmFja2dyb3VuZHMgfAp8IGBwaW5rLTIwMGAgfCBgI0ZGQjZDMWAgfCBQcmltYXJ5IGFjY2VudCwgYm9yZGVycywgbGlnaHQgZmlsbHMgfAp8IGBwaW5rLTMwMGAgfCBgI0ZGOUVCNWAgfCBNZWRpdW0gYWNjZW50LCBhY3RpdmUgc3RhdGVzIHwKfCBgcGluay00MDBgIHwgYCNGRjY5QjRgIHwgR3JhZGllbnQgZW5kLCBib2xkIGFjY2VudCB8CnwgYHBpbmstNTAwYCB8IGAjRTg1MEEwYCB8IFByaW1hcnkgYnV0dG9ucywgc3Ryb25nIGFjY2VudCB8CgojIyMgU2Vjb25kYXJ5IOKAlCBEZWVwIFB1cnBsZS1CbGFjayBTaWRlYmFyCnwgVG9rZW4gfCBIZXggfCBVc2FnZSB8CnwtLS0tLS0tfC0tLS0tfC0tLS0tLS18CnwgYHNpZGViYXItYmdgIHwgYCMxQTEwMjVgIHwgU2lkZWJhciBuYXZpZ2F0aW9uIGJhY2tncm91bmQgfAp8IGBzaWRlYmFyLWhvdmVyYCB8IGAjMkExQTNBYCB8IFNpZGViYXIgaXRlbSBob3ZlciB8CnwgYHNpZGViYXItYWN0aXZlYCB8IGAjM0QyNjUyYCB8IFNpZGViYXIgYWN0aXZlIHJvdXRlIGhpZ2hsaWdodCB8CnwgYHNpZGViYXItdGV4dGAgfCBgI0I4QTlDOWAgfCBTaWRlYmFyIHNlY29uZGFyeSB0ZXh0IHwKfCBgc2lkZWJhci1pY29uYCB8IGAjRThENUY1YCB8IFNpZGViYXIgaWNvbiBkZWZhdWx0IGNvbG9yIHwKCiMjIyBBY2NlbnQg4oCUIFJvc2UgR29sZAp8IFRva2VuIHwgSGV4IHwgVXNhZ2UgfAp8LS0tLS0tLXwtLS0tLXwtLS0tLS0tfAp8IGByb3NlLWdvbGRgIHwgYCNFOEEwQkZgIHwgRW1waGFzaXMsIHByb2dyZXNzIGJhcnMsIGhpZ2hsaWdodHMgfAp8IGByb3NlLWdvbGQtbGlnaHRgIHwgYCNGNUM5RDlgIHwgUm9zZSBnb2xkIGhvdmVyIHwKfCBgZ29sZGAgfCBgI0Q0QTU3NGAgfCBNaWxlc3RvbmUgaW5kaWNhdG9ycywgYWNoaWV2ZW1lbnRzIHwKCiMjIyBTZW1hbnRpYyBDb2xvcnMKfCBUb2tlbiB8IEhleCB8IFVzYWdlIHwKfC0tLS0tLS18LS0tLS18LS0tLS0tLXwKfCBgcHVycGxlLW1lbW9yeWAgfCBgI0M4QThFOWAgfCBBbnRlcmlvciBNZW1vcnkgY2FsZW5kYXIgaGlnaGxpZ2h0IHwKfCBgcGluay1tZW1vcnlgIHwgYCNGRkI2QzFgIHwgTFRNIG1lbW9yeSBjYWxlbmRhciBoaWdobGlnaHQgfAp8IGBnb2xkLW1pbGVzdG9uZWAgfCBgI0Q0QUYzN2AgfCBNaWxlc3RvbmUgZGF0ZXMgb24gY2FsZW5kYXIgfAp8IGB0ZXh0LXByaW1hcnlgIHwgYCMyRDFCMkVgIHwgTWFpbiBib2R5IHRleHQgKGRhcmsgcGx1bSkgfAp8IGB0ZXh0LXNlY29uZGFyeWAgfCBgIzZCNUI2RWAgfCBTZWNvbmRhcnkvY2FwdGlvbiB0ZXh0IHwKfCBgdGV4dC1tdXRlZGAgfCBgI0EwOTNBNWAgfCBQbGFjZWhvbGRlciwgZGlzYWJsZWQgdGV4dCB8CgojIyMgR3JhZGllbnQgRGVmaW5pdGlvbnMKfCBOYW1lIHwgRGVmaW5pdGlvbiB8IFVzYWdlIHwKfC0tLS0tLXwtLS0tLS0tLS0tLXwtLS0tLS0tfAp8IGBicmVhdGhpbmctZ3JhZGllbnRgIHwgYGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNGRkY1RjcgMCUsICNGRkU0RUMgMjUlLCAjRkZCNkMxIDUwJSwgI0U4QTBCRiA3NSUsICNENEE1RDQgMTAwJSlgIHwgQnJlYXRoaW5nIGFuaW1hdGlvbiBiYWNrZ3JvdW5kcyAoYXV0aCwgY2hhdCkgfAp8IGBjYXJkLWdyYWRpZW50YCB8IGBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjRkZGRkZGIDAlLCAjRkZGNUY3IDEwMCUpYCB8IENhcmQgc3VyZmFjZXMgfAp8IGBhY2NlbnQtZ3JhZGllbnRgIHwgYGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNGRjY5QjQgMCUsICNGRkI2QzEgMTAwJSlgIHwgQnV0dG9ucywgYWN0aXZlIGluZGljYXRvcnMgfAp8IGBzaWRlYmFyLWdyYWRpZW50YCB8IGBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjMUExMDI1IDAlLCAjMkExQTNBIDEwMCUpYCB8IFNpZGViYXIgZGVwdGggfAoKLS0tCgojIyBUeXBvZ3JhcGh5Cgp8IFRva2VuIHwgRm9udCB8IFNpemUgfCBXZWlnaHQgfCBMaW5lLUhlaWdodCB8IExldHRlci1TcGFjaW5nIHwgVXNhZ2UgfAp8LS0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tfC0tLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tLXwtLS0tLS0tfAp8IGBkaXNwbGF5YCB8IFpDT09MIFFpbmdLZSBIdWFuZ1lvdSB8IDQ4cHggfCA0MDAgfCAxLjE1IHwgLTAuMDJlbSB8IEhlcm8gaGVhZGxpbmVzLCBwYWdlIHRpdGxlcyB8CnwgYGgxYCB8IFpDT09MIFFpbmdLZSBIdWFuZ1lvdSB8IDM2cHggfCA0MDAgfCAxLjIgfCAtMC4wMWVtIHwgU2VjdGlvbiBoZWFkaW5ncyB8CnwgYGgyYCB8IE51bml0byB8IDI4cHggfCA3MDAgfCAxLjMgfCAwIHwgU3ViLXNlY3Rpb24gaGVhZGluZ3MgfAp8IGBoM2AgfCBOdW5pdG8gfCAyMnB4IHwgNzAwIHwgMS4zNSB8IDAgfCBDYXJkIHRpdGxlcywgbGFiZWxzIHwKfCBgaDRgIHwgTnVuaXRvIHwgMThweCB8IDYwMCB8IDEuNCB8IDAgfCBTbWFsbCBoZWFkaW5ncyB8CnwgYGJvZHlgIHwgTnVuaXRvIHwgMTVweCB8IDQwMCB8IDEuNjUgfCAwLjAwNWVtIHwgQm9keSBwYXJhZ3JhcGhzIHwKfCBgYm9keS1zbWAgfCBOdW5pdG8gfCAxM3B4IHwgNDAwIHwgMS42IHwgMC4wMWVtIHwgQ2FwdGlvbnMsIGRlc2NyaXB0aW9ucyB8CnwgYGxhYmVsYCB8IE51bml0byB8IDEycHggfCA2MDAgfCAxLjMgfCAwLjA0ZW0gfCBVcHBlcmNhc2UgbGFiZWxzLCBiYWRnZXMgfAp8IGBudW1iZXJgIHwgRE0gU2FucyB8IDQycHggfCA3MDAgfCAxLjAgfCAtMC4wM2VtIHwgQmlnIGVuZXJneSBudW1iZXJzLCBzdGF0cyB8CnwgYG51bWJlci1zbWAgfCBETSBTYW5zIHwgMjBweCB8IDYwMCB8IDEuMSB8IC0wLjAxZW0gfCBTbWFsbCBudW1lcmljYWwgdmFsdWVzIHwKCiMjIyBGb250IExvYWRpbmcKYGBgaHRtbAo8bGluayBocmVmPSJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2NzczI/ZmFtaWx5PVpDT09MK1FpbmdLZStIdWFuZ1lvdSZmYW1pbHk9TnVuaXRvOndnaHRANDAwOzYwMDs3MDAmZmFtaWx5PURNK1NhbnM6d2dodEA0MDA7NjAwOzcwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCI+CmBgYAoKLS0tCgojIyBTcGFjaW5nIFNjYWxlCgp8IFRva2VuIHwgVmFsdWUgfCBVc2FnZSB8CnwtLS0tLS0tfC0tLS0tLS18LS0tLS0tLXwKfCBgeHNgIHwgNHB4IHwgTWljcm8gZ2FwcywgaWNvbiBwYWRkaW5nIHwKfCBgc21gIHwgOHB4IHwgVGlnaHQgZWxlbWVudCBzcGFjaW5nIHwKfCBgbWRgIHwgMTZweCB8IENhcmQgaW50ZXJuYWwgcGFkZGluZywgZ2FwIHwKfCBgbGdgIHwgMjRweCB8IFNlY3Rpb24gcGFkZGluZywgY2FyZCBnYXAgfAp8IGB4bGAgfCAzMnB4IHwgU2VjdGlvbiB2ZXJ0aWNhbCBzcGFjaW5nIHwKfCBgMnhsYCB8IDQ4cHggfCBNYWpvciBzZWN0aW9uIHBhZGRpbmcgfAp8IGAzeGxgIHwgNjRweCB8IEhlcm8gc3BhY2luZyB8CnwgYHNpZGViYXItd2lkdGhgIHwgMjIwcHggfCBGaXhlZCBzaWRlYmFyIHdpZHRoIHwKfCBgcHJldmlldy13aWR0aGAgfCAzMjBweCB8IFBob25lLXNpemUgcHJldmlldyBwYW5lbCB3aWR0aCB8CnwgYGNvbnRlbnQtbWF4YCB8IDEyMDBweCB8IE1heGltdW0gY29udGVudCBhcmVhIHdpZHRoIHwKCiMjIyBCb3JkZXIgUmFkaXVzCnwgVG9rZW4gfCBWYWx1ZSB8IFVzYWdlIHwKfC0tLS0tLS18LS0tLS0tLXwtLS0tLS0tfAp8IGByYWRpdXMtc21gIHwgOHB4IHwgU21hbGwgYnV0dG9ucywgYmFkZ2VzIHwKfCBgcmFkaXVzLW1kYCB8IDEycHggfCBJbnB1dCBmaWVsZHMsIHNtYWxsIGNhcmRzIHwKfCBgcmFkaXVzLWxnYCB8IDE2cHggfCBDYXJkcywgbW9kYWxzIHwKfCBgcmFkaXVzLXhsYCB8IDI0cHggfCBIZXJvIGNhcmRzLCBsYXJnZSBjb250YWluZXJzIHwKfCBgcmFkaXVzLWZ1bGxgIHwgOTk5OXB4IHwgQ2lyY3VsYXIgYXZhdGFycywgcGlsbHMgfAoKIyMjIFNoYWRvd3MKfCBUb2tlbiB8IFZhbHVlIHwgVXNhZ2UgfAp8LS0tLS0tLXwtLS0tLS0tfC0tLS0tLS18CnwgYHNoYWRvdy1zbWAgfCBgMCAxcHggM3B4IHJnYmEoNDUsMjcsNDYsMC4wNilgIHwgU3VidGxlIGVsZXZhdGlvbiB8CnwgYHNoYWRvdy1tZGAgfCBgMCA0cHggMTZweCByZ2JhKDQ1LDI3LDQ2LDAuMDgpYCB8IENhcmRzIGF0IHJlc3QgfAp8IGBzaGFkb3ctbGdgIHwgYDAgOHB4IDMycHggcmdiYSg0NSwyNyw0NiwwLjEyKWAgfCBDYXJkcyBob3ZlciwgbW9kYWxzIHwKfCBgc2hhZG93LWdsb3dgIHwgYDAgMCAyNHB4IHJnYmEoMjU1LDE4MiwxOTMsMC4yNSlgIHwgUGluayBnbG93IGVmZmVjdCBvbiBmb2N1cy9hY3RpdmUgfAp8IGBzaGFkb3ctc2lkZWJhcmAgfCBgNHB4IDAgMjRweCByZ2JhKDI2LDE2LDM3LDAuMTUpYCB8IFNpZGViYXIgZGVwdGggc2hhZG93IHwKCi0tLQoKIyMgQW5pbWF0aW9uICYgTW90aW9uCgojIyMgR2xvYmFsIFRpbWluZyBUb2tlbnMKfCBUb2tlbiB8IFZhbHVlIHwgVXNhZ2UgfAp8LS0tLS0tLXwtLS0tLS0tfC0tLS0tLS18CnwgYGVhc2UtZGVmYXVsdGAgfCBgY3ViaWMtYmV6aWVyKDAuNCwgMCwgMC4yLCAxKWAgfCBEZWZhdWx0IHRyYW5zaXRpb25zIHwKfCBgZWFzZS1ib3VuY2VgIHwgYGN1YmljLWJlemllcigwLjY4LCAtMC4zLCAwLjMyLCAxLjMpYCB8IFBsYXlmdWwgbWljcm8taW50ZXJhY3Rpb25zIHwKfCBgZWFzZS1zbW9vdGhgIHwgYGN1YmljLWJlemllcigwLjI1LCAwLjEsIDAuMjUsIDEpYCB8IFNtb290aCBwYWdlIHRyYW5zaXRpb25zIHwKfCBgZHVyYXRpb24tZmFzdGAgfCAxNTBtcyB8IEJ1dHRvbiBob3ZlcnMsIHRvZ2dsZXMgfAp8IGBkdXJhdGlvbi1ub3JtYWxgIHwgMzAwbXMgfCBDYXJkIHRyYW5zaXRpb25zLCByZXZlYWxzIHwKfCBgZHVyYXRpb24tc2xvd2AgfCA1MDBtcyB8IFNlY3Rpb24gZW50cmFuY2VzIHwKfCBgZHVyYXRpb24tZW50cmFuY2VgIHwgNzAwbXMgfCBQYWdlLWxldmVsIGFuaW1hdGlvbnMgfAoKIyMjIEJyZWF0aGluZyBBbmltYXRpb24gKENTUyBLZXlmcmFtZXMpClVzZWQgb24gQXV0aCBiYWNrZ3JvdW5kIGFuZCBDaGF0IGJhY2tncm91bmQuIEEgc29mdCwgc2xvdyBwaW5rLXB1cnBsZSBncmFkaWVudCBwdWxzZSB0aGF0IGNyZWF0ZXMgYSBsaXZpbmcsIHdhcm0gYXRtb3NwaGVyZS4KCmBgYGNzcwpAa2V5ZnJhbWVzIGJyZWF0aGluZy1ncmFkaWVudCB7CiAgMCUsIDEwMCUgewogICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMCUgNTAlOwogICAgZmlsdGVyOiBicmlnaHRuZXNzKDEpIHNhdHVyYXRlKDEpOwogIH0KICA1MCUgewogICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMTAwJSA1MCU7CiAgICBmaWx0ZXI6IGJyaWdodG5lc3MoMS4wNSkgc2F0dXJhdGUoMS4wOCk7CiAgfQp9CgouYnJlYXRoaW5nLWJnIHsKICBiYWNrZ3JvdW5kOiBicmVhdGhpbmctZ3JhZGllbnQ7CiAgYmFja2dyb3VuZC1zaXplOiA0MDAlIDQwMCU7CiAgYW5pbWF0aW9uOiBicmVhdGhpbmctZ3JhZGllbnQgOHMgZWFzZS1pbi1vdXQgaW5maW5pdGU7Cn0KYGBgCgojIyMgRmxvYXRpbmcgT3JicyBBbmltYXRpb24gKERlY29yYXRpdmUpClNvZnQgcGluayBvcmJzIGZsb2F0IHNsb3dseSBhY3Jvc3MgdGhlIGJhY2tncm91bmQgZm9yIHRoZSBhdXRoIGFuZCBjaGF0IHBhZ2VzOgoKYGBgY3NzCkBrZXlmcmFtZXMgZmxvYXQtb3JiIHsKICAwJSB7IHRyYW5zZm9ybTogdHJhbnNsYXRlKDAsIDApIHNjYWxlKDEpOyBvcGFjaXR5OiAwLjM7IH0KICAzMyUgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgzMHB4LCAtNDBweCkgc2NhbGUoMS4xKTsgb3BhY2l0eTogMC41OyB9CiAgNjYlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTIwcHgsIDIwcHgpIHNjYWxlKDAuOSk7IG9wYWNpdHk6IDAuNDsgfQogIDEwMCUgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgwLCAwKSBzY2FsZSgxKTsgb3BhY2l0eTogMC4zOyB9Cn0KYGBgCjMgb3JicyB3aXRoIHN0YWdnZXJlZCBhbmltYXRpb24tZGVsYXkgKDBzLCAyLjVzLCA1cyksIHNpemVzIDIwMHB44oCTNDAwcHgsIGJsdXIgODBweCwgcG9zaXRpb25lZCBhYnNvbHV0ZS4KCiMjIyBTdGFuZGFyZCBFbnRyYW5jZSBQYXR0ZXJuCkVsZW1lbnRzIGVudGVyIHRoZSB2aWV3cG9ydCB3aXRoIGEgY29uc2lzdGVudCBwYXR0ZXJuOgotIGBvcGFjaXR5OiAwYCDihpIgYG9wYWNpdHk6IDFgCi0gYHRyYW5zbGF0ZVkoMzBweClgIOKGkiBgdHJhbnNsYXRlWSgwKWAKLSBEdXJhdGlvbjogNjAwbXMKLSBFYXNpbmc6IGVhc2Utc21vb3RoCi0gVHJpZ2dlcjogd2hlbiBlbGVtZW50IGVudGVycyAxNSUgZnJvbSBib3R0b20gb2Ygdmlld3BvcnQKLSBTdGFnZ2VyOiA4MG1zIGJldHdlZW4gc2libGluZyBlbGVtZW50cwoKIyMjIEhvdmVyIE1pY3JvLUludGVyYWN0aW9ucwotIEJ1dHRvbnM6IGBzY2FsZSgxLjAzKWAgKyBgc2hhZG93LWdsb3dgLCAxNTBtcwotIENhcmRzOiBgdHJhbnNsYXRlWSgtNHB4KWAgKyBgc2hhZG93LWxnYCwgMjAwbXMKLSBTaWRlYmFyIGl0ZW1zOiBiYWNrZ3JvdW5kIGNvbG9yIHNoaWZ0ICsgaWNvbiBgc2NhbGUoMS4xKWAsIDE1MG1zCi0gTGlua3M6IHVuZGVybGluZSBleHBhbmQgZnJvbSBjZW50ZXIsIDIwMG1zCi0gQXZhdGFyOiBgc2NhbGUoMS4wOClgICsgcmluZyBnbG93LCAyMDBtcwoKIyMjIFBhZ2UgVHJhbnNpdGlvbnMKLSBFeGl0OiBmYWRlIG91dCAyMDBtcwotIEVudGVyOiBmYWRlIGluICsgc2xpZGUgdXAgMjBweCwgNDAwbXMsIGVhc2Utc21vb3RoCi0gQmV0d2VlbiBhcHAgcGFnZXMgKHNpZGViYXIgbmF2KTogaW5zdGFudCB3aXRoIGNvbnRlbnQgZmFkZSwgbm8gZnVsbCBwYWdlIHJlbG9hZCBmZWVsCgotLS0KCiMjIFNoYXJlZCBDb21wb25lbnRzCgojIyMgU2lkZWJhciBOYXZpZ2F0aW9uCi0gKipCYWNrZ3JvdW5kKio6IGBzaWRlYmFyLWJnYCAoIzFBMTAyNSkgd2l0aCBgc2hhZG93LXNpZGViYXJgCi0gKipXaWR0aCoqOiAyMjBweCBmaXhlZCwgZnVsbCB2aWV3cG9ydCBoZWlnaHQKLSAqKkxheW91dCoqOiB2ZXJ0aWNhbCBmbGV4LCBsb2dvIGF0IHRvcCwgbmF2IGl0ZW1zIGluIG1pZGRsZSwgdXNlciBtaW5pLXByb2ZpbGUgYXQgYm90dG9tCi0gKipMb2dvKio6ICJQbGF0b25pYyIgd29yZG1hcmsgaW4gYHBpbmstMjAwYCwgMjRweCwgd2l0aCBzbWFsbCBzcGFya2xlIGljb24KLSAqKk5hdiBJdGVtcyoqOiBpY29uICgyMHB4KSArIGxhYmVsIGluIGBzaWRlYmFyLXRleHRgLCB2ZXJ0aWNhbCBwYWRkaW5nIDEycHgsIGhvcml6b250YWwgcGFkZGluZyAyMHB4CiAgLSBJdGVtczogRGFzaGJvYXJkLCBQbGF6YSwgQ2hhdCwgTWVtb3J5LCBEcmFtYSwgUGF5bWVudCwgU2V0dGluZ3MKICAtIEFjdGl2ZSBzdGF0ZTogYHNpZGViYXItYWN0aXZlYCBiYWNrZ3JvdW5kICsgbGVmdCBib3JkZXIgM3B4IGBwaW5rLTQwMGAgKyB0ZXh0IHdoaXRlCiAgLSBIb3ZlcjogYHNpZGViYXItaG92ZXJgIGJhY2tncm91bmQgKyBgc2lkZWJhci1pY29uYCBjb2xvciBzaGlmdCB0byBgcGluay0yMDBgCi0gKipVc2VyIE1pbmktUHJvZmlsZSoqOiBhdmF0YXIgKDM2cHggY2lyY2xlKSArIHVzZXJuYW1lICgxM3B4KSArIGVuZXJneSBkb3QgaW5kaWNhdG9yICg4cHgsIGBwaW5rLTQwMGApCi0gKipCb3R0b20gU2VjdGlvbioqOiAiQ3Jvd2RmdW5kaW5nIiBsaW5rIHdpdGggaGVhcnQgaWNvbiwgc3VidGxlIGByb3NlLWdvbGRgIGhpZ2hsaWdodAotICoqQW5pbWF0aW9uKio6IEl0ZW1zIHN0YWdnZXIgZmFkZS1pbiBvbiBwYWdlIGxvYWQgKDYwbXMgZGVsYXkgZWFjaCkuIEFjdGl2ZSBpbmRpY2F0b3Igc2xpZGVzIHdpdGggMjAwbXMgc3ByaW5nIHRyYW5zaXRpb24uCgojIyMgVG9wIEJhciAoRGFzaGJvYXJkICYgQXBwIFBhZ2VzKQotICoqSGVpZ2h0Kio6IDU2cHgsIHRyYW5zcGFyZW50IGJhY2tncm91bmQsIGNvbnRlbnQgb3ZlcmxhcHMgaW50byBwYWdlCi0gKipMZWZ0Kio6IFBhZ2UgdGl0bGUgaW4gYGgyYCBzdHlsZQotICoqUmlnaHQqKjogTm90aWZpY2F0aW9uIGJlbGwgKHdpdGggZG90IGluZGljYXRvcikgKyB1c2VyIGF2YXRhciBkcm9wZG93bgotICoqQW5pbWF0aW9uKio6IFRpdGxlIGZhZGVzIGluIGZyb20gbGVmdCAoMzAwbXMpLCByaWdodCBlbGVtZW50cyBmYWRlIGluIGZyb20gcmlnaHQgKDMwMG1zLCAxMDBtcyBkZWxheSkKCiMjIyBDYXJkIENvbXBvbmVudAotICoqQmFja2dyb3VuZCoqOiB3aGl0ZSB3aXRoIGBjYXJkLWdyYWRpZW50YAotICoqQm9yZGVyKio6IDFweCBzb2xpZCBgcGluay0xMDBgCi0gKipCb3JkZXIgUmFkaXVzKio6IGByYWRpdXMtbGdgICgxNnB4KQotICoqU2hhZG93Kio6IGBzaGFkb3ctbWRgIGF0IHJlc3QsIGBzaGFkb3ctbGdgIG9uIGhvdmVyCi0gKipQYWRkaW5nKio6IGBtZGAgKDE2cHgpIG9yIGBsZ2AgKDI0cHgpIGRlcGVuZGluZyBvbiBzaXplCi0gKipIb3ZlcioqOiBgdHJhbnNsYXRlWSgtNHB4KWAgKyBgc2hhZG93LWxnYCwgMjAwbXMgZWFzZS1kZWZhdWx0Ci0gKipUcmFuc2l0aW9uKio6IGFsbCAyMDBtcyBlYXNlLWRlZmF1bHQKCiMjIyBCdXR0b24gVmFyaWFudHMKfCBWYXJpYW50IHwgQmFja2dyb3VuZCB8IFRleHQgfCBCb3JkZXIgfCBIb3ZlciB8IEFjdGl2ZSB8CnwtLS0tLS0tLS18LS0tLS0tLS0tLS18LS0tLS0tfC0tLS0tLS0tfC0tLS0tLS18LS0tLS0tLS18CnwgUHJpbWFyeSB8IGBhY2NlbnQtZ3JhZGllbnRgIHwgd2hpdGUgfCBub25lIHwgYnJpZ2h0bmVzcygxLjA4KSArIGdsb3cgfCBicmlnaHRuZXNzKDAuOTUpIHwKfCBTZWNvbmRhcnkgfCBgcGluay01MGAgfCBgcGluay01MDBgIHwgMXB4IGBwaW5rLTIwMGAgfCBgcGluay0xMDBgIGJnIHwgYHBpbmstMjAwYCBiZyB8CnwgR2hvc3QgfCB0cmFuc3BhcmVudCB8IGB0ZXh0LXByaW1hcnlgIHwgMXB4IGBwaW5rLTEwMGAgfCBgcGluay01MGAgYmcgfCBgcGluay0xMDBgIGJnIHwKfCBJY29uIHwgYHBpbmstNTBgIHwgYHBpbmstNTAwYCB8IG5vbmUgfCBgcGluay0xMDBgICsgc2NhbGUoMS4wOCkgfCBzY2FsZSgwLjk3KSB8CnwgRGFuZ2VyIHwgYCNGRUUyRTJgIHwgYCNEQzI2MjZgIHwgbm9uZSB8IGAjRkVDQUNBYCB8IGJyaWdodG5lc3MoMC45NSkgfAoKIyMjIElucHV0IEZpZWxkCi0gKipCYWNrZ3JvdW5kKio6IHdoaXRlCi0gKipCb3JkZXIqKjogMXB4IHNvbGlkIGBwaW5rLTEwMGAsIHJhZGl1cyBgcmFkaXVzLW1kYAotICoqUGFkZGluZyoqOiAxMnB4IDE2cHgKLSAqKkZvY3VzKio6IGJvcmRlciBgcGluay00MDBgICsgYHNoYWRvdy1nbG93YAotICoqUGxhY2Vob2xkZXIqKjogYHRleHQtbXV0ZWRgCi0gKipUcmFuc2l0aW9uKio6IGJvcmRlci1jb2xvciAyMDBtcywgYm94LXNoYWRvdyAyMDBtcwoKIyMjIEJhZGdlL1RhZwotICoqQmFja2dyb3VuZCoqOiBgcGluay01MGAKLSAqKlRleHQqKjogYHBpbmstNTAwYCwgYGxhYmVsYCB0b2tlbgotICoqQm9yZGVyIFJhZGl1cyoqOiBgcmFkaXVzLWZ1bGxgIChwaWxsKQotICoqUGFkZGluZyoqOiA0cHggMTJweAotICoqVmFyaWFudHMqKjogYGdvbGRgIChmb3IgbWlsZXN0b25lKSwgYHB1cnBsZWAgKGZvciBtZW1vcnkpLCBgZ3JlZW5gIChmb3IgYWN0aXZlKQoKIyMjIFByb2dyZXNzIEJhcgotICoqSGVpZ2h0Kio6IDhweAotICoqQmFja2dyb3VuZCBUcmFjayoqOiBgcGluay01MGAKLSAqKkZpbGwqKjogYGFjY2VudC1ncmFkaWVudGAgb3IgYHJvc2UtZ29sZGAgZGVwZW5kaW5nIG9uIGNvbnRleHQKLSAqKkJvcmRlciBSYWRpdXMqKjogYHJhZGl1cy1mdWxsYAotICoqQW5pbWF0aW9uKio6IHdpZHRoIHRyYW5zaXRpb24gODAwbXMgZWFzZS1zbW9vdGggb24gdmFsdWUgY2hhbmdlCgojIyMgTW9kYWwvRHJhd2VyCi0gKipPdmVybGF5Kio6IHJnYmEoMjYsMTYsMzcsMC40KSBiYWNrZHJvcC1ibHVyKDRweCkKLSAqKlBhbmVsKio6IHdoaXRlIGJnLCBgcmFkaXVzLXhsYCwgYHNoYWRvdy1sZ2AKLSAqKkVudHJ5Kio6IHNjYWxlKDAuOTUpICsgb3BhY2l0eSgwKSDihpIgc2NhbGUoMSkgKyBvcGFjaXR5KDEpLCAzMDBtcyBlYXNlLWJvdW5jZQotICoqRXhpdCoqOiByZXZlcnNlLCAyMDBtcwotICoqRHJhd2VyIHZhcmlhbnQqKjogc2xpZGVzIGZyb20gcmlnaHQsIDQwMG1zIGVhc2Utc21vb3RoCgotLS0KCiMjIEFzc2V0cwoKIyMjIEltYWdlIEFzc2V0cwoKfCBGaWxlbmFtZSB8IERlc2NyaXB0aW9uIHwgUGFnZSB8IERpbWVuc2lvbnMgfCBUeXBlIHwKfC0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLS18LS0tLS0tfAp8IGBoZXJvLWJnLmpwZ2AgfCBTb2Z0IGRyZWFteSBwaW5rLXB1cnBsZSB3YXRlcmNvbG9yIHdhc2ggYmFja2dyb3VuZCB3aXRoIGdlbnRsZSBjbG91ZC1saWtlIGZvcm1hdGlvbnMsIGhlYWxpbmcgYW5kIHdhcm0gYXRtb3NwaGVyZSB8IGhvbWUgfCAxOTIweDEwODAgMTY6OSB8IEltYWdlIHwKfCBgY29tcGFuaW9uLTEuanBnYCB8IFBvcnRyYWl0IGlsbHVzdHJhdGlvbiBvZiBhIGdlbnRsZSB5b3VuZyB3b21hbiB3aXRoIHNvZnQgYnJvd24gaGFpciBhbmQgd2FybSBzbWlsZSwgYW5pbWUtaW5mbHVlbmNlZCBidXQgcmVhbGlzdGljLCBzb2Z0IHBpbmsgbGlnaHRpbmcgfCBwbGF6YSB8IDQwMHg1MDAgMzo0IHwgSW1hZ2UgfAp8IGBjb21wYW5pb24tMi5qcGdgIHwgUG9ydHJhaXQgaWxsdXN0cmF0aW9uIG9mIGEgY29uZmlkZW50IHlvdW5nIHdvbWFuIHdpdGggc2hvcnQgYmxhY2sgaGFpciBhbmQgc3BhcmtsaW5nIGV5ZXMsIGFuaW1lLWluZmx1ZW5jZWQsIHNvZnQgcm9zZS1nb2xkIGxpZ2h0aW5nIHwgcGxhemEgfCA0MDB4NTAwIDM6NCB8IEltYWdlIHwKfCBgY29tcGFuaW9uLTMuanBnYCB8IFBvcnRyYWl0IGlsbHVzdHJhdGlvbiBvZiBhIHNoeSBib29raXNoIHlvdW5nIHdvbWFuIHdpdGggZ2xhc3NlcyBhbmQgbG9uZyBzaWx2ZXIgaGFpciwgYW5pbWUtaW5mbHVlbmNlZCwgd2FybSBsYXZlbmRlciBsaWdodGluZyB8IHBsYXphIHwgNDAweDUwMCAzOjQgfCBJbWFnZSB8CnwgYGNvbXBhbmlvbi00LmpwZ2AgfCBQb3J0cmFpdCBpbGx1c3RyYXRpb24gb2YgYW4gZW5lcmdldGljIHlvdW5nIHdvbWFuIHdpdGggcmVkIGhhaXIgaW4gYSBwb255dGFpbCwgYnJpZ2h0IHNtaWxlLCBhbmltZS1pbmZsdWVuY2VkLCB3YXJtIGNvcmFsIGxpZ2h0aW5nIHwgcGxhemEgfCA0MDB4NTAwIDM6NCB8IEltYWdlIHwKfCBgY29tcGFuaW9uLTUuanBnYCB8IFBvcnRyYWl0IGlsbHVzdHJhdGlvbiBvZiBhIG15c3RlcmlvdXMgZWxlZ2FudCB3b21hbiB3aXRoIGRhcmsgcHVycGxlIGhhaXIgYW5kIGdlbnRsZSBleWVzLCBhbmltZS1pbmZsdWVuY2VkLCBtb29ubGl0IHBpbmsgbGlnaHRpbmcgfCBwbGF6YSB8IDQwMHg1MDAgMzo0IHwgSW1hZ2UgfAp8IGBjb21wYW5pb24tNi5qcGdgIHwgUG9ydHJhaXQgaWxsdXN0cmF0aW9uIG9mIGEgY2hlZXJmdWwgZ2lybCB3aXRoIHR3aW4tdGFpbHMgYW5kIGZsb3dlciBhY2Nlc3Nvcmllcywgd2FybSBnb2xkZW4tcGluayBsaWdodGluZywgYW5pbWUtaW5mbHVlbmNlZCB8IHBsYXphIHwgNDAweDUwMCAzOjQgfCBJbWFnZSB8CnwgYGRyYW1hLWNvdmVyLTEuanBnYCB8IFJvbWFudGljIGZhbnRhc3kgc2NlbmUgb2YgYSBjaGVycnkgYmxvc3NvbSBnYXJkZW4gYXQgdHdpbGlnaHQgd2l0aCB0d28gc2lsaG91ZXR0ZWQgZmlndXJlcywgc29mdCBwaW5rIGFuZCBwdXJwbGUgdG9uZXMsIHBhaW50ZXJseSBzdHlsZSB8IGRyYW1hIHwgNjAweDgwMCAzOjQgfCBJbWFnZSB8CnwgYGRyYW1hLWNvdmVyLTIuanBnYCB8IENvenkgY29mZmVlIHNob3AgaW50ZXJpb3Igd2l0aCB3YXJtIGxpZ2h0aW5nLCByYWluIG9uIHdpbmRvd3MsIHNvZnQgcGluayBhbmQgYW1iZXIgdG9uZXMsIGlsbHVzdHJhdGlvbiBzdHlsZSB8IGRyYW1hIHwgNjAweDgwMCAzOjQgfCBJbWFnZSB8CnwgYGRyYW1hLWNvdmVyLTMuanBnYCB8IFN0YXJyeSBuaWdodCBza3kgb3ZlciBhIHF1aWV0IGxha2VzaWRlIHdpdGggYSBzbWFsbCBnbG93aW5nIGxhbnRlcm4sIGRyZWFteSBwdXJwbGUtYmx1ZSB0b25lcywgcGFpbnRlcmx5IHN0eWxlIHwgZHJhbWEgfCA2MDB4ODAwIDM6NCB8IEltYWdlIHwKfCBgZHJhbWEtY292ZXItNC5qcGdgIHwgVmljdG9yaWFuLWVyYSBnYXJkZW4gcGFydHkgc2NlbmUgd2l0aCBzb2Z0IHBhc3RlbCBjb2xvcnMgYW5kIGZsb3dlciBkZWNvcmF0aW9ucywgcm9tYW50aWMgaWxsdXN0cmF0aW9uIHN0eWxlIHwgZHJhbWEgfCA2MDB4ODAwIDM6NCB8IEltYWdlIHwKfCBgY3Jvd2RmdW5kaW5nLWhlcm8uanBnYCB8IEFic3RyYWN0IDNEIHJlbmRlciBvZiBnbG93aW5nIGhlYXJ0LXNoYXBlZCBwYXJ0aWNsZXMgZmxvYXRpbmcgaW4gc29mdCBwaW5rLXB1cnBsZSBzcGFjZSwgdGVjaG5vbG9naWNhbCB5ZXQgd2FybSwgZnV0dXJpc3RpYyBoZWFsaW5nIGFlc3RoZXRpYyB8IGNyb3dkZnVuZGluZyB8IDE5MjB4NjAwIDIxOjkgfCBJbWFnZSB8CnwgYGxpdmUyZC1wcmV2aWV3LmpwZ2AgfCBQcmV2aWV3IG1vY2t1cCBzaG93aW5nIGEgTGl2ZTJEIGFuaW1hdGVkIGNoYXJhY3RlciBvbiB0aGUgbGVmdCBzaWRlIG9mIGEgcGhvbmUgc2NyZWVuIHdpdGggZXhwcmVzc2l2ZSBmYWNlIGFuZCBzdWJ0bGUgbW92ZW1lbnQgYmx1ciB8IGNyb3dkZnVuZGluZyB8IDgwMHg2MDAgNDozIHwgSW1hZ2UgfAp8IGBwZXQtcHJldmlldy5qcGdgIHwgUHJldmlldyBtb2NrdXAgc2hvd2luZyBhIGN1dGUgdmlydHVhbCBwZXQgKHNtYWxsIGZveC1saWtlIGNyZWF0dXJlKSBzaXR0aW5nIGF0IHRoZSBib3R0b20gb2YgYSBwaG9uZSBzY3JlZW4gd2l0aCBzb2Z0IGdsb3cgYXJvdW5kIGl0IHwgY3Jvd2RmdW5kaW5nIHwgODAweDYwMCA0OjMgfCBJbWFnZSB8CnwgYHR0cy1wcmV2aWV3LmpwZ2AgfCBBYnN0cmFjdCB2aXN1YWxpemF0aW9uIG9mIHNvdW5kIHdhdmVzIGluIHNvZnQgcGluayBhbmQgcHVycGxlIGdyYWRpZW50IGZvcm1pbmcgYSBoZWFydCBzaGFwZSwgdGVjaG5vbG9naWNhbCBidXQgd2FybSB8IGNyb3dkZnVuZGluZyB8IDgwMHg2MDAgNDozIHwgSW1hZ2UgfAp8IGBsb2dvLnN2Z2AgfCBQbGF0b25pYyB3b3JkbWFyayBsb2dvIHdpdGggYSBzbWFsbCBmb3VyLXBvaW50ZWQgc3BhcmtsZS9zdGFyIGljb24sIG1pbmltYWwgdmVjdG9yLCBwaW5rIGdyYWRpZW50IGZpbGwgfCBhbGwgfCAxNjB4NDAgfCBTVkcgfAp8IGBkZWZhdWx0LWF2YXRhci5qcGdgIHwgU29mdCBwYXN0ZWwgZ3JhZGllbnQgY2lyY2xlIHdpdGggYSBtaW5pbWFsIHNpbGhvdWV0dGUgb3V0bGluZSwgd2FybSBwaW5rLXB1cnBsZSB0b25lcyB8IGFsbCB8IDIwMHgyMDAgMToxIHwgSW1hZ2UgfAoKIyMjIEljb24gTGlicmFyeQoKVXNlIGBsdWNpZGUtcmVhY3RgIGZvciBhbGwgaWNvbnMuIEtleSBpY29ucyB1c2VkIGFjcm9zcyBwYWdlczoKLSBOYXZpZ2F0aW9uOiBgTGF5b3V0RGFzaGJvYXJkYCwgYFVzZXJzYCwgYE1lc3NhZ2VDaXJjbGVgLCBgQ2FsZW5kYXJgLCBgQm9va09wZW5gLCBgWmFwYCwgYFNldHRpbmdzYCwgYEhlYXJ0YCwgYFNwYXJrbGVzYAotIFVJOiBgU2VuZGAsIGBJbWFnZWAsIGBTbWlsZWAsIGBDaGV2cm9uTGVmdGAsIGBDaGV2cm9uUmlnaHRgLCBgQ2hldnJvbkRvd25gLCBgWGAsIGBNZW51YCwgYEJlbGxgLCBgU2VhcmNoYCwgYFBsdXNgLCBgRWRpdDNgLCBgVHJhc2gyYCwgYExvY2tgLCBgRXllYCwgYEV5ZU9mZmAsIGBDaGVja2AsIGBTdGFyYCwgYENsb2NrYCwgYFRyZW5kaW5nVXBgLCBgQmF0dGVyeWAsIGBHbG9iZWAKCi0tLQoKIyMgUmVzcG9uc2l2ZSBCcmVha3BvaW50cwoKfCBOYW1lIHwgV2lkdGggfCBCZWhhdmlvciB8CnwtLS0tLS18LS0tLS0tLXwtLS0tLS0tLS0tfAp8IE1vYmlsZSB8IDwgNzY4cHggfCBTaW5nbGUgY29sdW1uLCBzaWRlYmFyIGJlY29tZXMgYm90dG9tIG5hdiBvciBoYW1idXJnZXIgbWVudSwgcHJldmlldyBwYW5lbCBoaWRkZW4gfAp8IFRhYmxldCB8IDc2OOKAkzEwMjRweCB8IFNpZGViYXIgY29sbGFwc2VzIHRvIGljb25zLW9ubHkgKDcycHgpLCBjb250ZW50IGFyZWEgYWRqdXN0cyB8CnwgRGVza3RvcCB8IDEwMjTigJMxNDQwcHggfCBGdWxsIHNpZGViYXIgKyBjb250ZW50ICsgcHJldmlldyBwYW5lbCB8CnwgV2lkZSB8ID4gMTQ0MHB4IHwgQ29udGVudCBhcmVhIG1heGVzIGF0IDEyMDBweCwgZXh0cmEgc3BhY2Ugb24gc2lkZXMgfAoKLS0tCgojIyBTY3JvbGwgQmVoYXZpb3IKCi0gKipMZW5pcyoqIHNtb290aCBzY3JvbGxpbmcgZW5hYmxlZCBvbiBhbGwgcGFnZXMKLSAqKlNjcm9sbC10cmlnZ2VyZWQgcmV2ZWFscyoqOiBJbnRlcnNlY3Rpb25PYnNlcnZlciBhdCAxNSUgZnJvbSBib3R0b20KLSAqKk5vIHBpbm5pbmcqKiBvbiBkYXNoYm9hcmQvYXBwIHBhZ2VzIChmcmVlIHNjcm9sbCkKLSAqKkxhbmRpbmcgcGFnZSoqOiBQb3NzaWJsZSBwaW5uZWQgaGVybyBzZWN0aW9uIHdpdGggc2Nyb2xsLWRyaXZlbiBjb250ZW50IHJldmVhbAotICoqQmFjay10by10b3AqKjogRmxvYXRpbmcgcGlsbCBidXR0b24gYXBwZWFycyBhZnRlciA0MDBweCBzY3JvbGwsIGJvdHRvbS1yaWdodCwgYHBpbmstNDAwYCBiZywgd2hpdGUgYXJyb3cgaWNvbgo=
+# Platonic AI — Global Design Document
+
+A healing, romantic AI virtual companion web application. The design evokes warmth, emotional intimacy, and gentle technology through a soft pink visual language, breathing gradient animations, and delicate micro-interactions.
+
+---
+
+## Page List
+
+| Page | File | Route | Description |
+|------|------|-------|-------------|
+| Landing | `home.md` | `/` | Marketing homepage with hero, features, emotional intro |
+| Auth | `auth.md` | `/auth` | Email login/signup with pink breathing animation background |
+| Dashboard | `dashboard.md` | `/dashboard` | Main console: Big Five radar, milestones, energy, mood preview |
+| Plaza | `plaza.md` | `/plaza` | Grid of browseable AI companion cards with personality tags |
+| Customize | `customize.md` | `/customize` | Step-by-step companion creation with Big Five sliders |
+| Chat | `chat.md` | `/chat` | Full-screen SSE streaming chat with breathing gradient bg |
+| Memory | `memory.md` | `/memory` | 7x5 calendar grid with colored date highlights and detail sidebar |
+| Drama | `drama.md` | `/drama` | Story plaza + immersive story chat interface |
+| Payment | `payment.md` | `/payment` | Energy recharge center with plans and Alipay QR |
+| Settings | `settings.md` | `/settings` | Language, account info, theme preferences |
+| Crowdfunding | `crowdfunding.md` | `/crowdfunding` | Platonic feature funding plans with progress tracking |
+
+---
+
+## Color Palette
+
+### Primary — Soft Pink Gradient
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `pink-50` | `#FFF5F7` | Page backgrounds, card backgrounds |
+| `pink-100` | `#FFE4EC` | Light hover states, secondary backgrounds |
+| `pink-200` | `#FFB6C1` | Primary accent, borders, light fills |
+| `pink-300` | `#FF9EB5` | Medium accent, active states |
+| `pink-400` | `#FF69B4` | Gradient end, bold accent |
+| `pink-500` | `#E850A0` | Primary buttons, strong accent |
+
+### Secondary — Deep Purple-Black Sidebar
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `sidebar-bg` | `#1A1025` | Sidebar navigation background |
+| `sidebar-hover` | `#2A1A3A` | Sidebar item hover |
+| `sidebar-active` | `#3D2652` | Sidebar active route highlight |
+| `sidebar-text` | `#B8A9C9` | Sidebar secondary text |
+| `sidebar-icon` | `#E8D5F5` | Sidebar icon default color |
+
+### Accent — Rose Gold
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `rose-gold` | `#E8A0BF` | Emphasis, progress bars, highlights |
+| `rose-gold-light` | `#F5C9D9` | Rose gold hover |
+| `gold` | `#D4A574` | Milestone indicators, achievements |
+
+### Semantic Colors
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `purple-memory` | `#C8A8E9` | Anterior Memory calendar highlight |
+| `pink-memory` | `#FFB6C1` | LTM memory calendar highlight |
+| `gold-milestone` | `#D4AF37` | Milestone dates on calendar |
+| `text-primary` | `#2D1B2E` | Main body text (dark plum) |
+| `text-secondary` | `#6B5B6E` | Secondary/caption text |
+| `text-muted` | `#A093A5` | Placeholder, disabled text |
+
+### Gradient Definitions
+| Name | Definition | Usage |
+|------|-----------|-------|
+| `breathing-gradient` | `linear-gradient(135deg, #FFF5F7 0%, #FFE4EC 25%, #FFB6C1 50%, #E8A0BF 75%, #D4A5D4 100%)` | Breathing animation backgrounds (auth, chat) |
+| `card-gradient` | `linear-gradient(180deg, #FFFFFF 0%, #FFF5F7 100%)` | Card surfaces |
+| `accent-gradient` | `linear-gradient(135deg, #FF69B4 0%, #FFB6C1 100%)` | Buttons, active indicators |
+| `sidebar-gradient` | `linear-gradient(180deg, #1A1025 0%, #2A1A3A 100%)` | Sidebar depth |
+
+---
+
+## Typography
+
+| Token | Font | Size | Weight | Line-Height | Letter-Spacing | Usage |
+|-------|------|------|--------|-------------|----------------|-------|
+| `display` | ZCOOL QingKe HuangYou | 48px | 400 | 1.15 | -0.02em | Hero headlines, page titles |
+| `h1` | ZCOOL QingKe HuangYou | 36px | 400 | 1.2 | -0.01em | Section headings |
+| `h2` | Nunito | 28px | 700 | 1.3 | 0 | Sub-section headings |
+| `h3` | Nunito | 22px | 700 | 1.35 | 0 | Card titles, labels |
+| `h4` | Nunito | 18px | 600 | 1.4 | 0 | Small headings |
+| `body` | Nunito | 15px | 400 | 1.65 | 0.005em | Body paragraphs |
+| `body-sm` | Nunito | 13px | 400 | 1.6 | 0.01em | Captions, descriptions |
+| `label` | Nunito | 12px | 600 | 1.3 | 0.04em | Uppercase labels, badges |
+| `number` | DM Sans | 42px | 700 | 1.0 | -0.03em | Big energy numbers, stats |
+| `number-sm` | DM Sans | 20px | 600 | 1.1 | -0.01em | Small numerical values |
+
+### Font Loading
+```html
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&family=Nunito:wght@400;600;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+```
+
+---
+
+## Spacing Scale
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `xs` | 4px | Micro gaps, icon padding |
+| `sm` | 8px | Tight element spacing |
+| `md` | 16px | Card internal padding, gap |
+| `lg` | 24px | Section padding, card gap |
+| `xl` | 32px | Section vertical spacing |
+| `2xl` | 48px | Major section padding |
+| `3xl` | 64px | Hero spacing |
+| `sidebar-width` | 220px | Fixed sidebar width |
+| `preview-width` | 320px | Phone-size preview panel width |
+| `content-max` | 1200px | Maximum content area width |
+
+### Border Radius
+| Token | Value | Usage |
+|-------|-------|-------|
+| `radius-sm` | 8px | Small buttons, badges |
+| `radius-md` | 12px | Input fields, small cards |
+| `radius-lg` | 16px | Cards, modals |
+| `radius-xl` | 24px | Hero cards, large containers |
+| `radius-full` | 9999px | Circular avatars, pills |
+
+### Shadows
+| Token | Value | Usage |
+|-------|-------|-------|
+| `shadow-sm` | `0 1px 3px rgba(45,27,46,0.06)` | Subtle elevation |
+| `shadow-md` | `0 4px 16px rgba(45,27,46,0.08)` | Cards at rest |
+| `shadow-lg` | `0 8px 32px rgba(45,27,46,0.12)` | Cards hover, modals |
+| `shadow-glow` | `0 0 24px rgba(255,182,193,0.25)` | Pink glow effect on focus/active |
+| `shadow-sidebar` | `4px 0 24px rgba(26,16,37,0.15)` | Sidebar depth shadow |
+
+---
+
+## Animation & Motion
+
+### Global Timing Tokens
+| Token | Value | Usage |
+|-------|-------|-------|
+| `ease-default` | `cubic-bezier(0.4, 0, 0.2, 1)` | Default transitions |
+| `ease-bounce` | `cubic-bezier(0.68, -0.3, 0.32, 1.3)` | Playful micro-interactions |
+| `ease-smooth` | `cubic-bezier(0.25, 0.1, 0.25, 1)` | Smooth page transitions |
+| `duration-fast` | 150ms | Button hovers, toggles |
+| `duration-normal` | 300ms | Card transitions, reveals |
+| `duration-slow` | 500ms | Section entrances |
+| `duration-entrance` | 700ms | Page-level animations |
+
+### Breathing Animation (CSS Keyframes)
+Used on Auth background and Chat background. A soft, slow pink-purple gradient pulse that creates a living, warm atmosphere.
+
+```css
+@keyframes breathing-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1.05) saturate(1.08);
+  }
+}
+
+.breathing-bg {
+  background: breathing-gradient;
+  background-size: 400% 400%;
+  animation: breathing-gradient 8s ease-in-out infinite;
+}
+```
+
+### Floating Orbs Animation (Decorative)
+Soft pink orbs float slowly across the background for the auth and chat pages:
+
+```css
+@keyframes float-orb {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  33% { transform: translate(30px, -40px) scale(1.1); opacity: 0.5; }
+  66% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.4; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+}
+```
+3 orbs with staggered animation-delay (0s, 2.5s, 5s), sizes 200px–400px, blur 80px, positioned absolute.
+
+### Standard Entrance Pattern
+Elements enter the viewport with a consistent pattern:
+- `opacity: 0` → `opacity: 1`
+- `translateY(30px)` → `translateY(0)`
+- Duration: 600ms
+- Easing: ease-smooth
+- Trigger: when element enters 15% from bottom of viewport
+- Stagger: 80ms between sibling elements
+
+### Hover Micro-Interactions
+- Buttons: `scale(1.03)` + `shadow-glow`, 150ms
+- Cards: `translateY(-4px)` + `shadow-lg`, 200ms
+- Sidebar items: background color shift + icon `scale(1.1)`, 150ms
+- Links: underline expand from center, 200ms
+- Avatar: `scale(1.08)` + ring glow, 200ms
+
+### Page Transitions
+- Exit: fade out 200ms
+- Enter: fade in + slide up 20px, 400ms, ease-smooth
+- Between app pages (sidebar nav): instant with content fade, no full page reload feel
+
+---
+
+## Shared Components
+
+### Sidebar Navigation
+- **Background**: `sidebar-bg` (#1A1025) with `shadow-sidebar`
+- **Width**: 220px fixed, full viewport height
+- **Layout**: vertical flex, logo at top, nav items in middle, user mini-profile at bottom
+- **Logo**: "Platonic" wordmark in `pink-200`, 24px, with small sparkle icon
+- **Nav Items**: icon (20px) + label in `sidebar-text`, vertical padding 12px, horizontal padding 20px
+  - Items: Dashboard, Plaza, Chat, Memory, Drama, Payment, Settings
+  - Active state: `sidebar-active` background + left border 3px `pink-400` + text white
+  - Hover: `sidebar-hover` background + `sidebar-icon` color shift to `pink-200`
+- **User Mini-Profile**: avatar (36px circle) + username (13px) + energy dot indicator (8px, `pink-400`)
+- **Bottom Section**: "Crowdfunding" link with heart icon, subtle `rose-gold` highlight
+- **Animation**: Items stagger fade-in on page load (60ms delay each). Active indicator slides with 200ms spring transition.
+
+### Top Bar (Dashboard & App Pages)
+- **Height**: 56px, transparent background, content overlaps into page
+- **Left**: Page title in `h2` style
+- **Right**: Notification bell (with dot indicator) + user avatar dropdown
+- **Animation**: Title fades in from left (300ms), right elements fade in from right (300ms, 100ms delay)
+
+### Card Component
+- **Background**: white with `card-gradient`
+- **Border**: 1px solid `pink-100`
+- **Border Radius**: `radius-lg` (16px)
+- **Shadow**: `shadow-md` at rest, `shadow-lg` on hover
+- **Padding**: `md` (16px) or `lg` (24px) depending on size
+- **Hover**: `translateY(-4px)` + `shadow-lg`, 200ms ease-default
+- **Transition**: all 200ms ease-default
+
+### Button Variants
+| Variant | Background | Text | Border | Hover | Active |
+|---------|-----------|------|--------|-------|--------|
+| Primary | `accent-gradient` | white | none | brightness(1.08) + glow | brightness(0.95) |
+| Secondary | `pink-50` | `pink-500` | 1px `pink-200` | `pink-100` bg | `pink-200` bg |
+| Ghost | transparent | `text-primary` | 1px `pink-100` | `pink-50` bg | `pink-100` bg |
+| Icon | `pink-50` | `pink-500` | none | `pink-100` + scale(1.08) | scale(0.97) |
+| Danger | `#FEE2E2` | `#DC2626` | none | `#FECACA` | brightness(0.95) |
+
+### Input Field
+- **Background**: white
+- **Border**: 1px solid `pink-100`, radius `radius-md`
+- **Padding**: 12px 16px
+- **Focus**: border `pink-400` + `shadow-glow`
+- **Placeholder**: `text-muted`
+- **Transition**: border-color 200ms, box-shadow 200ms
+
+### Badge/Tag
+- **Background**: `pink-50`
+- **Text**: `pink-500`, `label` token
+- **Border Radius**: `radius-full` (pill)
+- **Padding**: 4px 12px
+- **Variants**: `gold` (for milestone), `purple` (for memory), `green` (for active)
+
+### Progress Bar
+- **Height**: 8px
+- **Background Track**: `pink-50`
+- **Fill**: `accent-gradient` or `rose-gold` depending on context
+- **Border Radius**: `radius-full`
+- **Animation**: width transition 800ms ease-smooth on value change
+
+### Modal/Drawer
+- **Overlay**: rgba(26,16,37,0.4) backdrop-blur(4px)
+- **Panel**: white bg, `radius-xl`, `shadow-lg`
+- **Entry**: scale(0.95) + opacity(0) → scale(1) + opacity(1), 300ms ease-bounce
+- **Exit**: reverse, 200ms
+- **Drawer variant**: slides from right, 400ms ease-smooth
+
+---
+
+## Assets
+
+### Image Assets
+
+| Filename | Description | Page | Dimensions | Type |
+|----------|-------------|------|-----------|------|
+| `hero-bg.jpg` | Soft dreamy pink-purple watercolor wash background with gentle cloud-like formations, healing and warm atmosphere | home | 1920x1080 16:9 | Image |
+| `companion-1.jpg` | Portrait illustration of a gentle young woman with soft brown hair and warm smile, anime-influenced but realistic, soft pink lighting | plaza | 400x500 3:4 | Image |
+| `companion-2.jpg` | Portrait illustration of a confident young woman with short black hair and sparkling eyes, anime-influenced, soft rose-gold lighting | plaza | 400x500 3:4 | Image |
+| `companion-3.jpg` | Portrait illustration of a shy bookish young woman with glasses and long silver hair, anime-influenced, warm lavender lighting | plaza | 400x500 3:4 | Image |
+| `companion-4.jpg` | Portrait illustration of an energetic young woman with red hair in a ponytail, bright smile, anime-influenced, warm coral lighting | plaza | 400x500 3:4 | Image |
+| `companion-5.jpg` | Portrait illustration of a mysterious elegant woman with dark purple hair and gentle eyes, anime-influenced, moonlit pink lighting | plaza | 400x500 3:4 | Image |
+| `companion-6.jpg` | Portrait illustration of a cheerful girl with twin-tails and flower accessories, warm golden-pink lighting, anime-influenced | plaza | 400x500 3:4 | Image |
+| `drama-cover-1.jpg` | Romantic fantasy scene of a cherry blossom garden at twilight with two silhouetted figures, soft pink and purple tones, painterly style | drama | 600x800 3:4 | Image |
+| `drama-cover-2.jpg` | Cozy coffee shop interior with warm lighting, rain on windows, soft pink and amber tones, illustration style | drama | 600x800 3:4 | Image |
+| `drama-cover-3.jpg` | Starry night sky over a quiet lakeside with a small glowing lantern, dreamy purple-blue tones, painterly style | drama | 600x800 3:4 | Image |
+| `drama-cover-4.jpg` | Victorian-era garden party scene with soft pastel colors and flower decorations, romantic illustration style | drama | 600x800 3:4 | Image |
+| `crowdfunding-hero.jpg` | Abstract 3D render of glowing heart-shaped particles floating in soft pink-purple space, technological yet warm, futuristic healing aesthetic | crowdfunding | 1920x600 21:9 | Image |
+| `live2d-preview.jpg` | Preview mockup showing a Live2D animated character on the left side of a phone screen with expressive face and subtle movement blur | crowdfunding | 800x600 4:3 | Image |
+| `pet-preview.jpg` | Preview mockup showing a cute virtual pet (small fox-like creature) sitting at the bottom of a phone screen with soft glow around it | crowdfunding | 800x600 4:3 | Image |
+| `tts-preview.jpg` | Abstract visualization of sound waves in soft pink and purple gradient forming a heart shape, technological but warm | crowdfunding | 800x600 4:3 | Image |
+| `logo.svg` | Platonic wordmark logo with a small four-pointed sparkle/star icon, minimal vector, pink gradient fill | all | 160x40 | SVG |
+| `default-avatar.jpg` | Soft pastel gradient circle with a minimal silhouette outline, warm pink-purple tones | all | 200x200 1:1 | Image |
+
+### Icon Library
+
+Use `lucide-react` for all icons. Key icons used across pages:
+- Navigation: `LayoutDashboard`, `Users`, `MessageCircle`, `Calendar`, `BookOpen`, `Zap`, `Settings`, `Heart`, `Sparkles`
+- UI: `Send`, `Image`, `Smile`, `ChevronLeft`, `ChevronRight`, `ChevronDown`, `X`, `Menu`, `Bell`, `Search`, `Plus`, `Edit3`, `Trash2`, `Lock`, `Eye`, `EyeOff`, `Check`, `Star`, `Clock`, `TrendingUp`, `Battery`, `Globe`
+
+---
+
+## Responsive Breakpoints
+
+| Name | Width | Behavior |
+|------|-------|----------|
+| Mobile | < 768px | Single column, sidebar becomes bottom nav or hamburger menu, preview panel hidden |
+| Tablet | 768–1024px | Sidebar collapses to icons-only (72px), content area adjusts |
+| Desktop | 1024–1440px | Full sidebar + content + preview panel |
+| Wide | > 1440px | Content area maxes at 1200px, extra space on sides |
+
+---
+
+## Scroll Behavior
+
+- **Lenis** smooth scrolling enabled on all pages
+- **Scroll-triggered reveals**: IntersectionObserver at 15% from bottom
+- **No pinning** on dashboard/app pages (free scroll)
+- **Landing page**: Possible pinned hero section with scroll-driven content reveal
+- **Back-to-top**: Floating pill button appears after 400px scroll, bottom-right, `pink-400` bg, white arrow icon

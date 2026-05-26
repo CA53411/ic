@@ -1,1 +1,309 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JzsKaW1wb3J0IHsgbW90aW9uIH0gZnJvbSAnZnJhbWVyLW1vdGlvbic7CmltcG9ydCB7CiAgSGVhcnQsCiAgVGFyZ2V0LAogIFNwYXJrbGVzLAogIExvYWRlcjIsCn0gZnJvbSAnbHVjaWRlLXJlYWN0JzsKaW1wb3J0IHsgc3VwYWJhc2UsIGdldFN0b3JhZ2VVcmwgfSBmcm9tICdAL2xpYi9zdXBhYmFzZSc7CmltcG9ydCB7IHVzZUF1dGggfSBmcm9tICdAL2hvb2tzL3VzZUF1dGgnOwppbXBvcnQgeyB1c2VJMThuIH0gZnJvbSAnQC9pMThuL0kxOG5Db250ZXh0JzsKaW1wb3J0IHsgdG9hc3QgfSBmcm9tICdzb25uZXInOwoKLyog4pSA4pSA4pSAIFR5cGVzIChtYXRjaGluZyBEQiBzY2hlbWEgZXhhY3RseSkg4pSA4pSA4pSAICovCmludGVyZmFjZSBDcm93ZGZ1bmRpbmdQcm9qZWN0IHsKICBpZDogc3RyaW5nOwogIGZlYXR1cmVfbmFtZTogc3RyaW5nOwogIGRlc2NyaXB0aW9uOiBzdHJpbmc7CiAgY292ZXJfaW1hZ2VfdXJsOiBzdHJpbmcgfCBudWxsOwogIHRhcmdldF9hbW91bnQ6IG51bWJlcjsKICBjdXJyZW50X2Ftb3VudDogbnVtYmVyOwogIHN0YXR1czogc3RyaW5nOwogIHNvcnRfb3JkZXI6IG51bWJlcjsKICBjcmVhdGVkX2F0OiBzdHJpbmc7Cn0KCi8qIOKUgOKUgOKUgCBQcm9qZWN0IENhcmQg4pSA4pSA4pSAICovCmZ1bmN0aW9uIFByb2plY3RDYXJkKHsKICBwcm9qZWN0LAogIGluZGV4LAp9OiB7CiAgcHJvamVjdDogQ3Jvd2RmdW5kaW5nUHJvamVjdDsKICBpbmRleDogbnVtYmVyOwp9KSB7CiAgY29uc3QgeyBpc0F1dGhlbnRpY2F0ZWQgfSA9IHVzZUF1dGgoKTsKICBjb25zdCBbaW1nRXJyb3IsIHNldEltZ0Vycm9yXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgY29uc3QgcHJvZ3Jlc3MgPSBwcm9qZWN0LnRhcmdldF9hbW91bnQgPiAwCiAgICA/IE1hdGgubWluKChwcm9qZWN0LmN1cnJlbnRfYW1vdW50IC8gcHJvamVjdC50YXJnZXRfYW1vdW50KSAqIDEwMCwgMTAwKQogICAgOiAwOwoKICBjb25zdCBpbWFnZVNyYyA9IHByb2plY3QuY292ZXJfaW1hZ2VfdXJsICYmICFpbWdFcnJvcgogICAgPyBnZXRTdG9yYWdlVXJsKHByb2plY3QuY292ZXJfaW1hZ2VfdXJsKQogICAgOiBgL3ByZXZpZXdzLyR7Wyd0dHMtcHJldmlldycsICdwZXQtcHJldmlldycsICdsaXZlMmQtcHJldmlldyddW2luZGV4XX0uanBnYDsKCiAgY29uc3QgaGFuZGxlU3VwcG9ydCA9ICgpID0+IHsKICAgIGlmICghaXNBdXRoZW50aWNhdGVkKSB7CiAgICAgIHRvYXN0KCdQbGVhc2UgbG9naW4gZmlyc3QnLCB7CiAgICAgICAgZGVzY3JpcHRpb246ICdMb2dpbiB0byBzdXBwb3J0IGNyb3dkZnVuZGluZyBwcm9qZWN0cycsCiAgICAgIH0pOwogICAgICByZXR1cm47CiAgICB9CiAgICB3aW5kb3cub3BlbignaHR0cHM6Ly9jb3JvbGFzLnRvcCcsICdfYmxhbmsnKTsKICB9OwoKICByZXR1cm4gKAogICAgPG1vdGlvbi5kaXYKICAgICAgY2xhc3NOYW1lPSJiZy13aGl0ZSByb3VuZGVkLTJ4bCBib3JkZXIgYm9yZGVyLXBpbmstMTAwIHNoYWRvdy1zbSBvdmVyZmxvdy1oaWRkZW4KICAgICAgICBob3ZlcjpzaGFkb3ctbWQgaG92ZXI6Ym9yZGVyLXBpbmstMjAwIHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTIwMCIKICAgICAgaW5pdGlhbD17eyBvcGFjaXR5OiAwLCB5OiAyNCB9fQogICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAgfX0KICAgICAgdHJhbnNpdGlvbj17eyBkZWxheTogMC4xICogaW5kZXgsIGR1cmF0aW9uOiAwLjQsIGVhc2U6IFswLjI1LCAwLjEsIDAuMjUsIDFdIH19CiAgICA+CiAgICAgIHsvKiBDb3ZlciBJbWFnZSAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9InJlbGF0aXZlIHctZnVsbCBhc3BlY3QtWzE2LzEwXSBvdmVyZmxvdy1oaWRkZW4gYmctcGluay01MCI+CiAgICAgICAgPGltZwogICAgICAgICAgc3JjPXtpbWFnZVNyY30KICAgICAgICAgIGFsdD17cHJvamVjdC5mZWF0dXJlX25hbWV9CiAgICAgICAgICBjbGFzc05hbWU9InctZnVsbCBoLWZ1bGwgb2JqZWN0LWNvdmVyIgogICAgICAgICAgb25FcnJvcj17KCkgPT4gc2V0SW1nRXJyb3IodHJ1ZSl9CiAgICAgICAgLz4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iYWJzb2x1dGUgaW5zZXQtMCBiZy1ncmFkaWVudC10by10IGZyb20tW3JnYmEoNDUsMjcsNDYsMC41KV0gdG8tdHJhbnNwYXJlbnQiIC8+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImFic29sdXRlIGJvdHRvbS0zIGxlZnQtNCByaWdodC00Ij4KICAgICAgICAgIDxoMyBjbGFzc05hbWU9ImZvbnQtYm9keSB0ZXh0LVsyMHB4XSBmb250LWJvbGQgdGV4dC13aGl0ZSBkcm9wLXNoYWRvdy1zbSI+CiAgICAgICAgICAgIHtwcm9qZWN0LmZlYXR1cmVfbmFtZX0KICAgICAgICAgIDwvaDM+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvZGl2PgoKICAgICAgey8qIENvbnRlbnQgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJwLTUiPgogICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1bMTRweF0gdGV4dC1bIzZCNUI2RV0gbGVhZGluZy1yZWxheGVkIG1iLTQiPgogICAgICAgICAge3Byb2plY3QuZGVzY3JpcHRpb259CiAgICAgICAgPC9wPgoKICAgICAgICB7LyogUHJvZ3Jlc3MgQmFyICovfQogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtYi00Ij4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gbWItMS41Ij4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsxMnB4XSB0ZXh0LVsjQTA5M0E1XSI+CiAgICAgICAgICAgICAgwqV7KHByb2plY3QuY3VycmVudF9hbW91bnQgfHwgMCkudG9Mb2NhbGVTdHJpbmcoKX0gLyDCpXsocHJvamVjdC50YXJnZXRfYW1vdW50IHx8IDApLnRvTG9jYWxlU3RyaW5nKCl9CiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsxMnB4XSBmb250LXNlbWlib2xkIHRleHQtcGluay01MDAiPgogICAgICAgICAgICAgIHtNYXRoLnJvdW5kKHByb2dyZXNzKX0lCiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDwvZGl2PgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImgtMiBiZy1waW5rLTUwIHJvdW5kZWQtZnVsbCBvdmVyZmxvdy1oaWRkZW4iPgogICAgICAgICAgICA8bW90aW9uLmRpdgogICAgICAgICAgICAgIGNsYXNzTmFtZT0iaC1mdWxsIGFjY2VudC1ncmFkaWVudCByb3VuZGVkLWZ1bGwiCiAgICAgICAgICAgICAgaW5pdGlhbD17eyB3aWR0aDogMCB9fQogICAgICAgICAgICAgIGFuaW1hdGU9e3sgd2lkdGg6IGAke3Byb2dyZXNzfSVgIH19CiAgICAgICAgICAgICAgdHJhbnNpdGlvbj17eyBkdXJhdGlvbjogMSwgZWFzZTogJ2Vhc2VPdXQnLCBkZWxheTogMC4yICogaW5kZXggfX0KICAgICAgICAgICAgLz4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgoKICAgICAgICB7LyogU3RhdHMgKi99CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC00IG1iLTQiPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0xLjUiPgogICAgICAgICAgICA8VGFyZ2V0IHNpemU9ezE0fSBjbGFzc05hbWU9InRleHQtcGluay00MDAiIC8+CiAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0idGV4dC1bMTJweF0gdGV4dC1bIzZCNUI2RV0iPgogICAgICAgICAgICAgIFRhcmdldCDCpXsocHJvamVjdC50YXJnZXRfYW1vdW50IHx8IDApLnRvTG9jYWxlU3RyaW5nKCl9CiAgICAgICAgICAgIDwvc3Bhbj4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgoKICAgICAgICB7LyogQ1RBICovfQogICAgICAgIDxidXR0b24KICAgICAgICAgIG9uQ2xpY2s9e2hhbmRsZVN1cHBvcnR9CiAgICAgICAgICBjbGFzc05hbWU9InctZnVsbCBweS0yLjUgcm91bmRlZC14bCBhY2NlbnQtZ3JhZGllbnQgdGV4dC13aGl0ZSBmb250LXNlbWlib2xkIHRleHQtWzE0cHhdCiAgICAgICAgICAgIGhvdmVyOmJyaWdodG5lc3MtMTEwIGhvdmVyOnNoYWRvdy1nbG93IHRyYW5zaXRpb24tYWxsIGR1cmF0aW9uLTE1MCBhY3RpdmU6YnJpZ2h0bmVzcy05NSIKICAgICAgICA+CiAgICAgICAgICBTdXBwb3J0IFByb2plY3QKICAgICAgICA8L2J1dHRvbj4KICAgICAgPC9kaXY+CiAgICA8L21vdGlvbi5kaXY+CiAgKTsKfQoKLyog4pSA4pSA4pSAIExvYWRpbmcgU2tlbGV0b24g4pSA4pSA4pSAICovCmZ1bmN0aW9uIFByb2plY3RTa2VsZXRvbih7IGluZGV4IH06IHsgaW5kZXg6IG51bWJlciB9KSB7CiAgcmV0dXJuICgKICAgIDxtb3Rpb24uZGl2CiAgICAgIGNsYXNzTmFtZT0iYmctd2hpdGUgcm91bmRlZC0yeGwgYm9yZGVyIGJvcmRlci1waW5rLTEwMCBzaGFkb3ctc20gb3ZlcmZsb3ctaGlkZGVuIgogICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDI0IH19CiAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fQogICAgICB0cmFuc2l0aW9uPXt7IGRlbGF5OiAwLjA1ICogaW5kZXgsIGR1cmF0aW9uOiAwLjMgfX0KICAgID4KICAgICAgPGRpdiBjbGFzc05hbWU9InctZnVsbCBhc3BlY3QtWzE2LzEwXSBiZy1waW5rLTEwMCBhbmltYXRlLXB1bHNlIiAvPgogICAgICA8ZGl2IGNsYXNzTmFtZT0icC01IHNwYWNlLXktMyI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImgtNCBiZy1waW5rLTEwMCByb3VuZGVkIGFuaW1hdGUtcHVsc2Ugdy0zLzQiIC8+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImgtMyBiZy1waW5rLTEwMCByb3VuZGVkIGFuaW1hdGUtcHVsc2Ugdy1mdWxsIiAvPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLTMgYmctcGluay0xMDAgcm91bmRlZCBhbmltYXRlLXB1bHNlIHctMi8zIiAvPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLTIgYmctcGluay0xMDAgcm91bmRlZCBhbmltYXRlLXB1bHNlIHctZnVsbCBtdC0yIiAvPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJoLTggYmctcGluay0xMDAgcm91bmRlZCBhbmltYXRlLXB1bHNlIHctZnVsbCBtdC0yIiAvPgogICAgICA8L2Rpdj4KICAgIDwvbW90aW9uLmRpdj4KICApOwp9CgovKiDilIDilIDilIAgTWFpbiBDb21wb25lbnQg4pSA4pSA4pSAICovCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIENyb3dkZnVuZGluZygpIHsKICBjb25zdCB7IHQgfSA9IHVzZUkxOG4oKTsKICBjb25zdCBbcHJvamVjdHMsIHNldFByb2plY3RzXSA9IHVzZVN0YXRlPENyb3dkZnVuZGluZ1Byb2plY3RbXT4oW10pOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKHRydWUpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3JdID0gdXNlU3RhdGU8c3RyaW5nIHwgbnVsbD4obnVsbCk7CgogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICBsb2FkUHJvamVjdHMoKTsKICB9LCBbXSk7CgogIGFzeW5jIGZ1bmN0aW9uIGxvYWRQcm9qZWN0cygpIHsKICAgIHRyeSB7CiAgICAgIHNldExvYWRpbmcodHJ1ZSk7CiAgICAgIHNldEVycm9yKG51bGwpOwoKICAgICAgY29uc3QgeyBkYXRhLCBlcnJvcjogZGJFcnJvciB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgICAuZnJvbSgnY3Jvd2RmdW5kaW5nX3Byb2plY3RzJykKICAgICAgICAuc2VsZWN0KCdpZCwgZmVhdHVyZV9uYW1lLCBkZXNjcmlwdGlvbiwgY292ZXJfaW1hZ2VfdXJsLCB0YXJnZXRfYW1vdW50LCBjdXJyZW50X2Ftb3VudCwgc3RhdHVzLCBzb3J0X29yZGVyLCBjcmVhdGVkX2F0JykKICAgICAgICAuZXEoJ3N0YXR1cycsICdhY3RpdmUnKQogICAgICAgIC5vcmRlcignc29ydF9vcmRlcicpOwoKICAgICAgaWYgKGRiRXJyb3IpIHsKICAgICAgICBjb25zb2xlLmVycm9yKCdbQ3Jvd2RmdW5kaW5nXSBEQiBlcnJvcjonLCBkYkVycm9yLm1lc3NhZ2UpOwogICAgICAgIHNldFByb2plY3RzKGdldERlZmF1bHRQcm9qZWN0cygpKTsKICAgICAgICByZXR1cm47CiAgICAgIH0KCiAgICAgIGlmIChkYXRhICYmIGRhdGEubGVuZ3RoID4gMCkgewogICAgICAgIHNldFByb2plY3RzKGRhdGEgYXMgQ3Jvd2RmdW5kaW5nUHJvamVjdFtdKTsKICAgICAgfSBlbHNlIHsKICAgICAgICBzZXRQcm9qZWN0cyhnZXREZWZhdWx0UHJvamVjdHMoKSk7CiAgICAgIH0KICAgIH0gY2F0Y2ggKGUpIHsKICAgICAgY29uc29sZS5lcnJvcignW0Nyb3dkZnVuZGluZ10gRXJyb3I6JywgZSk7CiAgICAgIHNldFByb2plY3RzKGdldERlZmF1bHRQcm9qZWN0cygpKTsKICAgIH0gZmluYWxseSB7CiAgICAgIHNldExvYWRpbmcoZmFsc2UpOwogICAgfQogIH0KCiAgLyoqIEZhbGxiYWNrIHdoZW4gREIgaXMgZW1wdHkgb3IgZXJyb3IgKi8KICBmdW5jdGlvbiBnZXREZWZhdWx0UHJvamVjdHMoKTogQ3Jvd2RmdW5kaW5nUHJvamVjdFtdIHsKICAgIHJldHVybiBbCiAgICAgIHsKICAgICAgICBpZDogJ3R0cy12b2ljZScsCiAgICAgICAgZmVhdHVyZV9uYW1lOiAnVFRT6K+t6Z+z5ZCI5oiQJywKICAgICAgICBkZXNjcmlwdGlvbjogJ0FkdmFuY2VkIHRleHQtdG8tc3BlZWNoIHRlY2hub2xvZ3kgZm9yIHlvdXIgY29tcGFuaW9uLiBOYXR1cmFsLCBlbW90aW9uYWwgdm9pY2Ugb3V0cHV0IHdpdGggbXVsdGlwbGUgdG9uZXMuJywKICAgICAgICBjb3Zlcl9pbWFnZV91cmw6ICdwcmV2aWV3cy90dHMtcHJldmlldy5qcGcnLAogICAgICAgIHRhcmdldF9hbW91bnQ6IDQwMDAwLAogICAgICAgIGN1cnJlbnRfYW1vdW50OiA2MjAwLAogICAgICAgIHN0YXR1czogJ2FjdGl2ZScsCiAgICAgICAgc29ydF9vcmRlcjogMSwKICAgICAgICBjcmVhdGVkX2F0OiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCiAgICAgIH0sCiAgICAgIHsKICAgICAgICBpZDogJ3ZpcnR1YWwtcGV0JywKICAgICAgICBmZWF0dXJlX25hbWU6ICfomZrmi5/lrqDnianns7vnu58nLAogICAgICAgIGRlc2NyaXB0aW9uOiAnWW91ciBjb21wYW5pb24gY2FuIHJhaXNlIGhlciBvd24gdmlydHVhbCBwZXQuIFRoZSBwZXQgaGFzIGl0cyBvd24gZW1vdGlvbnMgYW5kIG5lZWRzLCBhZGRpbmcgbW9yZSBmdW4uJywKICAgICAgICBjb3Zlcl9pbWFnZV91cmw6ICdwcmV2aWV3cy9wZXQtcHJldmlldy5qcGcnLAogICAgICAgIHRhcmdldF9hbW91bnQ6IDMwMDAwLAogICAgICAgIGN1cnJlbnRfYW1vdW50OiA4NTAwLAogICAgICAgIHN0YXR1czogJ2FjdGl2ZScsCiAgICAgICAgc29ydF9vcmRlcjogMiwKICAgICAgICBjcmVhdGVkX2F0OiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCksCiAgICAgIH0sCiAgICAgIHsKICAgICAgICBpZDogJ2xpdmUyZC1hdmF0YXInLAogICAgICAgIGZlYXR1cmVfbmFtZTogJ0xpdmUyROS6kuWKqOW9ouixoScsCiAgICAgICAgZGVzY3JpcHRpb246ICdMaXZlMkQgdGVjaG5vbG9neSBmb3IgZHluYW1pYyBpbnRlcmFjdGl2ZSBhdmF0YXJzLiBSaWNoIGV4cHJlc3Npb25zLCBtb3ZlbWVudHMgYW5kIGludGVyYWN0aW9uIGZlZWRiYWNrLicsCiAgICAgICAgY292ZXJfaW1hZ2VfdXJsOiAncHJldmlld3MvbGl2ZTJkLXByZXZpZXcuanBnJywKICAgICAgICB0YXJnZXRfYW1vdW50OiA1MDAwMCwKICAgICAgICBjdXJyZW50X2Ftb3VudDogMTI4MDAsCiAgICAgICAgc3RhdHVzOiAnYWN0aXZlJywKICAgICAgICBzb3J0X29yZGVyOiAzLAogICAgICAgIGNyZWF0ZWRfYXQ6IG5ldyBEYXRlKCkudG9JU09TdHJpbmcoKSwKICAgICAgfSwKICAgIF07CiAgfQoKICByZXR1cm4gKAogICAgPGRpdiBjbGFzc05hbWU9Im1pbi1oLVsxMDBkdmhdIGJnLXBpbmstNTAgcGItMTYiPgogICAgICB7Lyog4pSA4pSAIFRvcCBCYXIg4pSA4pSAICovfQogICAgICA8bW90aW9uLmRpdgogICAgICAgIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHB4LTggcHktNSIKICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IC0xMCB9fQogICAgICAgIGFuaW1hdGU9e3sgb3BhY2l0eTogMSwgeTogMCB9fQogICAgICAgIHRyYW5zaXRpb249e3sgZHVyYXRpb246IDAuMyB9fQogICAgICA+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0zIj4KICAgICAgICAgIDxIZWFydCBzaXplPXsyMH0gY2xhc3NOYW1lPSJ0ZXh0LXBpbmstNDAwIiAvPgogICAgICAgICAgPGgyIGNsYXNzTmFtZT0iZm9udC1ib2R5IHRleHQtWzI4cHhdIGZvbnQtYm9sZCB0ZXh0LVsjMkQxQjJFXSI+CiAgICAgICAgICAgIHt0KCdjcm93ZGZ1bmRpbmcudGl0bGUnKX0KICAgICAgICAgIDwvaDI+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LVsxNHB4XSB0ZXh0LVsjNkI1QjZFXSI+CiAgICAgICAgICBTdXBwb3J0IENvcm9sYXMgfCBQbGF0b25pYwogICAgICAgIDwvc3Bhbj4KICAgICAgPC9tb3Rpb24uZGl2PgoKICAgICAgey8qIOKUgOKUgCBQcm9qZWN0cyBHcmlkIOKUgOKUgCAqL30KICAgICAgPGRpdiBjbGFzc05hbWU9InB4LTgiPgogICAgICAgIHtsb2FkaW5nID8gKAogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTEgbWQ6Z3JpZC1jb2xzLTIgbGc6Z3JpZC1jb2xzLTMgZ2FwLTYiPgogICAgICAgICAgICB7WzAsIDEsIDJdLm1hcCgoaSkgPT4gKAogICAgICAgICAgICAgIDxQcm9qZWN0U2tlbGV0b24ga2V5PXtpfSBpbmRleD17aX0gLz4KICAgICAgICAgICAgKSl9CiAgICAgICAgICA8L2Rpdj4KICAgICAgICApIDogKAogICAgICAgICAgPD4KICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgZ3JpZC1jb2xzLTEgbWQ6Z3JpZC1jb2xzLTIgbGc6Z3JpZC1jb2xzLTMgZ2FwLTYiPgogICAgICAgICAgICAgIHtwcm9qZWN0cy5tYXAoKHByb2plY3QsIGlkeCkgPT4gKAogICAgICAgICAgICAgICAgPFByb2plY3RDYXJkIGtleT17cHJvamVjdC5pZH0gcHJvamVjdD17cHJvamVjdH0gaW5kZXg9e2lkeH0gLz4KICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICB7Lyog4pSA4pSAIFN0YXRzIFN1bW1hcnkg4pSA4pSAICovfQogICAgICAgICAgICB7cHJvamVjdHMubGVuZ3RoID4gMCAmJiAoCiAgICAgICAgICAgICAgPG1vdGlvbi5kaXYKICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0ibXQtMTAgZ3JpZCBncmlkLWNvbHMtMiBnYXAtNCBtYXgtdy1bNDgwcHhdIG14LWF1dG8iCiAgICAgICAgICAgICAgICBpbml0aWFsPXt7IG9wYWNpdHk6IDAsIHk6IDIwIH19CiAgICAgICAgICAgICAgICBhbmltYXRlPXt7IG9wYWNpdHk6IDEsIHk6IDAgfX0KICAgICAgICAgICAgICAgIHRyYW5zaXRpb249e3sgZGVsYXk6IDAuNCwgZHVyYXRpb246IDAuNCB9fQogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJiZy13aGl0ZSByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItcGluay0xMDAgcC00IHRleHQtY2VudGVyIj4KICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMnB4XSB0ZXh0LVsjQTA5M0E1XSBtYi0xIj5BY3RpdmUgUHJvamVjdHM8L3A+CiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0iZm9udC1udW1iZXIgdGV4dC1bMjRweF0gZm9udC1ib2xkIHRleHQtWyMyRDFCMkVdIj4KICAgICAgICAgICAgICAgICAgICB7cHJvamVjdHMubGVuZ3RofQogICAgICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJiZy13aGl0ZSByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItcGluay0xMDAgcC00IHRleHQtY2VudGVyIj4KICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxMnB4XSB0ZXh0LVsjQTA5M0E1XSBtYi0xIj5Ub3RhbCBSYWlzZWQ8L3A+CiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0iZm9udC1udW1iZXIgdGV4dC1bMjRweF0gZm9udC1ib2xkIHRleHQtcGluay01MDAiPgogICAgICAgICAgICAgICAgICAgIMKle3Byb2plY3RzLnJlZHVjZSgoc3VtLCBwKSA9PiBzdW0gKyAocC5jdXJyZW50X2Ftb3VudCB8fCAwKSwgMCkudG9Mb2NhbGVTdHJpbmcoKX0KICAgICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPC9tb3Rpb24uZGl2PgogICAgICAgICAgICApfQogICAgICAgICAgPC8+CiAgICAgICAgKX0KICAgICAgPC9kaXY+CgogICAgICB7Lyog4pSA4pSAIEZvb3RlciDilIDilIAgKi99CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJweC04IHB5LTggdGV4dC1jZW50ZXIgbXQtOCI+CiAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxNHB4XSB0ZXh0LVsjNkI1QjZFXSBtYi0yIj4KICAgICAgICAgIENvcm9sYXMgfCBQbGF0b25pYyAmY29weTsgMjAyNi4gQWxsIHJpZ2h0cyByZXNlcnZlZC4KICAgICAgICA8L3A+CiAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxM3B4XSB0ZXh0LVsjQTA5M0E1XSI+CiAgICAgICAgICBDb250YWN0IHVzOnsiICJ9CiAgICAgICAgICA8YQogICAgICAgICAgICBocmVmPSJtYWlsdG86Y29yb2xhckBjb3JvbGFzLnRvcCIKICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LXBpbmstNTAwIGhvdmVyOnRleHQtcGluay02MDAgdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgICAgICA+CiAgICAgICAgICAgIGNvcm9sYXJAY29yb2xhcy50b3AKICAgICAgICAgIDwvYT4KICAgICAgICA8L3A+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgKTsKfQo=
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import {
+  Heart,
+  Target,
+  Sparkles,
+  Loader2,
+} from 'lucide-react';
+import { supabase, getStorageUrl } from '@/lib/supabase';
+import { useAuth } from '@/hooks/useAuth';
+import { useI18n } from '@/i18n/I18nContext';
+import { toast } from 'sonner';
+
+/* ─── Types (matching DB schema exactly) ─── */
+interface CrowdfundingProject {
+  id: string;
+  feature_name: string;
+  description: string;
+  cover_image_url: string | null;
+  target_amount: number;
+  current_amount: number;
+  status: string;
+  sort_order: number;
+  created_at: string;
+}
+
+/* ─── Project Card ─── */
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: CrowdfundingProject;
+  index: number;
+}) {
+  const { isAuthenticated } = useAuth();
+  const [imgError, setImgError] = useState(false);
+
+  const progress = project.target_amount > 0
+    ? Math.min((project.current_amount / project.target_amount) * 100, 100)
+    : 0;
+
+  const imageSrc = project.cover_image_url && !imgError
+    ? getStorageUrl(project.cover_image_url)
+    : `/previews/${['tts-preview', 'pet-preview', 'live2d-preview'][index]}.jpg`;
+
+  const handleSupport = () => {
+    if (!isAuthenticated) {
+      toast('Please login first', {
+        description: 'Login to support crowdfunding projects',
+      });
+      return;
+    }
+    window.open('https://corolas.top', '_blank');
+  };
+
+  return (
+    <motion.div
+      className="bg-white rounded-2xl border border-pink-100 shadow-sm overflow-hidden
+        hover:shadow-md hover:border-pink-200 transition-all duration-200"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 * index, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      {/* Cover Image */}
+      <div className="relative w-full aspect-[16/10] overflow-hidden bg-pink-50">
+        <img
+          src={imageSrc}
+          alt={project.feature_name}
+          className="w-full h-full object-cover"
+          onError={() => setImgError(true)}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(45,27,46,0.5)] to-transparent" />
+        <div className="absolute bottom-3 left-4 right-4">
+          <h3 className="font-body text-[20px] font-bold text-white drop-shadow-sm">
+            {project.feature_name}
+          </h3>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-5">
+        <p className="text-[14px] text-[#6B5B6E] leading-relaxed mb-4">
+          {project.description}
+        </p>
+
+        {/* Progress Bar */}
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[12px] text-[#A093A5]">
+              ¥{(project.current_amount || 0).toLocaleString()} / ¥{(project.target_amount || 0).toLocaleString()}
+            </span>
+            <span className="text-[12px] font-semibold text-pink-500">
+              {Math.round(progress)}%
+            </span>
+          </div>
+          <div className="h-2 bg-pink-50 rounded-full overflow-hidden">
+            <motion.div
+              className="h-full accent-gradient rounded-full"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 1, ease: 'easeOut', delay: 0.2 * index }}
+            />
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="flex items-center gap-4 mb-4">
+          <div className="flex items-center gap-1.5">
+            <Target size={14} className="text-pink-400" />
+            <span className="text-[12px] text-[#6B5B6E]">
+              Target ¥{(project.target_amount || 0).toLocaleString()}
+            </span>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <button
+          onClick={handleSupport}
+          className="w-full py-2.5 rounded-xl accent-gradient text-white font-semibold text-[14px]
+            hover:brightness-110 hover:shadow-glow transition-all duration-150 active:brightness-95"
+        >
+          Support Project
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─── Loading Skeleton ─── */
+function ProjectSkeleton({ index }: { index: number }) {
+  return (
+    <motion.div
+      className="bg-white rounded-2xl border border-pink-100 shadow-sm overflow-hidden"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.05 * index, duration: 0.3 }}
+    >
+      <div className="w-full aspect-[16/10] bg-pink-100 animate-pulse" />
+      <div className="p-5 space-y-3">
+        <div className="h-4 bg-pink-100 rounded animate-pulse w-3/4" />
+        <div className="h-3 bg-pink-100 rounded animate-pulse w-full" />
+        <div className="h-3 bg-pink-100 rounded animate-pulse w-2/3" />
+        <div className="h-2 bg-pink-100 rounded animate-pulse w-full mt-2" />
+        <div className="h-8 bg-pink-100 rounded animate-pulse w-full mt-2" />
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─── Main Component ─── */
+export default function Crowdfunding() {
+  const { t } = useI18n();
+  const [projects, setProjects] = useState<CrowdfundingProject[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  async function loadProjects() {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const { data, error: dbError } = await supabase
+        .from('crowdfunding_projects')
+        .select('id, feature_name, description, cover_image_url, target_amount, current_amount, status, sort_order, created_at')
+        .eq('status', 'active')
+        .order('sort_order');
+
+      if (dbError) {
+        console.error('[Crowdfunding] DB error:', dbError.message);
+        setProjects(getDefaultProjects());
+        return;
+      }
+
+      if (data && data.length > 0) {
+        setProjects(data as CrowdfundingProject[]);
+      } else {
+        setProjects(getDefaultProjects());
+      }
+    } catch (e) {
+      console.error('[Crowdfunding] Error:', e);
+      setProjects(getDefaultProjects());
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  /** Fallback when DB is empty or error */
+  function getDefaultProjects(): CrowdfundingProject[] {
+    return [
+      {
+        id: 'tts-voice',
+        feature_name: 'TTS语音合成',
+        description: 'Advanced text-to-speech technology for your companion. Natural, emotional voice output with multiple tones.',
+        cover_image_url: 'previews/tts-preview.jpg',
+        target_amount: 40000,
+        current_amount: 6200,
+        status: 'active',
+        sort_order: 1,
+        created_at: new Date().toISOString(),
+      },
+      {
+        id: 'virtual-pet',
+        feature_name: '虚拟宠物系统',
+        description: 'Your companion can raise her own virtual pet. The pet has its own emotions and needs, adding more fun.',
+        cover_image_url: 'previews/pet-preview.jpg',
+        target_amount: 30000,
+        current_amount: 8500,
+        status: 'active',
+        sort_order: 2,
+        created_at: new Date().toISOString(),
+      },
+      {
+        id: 'live2d-avatar',
+        feature_name: 'Live2D互动形象',
+        description: 'Live2D technology for dynamic interactive avatars. Rich expressions, movements and interaction feedback.',
+        cover_image_url: 'previews/live2d-preview.jpg',
+        target_amount: 50000,
+        current_amount: 12800,
+        status: 'active',
+        sort_order: 3,
+        created_at: new Date().toISOString(),
+      },
+    ];
+  }
+
+  return (
+    <div className="min-h-[100dvh] bg-pink-50 pb-16">
+      {/* ── Top Bar ── */}
+      <motion.div
+        className="flex items-center justify-between px-8 py-5"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex items-center gap-3">
+          <Heart size={20} className="text-pink-400" />
+          <h2 className="font-body text-[28px] font-bold text-[#2D1B2E]">
+            {t('crowdfunding.title')}
+          </h2>
+        </div>
+        <span className="text-[14px] text-[#6B5B6E]">
+          Support Corolas | Platonic
+        </span>
+      </motion.div>
+
+      {/* ── Projects Grid ── */}
+      <div className="px-8">
+        {loading ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[0, 1, 2].map((i) => (
+              <ProjectSkeleton key={i} index={i} />
+            ))}
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.map((project, idx) => (
+                <ProjectCard key={project.id} project={project} index={idx} />
+              ))}
+            </div>
+
+            {/* ── Stats Summary ── */}
+            {projects.length > 0 && (
+              <motion.div
+                className="mt-10 grid grid-cols-2 gap-4 max-w-[480px] mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.4 }}
+              >
+                <div className="bg-white rounded-xl border border-pink-100 p-4 text-center">
+                  <p className="text-[12px] text-[#A093A5] mb-1">Active Projects</p>
+                  <p className="font-number text-[24px] font-bold text-[#2D1B2E]">
+                    {projects.length}
+                  </p>
+                </div>
+                <div className="bg-white rounded-xl border border-pink-100 p-4 text-center">
+                  <p className="text-[12px] text-[#A093A5] mb-1">Total Raised</p>
+                  <p className="font-number text-[24px] font-bold text-pink-500">
+                    ¥{projects.reduce((sum, p) => sum + (p.current_amount || 0), 0).toLocaleString()}
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </>
+        )}
+      </div>
+
+      {/* ── Footer ── */}
+      <div className="px-8 py-8 text-center mt-8">
+        <p className="text-[14px] text-[#6B5B6E] mb-2">
+          Corolas | Platonic &copy; 2026. All rights reserved.
+        </p>
+        <p className="text-[13px] text-[#A093A5]">
+          Contact us:{" "}
+          <a
+            href="mailto:corolar@corolas.top"
+            className="text-pink-500 hover:text-pink-600 transition-colors"
+          >
+            corolar@corolas.top
+          </a>
+        </p>
+      </div>
+    </div>
+  );
+}

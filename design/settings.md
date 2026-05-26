@@ -1,1 +1,222 @@
-IyBTZXR0aW5ncyBQYWdlIChzZXR0aW5ncy5tZCkKClRoZSBzZXR0aW5ncyBwYWdlIGZvciB1c2VyIHByZWZlcmVuY2VzIOKAlCBsYW5ndWFnZSBzd2l0Y2hpbmcsIGFjY291bnQgaW5mb3JtYXRpb24sIGFuZCB0aGVtZSBzZXR0aW5ncy4gQ2xlYW4sIG9yZ2FuaXplZCwgYW5kIGZ1bmN0aW9uYWwgd2l0aCBhIHNldHRpbmdzLWxpc3QgbGF5b3V0IHBhdHRlcm4uCgp8IFByb3BlcnR5IHwgVmFsdWUgfAp8LS0tLS0tLS0tLXwtLS0tLS0tfAp8IFJvdXRlIHwgYC9zZXR0aW5nc2AgfAp8IFNlY3Rpb25zIHwgNCB8CnwgUHVycG9zZSB8IFVzZXIgcHJlZmVyZW5jZXMsIGFjY291bnQgaW5mbywgYW5kIGFwcCBjb25maWd1cmF0aW9uIHwKCi0tLQoKIyMgUGFnZSBMYXlvdXQKClN0YW5kYXJkIGFwcCBsYXlvdXQ6IHNpZGViYXIgKyBjb250ZW50IGFyZWEuIFNldHRpbmdzIGFyZSBvcmdhbml6ZWQgaW4gY2FyZHMgYnkgY2F0ZWdvcnkuCgpgYGAK4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQCuKUgiBTaWRlYmFyIOKUgiAgICAgICAgU2V0dGluZ3MgQ29udGVudCAgICAgICAgICAgICAgICAgICDilIIK4pSCIDIyMHB4ICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIFRvcCBCYXI6ICLorr7nva4iICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgTGFuZ3VhZ2UgU2V0dGluZ3MgICAgICAgICAgICAgICAg4pSCICAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgQWNjb3VudCBJbmZvcm1hdGlvbiAgICAgICAgICAgICAg4pSCICAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgVGhlbWUgU2V0dGluZ3MgICAgICAgICAgICAgICAgICAg4pSCICAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgQWJvdXQgLyBEYW5nZXIgWm9uZSAgICAgICAgICAgICAg4pSCICAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilJTilIDilIDilIDilIDilIDilIDilIDilIDilIDilLTilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilJgKYGBgCgotLS0KCiMjIFNlY3Rpb24gMTogVG9wIEJhcgoKIyMjIEVsZW1lbnRzCi0gKipMZWZ0Kio6ICLorr7nva4iIGluIGBoMmAsIHdpdGggYFNldHRpbmdzYCBpY29uICgyMHB4LCBgdGV4dC1zZWNvbmRhcnlgKQotICoqUmlnaHQqKjogTm9uZQoKIyMjIEFuaW1hdGlvbnMKLSBGYWRlIGluLCAzMDBtcwoKLS0tCgojIyBTZWN0aW9uIDI6IExhbmd1YWdlIFNldHRpbmdzIENhcmQKCiMjIyBPdmVydmlldwpMYW5ndWFnZSBzd2l0Y2hpbmcgYmV0d2VlbiBzdXBwb3J0ZWQgbGFuZ3VhZ2VzLiBDbGVhciB2aXN1YWwgc2VsZWN0aW9uIHdpdGggZmxhZy9pY29uIGluZGljYXRvcnMuCgojIyMgTGF5b3V0Ci0gYENhcmQgQ29tcG9uZW50YCwgcGFkZGluZyAyNHB4Ci0gTWF4LXdpZHRoOiA2NDBweAoKIyMjIEVsZW1lbnRzCgojIyMjIENhcmQgSGVhZGVyCi0gVGl0bGU6ICLor63oqIDorr7nva4iIGluIGBoM2AKLSBTdWJ0aXRsZTogIumAieaLqeS9oOWBj+WlveeahOeVjOmdouivreiogCIgaW4gYGJvZHktc21gLCBgdGV4dC1tdXRlZGAKCiMjIyMgTGFuZ3VhZ2UgT3B0aW9ucwpGb3VyIHNlbGVjdGFibGUgb3B0aW9ucyBpbiBhIHZlcnRpY2FsIGxpc3Q6CgoxLiAqKuS4reaWhyAo566A5L2TKSoqCiAgIC0gUmFkaW8gYnV0dG9uIChsZWZ0KSArICLkuK3mlociIGxhYmVsICsgIueugOS9kyIgdGFnIChyaWdodCwgYGJvZHktc21gLCBgdGV4dC1tdXRlZGApCiAgIC0gU2VsZWN0ZWQ6IHJhZGlvIGZpbGxlZCBgcGluay00MDBgLCByb3cgYmcgYHBpbmstNTBgCiAgIC0gYEdsb2JlYCBpY29uIGJlc2lkZSBsYWJlbAoKMi4gKipFbmdsaXNoKioKICAgLSBTYW1lIGxheW91dAogICAtIExhYmVsOiAiRW5nbGlzaCIKCjMuICoq5pel5pys6KqeKioKICAgLSBMYWJlbDogIuaXpeacrOiqniIKICAgLSBUYWc6ICJKYXBhbmVzZSIgaW4gYGJvZHktc21gLCBgdGV4dC1tdXRlZGAKCjQuICoq7ZWc6rWt7Ja0KioKICAgLSBMYWJlbDogIu2VnOq1reyWtCIKICAgLSBUYWc6ICJLb3JlYW4iIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCgotIEVhY2ggb3B0aW9uOiBmdWxsLXdpZHRoIHJvdywgcGFkZGluZyAxNHB4IDE2cHgsIGByYWRpdXMtbWRgLCBjdXJzb3IgcG9pbnRlcgotIEhvdmVyOiBgcGluay01MGAgYmcsIDE1MG1zCi0gR2FwOiA4cHggYmV0d2VlbiBvcHRpb25zCgojIyMjIFNhdmUgQnV0dG9uCi0gIuS/neWtmCIgYHByaW1hcnlgIGJ1dHRvbiwgcmlnaHQtYWxpZ25lZCBiZWxvdyBvcHRpb25zCi0gRGlzYWJsZWQgdW50aWwgYSBjaGFuZ2UgaXMgbWFkZQotIFNob3dzICLlt7Lkv53lrZgg4pyFIiBicmllZmx5IGFmdGVyIHNhdmUKCiMjIyBBbmltYXRpb25zCi0gQ2FyZCBlbnRyYW5jZTogc2xpZGUgdXAgMjBweCArIGZhZGUsIDQwMG1zCi0gTGFuZ3VhZ2Ugb3B0aW9uczogc3RhZ2dlciBpbiA1MG1zCi0gU2VsZWN0aW9uOiByYWRpbyBmaWxsIGFuaW1hdGVzIChzY2FsZSAw4oaSMSksIDE1MG1zLCBiZyBjb2xvciB0cmFuc2l0aW9uIDIwMG1zCi0gU2F2ZTogYnV0dG9uIHRleHQgdHJhbnNpdGlvbnMsIGNoZWNrbWFyayBmYWRlcyBpbgoKLS0tCgojIyBTZWN0aW9uIDM6IEFjY291bnQgSW5mb3JtYXRpb24gQ2FyZAoKIyMjIE92ZXJ2aWV3CkRpc3BsYXlzIHVzZXIgYWNjb3VudCBkZXRhaWxzIHdpdGggdGhlIGFiaWxpdHkgdG8gZWRpdCBjZXJ0YWluIGZpZWxkcy4KCiMjIyBMYXlvdXQKLSBgQ2FyZCBDb21wb25lbnRgLCBwYWRkaW5nIDI0cHgsIG1heC13aWR0aCA2NDBweAotIE1hcmdpbi10b3A6IDIwcHgKCiMjIyBFbGVtZW50cwoKIyMjIyBDYXJkIEhlYWRlcgotIFRpdGxlOiAi6LSm5Y+35L+h5oGvIiBpbiBgaDNgCi0gRWRpdCB0b2dnbGU6ICLnvJbovpEiIC8gIuWPlua2iCIgbGluayBpbiBgcGluay01MDBgLCBgYm9keS1zbWAKCiMjIyMgQWNjb3VudCBGaWVsZHMgKHJlYWQtb25seSBtb2RlKQpFYWNoIGZpZWxkIGFzIGEgcm93OgotIExlZnQ6IGZpZWxkIGxhYmVsIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgLCB3aWR0aCAxMjBweAotIFJpZ2h0OiBmaWVsZCB2YWx1ZSBpbiBgYm9keWAsIGB0ZXh0LXByaW1hcnlgCi0gRGl2aWRlcjogMXB4IGBwaW5rLTUwYCBiZXR3ZWVuIHJvd3MKCkZpZWxkczoKMS4gKirnlKjmiLflkI0qKjogIlBsYXRvbmljVXNlcl84ODIzIiDigJQgd2l0aCBgRWRpdDNgIGljb24gZm9yIGlubGluZSBlZGl0aW5nCjIuICoq6YKu566xKio6ICJ1c2VyQGV4YW1wbGUuY29tIiDigJQgdmVyaWZpZWQgYmFkZ2UgKGBDaGVja0NpcmNsZWAsIGdyZWVuLCAxNHB4KQozLiAqKuazqOWGjOaXtumXtCoqOiAiMjAyNOW5tDEy5pyIMeaXpSIKNC4gKirkvLTkvqMqKjogIuWwj+aosSIg4oCUIHdpdGggc21hbGwgYXZhdGFyICgyMHB4KSArIGBDaGV2cm9uUmlnaHRgIGxpbmsgdG8gY29tcGFuaW9uIHNldHRpbmdzCgojIyMjIEVkaXQgTW9kZQpXaGVuICLnvJbovpEiIGNsaWNrZWQ6Ci0gVXNlcm5hbWUgYmVjb21lcyBlZGl0YWJsZSBgSW5wdXQgQ29tcG9uZW50YAotIFNhdmUgLyBDYW5jZWwgYnV0dG9ucyBhcHBlYXIgYmVsb3cKLSBFbWFpbCBzaG93cyAi6aqM6K+B5LitIiBvciB2ZXJpZmllZCBzdGF0dXMKCiMjIyBBbmltYXRpb25zCi0gQ2FyZCBlbnRyYW5jZTogc2xpZGUgdXAgMjBweCArIGZhZGUsIDQwMG1zLCAxMDBtcyBkZWxheQotIEVkaXQgdG9nZ2xlOiBmb3JtIGZpZWxkcyBjcm9zcy1mYWRlLCAyMDBtcwotIFNhdmU6IGlubGluZSBjaGVja21hcmsgYW5pbWF0aW9uIG9uIHNhdmVkIGZpZWxkCgotLS0KCiMjIFNlY3Rpb24gNDogVGhlbWUgU2V0dGluZ3MgQ2FyZAoKIyMjIE92ZXJ2aWV3ClRoZW1lIHByZWZlcmVuY2VzIGluY2x1ZGluZyBsaWdodC9kYXJrIG1vZGUgdG9nZ2xlIChmdXR1cmUpIGFuZCBhY2NlbnQgY29sb3Igc2VsZWN0aW9uLgoKIyMjIExheW91dAotIGBDYXJkIENvbXBvbmVudGAsIHBhZGRpbmcgMjRweCwgbWF4LXdpZHRoIDY0MHB4Ci0gTWFyZ2luLXRvcDogMjBweAoKIyMjIEVsZW1lbnRzCgojIyMjIENhcmQgSGVhZGVyCi0gVGl0bGU6ICLkuLvpopjorr7nva4iIGluIGBoM2AKLSBTdWJ0aXRsZTogIuiHquWumuS5ieS9oOeahOinhuinieS9k+mqjCIgaW4gYGJvZHktc21gLCBgdGV4dC1tdXRlZGAKCiMjIyMgVGhlbWUgTW9kZSBUb2dnbGUKLSBMYWJlbDogIuS4u+mimOaooeW8jyIgaW4gYGJvZHktc21gLCBgdGV4dC1zZWNvbmRhcnlgCi0gVG9nZ2xlIHN3aXRjaDogCiAgLSBMZWZ0OiBgU3VuYCBpY29uICsgIua1heiJsiIgbGFiZWwKICAtIFJpZ2h0OiBgTW9vbmAgaWNvbiArICLmt7HoibIiIGxhYmVsCiAgLSBUb2dnbGUgdHJhY2s6IDQ4cHggw5cgMjRweCwgYHJhZGl1cy1mdWxsYCwgYHBpbmstMTAwYCBiZwogIC0gVGh1bWI6IDIwcHggY2lyY2xlLCB3aGl0ZSwgYHNoYWRvdy1zbWAKICAtIEFjdGl2ZSBzaWRlOiBgcGluay00MDBgIGZpbGwgb24gdGhhdCBoYWxmCi0gQ3VycmVudGx5OiBsaWdodCBtb2RlIGFjdGl2ZSAoZGFyayBtb2RlIGlzIGZ1dHVyZSBmZWF0dXJlLCBzaG93cyAi5Y2z5bCG5o6o5Ye6IiB0b29sdGlwIG9uIGRhcmspCgojIyMjIEFjY2VudCBDb2xvciBTZWxlY3Rpb24KLSBMYWJlbDogIuW8uuiwg+iJsiIgaW4gYGJvZHktc21gLCBgdGV4dC1zZWNvbmRhcnlgCi0gUm93IG9mIDUgY29sb3IgY2lyY2xlcyAoMzJweCBlYWNoKToKICAxLiBEZWZhdWx0IFBpbms6IGBwaW5rLTQwMGAg4oCUIHNlbGVjdGVkCiAgMi4gUm9zZSBHb2xkOiBgcm9zZS1nb2xkYCAoI0U4QTBCRikKICAzLiBMYXZlbmRlcjogYHB1cnBsZS1tZW1vcnlgICgjQzhBOEU5KQogIDQuIENvcmFsOiBgI0ZGOEE4MGAKICA1LiBNaW50OiBgIzgwQ0JDNGAKLSBTZWxlY3RlZDogM3B4IHdoaXRlIGJvcmRlciArIDJweCBgdGV4dC1wcmltYXJ5YCBvdXRlciByaW5nICsgYHNoYWRvdy1nbG93YAotIEhvdmVyOiBgc2NhbGUoMS4xKWAsIDE1MG1zCgojIyMjIEZvbnQgU2l6ZSBTbGlkZXIKLSBMYWJlbDogIuWtl+S9k+Wkp+WwjyIgaW4gYGJvZHktc21gLCBgdGV4dC1zZWNvbmRhcnlgCi0gU2xpZGVyOiBgU2xpZGVyIENvbXBvbmVudGAgKHNhbWUgYXMgY3VzdG9taXplIHBhZ2UpLCByYW5nZSAi5bCPIiB0byAi5aSnIgotIERlZmF1bHQ6IG1pZGRsZSBwb3NpdGlvbgotIFByZXZpZXcgdGV4dCBiZWxvdzogIui/meaYr+mihOiniOaWh+WtlyIgaW4gZHluYW1pYyBzaXplCgojIyMgQW5pbWF0aW9ucwotIENhcmQgZW50cmFuY2U6IHNsaWRlIHVwIDIwcHggKyBmYWRlLCA0MDBtcywgMjAwbXMgZGVsYXkKLSBUb2dnbGUgc3dpdGNoOiB0aHVtYiBzbGlkZXMgd2l0aCBzcHJpbmcgYW5pbWF0aW9uLCAzMDBtcwotIENvbG9yIHNlbGVjdGlvbjogcmluZyBzY2FsZXMgaW4gKDDihpIxKSwgMjAwbXMsIGdsb3cgYXBwZWFycwotIEZvbnQgc2xpZGVyOiByZWFsLXRpbWUgcHJldmlldyB0ZXh0IHNpemUgdHJhbnNpdGlvbiwgMTUwbXMKCi0tLQoKIyMgU2VjdGlvbiA1OiBBYm91dCAmIERhbmdlciBab25lCgojIyMgTGF5b3V0Ci0gYENhcmQgQ29tcG9uZW50YCwgcGFkZGluZyAyNHB4LCBtYXgtd2lkdGggNjQwcHgKLSBNYXJnaW4tdG9wOiAyMHB4CgojIyMgRWxlbWVudHMKCiMjIyMgQWJvdXQgU2VjdGlvbgotIFRpdGxlOiAi5YWz5LqOIFBsYXRvbmljIiBpbiBgaDNgCi0gQXBwIHZlcnNpb246ICJ2MS4wLjAiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCi0gTGlua3M6ICLmnI3liqHmnaHmrL4iIC8gIumakOengeaUv+etliIgLyAi6IGU57O75oiR5LusIiDigJQgYGJvZHktc21gLCBgcGluay01MDBgLCBob3Jpem9udGFsIHJvdwotIENvcHlyaWdodDogIjIwMjQgUGxhdG9uaWMgQUkiIGluIGBib2R5LXNtYCwgYHRleHQtbXV0ZWRgCgojIyMjIERhbmdlciBab25lIChib3R0b20gb2YgY2FyZCwgc2VwYXJhdGVkIGJ5IGRpdmlkZXIpCi0gRGl2aWRlcjogMXB4IGBwaW5rLTEwMGAsIG1hcmdpbiAyMHB4IDAKLSBMYWJlbDogIuWNsemZqeaTjeS9nCIgaW4gYGxhYmVsYCwgYCNEQzI2MjZgCi0gKipMb2dvdXQgQnV0dG9uKio6IGBnaG9zdGAgc3R5bGUsIGB0ZXh0LXNlY29uZGFyeWAsIGBMb2dPdXRgIGljb24g4oCUICLpgIDlh7rnmbvlvZUiCi0gKipEZWxldGUgQWNjb3VudCoqOiB0ZXh0LW9ubHkgYnV0dG9uLCBgZGFuZ2VyYCBjb2xvciAoI0RDMjYyNiksIGBUcmFzaDJgIGljb24g4oCUICLms6jplIDotKblj7ciCiAgLSBDbGljazogY29uZmlybWF0aW9uIG1vZGFsIHJlcXVpcmVkCiAgLSBNb2RhbDogIuehruWumuimgeazqOmUgOi0puWPt+WQl++8n+atpOaTjeS9nOS4jeWPr+aSpOmUgOOAgiIgKyAi56Gu6K6k5rOo6ZSAIiAoZGFuZ2VyIGJ1dHRvbikgKyAi5Y+W5raIIgoKIyMjIEFuaW1hdGlvbnMKLSBDYXJkIGVudHJhbmNlOiBzbGlkZSB1cCAyMHB4ICsgZmFkZSwgNDAwbXMsIDMwMG1zIGRlbGF5Ci0gRGFuZ2VyIGJ1dHRvbnM6IG5vIHNwZWNpYWwgYW5pbWF0aW9uLCBzdGFuZGFyZCBob3ZlcgotIERlbGV0ZSBjb25maXJtYXRpb24gbW9kYWw6IHN0YW5kYXJkIG1vZGFsIGFuaW1hdGlvbiAoc2NhbGUgMC45M+KGkjEsIDMwMG1zKQo=
+# Settings Page (settings.md)
+
+The settings page for user preferences — language switching, account information, and theme settings. Clean, organized, and functional with a settings-list layout pattern.
+
+| Property | Value |
+|----------|-------|
+| Route | `/settings` |
+| Sections | 4 |
+| Purpose | User preferences, account info, and app configuration |
+
+---
+
+## Page Layout
+
+Standard app layout: sidebar + content area. Settings are organized in cards by category.
+
+```
+┌──────────────────────────────────────────────────────┐
+│ Sidebar │        Settings Content                   │
+│ 220px   │                                           │
+│         │  Top Bar: "设置"                          │
+│         │                                           │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ Language Settings                │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ Account Information              │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ Theme Settings                   │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ About / Danger Zone              │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+└─────────┴───────────────────────────────────────────┘
+```
+
+---
+
+## Section 1: Top Bar
+
+### Elements
+- **Left**: "设置" in `h2`, with `Settings` icon (20px, `text-secondary`)
+- **Right**: None
+
+### Animations
+- Fade in, 300ms
+
+---
+
+## Section 2: Language Settings Card
+
+### Overview
+Language switching between supported languages. Clear visual selection with flag/icon indicators.
+
+### Layout
+- `Card Component`, padding 24px
+- Max-width: 640px
+
+### Elements
+
+#### Card Header
+- Title: "语言设置" in `h3`
+- Subtitle: "选择你偏好的界面语言" in `body-sm`, `text-muted`
+
+#### Language Options
+Four selectable options in a vertical list:
+
+1. **中文 (简体)**
+   - Radio button (left) + "中文" label + "简体" tag (right, `body-sm`, `text-muted`)
+   - Selected: radio filled `pink-400`, row bg `pink-50`
+   - `Globe` icon beside label
+
+2. **English**
+   - Same layout
+   - Label: "English"
+
+3. **日本語**
+   - Label: "日本語"
+   - Tag: "Japanese" in `body-sm`, `text-muted`
+
+4. **한국어**
+   - Label: "한국어"
+   - Tag: "Korean" in `body-sm`, `text-muted`
+
+- Each option: full-width row, padding 14px 16px, `radius-md`, cursor pointer
+- Hover: `pink-50` bg, 150ms
+- Gap: 8px between options
+
+#### Save Button
+- "保存" `primary` button, right-aligned below options
+- Disabled until a change is made
+- Shows "已保存 ✅" briefly after save
+
+### Animations
+- Card entrance: slide up 20px + fade, 400ms
+- Language options: stagger in 50ms
+- Selection: radio fill animates (scale 0→1), 150ms, bg color transition 200ms
+- Save: button text transitions, checkmark fades in
+
+---
+
+## Section 3: Account Information Card
+
+### Overview
+Displays user account details with the ability to edit certain fields.
+
+### Layout
+- `Card Component`, padding 24px, max-width 640px
+- Margin-top: 20px
+
+### Elements
+
+#### Card Header
+- Title: "账号信息" in `h3`
+- Edit toggle: "编辑" / "取消" link in `pink-500`, `body-sm`
+
+#### Account Fields (read-only mode)
+Each field as a row:
+- Left: field label in `body-sm`, `text-muted`, width 120px
+- Right: field value in `body`, `text-primary`
+- Divider: 1px `pink-50` between rows
+
+Fields:
+1. **用户名**: "PlatonicUser_8823" — with `Edit3` icon for inline editing
+2. **邮箱**: "user@example.com" — verified badge (`CheckCircle`, green, 14px)
+3. **注册时间**: "2024年12月1日"
+4. **伴侣**: "小樱" — with small avatar (20px) + `ChevronRight` link to companion settings
+
+#### Edit Mode
+When "编辑" clicked:
+- Username becomes editable `Input Component`
+- Save / Cancel buttons appear below
+- Email shows "验证中" or verified status
+
+### Animations
+- Card entrance: slide up 20px + fade, 400ms, 100ms delay
+- Edit toggle: form fields cross-fade, 200ms
+- Save: inline checkmark animation on saved field
+
+---
+
+## Section 4: Theme Settings Card
+
+### Overview
+Theme preferences including light/dark mode toggle (future) and accent color selection.
+
+### Layout
+- `Card Component`, padding 24px, max-width 640px
+- Margin-top: 20px
+
+### Elements
+
+#### Card Header
+- Title: "主题设置" in `h3`
+- Subtitle: "自定义你的视觉体验" in `body-sm`, `text-muted`
+
+#### Theme Mode Toggle
+- Label: "主题模式" in `body-sm`, `text-secondary`
+- Toggle switch: 
+  - Left: `Sun` icon + "浅色" label
+  - Right: `Moon` icon + "深色" label
+  - Toggle track: 48px × 24px, `radius-full`, `pink-100` bg
+  - Thumb: 20px circle, white, `shadow-sm`
+  - Active side: `pink-400` fill on that half
+- Currently: light mode active (dark mode is future feature, shows "即将推出" tooltip on dark)
+
+#### Accent Color Selection
+- Label: "强调色" in `body-sm`, `text-secondary`
+- Row of 5 color circles (32px each):
+  1. Default Pink: `pink-400` — selected
+  2. Rose Gold: `rose-gold` (#E8A0BF)
+  3. Lavender: `purple-memory` (#C8A8E9)
+  4. Coral: `#FF8A80`
+  5. Mint: `#80CBC4`
+- Selected: 3px white border + 2px `text-primary` outer ring + `shadow-glow`
+- Hover: `scale(1.1)`, 150ms
+
+#### Font Size Slider
+- Label: "字体大小" in `body-sm`, `text-secondary`
+- Slider: `Slider Component` (same as customize page), range "小" to "大"
+- Default: middle position
+- Preview text below: "这是预览文字" in dynamic size
+
+### Animations
+- Card entrance: slide up 20px + fade, 400ms, 200ms delay
+- Toggle switch: thumb slides with spring animation, 300ms
+- Color selection: ring scales in (0→1), 200ms, glow appears
+- Font slider: real-time preview text size transition, 150ms
+
+---
+
+## Section 5: About & Danger Zone
+
+### Layout
+- `Card Component`, padding 24px, max-width 640px
+- Margin-top: 20px
+
+### Elements
+
+#### About Section
+- Title: "关于 Platonic" in `h3`
+- App version: "v1.0.0" in `body-sm`, `text-muted`
+- Links: "服务条款" / "隐私政策" / "联系我们" — `body-sm`, `pink-500`, horizontal row
+- Copyright: "2024 Platonic AI" in `body-sm`, `text-muted`
+
+#### Danger Zone (bottom of card, separated by divider)
+- Divider: 1px `pink-100`, margin 20px 0
+- Label: "危险操作" in `label`, `#DC2626`
+- **Logout Button**: `ghost` style, `text-secondary`, `LogOut` icon — "退出登录"
+- **Delete Account**: text-only button, `danger` color (#DC2626), `Trash2` icon — "注销账号"
+  - Click: confirmation modal required
+  - Modal: "确定要注销账号吗？此操作不可撤销。" + "确认注销" (danger button) + "取消"
+
+### Animations
+- Card entrance: slide up 20px + fade, 400ms, 300ms delay
+- Danger buttons: no special animation, standard hover
+- Delete confirmation modal: standard modal animation (scale 0.93→1, 300ms)

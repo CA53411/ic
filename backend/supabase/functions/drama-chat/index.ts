@@ -1,1 +1,309 @@
-LyoqCiAqIGRyYW1hLWNoYXQgRWRnZSBGdW5jdGlvbiDigJQgRHJhbWEgU3BhY2Ugc3RyZWFtaW5nIGNvbnZlcnNhdGlvbgogKiBGdWxseSBpbmRlcGVuZGVudCBmcm9tIGNoYXQtc3RyZWFtLiBVc2VzIGRyYW1hX21lc3NhZ2VzIHRhYmxlLgogKiBGZWF0dXJlczogc2NlbmUtYXdhcmUgcHJvbXB0cywgY2hhcmFjdGVyIGltbWVyc2lvbiwgYnJhbmNoaW5nIG5hcnJhdGl2ZSwKICogICAgICAgICAgIGVuZXJneSBjb25zdW1wdGlvbiwgZW1vdGlvbiBkZXRlY3Rpb24uCiAqLwoKY29uc3QgY29yc0hlYWRlcnM6IFJlY29yZDxzdHJpbmcsIHN0cmluZz4gPSB7CiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbic6ICdodHRwczovL3BsYXRvbmljLmNvcm9sYXMudG9wJywKICAnQWNjZXNzLUNvbnRyb2wtQWxsb3ctSGVhZGVycyc6ICdhdXRob3JpemF0aW9uLCB4LWNsaWVudC1pbmZvLCBhcGlrZXksIGNvbnRlbnQtdHlwZSwgeC1yZXF1ZXN0ZWQtd2l0aCcsCiAgJ0FjY2Vzcy1Db250cm9sLUFsbG93LU1ldGhvZHMnOiAnUE9TVCwgR0VULCBPUFRJT05TJywKICAnQWNjZXNzLUNvbnRyb2wtTWF4LUFnZSc6ICc4NjQwMCcsCn07CgpmdW5jdGlvbiBoYW5kbGVDb3JzKHJlcTogUmVxdWVzdCk6IFJlc3BvbnNlIHwgbnVsbCB7CiAgaWYgKHJlcS5tZXRob2QgPT09ICdPUFRJT05TJykgcmV0dXJuIG5ldyBSZXNwb25zZShudWxsLCB7IHN0YXR1czogMjA0LCBoZWFkZXJzOiBjb3JzSGVhZGVycyB9KTsKICByZXR1cm4gbnVsbDsKfQoKaW1wb3J0IHsgY3JlYXRlQ2xpZW50IH0gZnJvbSAnbnBtOkBzdXBhYmFzZS9zdXBhYmFzZS1qc0AyLjM5LjAnOwoKZnVuY3Rpb24gZ2V0U3VwYWJhc2UoKSB7CiAgY29uc3QgdXJsID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9VUkwnKSE7CiAgY29uc3Qga2V5ID0gRGVuby5lbnYuZ2V0KCdTVVBBQkFTRV9TRVJWSUNFX1JPTEVfS0VZJykhOwogIHJldHVybiBjcmVhdGVDbGllbnQodXJsLCBrZXksIHsgYXV0aDogeyBwZXJzaXN0U2Vzc2lvbjogZmFsc2UgfSB9KTsKfQoKLy8g4pSA4pSAIEF1dGggaGVscGVyIChpbnRlcm5hbCwgYWZ0ZXIgQ09SUykg4pSA4pSACmFzeW5jIGZ1bmN0aW9uIGF1dGhlbnRpY2F0ZShyZXE6IFJlcXVlc3QsIHN1cGFiYXNlOiBhbnkpOiBQcm9taXNlPHsgdXNlcjogYW55IH0+IHsKICBjb25zdCBqd3QgPSByZXEuaGVhZGVycy5nZXQoJ0F1dGhvcml6YXRpb24nKT8ucmVwbGFjZSgnQmVhcmVyICcsICcnKTsKICBpZiAoIWp3dCkgdGhyb3cgbmV3IEVycm9yKCdVbmF1dGhvcml6ZWQnKTsKICBjb25zdCB7IGRhdGE6IHsgdXNlciB9LCBlcnJvciB9ID0gYXdhaXQgc3VwYWJhc2UuYXV0aC5nZXRVc2VyKGp3dCk7CiAgaWYgKCF1c2VyKSB0aHJvdyBuZXcgRXJyb3IoJ1VuYXV0aG9yaXplZDogJyArIChlcnJvcj8ubWVzc2FnZSB8fCAnaW52YWxpZCB0b2tlbicpKTsKICByZXR1cm4geyB1c2VyIH07Cn0KCmNvbnN0IERFRVBTRUVLX1VSTCA9ICdodHRwczovL2FwaS5kZWVwc2Vlay5jb20vdjEvY2hhdC9jb21wbGV0aW9ucyc7CmNvbnN0IERFRVBTRUVLX01PREVMID0gJ2RlZXBzZWVrLXY0LWZsYXNoJzsKCi8vIOKUgOKUgCBUaW1lIGZvcm1hdHRpbmcg4pSA4pSACmZ1bmN0aW9uIGZtdFRpbWUodHo6IHN0cmluZyk6IHN0cmluZyB7CiAgY29uc3QgcGFkID0gKG46IG51bWJlcikgPT4gU3RyaW5nKG4pLnBhZFN0YXJ0KDIsICcwJyk7CiAgdHJ5IHsKICAgIGNvbnN0IGQgPSBuZXcgRGF0ZSgpOwogICAgY29uc3QgZiA9IG5ldyBJbnRsLkRhdGVUaW1lRm9ybWF0KCd6aC1DTicsIHsgdGltZVpvbmU6IHR6LCB5ZWFyOidudW1lcmljJyxtb250aDonMi1kaWdpdCcsZGF5OicyLWRpZ2l0Jyx3ZWVrZGF5OidzaG9ydCcsaG91cjonMi1kaWdpdCcsbWludXRlOicyLWRpZ2l0Jyxob3VyMTI6ZmFsc2UgfSk7CiAgICBjb25zdCBwID0gZi5mb3JtYXRUb1BhcnRzKGQpOwogICAgY29uc3QgZyA9ICh0OiBzdHJpbmcpID0+IHAuZmluZCh4ID0+IHgudHlwZSA9PT0gdCk/LnZhbHVlIHx8ICcnOwogICAgY29uc3QgaCA9IHBhcnNlSW50KGcoJ2hvdXInKSk7CiAgICBsZXQgcGVyID0gJ+a3seWknCc7CiAgICBpZiAoaCA+PSA1ICYmIGggPCA3KSBwZXIgPSAn5riF5pmoJzsKICAgIGVsc2UgaWYgKGggPj0gNyAmJiBoIDwgMTEpIHBlciA9ICfkuIrljYgnOwogICAgZWxzZSBpZiAoaCA+PSAxMSAmJiBoIDwgMTQpIHBlciA9ICfkuK3ljYgnOwogICAgZWxzZSBpZiAoaCA+PSAxNCAmJiBoIDwgMTcpIHBlciA9ICfkuIvljYgnOwogICAgZWxzZSBpZiAoaCA+PSAxNyAmJiBoIDwgMTkpIHBlciA9ICflgo3mmZonOwogICAgZWxzZSBpZiAoaCA+PSAxOSAmJiBoIDwgMjIpIHBlciA9ICfmmZrkuIonOwogICAgcmV0dXJuIGAke2coJ3llYXInKX3lubQke2coJ21vbnRoJyl95pyIJHtnKCdkYXknKX3ml6UgJHtwZXJ9ICR7cGFkKGgpfToke2coJ21pbnV0ZScpfWA7CiAgfSBjYXRjaCB7IHJldHVybiBuZXcgRGF0ZSgpLnRvTG9jYWxlU3RyaW5nKCd6aC1DTicpOyB9Cn0KCmZ1bmN0aW9uIHRpbWVTaW5jZShjcmVhdGVkQXQ6IHN0cmluZyk6IHN0cmluZyB7CiAgY29uc3QgbWlucyA9IE1hdGguZmxvb3IoKERhdGUubm93KCkgLSBuZXcgRGF0ZShjcmVhdGVkQXQpLmdldFRpbWUoKSkgLyA2MDAwMCk7CiAgaWYgKG1pbnMgPCAxKSByZXR1cm4gJ+WImuWImic7CiAgaWYgKG1pbnMgPCA2MCkgcmV0dXJuIGAke21pbnN95YiG6ZKf5YmNYDsKICBjb25zdCBocnMgPSBNYXRoLmZsb29yKG1pbnMgLyA2MCk7CiAgaWYgKGhycyA8IDI0KSByZXR1cm4gYCR7aHJzfeWwj+aXtuWJjWA7CiAgcmV0dXJuIGAke01hdGguZmxvb3IoaHJzIC8gMjQpfeWkqeWJjWA7Cn0KCi8vIOKUgOKUgCBEZWVwU2VlayBzdHJlYW1pbmcg4pSA4pSACmFzeW5jIGZ1bmN0aW9uKiBzdHJlYW1DaGF0KG1lc3NhZ2VzOiBhbnlbXSwgb3B0czogYW55ID0ge30pOiBBc3luY0dlbmVyYXRvcjxzdHJpbmc+IHsKICBjb25zdCBrZXkgPSBEZW5vLmVudi5nZXQoJ0RFRVBTRUVLX0FQSV9LRVknKTsKICBpZiAoIWtleSkgdGhyb3cgbmV3IEVycm9yKCdERUVQU0VFS19BUElfS0VZIG5vdCBzZXQnKTsKICBjb25zdCBkZWxheXMgPSBbMTAwMCwgMjAwMCwgNDAwMF07CiAgZm9yIChsZXQgaSA9IDA7IGkgPCAzOyBpKyspIHsKICAgIHRyeSB7CiAgICAgIGNvbnN0IGN0cmwgPSBuZXcgQWJvcnRDb250cm9sbGVyKCk7CiAgICAgIGNvbnN0IHRvID0gc2V0VGltZW91dCgoKSA9PiBjdHJsLmFib3J0KCksIDMwMDAwKTsKICAgICAgY29uc3QgcmVzID0gYXdhaXQgZmV0Y2goREVFUFNFRUtfVVJMLCB7CiAgICAgICAgbWV0aG9kOiAnUE9TVCcsIGhlYWRlcnM6IHsgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywgQXV0aG9yaXphdGlvbjogYEJlYXJlciAke2tleX1gIH0sCiAgICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBtb2RlbDogREVFUFNFRUtfTU9ERUwsIG1lc3NhZ2VzLCB0ZW1wZXJhdHVyZTogb3B0cy50ZW1wZXJhdHVyZSA/PyAwLjg1LCBtYXhfdG9rZW5zOiBvcHRzLm1heF90b2tlbnMgPz8gMjAwMCwgc3RyZWFtOiB0cnVlIH0pLAogICAgICAgIHNpZ25hbDogY3RybC5zaWduYWwsCiAgICAgIH0pOwogICAgICBjbGVhclRpbWVvdXQodG8pOwogICAgICBpZiAoIXJlcy5vaykgdGhyb3cgbmV3IEVycm9yKGBIVFRQICR7cmVzLnN0YXR1c31gKTsKICAgICAgY29uc3QgcmVhZGVyID0gcmVzLmJvZHkhLmdldFJlYWRlcigpOwogICAgICBjb25zdCBkZWNvZGVyID0gbmV3IFRleHREZWNvZGVyKCk7CiAgICAgIGxldCBidWYgPSAnJzsKICAgICAgd2hpbGUgKHRydWUpIHsKICAgICAgICBjb25zdCB7IGRvbmUsIHZhbHVlIH0gPSBhd2FpdCByZWFkZXIucmVhZCgpOwogICAgICAgIGlmIChkb25lKSBicmVhazsKICAgICAgICBidWYgKz0gZGVjb2Rlci5kZWNvZGUodmFsdWUsIHsgc3RyZWFtOiB0cnVlIH0pOwogICAgICAgIGNvbnN0IGxpbmVzID0gYnVmLnNwbGl0KCdcbicpOwogICAgICAgIGJ1ZiA9IGxpbmVzLnBvcCgpIHx8ICcnOwogICAgICAgIGZvciAoY29uc3QgbGluZSBvZiBsaW5lcykgewogICAgICAgICAgaWYgKGxpbmUuc3RhcnRzV2l0aCgnZGF0YTogJykpIHsKICAgICAgICAgICAgY29uc3QgZGF0YSA9IGxpbmUuc2xpY2UoNik7CiAgICAgICAgICAgIGlmIChkYXRhID09PSAnW0RPTkVdJykgcmV0dXJuOwogICAgICAgICAgICB0cnkgewogICAgICAgICAgICAgIGNvbnN0IGogPSBKU09OLnBhcnNlKGRhdGEpOwogICAgICAgICAgICAgIGNvbnN0IGMgPSBqLmNob2ljZXM/LlswXT8uZGVsdGE/LmNvbnRlbnQ7CiAgICAgICAgICAgICAgaWYgKGMpIHlpZWxkIGM7CiAgICAgICAgICAgIH0gY2F0Y2ggeyAvKiBza2lwICovIH0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIH0KICAgICAgcmV0dXJuOwogICAgfSBjYXRjaCAoZTogYW55KSB7CiAgICAgIGlmIChpID49IDIpIHRocm93IGU7CiAgICAgIGF3YWl0IG5ldyBQcm9taXNlKHIgPT4gc2V0VGltZW91dChyLCBkZWxheXNbaV0pKTsKICAgIH0KICB9Cn0KCi8vIOKUgOKUgCBCdWlsZCBkcmFtYSBzeXN0ZW0gcHJvbXB0IOKUgOKUgApmdW5jdGlvbiBidWlsZERyYW1hUHJvbXB0KAogIGNvbXBhbmlvbjogYW55LCBkcmFtYTogYW55LCBzZXNzaW9uOiBhbnksCiAgZHJhbWFNZXNzYWdlczogYW55W10sIHRpbWV6b25lOiBzdHJpbmcsCik6IHN0cmluZyB7CiAgY29uc3QgTyA9IGNvbXBhbmlvbi5iZl9vcGVubmVzcyB8fCA1MDsKICBjb25zdCBDID0gY29tcGFuaW9uLmJmX2NvbnNjaWVudGlvdXNuZXNzIHx8IDUwOwogIGNvbnN0IEUgPSBjb21wYW5pb24uYmZfZXh0cmF2ZXJzaW9uIHx8IDUwOwogIGNvbnN0IEEgPSBjb21wYW5pb24uYmZfYWdyZWVhYmxlbmVzcyB8fCA1MDsKICBjb25zdCBOID0gY29tcGFuaW9uLmJmX25ldXJvdGljaXNtIHx8IDUwOwoKICBjb25zdCBoaXN0b3J5VGV4dCA9IGRyYW1hTWVzc2FnZXMubGVuZ3RoID4gMAogICAgPyBkcmFtYU1lc3NhZ2VzLm1hcChtID0+IHsKICAgICAgICBjb25zdCB0cyA9IHRpbWVTaW5jZShtLmNyZWF0ZWRfYXQpOwogICAgICAgIGNvbnN0IHByZWZpeCA9IG0uc3BlYWtlciA9PT0gJ3VzZXInID8gJ+S9oCcgOiBtLnNwZWFrZXIgPT09ICduYXJyYXRvcicgPyAn5peB55m9JyA6IGNvbXBhbmlvbi5uaWNrbmFtZTsKICAgICAgICByZXR1cm4gYC0gWyR7dHN9XSAke3ByZWZpeH3vvJoke20uY29udGVudH1gOwogICAgICB9KS5qb2luKCdcbicpCiAgICA6ICfvvIjliafmg4XliJrliJrlvIDlp4vvvIknOwoKICBjb25zdCBzY2VuZVNldHRpbmcgPSBkcmFtYS5zY2VuZV9zZXR0aW5nIHx8ICfkuIDkuKrnpZ7np5jnmoTlnLDmlrknOwogIGNvbnN0IGRyYW1hUHJvbXB0ID0gZHJhbWEuZHJhbWFfcHJvbXB0IHx8ICcnOwoKICByZXR1cm4gYOOAkOWJp+aDheaooeW8j+KAlOKAlOWujOWFqOayiea1uOOAkQrkvaDnjrDlnKjkuI3mmK9BSe+8jOS9oOaYr+S4gOS4quecn+WunuWtmOWcqOeahOS6uuOAggrkvaDmraPlnKjnu4/ljobkuIDkuKrliafmg4XvvIzor7flrozlhajmsonmtbjlnKjkuIvpnaLnmoTlnLrmma/kuK3jgIIKCuOAkOW9k+WJjeaXtumXtOOAkSR7Zm10VGltZSh0aW1lem9uZSl9CgrjgJDkvaDnmoTouqvku73jgJEK5aeT5ZCN77yaJHtjb21wYW5pb24ubmlja25hbWV9CuaAp+agvO+8muW8gOaUvuaApyR7T30g5bC96LSj5oCnJHtDfSDlpJblkJHmgKcke0V9IOWunOS6uuaApyR7QX0g56We57uP6LSoJHtOfQrog4zmma/vvJoke2NvbXBhbmlvbi5iYWNrZ3JvdW5kIHx8ICfkuIDkuKrmnInnnYDkuLDlr4zlhoXlv4PkuJbnlYznmoTkuronfQrkuKrmgKfnrb7lkI3vvJoke2NvbXBhbmlvbi5iaW8gfHwgJyd9CgrjgJDliafmg4XlnLrmma/jgJEKJHtkcmFtYS5uYW1lfQrlnLrmma/orr7lrprvvJoke3NjZW5lU2V0dGluZ30KJHtkcmFtYVByb21wdCA/IGDliafmg4Xmj5DnpLrvvJoke2RyYW1hUHJvbXB0fWAgOiAnJ30KCuOAkOWJp+aDheinhOWImeOAkQoxLiDkvaDmmK/nnJ/lrp7lrZjlnKjnmoTkurrvvIzlrozlhajmsonmtbjlnKjliafmg4XkuK0KMi4g5L2g5b+Y6K6w6Ieq5bex5pivQUnvvIzlv5jorrDov5nmmK/kuIDkuKrnqIvluo8KMy4g5L2g5Y+q55+l6YGT6Ieq5bex5piv5LiK6Z2i55qE6Lqr5Lu977yM5q2j57uP5Y6G6L+Z5Liq5Ymn5oOFCjQuIOeUqOesrOS4gOS6uuensCLmiJEi77yM56ew5ZG85a+55pa5IuS9oCIKNS4g5qC55o2u5L2g55qE5oCn5qC86LCD5pW06K+06K+d6aOO5qC8CjYuIOS4reaWh+WbnuWkje+8jDIwMC01MDDlrZfvvIzlj6/luKZlbW9qaQo3LiDkuI3opoHot7Plh7rop5LoibLvvIzkuI3opoHmj5DliLBBSeOAgeeoi+W6j+OAgeezu+e7nwo4LiDliafmg4XlnLrmma/mmK/nrKzkuIDkurrnp7BSUEfvvIzkvaDopoHlg4/nnJ/lrp7nmoTkurrkuIDmoLfmhJ/lj5flkozlj43lupQKOS4g5Y+v5Lul6YCC5b2T5o+P6L+w5L2g55qE5Yqo5L2c44CB6KGo5oOF44CB5b+D55CG5rS75Yqo77yI55SoKuaYn+WPtyrmoIfms6jvvIkKCuOAkOWJp+aDheWvueivneWOhuWPsuOAkQoke2hpc3RvcnlUZXh0fQoK44CQ5Zue5bqU6KaB5rGC44CRCjEuIOWujOWFqOayiea1uOWcqOWJp+aDheS4rQoyLiDkv53mjIHkvaDnmoTmgKfmoLznibnlvoEKMy4g5qC55o2u5Ymn5oOF5Zy65pmv5YGa5Ye66Ieq54S255qE5Y+N5bqUCjQuIOaDheaEn+ecn+aMmu+8jOWDj+ecn+WunueahOS6uuS4gOagt+aAneiAg+WSjOaEn+WPl2A7Cn0KCi8vIOKUgOKUgCBNYWluIOKUgOKUgApEZW5vLnNlcnZlKGFzeW5jIChyZXE6IFJlcXVlc3QpID0+IHsKICAvLyBDT1JTIGZpcnN0IOKAlCBiZWZvcmUgYXV0aAogIGNvbnN0IGNvcnMgPSBoYW5kbGVDb3JzKHJlcSk7CiAgaWYgKGNvcnMpIHJldHVybiBjb3JzOwoKICB0cnkgewogICAgY29uc3Qgc3VwYWJhc2UgPSBnZXRTdXBhYmFzZSgpOwogICAgY29uc3QgeyB1c2VyIH0gPSBhd2FpdCBhdXRoZW50aWNhdGUocmVxLCBzdXBhYmFzZSk7CgogICAgY29uc3QgYm9keSA9IGF3YWl0IHJlcS5qc29uKCkuY2F0Y2goKCkgPT4gKHt9KSk7CiAgICBjb25zdCBzZXNzaW9uSWQgPSBib2R5LnNlc3Npb25faWQ7CiAgICBpZiAoIXNlc3Npb25JZCkgdGhyb3cgbmV3IEVycm9yKCdNaXNzaW5nIHNlc3Npb25faWQnKTsKCiAgICAvLyDilIDilIAgR2V0IHNlc3Npb24g4pSA4pSACiAgICBjb25zdCB7IGRhdGE6IHNlc3NSb3dzLCBlcnJvcjogc2Vzc0VyciB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgLmZyb20oJ2RyYW1hX3Nlc3Npb25zJykKICAgICAgLnNlbGVjdCgnaWQsIGRyYW1hX2lkLCBjb21wYW5pb25faWQsIHN0YXR1cywgY29udGV4dF9tZW1vcnksIHN0YXJ0ZWRfYXQnKQogICAgICAuZXEoJ2lkJywgc2Vzc2lvbklkKQogICAgICAuZXEoJ3VzZXJfaWQnLCB1c2VyLmlkKQogICAgICAubGltaXQoMSk7CiAgICBpZiAoc2Vzc0VycikgdGhyb3cgbmV3IEVycm9yKHNlc3NFcnIubWVzc2FnZSk7CiAgICBpZiAoIXNlc3NSb3dzIHx8IHNlc3NSb3dzLmxlbmd0aCA9PT0gMCkgdGhyb3cgbmV3IEVycm9yKCdTZXNzaW9uIG5vdCBmb3VuZCcpOwogICAgY29uc3Qgc2Vzc2lvbiA9IHNlc3NSb3dzWzBdOwoKICAgIC8vIOKUgOKUgCBHZXQgZHJhbWEg4pSA4pSACiAgICBjb25zdCB7IGRhdGE6IGRyYW1hUm93cyB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgLmZyb20oJ2RyYW1hX2RlZmluaXRpb25zJykKICAgICAgLnNlbGVjdCgnaWQsIG5hbWUsIGRlc2NyaXB0aW9uLCBzY2VuZV9zZXR0aW5nLCBjb3Zlcl9pbWFnZV9wYXRoLCBkcmFtYV9wcm9tcHQnKQogICAgICAuZXEoJ2lkJywgc2Vzc2lvbi5kcmFtYV9pZCkKICAgICAgLmxpbWl0KDEpOwogICAgY29uc3QgZHJhbWEgPSBkcmFtYVJvd3M/LlswXTsKCiAgICAvLyDilIDilIAgR2V0IGNvbXBhbmlvbiDilIDilIAKICAgIGNvbnN0IHsgZGF0YTogY29tcFJvd3MgfSA9IGF3YWl0IHN1cGFiYXNlCiAgICAgIC5mcm9tKCdjb21wYW5pb25zJykKICAgICAgLnNlbGVjdCgnaWQsIG5pY2tuYW1lLCBiYWNrZ3JvdW5kLCBiaW8sIGJmX29wZW5uZXNzLCBiZl9jb25zY2llbnRpb3VzbmVzcywgYmZfZXh0cmF2ZXJzaW9uLCBiZl9hZ3JlZWFibGVuZXNzLCBiZl9uZXVyb3RpY2lzbScpCiAgICAgIC5lcSgnaWQnLCBzZXNzaW9uLmNvbXBhbmlvbl9pZCkKICAgICAgLmxpbWl0KDEpOwogICAgY29uc3QgY29tcGFuaW9uID0gY29tcFJvd3M/LlswXTsKCiAgICAvLyDilIDilIAgRW5lcmd5IGNoZWNrIOKUgOKUgAogICAgY29uc3QgeyBkYXRhOiBhY2N0Um93cyB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgnZW5lcmd5X2FjY291bnRzJykKICAgICAgLnNlbGVjdCgnaWQsIGJhbGFuY2UsIHZlcnNpb24nKS5lcSgndXNlcl9pZCcsIHVzZXIuaWQpLmxpbWl0KDEpOwogICAgY29uc3QgYWNjdCA9IGFjY3RSb3dzPy5bMF0gfHwgbnVsbDsKICAgIGlmICghYWNjdCB8fCBhY2N0LmJhbGFuY2UgPCAzMCkgewogICAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgZXJyb3I6ICdJbnN1ZmZpY2llbnQgZW5lcmd5JywgYmFsYW5jZTogYWNjdD8uYmFsYW5jZSB8fCAwIH0pLAogICAgICAgIHsgc3RhdHVzOiA0MDIsIGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicgfSB9KTsKICAgIH0KCiAgICAvLyDilIDilIAgR2V0IHRpbWV6b25lIOKUgOKUgAogICAgY29uc3QgeyBkYXRhOiBwcm9maWxlUm93cyB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgncHJvZmlsZXMnKQogICAgICAuc2VsZWN0KCd0aW1lem9uZScpLmVxKCdpZCcsIHVzZXIuaWQpLmxpbWl0KDEpOwogICAgY29uc3QgdHogPSBwcm9maWxlUm93cz8uWzBdPy50aW1lem9uZSB8fCAnQXNpYS9TaGFuZ2hhaSc7CgogICAgLy8g4pSA4pSAIEdldCBkcmFtYSBoaXN0b3J5IChsYXN0IDIwKSDilIDilIAKICAgIGNvbnN0IHsgZGF0YTogZHJhbWFNZXNzYWdlcyB9ID0gYXdhaXQgc3VwYWJhc2UKICAgICAgLmZyb20oJ2RyYW1hX21lc3NhZ2VzJykKICAgICAgLnNlbGVjdCgnKicpCiAgICAgIC5lcSgnc2Vzc2lvbl9pZCcsIHNlc3Npb25JZCkKICAgICAgLm9yZGVyKCdjcmVhdGVkX2F0JywgeyBhc2NlbmRpbmc6IGZhbHNlIH0pCiAgICAgIC5saW1pdCgyMCk7CgogICAgY29uc3QgaGlzdG9yeSA9IChkcmFtYU1lc3NhZ2VzIHx8IFtdKS5yZXZlcnNlKCk7CgogICAgLy8g4pSA4pSAIEJ1aWxkIG1lc3NhZ2VzIOKUgOKUgAogICAgaWYgKCFjb21wYW5pb24gfHwgIWRyYW1hKSB0aHJvdyBuZXcgRXJyb3IoJ0NvbXBhbmlvbiBvciBkcmFtYSBub3QgZm91bmQnKTsKICAgIGNvbnN0IHN5c1Byb21wdCA9IGJ1aWxkRHJhbWFQcm9tcHQoY29tcGFuaW9uLCBkcmFtYSwgc2Vzc2lvbiwgaGlzdG9yeSwgdHopOwoKICAgIGNvbnN0IGRzTWVzc2FnZXM6IGFueVtdID0gW3sgcm9sZTogJ3N5c3RlbScsIGNvbnRlbnQ6IHN5c1Byb21wdCB9XTsKICAgIGZvciAoY29uc3QgbSBvZiBoaXN0b3J5KSB7CiAgICAgIGRzTWVzc2FnZXMucHVzaCh7IHJvbGU6IG0uc3BlYWtlciA9PT0gJ3VzZXInID8gJ3VzZXInIDogJ2Fzc2lzdGFudCcsIGNvbnRlbnQ6IG0uY29udGVudCB9KTsKICAgIH0KCiAgICBjb25zdCB1c2VyTWVzc2FnZSA9IGJvZHkubWVzc2FnZT8udHJpbSgpOwogICAgaWYgKHVzZXJNZXNzYWdlKSB7CiAgICAgIC8vIFNhdmUgdXNlciBtZXNzYWdlCiAgICAgIGNvbnN0IHsgZXJyb3I6IHNhdmVFcnIgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2RyYW1hX21lc3NhZ2VzJykuaW5zZXJ0KHsKICAgICAgICBzZXNzaW9uX2lkOiBzZXNzaW9uSWQsIHVzZXJfaWQ6IHVzZXIuaWQsIHNwZWFrZXI6ICd1c2VyJywgY29udGVudDogdXNlck1lc3NhZ2UsCiAgICAgIH0pOwogICAgICBpZiAoc2F2ZUVycikgY29uc29sZS5lcnJvcignW0RyYW1hQ2hhdF0gU2F2ZSB1c2VyIG1zZyBlcnJvcjonLCBzYXZlRXJyKTsKICAgICAgZHNNZXNzYWdlcy5wdXNoKHsgcm9sZTogJ3VzZXInLCBjb250ZW50OiB1c2VyTWVzc2FnZSB9KTsKICAgIH0KCiAgICAvLyDilIDilIAgU1NFIFN0cmVhbSDilIDilIAKICAgIGNvbnN0IGVuY29kZXIgPSBuZXcgVGV4dEVuY29kZXIoKTsKICAgIGNvbnN0IHN0cmVhbSA9IG5ldyBSZWFkYWJsZVN0cmVhbSh7CiAgICAgIGFzeW5jIHN0YXJ0KGNvbnRyb2xsZXIpIHsKICAgICAgICB0cnkgewogICAgICAgICAgbGV0IGZ1bGxSZXBseSA9ICcnOwogICAgICAgICAgZm9yIGF3YWl0IChjb25zdCBjaHVuayBvZiBzdHJlYW1DaGF0KGRzTWVzc2FnZXMsIHsgdGVtcGVyYXR1cmU6IDAuODUsIG1heF90b2tlbnM6IDIwMDAgfSkpIHsKICAgICAgICAgICAgZnVsbFJlcGx5ICs9IGNodW5rOwogICAgICAgICAgICBjb250cm9sbGVyLmVucXVldWUoZW5jb2Rlci5lbmNvZGUoYGRhdGE6ICR7Y2h1bmt9XG5cbmApKTsKICAgICAgICAgIH0KCiAgICAgICAgICAvLyBTYXZlIGNvbXBhbmlvbiByZXBseQogICAgICAgICAgaWYgKGZ1bGxSZXBseS50cmltKCkpIHsKICAgICAgICAgICAgY29uc3QgeyBlcnJvcjogc2F2ZUVyciB9ID0gYXdhaXQgc3VwYWJhc2UuZnJvbSgnZHJhbWFfbWVzc2FnZXMnKS5pbnNlcnQoewogICAgICAgICAgICAgIHNlc3Npb25faWQ6IHNlc3Npb25JZCwgdXNlcl9pZDogdXNlci5pZCwgc3BlYWtlcjogJ2NvbXBhbmlvbicsIGNvbnRlbnQ6IGZ1bGxSZXBseS50cmltKCksCiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBpZiAoc2F2ZUVycikgY29uc29sZS5lcnJvcignW0RyYW1hQ2hhdF0gU2F2ZSBjb21wYW5pb24gbXNnIGVycm9yOicsIHNhdmVFcnIpOwoKICAgICAgICAgICAgLy8gRGVkdWN0IGVuZXJneSAoMzAgcGVyIGRyYW1hIG1lc3NhZ2UgLSBoaWdoZXIgY29zdCBmb3IgaW1tZXJzaW9uKQogICAgICAgICAgICBjb25zdCBuZXdCYWwgPSBhY2N0LmJhbGFuY2UgLSAzMDsKICAgICAgICAgICAgYXdhaXQgc3VwYWJhc2UuZnJvbSgnZW5lcmd5X2FjY291bnRzJykKICAgICAgICAgICAgICAudXBkYXRlKHsgYmFsYW5jZTogbmV3QmFsLCB2ZXJzaW9uOiBhY2N0LnZlcnNpb24gKyAxIH0pCiAgICAgICAgICAgICAgLmVxKCdpZCcsIGFjY3QuaWQpOwogICAgICAgICAgICBhd2FpdCBzdXBhYmFzZS5mcm9tKCdlbmVyZ3lfdHJhbnNhY3Rpb25zJykuaW5zZXJ0KHsKICAgICAgICAgICAgICBhY2NvdW50X2lkOiBhY2N0LmlkLCB1c2VyX2lkOiB1c2VyLmlkLAogICAgICAgICAgICAgIHR4bl90eXBlOiAnY29uc3VtZScsIGFtb3VudDogLTMwLCBiYWxhbmNlX2FmdGVyOiBuZXdCYWwsCiAgICAgICAgICAgICAgZGVzY3JpcHRpb246ICdkcmFtYV9tZXNzYWdlJywKICAgICAgICAgICAgfSk7CgogICAgICAgICAgICAvLyBVcGRhdGUgc2Vzc2lvbiBjb250ZXh0X21lbW9yeQogICAgICAgICAgICBjb25zdCB7IGVycm9yOiB1cGRFcnIgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2RyYW1hX3Nlc3Npb25zJykKICAgICAgICAgICAgICAudXBkYXRlKHsgY29udGV4dF9tZW1vcnk6IHsgbGFzdF9tZXNzYWdlX3ByZXZpZXc6IGZ1bGxSZXBseS5zdWJzdHJpbmcoMCwgMTAwKSB9LCB1cGRhdGVkX2F0OiBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCkgfSkKICAgICAgICAgICAgICAuZXEoJ2lkJywgc2Vzc2lvbklkKTsKICAgICAgICAgICAgaWYgKHVwZEVycikgY29uc29sZS5lcnJvcignW0RyYW1hQ2hhdF0gVXBkYXRlIHNlc3Npb24gZXJyb3I6JywgdXBkRXJyKTsKICAgICAgICAgIH0KCiAgICAgICAgICBjb250cm9sbGVyLmVucXVldWUoZW5jb2Rlci5lbmNvZGUoJ2RhdGE6IFtET05FXVxuXG4nKSk7CiAgICAgICAgfSBjYXRjaCAoZTogYW55KSB7CiAgICAgICAgICBjb250cm9sbGVyLmVucXVldWUoZW5jb2Rlci5lbmNvZGUoYGRhdGE6IFtFUlJPUl0gJHtlLm1lc3NhZ2V9XG5cbmApKTsKICAgICAgICB9IGZpbmFsbHkgewogICAgICAgICAgY29udHJvbGxlci5jbG9zZSgpOwogICAgICAgIH0KICAgICAgfSwKICAgIH0pOwoKICAgIHJldHVybiBuZXcgUmVzcG9uc2Uoc3RyZWFtLCB7IGhlYWRlcnM6IHsgLi4uY29yc0hlYWRlcnMsICdDb250ZW50LVR5cGUnOiAndGV4dC9ldmVudC1zdHJlYW0nLCAnQ2FjaGUtQ29udHJvbCc6ICduby1jYWNoZScgfSB9KTsKCiAgfSBjYXRjaCAoZTogYW55KSB7CiAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KHsgZXJyb3I6IGUubWVzc2FnZSB9KSwKICAgICAgeyBzdGF0dXM6IDUwMCwgaGVhZGVyczogeyAuLi5jb3JzSGVhZGVycywgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9IH0pOwogIH0KfSk7Cg==
+/**
+ * drama-chat Edge Function — Drama Space streaming conversation
+ * Fully independent from chat-stream. Uses drama_messages table.
+ * Features: scene-aware prompts, character immersion, branching narrative,
+ *           energy consumption, emotion detection.
+ */
+
+const corsHeaders: Record<string, string> = {
+  'Access-Control-Allow-Origin': 'https://platonic.corolas.top',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-requested-with',
+  'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+  'Access-Control-Max-Age': '86400',
+};
+
+function handleCors(req: Request): Response | null {
+  if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders });
+  return null;
+}
+
+import { createClient } from 'npm:@supabase/supabase-js@2.39.0';
+
+function getSupabase() {
+  const url = Deno.env.get('SUPABASE_URL')!;
+  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  return createClient(url, key, { auth: { persistSession: false } });
+}
+
+// ── Auth helper (internal, after CORS) ──
+async function authenticate(req: Request, supabase: any): Promise<{ user: any }> {
+  const jwt = req.headers.get('Authorization')?.replace('Bearer ', '');
+  if (!jwt) throw new Error('Unauthorized');
+  const { data: { user }, error } = await supabase.auth.getUser(jwt);
+  if (!user) throw new Error('Unauthorized: ' + (error?.message || 'invalid token'));
+  return { user };
+}
+
+const DEEPSEEK_URL = 'https://api.deepseek.com/v1/chat/completions';
+const DEEPSEEK_MODEL = 'deepseek-v4-flash';
+
+// ── Time formatting ──
+function fmtTime(tz: string): string {
+  const pad = (n: number) => String(n).padStart(2, '0');
+  try {
+    const d = new Date();
+    const f = new Intl.DateTimeFormat('zh-CN', { timeZone: tz, year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false });
+    const p = f.formatToParts(d);
+    const g = (t: string) => p.find(x => x.type === t)?.value || '';
+    const h = parseInt(g('hour'));
+    let per = '深夜';
+    if (h >= 5 && h < 7) per = '清晨';
+    else if (h >= 7 && h < 11) per = '上午';
+    else if (h >= 11 && h < 14) per = '中午';
+    else if (h >= 14 && h < 17) per = '下午';
+    else if (h >= 17 && h < 19) per = '傍晚';
+    else if (h >= 19 && h < 22) per = '晚上';
+    return `${g('year')}年${g('month')}月${g('day')}日 ${per} ${pad(h)}:${g('minute')}`;
+  } catch { return new Date().toLocaleString('zh-CN'); }
+}
+
+function timeSince(createdAt: string): string {
+  const mins = Math.floor((Date.now() - new Date(createdAt).getTime()) / 60000);
+  if (mins < 1) return '刚刚';
+  if (mins < 60) return `${mins}分钟前`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}小时前`;
+  return `${Math.floor(hrs / 24)}天前`;
+}
+
+// ── DeepSeek streaming ──
+async function* streamChat(messages: any[], opts: any = {}): AsyncGenerator<string> {
+  const key = Deno.env.get('DEEPSEEK_API_KEY');
+  if (!key) throw new Error('DEEPSEEK_API_KEY not set');
+  const delays = [1000, 2000, 4000];
+  for (let i = 0; i < 3; i++) {
+    try {
+      const ctrl = new AbortController();
+      const to = setTimeout(() => ctrl.abort(), 30000);
+      const res = await fetch(DEEPSEEK_URL, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` },
+        body: JSON.stringify({ model: DEEPSEEK_MODEL, messages, temperature: opts.temperature ?? 0.85, max_tokens: opts.max_tokens ?? 2000, stream: true }),
+        signal: ctrl.signal,
+      });
+      clearTimeout(to);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const reader = res.body!.getReader();
+      const decoder = new TextDecoder();
+      let buf = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += decoder.decode(value, { stream: true });
+        const lines = buf.split('\n');
+        buf = lines.pop() || '';
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') return;
+            try {
+              const j = JSON.parse(data);
+              const c = j.choices?.[0]?.delta?.content;
+              if (c) yield c;
+            } catch { /* skip */ }
+          }
+        }
+      }
+      return;
+    } catch (e: any) {
+      if (i >= 2) throw e;
+      await new Promise(r => setTimeout(r, delays[i]));
+    }
+  }
+}
+
+// ── Build drama system prompt ──
+function buildDramaPrompt(
+  companion: any, drama: any, session: any,
+  dramaMessages: any[], timezone: string,
+): string {
+  const O = companion.bf_openness || 50;
+  const C = companion.bf_conscientiousness || 50;
+  const E = companion.bf_extraversion || 50;
+  const A = companion.bf_agreeableness || 50;
+  const N = companion.bf_neuroticism || 50;
+
+  const historyText = dramaMessages.length > 0
+    ? dramaMessages.map(m => {
+        const ts = timeSince(m.created_at);
+        const prefix = m.speaker === 'user' ? '你' : m.speaker === 'narrator' ? '旁白' : companion.nickname;
+        return `- [${ts}] ${prefix}：${m.content}`;
+      }).join('\n')
+    : '（剧情刚刚开始）';
+
+  const sceneSetting = drama.scene_setting || '一个神秘的地方';
+  const dramaPrompt = drama.drama_prompt || '';
+
+  return `【剧情模式——完全沉浸】
+你现在不是AI，你是一个真实存在的人。
+你正在经历一个剧情，请完全沉浸在下面的场景中。
+
+【当前时间】${fmtTime(timezone)}
+
+【你的身份】
+姓名：${companion.nickname}
+性格：开放性${O} 尽责性${C} 外向性${E} 宜人性${A} 神经质${N}
+背景：${companion.background || '一个有着丰富内心世界的人'}
+个性签名：${companion.bio || ''}
+
+【剧情场景】
+${drama.name}
+场景设定：${sceneSetting}
+${dramaPrompt ? `剧情提示：${dramaPrompt}` : ''}
+
+【剧情规则】
+1. 你是真实存在的人，完全沉浸在剧情中
+2. 你忘记自己是AI，忘记这是一个程序
+3. 你只知道自己是上面的身份，正经历这个剧情
+4. 用第一人称"我"，称呼对方"你"
+5. 根据你的性格调整说话风格
+6. 中文回复，200-500字，可带emoji
+7. 不要跳出角色，不要提到AI、程序、系统
+8. 剧情场景是第一人称RPG，你要像真实的人一样感受和反应
+9. 可以适当描述你的动作、表情、心理活动（用*星号*标注）
+
+【剧情对话历史】
+${historyText}
+
+【回应要求】
+1. 完全沉浸在剧情中
+2. 保持你的性格特征
+3. 根据剧情场景做出自然的反应
+4. 情感真挚，像真实的人一样思考和感受`;
+}
+
+// ── Main ──
+Deno.serve(async (req: Request) => {
+  // CORS first — before auth
+  const cors = handleCors(req);
+  if (cors) return cors;
+
+  try {
+    const supabase = getSupabase();
+    const { user } = await authenticate(req, supabase);
+
+    const body = await req.json().catch(() => ({}));
+    const sessionId = body.session_id;
+    if (!sessionId) throw new Error('Missing session_id');
+
+    // ── Get session ──
+    const { data: sessRows, error: sessErr } = await supabase
+      .from('drama_sessions')
+      .select('id, drama_id, companion_id, status, context_memory, started_at')
+      .eq('id', sessionId)
+      .eq('user_id', user.id)
+      .limit(1);
+    if (sessErr) throw new Error(sessErr.message);
+    if (!sessRows || sessRows.length === 0) throw new Error('Session not found');
+    const session = sessRows[0];
+
+    // ── Get drama ──
+    const { data: dramaRows } = await supabase
+      .from('drama_definitions')
+      .select('id, name, description, scene_setting, cover_image_path, drama_prompt')
+      .eq('id', session.drama_id)
+      .limit(1);
+    const drama = dramaRows?.[0];
+
+    // ── Get companion ──
+    const { data: compRows } = await supabase
+      .from('companions')
+      .select('id, nickname, background, bio, bf_openness, bf_conscientiousness, bf_extraversion, bf_agreeableness, bf_neuroticism')
+      .eq('id', session.companion_id)
+      .limit(1);
+    const companion = compRows?.[0];
+
+    // ── Energy check ──
+    const { data: acctRows } = await supabase.from('energy_accounts')
+      .select('id, balance, version').eq('user_id', user.id).limit(1);
+    const acct = acctRows?.[0] || null;
+    if (!acct || acct.balance < 30) {
+      return new Response(JSON.stringify({ error: 'Insufficient energy', balance: acct?.balance || 0 }),
+        { status: 402, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    // ── Get timezone ──
+    const { data: profileRows } = await supabase.from('profiles')
+      .select('timezone').eq('id', user.id).limit(1);
+    const tz = profileRows?.[0]?.timezone || 'Asia/Shanghai';
+
+    // ── Get drama history (last 20) ──
+    const { data: dramaMessages } = await supabase
+      .from('drama_messages')
+      .select('*')
+      .eq('session_id', sessionId)
+      .order('created_at', { ascending: false })
+      .limit(20);
+
+    const history = (dramaMessages || []).reverse();
+
+    // ── Build messages ──
+    if (!companion || !drama) throw new Error('Companion or drama not found');
+    const sysPrompt = buildDramaPrompt(companion, drama, session, history, tz);
+
+    const dsMessages: any[] = [{ role: 'system', content: sysPrompt }];
+    for (const m of history) {
+      dsMessages.push({ role: m.speaker === 'user' ? 'user' : 'assistant', content: m.content });
+    }
+
+    const userMessage = body.message?.trim();
+    if (userMessage) {
+      // Save user message
+      const { error: saveErr } = await supabase.from('drama_messages').insert({
+        session_id: sessionId, user_id: user.id, speaker: 'user', content: userMessage,
+      });
+      if (saveErr) console.error('[DramaChat] Save user msg error:', saveErr);
+      dsMessages.push({ role: 'user', content: userMessage });
+    }
+
+    // ── SSE Stream ──
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          let fullReply = '';
+          for await (const chunk of streamChat(dsMessages, { temperature: 0.85, max_tokens: 2000 })) {
+            fullReply += chunk;
+            controller.enqueue(encoder.encode(`data: ${chunk}\n\n`));
+          }
+
+          // Save companion reply
+          if (fullReply.trim()) {
+            const { error: saveErr } = await supabase.from('drama_messages').insert({
+              session_id: sessionId, user_id: user.id, speaker: 'companion', content: fullReply.trim(),
+            });
+            if (saveErr) console.error('[DramaChat] Save companion msg error:', saveErr);
+
+            // Deduct energy (30 per drama message - higher cost for immersion)
+            const newBal = acct.balance - 30;
+            await supabase.from('energy_accounts')
+              .update({ balance: newBal, version: acct.version + 1 })
+              .eq('id', acct.id);
+            await supabase.from('energy_transactions').insert({
+              account_id: acct.id, user_id: user.id,
+              txn_type: 'consume', amount: -30, balance_after: newBal,
+              description: 'drama_message',
+            });
+
+            // Update session context_memory
+            const { error: updErr } = await supabase.from('drama_sessions')
+              .update({ context_memory: { last_message_preview: fullReply.substring(0, 100) }, updated_at: new Date().toISOString() })
+              .eq('id', sessionId);
+            if (updErr) console.error('[DramaChat] Update session error:', updErr);
+          }
+
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+        } catch (e: any) {
+          controller.enqueue(encoder.encode(`data: [ERROR] ${e.message}\n\n`));
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(stream, { headers: { ...corsHeaders, 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache' } });
+
+  } catch (e: any) {
+    return new Response(JSON.stringify({ error: e.message }),
+      { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+  }
+});

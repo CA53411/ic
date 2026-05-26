@@ -1,1 +1,234 @@
-IyBQYXltZW50IFBhZ2UgKHBheW1lbnQubWQpCgpUaGUgZW5lcmd5IHJlY2hhcmdlIGNlbnRlciB3aGVyZSB1c2VycyBjYW4gcHVyY2hhc2UgImVuZXJneSIgKOeUtemHjykg4oCUIHRoZSBpbi1hcHAgY3VycmVuY3kgZm9yIGNvbnZlcnNhdGlvbnMgYW5kIHByZW1pdW0gZmVhdHVyZXMuIEZlYXR1cmVzIGEgcHJvbWluZW50IGJhbGFuY2UgZGlzcGxheSwgdGllcmVkIHJlY2hhcmdlIHBsYW5zLCBBbGlwYXkgUVIgY29kZSBwYXltZW50IGZsb3csIGFuZCB0cmFuc2FjdGlvbiBoaXN0b3J5LgoKfCBQcm9wZXJ0eSB8IFZhbHVlIHwKfC0tLS0tLS0tLS18LS0tLS0tLXwKfCBSb3V0ZSB8IGAvcGF5bWVudGAgfAp8IFNlY3Rpb25zIHwgNSB8CnwgUHVycG9zZSB8IFJlY2hhcmdlIGVuZXJneSBiYWxhbmNlIGFuZCB2aWV3IHRyYW5zYWN0aW9uIGhpc3RvcnkgfAoKLS0tCgojIyBQYWdlIExheW91dAoKU3RhbmRhcmQgYXBwIGxheW91dDogc2lkZWJhciArIGNvbnRlbnQgYXJlYS4gQ2xlYW4sIHRydXN0d29ydGh5LCBhbmQgZW5jb3VyYWdpbmcgZGVzaWduLgoKYGBgCuKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkArilIIgU2lkZWJhciDilIIgICAgICAgIFBheW1lbnQgQ29udGVudCAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAyMjBweCAgIOKUgiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICBUb3AgQmFyOiAi5pSv5LuY5Lit5b+DIiAgICAgICAgICAgICAgICAgICAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgRW5lcmd5IEJhbGFuY2UgQ2FyZCAobGFyZ2UpICAgICAg4pSCICAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgICLpgInmi6nlhYXlgLzlpZfppJAiICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSM4pSA4pSA4pSA4pSA4pSQIOKUjOKUgOKUgOKUgOKUgOKUkCDilIzilIDilIDilIDilIDilJAg4pSM4pSA4pSA4pSA4pSA4pSQIOKUjOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIJQMSAg4pSCIOKUglAyICDilIIg4pSCUDMgIOKUgiDilIJQNCAg4pSCIOKUglA1ICDilIIgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSU4pSA4pSA4pSA4pSA4pSYIOKUlOKUgOKUgOKUgOKUgOKUmCDilJTilIDilIDilIDilIDilJgg4pSU4pSA4pSA4pSA4pSA4pSYIOKUlOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIOKUjOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUkCAgICDilIIK4pSCICAgICAgICAg4pSCICDilIIgUGF5bWVudCBNZXRob2QgKEFsaXBheSBRUikgICAgICAg4pSCICAgIOKUggrilIIgICAgICAgICDilIIgIOKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmCAgICDilIIK4pSCICAgICAgICAg4pSCICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKUggrilIIgICAgICAgICDilIIgIFRyYW5zYWN0aW9uIEhpc3RvcnkgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSQICAgIOKUggrilIIgICAgICAgICDilIIgIOKUgiBMaXN0IG9mIHBhc3QgdHJhbnNhY3Rpb25zICAgICAgICDilIIgICAg4pSCCuKUgiAgICAgICAgIOKUgiAg4pSU4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSYICAgIOKUggrilIIgICAgICAgICDilIIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4pSCCuKUlOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUtOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUmApgYGAKCi0tLQoKIyMgU2VjdGlvbiAxOiBUb3AgQmFyCgojIyMgRWxlbWVudHMKLSAqKkxlZnQqKjogIuaUr+S7mOS4reW/gyIgaW4gYGgyYCwgd2l0aCBgWmFwYCBpY29uICgyMHB4LCBgZ29sZGApCi0gKipSaWdodCoqOiBDdXJyZW50IGJhbGFuY2UgcGlsbDogIuKaoSAxLDI4MCIgaW4gYGJvZHktc21gLCBgZ29sZGAsIGBwaW5rLTUwYCBiZywgYHJhZGl1cy1mdWxsYAoKIyMjIEFuaW1hdGlvbnMKLSBGYWRlIGluLCAzMDBtcwoKLS0tCgojIyBTZWN0aW9uIDI6IEVuZXJneSBCYWxhbmNlIENhcmQKCiMjIyBPdmVydmlldwpBIGxhcmdlLCB2aXN1YWxseSBzdHJpa2luZyBiYWxhbmNlIGRpc3BsYXkgY2FyZC4gVGhpcyBpcyB0aGUgaGVybyBlbGVtZW50IG9mIHRoZSBwYXltZW50IHBhZ2Ug4oCUIGJpZyBudW1iZXJzLCBjbGVhbiBkZXNpZ24sIGVuY291cmFnaW5nIHJlY2hhcmdlLgoKIyMjIExheW91dAotIEZ1bGwgY29udGVudCB3aWR0aAotIENhcmQ6IGBDYXJkIENvbXBvbmVudGAsIHBhZGRpbmcgNDBweCwgYHJhZGl1cy14bGAKLSBCYWNrZ3JvdW5kOiBgYWNjZW50LWdyYWRpZW50YCAodGhlIGNhcmQgaXRzZWxmIHVzZXMgdGhlIGdyYWRpZW50KQotIFRleHQ6IHdoaXRlCgojIyMgRWxlbWVudHMKCiMjIyMgRWxlbWVudDogIkJhbGFuY2UgTGFiZWwiCi0gIuW9k+WJjeeUtemHj+S9meminSIgaW4gYGJvZHlgLCB3aGl0ZSBhdCA4MCUKLSBgWmFwYCBpY29uICgyNHB4KSBiZXNpZGUgbGFiZWwKCiMjIyMgRWxlbWVudDogIkJhbGFuY2UgTnVtYmVyIgotICIxLDI4MCIgaW4gYG51bWJlcmAgdG9rZW4gKDQ4cHgsIGV2ZW4gbGFyZ2VyIGhlcmUpLCB3aGl0ZSwgYm9sZAotICLimqEiIHVuaXQgaWNvbiwgMjhweCwgd2hpdGUsIGJlc2lkZSBudW1iZXIKLSBgc2hhZG93LWdsb3dgIHRleHQgc2hhZG93IGZvciBlbXBoYXNpcwoKIyMjIyBFbGVtZW50OiAiQmFsYW5jZSBTdWItaW5mbyIKLSAi5aSn57qm5Y+v5pSv5oyBIDEyOCDmrKHmma7pgJrlr7nor50iIGluIGBib2R5LXNtYCwgd2hpdGUgYXQgNzAlCi0gUHJvZ3Jlc3MgYmFyIGJlbG93OiB0aGluICg2cHgpLCB3aGl0ZSBhdCAyMCUgdHJhY2ssIHdoaXRlIGZpbGwgYXQgfjYwJQotIExhYmVsOiAi5L2/55So6L+b5bqmIiBpbiBgYm9keS1zbWAsIHdoaXRlIGF0IDYwJQoKIyMjIyBFbGVtZW50OiAiUmVjaGFyZ2UgQ1RBIgotICLnlLXph4/kuI3otrPml7bvvIzlhYXlgLzljbPlj6/nu6fnu63kuI7kvLTkvqPnlYXogYoiIGluIGBib2R5LXNtYCwgd2hpdGUgYXQgNzAlCi0gUG9zaXRpb25lZCBhdCBib3R0b20tcmlnaHQgb2YgY2FyZAoKIyMjIEFuaW1hdGlvbnMKLSAqKkNhcmQgZW50cmFuY2UqKjogU2xpZGUgdXAgMzBweCArIGZhZGUsIDYwMG1zCi0gKipCYWxhbmNlIG51bWJlcioqOiBDb3VudHMgdXAgZnJvbSAwIHRvIDEyODAsIDIwMDBtcywgZWFzZS1zbW9vdGgKLSAqKlByb2dyZXNzIGJhcioqOiBXaWR0aCAw4oaSNjAlLCAxMjAwbXMsIDUwMG1zIGRlbGF5Ci0gKipHbG93IGVmZmVjdCoqOiBTdWJ0bGUgYHNoYWRvdy1nbG93YCBwdWxzZSBvbiB0aGUgbnVtYmVyLCAzcyBpbmZpbml0ZSwgc3RhcnRzIGFmdGVyIGNvdW50LXVwCgotLS0KCiMjIFNlY3Rpb24gMzogUmVjaGFyZ2UgUGxhbnMKCiMjIyBPdmVydmlldwpTaXggdGllcmVkIHJlY2hhcmdlIHBsYW4gY2FyZHMuIEVhY2ggb2ZmZXJzIGRpZmZlcmVudCBlbmVyZ3kgYW1vdW50cyBhdCBkaWZmZXJlbnQgcHJpY2UgcG9pbnRzLCB3aXRoIHBvcHVsYXIvYmVzdC12YWx1ZSBoaWdobGlnaHRpbmcuCgojIyMgTGF5b3V0Ci0gU2VjdGlvbiB0aXRsZTogIumAieaLqeWFheWAvOWll+mkkCIgaW4gYGgyYCwgbWFyZ2luLWJvdHRvbSAyNHB4Ci0gR3JpZDogMyBjb2x1bW5zIG9uIGRlc2t0b3AsIDIgb24gdGFibGV0LCAxIG9uIG1vYmlsZQotIEdhcDogMjBweAoKIyMjIFBsYW4gQ2FyZCBEZXNpZ24KCkVhY2ggcGxhbiBjYXJkOgotICoqQ29udGFpbmVyKio6IGBDYXJkIENvbXBvbmVudGAsIHBhZGRpbmcgMjhweCwgdGV4dCBjZW50ZXJlZAotICoqQm9yZGVyKio6IDJweCB0cmFuc3BhcmVudCwgYmVjb21lcyBgcGluay00MDBgIHdoZW4gc2VsZWN0ZWQKLSAqKkJvcmRlciByYWRpdXMqKjogYHJhZGl1cy1sZ2AKCiMjIyMgQ2FyZCBDb250ZW50Ci0gKipFbmVyZ3kgQW1vdW50Kio6IExhcmdlIG51bWJlciwgZS5nLiwgIjUwMCIgaW4gYG51bWJlcmAgdG9rZW4gKDM2cHgpLCBgdGV4dC1wcmltYXJ5YAotICoqVW5pdCoqOiAi4pqhIiBpbiBgZ29sZGAsIDIwcHgKLSAqKkJvbnVzIFRhZyoqIChpZiBhcHBsaWNhYmxlKTogcGlsbCBiYWRnZSwgYGFjY2VudC1ncmFkaWVudGAsIHdoaXRlIHRleHQsIGUuZy4sICIrNTAg6LWg6YCBIgotICoqUHJpY2UqKjogIsKlOS45OSIgaW4gYGgyYCwgYHBpbmstNTAwYAotICoqUGVyLXVuaXQgcHJpY2UqKjogIuKJiCDCpTAuMDIv5qyhIiBpbiBgYm9keS1zbWAsIGB0ZXh0LW11dGVkYAotICoqUG9wdWxhciBiYWRnZSoqIChmb3IgcmVjb21tZW5kZWQgcGxhbik6ICLmnIDlj5fmrKLov44iIHJpYmJvbiBhdCB0b3AtcmlnaHQgY29ybmVyLCBgZ29sZGAgYmcsIHdoaXRlIHRleHQKCiMjIyMgUGxhbiBUaWVycwoKfCBQbGFuIHwgRW5lcmd5IHwgQm9udXMgfCBQcmljZSB8IFBvcHVsYXIgfAp8LS0tLS0tfC0tLS0tLS0tfC0tLS0tLS18LS0tLS0tLXwtLS0tLS0tLS18Cnwg5YWl6ZeoIHwgMTAwIHwg4oCUIHwgwqUxLjk5IHwgfAp8IOWfuuehgCB8IDMwMCB8ICsyMCB8IMKlNC45OSB8IHwKfCDmoIflh4YgfCA1MDAgfCArNTAgfCDCpTkuOTkgfCDimIUgfAp8IOmrmOe6pyB8IDEwMDAgfCArMTUwIHwgwqUxOC45OSB8IHwKfCDosarljY4gfCAzMDAwIHwgKzYwMCB8IMKlNDkuOTkgfCB8Cnwg6Iez5bCKIHwgMTAwMDAgfCArMjUwMCB8IMKlMTQ5Ljk5IHwgfAoKIyMjIyBTZWxlY3RlZCBTdGF0ZQotIEJvcmRlcjogMnB4IGBwaW5rLTQwMGAKLSBCYWNrZ3JvdW5kOiBgcGluay01MGAKLSBgc2hhZG93LWdsb3dgIGVmZmVjdAotIFJhZGlvIGluZGljYXRvcjogZmlsbGVkIGBwaW5rLTQwMGAgY2lyY2xlIGF0IHRvcC1sZWZ0CgojIyMjIENhcmQgSG92ZXIKLSBgdHJhbnNsYXRlWSgtNHB4KWAgKyBgc2hhZG93LWxnYCwgMjAwbXMKLSBCb3JkZXI6IDFweCBgcGluay0yMDBgCgojIyMgQW5pbWF0aW9ucwotICoqQ2FyZHMgZW50cmFuY2UqKjogU3RhZ2dlciBpbiwgc2xpZGUgdXAgMjBweCArIGZhZGUsIDgwbXMgc3RhZ2dlciwgNDAwbXMKLSAqKkNhcmQgaG92ZXIqKjogQXMgZGVzY3JpYmVkCi0gKipTZWxlY3Rpb24qKjogQm9yZGVyIGNvbG9yIHRyYW5zaXRpb25zIDIwMG1zLCBnbG93IGFwcGVhcnMgMjAwbXMsIHJhZGlvIGZpbGxzIDE1MG1zCgotLS0KCiMjIFNlY3Rpb24gNDogUGF5bWVudCBNZXRob2Qg4oCUIEFsaXBheQoKIyMjIE92ZXJ2aWV3CkFsaXBheSBRUiBjb2RlIHBheW1lbnQgZmxvdy4gQ2xlYW4sIHN0ZXAtYnktc3RlcCBwYXltZW50IGV4cGVyaWVuY2UuCgojIyMgTGF5b3V0Ci0gQXBwZWFycyBiZWxvdyBwbGFuIHNlbGVjdGlvbiB3aGVuIGEgcGxhbiBpcyBzZWxlY3RlZAotIENhcmQ6IGBDYXJkIENvbXBvbmVudGAsIG1heC13aWR0aCA0ODBweCwgY2VudGVyZWQsIHBhZGRpbmcgMzJweAoKIyMjIEVsZW1lbnRzCgojIyMjIEVsZW1lbnQ6ICJTZWxlY3RlZCBQbGFuIFN1bW1hcnkiCi0gIuW3sumAieaLqTogNTAw4pqhICsgNTDimqHotaDpgIEiIGluIGBib2R5YAotICLlupTku5jph5Hpop06IMKlOS45OSIgaW4gYGgzYCwgYHBpbmstNTAwYAotIERpdmlkZXI6IDFweCBgcGluay0xMDBgCgojIyMjIEVsZW1lbnQ6ICJBbGlwYXkgUVIgQ29kZSIKLSBMYWJlbDogIuS9v+eUqOaUr+S7mOWuneaJq+eggeaUr+S7mCIgaW4gYGg0YAotIFFSIENvZGUgcGxhY2Vob2xkZXI6IDIwMHB4IMOXIDIwMHB4IHdoaXRlIHNxdWFyZSB3aXRoIGNlbnRlcmVkICLkuoznu7TnoIEiIHRleHQKICAtIEluIGltcGxlbWVudGF0aW9uOiBnZW5lcmF0ZSBhY3R1YWwgQWxpcGF5IFFSCiAgLSBCb3JkZXI6IDFweCBgcGluay0xMDBgLCBgcmFkaXVzLW1kYAotIEJlbG93IFFSOiAi5omT5byA5pSv5LuY5a6d5omr5LiA5omrIiBpbiBgYm9keS1zbWAsIGB0ZXh0LW11dGVkYAotIFJlZnJlc2ggYnV0dG9uOiAi5Yi35paw5LqM57u056CBIiBsaW5rIGluIGBwaW5rLTUwMGAsIGBib2R5LXNtYAoKIyMjIyBFbGVtZW50OiAiUGF5bWVudCBTdGF0dXMiCi0gQXV0by1jaGVja2luZyBwYXltZW50IHN0YXR1cwotICLnrYnlvoXmlK/ku5guLi4iIHdpdGggc3Bpbm5lciBhbmltYXRpb24KLSBBZnRlciBzdWNjZXNzOiAi5pSv5LuY5oiQ5YqfISDinIUiICsgcmVkaXJlY3Qgb3IgYmFsYW5jZSB1cGRhdGUKCiMjIyMgQWx0ZXJuYXRpdmUKLSAi5YW25LuW5pSv5LuY5pa55byPIiBleHBhbmRhYmxlIHNlY3Rpb24gKHBsYWNlaG9sZGVyIGZvciBmdXR1cmUpCi0gIuW+ruS/oeaUr+S7mCAo5Y2z5bCG5o6o5Ye6KSIgLyAi6ZO26KGM5Y2hICjljbPlsIbmjqjlh7opIiDigJQgZGlzYWJsZWQKCiMjIyBBbmltYXRpb25zCi0gKipTZWN0aW9uIGFwcGVhcnMqKjogU2xpZGUgZG93biArIGZhZGUsIDQwMG1zLCBhZnRlciBwbGFuIHNlbGVjdGlvbgotICoqUVIgY29kZSoqOiBGYWRlcyBpbiAzMDBtcwotICoqU3Bpbm5lcioqOiBDb250aW51b3VzIHJvdGF0aW9uIGFuaW1hdGlvbiwgMXMgbGluZWFyIGluZmluaXRlCi0gKipTdWNjZXNzKio6IFFSIHJlcGxhY2VkIGJ5IGFuaW1hdGVkIGNoZWNrbWFyayArIHN1Y2Nlc3MgdGV4dCwgNTAwbXMKCi0tLQoKIyMgU2VjdGlvbiA1OiBUcmFuc2FjdGlvbiBIaXN0b3J5CgojIyMgT3ZlcnZpZXcKQSBjbGVhbiBsaXN0IG9mIHBhc3QgcmVjaGFyZ2UgdHJhbnNhY3Rpb25zIHdpdGggZGF0ZSwgYW1vdW50LCBhbmQgc3RhdHVzLgoKIyMjIExheW91dAotIFNlY3Rpb24gdGl0bGU6ICLkuqTmmJPorrDlvZUiIGluIGBoMmAsIHdpdGggYENsb2NrYCBpY29uCi0gQ2FyZDogYENhcmQgQ29tcG9uZW50YCwgcGFkZGluZyAwIChsaXN0IGJsZWVkcyB0byBlZGdlcykKCiMjIyBFbGVtZW50cwoKIyMjIyBIZWFkZXIgUm93Ci0gQ29sdW1uIGhlYWRlcnM6IOaXpeacnyAvIOWll+mkkCAvIOmHkeminSAvIOeKtuaAgQotIEZvbnQ6IGBsYWJlbGAsIGB0ZXh0LW11dGVkYAotIEJhY2tncm91bmQ6IGBwaW5rLTUwYCwgcGFkZGluZyAxMnB4IDIwcHgKCiMjIyMgVHJhbnNhY3Rpb24gUm93cwpFYWNoIHJvdzoKLSBQYWRkaW5nOiAxNHB4IDIwcHgKLSBCb3JkZXItYm90dG9tOiAxcHggYHBpbmstNTBgCi0gQ29sdW1uczoKICAtICoq5pel5pyfKio6ICIyMDI0LTEyLTE1IDE0OjMyIiBpbiBgYm9keS1zbWAKICAtICoq5aWX6aSQKio6ICI1MDDimqEgKyA1MOKaoei1oOmAgSIgaW4gYGJvZHktc21gCiAgLSAqKumHkeminSoqOiAiwqU5Ljk5IiBpbiBgYm9keS1zbWAsIGB0ZXh0LXByaW1hcnlgLCBib2xkCiAgLSAqKueKtuaAgSoqOiAKICAgIC0gQ29tcGxldGVkOiAi5bey5a6M5oiQIiBwaWxsLCBncmVlbiBiZywgd2hpdGUgdGV4dCwgYHJhZGl1cy1mdWxsYAogICAgLSBQZW5kaW5nOiAi5aSE55CG5LitIiBwaWxsLCBgZ29sZGAgYmcsIHdoaXRlIHRleHQgKyBzcGlubmVyCi0gSG92ZXI6IGBwaW5rLTUwYCBiZywgMTUwbXMKCiMjIyMgUGFnaW5hdGlvbgotIEJvdHRvbSBvZiBsaXN0Ci0gIuWKoOi9veabtOWkmiIgYnV0dG9uIGlmIG1vcmUgdGhhbiAxMCByZWNvcmRzCgojIyMgU2FtcGxlIERhdGEKCnwgRGF0ZSB8IFBsYW4gfCBBbW91bnQgfCBTdGF0dXMgfAp8LS0tLS0tfC0tLS0tLXwtLS0tLS0tLXwtLS0tLS0tLXwKfCAyMDI0LTEyLTE1IDE0OjMyIHwgNTAw4pqhICsgNTDimqEgfCDCpTkuOTkgfCDlt7LlrozmiJAgfAp8IDIwMjQtMTItMDEgMDk6MTUgfCAzMDDimqEgKyAyMOKaoSB8IMKlNC45OSB8IOW3suWujOaIkCB8CnwgMjAyNC0xMS0yMCAyMjo0OCB8IDEwMDDimqEgKyAxNTDimqEgfCDCpTE4Ljk5IHwg5bey5a6M5oiQIHwKCiMjIyBBbmltYXRpb25zCi0gKipMaXN0IGVudHJhbmNlKio6IFJvd3Mgc3RhZ2dlciBpbiwgc2xpZGUgcmlnaHQgMTBweCArIGZhZGUsIDQwbXMgc3RhZ2dlciwgMzAwbXMKLSAqKlJvdyBob3ZlcioqOiBCYWNrZ3JvdW5kIGNvbG9yIHRyYW5zaXRpb24gMTUwbXMKLSAqKlN0YXR1cyBiYWRnZSoqOiBTY2FsZSAwLjnihpIxIG9uIGxvYWQsIDIwMG1zCg==
+# Payment Page (payment.md)
+
+The energy recharge center where users can purchase "energy" (电量) — the in-app currency for conversations and premium features. Features a prominent balance display, tiered recharge plans, Alipay QR code payment flow, and transaction history.
+
+| Property | Value |
+|----------|-------|
+| Route | `/payment` |
+| Sections | 5 |
+| Purpose | Recharge energy balance and view transaction history |
+
+---
+
+## Page Layout
+
+Standard app layout: sidebar + content area. Clean, trustworthy, and encouraging design.
+
+```
+┌──────────────────────────────────────────────────────┐
+│ Sidebar │        Payment Content                    │
+│ 220px   │                                           │
+│         │  Top Bar: "支付中心"                      │
+│         │                                           │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ Energy Balance Card (large)      │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+│         │  "选择充值套餐"                           │
+│         │  ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐    │
+│         │  │P1  │ │P2  │ │P3  │ │P4  │ │P5  │    │
+│         │  └────┘ └────┘ └────┘ └────┘ └────┘    │
+│         │                                           │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ Payment Method (Alipay QR)       │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+│         │  Transaction History                      │
+│         │  ┌──────────────────────────────────┐    │
+│         │  │ List of past transactions        │    │
+│         │  └──────────────────────────────────┘    │
+│         │                                           │
+└─────────┴───────────────────────────────────────────┘
+```
+
+---
+
+## Section 1: Top Bar
+
+### Elements
+- **Left**: "支付中心" in `h2`, with `Zap` icon (20px, `gold`)
+- **Right**: Current balance pill: "⚡ 1,280" in `body-sm`, `gold`, `pink-50` bg, `radius-full`
+
+### Animations
+- Fade in, 300ms
+
+---
+
+## Section 2: Energy Balance Card
+
+### Overview
+A large, visually striking balance display card. This is the hero element of the payment page — big numbers, clean design, encouraging recharge.
+
+### Layout
+- Full content width
+- Card: `Card Component`, padding 40px, `radius-xl`
+- Background: `accent-gradient` (the card itself uses the gradient)
+- Text: white
+
+### Elements
+
+#### Element: "Balance Label"
+- "当前电量余额" in `body`, white at 80%
+- `Zap` icon (24px) beside label
+
+#### Element: "Balance Number"
+- "1,280" in `number` token (48px, even larger here), white, bold
+- "⚡" unit icon, 28px, white, beside number
+- `shadow-glow` text shadow for emphasis
+
+#### Element: "Balance Sub-info"
+- "大约可支持 128 次普通对话" in `body-sm`, white at 70%
+- Progress bar below: thin (6px), white at 20% track, white fill at ~60%
+- Label: "使用进度" in `body-sm`, white at 60%
+
+#### Element: "Recharge CTA"
+- "电量不足时，充值即可继续与伴侣畅聊" in `body-sm`, white at 70%
+- Positioned at bottom-right of card
+
+### Animations
+- **Card entrance**: Slide up 30px + fade, 600ms
+- **Balance number**: Counts up from 0 to 1280, 2000ms, ease-smooth
+- **Progress bar**: Width 0→60%, 1200ms, 500ms delay
+- **Glow effect**: Subtle `shadow-glow` pulse on the number, 3s infinite, starts after count-up
+
+---
+
+## Section 3: Recharge Plans
+
+### Overview
+Six tiered recharge plan cards. Each offers different energy amounts at different price points, with popular/best-value highlighting.
+
+### Layout
+- Section title: "选择充值套餐" in `h2`, margin-bottom 24px
+- Grid: 3 columns on desktop, 2 on tablet, 1 on mobile
+- Gap: 20px
+
+### Plan Card Design
+
+Each plan card:
+- **Container**: `Card Component`, padding 28px, text centered
+- **Border**: 2px transparent, becomes `pink-400` when selected
+- **Border radius**: `radius-lg`
+
+#### Card Content
+- **Energy Amount**: Large number, e.g., "500" in `number` token (36px), `text-primary`
+- **Unit**: "⚡" in `gold`, 20px
+- **Bonus Tag** (if applicable): pill badge, `accent-gradient`, white text, e.g., "+50 赠送"
+- **Price**: "¥9.99" in `h2`, `pink-500`
+- **Per-unit price**: "≈ ¥0.02/次" in `body-sm`, `text-muted`
+- **Popular badge** (for recommended plan): "最受欢迎" ribbon at top-right corner, `gold` bg, white text
+
+#### Plan Tiers
+
+| Plan | Energy | Bonus | Price | Popular |
+|------|--------|-------|-------|---------|
+| 入门 | 100 | — | ¥1.99 | |
+| 基础 | 300 | +20 | ¥4.99 | |
+| 标准 | 500 | +50 | ¥9.99 | ★ |
+| 高级 | 1000 | +150 | ¥18.99 | |
+| 豪华 | 3000 | +600 | ¥49.99 | |
+| 至尊 | 10000 | +2500 | ¥149.99 | |
+
+#### Selected State
+- Border: 2px `pink-400`
+- Background: `pink-50`
+- `shadow-glow` effect
+- Radio indicator: filled `pink-400` circle at top-left
+
+#### Card Hover
+- `translateY(-4px)` + `shadow-lg`, 200ms
+- Border: 1px `pink-200`
+
+### Animations
+- **Cards entrance**: Stagger in, slide up 20px + fade, 80ms stagger, 400ms
+- **Card hover**: As described
+- **Selection**: Border color transitions 200ms, glow appears 200ms, radio fills 150ms
+
+---
+
+## Section 4: Payment Method — Alipay
+
+### Overview
+Alipay QR code payment flow. Clean, step-by-step payment experience.
+
+### Layout
+- Appears below plan selection when a plan is selected
+- Card: `Card Component`, max-width 480px, centered, padding 32px
+
+### Elements
+
+#### Element: "Selected Plan Summary"
+- "已选择: 500⚡ + 50⚡赠送" in `body`
+- "应付金额: ¥9.99" in `h3`, `pink-500`
+- Divider: 1px `pink-100`
+
+#### Element: "Alipay QR Code"
+- Label: "使用支付宝扫码支付" in `h4`
+- QR Code placeholder: 200px × 200px white square with centered "二维码" text
+  - In implementation: generate actual Alipay QR
+  - Border: 1px `pink-100`, `radius-md`
+- Below QR: "打开支付宝扫一扫" in `body-sm`, `text-muted`
+- Refresh button: "刷新二维码" link in `pink-500`, `body-sm`
+
+#### Element: "Payment Status"
+- Auto-checking payment status
+- "等待支付..." with spinner animation
+- After success: "支付成功! ✅" + redirect or balance update
+
+#### Alternative
+- "其他支付方式" expandable section (placeholder for future)
+- "微信支付 (即将推出)" / "银行卡 (即将推出)" — disabled
+
+### Animations
+- **Section appears**: Slide down + fade, 400ms, after plan selection
+- **QR code**: Fades in 300ms
+- **Spinner**: Continuous rotation animation, 1s linear infinite
+- **Success**: QR replaced by animated checkmark + success text, 500ms
+
+---
+
+## Section 5: Transaction History
+
+### Overview
+A clean list of past recharge transactions with date, amount, and status.
+
+### Layout
+- Section title: "交易记录" in `h2`, with `Clock` icon
+- Card: `Card Component`, padding 0 (list bleeds to edges)
+
+### Elements
+
+#### Header Row
+- Column headers: 日期 / 套餐 / 金额 / 状态
+- Font: `label`, `text-muted`
+- Background: `pink-50`, padding 12px 20px
+
+#### Transaction Rows
+Each row:
+- Padding: 14px 20px
+- Border-bottom: 1px `pink-50`
+- Columns:
+  - **日期**: "2024-12-15 14:32" in `body-sm`
+  - **套餐**: "500⚡ + 50⚡赠送" in `body-sm`
+  - **金额**: "¥9.99" in `body-sm`, `text-primary`, bold
+  - **状态**: 
+    - Completed: "已完成" pill, green bg, white text, `radius-full`
+    - Pending: "处理中" pill, `gold` bg, white text + spinner
+- Hover: `pink-50` bg, 150ms
+
+#### Pagination
+- Bottom of list
+- "加载更多" button if more than 10 records
+
+### Sample Data
+
+| Date | Plan | Amount | Status |
+|------|------|--------|--------|
+| 2024-12-15 14:32 | 500⚡ + 50⚡ | ¥9.99 | 已完成 |
+| 2024-12-01 09:15 | 300⚡ + 20⚡ | ¥4.99 | 已完成 |
+| 2024-11-20 22:48 | 1000⚡ + 150⚡ | ¥18.99 | 已完成 |
+
+### Animations
+- **List entrance**: Rows stagger in, slide right 10px + fade, 40ms stagger, 300ms
+- **Row hover**: Background color transition 150ms
+- **Status badge**: Scale 0.9→1 on load, 200ms

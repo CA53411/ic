@@ -1,1 +1,162 @@
-LyoqIEJpZyBGaXZlIHBlcnNvbmFsaXR5IHRyYWl0cyAqLwpleHBvcnQgaW50ZXJmYWNlIEJpZ0ZpdmUgewogIG9wZW5uZXNzOiBudW1iZXI7CiAgY29uc2NpZW50aW91c25lc3M6IG51bWJlcjsKICBleHRyYXZlcnNpb246IG51bWJlcjsKICBhZ3JlZWFibGVuZXNzOiBudW1iZXI7CiAgbmV1cm90aWNpc206IG51bWJlcjsKfQoKLyoqIEFJIENvbXBhbmlvbiBwcm9maWxlICovCmV4cG9ydCBpbnRlcmZhY2UgQ29tcGFuaW9uIHsKICBpZDogc3RyaW5nOwogIG5hbWU6IHN0cmluZzsKICBhdmF0YXI6IHN0cmluZzsKICBkZXNjcmlwdGlvbjogc3RyaW5nOwogIHBlcnNvbmFsaXR5OiBCaWdGaXZlOwogIHRhZ3M6IHN0cmluZ1tdOwogIGlzRGVmYXVsdD86IGJvb2xlYW47CiAgY3JlYXRlZEF0Pzogc3RyaW5nOwp9CgovKiogVXNlciBwcm9maWxlICovCmV4cG9ydCBpbnRlcmZhY2UgUHJvZmlsZSB7CiAgaWQ6IHN0cmluZzsKICBlbWFpbDogc3RyaW5nOwogIHVzZXJuYW1lOiBzdHJpbmc7CiAgYXZhdGFyOiBzdHJpbmc7CiAgcHJlZmVycmVkTGFuZ3VhZ2U6ICd6aCcgfCAnZW4nOwogIHRoZW1lOiAnbGlnaHQnIHwgJ2RhcmsnOwogIGNyZWF0ZWRBdDogc3RyaW5nOwp9CgovKiogQ2hhdCBtZXNzYWdlICovCmV4cG9ydCBpbnRlcmZhY2UgTWVzc2FnZSB7CiAgaWQ6IHN0cmluZzsKICBjb21wYW5pb25JZDogc3RyaW5nOwogIHJvbGU6ICd1c2VyJyB8ICdjb21wYW5pb24nOwogIGNvbnRlbnQ6IHN0cmluZzsKICBlbW90aW9uPzogc3RyaW5nOwogIGNyZWF0ZWRBdDogc3RyaW5nOwp9CgovKiogTWVtb3J5IGVudHJ5IGZvciBjYWxlbmRhciAqLwpleHBvcnQgaW50ZXJmYWNlIE1lbW9yeSB7CiAgaWQ6IHN0cmluZzsKICBkYXRlOiBzdHJpbmc7CiAgdHlwZTogJ3N0bScgfCAnbHRtJyB8ICdhbnRlcmlvcic7CiAgdGl0bGU6IHN0cmluZzsKICBkZXNjcmlwdGlvbjogc3RyaW5nOwogIGNvbXBhbmlvbklkOiBzdHJpbmc7CiAgbW9vZD86IE1vb2Q7Cn0KCi8qKiBFbmVyZ3kgYWNjb3VudCBmb3IgYmlsbGluZyAqLwpleHBvcnQgaW50ZXJmYWNlIEVuZXJneUFjY291bnQgewogIGlkOiBzdHJpbmc7CiAgdXNlcklkOiBzdHJpbmc7CiAgYmFsYW5jZTogbnVtYmVyOwogIHRvdGFsVXNlZDogbnVtYmVyOwogIHRvdGFsUmVjaGFyZ2VkOiBudW1iZXI7Cn0KCi8qKiBQYXltZW50IG9yZGVyICovCmV4cG9ydCBpbnRlcmZhY2UgUGF5bWVudE9yZGVyIHsKICBpZDogc3RyaW5nOwogIHVzZXJJZDogc3RyaW5nOwogIGFtb3VudDogbnVtYmVyOwogIGVuZXJneUFtb3VudDogbnVtYmVyOwogIHN0YXR1czogJ3BlbmRpbmcnIHwgJ3BhaWQnIHwgJ2ZhaWxlZCc7CiAgcGF5bWVudE1ldGhvZDogJ2FsaXBheScgfCAnd2VjaGF0JzsKICBjcmVhdGVkQXQ6IHN0cmluZzsKICBwYWlkQXQ/OiBzdHJpbmc7Cn0KCi8qKiBEcmFtYS9zdG9yeSAqLwpleHBvcnQgaW50ZXJmYWNlIERyYW1hIHsKICBpZDogc3RyaW5nOwogIHRpdGxlOiBzdHJpbmc7CiAgZGVzY3JpcHRpb246IHN0cmluZzsKICBjb3ZlckltYWdlOiBzdHJpbmc7CiAgY29tcGFuaW9uSWQ6IHN0cmluZzsKICBzY2VuZXM6IERyYW1hU2NlbmVbXTsKICBpc0FjdGl2ZTogYm9vbGVhbjsKICBjcmVhdGVkQXQ6IHN0cmluZzsKfQoKLyoqIERyYW1hIHNjZW5lICovCmV4cG9ydCBpbnRlcmZhY2UgRHJhbWFTY2VuZSB7CiAgaWQ6IHN0cmluZzsKICBvcmRlcjogbnVtYmVyOwogIHRpdGxlOiBzdHJpbmc7CiAgY29udGVudDogc3RyaW5nOwogIGNob2ljZXM/OiBEcmFtYUNob2ljZVtdOwogIGJhY2tncm91bmRJbWFnZT86IHN0cmluZzsKfQoKLyoqIERyYW1hIGNob2ljZSAqLwpleHBvcnQgaW50ZXJmYWNlIERyYW1hQ2hvaWNlIHsKICBpZDogc3RyaW5nOwogIHRleHQ6IHN0cmluZzsKICBuZXh0U2NlbmVJZDogc3RyaW5nOwogIGVmZmVjdHM/OiB7CiAgICBhZmZlY3Rpb24/OiBudW1iZXI7CiAgICB0cnVzdD86IG51bWJlcjsKICB9Owp9CgovKiogRHJhbWEgc2Vzc2lvbiBwcm9ncmVzcyAqLwpleHBvcnQgaW50ZXJmYWNlIERyYW1hU2Vzc2lvbiB7CiAgaWQ6IHN0cmluZzsKICB1c2VySWQ6IHN0cmluZzsKICBkcmFtYUlkOiBzdHJpbmc7CiAgY3VycmVudFNjZW5lSWQ6IHN0cmluZzsKICBjaG9pY2VzOiBzdHJpbmdbXTsKICBhZmZlY3Rpb246IG51bWJlcjsKICB0cnVzdDogbnVtYmVyOwogIHN0YXJ0ZWRBdDogc3RyaW5nOwogIHVwZGF0ZWRBdDogc3RyaW5nOwp9CgovKiogTWlsZXN0b25lIGluIHRoZSByZWxhdGlvbnNoaXAgam91cm5leSAqLwpleHBvcnQgaW50ZXJmYWNlIE1pbGVzdG9uZSB7CiAgaWQ6IG51bWJlcjsKICBuYW1lOiBzdHJpbmc7CiAgbmFtZUVuOiBzdHJpbmc7CiAgZGVzY3JpcHRpb246IHN0cmluZzsKICBpY29uOiBzdHJpbmc7CiAgaXNVbmxvY2tlZDogYm9vbGVhbjsKICBpc0N1cnJlbnQ6IGJvb2xlYW47Cn0KCi8qKiBNb29kL2Vtb3Rpb24gdHJhY2tpbmcgKi8KZXhwb3J0IGludGVyZmFjZSBNb29kIHsKICBpZDogc3RyaW5nOwogIGNvbXBhbmlvbklkOiBzdHJpbmc7CiAgdXNlcklkOiBzdHJpbmc7CiAgbW9vZDogJ2hhcHB5JyB8ICdjYWxtJyB8ICdzYWQnIHwgJ2FueGlvdXMnIHwgJ2V4Y2l0ZWQnIHwgJ3RlbmRlcic7CiAgaW50ZW5zaXR5OiBudW1iZXI7CiAgbm90ZT86IHN0cmluZzsKICBkYXRlOiBzdHJpbmc7Cn0KCi8qKiBDcm93ZGZ1bmRpbmcgbWlsZXN0b25lL3BsYW4gKi8KZXhwb3J0IGludGVyZmFjZSBDcm93ZGZ1bmRpbmdQbGFuIHsKICBpZDogc3RyaW5nOwogIHRpdGxlOiBzdHJpbmc7CiAgZGVzY3JpcHRpb246IHN0cmluZzsKICB0YXJnZXRBbW91bnQ6IG51bWJlcjsKICBjdXJyZW50QW1vdW50OiBudW1iZXI7CiAgYmFja2VyczogbnVtYmVyOwogIHByZXZpZXdJbWFnZTogc3RyaW5nOwogIHN0YXR1czogJ2FjdGl2ZScgfCAnZnVuZGVkJyB8ICdsb2NrZWQnOwogIGZlYXR1cmVzOiBzdHJpbmdbXTsKICBkZWFkbGluZT86IHN0cmluZzsKfQoKLyoqIE5hdmlnYXRpb24gaXRlbSAqLwpleHBvcnQgaW50ZXJmYWNlIE5hdkl0ZW0gewogIGxhYmVsOiBzdHJpbmc7CiAgcGF0aDogc3RyaW5nOwogIGljb246IHN0cmluZzsKfQo=
+/** Big Five personality traits */
+export interface BigFive {
+  openness: number;
+  conscientiousness: number;
+  extraversion: number;
+  agreeableness: number;
+  neuroticism: number;
+}
+
+/** AI Companion profile */
+export interface Companion {
+  id: string;
+  name: string;
+  avatar: string;
+  description: string;
+  personality: BigFive;
+  tags: string[];
+  isDefault?: boolean;
+  createdAt?: string;
+}
+
+/** User profile */
+export interface Profile {
+  id: string;
+  email: string;
+  username: string;
+  avatar: string;
+  preferredLanguage: 'zh' | 'en';
+  theme: 'light' | 'dark';
+  createdAt: string;
+}
+
+/** Chat message */
+export interface Message {
+  id: string;
+  companionId: string;
+  role: 'user' | 'companion';
+  content: string;
+  emotion?: string;
+  createdAt: string;
+}
+
+/** Memory entry for calendar */
+export interface Memory {
+  id: string;
+  date: string;
+  type: 'stm' | 'ltm' | 'anterior';
+  title: string;
+  description: string;
+  companionId: string;
+  mood?: Mood;
+}
+
+/** Energy account for billing */
+export interface EnergyAccount {
+  id: string;
+  userId: string;
+  balance: number;
+  totalUsed: number;
+  totalRecharged: number;
+}
+
+/** Payment order */
+export interface PaymentOrder {
+  id: string;
+  userId: string;
+  amount: number;
+  energyAmount: number;
+  status: 'pending' | 'paid' | 'failed';
+  paymentMethod: 'alipay' | 'wechat';
+  createdAt: string;
+  paidAt?: string;
+}
+
+/** Drama/story */
+export interface Drama {
+  id: string;
+  title: string;
+  description: string;
+  coverImage: string;
+  companionId: string;
+  scenes: DramaScene[];
+  isActive: boolean;
+  createdAt: string;
+}
+
+/** Drama scene */
+export interface DramaScene {
+  id: string;
+  order: number;
+  title: string;
+  content: string;
+  choices?: DramaChoice[];
+  backgroundImage?: string;
+}
+
+/** Drama choice */
+export interface DramaChoice {
+  id: string;
+  text: string;
+  nextSceneId: string;
+  effects?: {
+    affection?: number;
+    trust?: number;
+  };
+}
+
+/** Drama session progress */
+export interface DramaSession {
+  id: string;
+  userId: string;
+  dramaId: string;
+  currentSceneId: string;
+  choices: string[];
+  affection: number;
+  trust: number;
+  startedAt: string;
+  updatedAt: string;
+}
+
+/** Milestone in the relationship journey */
+export interface Milestone {
+  id: number;
+  name: string;
+  nameEn: string;
+  description: string;
+  icon: string;
+  isUnlocked: boolean;
+  isCurrent: boolean;
+}
+
+/** Mood/emotion tracking */
+export interface Mood {
+  id: string;
+  companionId: string;
+  userId: string;
+  mood: 'happy' | 'calm' | 'sad' | 'anxious' | 'excited' | 'tender';
+  intensity: number;
+  note?: string;
+  date: string;
+}
+
+/** Crowdfunding milestone/plan */
+export interface CrowdfundingPlan {
+  id: string;
+  title: string;
+  description: string;
+  targetAmount: number;
+  currentAmount: number;
+  backers: number;
+  previewImage: string;
+  status: 'active' | 'funded' | 'locked';
+  features: string[];
+  deadline?: string;
+}
+
+/** Navigation item */
+export interface NavItem {
+  label: string;
+  path: string;
+  icon: string;
+}

@@ -1,1 +1,10 @@
-aW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnCmltcG9ydCB7IEhhc2hSb3V0ZXIgfSBmcm9tICdyZWFjdC1yb3V0ZXItZG9tJwppbXBvcnQgJy4vaW5kZXguY3NzJwppbXBvcnQgQXBwIGZyb20gJy4vQXBwLnRzeCcKCmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSEpLnJlbmRlcigKICA8SGFzaFJvdXRlcj4KICAgIDxBcHAgLz4KICA8L0hhc2hSb3V0ZXI+LAopCg==
+import { createRoot } from 'react-dom/client'
+import { HashRouter } from 'react-router-dom'
+import './index.css'
+import App from './App.tsx'
+
+createRoot(document.getElementById('root')!).render(
+  <HashRouter>
+    <App />
+  </HashRouter>,
+)
