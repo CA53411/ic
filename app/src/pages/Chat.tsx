@@ -85,13 +85,7 @@ async function saveMessageToDB(
   }
 }
 
-const {t} = useI18n();
-const quickReplies = [
-  {t('chat.quickReply1') || '今天心情很好呢～'},
-  {t('chat.quickReply2') || '想听听你的故事'},
-  {t('chat.quickReply3') || '最近有什么好玩的吗？'},
-  {t('chat.quickReply4') || '你喜欢什么样的音乐？'},
-];
+
 
 /** Typing dots - isolated perpetual animation */
 const TypingDots = React.memo(function TypingDots() {
@@ -373,6 +367,14 @@ export default function Chat() {
     setShowScrollButton(!isNearBottom);
   }, []);
 
+  // Quick reply options
+  const quickReplies = [
+    t('chat.quickReply1') || '今天心情很好呢～',
+    t('chat.quickReply2') || '想听听你的故事',
+    t('chat.quickReply3') || '最近有什么好玩的吗？',
+    t('chat.quickReply4') || '你喜欢什么样的音乐？',
+  ];
+  
   // Auto-resize textarea
   useEffect(() => {
     const textarea = textareaRef.current;
