@@ -262,7 +262,7 @@ export default function Memory() {
   }, [currentMonth]);
 
   /* Day headers (Mon-Sun) */
-  const dayHeaders = [{t('memory.monday')}, {t('memory.tuesday')}, {t('memory.wednesday')}, {t('memory.thursday')}, {t('memory.friday')}, {t('memory.saturday')}, {t('memory.sunday')}];
+  const dayHeaders = [t('memory.monday'), t('memory.tuesday'), t('memory.wednesday'), t('memory.thursday'), t('memory.friday'), t('memory.saturday'), t('memory.sunday')];
 
   /* Selected date memories */
   const selectedMemories = selectedDate ? (memories[getMemoryKey(selectedDate)] || []) : [];
@@ -323,7 +323,7 @@ export default function Memory() {
                 {t('memory.title')}
               </h2>
               <p className="text-[13px] text-[#6B5B6E] mt-0.5">
-                记录每一个特别的瞬间
+                {t('memory.description')}
               </p>
             </div>
           </div>

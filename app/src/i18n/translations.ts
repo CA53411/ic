@@ -144,6 +144,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'memory.friday': 'Fri',
     'memory.saturday': 'Sat',
     'memory.sunday': 'Sun',
+    'memory.description': 'Record every special moment',
 
     /* ── Drama ── */
     'drama.title': 'Drama Space',
@@ -406,6 +407,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'memory.friday': '五',
     'memory.saturday': '六',
     'memory.sunday': '日',
+    'memory.description': '记录每一个特别的瞬间',
 
     /* ── Drama ── */
     'drama.title': '剧情空间',
@@ -668,6 +670,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'memory.friday': '金',
     'memory.saturday': '土',
     'memory.sunday': '日',
+    'memory.description': '特別な瞬間をすべて記録しましょう',
 
     /* ── Drama ── */
     'drama.title': 'ドラマスペース',
@@ -930,6 +933,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'memory.friday': '금',
     'memory.saturday': '토',
     'memory.sunday': '일',
+    'memory.description': '특별한 순간을 모두 기록하세요',
 
     /* ── Drama ── */
     'drama.title': '드라마 공간',
