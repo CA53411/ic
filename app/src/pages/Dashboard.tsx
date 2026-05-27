@@ -1183,7 +1183,7 @@ function PreviewPanel({ companion }: { companion?: Companion | null }) {
 
             {/* Placeholder text */}
             <div className="mt-4 px-4 py-2 bg-white/60 backdrop-blur-sm rounded-xl">
-              <p className="text-[11px] text-[#6B5B6E] font-body text-center">即将上线</p>
+              <p className="text-[11px] text-[#6B5B6E] font-body text-center">{t('dashboard.comingsoon')}</p>
             </div>
           </div>
         </div>
