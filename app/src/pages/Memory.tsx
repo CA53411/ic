@@ -72,6 +72,7 @@ const emptyMemories: Record<string, MemoryItem[]> = {};
 /* ─── Login Prompt ─── */
 function LoginPrompt() {
   const navigate = useNavigate();
+  const { t } = useI18n();
 
   return (
     <motion.div
@@ -82,10 +83,10 @@ function LoginPrompt() {
     >
       <Calendar size={32} className="text-pink-300 mx-auto mb-4" />
       <h3 className="font-body text-[18px] font-bold text-plum-900 mb-2">
-        登录后查看记忆
+        {t('memory.loginPrompt.title')}
       </h3>
       <p className="font-body text-[14px] text-[#6B5B6E] mb-4">
-        请登录以查看与伴侣的甜蜜记忆
+        {t('memory.loginPrompt.description')}
       </p>
       <div className="flex items-center justify-center gap-3">
         <button
@@ -93,14 +94,14 @@ function LoginPrompt() {
           className="flex items-center gap-2 px-5 py-2 rounded-xl accent-gradient text-white font-body font-medium text-[13px] hover:brightness-110 transition-all"
         >
           <LogIn size={14} />
-          登录
+          {t('common.login')}
         </button>
         <button
           onClick={() => navigate('/auth')}
           className="flex items-center gap-2 px-5 py-2 rounded-xl border border-pink-200 text-pink-500 font-body font-medium text-[13px] hover:bg-pink-100 transition-all"
         >
           <UserPlus size={14} />
-          创建账户
+          {t('common.register')}
         </button>
       </div>
     </motion.div>
