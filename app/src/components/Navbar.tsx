@@ -16,6 +16,7 @@ import {
   Zap,
   Settings,
   Heart,
+  Trophy,
   LogOut,
   LogIn,
   Sparkles,
