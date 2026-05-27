@@ -171,15 +171,14 @@ function BuyMeACoffee() {
           </h3>
         </div>
         <p className="text-[14px] text-[#6B5B6E] leading-relaxed">
-          Corolas | Platonic 是一个独立开发的项目。你的每一份支持都将帮助我们持续优化产品，
-          为每位用户带来更温暖的陪伴体验。
+          {t('crowdfunding.platonicSupport')}
         </p>
       </div>
 
       {/* Amount Selection */}
       <div className="p-6 sm:p-8">
         <p className="text-[13px] font-semibold text-[#2D1B2E] mb-4">
-          选择支持金额
+          {t('crowdfunding.selectAmount')}
         </p>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-3 mb-6">
           {COFFEE_AMOUNTS.map((item) => {
@@ -251,7 +250,7 @@ function BuyMeACoffee() {
               flex items-center justify-center gap-2"
           >
             <LogIn size={18} />
-            登录以支持我们
+            {t('common.login')}
             <ChevronRight size={16} />
           </button>
         )}
