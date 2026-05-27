@@ -134,10 +134,11 @@ export default function DramaSpace() {
   // ── Send message ──
   const handleSend = async () => {
     const text = inputValue.trim();
+    const {t} = useI18n();
     if (!text || isStreaming || !sessionId) return;
 
     if (energy < 30) {
-      setError(t('chat.energyLow') || '能量不足，请先充值');
+      setError({t('chat.energyLow')} || '能量不足，请先充值');
       return;
     }
 
