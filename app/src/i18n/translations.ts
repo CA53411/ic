@@ -153,6 +153,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'drama.peoplePlayed': 'players',
     'drama.freeUnlock': 'Free Unlock',
     'drama.typeInScene': 'Type your lines in the drama scenes',
+    'drama.immersive': 'Immersive Drama',
 
     /* ── Settings ── */
     'settings.title': 'Settings',
@@ -400,6 +401,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'drama.peoplePlayed': '人体验',
     'drama.freeUnlock': '免费解锁',
     'drama.typeInScene': '在剧情中输入你的台词',
+    'drama.immersive': '沉浸式剧情',
 
     /* ── Settings ── */
     'settings.title': '设置',
@@ -647,6 +649,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'drama.peoplePlayed': 'プレイヤー',
     'drama.freeUnlock': '無料アンロック',
     'drama.typeInScene': 'ドラマのシーンであなたのセリフを入力してください',
+    'drama.immersive': '没入型ドラマ',
 
     /* ── Settings ── */
     'settings.title': '設定',
@@ -894,6 +897,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'drama.peoplePlayed': '플레이어',
     'drama.freeUnlock': '묶 해제',
     'drama.typeInScene': '드라마 장면에서 대사를 입력하세요',
+    'drama.immersive': '몰입형 드라마',
 
     /* ── Settings ── */
     'settings.title': '설정',
