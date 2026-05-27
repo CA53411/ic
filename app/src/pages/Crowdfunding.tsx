@@ -114,6 +114,7 @@ function BuyMeACoffee() {
   const navigate = useNavigate();
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
   const [paying, setPaying] = useState(false);
+  const { t } = useI18n();
 
   const handleSupport = async () => {
     if (!isAuthenticated) {
