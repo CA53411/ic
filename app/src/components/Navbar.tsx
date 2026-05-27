@@ -98,7 +98,7 @@ export default function Navbar({
         { label: t('nav.chat'), path: '/chat', icon: <MessageCircle size={20} /> },
         { label: t('nav.memory'), path: '/memory', icon: <Calendar size={20} /> },
         { label: t('nav.drama'), path: '/drama', icon: <BookOpen size={20} /> },
-        { label: t('nav.achievements'), path: '/achievements', icon: <Trophy size={20} /> },
+        { label: t('nav.achievement'), path: '/achievement', icon: <Trophy size={20} /> },
         { label: t('nav.payment'), path: '/payment', icon: <Zap size={20} /> },
         { label: t('nav.settings'), path: '/settings', icon: <Settings size={20} /> },
         { label: t('nav.crowdfunding'), path: '/crowdfunding', icon: <Heart size={20} /> },

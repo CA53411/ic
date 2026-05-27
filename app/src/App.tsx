@@ -22,7 +22,7 @@ import DramaSpace from './pages/DramaSpace'
 import Payment from './pages/Payment'
 import Settings from './pages/Settings'
 import Crowdfunding from './pages/Crowdfunding'
-import Achievements from './pages/Achievement'
+import Achievement from './pages/Achievement'
 import { Spinner } from './components/ui/spinner'
 
 /**
