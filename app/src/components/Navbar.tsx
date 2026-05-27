@@ -292,15 +292,10 @@ export default function Navbar({
 
         {/* ========== Copyright ========== */}
         <div className="px-4 pt-2 pb-1">
-          <p className="text-sidebar-text text-[10px] opacity-60">
+          <a className="text-sidebar-text text-[10px] opacity-60" href="mailto:corolar@corolas.top">
             &copy; 2026 Corolas | Platonic
-          </p>
-          <a
-            href="mailto:corolar@corolas.top"
-            className="text-sidebar-text text-[10px] opacity-60 hover:opacity-100 hover:text-pink-200 transition-opacity"
-          >
-            corolar@corolas.top
           </a>
+
         </div>
       </div>
     </nav>
