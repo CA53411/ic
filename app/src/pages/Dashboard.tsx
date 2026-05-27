@@ -196,7 +196,7 @@ function ErrorState({ message, onRetry }: { message: string; onRetry: () => void
         className="flex items-center gap-2 px-5 py-2.5 rounded-xl accent-gradient text-white text-[13px] font-body font-semibold hover:brightness-110 transition-all duration-150"
       >
         <RefreshCw size={14} />
-        {t('dashboard.retry')}
+        Retry
       </button>
     </div>
   );
