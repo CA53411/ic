@@ -114,6 +114,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.tilNextStageNeed': 'To reach the next stage, still need',
     'dashboard.goChat': 'Start Chatting',
     'dashboard.goChatDesc': 'Start a warm conversation with your companion',
+    'dashboard.goMemory': 'View Memories',
+    'dashboard.goMemoryDesc': 'Review your precious memories with your companion',
+    'dashboard.goDrama': 'Experience Drama',
+    'dashboard.goDramaDesc': 'Experience various dramas to enrich your relationship with your companion',
 
     /* ── Memory ── */
     'memory.title': 'Memories',
@@ -356,6 +360,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.tilNextStageNeed': '距离下一阶段还需',
     'dashboard.goChat': '开始对话',
     'dashboard.goChatDesc': '与你的伴侣开始一段温暖的对话',
+    'dashboard.goMemory': '查看记忆',
+    'dashboard.goMemoryDesc': '回顾你和伴侣的珍贵回忆',
+    'dashboard.goDrama': '体验剧情',
+    'dashboard.goDramaDesc': '体验各种剧情，让与伴侣的关系更加丰富多彩',
 
     /* ── Memory ── */
     'memory.title': '记忆',
@@ -598,6 +606,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.tilNextStageNeed': '次の段階までには、あと',
     'dashboard.goChat': 'チャットを始める',
     'dashboard.goChatDesc': 'パートナーとの温かい会話を始めましょう',
+    'dashboard.goMemory': 'メモリーを見る',
+    'dashboard.goMemoryDesc': 'あなたとパートナーの思い出を振り返りましょう',
+    'dashboard.goDrama': 'ドラマを体験',
+    'dashboard.goDramaDesc': 'パートナーと一緒にドラマを楽しみましょう',
 
     /* ── Memory ── */
     'memory.title': 'メモリー',
@@ -840,6 +852,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.tilNextStageNeed': '다음 단계까지는 ',
     'dashboard.goChat': '채팅 시작',
     'dashboard.goChatDesc': '파트너와 따뜻한 대화를 시작하세요',
+    'dashboard.goMemory': '메모리 보기',
+    'dashboard.goMemoryDesc': '파트너와의 소중한 추억을 돌아보세요',
+    'dashboard.goDrama': '드라마 체험',
+    'dashboard.goDramaDesc': '다양한 드라마를 체험하며 파트너와의 관계를 더욱 풍부하게 만들어보세요',
 
     /* ── Memory ── */
     'memory.title': '메모리',
