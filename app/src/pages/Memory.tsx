@@ -262,7 +262,7 @@ export default function Memory() {
   }, [currentMonth]);
 
   /* Day headers (Mon-Sun) */
-  const dayHeaders = ['一', '二', '三', '四', '五', '六', '日'];
+  const dayHeaders = [{t('memory.monday')}, {t('memory.tuesday')}, {t('memory.wednesday')}, {t('memory.thursday')}, {t('memory.friday')}, {t('memory.saturday')}, {t('memory.sunday')}];
 
   /* Selected date memories */
   const selectedMemories = selectedDate ? (memories[getMemoryKey(selectedDate)] || []) : [];
