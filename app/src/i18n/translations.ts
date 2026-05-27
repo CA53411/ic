@@ -103,6 +103,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.energyTooltip': 'Energy is used for chatting with your companion and unlocking features',
     'dashboard.energyRemaining': 'Energy Remaining',
     'dashboard.comingsoon': 'Coming Soon',
+    'dashboard.consoleTitle': 'Console',
 
     /* ── Memory ── */
     'memory.title': 'Memories',
@@ -334,6 +335,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.energyTooltip': '电量用于与伴侣对话和解锁功能',
     'dashboard.energyRemaining': '剩余电量',
     'dashboard.comingsoon': '即将上线',
+    'dashboard.consoleTitle': '控制台',
 
     /* ── Memory ── */
     'memory.title': '记忆',
@@ -565,6 +567,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.energyTooltip': 'エネルギーはパートナーとのチャットや機能のアンロックに使用されます',
     'dashboard.energyRemaining': '残りのエネルギー',
     'dashboard.comingsoon': '近日公開',
+    'dashboard.consoleTitle': 'コンソール',
 
     /* ── Memory ── */
     'memory.title': 'メモリー',
@@ -796,6 +799,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.energyTooltip': '에너지는 파트너와의 채팅과 기능 잠금 해제에 사용됩니다',
     'dashboard.energyRemaining': '남은 에너지',
     'dashboard.comingsoon': '곧 출시',
+    'dashboard.consoleTitle': '콘솔',
 
     /* ── Memory ── */
     'memory.title': '메모리',

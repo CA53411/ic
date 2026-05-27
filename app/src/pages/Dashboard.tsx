@@ -1465,7 +1465,7 @@ export default function Dashboard() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3 }}
             >
-              控制台
+              {t('dashboard.consoleTitle')}
             </motion.h2>
             <motion.div
               className="flex items-center gap-3"
