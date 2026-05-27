@@ -306,8 +306,8 @@ export default function Crowdfunding() {
     return [
       {
         id: 'tts-voice',
-        feature_name: t('crowdfunding.features.ttsVoice'),
-        description: t('crowdfunding.features.ttsVoiceDescription'),
+        feature_name: t('crowdfunding.featuresTTSVoice'),
+        description: t('crowdfunding.featuresTTSVoiceDescription'),
         cover_image_url: 'previews/tts-preview.jpg',
         target_amount: 40000,
         current_amount: 6200,
@@ -317,8 +317,8 @@ export default function Crowdfunding() {
       },
       {
         id: 'virtual-pet',
-        feature_name: t('crowdfunding.features.virtualPet'),
-        description: t('crowdfunding.features.virtualPetDescription'),
+        feature_name: t('crowdfunding.featuresVirtualPet'),
+        description: t('crowdfunding.featuresVirtualPetDescription'),
         cover_image_url: 'previews/pet-preview.jpg',
         target_amount: 30000,
         current_amount: 8500,
@@ -328,8 +328,8 @@ export default function Crowdfunding() {
       },
       {
         id: 'live2d-avatar',
-        feature_name: t('crowdfunding.features.live2dAvatar'),
-        description: t('crowdfunding.features.live2dAvatarDescription'),
+        feature_name: t('crowdfunding.featuresLive2dAvatar'),
+        description: t('crowdfunding.featuresLive2dAvatarDescription'),
         cover_image_url: 'previews/live2d-preview.jpg',
         target_amount: 50000,
         current_amount: 12800,
