@@ -981,32 +981,25 @@ function QuickActions({ currentStageNum, isLoading }: { currentStageNum?: number
 
   const actions = [
     {
-      label: '开始对话',
+      label: t('dashboard.goChat'),
       icon: <MessageCircle size={28} />,
-      desc: '与你的伴侣开始一段温暖对话',
+      desc: t('dashboard.goChatDesc'),
       gradient: true,
       onClick: () => navigate('/chat'),
     },
     {
-      label: t('dashboard.goPlaza'),
-      icon: <Users size={28} />,
-      desc: '发现更多有趣的灵魂伴侣',
-      gradient: false,
-      onClick: () => navigate('/plaza'),
-    },
-    {
-      label: '甜蜜记忆',
+      label: t('dashboard.goMemory'),
       icon: <Heart size={28} />,
-      desc: '回顾你们的美好回忆',
+      desc: t('dashboard.goMemoryDesc'),
       gradient: false,
       onClick: () => navigate('/memory'),
     },
     ...(showAdvancedDrama
       ? [
           {
-            label: '高级剧情',
+            label: t('dashboard.goDrama'),
             icon: <BookOpen size={28} />,
-            desc: '解锁专属的深度剧情体验',
+            desc: t('dashboard.goDramaDesc'),
             gradient: false,
             onClick: () => navigate('/drama'),
           },

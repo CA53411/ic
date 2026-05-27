@@ -112,6 +112,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.personalityProfileDesc': 'Based on the Big Five personality model',
     'dashboard.affectionPoints': 'affection points',
     'dashboard.tilNextStageNeed': 'To reach the next stage, still need',
+    'dashboard.goChat': 'Start Chatting',
+    'dashboard.goChatDesc': 'Start a warm conversation with your companion',
 
     /* ── Memory ── */
     'memory.title': 'Memories',
@@ -352,6 +354,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.personalityProfileDesc': '基于 Big Five 人格模型',
     'dashboard.affectionPoints': '点好感度',
     'dashboard.tilNextStageNeed': '距离下一阶段还需',
+    'dashboard.goChat': '开始对话',
+    'dashboard.goChatDesc': '与你的伴侣开始一段温暖的对话',
 
     /* ── Memory ── */
     'memory.title': '记忆',
@@ -592,6 +596,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.personalityProfileDesc': 'ビッグファイブ性格モデルに基づく',
     'dashboard.affectionPoints': 'の好感度が必要です',
     'dashboard.tilNextStageNeed': '次の段階までには、あと',
+    'dashboard.goChat': 'チャットを始める',
+    'dashboard.goChatDesc': 'パートナーとの温かい会話を始めましょう',
 
     /* ── Memory ── */
     'memory.title': 'メモリー',
@@ -832,6 +838,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'dashboard.personalityProfileDesc': '빅파이브 성격 모델 기반',
     'dashboard.affectionPoints': '의 친밀도가 더 필요합니다',
     'dashboard.tilNextStageNeed': '다음 단계까지는 ',
+    'dashboard.goChat': '채팅 시작',
+    'dashboard.goChatDesc': '파트너와 따뜻한 대화를 시작하세요',
 
     /* ── Memory ── */
     'memory.title': '메모리',
