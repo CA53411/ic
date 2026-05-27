@@ -306,8 +306,8 @@ export default function Crowdfunding() {
     return [
       {
         id: 'tts-voice',
-        feature_name: 'TTS语音合成',
-        description: 'Advanced text-to-speech technology for your companion. Natural, emotional voice output with multiple tones.',
+        feature_name: t('features.ttsVoice'),
+        description: t('features.ttsVoiceDescription'),
         cover_image_url: 'previews/tts-preview.jpg',
         target_amount: 40000,
         current_amount: 6200,
@@ -317,8 +317,8 @@ export default function Crowdfunding() {
       },
       {
         id: 'virtual-pet',
-        feature_name: '虚拟宠物系统',
-        description: 'Your companion can raise her own virtual pet. The pet has its own emotions and needs, adding more fun.',
+        feature_name: t('features.virtualPet'),
+        description: t('features.virtualPetDescription'),
         cover_image_url: 'previews/pet-preview.jpg',
         target_amount: 30000,
         current_amount: 8500,
@@ -328,8 +328,8 @@ export default function Crowdfunding() {
       },
       {
         id: 'live2d-avatar',
-        feature_name: 'Live2D互动形象',
-        description: 'Live2D technology for dynamic interactive avatars. Rich expressions, movements and interaction feedback.',
+        feature_name: t('features.live2dAvatar'),
+        description: t('features.live2dAvatarDescription'),
         cover_image_url: 'previews/live2d-preview.jpg',
         target_amount: 50000,
         current_amount: 12800,
