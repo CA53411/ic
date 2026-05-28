@@ -391,7 +391,7 @@ export default function Settings() {
             ? new Date(profile.created_at).toLocaleDateString('zh-CN')
             : '');
           // If has companion, load companion info
-          if (profile.current_companion_id) {
+          if (profile.status === 'HAS_COMPANION') {
             const { data: companion } = await supabase.from('companions')
               .select('id, nickname, name, avatar_url')
               .eq('user_id', user.id)
