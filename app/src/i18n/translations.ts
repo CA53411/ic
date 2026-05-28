@@ -494,7 +494,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'drama.continueExperience': '继续体验',
     'drama.restart': '重新开始',
     'drama.notStarted': '未开始',
-    'drama.totalExperiencedDramas': '总体验剧情'
+    'drama.totalExperiencedDramas': '总体验剧情',
 
     /* ── Settings ── */
     'settings.title': '设置',
