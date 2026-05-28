@@ -394,7 +394,7 @@ export default function Settings() {
           if (profile.current_companion_id) {
             const { data: companion } = await supabase.from('companions')
               .select('id, nickname, name, avatar_url')
-              .eq('id', profile.current_companion_id)
+              .eq('user_id', user.id)
               .single();
             if (companion) {
               setCompanionName(companion.nickname || companion.name);
@@ -1108,7 +1108,7 @@ export default function Settings() {
                   {t('settings.releaseConfirm')}
                 </p>
                 <p className="font-body text-[12px] text-amber-600 mt-2">
-                  释放后可以创建新的伴侣。
+                  {t('settings.releaseCanCreateNew')}
                 </p>
               </div>
               <div className="flex gap-3">

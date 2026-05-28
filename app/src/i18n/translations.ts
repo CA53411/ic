@@ -211,6 +211,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'settings.releaseConfirm': 'Are you sure you want to release your companion? This action cannot be undone.',
     'settings.updated': 'Last updated: January 1, 2026',
     'settings.passwordComingSoon': 'Password change feature coming soon',
+    'settings.releaseCanCreateNew': 'After releasing, you can meet/create a new companion.',
 
     /* ── Achievement ── */
     'achievement.title': 'Achievements',
@@ -503,6 +504,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'settings.releaseConfirm': '确定要释放伴侣吗？此操作不可撤销。',
     'settings.updated': '本政策最后更新于 2026年1月1日',
     'settings.passwordComingSoon': '修改密码功能即将推出',
+    'settings.releaseCanCreateNew': '释放后你可以认识/创建一个新的伴侣。',
 
     /* ── Achievement ── */
     'achievement.title': '成就',
@@ -795,6 +797,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'settings.releaseConfirm': 'パートナーを解放してもよろしいですか？この操作は元に戻せません。',
     'settings.updated': '最終更新: 2026年1月1日',
     'settings.passwordComingSoon': 'パスワード変更機能は近日公開予定',
+    'settings.releaseCanCreateNew': '解放後は新しいパートナーを知る/作成することができます。',
 
     /* ── Achievement ── */
     'achievement.title': '実績',
@@ -1087,6 +1090,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'settings.releaseConfirm': '파트너를 해제하시겠습니까? 이 작업은 되돌릴 수 없습니다.',
     'settings.updated': '최종 업데이트: 2026년 1월 1일',
     'settings.passwordComingSoon': '비밀번호 변경 기능이 곧 출시됩니다',
+    'settings.releaseCanCreateNew': '해제 후에는 새로운 파트너를 알고/생성할 수 있습니다.',
 
     /* ── Achievement ── */
     'achievement.title': '업적',
