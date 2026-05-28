@@ -398,7 +398,7 @@ export default function Settings() {
               .eq('user_id', user.id)
               .maybeSingle();
             if (companion) {
-              setCompanionName(companion.nickname || companion.name);
+              setCompanionName(companion.nickname);
               setCompanionId(companion.id);
               if (companion.avatar_url) setAvatar(companion.avatar_url);
             }
