@@ -106,8 +106,8 @@ const storyPrompts = [
 ];
 
 const avatarOptions = [
-  '/companion-1.jpg', '/companion-2.jpg', '/companion-3.jpg',
-  '/companion-4.jpg', '/companion-5.jpg', '/companion-6.jpg',
+  '/companion-female-xiaoying.jpg', '/companion-female-lingshuang.jpg', '/companion-female-yinyue.jpg',
+  '/companion-female-yanxia.jpg', '/companion-female-ziyuan.jpg', '/companion-female-qingkong.jpg',
 ];
 
 const genderOptions = [
