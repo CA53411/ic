@@ -394,7 +394,7 @@ export default function Settings() {
           if (profile.status === 'HAS_COMPANION') {
             const { data: companion } = await supabase.from('companions')
               .select('id, nickname, name, avatar_url')
-              .eq('user_id', profile.id)
+              .eq('user_id', user.id)
               .single();
             if (companion) {
               setCompanionName(companion.nickname || companion.name);
