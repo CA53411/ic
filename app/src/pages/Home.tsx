@@ -310,12 +310,12 @@ export default function Home() {
   };
 
   // Scroll-triggered refs
-  const conceptRef = useRef<<HTMLDivElement>(null);
-  const radarRef = useRef<<HTMLDivElement>(null);
-  const milestoneRef = useRef<<HTMLDivElement>(null);
-  const featuresRef = useRef<<HTMLDivElement>(null);
-  const testimonialRef = useRef<<HTMLDivElement>(null);
-  const ctaRef = useRef<<HTMLDivElement>(null);
+  const conceptRef = useRef<HTMLDivElement>(null);
+  const radarRef = useRef<HTMLDivElement>(null);
+  const milestoneRef = useRef<HTMLDivElement>(null);
+  const featuresRef = useRef<HTMLDivElement>(null);
+  const testimonialRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   const conceptInView = useInView(conceptRef, { once: true, amount: 0.15 });
   const radarInView = useInView(radarRef, { once: true, amount: 0.15 });
