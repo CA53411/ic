@@ -1,12 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 
-// Supabase project configuration
-const SUPABASE_URL = 'https://iqylckwmmygqutycqmlb.supabase.co'
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxeWxja3dtbXlncXV0eWNxbWxiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyMTk0MTUsImV4cCI6MjA5Mjc5NTQxNX0.LdxRP6L1HQQaQbxjegmKLa0IEaXGajXQ0mSvf0zFo8o'
-
 // Fallback to environment variables if set (for development)
-const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL as string) || SUPABASE_URL
-const supabaseKey = (import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string) || SUPABASE_KEY
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 
 export const supabase = createClient(supabaseUrl, supabaseKey)
 
