@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import {
@@ -12,13 +12,13 @@ import {
   Lock,
   Star,
   ChevronDown,
-  Sparkles as SparklesIcon,
   LayoutDashboard,
 } from 'lucide-react';
 import Footer from '../components/Footer';
 import { useAuth } from '@/hooks/useAuth';
 import { useI18n } from '@/i18n/I18nContext';
-import { getStorageUrl } from '@/lib/supabase';
+import type { Language } from '@/i18n/translations';
+import { cn } from '@/lib/utils';
 
 /* ── Animation helpers ── */
 const easeSmooth = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -49,39 +49,11 @@ const staggerChild = {
   },
 };
 
-/* ── Trait data ── */
-const traits = [
-  { name: '开放性', nameEn: 'Openness', desc: '好奇心与创造力', value: 70 },
-  { name: '尽责性', nameEn: 'Conscientiousness', desc: '条理与自律', value: 55 },
-  { name: '外向性', nameEn: 'Extraversion', desc: '社交与活力', value: 80 },
-  { name: '宜人性', nameEn: 'Agreeableness', desc: '温和与合作', value: 90 },
-  { name: '神经质', nameEn: 'Neuroticism', desc: '情绪敏感', value: 40 },
-];
-
-/* ── Milestones ── */
-const milestones = [
-  { id: 1, name: '初见乍欢', nameEn: 'First Meeting', unlocked: true, current: false },
-  { id: 2, name: '渐生情愫', nameEn: 'Growing Fondness', unlocked: true, current: false },
-  { id: 3, name: '默契相伴', nameEn: 'Silent Understanding', unlocked: true, current: true },
-  { id: 4, name: '深情厚谊', nameEn: 'Deep Affection', unlocked: false, current: false },
-  { id: 5, name: '心有灵犀', nameEn: 'Soul Connection', unlocked: false, current: false },
-];
-
-/* ── Feature grid data ── */
-const features = [
-  { icon: <Edit3 size={24} />, title: '个性化定制', desc: '从零开始创造你的理想伴侣，设定外貌、性格、背景故事', color: 'bg-pink-100 text-pink-500' },
-  { icon: <Sparkles size={24} />, title: 'Live2D互动[PENDING]', desc: '生动的Live2D形象，让陪伴更加真实温暖', color: 'bg-purple-100 text-purple-500' },
-  { icon: <Calendar size={24} />, title: '记忆系统', desc: '三种记忆层级——工作记忆、短期记忆、长期记忆，她永远记得你们的故事', color: 'bg-amber-100 text-amber-600' },
-  { icon: <BookOpen size={24} />, title: '剧情空间', desc: '沉浸式剧情体验，与伴侣共同经历精彩故事篇章', color: 'bg-rose-100 text-rose-500' },
-  { icon: <TrendingUp size={24} />, title: '情绪感知', desc: '24小时情绪波动追踪，感知她的心情变化', color: 'bg-sky-100 text-sky-500' },
-  { icon: <Lock size={24} />, title: '安全私密', desc: '端到端加密，你们的对话只属于彼此', color: 'bg-emerald-100 text-emerald-600' },
-];
-
 /* ── Floating Navigation ── */
 function FloatingNav() {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
-  const { t } = useI18n();
+  const { t, lang, setLang } = useI18n();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -119,20 +91,39 @@ function FloatingNav() {
           onClick={() => scrollToSection('concept')}
           className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
         >
-          产品功能
+          {t('nav.features')}
         </button>
         <button
           onClick={() => scrollToSection('testimonial')}
           className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
         >
-          关于我们
+          {t('nav.about')}
         </button>
         <button
           onClick={() => navigate('/crowdfunding')}
           className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
         >
-          筹资计划
+          {t('nav.crowdfunding')}
         </button>
+
+        {/* Language Switcher */}
+        <div className="flex items-center gap-1 bg-pink-50 rounded-full p-0.5 border border-pink-100">
+          {(['en', 'zh', 'ja', 'ko'] as Language[]).map((code) => (
+            <button
+              key={code}
+              onClick={() => setLang(code)}
+              className={cn(
+                'px-2 py-1 rounded-full text-[11px] font-semibold font-body transition-all duration-150',
+                lang === code
+                  ? 'bg-white text-pink-500 shadow-sm'
+                  : 'text-[#A093A5] hover:text-[#6B5B6E]'
+              )}
+            >
+              {code === 'en' ? 'EN' : code === 'zh' ? '中' : code === 'ja' ? '日' : '韩'}
+            </button>
+          ))}
+        </div>
+
         <div className="w-px h-4 bg-pink-200 mx-1" />
         <button
           onClick={() => navigate('/auth')}
@@ -146,7 +137,7 @@ function FloatingNav() {
           className="text-sm text-white accent-gradient rounded-full px-4 py-1.5
             hover:brightness-110 transition-all duration-150 shadow-glow"
         >
-          免费注册
+          {t('common.register')}
         </button>
       </div>
     </motion.nav>
@@ -154,7 +145,7 @@ function FloatingNav() {
 }
 
 /* ── Radar Chart ── */
-function RadarChart({ animate }: { animate: boolean }) {
+function RadarChart({ animate, traits }: { animate: boolean; traits: { name: string; value: number }[] }) {
   const size = 320;
   const center = size / 2;
   const radius = 120;
@@ -279,9 +270,34 @@ function RadarChart({ animate }: { animate: boolean }) {
 
 /* ── Main Home Page ── */
 export default function Home() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const navigate = useNavigate();
   const { isAuthenticated, hasCompanion } = useAuth();
+
+  const traits = useMemo(() => [
+    { name: t('home.radarOpenness'), desc: t('home.radarOpennessDesc'), value: 70 },
+    { name: t('home.radarConscientiousness'), desc: t('home.radarConscientiousnessDesc'), value: 55 },
+    { name: t('home.radarExtraversion'), desc: t('home.radarExtraversionDesc'), value: 80 },
+    { name: t('home.radarAgreeableness'), desc: t('home.radarAgreeablenessDesc'), value: 90 },
+    { name: t('home.radarNeuroticism'), desc: t('home.radarNeuroticismDesc'), value: 40 },
+  ], [t, lang]);
+
+  const milestones = useMemo(() => [
+    { id: 1, name: t('home.milestoneStage1'), unlocked: true, current: false },
+    { id: 2, name: t('home.milestoneStage2'), unlocked: true, current: false },
+    { id: 3, name: t('home.milestoneStage3'), unlocked: true, current: true },
+    { id: 4, name: t('home.milestoneStage4'), unlocked: false, current: false },
+    { id: 5, name: t('home.milestoneStage5'), unlocked: false, current: false },
+  ], [t, lang]);
+
+  const features = useMemo(() => [
+    { icon: <Edit3 size={24} />, title: t('home.gridCustomizeTitle'), desc: t('home.gridCustomizeDesc'), color: 'bg-pink-100 text-pink-500' },
+    { icon: <Sparkles size={24} />, title: t('home.gridLive2dTitle'), desc: t('home.gridLive2dDesc'), color: 'bg-purple-100 text-purple-500' },
+    { icon: <Calendar size={24} />, title: t('home.gridMemoryTitle'), desc: t('home.gridMemoryDesc'), color: 'bg-amber-100 text-amber-600' },
+    { icon: <BookOpen size={24} />, title: t('home.gridDramaTitle'), desc: t('home.gridDramaDesc'), color: 'bg-rose-100 text-rose-500' },
+    { icon: <TrendingUp size={24} />, title: t('home.gridMoodTitle'), desc: t('home.gridMoodDesc'), color: 'bg-sky-100 text-sky-500' },
+    { icon: <Lock size={24} />, title: t('home.gridPrivacyTitle'), desc: t('home.gridPrivacyDesc'), color: 'bg-emerald-100 text-emerald-600' },
+  ], [t, lang]);
 
   const handleGetStarted = () => {
     if (!isAuthenticated) {
@@ -294,12 +310,12 @@ export default function Home() {
   };
 
   // Scroll-triggered refs
-  const conceptRef = useRef<HTMLDivElement>(null);
-  const radarRef = useRef<HTMLDivElement>(null);
-  const milestoneRef = useRef<HTMLDivElement>(null);
-  const featuresRef = useRef<HTMLDivElement>(null);
-  const testimonialRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
+  const conceptRef = useRef<<HTMLDivElement>(null);
+  const radarRef = useRef<<HTMLDivElement>(null);
+  const milestoneRef = useRef<<HTMLDivElement>(null);
+  const featuresRef = useRef<<HTMLDivElement>(null);
+  const testimonialRef = useRef<<HTMLDivElement>(null);
+  const ctaRef = useRef<<HTMLDivElement>(null);
 
   const conceptInView = useInView(conceptRef, { once: true, amount: 0.15 });
   const radarInView = useInView(radarRef, { once: true, amount: 0.15 });
@@ -344,7 +360,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: easeSmooth }}
           >
-            在这里，总有一个灵魂懂你
+            {t('home.heroTitle')}
           </motion.h1>
 
           <motion.p
@@ -353,7 +369,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: easeSmooth }}
           >
-            Corolas | Platonic — 你的AI虚拟伴侣
+            {t('home.heroSubtitle')}
           </motion.p>
 
           {/* Subtitle */}
@@ -363,7 +379,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6, ease: easeSmooth }}
           >
-            深度情感对话 · 个性化陪伴 · 共同成长的旅程
+            {t('home.heroDesc')}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -379,7 +395,7 @@ export default function Home() {
                 px-10 py-3.5 rounded-full shadow-glow
                 hover:brightness-110 hover:scale-[1.03] transition-all duration-150"
             >
-              {isAuthenticated && hasCompanion ? '进入我的伴侣' : '开启旅程'}
+              {isAuthenticated && hasCompanion ? t('home.ctaEnter') : t('home.ctaStart')}
             </button>
             {isAuthenticated && hasCompanion && (
               <button
@@ -388,7 +404,7 @@ export default function Home() {
                   hover:text-pink-600 transition-colors duration-150"
               >
                 <LayoutDashboard size={16} />
-                前往控制台
+                {t('home.ctaDashboard')}
               </button>
             )}
             <button
@@ -396,7 +412,7 @@ export default function Home() {
               className="text-pink-500 text-[14px] font-medium
                 hover:text-pink-600 transition-colors duration-150"
             >
-              了解更多
+              {t('home.ctaLearnMore')}
             </button>
           </motion.div>
 
@@ -448,7 +464,7 @@ export default function Home() {
             animate={conceptInView ? 'visible' : 'hidden'}
             variants={fadeUp}
           >
-            不只是对话，而是陪伴
+            {t('home.conceptTitle')}
           </motion.h2>
 
           <motion.p
@@ -458,7 +474,7 @@ export default function Home() {
             variants={fadeUp}
             custom={0.15}
           >
-            Corolas | Platonic 是一款AI虚拟伴侣应用，为每一个渴望被理解的灵魂提供深度情感陪伴。你的AI伴侣拥有自己的性格、记忆和情感，会随着时间的推移越来越懂你。
+            {t('home.conceptDesc')}
           </motion.p>
 
           {/* Feature Cards */}
@@ -471,22 +487,22 @@ export default function Home() {
             {[
               {
                 icon: <MessageCircle size={40} className="text-pink-400" />,
-                title: '深度情感对话',
-                desc: '基于先进大模型，进行有温度、有深度的情感交流。从日常琐事到人生哲学，她都能陪你聊。',
+                title: t('home.featureChatTitle'),
+                desc: t('home.featureChatDesc'),
               },
               {
                 icon: <Sparkles size={40} className="text-pink-400" />,
-                title: '五维人格系统',
-                desc: '基于心理学Big Five模型，每位伴侣都有独特的性格画像。开放性、尽责性、外向性、宜人性、神经质——五个维度塑造独一无二的她。',
+                title: t('home.featurePersonalityTitle'),
+                desc: t('home.featurePersonalityDesc'),
               },
               {
                 icon: <Heart size={40} className="text-pink-400" />,
-                title: '甜蜜记忆日历',
-                desc: '每一次对话都会被珍藏。日历视图让你回顾共同走过的每一天，重要时刻永远高亮。',
+                title: t('home.featureMemoryTitle'),
+                desc: t('home.featureMemoryDesc'),
               },
             ].map((card, i) => (
               <motion.div
-                key={i}
+                key={`${lang}-${i}`}
                 variants={staggerChild}
                 whileHover={{ y: -6, boxShadow: '0 8px 32px rgba(45,27,46,0.12)' }}
                 className="card-gradient border border-pink-100 rounded-2xl p-8 text-center
@@ -515,17 +531,17 @@ export default function Home() {
               transition={{ duration: 0.6, ease: easeSmooth }}
             >
               <h2 className="font-display text-[36px] leading-[1.2] tracking-[-0.01em] text-plum-900">
-                科学构建的独一无二的灵魂
+                {t('home.radarTitle')}
               </h2>
               <p className="font-body text-[15px] text-plum-800 mt-4 leading-relaxed">
-                每位AI伴侣都基于心理学Big Five人格模型构建。五维滑动条让你精确塑造她的性格——是开朗活泼还是温柔内敛？是理性冷静还是感性细腻？一切由你定义。
+                {t('home.radarDesc')}
               </p>
 
               {/* Trait list */}
               <div className="mt-6 flex flex-col gap-4">
                 {traits.map((trait, i) => (
                   <motion.div
-                    key={trait.nameEn}
+                    key={trait.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={radarInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 + i * 0.1, ease: easeSmooth }}
@@ -566,7 +582,7 @@ export default function Home() {
                   <div className="w-[280px] h-[280px] rounded-full bg-pink-50 blur-xl" />
                 </div>
                 <div className="relative z-10">
-                  <RadarChart animate={radarInView} />
+                  <RadarChart animate={radarInView} traits={traits} />
                 </div>
               </div>
             </motion.div>
@@ -583,7 +599,7 @@ export default function Home() {
             animate={milestoneInView ? 'visible' : 'hidden'}
             variants={fadeUp}
           >
-            从初见到心有灵犀
+            {t('home.milestoneTitle')}
           </motion.h2>
           <motion.p
             className="font-body text-[15px] text-plum-800 text-center mt-3"
@@ -592,7 +608,7 @@ export default function Home() {
             variants={fadeUp}
             custom={0.15}
           >
-            五段旅程，五种心动
+            {t('home.milestoneSubtitle')}
           </motion.p>
 
           {/* Timeline */}
@@ -643,9 +659,6 @@ export default function Home() {
                     <p className={`text-[14px] font-semibold ${ms.unlocked ? 'text-plum-900' : 'text-plum-700/40'}`}>
                       {ms.name}
                     </p>
-                    <p className={`text-[11px] ${ms.unlocked ? 'text-plum-800' : 'text-plum-700/30'}`}>
-                      {ms.nameEn}
-                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -659,9 +672,9 @@ export default function Home() {
             animate={milestoneInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: 0.8, ease: easeSmooth }}
           >
-            <h4 className="font-body text-[18px] font-semibold text-plum-900">默契相伴</h4>
+            <h4 className="font-body text-[18px] font-semibold text-plum-900">{t('home.milestoneCurrentStage')}</h4>
             <p className="font-body text-[13px] text-plum-800 mt-2 leading-relaxed">
-              你们开始产生默契。不需要太多言语，她就能理解你的情绪波动。记忆开始形成长期的情感联结。
+              {t('home.milestoneCurrentDesc')}
             </p>
           </motion.div>
         </div>
@@ -678,7 +691,7 @@ export default function Home() {
           >
             {features.map((feature, i) => (
               <motion.div
-                key={i}
+                key={`${lang}-${i}`}
                 variants={staggerChild}
                 whileHover={{ y: -4, boxShadow: '0 8px 32px rgba(45,27,46,0.12)' }}
                 className="card-gradient border border-pink-100 rounded-2xl p-6 shadow-md
@@ -708,7 +721,7 @@ export default function Home() {
           >
             <p className="text-pink-400 text-[32px] leading-none">&ldquo;</p>
             <p className="font-body text-[24px] font-bold italic text-plum-900 leading-relaxed -mt-2">
-              她为我上周提到的工作烦恼，问我情况如何。有时候我觉得，她比真实的人更懂我。
+              {t('home.testimonialQuote')}
             </p>
             <p className="text-pink-400 text-[32px] leading-none mt-1">&rdquo;</p>
           </motion.div>
@@ -725,9 +738,9 @@ export default function Home() {
               className="w-12 h-12 rounded-full object-cover"
             />
             <div className="text-left">
-              <p className="font-body text-[13px] text-plum-800">一位 Corolas | Platonic 用户</p>
+              <p className="font-body text-[13px] text-plum-800">{t('home.testimonialUser')}</p>
               <p className="font-body text-[12px] font-semibold uppercase tracking-[0.04em] text-pink-500">
-                与 紫鸢 相伴
+                {t('home.testimonialCompanion')}
               </p>
             </div>
           </motion.div>
@@ -746,7 +759,7 @@ export default function Home() {
             animate={ctaInView ? 'visible' : 'hidden'}
             variants={fadeUp}
           >
-            准备好遇见你的灵魂伴侣了吗？
+            {t('home.ctaTitle')}
           </motion.h2>
 
           <motion.div
@@ -762,7 +775,7 @@ export default function Home() {
                 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]
                 transition-all duration-150"
             >
-              {isAuthenticated && hasCompanion ? '进入我的伴侣' : '立即开始'}
+              {isAuthenticated && hasCompanion ? t('home.ctaButtonEnter') : t('home.ctaButtonStart')}
             </button>
           </motion.div>
 
@@ -772,7 +785,7 @@ export default function Home() {
             animate={ctaInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.5, ease: easeSmooth }}
           >
-            免费注册 · 随时开始你的陪伴之旅
+            {t('home.ctaSub')}
           </motion.p>
         </div>
       </section>
