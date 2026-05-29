@@ -66,28 +66,27 @@ const LANGUAGES: LanguageOption[] = [
   { code: 'ko', label: '한국어', tag: 'Korean' },
 ];
 
-const { t } = useI18n();
-const TIMEZONES: TimezoneOption[] = [
-  { value: 'Asia/Shanghai', label: t('settings.timezoneBeiJing'), region: t('settings.timezoneRegionChina') },
-  { value: 'Asia/Hong_Kong', label: t('settings.timezoneHongKong'), region: t('settings.timezoneRegionHongKong') },
-  { value: 'Asia/Singapore', label: t('settings.timezoneSingapore'), region: t('settings.timezoneRegionSingapore') },
-  { value: 'Asia/Taipei', label: t('settings.timezoneTaipei'), region: t('settings.timezoneRegionTaiwan') },
-  { value: 'Asia/Tokyo', label: t('settings.timezoneTokyo'), region: t('settings.timezoneRegionJapan') },
-  { value: 'Asia/Seoul', label: t('settings.timezoneSeoul'), region: t('settings.timezoneRegionSouthKorea') },
-  { value: 'Asia/Bangkok', label: t('settings.timezoneBangkok'), region: t('settings.timezoneRegionThailand') },
-  { value: 'Asia/Dubai', label: t('settings.timezoneDubai'), region: t('settings.timezoneRegionUAE') },
-  { value: 'Europe/London', label: t('settings.timezoneLondon'), region: t('settings.timezoneRegionUK') },
-  { value: 'Europe/Paris', label: t('settings.timezoneParis'), region: t('settings.timezoneRegionFrance') },
-  { value: 'Europe/Berlin', label: t('settings.timezoneBerlin'), region: t('settings.timezoneRegionGermany') },
-  { value: 'Europe/Moscow', label: t('settings.timezoneMoscow'), region: t('settings.timezoneRegionRussia') },
-  { value: 'America/New_York', label: t('settings.timezoneNewYork'), region: t('settings.timezoneRegionEastUSA') },
-  { value: 'America/Los_Angeles', label: t('settings.timezoneLosAngeles'), region: t('settings.timezoneRegionWestUSA') },
-  { value: 'America/Chicago', label: t('settings.timezoneChicago'), region: t('settings.timezoneRegionCentralUSA') },
-  { value: 'America/Toronto', label: t('settings.timezoneToronto'), region: t('settings.timezoneRegionCanada') },
-  { value: 'Australia/Sydney', label: t('settings.timezoneSydney'), region: t('settings.timezoneRegionAustralia') },
-  { value: 'Pacific/Auckland', label: t('settings.timezoneAuckland'), region: t('settings.timezoneRegionNewZealand') },
-  { value: 'UTC', label: t('settings.timezoneUTC'), region: t('settings.timezoneRegionGlobal') },
-];
+const TIMEZONE_DATA = [
+  { value: 'Asia/Shanghai', labelKey: 'settings.timezoneBeiJing', regionKey: 'settings.timezoneRegionChina' },
+  { value: 'Asia/Hong_Kong', labelKey: 'settings.timezoneHongKong', regionKey: 'settings.timezoneRegionHongKong' },
+  { value: 'Asia/Singapore', labelKey: 'settings.timezoneSingapore', regionKey: 'settings.timezoneRegionSingapore' },
+  { value: 'Asia/Taipei', labelKey: 'settings.timezoneTaipei', regionKey: 'settings.timezoneRegionTaiwan' },
+  { value: 'Asia/Tokyo', labelKey: 'settings.timezoneTokyo', regionKey: 'settings.timezoneRegionJapan' },
+  { value: 'Asia/Seoul', labelKey: 'settings.timezoneSeoul', regionKey: 'settings.timezoneRegionSouthKorea' },
+  { value: 'Asia/Bangkok', labelKey: 'settings.timezoneBangkok', regionKey: 'settings.timezoneRegionThailand' },
+  { value: 'Asia/Dubai', labelKey: 'settings.timezoneDubai', regionKey: 'settings.timezoneRegionUAE' },
+  { value: 'Europe/London', labelKey: 'settings.timezoneLondon', regionKey: 'settings.timezoneRegionUK' },
+  { value: 'Europe/Paris', labelKey: 'settings.timezoneParis', regionKey: 'settings.timezoneRegionFrance' },
+  { value: 'Europe/Berlin', labelKey: 'settings.timezoneBerlin', regionKey: 'settings.timezoneRegionGermany' },
+  { value: 'Europe/Moscow', labelKey: 'settings.timezoneMoscow', regionKey: 'settings.timezoneRegionRussia' },
+  { value: 'America/New_York', labelKey: 'settings.timezoneNewYork', regionKey: 'settings.timezoneRegionEastUSA' },
+  { value: 'America/Los_Angeles', labelKey: 'settings.timezoneLosAngeles', regionKey: 'settings.timezoneRegionWestUSA' },
+  { value: 'America/Chicago', labelKey: 'settings.timezoneChicago', regionKey: 'settings.timezoneRegionCentralUSA' },
+  { value: 'America/Toronto', labelKey: 'settings.timezoneToronto', regionKey: 'settings.timezoneRegionCanada' },
+  { value: 'Australia/Sydney', labelKey: 'settings.timezoneSydney', regionKey: 'settings.timezoneRegionAustralia' },
+  { value: 'Pacific/Auckland', labelKey: 'settings.timezoneAuckland', regionKey: 'settings.timezoneRegionNewZealand' },
+  { value: 'UTC', labelKey: 'settings.timezoneUTC', regionKey: 'settings.timezoneRegionGlobal' },
+] as const;
 
 const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = [
   { value: 'light', label: 'Light', icon: <Sun size={18} /> },
@@ -471,6 +470,12 @@ export default function Settings() {
       setTimeout(() => setSavedLanguage(false), 2000);
     }
   };
+
+  const TIMEZONES: TimezoneOption[] = TIMEZONE_DATA.map(tz => ({
+    value: tz.value,
+    label: t(tz.labelKey),
+    region: t(tz.regionKey),
+  }));
 
   const handleTimezoneChange = async (tz: string) => {
     setTimezone(tz);
