@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
+import { useLocation } from 'react-router-dom';
 import { useI18n } from '@/i18n/I18nContext';
 
 /* ─── Types ─── */
@@ -1259,11 +1260,12 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasCompanion, setHasCompanion] = useState(false);
+  const location = useLocation();
   const { t } = useI18n();
 
   useEffect(() => {
     loadDashboardData();
-  }, []);
+  }, [location.key]);
 
   async function loadDashboardData() {
     try {

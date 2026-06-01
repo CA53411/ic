@@ -16,6 +16,7 @@ import { fetchEdgeFunction } from '@/lib/supabase';
 import { useAuth } from '@/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import { useI18n } from '@/i18n/I18nContext';
+import { useLocation } from 'react-router-dom';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -183,6 +184,7 @@ export default function Payment() {
   const [plans, setPlans] = useState<RechargePlan[]>([]);
   const [paying, setPaying] = useState(false);
   const { isAuthenticated } = useAuth();
+  const location = useLocation();
   const { t } = useI18n();
 
   const selectedPlanData = plans.find((p) => p.id === selectedPlan);
@@ -191,7 +193,7 @@ export default function Payment() {
   useEffect(() => {
     if (!isAuthenticated) return;
     loadEnergyData();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, location.key]);
 
   async function loadEnergyData() {
     try {

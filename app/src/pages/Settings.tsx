@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { applyTheme, loadSavedTheme } from '@/lib/theme';
+import { useLocation } from 'react-router-dom';
 import type { Theme } from '@/lib/theme';
 
 /* ------------------------------------------------------------------ */
@@ -349,6 +350,7 @@ export default function Settings() {
   const [companionId, setCompanionId] = useState<string | null>(null);
   const [avatar, setAvatar] = useState('/default-avatar.jpg');
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   // Dark mode - replaced by 3-state theme
   const [theme, setTheme] = useState<Theme>(() => loadSavedTheme());
@@ -374,7 +376,7 @@ export default function Settings() {
     loadNotificationSettings();
     loadThemeSettings();
     loadContentSettings();
-  }, []);
+  }, [location.key]);
 
   async function loadUserData() {
     try {
