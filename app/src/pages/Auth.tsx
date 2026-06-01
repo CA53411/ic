@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast, Toaster } from 'sonner';
@@ -23,7 +23,7 @@ import { useAuth } from '@/hooks/useAuth';
 /* ------------------------------------------------------------------ */
 
 type AuthMode = 'login' | 'signup';
-type SignupStep = 1 | 2;
+type SignupStep = 1 | 2 | 3;
 
 /* ------------------------------------------------------------------ */
 /*  Validation helpers                                                 */
@@ -156,6 +156,47 @@ function FloatingOrbs() {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Success Checkmark (SVG animation)                                  */
+/* ------------------------------------------------------------------ */
+
+function SuccessCheckmark() {
+  return (
+    <motion.svg
+      width="80"
+      height="80"
+      viewBox="0 0 80 80"
+      fill="none"
+      initial={{ scale: 0.5, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.4, ease: easeBounce }}
+    >
+      <motion.circle
+        cx="40"
+        cy="40"
+        r="36"
+        stroke="#FF69B4"
+        strokeWidth="3"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 }}
+      />
+      <motion.path
+        d="M26 40 L35 49 L54 30"
+        stroke="#FF69B4"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.8 }}
+      />
+    </motion.svg>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /*  Password Strength Indicator                                        */
 /* ------------------------------------------------------------------ */
 
@@ -208,6 +249,76 @@ function PasswordStrength({ password }: { password: string }) {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Verification Code Input                                            */
+/* ------------------------------------------------------------------ */
+
+function VerificationCodeInput({
+  value,
+  onChange,
+  onComplete,
+}: {
+  value: string[];
+  onChange: (vals: string[]) => void;
+  onComplete?: () => void;
+}) {
+  const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
+
+  const handleChange = (index: number, char: string) => {
+    if (!/^\d?$/.test(char)) return;
+    const next = [...value];
+    next[index] = char;
+    onChange(next);
+    if (char && index < 5) {
+      inputsRef.current[index + 1]?.focus();
+    }
+    if (next.every((v) => v !== '') && onComplete) {
+      onComplete();
+    }
+  };
+
+  const handleKeyDown = (index: number, e: React.KeyboardEvent) => {
+    if (e.key === 'Backspace' && !value[index] && index > 0) {
+      inputsRef.current[index - 1]?.focus();
+    }
+  };
+
+  const handlePaste = (e: React.ClipboardEvent) => {
+    e.preventDefault();
+    const text = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 6);
+    if (!text) return;
+    const next = text.split('').concat(Array(6 - text.length).fill(''));
+    onChange(next);
+    const focusIdx = Math.min(text.length, 5);
+    inputsRef.current[focusIdx]?.focus();
+    if (text.length === 6 && onComplete) {
+      onComplete();
+    }
+  };
+
+  return (
+    <div className="flex gap-2 justify-center" onPaste={handlePaste}>
+      {value.map((char, i) => (
+        <input
+          key={i}
+          ref={(el) => { inputsRef.current[i] = el; }}
+          type="text"
+          inputMode="numeric"
+          maxLength={1}
+          value={char}
+          onChange={(e) => handleChange(i, e.target.value)}
+          onKeyDown={(e) => handleKeyDown(i, e)}
+          className={cn(
+            'w-12 h-14 text-center text-2xl font-number font-bold rounded-xl border transition-all duration-200 outline-none',
+            'border-pink-200 text-plum-900',
+            'focus:border-pink-400 focus:shadow-glow'
+          )}
+        />
+      ))}
     </div>
   );
 }
@@ -696,25 +807,51 @@ function SignupStep1({
           'mt-2'
         )}
       >
-        Create Account
+        Next
       </motion.button>
     </motion.div>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/*  Signup Form — Step 2: Email Sent Confirmation                      */
+/*  Signup Form — Step 2: Email Verification                           */
 /* ------------------------------------------------------------------ */
 
-function SignupStep2Sent({
+function SignupStep2({
   email,
-  onBackToLogin,
+  code,
+  onCodeChange,
+  onVerify,
+  onBack,
   direction,
 }: {
   email: string;
-  onBackToLogin: () => void;
+  code: string[];
+  onCodeChange: (vals: string[]) => void;
+  onVerify: () => void;
+  onBack: () => void;
   direction: number;
 }) {
+  const [timer, setTimer] = useState(45);
+  const [isResendActive, setIsResendActive] = useState(false);
+
+  useEffect(() => {
+    if (timer <= 0) {
+      setIsResendActive(true);
+      return;
+    }
+    const id = setInterval(() => setTimer((t) => t - 1), 1000);
+    return () => clearInterval(id);
+  }, [timer]);
+
+  const handleResend = () => {
+    setTimer(45);
+    setIsResendActive(false);
+    toast.success('Verification code resent!', { position: 'top-center' });
+  };
+
+  const isComplete = code.every((c) => c !== '');
+
   return (
     <motion.div
       key="step2"
@@ -723,76 +860,130 @@ function SignupStep2Sent({
       initial="enter"
       animate="center"
       exit="exit"
-      className="space-y-6 text-center"
+      className="space-y-6"
     >
-      {/* Icon */}
-      <div className="flex justify-center">
-        <motion.div
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, ease: easeBounce }}
-          className="w-20 h-20 rounded-full bg-pink-50 flex items-center justify-center"
-        >
-          <Mail size={40} className="text-pink-400" />
-        </motion.div>
+      {/* Header */}
+      <div className="text-center space-y-3">
+        <div className="flex justify-center">
+          <div className="w-16 h-16 rounded-full bg-pink-50 flex items-center justify-center">
+            <Mail size={32} className="text-pink-400" />
+          </div>
+        </div>
+        <h2 className="text-2xl font-bold text-plum-900 font-body">Verify your email</h2>
+        <p className="text-sm text-[#6B5B6E] font-body leading-relaxed">
+          We&apos;ve sent a verification code to <strong className="text-plum-900">{email}</strong>,
+          <br />
+          please check your inbox and enter it below
+        </p>
       </div>
 
-      {/* Text */}
+      {/* Code input */}
+      <VerificationCodeInput
+        value={code}
+        onChange={onCodeChange}
+        onComplete={() => {
+          /* auto-submits when all 6 digits entered */
+        }}
+      />
+
+      {/* Resend timer */}
+      <div className="text-center">
+        {isResendActive ? (
+          <button
+            type="button"
+            onClick={handleResend}
+            className="text-sm text-pink-500 font-semibold hover:underline font-body"
+          >
+            Resend code
+          </button>
+        ) : (
+          <p className="text-sm text-[#A093A5] font-body">
+            Resend in <span className="font-number font-semibold text-pink-400">{timer}s</span>
+          </p>
+        )}
+      </div>
+
+      {/* Verify button */}
+      <motion.button
+        type="button"
+        disabled={!isComplete}
+        whileHover={isComplete ? { scale: 1.02 } : {}}
+        whileTap={isComplete ? { scale: 0.98 } : {}}
+        onClick={onVerify}
+        className={cn(
+          'w-full h-12 rounded-xl text-white font-semibold font-body text-sm',
+          'accent-gradient transition-all duration-150',
+          'hover:shadow-glow disabled:opacity-40 disabled:cursor-not-allowed'
+        )}
+      >
+        Verify
+      </motion.button>
+
+      {/* Back */}
+      <button
+        type="button"
+        onClick={onBack}
+        className="w-full text-center text-sm text-[#A093A5] hover:text-pink-500 font-body transition-colors"
+      >
+        Back
+      </button>
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Signup Form — Step 3: Success                                      */
+/* ------------------------------------------------------------------ */
+
+function SignupStep3({ direction }: { direction: number }) {
+  const navigate = useNavigate();
+
+  return (
+    <motion.div
+      key="step3"
+      custom={direction}
+      variants={stepVariants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      className="space-y-6 text-center"
+    >
+      <div className="flex justify-center">
+        <SuccessCheckmark />
+      </div>
+
       <motion.div
-        initial={{ opacity: 0, y: 15 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4, ease: easeSmooth }}
+        transition={{ delay: 1.0, duration: 0.4, ease: easeSmooth }}
         className="space-y-2"
       >
         <h2 className="text-2xl font-bold text-plum-900 font-body">
-          Check your inbox
+          Welcome to Corolas | Platonic
         </h2>
         <p className="text-sm text-[#6B5B6E] font-body leading-relaxed">
-          We&apos;ve sent a verification link to{' '}
-          <strong className="text-plum-900">{email}</strong>.
+          Your account has been created successfully.
           <br />
-          Click the link in the email to activate your account.
+          Now, go meet your soulmate.
         </p>
       </motion.div>
 
-      {/* Info box */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.35, duration: 0.3, ease: easeSmooth }}
-        className="rounded-xl bg-pink-50/60 border border-pink-100 p-4 text-left space-y-3"
-      >
-        <div className="flex items-start gap-3">
-          <Info size={16} className="text-pink-400 mt-0.5 shrink-0" />
-          <p className="text-xs text-[#6B5B6E] font-body leading-relaxed">
-            After clicking the link, you&apos;ll be verified and can sign in immediately.
-          </p>
-        </div>
-        <div className="flex items-start gap-3">
-          <Info size={16} className="text-pink-400 mt-0.5 shrink-0" />
-          <p className="text-xs text-[#6B5B6E] font-body leading-relaxed">
-            Didn&apos;t receive it? Check your spam folder, or try signing up again.
-          </p>
-        </div>
-      </motion.div>
-
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.3, ease: easeSmooth }}
+        transition={{ delay: 1.3, duration: 0.3, ease: easeSmooth }}
       >
         <motion.button
           type="button"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={onBackToLogin}
+          onClick={() => navigate('/customize')}
           className={cn(
             'w-full h-12 rounded-xl text-white font-semibold font-body text-sm',
             'accent-gradient hover:shadow-glow transition-all duration-150'
           )}
         >
-          Back to Sign In
+          Enter Corolas | Platonic
         </motion.button>
       </motion.div>
     </motion.div>
@@ -804,16 +995,17 @@ function SignupStep2Sent({
 /* ------------------------------------------------------------------ */
 
 export default function Auth() {
-  const [mode, setMode] = useState<<AuthMode>('login');
+  const [mode, setMode] = useState<AuthMode>('login');
   const [tabDirection, setTabDirection] = useState(1);
   const [stepDirection, setStepDirection] = useState(1);
-  const [signupStep, setSignupStep] = useState<<SignupStep>(1);
+  const [signupStep, setSignupStep] = useState<SignupStep>(1);
   const [signupForm, setSignupForm] = useState({
     username: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
+  const [verificationCode, setVerificationCode] = useState<string[]>(Array(6).fill(''));
 
   const switchMode = (newMode: AuthMode) => {
     setTabDirection(newMode === 'signup' ? 1 : -1);
@@ -846,13 +1038,35 @@ export default function Auth() {
         return;
       }
       if (data.user) {
-        // 直接进入"已发送"提示页，不再等待验证码
         setSignupStep(2);
-        toast.success('Verification email sent! Please check your inbox.', { position: 'top-center' });
+        toast.success('Please check your email for the verification code!', { position: 'top-center' });
       }
     } catch (e) {
       console.error('Signup error:', e);
       toast.error('Signup failed. Please try again.', { position: 'top-center' });
+    }
+  };
+
+  const handleVerify = async () => {
+    setStepDirection(1);
+    try {
+      const token = verificationCode.join('');
+      const { data, error } = await supabase.auth.verifyOtp({
+        email: signupForm.email,
+        token,
+        type: 'signup',
+      });
+      if (error) {
+        toast.error(error.message || 'Verification failed. Please try again.', { position: 'top-center' });
+        return;
+      }
+      if (data.user) {
+        setSignupStep(3);
+        toast.success('Email verified!', { position: 'top-center' });
+      }
+    } catch (e) {
+      console.error('Verification error:', e);
+      toast.error('Verification failed. Please try again.', { position: 'top-center' });
     }
   };
 
@@ -912,11 +1126,11 @@ export default function Auth() {
           </div>
         </div>
 
-        {/* Step indicator (signup only) — now 2 steps */}
+        {/* Step indicator (signup only) */}
         {mode === 'signup' && (
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="flex items-center gap-2">
-              {[1, 2].map((step, i) => (
+              {[1, 2, 3].map((step, i) => (
                 <div key={step} className="flex items-center gap-2">
                   <div
                     className={cn(
@@ -926,7 +1140,7 @@ export default function Auth() {
                         : 'w-2 h-2 bg-pink-100'
                     )}
                   />
-                  {i < 1 && (
+                  {i < 2 && (
                     <div
                       className={cn(
                         'w-8 h-px rounded-full transition-colors duration-300',
@@ -961,13 +1175,17 @@ export default function Auth() {
                   />
                 )}
                 {signupStep === 2 && (
-                  <SignupStep2Sent
+                  <SignupStep2
                     key="s2"
                     email={signupForm.email}
-                    onBackToLogin={() => switchMode('login')}
+                    code={verificationCode}
+                    onCodeChange={setVerificationCode}
+                    onVerify={handleVerify}
+                    onBack={() => goToStep(1)}
                     direction={stepDirection}
                   />
                 )}
+                {signupStep === 3 && <SignupStep3 key="s3" direction={stepDirection} />}
               </AnimatePresence>
 
               {signupStep === 1 && (
