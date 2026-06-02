@@ -841,7 +841,7 @@ export default function Customize() {
                         </label>
                         <textarea
                           value={form.background}
-                          onChange={(e) => updateForm('background', e.target.value.slice(0, 500))}
+                          onChange={(e) => updateForm('background', e.target.value.slice(0, 1000))}
                           placeholder={t('customize.backgroundPlaceholder')}
                           rows={6}
                           className="w-full px-4 py-3 rounded-xl bg-white border border-pink-100 text-plum-900 placeholder:text-muted-plum focus:outline-none focus:border-pink-400 focus:shadow-glow transition-all duration-200 resize-none"
@@ -853,7 +853,7 @@ export default function Customize() {
                           >
                             {showPrompts ? '收起提示' : t('customize.personalityPrompt')}
                           </button>
-                          <span className="text-xs text-muted-plum">{form.background.length}/500</span>
+                          <span className="text-xs text-muted-plum">{form.background.length}/1000</span>
                         </div>
                         <AnimatePresence>
                           {showPrompts && (
