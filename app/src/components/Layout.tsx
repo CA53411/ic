@@ -66,7 +66,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div
         className={`
           min-h-screen transition-all duration-300
-          ${showSidebar ? 'ml-[220px]' : ''}
+          ${showSidebar ? 'md:ml-[220px]' : ''}
           ${showSidebar && isAuthenticated ? 'pt-16 md:pb-0' : ''}
         `}
       >
