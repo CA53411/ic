@@ -46,7 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             background: isDark ? '#1f2937' : '#fff',
             color: isDark ? '#f3f4f6' : '#1f2937',
             border: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
-            font-family: 'Nunito, sans-serif',
+            fontFamily: 'Nunito, sans-serif',
             fontSize: '13px',
           },
         }}
