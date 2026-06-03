@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useInView } from 'framer-motion';
+import { AnimatePresence, motion, useInView } from 'framer-motion';
 import {
   MessageCircle,
   Sparkles,
