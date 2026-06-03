@@ -268,15 +268,19 @@ function FloatingNav() {
                 {/* Auth Buttons */}
                 <div className="px-2 space-y-2">
                   <button
-                    onClick={() => navigate('/auth')}
+                    onClick={() => {
+                      navigate('/auth');
+                      setMobileMenuOpen(false);
+                    }}
                     className="w-full py-3 rounded-xl text-sm font-medium text-pink-500 border border-pink-200 hover:bg-pink-50 transition-colors"
                   >
                     {t('common.login')}
                   </button>
                   <button
-                    onClick={() => navigate('/auth'
+                    onClick={() => {
+                      navigate('/auth');
                       setMobileMenuOpen(false);
-                    )}
+                    }}
                     className="w-full py-3 rounded-xl text-sm font-semibold text-white accent-gradient hover:brightness-110 transition-all shadow-glow"
                   >
                     {t('common.register')}
