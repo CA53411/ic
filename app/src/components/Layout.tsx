@@ -9,7 +9,6 @@ import { useLocation } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import { useAuth } from '@/context/AuthContext';
 import { useThemeContext } from '@/context/ThemeContext';
-import { applyTheme, loadSavedTheme, getEffectiveTheme } from '@/lib/theme';
 import Navbar from './Navbar';
 
 /** Routes that should display the sidebar navigation */
@@ -47,6 +46,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             background: isDark ? '#1f2937' : '#fff',
             color: isDark ? '#f3f4f6' : '#1f2937',
             border: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
+            font-family: 'Nunito, sans-serif',
+            fontSize: '13px',
           },
         }}
       />
@@ -66,7 +67,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={`
           min-h-screen transition-all duration-300
           ${showSidebar ? 'ml-[220px]' : ''}
-          pb-16 md:pb-0
+          ${showSidebar && isAuthenticated ? 'pt-16 md:pb-0' : ''}
         `}
       >
         <main className="min-h-screen">{children}</main>
