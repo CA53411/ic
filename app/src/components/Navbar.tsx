@@ -1,10 +1,10 @@
 /**
- * Navbar.tsx - Sidebar Navigation Component + Mobile Bottom Tab Bar
+ * Navbar.tsx - Responsive Sidebar + Mobile Bottom Tab Bar
  *
- * Provides dynamic navigation based on authentication state and companion status.
- * Includes brand header, nav items, dark mode (3-state), 4-language selector, and auth section.
+ * Desktop (≥md): Fixed left sidebar (original design)
+ * Mobile (<md):  Bottom tab bar with 5 main entries + "More" sheet
  */
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -77,14 +77,14 @@ export default function Navbar({
   const { t, lang, setLang } = useI18n();
   const { theme, cycleTheme } = useThemeContext();
 
-  // Language dropdown state
+  // Language dropdown state (desktop only)
   const [langOpen, setLangOpen] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
+  const langRef = useRef<<HTMLDivElement>(null);
 
   // Mobile "More" sheet state
   const [moreOpen, setMoreOpen] = useState(false);
 
-  // Close dropdown on outside click
+  // Close language dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -95,7 +95,7 @@ export default function Navbar({
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Desktop Nav items with i18n labels
+  // Desktop nav items with i18n labels
   const navItems = useMemo(() => {
     if (!isAuthenticated) {
       return [
@@ -104,41 +104,41 @@ export default function Navbar({
       ];
     }
     return [
-        ...(hasCompanion
-          ? [{ label: t('nav.dashboard'), path: '/dashboard', icon: <LayoutDashboard size={20} /> }]
-          : [{ label: t('nav.plaza'), path: '/plaza', icon: <Users size={20} /> }]),
-        { label: t('nav.chat'), path: '/chat', icon: <MessageCircle size={20} /> },
-        { label: t('nav.memory'), path: '/memory', icon: <Calendar size={20} /> },
-        { label: t('nav.drama'), path: '/drama', icon: <BookOpen size={20} /> },
-        { label: t('nav.achievement'), path: '/achievement', icon: <Trophy size={20} /> },
-        { label: t('nav.payment'), path: '/payment', icon: <Zap size={20} /> },
-        { label: t('nav.settings'), path: '/settings', icon: <Settings size={20} /> },
-        { label: t('nav.crowdfunding'), path: '/crowdfunding', icon: <Heart size={20} /> },
-      ];
-    }, [isAuthenticated, hasCompanion, t]);
+      ...(hasCompanion
+        ? [{ label: t('nav.dashboard'), path: '/dashboard', icon: <LayoutDashboard size={20} /> }]
+        : [{ label: t('nav.plaza'), path: '/plaza', icon: <Users size={20} /> }]),
+      { label: t('nav.chat'), path: '/chat', icon: <MessageCircle size={20} /> },
+      { label: t('nav.memory'), path: '/memory', icon: <Calendar size={20} /> },
+      { label: t('nav.drama'), path: '/drama', icon: <BookOpen size={20} /> },
+      { label: t('nav.achievement'), path: '/achievement', icon: <Trophy size={20} /> },
+      { label: t('nav.payment'), path: '/payment', icon: <Zap size={20} /> },
+      { label: t('nav.settings'), path: '/settings', icon: <Settings size={20} /> },
+      { label: t('nav.crowdfunding'), path: '/crowdfunding', icon: <Heart size={20} /> },
+    ];
+  }, [isAuthenticated, hasCompanion, t]);
 
-    // Mobile Bottom Tab items
-    const bottomTabs = useMemo(() => {
-    { if (!isAuthenticated) {
+  // Mobile bottom tab items (max 5, last one is "More")
+  const bottomTabs = useMemo(() => {
+    if (!isAuthenticated) {
       return [
-        { label: t('nav.home'), path: '/', icon: <Sparkles size={20} /> },
-        { label: t('auth.login'), path: '/auth', icon: <LogIn size={20} /> },
+        { label: t('nav.home'), path: '/', icon: <Sparkles size={22} /> },
+        { label: t('auth.login'), path: '/auth', icon: <LogIn size={22} /> },
       ];
     }
     return [
       {
         label: hasCompanion ? t('nav.dashboard') : t('nav.plaza'),
         path: hasCompanion ? '/dashboard' : '/plaza',
-        icon: <LayoutDashboard size={20} />,
+        icon: <LayoutDashboard size={22} />,
       },
-      { label: t('nav.chat'), path: '/chat', icon: <MessageCircle size={20} /> },
-      { label: t('nav.memory'), path: '/memory', icon: <Calendar size={20} /> },
-      { label: t('nav.drama'), path: '/drama', icon: <BookOpen size={20} /> },
-      { label: t('nav.more'), path: '#more', icon: <MoreVertical size={20} /> },
+      { label: t('nav.chat'), path: '/chat', icon: <MessageCircle size={22} /> },
+      { label: t('nav.memory'), path: '/memory', icon: <Calendar size={22} /> },
+      { label: t('nav.drama'), path: '/drama', icon: <BookOpen size={22} /> },
+      { label: t('nav.more'), path: '#more', icon: <MoreVertical size={22} /> },
     ];
   }, [isAuthenticated, hasCompanion, t]);
 
-  //Items inside the "More" sheet
+  // Items inside the "More" sheet
   const moreItems = useMemo(() => {
     if (!isAuthenticated) return [];
     return [
@@ -160,9 +160,11 @@ export default function Navbar({
 
   return (
     <>
-      {/* ========== Desktop Sidebar ========== */}
-      <nav className="fixed left-0 top-0 h-screen w-[220px] sidebar-gradient shadow-sidebar z-50 flex flex-col">
-        {/* ========== Brand Logo ========== */}
+      {/* ═══════════════════════════════════════════════════════════
+          DESKTOP SIDEBAR (≥ md)
+          ═══════════════════════════════════════════════════════════ */}
+      <nav className="fixed left-0 top-0 h-screen w-[220px] sidebar-gradient shadow-sidebar z-50 hidden md:flex flex-col">
+        {/* Brand Logo */}
         <div
           className="flex items-center gap-2 px-5 py-6 cursor-pointer"
           onClick={() => navigate('/')}
@@ -177,7 +179,7 @@ export default function Navbar({
           </span>
         </div>
 
-        {/* ========== Navigation Items ========== */}
+        {/* Navigation Items */}
         <div className="flex-1 flex flex-col gap-1 px-3 py-4 overflow-y-auto">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -209,12 +211,11 @@ export default function Navbar({
           })}
         </div>
 
-        {/* ========== Bottom Section ========== */}
+        {/* Bottom Section */}
         <div className="px-3 pb-4 flex flex-col gap-2">
-          {/* Separator */}
           <div className="border-t border-sidebar-hover my-1" />
 
-          {/* Dark Mode Toggle - 3-state */}
+          {/* Dark Mode Toggle */}
           <button
             onClick={cycleTheme}
             className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm
@@ -225,7 +226,7 @@ export default function Navbar({
             <span className="font-body">{useThemeLabel(theme, t)}</span>
           </button>
 
-          {/* Language Selector — 4-language dropdown */}
+          {/* Language Selector */}
           <div ref={langRef} className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
@@ -242,8 +243,7 @@ export default function Navbar({
                 transition={{ duration: 0.2 }}
                 className="ml-auto"
               >
-                <Monitor size={12} className="opacity-50" style={{ display: 'none' }} />
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <ChevronDown size={12} className="opacity-50" />
               </motion.span>
             </button>
 
@@ -284,11 +284,10 @@ export default function Navbar({
             </AnimatePresence>
           </div>
 
-          {/* ========== Auth Section ========== */}
+          {/* Auth Section */}
           <div className="border-t border-sidebar-hover pt-3 mt-1">
             {isAuthenticated && user ? (
               <div className="flex flex-col gap-2">
-                {/* User info */}
                 <div className="flex items-center gap-3 px-4 py-2">
                   <div className="relative">
                     <img
@@ -308,7 +307,6 @@ export default function Navbar({
                     <span className="text-sidebar-text text-[11px]">{t('common.online')}</span>
                   </div>
                 </div>
-                {/* Logout button */}
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-3 px-4 py-2 rounded-xl text-sm
@@ -332,108 +330,120 @@ export default function Navbar({
             )}
           </div>
 
-          {/* ========== Copyright ========== */}
+          {/* Copyright */}
           <div className="px-4 pt-2 pb-1">
             <a className="text-sidebar-text text-[10px] opacity-60" href="mailto:corolar@corolas.top">
               &copy; 2026 Corolas | Platonic
             </a>
-
           </div>
         </div>
       </nav>
 
-    {/* ========== Mobile Bottom Tab Bar ========== */}
-    {isAuthenticated && (
-      <>
-        <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-[12px] border-t border-pink-100 md:hidden pb-[env(safe-area-inset-bottom)]">
-          <div className="flex items-center justify-around h-16">
-            {bottomTabs.map((tab) => {
-              const isActive = location.pathname === tab.path;
-              const isMore = item.path === '#more';
+      {/* ═══════════════════════════════════════════════════════════
+          MOBILE BOTTOM TAB BAR (< md)
+          ═══════════════════════════════════════════════════════════ */}
+      {isAuthenticated && (
+        <>
+          <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-[12px] border-t border-pink-100 md:hidden pb-[env(safe-area-inset-bottom)]">
+            <div className="flex items-center justify-around h-16">
+              {bottomTabs.map((item) => {
+                const isActive = location.pathname === item.path;
+                const isMore = item.path === '#more';
 
-              return (
-                <button
-                  key={Item.label}
-                  onClick={() => {
-                    if (isMore) {
-                      setMoreOpen(true);
-                    } else {
-                      navigate(item.path);
-                    }
-                  }}
-                  className={`
-                    flex flex-col items-center justify-center gap-0.5 w-full h-full
-                    transition-colors duration-150
-                    ${isActive ? 'text-pink-500' : 'text-[#A093A5]'}
+                return (
+                  <button
+                    key={item.label}
+                    onClick={() => {
+                      if (isMore) {
+                        setMoreOpen(true);
+                      } else {
+                        navigate(item.path);
+                      }
+                    }}
+                    className={`
+                      flex flex-col items-center justify-center gap-0.5 w-full h-full
+                      transition-colors duration-150
+                      ${isActive ? 'text-pink-500' : 'text-[#A093A5]'}
                     `}
+                  >
+                    <span>{item.icon}</span>
+                    <span className="text-[10px] font-medium font-body">{item.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile "More" Sheet */}
+          <AnimatePresence>
+            {moreOpen && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[60] bg-black/30 backdrop-blur-[2px] md:hidden"
+                onClick={() => setMoreOpen(false)}
+              >
+                <motion.div
+                  initial={{ y: '100%' }}
+                  animate={{ y: 0 }}
+                  exit={{ y: '100%' }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-xl border-t border-pink-100 pb-[env(safe-area-inset-bottom)]"
                 >
+                  {/* Drag indicator */}
+                  <div className="w-full flex justify-center pt-3 pb-1">
+                    <div className="w-10 h-1 rounded-full bg-pink-200" />
+                  </div>
 
-                {/* Mobile "More" Sheet*/}
-                <AnimatePresence>
-                  {moreOpen && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0}}
-                      className="fixed inset-0 z-[60] bg-black/30 backdrop-blur-[2px] md:hidden"
-                      onClick={() => setMoreOpen(false)}
-                    >
-                      <motion.div
-                        initial={{ y: '100%' }}
-                        animate={{ y: 0 }}
-                        exit={{ y: '100%' }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                        onClick={(e) => e.stopPropagation()}
-                        className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-xl border-t border-pink-100 pd-[env(safe-area-inset-bottom)]"
+                  <div className="px-4 py-2">
+                    <h3 className="text-xs font-semibold text-[#A093A5] uppercase tracking-wider mb-3 px-2">
+                      {t('nav.more')}
+                    </h3>
+
+                    <div className="grid grid-cols-4 gap-2">
+                      {moreItems.map((item) => (
+                        <button
+                          key={item.path}
+                          onClick={() => {
+                            navigate(item.path);
+                            setMoreOpen(false);
+                          }}
+                          className="flex flex-col items-center gap-1.5 p-3 rounded-xl hover:bg-pink-50 transition-colors active:scale-95"
+                        >
+                          <span className="text-pink-400">{item.icon}</span>
+                          <span className="text-[11px] text-[#6B5B6E] font-medium text-center leading-tight">
+                            {item.label}
+                          </span>
+                        </button>
+                      ))}
+
+                      {/* Logout */}
+                      <button
+                        onClick={() => {
+                          handleLogout();
+                          setMoreOpen(false);
+                        }}
+                        className="flex flex-col items-center gap-1.5 p-3 rounded-xl hover:bg-red-50 transition-colors active:scale-95"
                       >
-                        {/* Drag indicator */}
-                        <div className="w-full flex justify-center pt-3 pb-1">
-                          <div className="w-10 h-1 rounded-full bg-pink-200" />
-                        </div>
-                        
-                        <div className="px-4 py-2">
-                          <h3 className="text-xs font-semibold text-[#A093A5] uppercase tracking-wider mb-3 px-2">
-                            {t('nav.more')}
-                          </h3>
+                        <LogOut size={20} className="text-red-400" />
+                        <span className="text-[11px] text-red-500 font-medium text-center leading-tight">
+                          {t('common.logout')}
+                        </span>
+                      </button>
+                    </div>
+                  </div>
 
-                          <div className="grid grid-cols-4 gap-2">
-                            {moreItems.map((item) => (
-                              <button
-                                key={item.path}
-                                onClick={() => {
-                                  navigate(item.path);
-                                  setMoreOpen(false);
-                                }}
-                                className="flex flex-col items-center gap-1.5 px-3 rounded-xl hover:bg-pink-50 transition-colors active:scale-95"
-                              >
-                                <span className="text-pink-400">{item.icon}</span>
-                                <span className="text-[11px] text-[#6B5B6E] font-medium text-center leading-tight">{item.label}</span>
-                              </button>
-                            ))}
+                  <div className="h-4" />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      )}
 
-                            {/* Logout */}
-                            <button
-                              onClick={() => {
-                                handleLogout();
-                                setMoreOpen(false);
-                              }}
-                              className="flex flex-col items-center gap-1.5 p-3 rounded-xl hover:bg-red-50 transition-colors active:scale-95"
-                            >
-                              <LogOut size={20} className="text-red-400" />
-                              <span className="text-[11px] text-red-500 font-medium text-center leading-tight">
-                                {t('common.logout')}
-                              </span> 
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="h-4" />
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-          </>
-        )}
+      {/* Unauthenticated mobile: no bottom bar, keep clean landing */}
     </>
   );
 }
