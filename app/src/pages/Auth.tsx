@@ -16,7 +16,7 @@ import {
   Sparkles,
   Sun,
   Moon,
-  Monior,
+  Monitor,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
@@ -893,7 +893,7 @@ export default function Auth() {
         >
           <ThemeIcon t={theme} size={16} />
         </button>
-        
+
         {/* Logo */}
 
         <div className="text-center mb-8">
