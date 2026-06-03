@@ -79,7 +79,7 @@ export default function Navbar({
 
   // Language dropdown state (desktop only)
   const [langOpen, setLangOpen] = useState(false);
-  const langRef = useRef<<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
 
   // Mobile "More" sheet state
   const [moreOpen, setMoreOpen] = useState(false);
