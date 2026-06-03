@@ -19,6 +19,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useI18n } from '@/i18n/I18nContext';
 import type { Language } from '@/i18n/translations';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 /* ── Animation helpers ── */
 const easeSmooth = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -52,6 +53,7 @@ const staggerChild = {
 /* ── Floating Navigation ── */
 function FloatingNav() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { t, lang, setLang } = useI18n();
 
@@ -64,84 +66,230 @@ function FloatingNav() {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
   };
+  
+  const mobileNavLinks = [
+    { label: t('nav.features'), action: () => scrollToSection('concept') },
+    { label: t('nav.about'), action: () => scrollToSection('testimonial') },
+    { label: t('nav.crowdfunding'), action: () => navigate('/crowdfunding') },
+  ];
 
   return (
-    <motion.nav
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: easeSmooth }}
-      className={`
-        fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-6 lg:px-10
-        transition-all duration-300
-        ${scrolled ? 'bg-[rgba(255,245,247,0.9)] backdrop-blur-[12px] shadow-sm' : 'bg-transparent'}
-      `}
-    >
-      <button onClick={() => navigate('/')} className="flex items-center gap-2 group">
-        <img
-          src="/platonic.png"
-          alt="Logo"
-          className="w-6 h-6 rounded-md object-cover ring-1 ring-pink-400/40 group-hover:animate-[spin_3s_linear_infinite] transition-transform"
-        />
-        <span className="text-pink-400 text-lg font-bold tracking-tight">Corolas | Platonic</span>
-      </button>
-
-      <div className="hidden md:flex items-center gap-6">
-        <button
-          onClick={() => scrollToSection('concept')}
-          className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
-        >
-          {t('nav.features')}
-        </button>
-        <button
-          onClick={() => scrollToSection('testimonial')}
-          className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
-        >
-          {t('nav.about')}
-        </button>
-        <button
-          onClick={() => navigate('/crowdfunding')}
-          className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
-        >
-          {t('nav.crowdfunding')}
+    <>
+      {/* ====== Desktop Nav ====== */}
+      <motion.nav
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        className={`
+          fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-6 lg:px-10
+          transition-all duration-300
+          ${scrolled ? 'bg-[rgba(255,245,247,0.9)] backdrop-blur-[12px] shadow-sm' : 'bg-transparent'}
+        `}
+      >
+        <button onClick={() => navigate('/')} className="flex items-center gap-2 group">
+          <img
+            src="/platonic.png"
+            alt="Logo"
+            className="w-6 h-6 rounded-md object-cover ring-1 ring-pink-400/40 group-hover:animate-[spin_3s_linear_infinite] transition-transform"
+          />
+          <span className="text-pink-400 text-lg font-bold tracking-tight">Corolas | Platonic</span>
         </button>
 
-        {/* Language Switcher */}
-        <div className="flex items-center gap-1 bg-pink-50 rounded-full p-0.5 border border-pink-100">
-          {(['en', 'zh', 'ja', 'ko'] as Language[]).map((code) => (
-            <button
-              key={code}
-              onClick={() => setLang(code)}
-              className={cn(
-                'px-2 py-1 rounded-full text-[11px] font-semibold font-body transition-all duration-150',
-                lang === code
-                  ? 'bg-white text-pink-500 shadow-sm'
-                  : 'text-[#A093A5] hover:text-[#6B5B6E]'
-              )}
-            >
-              {code === 'en' ? 'EN' : code === 'zh' ? '中' : code === 'ja' ? '日' : '韩'}
-            </button>
-          ))}
+        <div className="hidden md:flex items-center gap-6">
+          <button
+            onClick={() => scrollToSection('concept')}
+            className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
+          >
+            {t('nav.features')}
+          </button>
+          <button
+            onClick={() => scrollToSection('testimonial')}
+            className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
+          >
+            {t('nav.about')}
+          </button>
+          <button
+            onClick={() => navigate('/crowdfunding')}
+            className="text-sm text-plum-800 hover:text-pink-500 transition-colors duration-150"
+          >
+            {t('nav.crowdfunding')}
+          </button>
+
+          {/* Language Switcher */}
+          <div className="flex items-center gap-1 bg-pink-50 rounded-full p-0.5 border border-pink-100">
+            {(['en', 'zh', 'ja', 'ko'] as Language[]).map((code) => (
+              <button
+                key={code}
+                onClick={() => setLang(code)}
+                className={cn(
+                  'px-2 py-1 rounded-full text-[11px] font-semibold font-body transition-all duration-150',
+                  lang === code
+                    ? 'bg-white text-pink-500 shadow-sm'
+                    : 'text-[#A093A5] hover:text-[#6B5B6E]'
+                )}
+              >
+                {code === 'en' ? 'EN' : code === 'zh' ? '中' : code === 'ja' ? '日' : '韩'}
+              </button>
+            ))}
+          </div>
+
+          <div className="w-px h-4 bg-pink-200 mx-1" />
+          <button
+            onClick={() => navigate('/auth')}
+            className="text-sm text-pink-500 border border-pink-200 rounded-full px-4 py-1.5
+              hover:bg-pink-50 transition-colors duration-150"
+          >
+            {t('common.login')}
+          </button>
+          <button
+            onClick={() => navigate('/auth')}
+            className="text-sm text-white accent-gradient rounded-full px-4 py-1.5
+              hover:brightness-110 transition-all duration-150 shadow-glow"
+          >
+            {t('common.register')}
+          </button>
         </div>
+      </motion.nav>
 
-        <div className="w-px h-4 bg-pink-200 mx-1" />
-        <button
-          onClick={() => navigate('/auth')}
-          className="text-sm text-pink-500 border border-pink-200 rounded-full px-4 py-1.5
-            hover:bg-pink-50 transition-colors duration-150"
+      {/* ====== Mobile Nav ====== */}
+      <motion.div
+        initial={{ y: -60, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        className={`
+          fixed top-0 left-0 right-0 z-40 h-14 flex items-center justify-between px-4 md:hidden
+          transition-all duration-300
+          ${scrolled ? 'bg-[rgba(255,245,247,0.95)] backdrop-blur-[12px] shadow-sm' : 'bg-transparent'}
+          `}
         >
-          {t('common.login')}
-        </button>
-        <button
-          onClick={() => navigate('/auth')}
-          className="text-sm text-white accent-gradient rounded-full px-4 py-1.5
-            hover:brightness-110 transition-all duration-150 shadow-glow"
-        >
-          {t('common.register')}
-        </button>
-      </div>
-    </motion.nav>
+          {/* Logo */}
+          <button onClick={() => navigate('/')} className="flex items-center gap-2 group">
+            <img
+              src="/platonic.png"
+              alt="Logo"
+              className="w-6 h-6 rounded-md object-cover ring-1 ring-pink-400/40"
+            />
+            <span className="text-pink-400 text-base font-bold tracking-tight">Platonic</span>
+          </button>
+
+          {/* Hamburger Menu */}
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="w-10 h-10 rounded-xl flex items-center justify-center hover:bg-pink-50 transition-colors active:scale-95"
+            aria-label="Open menu"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-[#2D1B2E]">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+        </motion.div>
+
+        {/* Mobile Menu Sheet */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[70] bg-black/30 backdrop-blur-[2px] md:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+            >
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
+              className="absolute top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white shadow-lg flex flex-col"
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-pink-100">
+                <div className="flex items-center gap-2">
+                  <img src="/platonic.png" alt="Logo" className="w-6 h-6 rounded-md" />
+                  <span className="text-pink-400 text-sm font-bold">Corolas | Platonic</span>
+                </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-pink-50 transition-colors"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-[#6B5B6E]">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Nav Links */}
+              <div className="flex-1 overflow-y-auto py-4 px-3">
+                <div className="space-y-1">
+                  {mobileNavLinks.map((link) => (
+                    <button
+                      key={link.label}
+                      onClick={link.action}
+                      className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[15px] font-medium text-[#2D1B2E] hover:bg-pink-50 transition-colors text-left"
+                    >
+                      {link.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-pink-100 my-4" />
+
+                {/* Language Switcher */}
+                <p className="text-[11px] font-semibold text-[#A093A5] uppercase tracking-wider mb-2 px-4">
+                  {t('settings.language') || 'Language'}:
+                </p>
+                <div className="grid grid-cols-4 gap-2 px-2 mb-4">
+                  {(['en', 'zh', 'ja', 'ko'] as Language[]).map((code) => (
+                    <button
+                      key={code}
+                      onClick={() => setLang(code)}
+                      className={cn(
+                        'py rounded-lg text-[13px] font-semibold transition-all',
+                        lang === code
+                          ? 'bg-pink-400 text-white shadow-sm'
+                          : 'bg-pink-50 text-[#6B5B6E] hover:bg-pink-100'
+                      )}
+                    >
+                      {code === 'en' ? 'EN' : code === 'zh' ? '中' : code === 'ja' ? '日' : '韩'}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Divider*/}
+                <div className="my-4 border-t border-pink-100" />
+
+                {/* Auth Buttons */}
+                <div className="px-2 space-y-2">
+                  <button
+                    onClick={() => navigate('/auth')}
+                    className="w-full py-3 rounded-xl text-sm font-medium text-pink-500 border border-pink-200 hover:bg-pink-50 transition-colors"
+                  >
+                    {t('common.login')}
+                  </button>
+                  <button
+                    onClick={() => navigate('/auth'
+                      setMobileMenuOpen(false);
+                    )}
+                    className="w-full py-3 rounded-xl text-sm font-semibold text-white accent-gradient hover:brightness-110 transition-all shadow-glow"
+                  >
+                    {t('common.register')}
+                  </button>                    
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
+
 }
 
 /* ── Radar Chart ── */
