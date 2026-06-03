@@ -61,6 +61,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.achievement': 'Achievements',
     'nav.features': 'Features',
     'nav.about': 'About Us',
+    'nav.more': 'More',
 
     /* ── Auth ── */
     'auth.loginTitle': 'Welcome Back',
@@ -484,6 +485,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.achievement': '成就',
     'nav.features': '产品功能',
     'nav.about': '关于我们',
+    'nav.more': '更多',
 
     /* ── Auth ── */
     'auth.loginTitle': '欢迎回来',
@@ -907,6 +909,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.achievement': '実績',
     'nav.features': '機能',
     'nav.about': '私たちについて',
+    'nav.more': 'もっと',
 
     /* ── Auth ── */
     'auth.loginTitle': 'お帰りなさい',
@@ -1330,6 +1333,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.achievement': '업적',
     'nav.features': '기능',
     'nav.about': '소개',
+    'nav.more': '더보기',
 
     /* ── Auth ── */
     'auth.loginTitle': '돌아오신 것을 환영합니다',

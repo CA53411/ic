@@ -1,8 +1,8 @@
 /**
  * Navbar.tsx - Responsive Sidebar + Mobile Bottom Tab Bar
  *
- * Desktop (≥md): Fixed left sidebar (original design)
- * Mobile (<md):  Bottom tab bar with 5 main entries + "More" sheet
+ * Desktop (≥md): Fixed left sidebar
+ * Mobile (<md): Bottom tab bar + "More" sheet with Theme & Language
  */
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -27,6 +27,7 @@ import {
   Check,
   MoreVertical,
   ChevronDown,
+  ChevronLeft,
 } from 'lucide-react';
 import type { User } from '@supabase/supabase-js';
 import { useThemeContext } from '@/context/ThemeContext';
@@ -34,16 +35,12 @@ import { useI18n } from '@/i18n/I18nContext';
 import type { Language } from '@/i18n/translations';
 import type { Theme } from '@/lib/theme';
 
-/** Props for the Navbar component */
 interface NavbarProps {
   isAuthenticated: boolean;
   user: User | null;
   hasCompanion: boolean;
   onLogout: () => Promise<void>;
 }
-
-/** Theme cycle order: light -> dark -> auto -> light */
-const themeCycle: Theme[] = ['light', 'dark', 'auto'];
 
 const languageOptions: { code: Language; label: string }[] = [
   { code: 'en', label: 'English' },
@@ -52,14 +49,12 @@ const languageOptions: { code: Language; label: string }[] = [
   { code: 'ko', label: '한국어' },
 ];
 
-/** Theme icon map */
-function ThemeIcon({ theme, size = 18, className }: { theme: Theme; size?: number; className?: string }) {
-  if (theme === 'light') return <Sun size={size} className={className} />;
-  if (theme === 'dark') return <Moon size={size} className={className} />;
-  return <Monitor size={size} className={className} />;
+function ThemeIcon({ theme, size = 18 }: { theme: Theme; size?: number }) {
+  if (theme === 'light') return <Sun size={size} />;
+  if (theme === 'dark') return <Moon size={size} />;
+  return <Monitor size={size} />;
 }
 
-/** Theme label via i18n */
 function useThemeLabel(theme: Theme, t: (k: string) => string) {
   if (theme === 'light') return t('theme.light');
   if (theme === 'dark') return t('theme.dark');
@@ -77,14 +72,11 @@ export default function Navbar({
   const { t, lang, setLang } = useI18n();
   const { theme, cycleTheme } = useThemeContext();
 
-  // Language dropdown state (desktop only)
   const [langOpen, setLangOpen] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
-
-  // Mobile "More" sheet state
+  const langRef = useRef<<HTMLDivElement>(null);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [langPanelOpen, setLangPanelOpen] = useState(false); // 语言二级面板
 
-  // Close language dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -95,7 +87,6 @@ export default function Navbar({
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  // Desktop nav items with i18n labels
   const navItems = useMemo(() => {
     if (!isAuthenticated) {
       return [
@@ -117,7 +108,6 @@ export default function Navbar({
     ];
   }, [isAuthenticated, hasCompanion, t]);
 
-  // Mobile bottom tab items (max 5, last one is "More")
   const bottomTabs = useMemo(() => {
     if (!isAuthenticated) {
       return [
@@ -138,7 +128,6 @@ export default function Navbar({
     ];
   }, [isAuthenticated, hasCompanion, t]);
 
-  // Items inside the "More" sheet
   const moreItems = useMemo(() => {
     if (!isAuthenticated) return [];
     return [
@@ -149,22 +138,18 @@ export default function Navbar({
     ];
   }, [isAuthenticated, t]);
 
-  /** Handle logout */
   const handleLogout = async () => {
     try {
       await onLogout();
     } catch {
-      // Error is already handled in AuthContext
+      // handled in AuthContext
     }
   };
 
   return (
     <>
-      {/* ═══════════════════════════════════════════════════════════
-          DESKTOP SIDEBAR (≥ md)
-          ═══════════════════════════════════════════════════════════ */}
+      {/* ═══════ Desktop Sidebar (≥ md) ═══════ */}
       <nav className="fixed left-0 top-0 h-screen w-[220px] sidebar-gradient shadow-sidebar z-50 hidden md:flex flex-col">
-        {/* Brand Logo */}
         <div
           className="flex items-center gap-2 px-5 py-6 cursor-pointer"
           onClick={() => navigate('/')}
@@ -179,7 +164,6 @@ export default function Navbar({
           </span>
         </div>
 
-        {/* Navigation Items */}
         <div className="flex-1 flex flex-col gap-1 px-3 py-4 overflow-y-auto">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -187,22 +171,13 @@ export default function Navbar({
               <button
                 key={item.path}
                 onClick={() => navigate(item.path)}
-                className={`
-                  flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium
-                  transition-all duration-150 ease-out
-                  ${
-                    isActive
-                      ? 'bg-sidebar-active text-white border-l-[3px] border-pink-400'
-                      : 'text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200 border-l-[3px] border-transparent'
-                  }
-                `}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 ease-out ${
+                  isActive
+                    ? 'bg-sidebar-active text-white border-l-[3px] border-pink-400'
+                    : 'text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200 border-l-[3px] border-transparent'
+                }`}
               >
-                <span
-                  className={`
-                    transition-transform duration-150
-                    ${isActive ? 'text-pink-200' : 'text-sidebar-icon'}
-                  `}
-                >
+                <span className={isActive ? 'text-pink-200' : 'text-sidebar-icon'}>
                   {item.icon}
                 </span>
                 <span className="font-body">{item.label}</span>
@@ -211,28 +186,21 @@ export default function Navbar({
           })}
         </div>
 
-        {/* Bottom Section */}
         <div className="px-3 pb-4 flex flex-col gap-2">
           <div className="border-t border-sidebar-hover my-1" />
 
-          {/* Dark Mode Toggle */}
           <button
             onClick={cycleTheme}
-            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm
-              text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200
-              transition-all duration-150 w-full"
+            className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200 transition-all duration-150 w-full"
           >
-            <ThemeIcon theme={theme} size={18} className="text-sidebar-icon" />
+            <ThemeIcon theme={theme} size={18} />
             <span className="font-body">{useThemeLabel(theme, t)}</span>
           </button>
 
-          {/* Language Selector */}
           <div ref={langRef} className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm
-                text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200
-                transition-all duration-150 w-full"
+              className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200 transition-all duration-150 w-full"
             >
               <Globe size={18} className="text-sidebar-icon" />
               <span className="font-body">
@@ -265,14 +233,11 @@ export default function Navbar({
                           setLang(option.code);
                           setLangOpen(false);
                         }}
-                        className={`
-                          flex items-center gap-2 w-full px-3 py-2.5 text-sm
-                          transition-all duration-150
-                          ${isSelected
+                        className={`flex items-center gap-2 w-full px-3 py-2.5 text-sm transition-all duration-150 ${
+                          isSelected
                             ? 'bg-pink-400/20 text-pink-200'
                             : 'text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200'
-                          }
-                        `}
+                        }`}
                       >
                         <span className="font-body flex-1 text-left">{option.label}</span>
                         {isSelected && <Check size={14} className="text-pink-400" />}
@@ -284,7 +249,6 @@ export default function Navbar({
             </AnimatePresence>
           </div>
 
-          {/* Auth Section */}
           <div className="border-t border-sidebar-hover pt-3 mt-1">
             {isAuthenticated && user ? (
               <div className="flex flex-col gap-2">
@@ -292,7 +256,7 @@ export default function Navbar({
                   <div className="relative">
                     <img
                       src={user.user_metadata?.avatar || '/default-avatar.jpg'}
-                      alt={user.user_metadata?.username || user.email || 'User'}
+                      alt="User"
                       className="w-9 h-9 rounded-full object-cover ring-2 ring-pink-400/30"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = '/default-avatar.jpg';
@@ -309,9 +273,7 @@ export default function Navbar({
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-3 px-4 py-2 rounded-xl text-sm
-                    text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200
-                    transition-all duration-150 w-full"
+                  className="flex items-center gap-3 px-4 py-2 rounded-xl text-sm text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200 transition-all duration-150 w-full"
                 >
                   <LogOut size={18} className="text-sidebar-icon" />
                   <span className="font-body text-xs">{t('common.logout')}</span>
@@ -320,9 +282,7 @@ export default function Navbar({
             ) : (
               <button
                 onClick={() => navigate('/auth')}
-                className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium
-                  text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200
-                  transition-all duration-150 w-full"
+                className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-sidebar-text hover:bg-sidebar-hover hover:text-pink-200 transition-all duration-150 w-full"
               >
                 <LogIn size={20} className="text-sidebar-icon" />
                 <span className="font-body">{t('auth.login')}</span>
@@ -330,7 +290,6 @@ export default function Navbar({
             )}
           </div>
 
-          {/* Copyright */}
           <div className="px-4 pt-2 pb-1">
             <a className="text-sidebar-text text-[10px] opacity-60" href="mailto:corolar@corolas.top">
               &copy; 2026 Corolas | Platonic
@@ -339,42 +298,39 @@ export default function Navbar({
         </div>
       </nav>
 
-      {/* ═══════════════════════════════════════════════════════════
-          MOBILE BOTTOM TAB BAR (< md)
-          ═══════════════════════════════════════════════════════════ */}
+      {/* ═══════ Mobile Bottom Tab Bar (< md) ═══════ */}
       {isAuthenticated && (
         <>
           <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-[12px] border-t border-pink-100 md:hidden pb-[env(safe-area-inset-bottom)]">
             <div className="flex items-center justify-around h-16">
-              {bottomTabs.map((item) => {
-                const isActive = location.pathname === item.path;
-                const isMore = item.path === '#more';
+              {bottomTabs.map((tab) => {
+                const isActive = location.pathname === tab.path;
+                const isMore = tab.path === '#more';
 
                 return (
                   <button
-                    key={item.label}
+                    key={tab.label}
                     onClick={() => {
                       if (isMore) {
                         setMoreOpen(true);
+                        setLangPanelOpen(false);
                       } else {
-                        navigate(item.path);
+                        navigate(tab.path);
                       }
                     }}
-                    className={`
-                      flex flex-col items-center justify-center gap-0.5 w-full h-full
-                      transition-colors duration-150
-                      ${isActive ? 'text-pink-500' : 'text-[#A093A5]'}
-                    `}
+                    className={`flex flex-col items-center justify-center gap-0.5 w-full h-full transition-colors duration-150 ${
+                      isActive ? 'text-pink-500' : 'text-[#A093A5]'
+                    }`}
                   >
-                    <span>{item.icon}</span>
-                    <span className="text-[10px] font-medium font-body">{item.label}</span>
+                    <span>{tab.icon}</span>
+                    <span className="text-[10px] font-medium font-body">{tab.label}</span>
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* Mobile "More" Sheet */}
+          {/* ═══════ Mobile "More" Sheet ═══════ */}
           <AnimatePresence>
             {moreOpen && (
               <motion.div
@@ -382,7 +338,10 @@ export default function Navbar({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="fixed inset-0 z-[60] bg-black/30 backdrop-blur-[2px] md:hidden"
-                onClick={() => setMoreOpen(false)}
+                onClick={() => {
+                  setMoreOpen(false);
+                  setLangPanelOpen(false);
+                }}
               >
                 <motion.div
                   initial={{ y: '100%' }}
@@ -398,17 +357,18 @@ export default function Navbar({
                   </div>
 
                   <div className="px-4 py-2">
+                    {/* ── More Options ── */}
                     <h3 className="text-xs font-semibold text-[#A093A5] uppercase tracking-wider mb-3 px-2">
-                      {t('nav.more')}
+                      {t('nav.more') || 'More'}
                     </h3>
-
-                    <div className="grid grid-cols-4 gap-2">
+                    <div className="grid grid-cols-4 gap-2 mb-5">
                       {moreItems.map((item) => (
                         <button
                           key={item.path}
                           onClick={() => {
                             navigate(item.path);
                             setMoreOpen(false);
+                            setLangPanelOpen(false);
                           }}
                           className="flex flex-col items-center gap-1.5 p-3 rounded-xl hover:bg-pink-50 transition-colors active:scale-95"
                         >
@@ -418,21 +378,108 @@ export default function Navbar({
                           </span>
                         </button>
                       ))}
+                    </div>
 
-                      {/* Logout */}
+                    {/* ── Preference Settings: Theme & Language ── */}
+                    <h3 className="text-xs font-semibold text-[#A093A5] uppercase tracking-wider mb-3 px-2">
+                      {t('settings.preferences') || 'Preferences'}
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3 mb-5">
+                      {/* Theme Toggle */}
                       <button
-                        onClick={() => {
-                          handleLogout();
-                          setMoreOpen(false);
-                        }}
-                        className="flex flex-col items-center gap-1.5 p-3 rounded-xl hover:bg-red-50 transition-colors active:scale-95"
+                        onClick={() => cycleTheme()}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-pink-50 border border-pink-100 hover:bg-pink-100 transition-colors active:scale-95"
                       >
-                        <LogOut size={20} className="text-red-400" />
-                        <span className="text-[11px] text-red-500 font-medium text-center leading-tight">
-                          {t('common.logout')}
+                        <span className="text-pink-500">
+                          <ThemeIcon theme={theme} size={20} />
                         </span>
+                        <div className="text-left">
+                          <span className="block text-[13px] font-medium text-[#2D1B2E] font-body">
+                            {useThemeLabel(theme, t)}
+                          </span>
+                          <span className="block text-[10px] text-[#A093A5]">
+                            {t('settings.theme') || 'Theme'}
+                          </span>
+                        </div>
+                      </button>
+
+                      {/* Language Toggle */}
+                      <button
+                        onClick={() => setLangPanelOpen(true)}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-pink-50 border border-pink-100 hover:bg-pink-100 transition-colors active:scale-95"
+                      >
+                        <Globe size={20} className="text-pink-500" />
+                        <div className="text-left">
+                          <span className="block text-[13px] font-medium text-[#2D1B2E] font-body">
+                            {languageOptions.find((l) => l.code === lang)?.label ?? 'English'}
+                          </span>
+                          <span className="block text-[10px] text-[#A093A5]">
+                            {t('settings.language') || 'Language'}
+                          </span>
+                        </div>
                       </button>
                     </div>
+
+                    {/* ── Language Selection Sub-panel ── */}
+                    <AnimatePresence>
+                      {langPanelOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="overflow-hidden mb-4"
+                        >
+                          <div className="bg-pink-50/50 rounded-xl border border-pink-100 p-3">
+                            <div className="flex items-center justify-between mb-2 px-1">
+                              <span className="text-xs font-semibold text-[#A093A5]">
+                                {t('settings.selectLanguage') || 'Select Language'}
+                              </span>
+                              <button
+                                onClick={() => setLangPanelOpen(false)}
+                                className="text-[11px] text-pink-500 font-medium"
+                              >
+                                {t('common.close') || 'Close'}
+                              </button>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2">
+                              {languageOptions.map((option) => {
+                                const isSelected = lang === option.code;
+                                return (
+                                  <button
+                                    key={option.code}
+                                    onClick={() => {
+                                      setLang(option.code);
+                                      setLangPanelOpen(false);
+                                    }}
+                                    className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-all ${
+                                      isSelected
+                                        ? 'bg-pink-400 text-white shadow-sm'
+                                        : 'bg-white text-[#6B5B6E] hover:bg-pink-100'
+                                    }`}
+                                  >
+                                    <span className="font-body">{option.label}</span>
+                                    {isSelected && <Check size={14} className="ml-auto" />}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* ── Logout ── */}
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        setMoreOpen(false);
+                        setLangPanelOpen(false);
+                      }}
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-red-50 text-red-500 font-medium text-sm hover:bg-red-100 transition-colors active:scale-95"
+                    >
+                      <LogOut size={18} />
+                      {t('common.logout') || 'Logout'}
+                    </button>
                   </div>
 
                   <div className="h-4" />
@@ -442,8 +489,6 @@ export default function Navbar({
           </AnimatePresence>
         </>
       )}
-
-      {/* Unauthenticated mobile: no bottom bar, keep clean landing */}
     </>
   );
 }

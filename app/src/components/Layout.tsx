@@ -66,6 +66,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={`
           min-h-screen transition-all duration-300
           ${showSidebar ? 'ml-[220px]' : ''}
+          pb-16 md:pb-0
         `}
       >
         <main className="min-h-screen">{children}</main>
