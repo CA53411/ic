@@ -73,7 +73,7 @@ export default function Navbar({
   const { theme, cycleTheme } = useThemeContext();
 
   const [langOpen, setLangOpen] = useState(false);
-  const langRef = useRef<<HTMLDivElement>(null);
+  const langRef = useRef<HTMLDivElement>(null);
   const [moreOpen, setMoreOpen] = useState(false);
   const [langPanelOpen, setLangPanelOpen] = useState(false); // 语言二级面板
 
