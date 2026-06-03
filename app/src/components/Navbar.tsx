@@ -382,7 +382,7 @@ export default function Navbar({
 
                     {/* ── Preference Settings: Theme & Language ── */}
                     <h3 className="text-xs font-semibold text-[#A093A5] uppercase tracking-wider mb-3 px-2">
-                      {t('settings.preferences') || 'Preferences'}
+                      {t('nav.preferences') || 'Preferences'}
                     </h3>
                     <div className="grid grid-cols-2 gap-3 mb-5">
                       {/* Theme Toggle */}
