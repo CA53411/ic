@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast, Toaster } from 'sonner';
+import { useThemeContext } from '@/context/ThemeContext';
+import type { Theme } from '@/lib/theme';
 import {
   Mail,
   Lock,
@@ -12,6 +14,9 @@ import {
   X,
   Github,
   Sparkles,
+  Sun,
+  Moon,
+  Monior,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase';
@@ -811,6 +816,7 @@ export default function Auth() {
   const [mode, setMode] = useState<AuthMode>('login');
   const [tabDirection, setTabDirection] = useState(1);
   const [stepDirection, setStepDirection] = useState(1);
+  const { theme, cycleTheme } = useThemeContext();
   const [signupStep, setSignupStep] = useState<SignupStep>(1);
   const [signupForm, setSignupForm] = useState({
     username: '',
@@ -818,6 +824,12 @@ export default function Auth() {
     password: '',
     confirmPassword: '',
   });
+
+  function ThemeIcon({ t, size = 16 } : { t: Theme; size?: number}) {
+    if (t === 'light') return <Sun size={size}/>;
+    if (t === 'dark') return <Moon size={size}/>;
+    return <Monitor size={size} />;
+  }
 
   const switchMode = (newMode: AuthMode) => {
     setTabDirection(newMode === 'signup' ? 1 : -1);
@@ -871,8 +883,19 @@ export default function Auth() {
         style={{
           boxShadow: '0 8px 32px rgba(45,27,46,0.12), 0 0 60px rgba(255,182,193,0.15)',
         }}
-      >
+      >        
+      
+        {/* Theme Toggle - top right of card */}
+        <button
+          onClick={cycleTheme}
+          className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-white/60 backdrop-blur-sm border border-pink-200 flex items-center justify-center text-[#A093A5] hover:text-pink-500 hover:border-pink-300 hover:bg-white/80 transition-all duration-200 shadow-sm"
+          title="Toggle theme"
+        >
+          <ThemeIcon t={theme} size={16} />
+        </button>
+        
         {/* Logo */}
+
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Sparkles size={28} className="text-pink-400" />
